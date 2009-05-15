@@ -83,7 +83,7 @@ jQuery(document).ready(function($) {
             <li><a href="<?php bloginfo('url') ?>"><?php echo arras_get_option('topnav_home') ?></a></li>
             <?php 
 			if (!arras_get_option('topnav_linkcat')) {
-            	wp_list_categories('hierarchical=1&orderby=id&hide_empty=1&title_li=&exclude=1');
+            	wp_list_categories('hierarchical=1&orderby=id&hide_empty=1&title_li=');
 			} else {
 				wp_list_bookmarks('category='.arras_get_option('topnav_linkcat').'&hierarchical=0&show_private=1&hide_invisible=0&title_li=&categorize=0&orderby=id'); 
 			}
