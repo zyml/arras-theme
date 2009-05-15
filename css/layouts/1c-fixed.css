@@ -1,0 +1,45 @@
+/*
+LAYOUT: One-Column Fixed
+DESCRIPTION: 
+*/
+
+#main {
+    width:100%;
+    margin:0 auto;
+	overflow:hidden;
+    position:relative;
+	min-height: 980px;	
+}
+#container {
+    
+}
+#content {
+    width:660px;
+	margin: 0 auto;
+}
+#primary {
+	display: none;
+}
+#secondary {
+	display: none;
+}
+#subsidiary {
+    width:960px;
+    margin:0 auto;
+    overflow:hidden;
+	display: none;
+}
+#subsidiary .aside {
+    width:300px;
+    float:left;
+    margin:0 20px 0 0;
+	display: none;
+}
+#subsidiary #third {
+    margin:0;
+	display: none;
+}
+.fixed {
+	width: 960px;
+	margin: 0 auto;
+}

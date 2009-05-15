@@ -1,0 +1,80 @@
+/*---------- Plugins ----------*/
+.wp-pagenavi {
+	margin: 0 0 10px;
+	font-size: 12px !important;
+}
+.wp-pagenavi a, .wp-pagenavi a:link {
+	padding: 3px 4px; 
+	margin: 2px;
+	text-decoration: none;
+	background-color: #322e2c;	
+}
+.wp-pagenavi a:visited {
+	padding: 3px 4px; 
+	margin: 2px;
+	text-decoration: none;
+	background-color: #322e2c;	
+}
+.wp-pagenavi a:hover {	
+	color: #fff;
+}
+.wp-pagenavi a:active {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;
+	text-decoration: none;
+	background-color: #322e2c;	
+}
+.wp-pagenavi span.pages {
+	padding: 3px 4px; 
+	margin: 2px 2px 2px 0;
+	color: #848485;
+	background-color: #322e2c;
+	border: 1px solid #292624;
+}
+.wp-pagenavi span.current {
+	padding: 3px 4px; 
+	margin: 2px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #322e2c;
+}
+.wp-pagenavi span.extend {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;	
+	color: #000000;
+	background-color: #FFFFFF;
+}
+.WP-PrintIcon {
+	display: none;
+}
+
+.solo-subscribe-to-comments {
+	font-weight: bold;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #fff;
+}
+.solo-subscribe-to-comments label {
+	display: block;
+	margin-top: 10px;
+	float: left;
+	text-transform: none;
+	font-size: 11px;
+	color: #ccc;
+}
+.solo-subscribe-to-comments label input {
+	float: none;
+	margin-top: 0;
+}
+.solo-subscribe-to-comments input {
+	float: left;
+	margin-left: 5px;
+	margin-top: 9px;
+}
+
+#user_login, #user_pass {
+	width: 200px;
+}
+#wp125adwrap_2c .wp125ad {
+	width: 115px !important;
+}

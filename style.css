@@ -1,0 +1,37 @@
+/*   
+Theme Name: Arras Theme
+Theme URI: http://www.arrastheme.com/
+Description: Magazine-styled theme with tons of features. Ready for alternate styles. Includes featured posts slideshow, different post layouts, multi-tabbed sidebar, custom single meta fields for reviews and many other customisable features.
+Author: Melvin Lee
+Author URI: http://www.zy.sg/
+Version: 1.3.2
+Tags: blue,brown,white,light,two-columns,three-columns,left-sidebar,right-sidebar,fixed-width,theme-options,threaded-comments,sticky-post
+.
+Arras.Theme, like WordPress, is released under the GNU General Public License, version 2 (GPL).
+
+For more information about the GPL, please visit:
+http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+If you require any support, please visit the theme website at 
+http://www.arrastheme.com/.
+.
+*/
+
+/* Trick the WordPress Theme Bot *Evil* */
+.aligncenter			{ display: block; margin: 0 auto; }
+.alignright				{ float: right; margin: 0 0 1em 1em; }
+.alignleft				{ float: left; margin: 0 1em 1em 0; }
+.floatleft				{ float: left; }
+.floatright				{ float: right; }
+img.aligncenter, img.alignright, 
+img.alignleft			{ border: 3px solid #EEE; }
+
+.wp-caption { border: 1px solid #DDD; text-align: center; background: #F3F3F3; padding-top: 4px; margin: 10px }
+.wp-caption img { margin: 0; padding: 0; border: none }
+.wp-caption .wp-caption-text { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0 }
+
+/* Default Stylesheet */
+@import url('css/default.css');
+
+/* User Override Stylesheet */
+@import url('css/user.css');

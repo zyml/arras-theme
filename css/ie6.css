@@ -1,0 +1,20 @@
+.logo				{ margin-left: 5px; }
+
+#primary			{ overflow: hidden; }
+.menu 				{ display: block; overflow: visible; }
+.menu a:link, .menu a:visited	{ margin: 0 10px 0 0; }
+.rss a:link, .rss a:visited	{ margin: 0; }
+
+.posts-default .entry-meta, .posts-quick .entry-meta	{ background: #111; padding-left: 5px; width: 185px; }
+.posts-default .published, .posts-quick .published	{ margin:  5px 0 0; display: block; }
+.single-post .entry-content { padding: 0 0 0 20px; }
+.style-techblue .posts-default .post { margin: 0 6px 10px 0; }
+
+.layout-3c-fixed #primary { margin: 0 0 0 -990px; }
+.layout-3c-fixed #content { margin: 0 215px 0 235px; }
+.layout-3c-fixed, .layout-3c-r-fixed .featured { overflow: hidden; }
+
+.layout-3c-fixed .posts-default, .layout-3c-fixed .posts-quick, .layout-3c-r-fixed .posts-default, .layout-3c-r-fixed .posts-quick { margin-bottom: 10px; }
+
+.layout-3c-r-fixed .posts-default .post, .layout-3c-r-fixed .posts-default img, .layout-3c-r-fixed .posts-default .entry-meta	{ width: 220px; }
+.layout-3c-fixed .posts-default .post, .layout-3c-fixed .posts-default img, .layout-3c-fixed .posts-default .entry-meta	{ width: 220px; }

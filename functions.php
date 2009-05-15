@@ -1,0 +1,43 @@
+<?php
+wp_enqueue_script('jquery');
+
+// Translate Arras.Theme, if possible
+if (class_exists('xili_language')) {
+	define('THEME_TEXTDOMAIN', 'arras');
+	define('THEME_LANGS_FOLDER', '/language');
+} else {
+	load_theme_textdomain('arras', get_template_directory() . '/language');
+}
+
+$theme_data = get_theme( get_current_theme() );
+define( ARRAS_CHILD, (boolean)($theme_data['Parent Theme'] == 'Arras.Theme') );
+
+$parent_data = get_theme('Arras Theme');
+
+// Define post meta fields
+define( ARRAS_POST_THUMBNAIL, 'thumb' );
+define( ARRAS_REVIEW_SCORE, 'score' );
+define( ARRAS_REVIEW_PROS, 'pros' );
+define( ARRAS_REVIEW_CONS, 'cons' );
+
+// Define PHP file constants
+define( ARRAS_DIR, TEMPLATEPATH );
+define( ARRAS_LIB, ARRAS_DIR . '/library' );
+define( ARRAS_VERSION, $parent_data['Version'] );
+
+// Load library files
+require_once ARRAS_LIB . '/actions.php';
+require_once ARRAS_LIB . '/filters.php';
+require_once ARRAS_LIB . '/template.php';
+require_once ARRAS_LIB . '/styles.php';
+
+if ( class_exists('WP_Widget') ) require_once ARRAS_LIB . '/widgets.php';
+else require_once ARRAS_LIB . '/widgets-legacy.php';
+
+require_once ARRAS_LIB . '/admin/options.php';
+arras_flush_options();
+
+if ( is_admin() ) require_once ARRAS_LIB . '/admin/admin.php';
+
+require_once ARRAS_LIB . '/launcher.php';
+?>
