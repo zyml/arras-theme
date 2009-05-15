@@ -31,7 +31,7 @@ if ( function_exists('dsq_comment_count') ) {
                 <span class="featured-entry">
                     <span class="entry-title"><?php the_title(); ?></span>
                     <?php if ( arras_get_option('post_preview') == 'content' ) : ?>
-                    <span class="entry-summary"><?php the_content_rss('', TRUE, '', 25, 2); ?></span>
+                    <span class="entry-summary"><?php echo arras_strip_content(get_the_content(), 20); ?></span>
                     <?php else : ?>
                     <span class="entry-summary"><?php the_excerpt(); ?></span>
                     <?php endif; ?>
