@@ -7,7 +7,7 @@ if ( post_password_required() ) {
 }
 ?>
 <?php if ( have_comments() ) : ?>
-	<?php if ( ! empty($comments_by_type['comment']) ) : ?>  
+	<?php if ( !empty($comments_by_type['comment']) ) : ?>  
 	<h4 class="module-title"><?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __ngettext('% Comment', '% Comments', get_comments_number(), 'arras') ); ?></h4>
 		<ol id="commentlist" class="clearfix">
 			<?php wp_list_comments('type=comment&callback=arras_list_comments'); ?>
@@ -18,16 +18,22 @@ if ( post_password_required() ) {
 		</div>
 	<?php endif; ?>
 	
-	<?php if ( ! empty($comments_by_type['pings']) ) : ?>
+	<?php if ( !empty($comments_by_type['pings']) ) : ?>
 	<h4 class="module-title"><?php _e('Trackbacks / Pings', 'arras') ?></h4>
 	<ol class="pingbacks"><?php wp_list_comments('type=pings&callback=arras_list_trackbacks'); ?></ol>
 	<?php endif; ?>
 	
-	<?php else: ?>
-	<h4 class="module-title"><?php _e('No Comments', 'arras') ?></h4>
-	<p class="nocomments"><?php _e('Start the ball rolling by posting a comment on this article!', 'arras') ?></p>
+<?php else: ?>
+		<?php if ('open' == $post->comment_status) : ?>
+		<h4 class="module-title"><?php _e('No Comments', 'arras') ?></h4>
+		<p class="nocomments"><?php _e('Start the ball rolling by posting a comment on this article!', 'arras') ?></p>
+		<?php else : ?>
+		<h4 class="module-title"><?php _e('Comments Closed', 'arras') ?></h4>
+		<p class="nocomments"><?php _e('Comments are closed. You will not be able to post a comment in this post.', 'arras') ?></p>
+		<?php endif ?>
 <?php endif; ?>
 
+<?php if ('open' == $post->comment_status) : ?>
 <div id="respond">
 <h4 class="module-title"><?php comment_form_title( __('Leave a Reply', 'arras'), __('Leave a Reply to %s', 'arras') ); ?></h4>
  <div id="commentsform">
@@ -64,3 +70,4 @@ if ( post_password_required() ) {
   </form>
  <?php if(function_exists('show_manual_subscription_form')) { show_manual_subscription_form(); } ?>
  </div><!-- end #commentsform --></div>
+ <?php endif ?>
