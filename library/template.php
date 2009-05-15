@@ -31,21 +31,16 @@ function arras_override_styles() {
 <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/layouts/<?php echo arras_get_option('layout') ?>.css" type="text/css" />
 <?php endif; ?>
 
-<style type="text/css">
-
 <?php
-if ( arras_get_option('background_type') == 'original' ) {
-	if ( file_exists(TEMPLATEPATH . '/images/bg/' .arras_get_option('style'). '/background.php') )
-		include TEMPLATEPATH . '/images/bg/' .arras_get_option('style'). '/background.php';
-} else {
-	if ( file_exists(TEMPLATEPATH . '/images/bg/' .arras_get_option('background') ) ) {
-		echo 'body { background: ' .arras_get_option('background_color'). ' url(' .get_bloginfo('stylesheet_directory'). '/images/bg/' .arras_get_option('background'). ') ' .arras_get_option('background_tiling'). ' top center; }';
-	}	
-}
-?>
-
-</style>
-<?php	
+	$bg_exists = file_exists(TEMPLATEPATH . '/images/bg/' . arras_get_option('background'));
+	if ($bg_exists || arras_get_option('background_color')) {
+		echo '<style type="text/css">';
+		echo 'body {';
+		if ($bg_exists) echo 'background: url(' . get_bloginfo('stylesheet_directory') . '/images/bg/' . arras_get_option('background') . ') ' . arras_get_option('background_tiling') . ' top center;';
+		if (arras_get_option('background_color')) echo 'background-color: ' . arras_get_option('background_color') . ';';
+		echo '}';
+		echo '</style>';
+	}
 }
 
 function arras_alternate_style() {

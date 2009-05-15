@@ -40,6 +40,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 
 .hide, .ui-tabs-hide	{ display: none !important; }
 
+#colorpicker			{ background: #FFF; border: 1px solid #8CBDD5; position:absolute; }
 .farbtastic				{ position: relative; }
 .farbtastic *			{ cursor: crosshair; position: absolute; }
 .farbtastic,.farbtastic .wheel	{ height: 195px; width: 195px; }

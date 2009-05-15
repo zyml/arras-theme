@@ -43,5 +43,14 @@ j(document).ready(function() {
 	});
 	
 	j('#colorpicker').farbtastic('#arras-background-color');
+	j('#colorpicker').hide();
+	
+	j('#arras-background-color').focus( function() {
+		j('#colorpicker').show('fast');
+	});
+	
+	j('#arras-background-color').blur( function() {
+		j('#colorpicker').hide('fast');
+	});
 	
 });
