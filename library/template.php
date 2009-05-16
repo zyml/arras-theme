@@ -232,13 +232,7 @@ function arras_get_posts($page_type, $query = null) {
 	<?php while ($query->have_posts()) : $query->the_post() ?>
 	<div id="post-<?php the_ID() ?>" <?php arras_single_post_class() ?>>
         <?php arras_postheader() ?>
-		
-		<?php if ( arras_get_option('post_preview') == 'content' ) : ?>
 		<div class="entry-content"><?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?></div>
-		<?php else : ?>
-		<div class="entry-content"><?php the_excerpt(); ?></div>
-		<?php endif; ?>
-        
 		<?php arras_postfooter() ?>
     </div>
 	<?php endwhile; ?>
