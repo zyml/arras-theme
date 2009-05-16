@@ -30,11 +30,7 @@ if ( function_exists('dsq_comment_count') ) {
             	<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark" style="background: url(<?php echo arras_get_thumbnail($w, $h); ?>) no-repeat;">
                 <span class="featured-entry">
                     <span class="entry-title"><?php the_title(); ?></span>
-                    <?php if ( arras_get_option('post_preview') == 'content' ) : ?>
-                    <span class="entry-summary"><?php echo arras_strip_content(get_the_content(), 20); ?></span>
-                    <?php else : ?>
-                    <span class="entry-summary"><?php the_excerpt(); ?></span>
-                    <?php endif; ?>
+                    <span class="entry-summary"><?php echo arras_strip_content(get_the_excerpt(), 20); ?></span>
 					<span class="progress"></span>
                 </span>
             	</a>
