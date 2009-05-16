@@ -64,6 +64,10 @@ class Options {
 		$saved_options = unserialize(get_option('arras_options'));
 		if (!empty($saved_options) && is_object($saved_options)) {
 			foreach($saved_options as $name => $value) {
+				// Apply filters if qTranslate is enabled
+				if (function_exists('qtrans_init')) {
+					$value = qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage($value);	
+				}
 				$this->$name = $value;
 			}	
 		}

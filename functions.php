@@ -9,6 +9,11 @@ if (class_exists('xili_language')) {
 	load_theme_textdomain('arras', get_template_directory() . '/language');
 }
 
+// Remove filter on theme options if qTranslate is enabled
+if (function_exists('qtrans_init')) {
+	remove_filter('option_arras_options', 'qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage', 0);	
+}
+
 $theme_data = get_theme( get_current_theme() );
 define( ARRAS_CHILD, (boolean)($theme_data['Parent Theme'] == 'Arras.Theme') );
 
