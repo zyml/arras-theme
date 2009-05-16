@@ -1,19 +1,6 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
 <div id="layout" class="padding-content">
 
-<h3><?php _e('Overall', 'arras') ?></h3>
-<table class="form-table">
-
-<tr valign="top">
-<th scope="row"><label for="arras-layout-newspreview"><?php _e('Show Content Preview', 'arras') ?></label></th>
-<td>
-<?php echo arras_form_radio('arras-layout-newspreview', 'content', arras_get_option('post_preview') == 'content') ?> <?php _e('First 25 Words of Post', 'arras') ?><br />
-<?php echo arras_form_radio('arras-layout-newspreview', 'excerpt', arras_get_option('post_preview') == 'excerpt') ?> <?php _e('Post Excerpt', 'arras') ?>
-</td>
-</tr>
-
-</table>
-
 <h3><?php _e('Index Page', 'arras') ?></h3>
 <table class="form-table">
 

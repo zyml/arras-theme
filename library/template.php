@@ -261,13 +261,7 @@ function arras_get_posts($page_type, $query = null) {
 	<li id="post-<?php the_ID() ?>" <?php arras_post_class() ?>>
 		
 		<?php arras_newsheader($page_type) ?>
-		
-		<?php if ( arras_get_option('post_preview') == 'content' ) : ?>
-		<div class="entry-summary"><?php echo arras_strip_content(get_the_content(), 20); ?></div>
-		<?php else : ?>
-		<div class="entry-summary"><?php the_excerpt(); ?></div>
-		<?php endif; ?>
-		
+		<div class="entry-summary"><?php echo arras_strip_content(get_the_excerpt(), 20); ?></div>
 		<?php arras_newsfooter($page_type) ?>		
 	</li>
 	<?php endwhile; ?>

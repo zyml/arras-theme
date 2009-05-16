@@ -9,7 +9,6 @@ class Options {
 	// Navigation
 	var $topnav_home, $topnav_linkcat;
 	// Layout
-	var $post_preview;
 	var $featured1_count, $featured2_count, $index_count;
 	var $featured2_news_display, $index_news_display, $index_news_thumbs;
 	var $archive_news_display, $archive_news_thumbs;
@@ -31,8 +30,6 @@ class Options {
 		
 		$this->topnav_home = __('Home', 'arras');
 		$this->topnav_linkcat = 0;
-
-		$this->post_preview = 'content';
 		
 		$this->featured1_count = 4;
 		$this->featured2_count = 3;
@@ -87,8 +84,6 @@ class Options {
 		
 		$this->topnav_home = (string)$_POST['arras-nav-home'];
 		$this->topnav_linkcat = (int)$_POST['arras-nav-linkcat'];
-		
-		$this->post_preview = (string)$_POST['arras-layout-newspreview'];
 		
 		$this->featured1_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
 		$this->featured2_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
