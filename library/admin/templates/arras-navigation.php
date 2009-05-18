@@ -20,6 +20,15 @@ foreach ( get_categories('type=link&hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
+<th scope="row"><label for="arras-layout-metapos"><?php _e('Top Navigation Display', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_radio('arras-nav-display', 'categories', arras_get_option('topnav_display') == 'categories') ?> <?php _e('Categories', 'arras') ?><br />
+<?php echo arras_form_radio('arras-nav-display', 'pages', arras_get_option('topnav_display') == 'pages') ?> <?php _e('Pages', 'arras') ?><br />
+<?php echo arras_form_radio('arras-nav-display', 'linkcat', arras_get_option('topnav_display') == 'linkcat') ?> <?php _e('Link Category', 'arras') ?><br />
+</td>
+</tr>
+
+<tr valign="top">
 <th scope="row"><label for="arras-nav-linkcat"><?php _e('Link Category', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_dropdown('arras-nav-linkcat', $linkcats, arras_get_option('topnav_linkcat')); ?>

@@ -7,7 +7,7 @@ class Options {
 	// Categories
 	var $featured_cat1, $featured_cat2, $news_cat;
 	// Navigation
-	var $topnav_home, $topnav_linkcat;
+	var $topnav_home, $topnav_display, $topnav_linkcat;
 	// Layout
 	var $featured1_count, $featured2_count, $index_count;
 	var $featured2_news_display, $index_news_display, $index_news_thumbs;
@@ -29,6 +29,7 @@ class Options {
 		$this->featured_cat = 0;
 		
 		$this->topnav_home = __('Home', 'arras');
+		$this->topnav_display = 'categories';
 		$this->topnav_linkcat = 0;
 		
 		$this->featured1_count = 4;
@@ -82,6 +83,7 @@ class Options {
 		$this->news_cat = (int)$_POST['arras-cat-news'];
 		
 		$this->topnav_home = (string)$_POST['arras-nav-home'];
+		$this->topnav_display = (string)$_POST['arras-nav-display'];
 		$this->topnav_linkcat = (int)$_POST['arras-nav-linkcat'];
 		
 		$this->featured1_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
