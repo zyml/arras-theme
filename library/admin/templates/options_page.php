@@ -1,6 +1,12 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
 <?php include 'functions.php'; ?>
 
+<div class="wrap">
+
+<div class="clearfix">
+<h2 id="arras-header"><?php _e('Arras.Theme Options', 'arras') ?></h2>
+</div>
+
 <?php if (!arras_cache_is_writable) : ?>
 <div class="error">
 	<p>
@@ -18,11 +24,7 @@
 </div>
 <?php endif ?>
 
-<div class="wrap">
-
-<div class="clearfix">
-<h2 id="arras-header"><?php _e('Arras.Theme Options', 'arras') ?></h2>
-</div>
+<?php echo $notices ?>
 
 <ul id="arras-help-links">
 <li id="donate-form">
@@ -55,7 +57,6 @@
 </ul>
 
 <div class="clearfix arras-options-wrapper">
-<div class="arras-options-tabcover"></div>
 
 <?php include 'arras-general.php' ?>
 <?php include 'arras-categories.php' ?>

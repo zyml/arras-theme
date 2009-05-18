@@ -9,19 +9,21 @@ function arras_addmenu() {
 function arras_admin() {
 	global $arras_options;
 	
+	$notices = ''; // store notices here so that options_page.php will echo it out later
+	
 	if ( isset($_GET['page']) && $_GET['page'] == 'arras-options' ) {
 		//print_r($_POST);
 		
 		if ( isset($_REQUEST['save']) ) {
 			$arras_options->save_options();
 			arras_update_options();
-			echo '<div class="updated"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
+			$notices = '<div class="updated"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
 		}
 		
 		if ( isset($_REQUEST['reset']) ) {
 			delete_option('arras_options');
 			arras_flush_options();
-			echo '<div class="updated"><p>' . __('Your settings have been reverted to the defaults.', 'arras') . '</p></div>';
+			$notices = '<div class="updated"><p>' . __('Your settings have been reverted to the defaults.', 'arras') . '</p></div>';
 		}
 		
 		if ( isset($_REQUEST['clearcache']) ) {
@@ -32,7 +34,7 @@ function arras_admin() {
 				@unlink(trailingslashit($cache_location) . $obj);
 			}
 			closedir($dh);
-			echo '<div class="updated"><p>' . __('Thumbnail cache has been cleared.', 'arras') . '</p></div>';
+			$notices = '<div class="updated"><p>' . __('Thumbnail cache has been cleared.', 'arras') . '</p></div>';
 		}
 		
 		$nonce = wp_create_nonce('arras-admin'); // create nonce token for security

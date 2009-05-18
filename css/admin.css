@@ -6,7 +6,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #arras-help-links li	{ float: left; }
 #arras-help-links #donate-form	{ margin: -3px 0 0; }
 
-#arras-tabs				{ margin: 5px 5px 0; width: 100%; }
+#arras-tabs				{ margin: 5px 0 0; width: 100%; }
 #arras-tabs li			{ float: left; font-size: 12px; margin: 0; padding: 0; }
 #arras-tabs a			{ cursor: default; background: #F2F2F2 url(../images/admin/white-grad.png) repeat-x scroll left top; border: 1px solid #bbb; border-right: none; color: #464646; display: block; padding: 5px 12px; text-decoration: none; }
 #arras-tabs a:hover		{ background: #F2F2F2 url(../images/admin/white-grad-active.png) repeat-x scroll left top; color: #000; }
@@ -14,6 +14,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #arras-tabs li:first-child a	{ moz-border-radius: 6px 0 0 0; webkit-border-radius: 6px 0 0 0; }
 #arras-tabs li:last-child a	{ border-right: 1px solid #bbb; moz-border-radius: 0 6px 0 0; webkit-border-radius: 6px 0 0 0; }
 
+.arras-options-wrapper	{ border-top: 3px solid #AAA; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .padding-content		{ padding: 10px; }
 .padding-content h3		{ font-size: 14px; margin: 10px 0 0; }
