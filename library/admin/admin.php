@@ -1,6 +1,11 @@
 <?php
 function arras_addmenu() {
-	$options_page = add_theme_page( __('Options', 'arras'), __('Options', 'arras'), 'edit_themes', 'arras-options', 'arras_admin' );
+	$options_page = add_menu_page( __('Arras Theme', 'arras'), __('Arras Theme', 'arras'), 8, 'arras-options', 'arras_admin');
+	add_submenu_page( 'arras-options', __('Arras Theme', 'arras'), __('Theme Options', 'arras'), 8, 'arras-options', 'arras_admin' );
+	add_submenu_page( 'arras-options', __('Arras Theme', 'arras'), __('Quick Guide', 'arras'), 8, 'arras-guide', 'arras_guide' );
+	
+	//$options_page = add_theme_page( __('Options', 'arras'), __('Theme Options', 'arras'), 'edit_themes', 'arras-options', 'arras_admin' );
+	//$usage_page = add_theme_page( __('Usage Guide', 'arras'), __('Quick Guide', 'arras'), 'edit_themes', 'arras-guide', 'arras_guide' );
 	
 	add_action('admin_print_scripts-'. $options_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-'. $options_page, 'arras_admin_styles');
@@ -40,6 +45,10 @@ function arras_admin() {
 		$nonce = wp_create_nonce('arras-admin'); // create nonce token for security
 		include 'templates/options_page.php';
 	}
+}
+
+function arras_guide() {
+	include 'templates/usage_page.php';	
 }
 
 function arras_admin_scripts() {

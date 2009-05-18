@@ -4,7 +4,7 @@
 <div class="wrap">
 
 <div class="clearfix">
-<h2 id="arras-header"><?php _e('Arras.Theme Options', 'arras') ?></h2>
+<h2 id="arras-header"><?php _e('Arras Theme Options', 'arras') ?></h2>
 </div>
 
 <?php if (!arras_cache_is_writable) : ?>
