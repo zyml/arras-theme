@@ -48,9 +48,8 @@ class Options {
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
 		
-		$this->background = '';
-		$this->background_type = 'original';
-		$this->background_color = '#252221';
+		$this->background = 'none';
+		$this->background_type = 'custom';
 		$this->background_tiling = 'none';
 		
 		$this->single_meta_pos = 'top';
