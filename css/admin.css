@@ -14,7 +14,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #arras-tabs li:first-child a	{ moz-border-radius: 6px 0 0 0; webkit-border-radius: 6px 0 0 0; }
 #arras-tabs li:last-child a	{ border-right: 1px solid #bbb; moz-border-radius: 0 6px 0 0; webkit-border-radius: 6px 0 0 0; }
 
-.arras-options-wrapper	{ border-top: 3px solid #AAA; }
+.arras-options-wrapper	{ border-top: 3px solid #AAA; min-height: 820px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .padding-content		{ padding: 10px; }
 .padding-content h3		{ font-size: 14px; margin: 10px 0 0; }
@@ -31,8 +31,8 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 
 .hide, .ui-tabs-hide	{ display: none !important; }
 
-#colorpicker			{ background: #FFF; border: 1px solid #8CBDD5; position:absolute; }
-.farbtastic				{ position: relative; }
+#colorpicker			{ position: relative; }
+.farbtastic				{ background: #FFF; border: 1px solid #8CBDD5; position: relative; }
 .farbtastic *			{ cursor: crosshair; position: absolute; }
 .farbtastic,.farbtastic .wheel	{ height: 195px; width: 195px; }
 .farbtastic .color,.farbtastic .overlay	{ height: 101px; left: 47px; top: 47px; width: 101px; }
