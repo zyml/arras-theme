@@ -11,7 +11,7 @@
 	<p><?php _e('Like some of the WordPress themes, Arras Theme uses single post custom fields to store the location of the images you would like to use.', 'arras') ?></p>
 	<p><strong><?php _e('To upload your own images for use in thumbnails:', 'arras') ?></strong></p>
 	<p><strong><a href="http://i43.tinypic.com/4ida3n.jpg"><?php _e('Pictorial Guide on Posting Thumbnails', 'arras') ?></a></strong></p>
-	<ol>
+	<ol style="list-style: decimal; margin: 20px 0; padding-left: 30px;">
 		<li><?php _e('When editing or creating a new post, click on the <strong>Insert Image</strong> icon to upload a new image.', 'arras') ?></li>
 		<li><?php _e("Upload your image using WordPress' built-in image uploader.", 'arras') ?></li>
 		<li><?php _e('When your image has successfully been uploaded, click on <strong>File URL</strong>. A URL should appear in the field above the button (Link URL field). 
@@ -28,7 +28,7 @@
 	<p><?php _e('You can try out the <a href="http://forums.arrastheme.com/">Community Forums</a>.', 'arras') ?></p>
 	
 	<h3><?php _e('I want to make this theme better! How can I help?', 'arras') ?></h3>
-	<ol>
+	<ol style="list-style: decimal; margin: 20px 0; padding-left: 30px;">
 		<li><?php _e('Help out in the community forums. There are many who need help with this theme.', 'arras') ?></li>
 		<li><?php _e('If you know HTML, CSS or PHP, make suggestions on how to improve the code.', 'arras') ?></li>
 		<li><?php _e('Donate to the theme developer so that he can continue working this theme.', 'arras') ?></li>
