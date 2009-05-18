@@ -1,6 +1,6 @@
 <?php
 function arras_addmenu() {
-	$options_page = add_menu_page( __('Arras Theme', 'arras'), __('Arras Theme', 'arras'), 8, 'arras-options', 'arras_admin');
+	$options_page = add_menu_page( __('Arras Theme', 'arras'), __('Arras Theme', 'arras'), 8, 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png');
 	add_submenu_page( 'arras-options', __('Arras Theme', 'arras'), __('Theme Options', 'arras'), 8, 'arras-options', 'arras_admin' );
 	add_submenu_page( 'arras-options', __('Arras Theme', 'arras'), __('Quick Guide', 'arras'), 8, 'arras-guide', 'arras_guide' );
 	
