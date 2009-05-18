@@ -14,10 +14,10 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .padding-content		{ padding: 10px; }
 .padding-content h3		{ font-size: 14px; margin: 10px 0 0; }
-.form-table				{ margin-bottom: 0!important; }
+.form-table				{ margin-bottom: 0 !important; }
 .form-table th,.largetext	{ font-size: 12px; }
-.form-table select		{ width: 225px; }
-.version				{ font-size: 12px!important; font-weight: bold; }
+.form-table select		{ width: 275px; }
+.version				{ font-size: 12px !important; font-weight: bold; padding: 10px !important; }
 
 #add-new-hook			{ margin-top: 10px; }
 #hooks-placeholder		{ border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; margin: 20px 0 0; padding: 10px; }
