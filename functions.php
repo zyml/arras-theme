@@ -36,8 +36,7 @@ require_once ARRAS_LIB . '/filters.php';
 require_once ARRAS_LIB . '/template.php';
 require_once ARRAS_LIB . '/styles.php';
 
-if ( class_exists('WP_Widget') ) require_once ARRAS_LIB . '/widgets.php';
-else require_once ARRAS_LIB . '/widgets-legacy.php';
+require_once ARRAS_LIB . '/widgets-legacy.php';
 
 require_once ARRAS_LIB . '/admin/options.php';
 arras_flush_options();
