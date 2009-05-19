@@ -86,19 +86,30 @@ function arras_postheader() {
 	}
 	
 	if ( is_single() && !is_attachment() ) {
-		$postheader .= '<ul class="postbar clearfix">';
-		$postheader .= '<li><a href="' . get_comments_link() . '">' . __('Comments', 'arras') . ' [' . get_comments_number() . ']</a></li>';
-		if ( function_exists('wp_print') ) $postheader .= '<li>' . print_link('', '', false) . '</li>';
-		
-		// Add social bookmarking buttons
-		$postheader .= '<li><a href="http://digg.com/submit?phase=2&amp;url=' . get_permalink() . '&amp;title=' . get_the_title() . '">' . __('Digg it!', 'arras') . '</a></li>';
-		$postheader .= '<li><a href="http://www.facebook.com/share.php?u=' . get_permalink() . '&amp;t=' . get_the_title() . '">' . __('Facebook', 'arras') . '</a></li>';
-		
-		$postheader .= '<li><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&post=' . $id . '">' . __('Edit Post', 'arras') . '</a></li>';
-		$postheader .= '</ul>';
+		$postheader .= arras_postbar(); // the postbar links have been moved to arras_postbar() function
 	}
 	
 	echo apply_filters('arras_postheader', $postheader);
+}
+
+/**
+ * Called to display important links for single posts
+ * @since 1.3.3
+ */
+function arras_postbar($echo = false) {
+	$postbar .= '<ul class="postbar clearfix">';
+	$postbar .= '<li><a href="' . get_comments_link() . '">' . __('Comments', 'arras') . ' [' . get_comments_number() . ']</a></li>';
+	if ( function_exists('wp_print') ) $postbar .= '<li>' . print_link('', '', false) . '</li>';
+	
+	// Add social bookmarking buttons
+	$postbar .= '<li><a href="http://digg.com/submit?phase=2&amp;url=' . get_permalink() . '&amp;title=' . get_the_title() . '">' . __('Digg it!', 'arras') . '</a></li>';
+	$postbar .= '<li><a href="http://www.facebook.com/share.php?u=' . get_permalink() . '&amp;t=' . get_the_title() . '">' . __('Facebook', 'arras') . '</a></li>';
+	
+	$postbar .= '<li><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&post=' . $id . '">' . __('Edit Post', 'arras') . '</a></li>';
+	$postbar .= '</ul>';
+	
+	if ($echo) echo apply_filters('arras_postbar', $postbar);
+	else return apply_filters('arras_postbar', $postbar);
 }
 
 /**
@@ -109,16 +120,7 @@ function arras_postfooter() {
 	global $id, $post;
 	
 	if ( !is_attachment() ) {
-		$postfooter .= '<ul class="postbar clearfix">';
-		$postfooter .= '<li><a href="' . get_comments_link() . '">' . __('Comments', 'arras') . ' [' . get_comments_number() . ']</a></li>';
-		if ( function_exists('wp_print') ) $postfooter .= '<li>' . print_link('', '', false) . '</li>';
-		
-		// Add social bookmarking buttons
-		$postfooter .= '<li><a href="http://digg.com/submit?phase=2&amp;url=' . get_permalink() . '&amp;title=' . get_the_title() . '">' . __('Digg it!', 'arras') . '</a></li>';
-		$postfooter .= '<li><a href="http://www.facebook.com/share.php?u=' . get_permalink() . '&amp;t=' . get_the_title() . '">' . __('Facebook', 'arras') . '</a></li>';
-		
-		$postfooter .= '<li><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&post=' . $id . '">' . __('Edit Post', 'arras') . '</a></li>';
-		$postfooter .= '</ul>';
+		$postfooter .= arras_postbar(); // the postbar links have been moved to arras_postbar() function
 	}
 	
 	echo apply_filters('arras_postfooter', $postfooter);
