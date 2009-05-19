@@ -59,7 +59,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 /* structure */
 #wrapper				{ min-height: 100%; position: relative; }
-#main					{ padding: 20px; z-index: -1; }
+#main					{ padding: 20px; z-index: 0; *z-index: -1; }
 /*#main { background: url(../../images/12_col.gif); } */
 
 /* header */
@@ -121,7 +121,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 						
 /* featured slideshow */
 .featured				{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; padding: 10px; margin: 0 10px 10px 0; height: 250px; }
-#controls				{ position: absolute; float: left; z-index: 5; width: 630px; padding-top: 75px; }
+#controls				{ position: absolute; float: left; z-index: 10; width: 630px; padding-top: 75px; }
 
 #controls .next, #controls .prev	{ text-indent: -9000px; width: 30px; height: 30px; display: block; }
 #controls .prev			{ background: url(../../images/prev.png) no-repeat; float: left; }
