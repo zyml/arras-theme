@@ -14,9 +14,11 @@ if ( function_exists('dsq_comment_count') ) {
     <!-- Featured Articles #1 -->
     <div class="featured clearfix">
     <?php 
-	if ( $featured1_cat == '-5' ) $q = new WP_Query( array('post__in' => get_option('sticky_posts'), 'showposts' => arras_get_option('featured1_count') ) );
-	elseif( $featured1_cat == '0' ) $q = new WP_Query('showposts=' . arras_get_option('featured1_count') );
-	else $q = new WP_Query('showposts=' . arras_get_option('featured1_count') . '&cat=' . $featured1_cat ); 
+	if ($featured1_cat == '-5') 	$query = array('post__in' => get_option('sticky_posts'), 'showposts' => arras_get_option('featured1_count') );
+	elseif ($featured1_cat == '0') 	$query = 'showposts=' . arras_get_option('featured1_count');
+	else							$query = 'showposts=' . arras_get_option('featured1_count') . '&cat=' . $featured1_cat;
+	
+	$q = new WP_Query( apply_filters('arras_featured1_query', $query) );
 	?> 
     	<div id="controls" style="display: none;">
 			<a href="" class="prev"><?php _e('Prev', 'arras') ?></a>
@@ -40,23 +42,31 @@ if ( function_exists('dsq_comment_count') ) {
     </div>
 <?php endif; ?>
 
+<!-- Featured Articles #2 -->
 <?php if (!$paged) : if ( ($featured2_cat = arras_get_option('featured_cat2') ) !== '' && $featured2_cat != '-1' ) : ?>
 	<?php 
-	if ( $featured2_cat == '-5' ) $q2 = new WP_Query( array('post__in' => get_option('sticky_posts'), 'showposts' => arras_get_option('featured2_count') ) );
-	elseif( $featured2_cat == '0' ) $q2 = new WP_Query('showposts=' . arras_get_option('featured2_count') );
-	else $q2 = new WP_Query('cat=' . $featured2_cat . '&showposts=' . arras_get_option('featured2_count') );
+	if ($featured2_cat == '-5') 	$query2 = array('post__in' => get_option('sticky_posts'), 'showposts' => arras_get_option('featured2_count') );
+	elseif ($featured2_cat == '0') 	$query2 = 'showposts=' . arras_get_option('featured2_count');
+	else							$query2 = 'showposts=' . arras_get_option('featured2_count') . '&cat=' . $featured2_cat;
+	
+	$q2 = new WP_Query( apply_filters('arras_featured2_query', $query2) );
 	arras_get_posts('featured2', $q2);
 	?>
 <?php endif; endif; ?>
 
 <?php arras_above_index_news_post() ?>
 
-<?php 
-wp_reset_query(); query_posts( array(
+<!-- News Articles -->
+<?php
+$news_query = array(
 	'cat' => arras_get_option('news_cat'),
 	'paged' => $paged,
 	'showposts' => ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) )
-) ); 
+);
+
+// if you are a WP plugin freak you can use 'arras_news_query' filter to override the query
+wp_reset_query(); query_posts(apply_filters('arras_news_query', $news_query));
+
 arras_get_posts('index') ?>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
