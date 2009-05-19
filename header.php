@@ -22,6 +22,7 @@
 <?php endif; ?>
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/superfish.css" type="text/css" />
 
 <?php
 wp_deregister_script('jquery');
@@ -79,7 +80,7 @@ jQuery(document).ready(function($) {
 	<?php arras_above_nav() ?>
     <div id="nav">
     	<div id="nav-content" class="clearfix">
-        <ul class="menu clearfix">
+        <ul class="sf-menu menu clearfix">
             <li><a href="<?php bloginfo('url') ?>"><?php echo arras_get_option('topnav_home') ?></a></li>
             <?php 
 			if (arras_get_option('topnav_display') == 'pages') {
@@ -87,7 +88,7 @@ jQuery(document).ready(function($) {
 			} else if (arras_get_option('topnav_display') == 'linkcat') {
 				wp_list_bookmarks('category='.arras_get_option('topnav_linkcat').'&hierarchical=0&show_private=1&hide_invisible=0&title_li=&categorize=0&orderby=id'); 
 			} else {
-				wp_list_categories('hierarchical=1&orderby=id&hide_empty=1&title_li=');	
+				wp_list_categories('number=11&hierarchical=1&orderby=id&hide_empty=1&title_li=');	
 			}
 			?>
         </ul>

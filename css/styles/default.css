@@ -59,7 +59,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 /* structure */
 #wrapper				{ min-height: 100%; position: relative; }
-#main					{ padding: 20px; }
+#main					{ padding: 20px; z-index: -1; }
 /*#main { background: url(../../images/12_col.gif); } */
 
 /* header */
@@ -73,17 +73,17 @@ img.alignleft			{ border: 3px solid #EEE; }
 .blog-description		{ line-height: 1em; display: block; font-size: 11px; font-weight: bold; color: #7d716d; margin: 0; padding: 5px 0 0; text-transform: uppercase; }
 
 /* navigation */
-#nav					{ zoom: 1; overflow: hidden; max-height: 35px; }
+#nav					{ zoom: 1; max-height: 35px; }
 #nav-content			{ margin: 0 auto; width: 958px; background: url(../../images/topnav.jpg) repeat-x #CCC; height: 30px; border: 1px solid #CCC; }
 .menu, .rss				{ list-style: none; margin: 0; padding: 0 15px; max-height: 30px; }
-.menu					{ float: left; max-width: 730px; overflow: hidden; }
+.menu					{ float: left; width: 730px; }
 .rss					{ float: right; }
 .menu li, .rss li		{ float: left; display: inline; text-transform: uppercase; }
 .menu a:link, .rss a:link, .menu a:visited, .rss a:visited	{ display: block; margin: 0 25px 0 0; color: #666; font-size: 11px; font-weight: bold; text-decoration: none; padding: 5px 0 0 0; float: left; clear: left; }
-.menu .children			{ position: absolute; width: 150px; z-index: 100; margin: 30px 0 0 -12px; padding: 5px 0; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; }
-.menu .children .children { margin: -6px 0 0 150px; }
-.menu .children	li		{ float: none; }
-.menu .children	li a:link, .menu .children li a:visited { display: block; text-transform: none; padding: 5px 10px 1px !important; width: 130px; }
+.menu .children			{ margin: 0 0 0 -12px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; }
+.menu .children .children { }
+.menu .children	li		{ float: none; width: 12em; }
+.menu .children	li a:link, .menu .children li a:visited { display: block; text-transform: none; padding: 5px 1em 1px !important; width: 11em; margin: 0 !important; }
 .menu .children	li a:hover	{ background: url(../../images/techblue/feed-title.jpg) repeat-x top; color: #FFF !important; }
 #nav ul a:link, #nav ul a:visited	{ padding: 8px 0 0 0; height: 19px; }
 #nav .menu a:hover		{ color: #D20000; }
@@ -121,7 +121,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 						
 /* featured slideshow */
 .featured				{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; padding: 10px; margin: 0 10px 10px 0; height: 250px; }
-#controls				{ position: absolute; float: left; z-index: 1000; width: 630px; padding-top: 75px; }
+#controls				{ position: absolute; float: left; z-index: 5; width: 630px; padding-top: 75px; }
 
 #controls .next, #controls .prev	{ text-indent: -9000px; width: 30px; height: 30px; display: block; }
 #controls .prev			{ background: url(../../images/prev.png) no-repeat; float: left; }
