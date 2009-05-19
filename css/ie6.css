@@ -1,7 +1,7 @@
 .logo				{ margin-left: 5px; }
 
 #primary			{ overflow: hidden; }
-.menu 				{ display: block; overflow: visible; }
+.menu 				{ display: block; overflow: visible !important; }
 .menu a:link, .menu a:visited	{ margin: 0 10px 0 0; }
 .rss a:link, .rss a:visited	{ margin: 0; }
 

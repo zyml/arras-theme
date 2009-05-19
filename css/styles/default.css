@@ -82,7 +82,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .menu a:link, .rss a:link, .menu a:visited, .rss a:visited	{ display: block; margin: 0 25px 0 0; color: #666; font-size: 11px; font-weight: bold; text-decoration: none; padding: 5px 0 0 0; float: left; clear: left; }
 .menu .children			{ margin: 0 0 0 -12px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; }
 .menu .children .children { }
-.menu .children	li		{ float: none; width: 12em; }
+.menu .children	li		{ float: none; width: 12em; zoom: 1; clear: left; overflow: visible; }
 .menu .children	li a:link, .menu .children li a:visited { display: block; text-transform: none; padding: 5px 1em 1px !important; width: 11em; margin: 0 !important; }
 .menu .children	li a:hover	{ background: url(../../images/techblue/feed-title.jpg) repeat-x top; color: #FFF !important; }
 #nav ul a:link, #nav ul a:visited	{ padding: 8px 0 0 0; height: 19px; }
