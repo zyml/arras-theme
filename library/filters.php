@@ -102,6 +102,7 @@ function arras_postbar($echo = false) {
 	$postbar .= '<ul class="postbar clearfix">';
 	$postbar .= '<li><a href="' . get_comments_link() . '">' . __('Comments', 'arras') . ' [' . get_comments_number() . ']</a></li>';
 	if ( function_exists('wp_print') ) $postbar .= '<li>' . print_link('', '', false) . '</li>';
+	if ( function_exists('wp_email') ) $postbar .= '<li>' . email_link('', '', false) . '</li>';
 	
 	// Add social bookmarking buttons
 	$postbar .= '<li><a href="http://digg.com/submit?phase=2&amp;url=' . get_permalink() . '&amp;title=' . get_the_title() . '">' . __('Digg it!', 'arras') . '</a></li>';
