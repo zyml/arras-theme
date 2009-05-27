@@ -6,7 +6,7 @@
 <?php if (have_posts()) : ?>
 <div class="search-results">
     <h2><?php _e('Search Results', 'arras') ?></h2>
-    <div class="search-results-content">
+    <div class="search-results-content clearfix">
 	<p><?php printf( __('Search Results for <strong>&#8216;' . '%s' . '&#8217;</strong></p>', 'arras'), wp_specialchars($s, 1) ) ?>
     <?php include (TEMPLATEPATH . '/searchform.php'); ?>
     </div>
@@ -25,13 +25,13 @@
 
 <div class="search-results">
     <h2>Search Results</h2>
-    <div class="search-results-content">
+    <div class="search-results-content clearfix">
     <p><?php _e('<strong>Sorry, we couldn\'t find any results based on your search query.</strong>', 'arras') ?></p>
     <?php include (TEMPLATEPATH . '/searchform.php'); ?>
     </div>
 </div> 
 
-<h2 class="archive-title"><?php _e('Blog Archive', 'arras') ?></h2>
+<h2 class="feed-title"><?php _e('Blog Archive', 'arras') ?></h2>
 <?php query_posts(''); ?>
 <?php arras_get_posts('archive') ?>
     
