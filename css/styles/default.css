@@ -102,7 +102,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .widgetcontainer li		{ margin-bottom: 5px; }
 .widgetcontainer li a:visited, .widgetcontainer li a:link	{ text-decoration: none; font-weight: bold; font-size: 12px; }
 .widgetcontainer li a:hover	{ border-bottom: 1px dotted #635957; }
-.widgetcontainer input[type=text]	{ width: 260px; }
+.widgetcontainer input[type=text], .widgetcontainer input[type=password]	{ width: 80%; }
 .widgettitle			{ color: #333; font-size: 12px; font-weight: bold; margin: 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; }
 .widgettitle a			{ color: #333; }
 .widgetcontent			{ border: solid #CCC; border-width: 0 1px 1px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; margin-bottom: 10px; padding: 10px; }
