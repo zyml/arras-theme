@@ -24,6 +24,8 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/superfish.css" type="text/css" />
 
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" />
+
 <?php
 wp_deregister_script('jquery');
 wp_enqueue_script('arras-jquery', get_template_directory_uri() . '/js/jquery-1.3.2.min.js', null, null, false);
