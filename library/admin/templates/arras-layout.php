@@ -74,19 +74,41 @@
 <table class="form-table">
 
 <tr valign="top">
-<th scope="row" colspan="2">
-<?php echo arras_form_checkbox('arras-layout-single-author', 'show', arras_get_option('display_author'), 'id="arras-layout-single-author"') ?> 
-<label for="arras-layout-single-author"><?php _e('Display author information in single post', 'arras') ?></label>
-</th>
-<td></td>
-</tr>
+<th scope="row"><?php _e('Display in Single Posts', 'arras') ?></th>
+<td>
 
-<tr valign="top">
-<th scope="row" colspan="2">
+<?php echo arras_form_checkbox('arras-layout-post-author', 'show', arras_get_option('post_author'), 'id="arras-layout-post-author"') ?> 
+<label for="arras-layout-post-author"><?php _e('Author (Header)', 'arras') ?></label>
+<br />
+
+<?php echo arras_form_checkbox('arras-layout-post-date', 'show', arras_get_option('post_date'), 'id="arras-layout-post-date"') ?> 
+<label for="arras-layout-post-date"><?php _e('Publish Date (Header)', 'arras') ?></label>
+<br />
+
+<?php echo arras_form_checkbox('arras-layout-post-cats', 'show', arras_get_option('post_cats'), 'id="arras-layout-post-cats"') ?> 
+<label for="arras-layout-post-cats"><?php _e('Categories (Header)', 'arras') ?></label>
+<br />
+
+<?php echo arras_form_checkbox('arras-layout-post-tags', 'show', arras_get_option('post_tags'), 'id="arras-layout-post-tags"') ?> 
+<label for="arras-layout-post-tags"><?php _e('Tags (Header)', 'arras') ?></label>
+<br />
+
 <?php echo arras_form_checkbox('arras-layout-single-thumb', 'show', arras_get_option('single_thumbs'), 'id="arras-layout-single-thumb"') ?> 
-<label for="arras-layout-single-thumb"><?php _e('Display thumbnails in single post', 'arras') ?></label>
-</th>
-<td></td>
+<label for="arras-layout-single-thumb"><?php _e('Post Thumbnail', 'arras') ?></label>
+<br />
+
+<?php echo arras_form_checkbox('arras-layout-single-author', 'show', arras_get_option('display_author'), 'id="arras-layout-single-author"') ?> 
+<label for="arras-layout-single-author"><?php _e('Author Information', 'arras') ?></label>
+<br />
+
+<?php echo arras_form_checkbox('arras-layout-post-barheader', 'show', arras_get_option('postbar_header'), 'id="arras-layout-post-barheader"') ?> 
+<label for="arras-layout-post-barheader"><?php _e('Display Post Links in Header', 'arras') ?></label>
+<br />
+
+<?php echo arras_form_checkbox('arras-layout-post-barfooter', 'show', arras_get_option('postbar_footer'), 'id="arras-layout-post-barfooter"') ?> 
+<label for="arras-layout-post-barfooter"><?php _e('Display Post Links in Footer', 'arras') ?></label>
+
+</td>
 </tr>
 
 <tr valign="top">

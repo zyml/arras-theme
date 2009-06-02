@@ -12,7 +12,11 @@ class Options {
 	var $featured1_count, $featured2_count, $index_count;
 	var $featured2_news_display, $index_news_display, $index_news_thumbs;
 	var $archive_news_display, $archive_news_thumbs;
-	var $display_author, $single_thumbs, $single_meta_pos, $single_custom_fields;	
+	var $display_author, $single_thumbs, $single_meta_pos, $single_custom_fields;
+	
+	// added in 1.3.4
+	var $post_author, $post_date, $post_cats, $post_tags, $postbar_header, $postbar_footer;
+	
 	// Design
 	var $layout, $style, $background, $background_type, $background_tiling;
 	
@@ -45,6 +49,13 @@ class Options {
 		
 		$this->display_author = true;
 		$this->single_thumbs = true;
+		
+		$this->post_author = true;
+		$this->post_date = true;
+		$this->post_cats = true;
+		$this->post_tags = true;
+		$this->postbar_header = true;
+		$this->postbar_footer = true;
 		
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
@@ -97,6 +108,14 @@ class Options {
 		
 		$this->display_author = (boolean)$_POST['arras-layout-single-author'];
 		$this->single_thumbs = (boolean)$_POST['arras-layout-single-thumb'];
+		
+		$this->post_author = (boolean)$_POST['arras-layout-post-author'];
+		$this->post_date = (boolean)$_POST['arras-layout-post-date'];
+		$this->post_cats = (boolean)$_POST['arras-layout-post-cats'];
+		$this->post_tags = (boolean)$_POST['arras-layout-post-tags'];
+		$this->postbar_header = (boolean)$_POST['arras-layout-post-barheader'];
+		$this->postbar_footer = (boolean)$_POST['arras-layout-post-barfooter'];
+		
 		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];
 		$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];
 		

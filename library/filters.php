@@ -64,16 +64,23 @@ function arras_postheader() {
 	if ( !is_page() ) {
 		$postheader .= '<div class="entry-info">';
 		
-		$post_cats = array();
-		$cats = get_the_category();
-		foreach ($cats as $c) $post_cats[] = $c->cat_name;
+		if ( arras_get_option('post_author') ) {
+			$postheader .= sprintf( __('<span class="entry-author">By %s</span>', 'arras'), '<address class="author vcard">' . get_the_author() . '</address>' );
+		}
 		
-		$postheader .= sprintf( __('<span class="entry-author">By %s</span>', 'arras'), '<address class="author vcard">' . get_the_author() . '</address>' );
-		$postheader .= sprintf( __('<strong>Published:</strong> %s', 'arras'), '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( __('d F Y g:i A T', 'arras') ) . '</abbr>');
+		if ( arras_get_option('post_date') ) {
+			$postheader .= sprintf( __('<strong>Published:</strong> %s', 'arras'), '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( __('d F Y g:i A T', 'arras') ) . '</abbr>');
+		}
 		
-		$postheader .= sprintf( __('<span class="entry-cat"><strong>Posted in: </strong>%s</span>', 'arras'), implode(', ', $post_cats) );
+		if ( arras_get_option('post_cats') ) {
+			$post_cats = array();
+			$cats = get_the_category();
+			foreach ($cats as $c) $post_cats[] = $c->cat_name;
+			
+			$postheader .= sprintf( __('<span class="entry-cat"><strong>Posted in: </strong>%s</span>', 'arras'), implode(', ', $post_cats) );
+		}
 		
-		if ( !is_attachment() )
+		if ( arras_get_option('post_tags') && !is_attachment() )
 			$postheader .= '<span class="tags"><strong>' . __('Tags:', 'arras') . '</strong>' . get_the_tag_list(' ', ', ', ' ') . '</span>';
 		
 		$postheader .= '</div>';
@@ -85,8 +92,8 @@ function arras_postheader() {
 		$postheader .= '<div class="entry-photo"><img src="' . arras_get_thumbnail($w, $h) . '" alt="' . get_the_title() . '" title="' . get_the_title() . '" /></div>';	
 	}
 	
-	if ( is_single() && !is_attachment() ) {
-		$postheader .= arras_postbar(); // the postbar links have been moved to arras_postbar() function
+	if ( arras_get_option('postbar_header') && is_single() && !is_attachment() ) {
+		$postheader .= arras_postbar();
 	}
 	
 	echo apply_filters('arras_postheader', $postheader);
@@ -122,7 +129,7 @@ function arras_postbar($echo = false) {
 function arras_postfooter() {
 	global $id, $post;
 	
-	if ( !is_attachment() ) {
+	if ( arras_get_option('postbar_footer') && !is_attachment() ) {
 		$postfooter .= arras_postbar(); // the postbar links have been moved to arras_postbar() function
 	}
 	
