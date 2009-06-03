@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras.Theme 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-19 02:11+0800\n"
+"POT-Creation-Date: 2009-06-03 23:09+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team: Melvin Lee <zy@zy.sg>\n"
@@ -193,29 +193,29 @@ msgstr ""
 msgid "%s latest comments"
 msgstr ""
 
-#: ../header.php:96
-#: ../header.php:98
+#: ../header.php:111
+#: ../header.php:113
 msgid "Posts"
 msgstr ""
 
-#: ../header.php:101
-#: ../header.php:103
+#: ../header.php:116
+#: ../header.php:118
 msgid "Comments"
 msgstr ""
 
-#: ../home.php:22
+#: ../home.php:24
 msgid "Prev"
 msgstr ""
 
-#: ../home.php:23
+#: ../home.php:25
 msgid "Next"
 msgstr ""
 
-#: ../home.php:64
+#: ../home.php:74
 msgid "Older Entries"
 msgstr ""
 
-#: ../home.php:65
+#: ../home.php:75
 msgid "Newer Entries"
 msgstr ""
 
@@ -265,57 +265,54 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: ../library/filters.php:28
+#: ../library/filters.php:33
 msgid "F d, Y"
 msgstr ""
 
-#: ../library/filters.php:44
+#: ../library/filters.php:49
 msgid "Read More"
 msgstr ""
 
-#: ../library/filters.php:71
+#: ../library/filters.php:73
 #, php-format
 msgid "<span class=\"entry-author\">By %s</span>"
 msgstr ""
 
-#: ../library/filters.php:72
+#: ../library/filters.php:77
 #, php-format
 msgid "<strong>Published:</strong> %s"
 msgstr ""
 
-#: ../library/filters.php:72
+#: ../library/filters.php:77
 msgid "d F Y g:i A T"
 msgstr ""
 
-#: ../library/filters.php:74
+#: ../library/filters.php:85
 #, php-format
 msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
 msgstr ""
 
-#: ../library/filters.php:77
+#: ../library/filters.php:89
 msgid "Tags:"
 msgstr ""
 
-#: ../library/filters.php:94
-#: ../library/filters.php:117
+#: ../library/filters.php:126
 msgid "Digg it!"
 msgstr ""
 
-#: ../library/filters.php:95
-#: ../library/filters.php:118
+#: ../library/filters.php:127
 msgid "Facebook"
 msgstr ""
 
-#: ../library/filters.php:97
-#: ../library/filters.php:120
+#: ../library/filters.php:129
 msgid "Edit Post"
 msgstr ""
 
-#: ../library/filters.php:158
+#: ../library/filters.php:181
 msgid "That 'something' you are looking for isn't here!"
 msgstr ""
 
-#: ../library/filters.php:159
+#: ../library/filters.php:182
 msgid "<strong>We're very sorry, but that page doesn't exist or has been moved.</strong><br />Please make sure you have the right URL."
 msgstr ""
 
@@ -470,28 +467,28 @@ msgstr ""
 msgid "Quick Guide"
 msgstr ""
 
-#: ../library/admin/admin.php:25
+#: ../library/admin/admin.php:22
 msgid "Your settings have been saved to the database."
 msgstr ""
 
-#: ../library/admin/admin.php:31
+#: ../library/admin/admin.php:28
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:42
+#: ../library/admin/admin.php:39
 msgid "Thumbnail cache has been cleared."
 msgstr ""
 
-#: ../library/admin/options.php:26
+#: ../library/admin/options.php:30
 msgid "Copyright"
 msgstr ""
 
-#: ../library/admin/options.php:27
+#: ../library/admin/options.php:31
 #, php-format
 msgid "Copyright %s. All Rights Reserved."
 msgstr ""
 
-#: ../library/admin/options.php:31
+#: ../library/admin/options.php:35
 msgid "Home"
 msgstr ""
 
@@ -546,7 +543,7 @@ msgid "The news category will be shown below the featured section in the index p
 msgstr ""
 
 #: ../library/admin/templates/arras-categories.php:49
-#: ../library/admin/templates/arras-design.php:95
+#: ../library/admin/templates/arras-design.php:97
 msgid "Save Changes"
 msgstr ""
 
@@ -579,27 +576,32 @@ msgstr ""
 msgid "Custom Backgrounds"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:75
+#: ../library/admin/templates/arras-design.php:68
+#, php-format
+msgid "Custom backgrounds are placed in %s."
+msgstr ""
+
+#: ../library/admin/templates/arras-design.php:77
 msgid "Background Tiling"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:78
+#: ../library/admin/templates/arras-design.php:80
 msgid "Do not Tile"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:78
+#: ../library/admin/templates/arras-design.php:80
 msgid "Tile Horizontally"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:78
+#: ../library/admin/templates/arras-design.php:80
 msgid "Tile Vertically"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:78
+#: ../library/admin/templates/arras-design.php:80
 msgid "Tile Both Horizontally and Vertically"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:85
+#: ../library/admin/templates/arras-design.php:87
 msgid "Background Color"
 msgstr ""
 
@@ -715,23 +717,51 @@ msgstr ""
 msgid "Single Post"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:79
-msgid "Display author information in single post"
+#: ../library/admin/templates/arras-layout.php:77
+msgid "Display in Single Posts"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:87
-msgid "Display thumbnails in single post"
+#: ../library/admin/templates/arras-layout.php:81
+msgid "Author (Header)"
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:85
+msgid "Publish Date (Header)"
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:89
+msgid "Categories (Header)"
 msgstr ""
 
 #: ../library/admin/templates/arras-layout.php:93
+msgid "Tags (Header)"
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:97
+msgid "Post Thumbnail"
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:101
+msgid "Author Information"
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:105
+msgid "Display Post Links in Header"
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:109
+msgid "Display Post Links in Footer"
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:115
 msgid "Position of Custom Fields"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:95
+#: ../library/admin/templates/arras-layout.php:117
 msgid "Before the Post Content"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:96
+#: ../library/admin/templates/arras-layout.php:118
 msgid "After the Post Content"
 msgstr ""
 
