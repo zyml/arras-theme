@@ -18,5 +18,4 @@ jQuery(document).ready(function($) {
 		prev: '#controls .prev',
 		timeout: 6000
 	});
-	$('ul.menu').superfish({autoArrows: false, speed: 'fast'});
 });

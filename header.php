@@ -22,28 +22,37 @@
 <?php endif; ?>
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/superfish.css" type="text/css" />
+<!--<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/superfish.css" type="text/css" />-->
 
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" />
 
 <?php
-wp_deregister_script('jquery');
-wp_enqueue_script('arras-jquery', get_template_directory_uri() . '/js/jquery-1.3.2.min.js', null, null, false);
-wp_enqueue_script('arras-jquery-ui', get_template_directory_uri() . '/js/jquery-ui-1.7.1.min.js', null, null, false);
-
+wp_enqueue_script('jquery-ui-tabs', '', array('jquery', 'jquery-ui-core'). null, false);
 wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', 'jquery', null, false);
-wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
+wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', array('jquery', 'jquery-ui-core'), null, false);
 
-wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/superfish/hoverIntent.js', 'jquery', null, false);
-wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish/superfish.js', 'jquery', null, false);
+if ( !function_exists('pixopoint_menu') ) {
+	wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/superfish/hoverIntent.js', 'jquery', null, false);
+	wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish/superfish.js', 'jquery', null, false);
+}
 
-wp_enqueue_script('arras-base', get_template_directory_uri() . '/js/base.js', null, null, false);
+if ( is_singular() ) {
+	wp_enqueue_script('comment-reply');
+}
 
-if ( is_singular() ) wp_enqueue_script('comment-reply');
+wp_enqueue_script('arras-base', get_template_directory_uri() . '/js/base.js', 'jquery', null, false);
 
 wp_head();
 arras_head();
+
+if ( !function_exists('pixopoint_menu') ) :
 ?>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$('.sf-menu').superfish({autoArrows: false, speed: 'fast'});
+	});
+</script>
+<?php endif ?>
 
 <!--[if IE 6]>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" media="screen, projector" />
@@ -82,30 +91,34 @@ jQuery(document).ready(function($) {
 	<?php arras_above_nav() ?>
     <div id="nav">
     	<div id="nav-content" class="clearfix">
-        <ul class="sf-menu menu clearfix">
-            <li><a href="<?php bloginfo('url') ?>"><?php echo arras_get_option('topnav_home') ?></a></li>
-            <?php 
-			if (arras_get_option('topnav_display') == 'pages') {
-            	wp_list_pages('sort_column=menu_order&title_li=');
-			} else if (arras_get_option('topnav_display') == 'linkcat') {
-				wp_list_bookmarks('category='.arras_get_option('topnav_linkcat').'&hierarchical=0&show_private=1&hide_invisible=0&title_li=&categorize=0&orderby=id'); 
-			} else {
-				wp_list_categories('number=11&hierarchical=1&orderby=id&hide_empty=1&title_li=');	
-			}
-			?>
-        </ul>
-        <ul class="rss clearfix">
-        	<?php if ($feed == '') : ?>
-                <li><a href="<?php bloginfo('rss2_url'); ?>"><?php _e('Posts', 'arras') ?></a></li>
-            <?php else : ?>
-            	<li><a href="<?php echo $feed; ?>"><?php _e('Posts', 'arras') ?></a></li>
-            <?php endif; ?>
-			<?php if ($comments_feed == '') : ?>
-                <li><a href="<?php bloginfo('comments_rss2_url'); ?>"><?php _e('Comments', 'arras') ?></a></li>
-            <?php else : ?>
-            	<li><a href="<?php echo $comments_feed; ?>"><?php _e('Comments', 'arras') ?></a></li>
-            <?php endif; ?>
-        </ul>
+		<?php if ( function_exists('pixopoint_menu') ): ?>
+		<?php pixopoint_menu(); ?>
+		<?php else : ?>
+			<ul class="sf-menu menu clearfix">
+				<li><a href="<?php bloginfo('url') ?>"><?php echo arras_get_option('topnav_home') ?></a></li>
+				<?php 
+				if (arras_get_option('topnav_display') == 'pages') {
+					wp_list_pages('sort_column=menu_order&title_li=');
+				} else if (arras_get_option('topnav_display') == 'linkcat') {
+					wp_list_bookmarks('category='.arras_get_option('topnav_linkcat').'&hierarchical=0&show_private=1&hide_invisible=0&title_li=&categorize=0&orderby=id'); 
+				} else {
+					wp_list_categories('number=11&hierarchical=1&orderby=id&hide_empty=1&title_li=');	
+				}
+				?>
+			</ul>
+		<?php endif ?>
+			<ul class="rss clearfix">
+				<?php if ($feed == '') : ?>
+					<li><a href="<?php bloginfo('rss2_url'); ?>"><?php _e('Posts', 'arras') ?></a></li>
+				<?php else : ?>
+					<li><a href="<?php echo $feed; ?>"><?php _e('Posts', 'arras') ?></a></li>
+				<?php endif; ?>
+				<?php if ($comments_feed == '') : ?>
+					<li><a href="<?php bloginfo('comments_rss2_url'); ?>"><?php _e('Comments', 'arras') ?></a></li>
+				<?php else : ?>
+					<li><a href="<?php echo $comments_feed; ?>"><?php _e('Comments', 'arras') ?></a></li>
+				<?php endif; ?>
+			</ul>
 		</div><!-- #nav-content -->
     </div><!-- #nav -->
 	<?php arras_below_nav() ?>

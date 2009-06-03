@@ -75,19 +75,24 @@ img.alignleft			{ border: 3px solid #EEE; }
 /* navigation */
 #nav					{ zoom: 1; max-height: 35px; }
 #nav-content			{ margin: 0 auto; width: 958px; background: url(../../images/topnav.jpg) repeat-x #CCC; height: 30px; border: 1px solid #CCC; }
-.menu, .rss				{ list-style: none; margin: 0; padding: 0 15px; max-height: 30px; }
-.menu					{ float: left; width: 730px; }
-.rss					{ float: right; }
-.menu li, .rss li		{ float: left; display: inline; text-transform: uppercase; }
-.menu a:link, .rss a:link, .menu a:visited, .rss a:visited	{ display: block; margin: 0 25px 0 0; color: #666; font-size: 11px; font-weight: bold; text-decoration: none; padding: 5px 0 0 0; float: left; clear: left; }
-.menu ul			    { margin: 0 0 0 -12px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; }
-.menu ul li		        { float: none; width: 12em; zoom: 1; clear: left; overflow: visible; }
-.menu ul li a:link, .menu ul li a:visited { display: block; text-transform: none; padding: 5px 1em 1px !important; width: 11em; margin: 0 !important; }
-.menu ul li a:hover	{ background: url(../../images/techblue/feed-title.jpg) repeat-x top; color: #FFF !important; }
-#nav ul a:link, #nav ul a:visited	{ padding: 8px 0 0 0; height: 19px; }
-#nav .menu a:hover		{ color: #D20000; }
-.rss a:link, .rss a:visited	{ margin: 0; }
-.rss li					{ background: url(../../images/rss.png) no-repeat; background-position: 0 9px; padding: 0 0 0 18px; margin: 0 0 0 10px; }
+
+.sf-menu				{ font-weight: bold; }
+.sf-menu, .sf-menu ul	{ float: left; list-style: none; line-height: 30px; padding: 0; margin: 0; }
+.sf-menu a				{ display: block; text-decoration: none; padding: 0 15px; text-transform: uppercase; color: #666; font-size: 11px; }
+.sf-menu li				{ float: left; padding: 0; }
+.sf-menu ul				{ position: absolute; left: -999em; height: auto; width: 150px; margin: 0; line-height: 1; border: none; }
+.sf-menu li li			{ width: 148px; border: solid #CCC; border-width: 1px 1px 0; }
+.sf-menu li li a		{ background: url(../../images/techblue/content-bg.jpg) repeat-x top #FFF; padding: 7px 10px; width: 128px; font-size: 12px; text-transform: none; }
+.sf-menu li ul ul		{ margin: -27px 0 0 148px; }
+.sf-menu li li:hover	{ }
+.sf-menu li:hover ul ul, .sf-menu li:hover ul ul ul, .sf-menu li:hover ul ul ul ul, .sf-menu li.sfhover ul ul, .sf-menu li.sfhover ul ul ul, .sf-menu li.sfhover ul ul ul ul { left: -999em; }
+.sf-menu li:hover ul, .sf-menu li li:hover ul, .sf-menu li li li:hover ul, .sf-menu li li li li:hover ul, .sf-menu li.sfhover ul, .sf-menu li li.sfhover ul, .sf-menu li li li.sfhover ul, .sf-menu li li li li.sfhover ul { left: auto; z-index: 2; }
+.sf-menu li ul li:hover a, .sf-menu li ul li li:hover a, .sf-menu li ul li li li:hover a, .sf-menu li ul li li li:hover a { background: url(../../images/techblue/feed-title.jpg) repeat-x top; color: #FFF; }
+.sf-menu li:hover li a, .sf-menu li li:hover li a, .sf-menu li li li:hover li a, .sf-menu li li li li:hover li a { background: url(../../images/techblue/content-bg.jpg) repeat-x top #FFF; color: #666; }
+
+.rss					{ float: right; list-style: none; margin: 0; padding: 0 15px; }
+.rss a:link, .rss a:visited	{ display: block; margin: 0 25px 0 0; color: #666; font-size: 11px; font-weight: bold; text-decoration: none; padding: 8px 0 0 0; float: left; clear: left; margin: 0; }
+.rss li					{ float: left; display: inline; text-transform: uppercase; background: url(../../images/rss.png) no-repeat; background-position: 0 9px; padding: 0 0 0 18px; margin: 0 0 0 10px; }
 
 /* search bar */
 #searchbar				{ float: right; overflow: hidden; padding: 0; margin: 25px 0 0; }
