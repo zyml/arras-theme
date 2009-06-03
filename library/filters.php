@@ -20,8 +20,13 @@ function arras_newsheader($page_type) {
 	global $post;
 	$postheader = '';
 	
-	$w = 190; $h = 100;
-	if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) $w = 220;
+	if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) {
+		$w = ARRAS_3COL_MINI_WIDTH;
+		$h = ARRAS_3COL_MINI_HEIGHT;
+	} else {
+		$w = ARRAS_2COL_MINI_WIDTH; 
+		$h = ARRAS_2COL_MINI_HEIGHT;
+	}
 	
 	$postheader .= '<div class="entry-thumbnails"><a href="' . get_permalink() . '"><img src="' . arras_get_thumbnail($w,$h) . '" alt="' . get_the_title() . '" title="' . get_the_title()	. '" /></a>';
 	$postheader .= '<span class="entry-meta"><a href="' . get_permalink() . '"><span class="entry-comments">' . get_comments_number() . '</span></a>';
@@ -88,7 +93,13 @@ function arras_postheader() {
 	
 	$lead = get_post_meta($post->ID, ARRAS_POST_THUMBNAIL, true);
 	if ( $lead ) {
-		$w = 630; $h = 250; if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) $w = 480; $h = 225;
+		if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) {
+			$w = ARRAS_3COL_FULL_WIDTH;
+			$h = ARRAS_3COL_FULL_HEIGHT;
+		} else {
+			$w = ARRAS_2COL_FULL_WIDTH; 
+			$h = ARRAS_2COL_FULL_HEIGHT;
+		}
 		$postheader .= '<div class="entry-photo"><img src="' . arras_get_thumbnail($w, $h) . '" alt="' . get_the_title() . '" title="' . get_the_title() . '" /></div>';	
 	}
 	
