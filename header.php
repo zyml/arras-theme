@@ -26,9 +26,11 @@
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" />
 
 <?php
-wp_enqueue_script('jquery-ui-tabs', '', array('jquery', 'jquery-ui-core'). null, false);
+//wp_enqueue_script('jquery-ui-tabs', '', array('jquery', 'jquery-ui-core'). null, false);
+
+wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui-1.6.min.js', 'jquery', '1.6', false);
 wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', 'jquery', null, false);
-wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', array('jquery', 'jquery-ui-core'), null, false);
+wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
 
 if ( !function_exists('pixopoint_menu') ) {
 	wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/superfish/hoverIntent.js', 'jquery', null, false);

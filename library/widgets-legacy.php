@@ -143,6 +143,7 @@ function arras_widget_tabbed_sidebar($args) {
 	$options = get_option('arras_widget_tabbed_sidebar');
 	$featured = arras_get_option('featured_cat');
 ?>
+	<li id="multi-sidebar-container">
 	<div id="multi-sidebar" class="clearfix">
 	<ul class="tabs clearfix">
 	<?php render_sidebar_tabs( $options['order'], is_numeric($featured) ) ?>
@@ -159,7 +160,7 @@ function arras_widget_tabbed_sidebar($args) {
 		<?php
 		$f = new WP_Query('showposts=5&cat=' . $featured);
 		if (!$f->have_posts()) :
-		?> <div class="textCenter sub"><?php _e('No posts at the moment. Check back again later!', 'arras') ?></div> <?php
+		?> <span class="textCenter sub"><?php _e('No posts at the moment. Check back again later!', 'arras') ?></span> <?php
 		else:
 		while ($f->have_posts()) : $f->the_post() ?>
 			<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
@@ -168,7 +169,7 @@ function arras_widget_tabbed_sidebar($args) {
 			</li>    
 		<?php endwhile; endif; ?>
 		</ul>
-	</div>
+	</div><!-- #s-featured -->
 	<?php endif;
 	break;
 	
@@ -178,7 +179,7 @@ function arras_widget_tabbed_sidebar($args) {
 	    <ul>
 			<?php $l = new WP_Query('showposts=5') ?>
 			<?php if (!$l->have_posts()) : ?>
-				<div class="textCenter sub"><?php _e('No posts at the moment. Check back again later!', 'arras') ?></div>
+				<span class="textCenter sub"><?php _e('No posts at the moment. Check back again later!', 'arras') ?></span>
 			<?php else : ?>
 			<?php while($l->have_posts()) : $l->the_post() ?>
 				<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
@@ -187,7 +188,7 @@ function arras_widget_tabbed_sidebar($args) {
 				</li>
 			<?php endwhile; endif; ?>
 	    </ul>
-	</div>
+	</div><!-- #s-latest -->
 	<?php
 	break;
 	
@@ -200,8 +201,9 @@ function arras_widget_tabbed_sidebar($args) {
 		echo  '<li class="recentcomments">' .
 		/* translators: comments widget: 1: comment author, 2: post link */ 
 		sprintf( __('%1$s on %2$s', 'arras'), $comment->comment_author, '<a href="' . clean_url( get_comment_link($comment->comment_ID) ) . '">' . get_the_title($comment->comment_post_ID) . '</a>') . '</li>';
-		endforeach; endif;?></ul>
-	</div>
+		endforeach; endif;?>
+		</ul>
+	</div><!-- #s-comments -->
 	<?php
 	break;
 	
@@ -209,7 +211,7 @@ function arras_widget_tabbed_sidebar($args) {
 	?>
 	<div id="s-tags" class="widgetcontainer clearfix">
         <?php wp_tag_cloud('smallest=8&largest=18'); ?>
-    </div>
+    </div><!-- #s-tags -->
 	<?php
 	break;
 	
@@ -217,14 +219,15 @@ function arras_widget_tabbed_sidebar($args) {
 	?>
 	<div id="s-popular" class="widgetcontainer clearfix">
         <?php if ( function_exists('akpc_most_popular') ) akpc_most_popular(); ?>
-    </div>
+    </div><!-- #s-popular -->
 	<?php
 	break;
 	
 	endswitch;
 	endforeach;
 ?>
-	</div>
+	</div><!-- #multi-sidebar -->
+	</li><!-- #multi-sidebar-container -->
 <?php
 }
 

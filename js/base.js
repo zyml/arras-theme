@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
 	$('#multi-sidebar').tabs();
+	
 	$('#commentform').validate();
 	$('.featured').hover( 
 		function() {
