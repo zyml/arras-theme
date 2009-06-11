@@ -49,9 +49,7 @@ function arras_guide() {
 }
 
 function arras_admin_scripts() {
-	wp_enqueue_script('jquery-1.3.2', get_template_directory_uri() . '/js/jquery-1.3.2.min.js');
 	wp_enqueue_script('jquery-ui-tabs', null, 'jquery-ui-core');
-	wp_enqueue_script('jquery-ui-sortable', null, 'jquery-ui-core');
 	wp_enqueue_script('farbtastic', get_template_directory_uri() . '/js/farbtastic.js');
 	wp_enqueue_script('arras-admin-js', get_template_directory_uri() . '/js/admin.js');
 }
