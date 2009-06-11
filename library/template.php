@@ -220,7 +220,7 @@ function arras_get_thumbnail($w = 630, $h = 250) {
 		return false;
 	} else {
 		if (ARRAS_THUMB == 'phpthumb') {
-			return get_bloginfo('template_directory') . '/library/phpthumb/phpthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+			return get_bloginfo('template_directory') . '/library/phpthumb/phpThumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
 		} else {
 			return get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
 		}
