@@ -87,7 +87,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .sf-menu li li:hover	{ }
 .sf-menu li:hover ul ul, .sf-menu li:hover ul ul ul, .sf-menu li:hover ul ul ul ul, .sf-menu li.sfhover ul ul, .sf-menu li.sfhover ul ul ul, .sf-menu li.sfhover ul ul ul ul { left: -999em; }
 .sf-menu li:hover ul, .sf-menu li li:hover ul, .sf-menu li li li:hover ul, .sf-menu li li li li:hover ul, .sf-menu li.sfhover ul, .sf-menu li li.sfhover ul, .sf-menu li li li.sfhover ul, .sf-menu li li li li.sfhover ul { left: auto; z-index: 2; }
-.sf-menu li ul li:hover a, .sf-menu li ul li li:hover a, .sf-menu li ul li li li:hover a, .sf-menu li ul li li li:hover a { background: url(../../images/techblue/feed-title.jpg) repeat-x top; color: #FFF; }
+.sf-menu li ul li:hover a, .sf-menu li ul li li:hover a, .sf-menu li ul li li li:hover a, .sf-menu li ul li li li:hover a { background: url(../../images/techblue/feed-title.jpg) repeat-x top #004688; color: #FFF; }
 .sf-menu li:hover li a, .sf-menu li li:hover li a, .sf-menu li li li:hover li a, .sf-menu li li li li:hover li a { background: url(../../images/techblue/content-bg.jpg) repeat-x top #FFF; color: #666; }
 
 .rss					{ float: right; list-style: none; margin: 0; padding: 0 15px; }
