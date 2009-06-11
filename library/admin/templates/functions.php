@@ -174,5 +174,15 @@ function arras_get_files_list($path, $include_none) {
 	return $files;
 }
 
+function arras_cache_is_writable() {
+	if (ARRAS_THUMB == 'phpthumb') $cache_path = TEMPLATEPATH . '/library/phpthumb/cache';
+	else $cache_path = TEMPLATEPATH . '/library/cache';
+	return (boolean)is_writable($cache_path);
+}
+
+function arras_gd_is_installed() {
+	return (boolean)function_exists('gd_info');
+}
+
 /* End of file functions.php */
 /* Location: ./library/admin/templates/functions.php */

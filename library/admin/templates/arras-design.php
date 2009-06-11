@@ -65,6 +65,8 @@ if ($style_dir) {
 
 </div>
 
+<?php printf( __('Custom backgrounds are placed in %s.', 'arras'), '<code>wp-content/themes/' .get_stylesheet(). '/images/bg/</code>' ) ?>
+
 <input type="hidden" name="arras-background-type" id="arras-background-type" value="<?php echo arras_get_option('background_type') ?>" />
 <input type="hidden" name="arras-background" id="arras-background" value="<?php echo arras_get_option('background') ?>" />
 

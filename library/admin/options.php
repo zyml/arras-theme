@@ -7,13 +7,16 @@ class Options {
 	// Categories
 	var $featured_cat1, $featured_cat2, $news_cat;
 	// Navigation
-	var $topnav_home, $topnav_linkcat;
+	var $topnav_home, $topnav_display, $topnav_linkcat;
 	// Layout
-	var $post_preview;
 	var $featured1_count, $featured2_count, $index_count;
 	var $featured2_news_display, $index_news_display, $index_news_thumbs;
 	var $archive_news_display, $archive_news_thumbs;
-	var $display_author, $single_thumbs, $single_meta_pos, $single_custom_fields;	
+	var $display_author, $single_thumbs, $single_meta_pos, $single_custom_fields;
+	
+	// added in 1.3.4
+	var $post_author, $post_date, $post_cats, $post_tags, $postbar_header, $postbar_footer;
+	
 	// Design
 	var $layout, $style, $background, $background_type, $background_tiling;
 	
@@ -30,9 +33,8 @@ class Options {
 		$this->featured_cat = 0;
 		
 		$this->topnav_home = __('Home', 'arras');
+		$this->topnav_display = 'categories';
 		$this->topnav_linkcat = 0;
-
-		$this->post_preview = 'content';
 		
 		$this->featured1_count = 4;
 		$this->featured2_count = 3;
@@ -48,12 +50,18 @@ class Options {
 		$this->display_author = true;
 		$this->single_thumbs = true;
 		
+		$this->post_author = true;
+		$this->post_date = true;
+		$this->post_cats = true;
+		$this->post_tags = true;
+		$this->postbar_header = true;
+		$this->postbar_footer = true;
+		
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
 		
-		$this->background = '';
-		$this->background_type = 'original';
-		$this->background_color = '#252221';
+		$this->background = 'none';
+		$this->background_type = 'custom';
 		$this->background_tiling = 'none';
 		
 		$this->single_meta_pos = 'top';
@@ -64,6 +72,10 @@ class Options {
 		$saved_options = unserialize(get_option('arras_options'));
 		if (!empty($saved_options) && is_object($saved_options)) {
 			foreach($saved_options as $name => $value) {
+				// Apply filters if qTranslate is enabled
+				if ( function_exists('qtrans_init') && (!isset($_GET['page']) || $_GET['page'] != 'arras-options') ) 
+					$value = qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage($value);
+					
 				$this->$name = $value;
 			}	
 		}
@@ -82,9 +94,8 @@ class Options {
 		$this->news_cat = (int)$_POST['arras-cat-news'];
 		
 		$this->topnav_home = (string)$_POST['arras-nav-home'];
+		$this->topnav_display = (string)$_POST['arras-nav-display'];
 		$this->topnav_linkcat = (int)$_POST['arras-nav-linkcat'];
-		
-		$this->post_preview = (string)$_POST['arras-layout-newspreview'];
 		
 		$this->featured1_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
 		$this->featured2_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
@@ -97,6 +108,14 @@ class Options {
 		
 		$this->display_author = (boolean)$_POST['arras-layout-single-author'];
 		$this->single_thumbs = (boolean)$_POST['arras-layout-single-thumb'];
+		
+		$this->post_author = (boolean)$_POST['arras-layout-post-author'];
+		$this->post_date = (boolean)$_POST['arras-layout-post-date'];
+		$this->post_cats = (boolean)$_POST['arras-layout-post-cats'];
+		$this->post_tags = (boolean)$_POST['arras-layout-post-tags'];
+		$this->postbar_header = (boolean)$_POST['arras-layout-post-barheader'];
+		$this->postbar_footer = (boolean)$_POST['arras-layout-post-barfooter'];
+		
 		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];
 		$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];
 		

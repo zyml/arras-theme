@@ -70,5 +70,6 @@ if (!ARRAS_CHILD) {
 add_filter('comments_template', 'legacy_comments');
 add_filter('gallery_style', 'remove_gallery_css');
 
+
 /* End of file launcher.php */
 /* Location: ./library/launcher.php */

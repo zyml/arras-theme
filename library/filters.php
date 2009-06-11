@@ -20,12 +20,17 @@ function arras_newsheader($page_type) {
 	global $post;
 	$postheader = '';
 	
-	$w = 190; $h = 100;
-	if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) $w = 220;
+	if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) {
+		$w = ARRAS_3COL_MINI_WIDTH;
+		$h = ARRAS_3COL_MINI_HEIGHT;
+	} else {
+		$w = ARRAS_2COL_MINI_WIDTH; 
+		$h = ARRAS_2COL_MINI_HEIGHT;
+	}
 	
 	$postheader .= '<div class="entry-thumbnails"><a href="' . get_permalink() . '"><img src="' . arras_get_thumbnail($w,$h) . '" alt="' . get_the_title() . '" title="' . get_the_title()	. '" /></a>';
 	$postheader .= '<span class="entry-meta"><a href="' . get_permalink() . '"><span class="entry-comments">' . get_comments_number() . '</span></a>';
-	$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( __('F d, Y', 'arras') ) . '</abbr></span></div>';
+	$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr></span></div>';
 	
 	$postheader .= '<h3 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h3>';
 	
@@ -64,16 +69,23 @@ function arras_postheader() {
 	if ( !is_page() ) {
 		$postheader .= '<div class="entry-info">';
 		
-		$post_cats = array();
-		$cats = get_the_category();
-		foreach ($cats as $c) $post_cats[] = $c->cat_name;
+		if ( arras_get_option('post_author') ) {
+			$postheader .= sprintf( __('<span class="entry-author">By %s</span>', 'arras'), '<address class="author vcard">' . get_the_author() . '</address>' );
+		}
 		
-		$postheader .= sprintf( __('<span class="entry-author">By %s</span>', 'arras'), '<address class="author vcard">' . get_the_author() . '</address>' );
-		$postheader .= sprintf( __('<strong>Published:</strong> %s', 'arras'), '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( __('d F Y g:i A T', 'arras') ) . '</abbr>');
+		if ( arras_get_option('post_date') ) {
+			$postheader .= sprintf( __('<strong>Published:</strong> %s', 'arras'), '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr>');
+		}
 		
-		$postheader .= sprintf( __('<span class="entry-cat"><strong>Posted in: </strong>%s</span>', 'arras'), implode(', ', $post_cats) );
+		if ( arras_get_option('post_cats') ) {
+			$post_cats = array();
+			$cats = get_the_category();
+			foreach ($cats as $c) $post_cats[] = $c->cat_name;
+			
+			$postheader .= sprintf( __('<span class="entry-cat"><strong>Posted in: </strong>%s</span>', 'arras'), implode(', ', $post_cats) );
+		}
 		
-		if ( !is_attachment() )
+		if ( arras_get_option('post_tags') && !is_attachment() )
 			$postheader .= '<span class="tags"><strong>' . __('Tags:', 'arras') . '</strong>' . get_the_tag_list(' ', ', ', ' ') . '</span>';
 		
 		$postheader .= '</div>';
@@ -81,24 +93,46 @@ function arras_postheader() {
 	
 	$lead = get_post_meta($post->ID, ARRAS_POST_THUMBNAIL, true);
 	if ( $lead ) {
-		$w = 630; $h = 250; if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) $w = 480; $h = 225;
+		if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) {
+			$w = ARRAS_3COL_FULL_WIDTH;
+			$h = ARRAS_3COL_FULL_HEIGHT;
+		} else {
+			$w = ARRAS_2COL_FULL_WIDTH; 
+			$h = ARRAS_2COL_FULL_HEIGHT;
+		}
 		$postheader .= '<div class="entry-photo"><img src="' . arras_get_thumbnail($w, $h) . '" alt="' . get_the_title() . '" title="' . get_the_title() . '" /></div>';	
 	}
 	
-	if ( is_single() && !is_attachment() ) {
-		$postheader .= '<ul class="postbar clearfix">';
-		$postheader .= '<li><a href="' . get_comments_link() . '">' . __('Comments', 'arras') . ' [' . get_comments_number() . ']</a></li>';
-		if ( function_exists('wp_print') ) $postheader .= '<li>' . print_link('', '', false) . '</li>';
-		
-		// Add social bookmarking buttons
-		$postheader .= '<li><a href="http://digg.com/submit?phase=2&amp;url=' . get_permalink() . '&amp;title=' . get_the_title() . '">' . __('Digg it!', 'arras') . '</a></li>';
-		$postheader .= '<li><a href="http://www.facebook.com/share.php?u=' . get_permalink() . '&amp;t=' . get_the_title() . '">' . __('Facebook', 'arras') . '</a></li>';
-		
-		$postheader .= '<li><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&post=' . $id . '">' . __('Edit Post', 'arras') . '</a></li>';
-		$postheader .= '</ul>';
+	if ( arras_get_option('postbar_header') && is_single() && !is_attachment() ) {
+		$postheader .= arras_postbar();
 	}
 	
 	echo apply_filters('arras_postheader', $postheader);
+}
+
+/**
+ * Called to display important links for single posts
+ * @since 1.3.3
+ */
+function arras_postbar($echo = false) {
+	global $post;
+	
+	$postbar .= '<ul class="postbar clearfix">';
+	$postbar .= '<li><a href="' . get_comments_link() . '">' . __('Comments', 'arras') . ' [' . get_comments_number() . ']</a></li>';
+	if ( function_exists('wp_print') ) $postbar .= '<li>' . print_link('', '', false) . '</li>';
+	if ( function_exists('wp_email') ) $postbar .= '<li>' . email_link('', '', false) . '</li>';
+	
+	// Add social bookmarking buttons
+	$postbar .= '<li><a href="http://digg.com/submit?phase=2&amp;url=' . get_permalink() . '&amp;title=' . get_the_title() . '">' . __('Digg it!', 'arras') . '</a></li>';
+	$postbar .= '<li><a href="http://www.facebook.com/share.php?u=' . get_permalink() . '&amp;t=' . get_the_title() . '">' . __('Facebook', 'arras') . '</a></li>';
+	
+	if (current_user_can('edit_post')) {
+		$postbar .= '<li><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&post=' . $post->ID . '">' . __('Edit Post', 'arras') . '</a></li>';
+	}
+	$postbar .= '</ul>';
+	
+	if ($echo) echo apply_filters('arras_postbar', $postbar);
+	else return apply_filters('arras_postbar', $postbar);
 }
 
 /**
@@ -108,17 +142,8 @@ function arras_postheader() {
 function arras_postfooter() {
 	global $id, $post;
 	
-	if ( !is_attachment() ) {
-		$postfooter .= '<ul class="postbar clearfix">';
-		$postfooter .= '<li><a href="' . get_comments_link() . '">' . __('Comments', 'arras') . ' [' . get_comments_number() . ']</a></li>';
-		if ( function_exists('wp_print') ) $postfooter .= '<li>' . print_link('', '', false) . '</li>';
-		
-		// Add social bookmarking buttons
-		$postfooter .= '<li><a href="http://digg.com/submit?phase=2&amp;url=' . get_permalink() . '&amp;title=' . get_the_title() . '">' . __('Digg it!', 'arras') . '</a></li>';
-		$postfooter .= '<li><a href="http://www.facebook.com/share.php?u=' . get_permalink() . '&amp;t=' . get_the_title() . '">' . __('Facebook', 'arras') . '</a></li>';
-		
-		$postfooter .= '<li><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&post=' . $id . '">' . __('Edit Post', 'arras') . '</a></li>';
-		$postfooter .= '</ul>';
+	if ( arras_get_option('postbar_footer') && !is_attachment() ) {
+		$postfooter .= arras_postbar(); // the postbar links have been moved to arras_postbar() function
 	}
 	
 	echo apply_filters('arras_postfooter', $postfooter);

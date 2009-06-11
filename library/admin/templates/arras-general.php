@@ -7,7 +7,7 @@
 
 <tr valign="top">
 <th scope="row"><?php _e('Current Version', 'arras') ?></th>
-<td><span class="version"><?php echo ARRAS_VERSION ?></span></td>
+<td class="version"><?php echo ARRAS_VERSION ?></td>
 </tr>
 
 </table>

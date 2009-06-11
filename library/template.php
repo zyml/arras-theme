@@ -218,8 +218,13 @@ function arras_get_thumbnail($w = 630, $h = 250) {
 	
 	if (!$thumbnail) {
 		return false;
-	} else
-		return get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+	} else {
+		if (ARRAS_THUMB == 'phpthumb') {
+			return get_bloginfo('template_directory') . '/library/phpthumb/phpthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+		} else {
+			return get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+		}
+	}
 }
 
 function arras_get_posts($page_type, $query = null) {
@@ -230,15 +235,9 @@ function arras_get_posts($page_type, $query = null) {
 <?php if (arras_get_option($page_type . '_news_display') == 'traditional') : ?>
 	<div class="traditional hfeed">
 	<?php while ($query->have_posts()) : $query->the_post() ?>
-	<div id="post-<?php the_ID() ?>" <?php arras_single_post_class() ?>>
+	<div <?php arras_single_post_class() ?>>
         <?php arras_postheader() ?>
-		
-		<?php if ( arras_get_option('post_preview') == 'content' ) : ?>
 		<div class="entry-content"><?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?></div>
-		<?php else : ?>
-		<div class="entry-content"><?php the_excerpt(); ?></div>
-		<?php endif; ?>
-        
 		<?php arras_postfooter() ?>
     </div>
 	<?php endwhile; ?>
@@ -246,7 +245,7 @@ function arras_get_posts($page_type, $query = null) {
 <?php elseif (arras_get_option($page_type . '_news_display') == 'line') : ?>
 	<ul class="hfeed posts-line clearfix">
 	<?php while ($query->have_posts()) : $query->the_post() ?>
-	<li id="post-<?php the_ID() ?>" <?php arras_post_class() ?>>
+	<li <?php arras_post_class() ?>>
 		<?php if(!is_archive()) : ?>
 		<span class="entry-cat"><?php $cats = get_the_category(); if (arras_get_option('news_cat')) echo $cats[1]->cat_name; else echo $cats[0]->cat_name; ?></span>
 		<?php endif ?>
@@ -258,16 +257,10 @@ function arras_get_posts($page_type, $query = null) {
 <?php else : ?>
 	<ul class="hfeed posts-<?php echo arras_get_option($page_type . '_news_display') ?> clearfix">
 	<?php while ($query->have_posts()) : $query->the_post() ?>
-	<li id="post-<?php the_ID() ?>" <?php arras_post_class() ?>>
+	<li <?php arras_post_class() ?>>
 		
 		<?php arras_newsheader($page_type) ?>
-		
-		<?php if ( arras_get_option('post_preview') == 'content' ) : ?>
-		<div class="entry-summary"><?php echo arras_strip_content(get_the_content(), 20); ?></div>
-		<?php else : ?>
-		<div class="entry-summary"><?php the_excerpt(); ?></div>
-		<?php endif; ?>
-		
+		<div class="entry-summary"><?php echo arras_strip_content(get_the_excerpt(), 20); ?></div>
 		<?php arras_newsfooter($page_type) ?>		
 	</li>
 	<?php endwhile; ?>

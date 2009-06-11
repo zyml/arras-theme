@@ -23,8 +23,8 @@ code					{ background: #EAEAEA; color: #333; font-family: Consolas,Monaco,Courie
 pre code				{ background: #322E2C; border: 1px solid #635957; color: #FFF; display: block; overflow: scroll; padding: 1.5em 1.75em; }
 
 input[type=text], input[type=password], textarea	{ background: url(../../images/form.jpg) repeat-x top #FFF; border: 1px solid #CCC; padding: 3px; }
-input[type=submit]		{ font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; background: url(../../images/postbar.gif) repeat-x; border: 1px solid #333; padding: 5px 10px; font-size: 12px; color:#FFF; }
-input[type=submit]:hover{ border: 1px solid #CCC; background: url(../../images/topnav.jpg) repeat-x; color:#333; }
+input[type=submit], #wp-email-submit    { font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; background: url(../../images/postbar.gif) repeat-x; border: 1px solid #333; padding: 5px 10px; font-size: 12px; color:#FFF; }
+input[type=submit]:hover, #wp-email-submit:hover    { border: 1px solid #CCC; background: url(../../images/topnav.jpg) repeat-x; color:#333; }
 
 table					{ border-collapse: collapse; border-spacing: 0; border: 1px solid #CCC; }
 th, td					{ padding: 5px; border: 1px solid #CCC; border-width: 1px; }
@@ -59,7 +59,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 /* structure */
 #wrapper				{ min-height: 100%; position: relative; }
-#main					{ padding: 20px; }
+#main					{ padding: 20px; z-index: 0; *z-index: -1; }
 /*#main { background: url(../../images/12_col.gif); } */
 
 /* header */
@@ -73,22 +73,26 @@ img.alignleft			{ border: 3px solid #EEE; }
 .blog-description		{ line-height: 1em; display: block; font-size: 11px; font-weight: bold; color: #7d716d; margin: 0; padding: 5px 0 0; text-transform: uppercase; }
 
 /* navigation */
-#nav					{ zoom: 1; overflow: hidden; max-height: 35px; }
+#nav					{ zoom: 1; max-height: 35px; }
 #nav-content			{ margin: 0 auto; width: 958px; background: url(../../images/topnav.jpg) repeat-x #CCC; height: 30px; border: 1px solid #CCC; }
-.menu, .rss				{ list-style: none; margin: 0; padding: 0 15px; max-height: 30px; }
-.menu					{ float: left; max-width: 730px; overflow: hidden; }
-.rss					{ float: right; }
-.menu li, .rss li		{ float: left; display: inline; text-transform: uppercase; }
-.menu a:link, .rss a:link, .menu a:visited, .rss a:visited	{ display: block; margin: 0 25px 0 0; color: #666; font-size: 11px; font-weight: bold; text-decoration: none; padding: 5px 0 0 0; float: left; clear: left; }
-.menu .children			{ position: absolute; width: 150px; z-index: 100; margin: 30px 0 0 -12px; padding: 5px 0; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; }
-.menu .children .children { margin: -6px 0 0 150px; }
-.menu .children	li		{ float: none; }
-.menu .children	li a:link, .menu .children li a:visited { display: block; text-transform: none; padding: 5px 10px 1px !important; width: 130px; }
-.menu .children	li a:hover	{ background: url(../../images/techblue/feed-title.jpg) repeat-x top; color: #FFF !important; }
-#nav ul a:link, #nav ul a:visited	{ padding: 8px 0 0 0; height: 19px; }
-#nav .menu a:hover		{ color: #D20000; }
-.rss a:link, .rss a:visited	{ margin: 0; }
-.rss li					{ background: url(../../images/rss.png) no-repeat; background-position: 0 9px; padding: 0 0 0 18px; margin: 0 0 0 10px; }
+
+.sf-menu				{ font-weight: bold; }
+.sf-menu, .sf-menu ul	{ float: left; list-style: none; line-height: 30px; padding: 0; margin: 0; }
+.sf-menu a				{ display: block; text-decoration: none; padding: 0 15px; text-transform: uppercase; color: #666; font-size: 11px; }
+.sf-menu li				{ float: left; padding: 0; }
+.sf-menu ul				{ position: absolute; left: -999em; height: auto; width: 150px; margin: 0; line-height: 1; border: none; }
+.sf-menu li li			{ width: 148px; border: solid #CCC; border-width: 1px 1px 0; }
+.sf-menu li li a		{ background: url(../../images/techblue/content-bg.jpg) repeat-x top #FFF; padding: 7px 10px; width: 128px; font-size: 12px; text-transform: none; }
+.sf-menu li ul ul		{ margin: -27px 0 0 148px; }
+.sf-menu li li:hover	{ }
+.sf-menu li:hover ul ul, .sf-menu li:hover ul ul ul, .sf-menu li:hover ul ul ul ul, .sf-menu li.sfhover ul ul, .sf-menu li.sfhover ul ul ul, .sf-menu li.sfhover ul ul ul ul { left: -999em; }
+.sf-menu li:hover ul, .sf-menu li li:hover ul, .sf-menu li li li:hover ul, .sf-menu li li li li:hover ul, .sf-menu li.sfhover ul, .sf-menu li li.sfhover ul, .sf-menu li li li.sfhover ul, .sf-menu li li li li.sfhover ul { left: auto; z-index: 2; }
+.sf-menu li ul li:hover a, .sf-menu li ul li li:hover a, .sf-menu li ul li li li:hover a, .sf-menu li ul li li li:hover a { background: url(../../images/techblue/feed-title.jpg) repeat-x top #004688; color: #FFF; }
+.sf-menu li:hover li a, .sf-menu li li:hover li a, .sf-menu li li li:hover li a, .sf-menu li li li li:hover li a { background: url(../../images/techblue/content-bg.jpg) repeat-x top #FFF; color: #666; }
+
+.rss					{ float: right; list-style: none; margin: 0; padding: 0 15px; }
+.rss a:link, .rss a:visited	{ display: block; margin: 0 25px 0 0; color: #666; font-size: 11px; font-weight: bold; text-decoration: none; padding: 8px 0 0 0; float: left; clear: left; margin: 0; }
+.rss li					{ float: left; display: inline; text-transform: uppercase; background: url(../../images/rss.png) no-repeat; background-position: 0 9px; padding: 0 0 0 18px; margin: 0 0 0 10px; }
 
 /* search bar */
 #searchbar				{ float: right; overflow: hidden; padding: 0; margin: 25px 0 0; }
@@ -102,7 +106,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .widgetcontainer li		{ margin-bottom: 5px; }
 .widgetcontainer li a:visited, .widgetcontainer li a:link	{ text-decoration: none; font-weight: bold; font-size: 12px; }
 .widgetcontainer li a:hover	{ border-bottom: 1px dotted #635957; }
-.widgetcontainer input[type=text]	{ width: 260px; }
+.widgetcontainer input[type=text], .widgetcontainer input[type=password]	{ width: 80%; }
 .widgettitle			{ color: #333; font-size: 12px; font-weight: bold; margin: 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; }
 .widgettitle a			{ color: #333; }
 .widgetcontent			{ border: solid #CCC; border-width: 0 1px 1px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; margin-bottom: 10px; padding: 10px; }
@@ -121,7 +125,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 						
 /* featured slideshow */
 .featured				{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; padding: 10px; margin: 0 10px 10px 0; height: 250px; }
-#controls				{ position: absolute; float: left; z-index: 1000; width: 630px; padding-top: 75px; }
+#controls				{ position: absolute; float: left; z-index: 10; width: 630px; padding-top: 75px; }
 
 #controls .next, #controls .prev	{ text-indent: -9000px; width: 30px; height: 30px; display: block; }
 #controls .prev			{ background: url(../../images/prev.png) no-repeat; float: left; }
@@ -205,6 +209,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .postbar li:first-child	{ border-left: 0; }
 .postbar li a:link, .postbar li a:visited	{ text-decoration: none; font-weight: bold; }
 .postbar li a:hover		{ }
+.postbar .WP-PrintIcon, .postbar .WP-EmailIcon { display: none; }
 
 .single-post-meta		{ padding: 4px; margin: 0 10px 10px; background: #F0F0F0; }
 .single-post-meta-field	{ clear: left; float: left; width: 15%; font-weight: bold; color: #000; background: #F0F0F0; }
@@ -239,6 +244,11 @@ img.alignleft			{ border: 3px solid #EEE; }
 html[xmlns] #wp125adwrap_2c	{ display: block; }
 * html #wp125adwrap_2c	{ height: 1%; }
 
+/* wp-email */
+#wp-email-required      { color: #CC0000; }
+#wp-email               { margin: 10px; padding: 10px; background: #F0F0F0; }
+#wp-email-button        { text-align: left !important; }
+
 /* comments */
 #commentlist			{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: solid #CCC; border-width: 0 1px 1px; list-style: none; padding: 10px; margin: 0 10px 0 0; }
 #commentlist li			{ margin: 0; padding-bottom: 20px; overflow: hidden; }
@@ -267,6 +277,10 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 .pingbacks				{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: solid #CCC; border-width: 0 1px 1px; padding: 15px 10px 15px 30px; margin: 0 10px 20px 0; }
 .pingbacks li			{ padding: 2px 0; font-weight: bold; }
 .pingbacks a:link, .pingbacks a:visited	{ text-decoration: none; }
+
+/* search results */
+.search-results h2      { color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; }
+.search-results-content { border: solid #CCC; border-width: 0 1px 1px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; margin: 0 10px 10px 0; padding: 10px; }
 
 /* footer */
 #footer				{ margin: 5px auto 5px; width: 960px; background: #FFF; padding-bottom: 10px; border: 1px solid #CCC;  }

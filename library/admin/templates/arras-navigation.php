@@ -20,11 +20,19 @@ foreach ( get_categories('type=link&hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
+<th scope="row"><label for="arras-layout-metapos"><?php _e('Top Navigation Display', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_radio('arras-nav-display', 'categories', arras_get_option('topnav_display') == 'categories') ?> <?php _e('Categories', 'arras') ?><br />
+<?php echo arras_form_radio('arras-nav-display', 'pages', arras_get_option('topnav_display') == 'pages') ?> <?php _e('Pages', 'arras') ?><br />
+<?php echo arras_form_radio('arras-nav-display', 'linkcat', arras_get_option('topnav_display') == 'linkcat') ?> <?php _e('Link Category', 'arras') ?><br />
+</td>
+</tr>
+
+<tr valign="top">
 <th scope="row"><label for="arras-nav-linkcat"><?php _e('Link Category', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_dropdown('arras-nav-linkcat', $linkcats, arras_get_option('topnav_linkcat')); ?>
-<br /><?php _e('By default, the theme will list all the available categories on the main navigation (besides the home link). 
-To organise and arrange the links in the top navigation, you can create a link category with all the links you want to display at the main navigation and assign the link category here.', 'arras') ?>
+<br /><?php _e('To organise and arrange the links in the top navigation, you can create a link category with all the links you want to display at the main navigation and assign the link category here.', 'arras') ?>
 </td>
 </tr>
 
