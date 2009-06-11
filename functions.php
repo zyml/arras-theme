@@ -43,6 +43,9 @@ define( ARRAS_DIR, TEMPLATEPATH );
 define( ARRAS_LIB, ARRAS_DIR . '/library' );
 define( ARRAS_VERSION, $parent_data['Version'] );
 
+// Thumbnail generator
+define( ARRAS_THUMB, 'timthumb' );
+
 // Load library files
 require_once ARRAS_LIB . '/actions.php';
 require_once ARRAS_LIB . '/filters.php';

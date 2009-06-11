@@ -218,8 +218,13 @@ function arras_get_thumbnail($w = 630, $h = 250) {
 	
 	if (!$thumbnail) {
 		return false;
-	} else
-		return get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+	} else {
+		if (ARRAS_THUMB == 'phpthumb') {
+			return get_bloginfo('template_directory') . '/library/phpthumb/phpthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+		} else {
+			return get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+		}
+	}
 }
 
 function arras_get_posts($page_type, $query = null) {

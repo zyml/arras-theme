@@ -175,7 +175,8 @@ function arras_get_files_list($path, $include_none) {
 }
 
 function arras_cache_is_writable() {
-	$cache_path = TEMPLATEPATH . '/library/cache';
+	if (ARRAS_THUMB == 'phpthumb') $cache_path = TEMPLATEPATH . '/library/phpthumb/cache';
+	else $cache_path = TEMPLATEPATH . '/library/cache';
 	return (boolean)is_writable($cache_path);
 }
 
