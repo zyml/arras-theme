@@ -26,7 +26,7 @@ else add_filter('arras_postheader', 'arras_postmeta');
         <?php if ( arras_get_option('display_author') ) : ?>
         <div class="about-author clearfix">
         	<h4><?php _e('About the Author', 'arras') ?></h4>
-            <?php echo get_avatar(get_the_author_email(), 48); ?>
+            <?php echo get_avatar(get_the_author_id(), 48); ?>
             <?php the_author_description(); ?>
         </div>
         <?php endif; ?>
