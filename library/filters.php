@@ -126,7 +126,9 @@ function arras_postbar($echo = false) {
 	$postbar .= '<li><a href="http://digg.com/submit?phase=2&amp;url=' . get_permalink() . '&amp;title=' . get_the_title() . '">' . __('Digg it!', 'arras') . '</a></li>';
 	$postbar .= '<li><a href="http://www.facebook.com/share.php?u=' . get_permalink() . '&amp;t=' . get_the_title() . '">' . __('Facebook', 'arras') . '</a></li>';
 	
-	$postbar .= '<li><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&post=' . $post->ID . '">' . __('Edit Post', 'arras') . '</a></li>';
+	if (current_user_can('edit_post')) {
+		$postbar .= '<li><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&post=' . $post->ID . '">' . __('Edit Post', 'arras') . '</a></li>';
+	}
 	$postbar .= '</ul>';
 	
 	if ($echo) echo apply_filters('arras_postbar', $postbar);
