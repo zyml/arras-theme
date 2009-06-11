@@ -26,9 +26,13 @@
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" />
 
 <?php
-wp_deregister_script('jquery');
-wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-1.3.2.min.js', null, '1.3.2', false);
-wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui-1.7.1.min.js', 'jquery', '1.7.1', false);
+if ( $wp_version != '2.8') {
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-1.3.2.min.js', null, '1.3.2', false);
+	wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui-1.7.1.min.js', 'jquery', '1.7.1', false);
+} else {
+	wp_enqueue_script('jquery-ui-tabs', null, array('jquery', 'jquery-ui-core'), null, false);
+}
 
 wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', 'jquery', null, false);
 wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
