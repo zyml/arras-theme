@@ -15,7 +15,7 @@ if (function_exists('qtrans_init')) {
 }
 
 $theme_data = get_theme( get_current_theme() );
-define( ARRAS_CHILD, (boolean)($theme_data['Parent Theme'] == 'Arras.Theme') );
+define( ARRAS_CHILD, (boolean)($theme_data['Parent Theme'] == 'Arras Theme') );
 
 $parent_data = get_theme('Arras Theme');
 
@@ -44,7 +44,7 @@ define( ARRAS_LIB, ARRAS_DIR . '/library' );
 define( ARRAS_VERSION, $parent_data['Version'] );
 
 // Thumbnail generator
-define( ARRAS_THUMB, 'timthumb' );
+define( ARRAS_THUMB, 'phpthumb' );
 
 // Load library files
 require_once ARRAS_LIB . '/actions.php';
