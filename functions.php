@@ -44,7 +44,7 @@ define( ARRAS_LIB, ARRAS_DIR . '/library' );
 define( ARRAS_VERSION, $parent_data['Version'] );
 
 // Thumbnail generator
-define( ARRAS_THUMB, 'phpthumb' );
+define( ARRAS_THUMB, 'timthumb' );
 
 // Load library files
 require_once ARRAS_LIB . '/actions.php';
