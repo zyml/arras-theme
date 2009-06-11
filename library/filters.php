@@ -30,7 +30,7 @@ function arras_newsheader($page_type) {
 	
 	$postheader .= '<div class="entry-thumbnails"><a href="' . get_permalink() . '"><img src="' . arras_get_thumbnail($w,$h) . '" alt="' . get_the_title() . '" title="' . get_the_title()	. '" /></a>';
 	$postheader .= '<span class="entry-meta"><a href="' . get_permalink() . '"><span class="entry-comments">' . get_comments_number() . '</span></a>';
-	$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( __('F d, Y', 'arras') ) . '</abbr></span></div>';
+	$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr></span></div>';
 	
 	$postheader .= '<h3 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h3>';
 	
@@ -74,7 +74,7 @@ function arras_postheader() {
 		}
 		
 		if ( arras_get_option('post_date') ) {
-			$postheader .= sprintf( __('<strong>Published:</strong> %s', 'arras'), '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( __('d F Y g:i A T', 'arras') ) . '</abbr>');
+			$postheader .= sprintf( __('<strong>Published:</strong> %s', 'arras'), '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr>');
 		}
 		
 		if ( arras_get_option('post_cats') ) {
