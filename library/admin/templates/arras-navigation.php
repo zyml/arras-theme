@@ -9,6 +9,10 @@ foreach ( get_categories('type=link&hide_empty=0') as $c ) {
 <div id="navigation" class="padding-content">
 
 <h3><?php _e('Main Navigation', 'arras') ?></h3>
+
+<p><?php printf( __('It is highly recommended that you use the %s for better control of the main navigation.', 'arras'), '<a href="http://pixopoint.com/multi-level-navigation/">Multi-level Navigation Plugin for WordPress</a>'); ?>
+</p>
+
 <table class="form-table">
 
 <tr valign="top">
