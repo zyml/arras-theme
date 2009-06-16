@@ -247,9 +247,15 @@ function arras_get_posts($page_type, $query = null) {
 	<ul class="hfeed posts-line clearfix">
 	<?php while ($query->have_posts()) : $query->the_post() ?>
 	<li <?php arras_post_class() ?>>
+	
 		<?php if(!is_archive()) : ?>
-		<span class="entry-cat"><?php $cats = get_the_category(); if (arras_get_option('news_cat')) echo $cats[1]->cat_name; else echo $cats[0]->cat_name; ?></span>
+		<span class="entry-cat">
+			<?php $cats = get_the_category(); 
+			if (arras_get_option('news_cat')) echo $cats[1]->cat_name;
+			else echo $cats[0]->cat_name; ?>
+		</span>
 		<?php endif ?>
+		
 		<h3 class="entry-title"><a rel="bookmark" href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>"><?php the_title() ?></a></h3>
 		<span class="entry-comments"><?php comments_number() ?></span>
 	</li>
