@@ -28,7 +28,16 @@ function arras_newsheader($page_type) {
 		$h = ARRAS_2COL_MINI_HEIGHT;
 	}
 	
-	$postheader .= '<div class="entry-thumbnails"><a href="' . get_permalink() . '"><img src="' . arras_get_thumbnail($w,$h) . '" alt="' . get_the_title() . '" title="' . get_the_title()	. '" /></a>';
+	$postheader .= '<div class="entry-thumbnails"><a class="entry-thumbnails-link" href="' . get_permalink() . '">';
+	
+	if ( ($thumbnail = arras_get_thumbnail($w, $h)) ) {
+		$postheader .= '<img src="' . arras_get_thumbnail($w,$h) . '" alt="' . get_the_title() . '" title="' . get_the_title()	. '" />';
+	} else {
+		$postheader .= get_the_title();
+	}
+	
+	$postheader .= '</a>';
+	
 	$postheader .= '<span class="entry-meta"><a href="' . get_permalink() . '"><span class="entry-comments">' . get_comments_number() . '</span></a>';
 	$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr></span></div>';
 	

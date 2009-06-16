@@ -74,11 +74,14 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 /* navigation */
 #nav					{ zoom: 1; max-height: 35px; }
-#nav-content			{ margin: 0 auto; width: 958px; background: url(../../images/topnav.jpg) repeat-x #CCC; height: 30px; border: 1px solid #CCC; }
+#nav-content			{ margin: 0 auto; width: 958px; background: url(../../images/topnav.jpg) repeat-x #E5E5E5; border: solid #CCC; border-width: 0 1px 1px; }
 
-.sf-menu				{ font-weight: bold; }
+.sf-menu				{ font-weight: bold; max-width: 770px; }
 .sf-menu, .sf-menu ul	{ float: left; list-style: none; line-height: 30px; padding: 0; margin: 0; }
 .sf-menu a				{ display: block; text-decoration: none; padding: 0 15px; text-transform: uppercase; color: #666; font-size: 11px; }
+.sf-menu a:hover		{ color: #FFF; }
+.sf-menu li.sfhover, .sf-menu li:hover { background: url(../../images/techblue/feed-title.jpg) repeat-x top #004688; }
+.sf-menu li.sfhover a, .sf-menu li:hover a { color: #FFF; }
 .sf-menu li				{ float: left; padding: 0; }
 .sf-menu ul				{ position: absolute; left: -999em; height: auto; width: 150px; margin: 0; line-height: 1; border: none; }
 .sf-menu li li			{ width: 148px; border: solid #CCC; border-width: 1px 1px 0; }
@@ -160,10 +163,11 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-default .entry-title a:hover	{ }
 .posts-default .entry-summary, .posts-quick .entry-summary	{ color: #666; overflow: hidden; }
 .posts-default .entry-thumbnails	{ clear: both; display: inline-block; }
+.entry-thumbnails-link { float: left; margin-right: 15px; border: 1px solid #CCC; width: 190px; height: 100px; background: #111; display: block; text-indent: -9000px; }
 .posts-quick			{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 10px; }
 .posts-quick li			{ padding: 10px 0; border-bottom: 1px dotted #EEE; }
 .posts-quick li:last-child	{ border: none; }
-.posts-quick img		{ float: left; margin-right: 15px; border: 1px solid #CCC; width: 190px; height: 100px; background: #111; text-indent: -9000px; }
+.posts-quick img		{ text-indent: -9000px; }
 .posts-quick .entry-title	{ font-weight: bold; font-size: 14px; margin: 0 0 10px; line-height: 1.3em; }
 .posts-quick .entry-title a:link, .posts-quick .entry-title a:visited	{ text-decoration: none; }
 .posts-quick .entry-title a:hover	{ }
