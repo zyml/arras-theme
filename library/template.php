@@ -65,8 +65,9 @@ function arras_alternate_style() {
  * Generates semantic classes for BODY element. Based on Sandbox.
  */
 function arras_body_class() {
-	if ( function_exists('body_class') )
-		return body_class();
+	if ( function_exists('body_class') ) {
+		return body_class( array('layout-' . arras_get_option('layout'), 'style-' . arras_get_option('style')) );
+	}
 	
 	global $wp_query, $current_user;
 	
@@ -220,7 +221,7 @@ function arras_get_thumbnail($w = 630, $h = 250) {
 		return false;
 	} else {
 		if (ARRAS_THUMB == 'phpthumb') {
-			return get_bloginfo('template_directory') . '/library/phpthumb/phpthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+			return get_bloginfo('template_directory') . '/library/phpthumb/phpThumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
 		} else {
 			return get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
 		}
@@ -246,9 +247,15 @@ function arras_get_posts($page_type, $query = null) {
 	<ul class="hfeed posts-line clearfix">
 	<?php while ($query->have_posts()) : $query->the_post() ?>
 	<li <?php arras_post_class() ?>>
+	
 		<?php if(!is_archive()) : ?>
-		<span class="entry-cat"><?php $cats = get_the_category(); if (arras_get_option('news_cat')) echo $cats[1]->cat_name; else echo $cats[0]->cat_name; ?></span>
+		<span class="entry-cat">
+			<?php $cats = get_the_category(); 
+			if (arras_get_option('news_cat')) echo $cats[1]->cat_name;
+			else echo $cats[0]->cat_name; ?>
+		</span>
 		<?php endif ?>
+		
 		<h3 class="entry-title"><a rel="bookmark" href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>"><?php the_title() ?></a></h3>
 		<span class="entry-comments"><?php comments_number() ?></span>
 	</li>

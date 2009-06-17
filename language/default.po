@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras.Theme 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-11 23:30+0800\n"
+"POT-Creation-Date: 2009-06-16 23:43+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team: Melvin Lee <zy@zy.sg>\n"
@@ -203,19 +203,19 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: ../home.php:24
+#: ../home.php:31
 msgid "Prev"
 msgstr ""
 
-#: ../home.php:25
+#: ../home.php:32
 msgid "Next"
 msgstr ""
 
-#: ../home.php:74
+#: ../home.php:86
 msgid "Older Entries"
 msgstr ""
 
-#: ../home.php:75
+#: ../home.php:87
 msgid "Newer Entries"
 msgstr ""
 
@@ -265,46 +265,46 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: ../library/filters.php:49
+#: ../library/filters.php:58
 msgid "Read More"
 msgstr ""
 
-#: ../library/filters.php:73
+#: ../library/filters.php:82
 #, php-format
 msgid "<span class=\"entry-author\">By %s</span>"
 msgstr ""
 
-#: ../library/filters.php:77
+#: ../library/filters.php:86
 #, php-format
 msgid "<strong>Published:</strong> %s"
 msgstr ""
 
-#: ../library/filters.php:85
+#: ../library/filters.php:94
 #, php-format
 msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
 msgstr ""
 
-#: ../library/filters.php:89
+#: ../library/filters.php:98
 msgid "Tags:"
 msgstr ""
 
-#: ../library/filters.php:126
+#: ../library/filters.php:135
 msgid "Digg it!"
 msgstr ""
 
-#: ../library/filters.php:127
+#: ../library/filters.php:136
 msgid "Facebook"
 msgstr ""
 
-#: ../library/filters.php:130
+#: ../library/filters.php:139
 msgid "Edit Post"
 msgstr ""
 
-#: ../library/filters.php:183
+#: ../library/filters.php:192
 msgid "That 'something' you are looking for isn't here!"
 msgstr ""
 
-#: ../library/filters.php:184
+#: ../library/filters.php:193
 msgid "<strong>We're very sorry, but that page doesn't exist or has been moved.</strong><br />Please make sure you have the right URL."
 msgstr ""
 
@@ -324,29 +324,29 @@ msgstr ""
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
-#: ../library/template.php:252
+#: ../library/template.php:259
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../library/template.php:295
+#: ../library/template.php:302
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:298
+#: ../library/template.php:305
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:298
+#: ../library/template.php:305
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:298
+#: ../library/template.php:305
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:298
+#: ../library/template.php:305
 msgid "g:i A"
 msgstr ""
 
@@ -761,28 +761,33 @@ msgstr ""
 msgid "Main Navigation"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:15
+#: ../library/admin/templates/arras-navigation.php:13
+#, php-format
+msgid "It is highly recommended that you use the %s for better control of the main navigation."
+msgstr ""
+
+#: ../library/admin/templates/arras-navigation.php:19
 msgid "Home Link"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:18
+#: ../library/admin/templates/arras-navigation.php:22
 msgid "You can change the name of the home link at the main navigation."
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:23
+#: ../library/admin/templates/arras-navigation.php:27
 msgid "Top Navigation Display"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:26
+#: ../library/admin/templates/arras-navigation.php:30
 msgid "Pages"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:27
-#: ../library/admin/templates/arras-navigation.php:32
-msgid "Link Category"
+#: ../library/admin/templates/arras-navigation.php:31
+#: ../library/admin/templates/arras-navigation.php:36
+msgid "Top Navigation Display"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:35
+#: ../library/admin/templates/arras-navigation.php:39
 msgid "To organise and arrange the links in the top navigation, you can create a link category with all the links you want to display at the main navigation and assign the link category here."
 msgstr ""
 

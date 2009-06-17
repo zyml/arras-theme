@@ -5,6 +5,8 @@ if ( function_exists('dsq_comment_count') ) {
 	remove_action('loop_end', 'dsq_comment_count');
 	add_action('arras_above_index_news_post', 'dsq_comment_count');
 }
+
+$stickies = get_option('sticky_posts');
 ?>
 
 <div id="content" class="section">
@@ -13,10 +15,15 @@ if ( function_exists('dsq_comment_count') ) {
 <?php if ( ( $featured1_cat = arras_get_option('featured_cat1') ) !== '' && $featured1_cat != '-1' ) : ?>
     <!-- Featured Articles #1 -->
     <div class="featured clearfix">
-    <?php 
-	if ($featured1_cat == '-5') 	$query = array('post__in' => get_option('sticky_posts'), 'showposts' => arras_get_option('featured1_count') );
-	elseif ($featured1_cat == '0') 	$query = 'showposts=' . arras_get_option('featured1_count');
-	else							$query = 'showposts=' . arras_get_option('featured1_count') . '&cat=' . $featured1_cat;
+    <?php
+	if ($featured1_cat == '-5') {
+		if (count($stickies) > 0) 
+			$query = array('post__in' => $stickies, 'showposts' => arras_get_option('featured1_count') );
+	} elseif ($featured1_cat == '0') {
+		$query = 'showposts=' . arras_get_option('featured1_count');
+	} else {
+		$query = 'showposts=' . arras_get_option('featured1_count') . '&cat=' . $featured1_cat;
+	}
 	
 	$q = new WP_Query( apply_filters('arras_featured1_query', $query) );
 	?> 
@@ -44,10 +51,15 @@ if ( function_exists('dsq_comment_count') ) {
 
 <!-- Featured Articles #2 -->
 <?php if (!$paged) : if ( ($featured2_cat = arras_get_option('featured_cat2') ) !== '' && $featured2_cat != '-1' ) : ?>
-	<?php 
-	if ($featured2_cat == '-5') 	$query2 = array('post__in' => get_option('sticky_posts'), 'showposts' => arras_get_option('featured2_count') );
-	elseif ($featured2_cat == '0') 	$query2 = 'showposts=' . arras_get_option('featured2_count');
-	else							$query2 = 'showposts=' . arras_get_option('featured2_count') . '&cat=' . $featured2_cat;
+	<?php
+	if ($featured2_cat == '-5') {
+		if (count($stickies) > 0) 
+			$query2 = array('post__in' => $stickies, 'showposts' => arras_get_option('featured2_count') );
+	} elseif ($featured2_cat == '0') {
+		$query2 = 'showposts=' . arras_get_option('featured2_count');
+	} else {
+		$query2 = 'showposts=' . arras_get_option('featured2_count') . '&cat=' . $featured2_cat;
+	}
 	
 	$q2 = new WP_Query( apply_filters('arras_featured2_query', $query2) );
 	arras_get_posts('featured2', $q2);

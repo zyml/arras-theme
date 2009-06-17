@@ -15,7 +15,7 @@ if (function_exists('qtrans_init')) {
 }
 
 $theme_data = get_theme( get_current_theme() );
-define( ARRAS_CHILD, (boolean)($theme_data['Parent Theme'] == 'Arras.Theme') );
+define( ARRAS_CHILD, (boolean)($theme_data['Parent Theme'] == 'Arras Theme') );
 
 $parent_data = get_theme('Arras Theme');
 
