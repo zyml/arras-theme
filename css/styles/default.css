@@ -208,7 +208,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 .layout-3c-r-fixed .post .entry-photo, .layout-3c-r-fixed .single-post .entry-photo, .layout-3c-fixed .post .entry-photo, .layout-3c-fixed .single-post .entry-photo	{ width: 480px; }
 
-.postbar				{ list-style: none; margin: 0 0 10px; padding: 7px 0; border: 1px solid #CCC; background: url(../../images/topnav.jpg) repeat-x top; font-size: 11px; }
+.postbar				{ list-style: none; margin: 0 0 10px; padding: 7px 0; border: 1px solid #CCC; background: url(../../images/topnav.jpg) repeat-x top; font-size: 11px; width: 100%; }
 .postbar li				{ float: left; padding: 0 10px; border-left: 1px solid #EEE; }
 .postbar li:first-child	{ border-left: 0; }
 .postbar li a:link, .postbar li a:visited	{ text-decoration: none; font-weight: bold; }
