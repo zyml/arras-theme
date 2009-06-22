@@ -34,8 +34,9 @@ if ( $wp_version != '2.8') {
 	wp_enqueue_script('jquery-ui-tabs', null, array('jquery', 'jquery-ui-core'), null, false);
 }
 
-wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', 'jquery', null, false);
-wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
+if ( is_home() || is_front_page() ) {
+	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', 'jquery', null, false);
+}
 
 if ( !function_exists('pixopoint_menu') ) {
 	wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/superfish/hoverIntent.js', 'jquery', null, false);
@@ -44,31 +45,23 @@ if ( !function_exists('pixopoint_menu') ) {
 
 if ( is_singular() ) {
 	wp_enqueue_script('comment-reply');
+	wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
 }
-
-wp_enqueue_script('arras-base', get_template_directory_uri() . '/js/base.js', 'jquery', null, false);
 
 wp_head();
 arras_head();
 
-if ( !function_exists('pixopoint_menu') ) :
 ?>
 <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$('.sf-menu').superfish({autoArrows: false, speed: 'fast'});
-	});
+<?php @include 'js/base.js.php'; ?>
 </script>
-<?php endif ?>
 
 <!--[if IE 6]>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" media="screen, projector" />
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.supersleight.min.js"></script>
 <script type="text/javascript">
-jQuery(document).ready(function($) {
-	$('.blog-name').supersleight( {shim: '<?php bloginfo('template_url') ?>/images/x.gif'} );
 	$('#controls').supersleight( {shim: '<?php bloginfo('template_url') ?>/images/x.gif'} );
 	$('.featured-article').supersleight( {shim: '<?php bloginfo('template_url') ?>/images/x.gif'} );
-});
 </script>
 <![endif]-->
 </head>
