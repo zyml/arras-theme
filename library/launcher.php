@@ -52,6 +52,9 @@ register_sidebar( array(
 // Header Actions
 add_action('arras_head', 'arras_override_styles');
 
+// Footer Actions
+add_action('wp_footer', 'arras_js_footer');
+
 // Options
 if (is_admin()) {
 	add_action('admin_menu', 'arras_addmenu');
