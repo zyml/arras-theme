@@ -106,7 +106,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .widgetcontainer li a:visited, .widgetcontainer li a:link	{ text-decoration: none; font-weight: bold; font-size: 12px; }
 .widgetcontainer li a:hover	{ border-bottom: 1px dotted #635957; }
 .widgetcontainer input[type=text], .widgetcontainer input[type=password]	{ width: 80%; }
-.widgettitle			{ color: #333; font-size: 12px; font-weight: bold; margin: 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; }
+.widgettitle			{ color: #333; font-size: 12px; font-weight: bold; margin: 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
 .widgettitle a			{ color: #333; }
 .widgetcontent			{ border: solid #CCC; border-width: 0 1px 1px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; margin-bottom: 10px; padding: 10px; }
 
@@ -123,7 +123,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 #multi-sidebar .widgetcontainer li	{ margin-bottom: 10px; }
 
 #wp-calendar			{ width: 100%; }
-#wp-calendar caption	{ color: #333; font-size: 12px; font-weight: bold; margin: 0 0 0 -1px; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; }
+#wp-calendar caption	{ color: #333; font-size: 12px; font-weight: bold; margin: 0 0 0 -1px; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
 						
 /* featured slideshow */
 .featured				{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; padding: 10px; margin: 0 10px 10px 0; height: 250px; }
@@ -218,7 +218,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .single-post-meta-field	{ clear: left; float: left; width: 15%; font-weight: bold; color: #000; background: #F0F0F0; }
 .single-post-meta-value	{ float: left; width: 80%; color: #333; background: #F0F0F0; }
 
-.module-title, .feed-title	{ line-height: 1em; color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 7px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; display: block; }
+.module-title, .feed-title	{ line-height: 1em; color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 7px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; display: block; }
 .feed-title				{ border-bottom: none; }
 
 .gallery				{ clear: both; margin: 10px 0; }
@@ -260,7 +260,7 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 #commentlist p			{ clear: left; font-size: 12px; }
 #commentlist .reply		{ float: right; }
 #commentlist .reply a, .comments-navigation a, .read-more, .navigation a	{ color: #FFF; background: url(../../images/techblue/feed-title.jpg) top repeat-x; text-decoration: none; padding: 5px 8px; margin-bottom: 3px; border: 1px solid #CCC; font-weight: bold; zoom: 1; *display: inline; display: inline-block; }
-#commentlist .reply a:hover, .comments-navigation a:hover, .navigation a:hover, .read-more:hover	{ background: url(../../images/feed-title-white.jpg) top repeat-x; color: #000; }
+#commentlist .reply a:hover, .comments-navigation a:hover, .navigation a:hover, .read-more:hover	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; }
 #commentlist .children	{ clear: right; margin: 5px 0 0; list-style: none; }
 #commentlist .children li	{ border-bottom: none; border-left: 1px dotted #CCC; padding: 0 0 0 20px; }
 #commentlist #respond	{ clear: both; margin-top: 40px; padding-top: 10px; border-top: 1px dotted #CCC; }
@@ -282,7 +282,7 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 .pingbacks a:link, .pingbacks a:visited	{ text-decoration: none; }
 
 /* search results */
-.search-results h2      { color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; }
+.search-results h2      { color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
 .search-results-content { border: solid #CCC; border-width: 0 1px 1px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; margin: 0 10px 10px 0; padding: 10px; }
 
 /* footer */
