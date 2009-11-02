@@ -52,7 +52,7 @@ function arras_alternate_style() {
 		echo '
 <link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/screen.css" type="text/css" media="screen,projector" />
 <link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/print.css" type="text/css" media="print" />
-<!--[if IE]>
+<!--[if IE 6]>
 <link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/ie.css" type="text/css" media="screen,projector" />
 <![endif]-->
 		';

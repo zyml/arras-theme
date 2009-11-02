@@ -53,6 +53,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 .tags a:link, .tags a:visited	{ font-weight: bold; text-decoration: none; padding: 2px 4px; background: #FFF; display: inline-block; margin-bottom: 3px; }
 
+.xoxo					{ padding: 0; }
+
 /* structure */
 #wrapper				{ min-height: 100%; position: relative; }
 #main					{ padding: 20px; z-index: 0; *z-index: -1; }
@@ -101,7 +103,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 /* sidebar */
 .sidebar				{ }
 .sidebar .xoxo			{ list-style: none; padding: 0; margin: 0; }
-.widgetcontainer ul, .widgetcontent .xoxo, .widgetcontainer ol	{ list-style: disc; margin-left: 15px; }
+.widgetcontainer ul, .widgetcontent .xoxo, .widgetcontainer ol	{ list-style: disc; margin-left: 15px; padding: 0; }
 .widgetcontainer li		{ margin-bottom: 5px; }
 .widgetcontainer li a:visited, .widgetcontainer li a:link	{ text-decoration: none; font-weight: bold; font-size: 12px; }
 .widgetcontainer li a:hover	{ border-bottom: 1px dotted #635957; }
@@ -146,7 +148,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .layout-3c-r-fixed .featured-entry, .layout-3c-fixed .featured-entry		{ height: 100px; top: 125px; }
 
 /* bottom content */
-#bottom-content-1, #bottom-content-2	{ float: left; width: 320px; margin: 0 10px 10px 0; overflow: hidden; }
+#bottom-content-1, #bottom-content-2	{ list-style: none; float: left; width: 320px; margin: 0 10px 10px 0; overflow: hidden; padding: 0; }
 #bottom-content-1 .xoxo, #bottom-content-2 .xoxo	{ margin: 0; }
 #bottom-content-1 * .xoxo, #bottom-content-2 * .xoxo{ margin-left: 15px; }
 #bottom-content-1 .widgettitle, #bottom-content-2 .widgettitle	{ background: #F0F0F0; }
@@ -290,9 +292,9 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 #footer .widgetcontainer	{ padding: 5px 10px; }
 #footer .widgettitle	{ background: none; border: none; text-transform: uppercase; font-size: 10px; color: #333; padding: 0 0 10px; }
 #footer .widgetcontent	{ font-size: 11px; background: none; padding: 0; border: none; }
-#footer .footer-message	{ border-left: 1px solid #EEE; float: left; overflow: hidden; margin: 10px 0 0; }
+#footer .footer-message	{ border-left: 1px solid #EEE; float: left; overflow: hidden; margin: 10px 0 0; padding: 0; }
 #footer .footer-message .widgetcontainer	{ width: 215px; overflow: hidden; }
-#footer-sidebar		{ width: 690px; float: left; overflow: hidden; margin: 10px 10px 0; }
+#footer-sidebar		{ width: 690px; float: left; overflow: hidden; margin: 10px 10px 0; padding: 0; }
 #footer-sidebar .widgetcontainer	{ float: left; margin: 0 0 15px 0; max-width: 250px; max-height: 120px; }
 #footer-sidebar ul	{ list-style: square; }
 #footer-sidebar li	{ margin: 0 0 3px; }
