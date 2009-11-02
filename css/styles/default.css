@@ -127,9 +127,9 @@ img.alignleft			{ border: 3px solid #EEE; }
 						
 /* featured slideshow */
 .featured				{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; padding: 10px; margin: 0 10px 10px 0; height: 250px; }
-#controls				{ position: absolute; float: left; z-index: 10; width: 630px; padding-top: 75px; }
+#controls				{ position: absolute; float: left; z-index: 100; width: 630px; padding-top: 75px; }
 
-#controls .next, #controls .prev	{ text-indent: -9000px; width: 30px; height: 30px; display: block; }
+#controls .next, #controls .prev	{ text-indent: -9000px; width: 30px; height: 30px; display: block; z-index: 1000; }
 #controls .prev			{ background: url(../../images/prev.png) no-repeat; float: left; }
 #controls .next			{ background: url(../../images/next.png) no-repeat; float: right; }
 
