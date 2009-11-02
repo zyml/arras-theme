@@ -98,18 +98,24 @@ arras_get_posts('index') ?>
 
 <?php arras_below_index_news_post() ?>
 
+<?php $sidebars = wp_get_sidebars_widgets(); ?>
+
 <div id="bottom-content-1">
+	<?php if ( $sidebars['sidebar-4'] ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #1') ) : ?>
         <?php endif; ?>
 	</ul>
+	<?php endif; ?>
 </div>
 
 <div id="bottom-content-2">
+	<?php if ( $sidebars['sidebar-5'] ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #2') ) : ?>
         <?php endif; ?>
 	</ul>
+	<?php endif; ?>
 </div>
 
 <?php arras_below_content() ?>
