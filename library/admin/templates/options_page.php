@@ -67,7 +67,7 @@
 <div id="remove" class="padding-content">
 	<h3><?php _e('Clear Thumbnail Cache', 'arras') ?></h3>
 	<p><?php _e('If you have recently changed your layout, or edited the thumbnail sizes, it is highly recommended that you clear your thumbnail cache.', 'arras') ?></p>
-	<p><?php printf( __('The thumbnail cache folder is located at: %s.', 'arras'), '<code>' . ARRAS_LIB . '/library/cache/' . '</code>') ?><br />
+	<p><?php printf( __('The thumbnail cache folder is located at: %s.', 'arras'), '<code>' . ARRAS_LIB . '/cache/' . '</code>') ?><br />
 	<?php _e('If this does not work, you can manually delete all the files in that folder.', 'arras') ?>
 	<p class="submit">
 	<input class="button-secondary" type="submit" name="clearcache" value="<?php _e('Clear Thumbnail Cache', 'arras') ?>" />

@@ -49,14 +49,29 @@ function arras_alternate_style() {
 	if (ARRAS_CHILD && count($arras_registered_alt_styles) > 0) {
 		echo '<link rel="stylesheet=" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen, projector" />';
 	} else {
+		echo '
+<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/screen.css" type="text/css" media="screen,projector" />
+<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/print.css" type="text/css" media="print" />
+<!--[if IE 6]>
+<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/ie.css" type="text/css" media="screen,projector" />
+<![endif]-->
+		';
+
+	
 		$scheme = arras_get_option('style');
 		if ( $scheme != 'default' )
-			echo '<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen" />';
+			echo '
+<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projector" />
+			';
 		else
-			echo '<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/default.css" type="text/css" media="screen" />';
+			echo '
+<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/default.css" type="text/css" media="screen,projector" />
+			';
 		
 		if (!ARRAS_CHILD) {
-			echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/user.css" type="text/css" media="screen" />';
+			echo '
+<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/user.css" type="text/css" media="screen,projector" />
+';
 		}
 	}
 }
@@ -353,6 +368,39 @@ function arras_strip_content($content, $limit) {
 		//otherwise
 		return implode(' ', $words); 
 	}
+}
+
+function arras_js_footer() {
+?>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+<?php if (is_home() || is_front_page()) : ?>
+$('.featured').hover( 
+	function() {
+		$('#featured-slideshow').cycle('pause');
+		$('#controls').fadeIn();
+	}, 
+	function() {
+		$('#featured-slideshow').cycle('resume');
+		$('#controls').fadeOut();
+	}
+);
+$('#featured-slideshow').cycle({
+	fx: 'fade',
+	speed: 250,
+	next: '#controls .next',
+	prev: '#controls .prev',
+	timeout: 6000
+});
+
+<?php endif ?>
+	
+});
+</script>
+	
+<?php
 }
 
 /* End of file template.php */

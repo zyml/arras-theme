@@ -35,7 +35,15 @@ $stickies = get_option('sticky_posts');
         	<?php $count = 0; ?>
     		<?php if ($q->have_posts()) : while ($q->have_posts()) : $q->the_post(); ?>
     		<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
-    			<?php $w = 630; $h = 250; if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) { $w = 480; $h = 225; } ?>
+	<?php
+	if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) {
+		$w = ARRAS_3COL_FULL_WIDTH;
+		$h = ARRAS_3COL_FULL_HEIGHT;
+	} else {
+		$w = ARRAS_2COL_FULL_WIDTH; 
+		$h = ARRAS_2COL_FULL_HEIGHT;
+	}
+	?>
             	<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark" style="background: url(<?php echo arras_get_thumbnail($w, $h); ?>) no-repeat;">
                 <span class="featured-entry">
                     <span class="entry-title"><?php the_title(); ?></span>
@@ -90,18 +98,24 @@ arras_get_posts('index') ?>
 
 <?php arras_below_index_news_post() ?>
 
+<?php $sidebars = wp_get_sidebars_widgets(); ?>
+
 <div id="bottom-content-1">
+	<?php if ( $sidebars['sidebar-4'] ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #1') ) : ?>
         <?php endif; ?>
 	</ul>
+	<?php endif; ?>
 </div>
 
 <div id="bottom-content-2">
+	<?php if ( $sidebars['sidebar-5'] ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #2') ) : ?>
         <?php endif; ?>
 	</ul>
+	<?php endif; ?>
 </div>
 
 <?php arras_below_content() ?>

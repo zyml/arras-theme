@@ -1,7 +1,3 @@
-@import url('../blueprint/reset.css'); 
-@import url('../blueprint/typography.css'); 
-@import url('../blueprint/forms.css'); 
-
 /* globals */
 body					{ background-color: #F0F0F0; color: #333; font: 12px 'Lucida Grande',Arial,Helvetica,sans-serif; height: 100%; min-height: 100%; }
 
@@ -57,6 +53,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 .tags a:link, .tags a:visited	{ font-weight: bold; text-decoration: none; padding: 2px 4px; background: #FFF; display: inline-block; margin-bottom: 3px; }
 
+.xoxo					{ padding: 0; }
+
 /* structure */
 #wrapper				{ min-height: 100%; position: relative; }
 #main					{ padding: 20px; z-index: 0; *z-index: -1; }
@@ -105,12 +103,12 @@ img.alignleft			{ border: 3px solid #EEE; }
 /* sidebar */
 .sidebar				{ }
 .sidebar .xoxo			{ list-style: none; padding: 0; margin: 0; }
-.widgetcontainer ul, .widgetcontent .xoxo, .widgetcontainer ol	{ list-style: disc; margin-left: 15px; }
+.widgetcontainer ul, .widgetcontent .xoxo, .widgetcontainer ol	{ list-style: disc; margin-left: 15px; padding: 0; }
 .widgetcontainer li		{ margin-bottom: 5px; }
 .widgetcontainer li a:visited, .widgetcontainer li a:link	{ text-decoration: none; font-weight: bold; font-size: 12px; }
 .widgetcontainer li a:hover	{ border-bottom: 1px dotted #635957; }
 .widgetcontainer input[type=text], .widgetcontainer input[type=password]	{ width: 80%; }
-.widgettitle			{ color: #333; font-size: 12px; font-weight: bold; margin: 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; }
+.widgettitle			{ color: #333; font-size: 12px; font-weight: bold; margin: 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
 .widgettitle a			{ color: #333; }
 .widgetcontent			{ border: solid #CCC; border-width: 0 1px 1px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; margin-bottom: 10px; padding: 10px; }
 
@@ -125,12 +123,15 @@ img.alignleft			{ border: 3px solid #EEE; }
 #multi-sidebar .widgetcontainer	{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; margin-bottom: 10px; padding: 10px; }
 #multi-sidebar .widgetcontainer ul	{ list-style: none; margin: 0 0 0 5px; }
 #multi-sidebar .widgetcontainer li	{ margin-bottom: 10px; }
+
+#wp-calendar			{ width: 100%; }
+#wp-calendar caption	{ color: #333; font-size: 12px; font-weight: bold; margin: 0 0 0 -1px; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
 						
 /* featured slideshow */
 .featured				{ background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; padding: 10px; margin: 0 10px 10px 0; height: 250px; }
-#controls				{ position: absolute; float: left; z-index: 10; width: 630px; padding-top: 75px; }
+#controls				{ position: absolute; float: left; z-index: 100; width: 630px; padding-top: 75px; }
 
-#controls .next, #controls .prev	{ text-indent: -9000px; width: 30px; height: 30px; display: block; }
+#controls .next, #controls .prev	{ text-indent: -9000px; width: 30px; height: 30px; display: block; z-index: 1000; }
 #controls .prev			{ background: url(../../images/prev.png) no-repeat; float: left; }
 #controls .next			{ background: url(../../images/next.png) no-repeat; float: right; }
 
@@ -147,7 +148,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .layout-3c-r-fixed .featured-entry, .layout-3c-fixed .featured-entry		{ height: 100px; top: 125px; }
 
 /* bottom content */
-#bottom-content-1, #bottom-content-2	{ float: left; width: 320px; margin: 0 10px 10px 0; overflow: hidden; }
+#bottom-content-1, #bottom-content-2	{ list-style: none; float: left; width: 320px; margin: 0 10px 10px 0; overflow: hidden; padding: 0; }
 #bottom-content-1 .xoxo, #bottom-content-2 .xoxo	{ margin: 0; }
 #bottom-content-1 * .xoxo, #bottom-content-2 * .xoxo{ margin-left: 15px; }
 #bottom-content-1 .widgettitle, #bottom-content-2 .widgettitle	{ background: #F0F0F0; }
@@ -219,7 +220,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .single-post-meta-field	{ clear: left; float: left; width: 15%; font-weight: bold; color: #000; background: #F0F0F0; }
 .single-post-meta-value	{ float: left; width: 80%; color: #333; background: #F0F0F0; }
 
-.module-title, .feed-title	{ line-height: 1em; color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 7px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; display: block; }
+.module-title, .feed-title	{ line-height: 1em; color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 7px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; display: block; }
 .feed-title				{ border-bottom: none; }
 
 .gallery				{ clear: both; margin: 10px 0; }
@@ -261,7 +262,7 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 #commentlist p			{ clear: left; font-size: 12px; }
 #commentlist .reply		{ float: right; }
 #commentlist .reply a, .comments-navigation a, .read-more, .navigation a	{ color: #FFF; background: url(../../images/techblue/feed-title.jpg) top repeat-x; text-decoration: none; padding: 5px 8px; margin-bottom: 3px; border: 1px solid #CCC; font-weight: bold; zoom: 1; *display: inline; display: inline-block; }
-#commentlist .reply a:hover, .comments-navigation a:hover, .navigation a:hover, .read-more:hover	{ background: url(../../images/feed-title-white.jpg) top repeat-x; color: #000; }
+#commentlist .reply a:hover, .comments-navigation a:hover, .navigation a:hover, .read-more:hover	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; }
 #commentlist .children	{ clear: right; margin: 5px 0 0; list-style: none; }
 #commentlist .children li	{ border-bottom: none; border-left: 1px dotted #CCC; padding: 0 0 0 20px; }
 #commentlist #respond	{ clear: both; margin-top: 40px; padding-top: 10px; border-top: 1px dotted #CCC; }
@@ -283,7 +284,7 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 .pingbacks a:link, .pingbacks a:visited	{ text-decoration: none; }
 
 /* search results */
-.search-results h2      { color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #0052a3; border: 1px solid #CCC; }
+.search-results h2      { color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
 .search-results-content { border: solid #CCC; border-width: 0 1px 1px; background: url(../../images/techblue/content-bg.jpg) repeat-x #FFF; margin: 0 10px 10px 0; padding: 10px; }
 
 /* footer */
@@ -291,9 +292,9 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 #footer .widgetcontainer	{ padding: 5px 10px; }
 #footer .widgettitle	{ background: none; border: none; text-transform: uppercase; font-size: 10px; color: #333; padding: 0 0 10px; }
 #footer .widgetcontent	{ font-size: 11px; background: none; padding: 0; border: none; }
-#footer .footer-message	{ border-left: 1px solid #EEE; float: left; overflow: hidden; margin: 10px 0 0; }
+#footer .footer-message	{ border-left: 1px solid #EEE; float: left; overflow: hidden; margin: 10px 0 0; padding: 0; }
 #footer .footer-message .widgetcontainer	{ width: 215px; overflow: hidden; }
-#footer-sidebar		{ width: 690px; float: left; overflow: hidden; margin: 10px 10px 0; }
+#footer-sidebar		{ width: 690px; float: left; overflow: hidden; margin: 10px 10px 0; padding: 0; }
 #footer-sidebar .widgetcontainer	{ float: left; margin: 0 0 15px 0; max-width: 250px; max-height: 120px; }
 #footer-sidebar ul	{ list-style: square; }
 #footer-sidebar li	{ margin: 0 0 3px; }

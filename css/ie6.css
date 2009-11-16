@@ -5,10 +5,12 @@
 .menu a:link, .menu a:visited	{ margin: 0 10px 0 0; }
 .rss a:link, .rss a:visited	{ margin: 0; }
 
-.posts-default .entry-meta, .posts-quick .entry-meta	{ background: #111; padding-left: 5px; width: 185px; }
-.posts-default .published, .posts-quick .published	{ margin:  5px 0 0; display: block; }
+.posts-default .post { overflow: hidden; }
+.posts-default .entry-meta, .posts-quick .entry-meta	{ background: #111; padding-left: 5px; width: 184px; }
+.posts-default .published, .posts-quick .published	{ margin: 5px 0 0; display: block; }
 .single-post .entry-content { padding: 0 0 0 20px; }
 .style-techblue .posts-default .post { margin: 0 6px 10px 0; }
+
 
 .layout-3c-fixed #primary { margin: 0 0 0 -990px; }
 .layout-3c-fixed #content { margin: 0 215px 0 235px; }
