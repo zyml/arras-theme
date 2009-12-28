@@ -4,18 +4,18 @@ DESCRIPTION:
 */
 
 #main {
-    width:100%;
+    width: 980px;
     margin:0 auto;
 	overflow:hidden;
     position:relative;
-	min-height: 980px;	
+	min-height: 960px;	
 }
 #container {
-    
+    width:970px;
+	margin: 0 auto;   
 }
 #content {
-    width:660px;
-	margin: 0 auto;
+	margin: 0 0 0 10px;
 }
 #primary {
 	display: none;

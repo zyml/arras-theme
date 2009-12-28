@@ -4,7 +4,10 @@ if ( function_exists('add_theme_support') ) {
 	add_theme_support('post-thumbnails');
 	
 	$layout = arras_get_option('layout');
-	if ($layout == '3c-fixed' || $layout == '3c-r-fixed') {
+	
+	if ( strpos($layout, '1c') !== false ) {
+		add_image_size( 'featured-slideshow-thumb', 940, 300, true );
+	} else if ( strpos($layout, '3c') !== false ) {
 		add_image_size( 'featured-slideshow-thumb', 490, 225, true );
 	} else {
 		add_image_size( 'featured-slideshow-thumb', 640, 250, true );
@@ -77,7 +80,7 @@ if (is_admin()) {
 
 // Alternate Styles & Layouts
 if (!ARRAS_CHILD) {
-	//register_alternate_layout( '1c-fixed', __('1 Column Layout (No Sidebars)', 'arras') );
+	register_alternate_layout( '1c-fixed', __('1 Column Layout (No Sidebars)', 'arras') );
 	register_alternate_layout( '2c-r-fixed', __('2 Column Layout (Right Sidebar)', 'arras') );
 	register_alternate_layout( '2c-l-fixed', __('2 Column Layout (Left Sidebar)', 'arras') );
 	register_alternate_layout( '3c-fixed', __('3 Column Layout (Left & Right Sidebars)', 'arras') );

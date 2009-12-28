@@ -52,7 +52,13 @@ $news_thumb_h = arras_get_option('news_thumb_h');
 #index-news .posts-quick .entry-meta, #archive-posts .posts-quick .entry-meta	{ margin: <?php echo $news_thumb_h - 25 ?>px 0 0 -<?php echo $news_thumb_w + 15 ?>px; }
 
 <?php $layout = arras_get_option('layout') ?>
-<?php if ($layout == '3c-fixed' || $layout == '3c-r-fixed') : ?>
+
+<?php if (strpos($layout, '1c') !== false) : ?>
+.featured, .featured-article { height: 300px; }
+.featured-article { width: 940px; }
+#controls { width: 920px; padding-top: 120px; }
+.featured-entry	{ height: 100px; top: 200px; }
+<?php elseif (strpos($layout, '3c') !== false) : ?>
 .featured, .featured-article { height: 225px; }
 .featured-article { width: 490px; }
 #controls { width: 470px; padding-top: 70px; }
