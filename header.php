@@ -118,5 +118,5 @@ arras_head();
     </div><!-- #nav -->
 	<?php arras_below_nav() ?>
     
-	<div id="main">
+	<div id="main" class="clearfix">
     <div id="container" class="clearfix">

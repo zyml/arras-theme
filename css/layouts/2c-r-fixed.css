@@ -6,7 +6,6 @@ DESCRIPTION: Two-column 950px fixed layout with one sidebar right of content
 #main {
     width:960px;
     margin:0 auto;
-    overflow:hidden;
     position:relative;
 }
 #container {
