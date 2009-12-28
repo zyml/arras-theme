@@ -1,8 +1,8 @@
 <?php
 function arras_addmenu() {
-	$options_page = add_menu_page( __('Arras Theme', 'arras'), __('Arras Theme', 'arras'), 8, 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png');
+	$options_page = add_menu_page( '', __('Arras Theme', 'arras'), 8, 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 55);
 	add_submenu_page( 'arras-options', __('Arras Theme', 'arras'), __('Theme Options', 'arras'), 8, 'arras-options', 'arras_admin' );
-	add_submenu_page( 'arras-options', __('Arras Theme', 'arras'), __('Quick Guide', 'arras'), 8, 'arras-guide', 'arras_guide' );
+	//add_submenu_page( 'arras-options', __('Arras Theme', 'arras'), __('Quick Guide', 'arras'), 8, 'arras-guide', 'arras_guide' );
 
 	add_action('admin_print_scripts-'. $options_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-'. $options_page, 'arras_admin_styles');
@@ -50,7 +50,6 @@ function arras_guide() {
 
 function arras_admin_scripts() {
 	wp_enqueue_script('jquery-ui-tabs', null, 'jquery-ui-core');
-	wp_enqueue_script('farbtastic', get_template_directory_uri() . '/js/farbtastic.js');
 	wp_enqueue_script('arras-admin-js', get_template_directory_uri() . '/js/admin.js');
 }
 

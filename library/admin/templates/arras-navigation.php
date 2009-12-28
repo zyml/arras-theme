@@ -10,6 +10,8 @@ foreach ( get_categories('type=link&hide_empty=0') as $c ) {
 
 <h3><?php _e('Main Navigation', 'arras') ?></h3>
 
+<?php if (!function_exists('show_suckerfish_options')) : ?>
+
 <p><?php printf( __('It is highly recommended that you use the %s for better control of the main navigation.', 'arras'), '<a href="http://pixopoint.com/multi-level-navigation/">Multi-level Navigation Plugin for WordPress</a>'); ?>
 </p>
 
@@ -42,8 +44,14 @@ foreach ( get_categories('type=link&hide_empty=0') as $c ) {
 
 </table>
 
-<p class="submit">
-<input class="button-primary" type="submit" name="save" value="<?php _e('Save Changes', 'arras') ?>" />
+<?php else: ?>
+
+<p><?php printf( __('You have %s installed.', 'arras'), '<a href="http://pixopoint.com/multi-level-navigation/">Multi-level Navigation Plugin for WordPress</a>'); ?>
 </p>
+
+<p><a class="button-secondary" href="options-general.php?page=multileveloptions"><?php _e('Customize Main Navigation', 'arras') ?></a> 
+<?php _e('(Any changes made here will be lost)', 'arras') ?></p>
+
+<?php endif ?>
 
 </div><!-- #navigation -->

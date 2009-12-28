@@ -8,18 +8,22 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 
 #arras-tabs				{ margin: 5px 0 0; width: 100%; }
 #arras-tabs li			{ float: left; font-size: 12px; margin: 0; padding: 0; }
-#arras-tabs a			{ cursor: default; background: #F2F2F2 url(../images/admin/white-grad.png) repeat-x scroll left top; border: 1px solid #bbb; border-right: none; color: #464646; display: block; padding: 5px 12px; text-decoration: none; }
-#arras-tabs a:hover		{ background: #F2F2F2 url(../images/admin/white-grad-active.png) repeat-x scroll left top; color: #000; }
-#arras-tabs .ui-tabs-selected a,.arras-hook-title	{ background: url(../images/admin/menu-bits.gif) repeat-x scroll top left; border-bottom: none; color: #fff; font-weight: bold; padding-bottom: 6px; }
-#arras-tabs li:first-child a	{ moz-border-radius: 6px 0 0 0; webkit-border-radius: 6px 0 0 0; }
-#arras-tabs li:last-child a	{ border-right: 1px solid #bbb; moz-border-radius: 0 6px 0 0; webkit-border-radius: 6px 0 0 0; }
+#arras-tabs a			{ cursor: default; background: #F1F1F1 repeat-x left top; border: 1px solid #E3E3E3; border-right: none; color: #21759B; display: block; padding: 5px 12px; text-decoration: none; }
+#arras-tabs a:hover		{ background: #F2F2F2 url(../images/admin/white-grad-active.png) repeat-x scroll left top; color: #D54E21; }
+#arras-tabs .ui-tabs-selected a,.arras-hook-title	{ background: url(../../../../wp-admin/images/menu-bits-vs.gif) repeat-x scroll top left; border-bottom: none; color: #fff; font-weight: bold; padding-bottom: 6px; }
+#arras-tabs li:first-child a	{ -moz-border-radius: 6px 0 0 0; -webkit-border-radius: 6px 0 0 0; }
+#arras-tabs li:last-child a	{ border-right: 1px solid #E3E3E3; -moz-border-radius: 0 6px 0 0; -webkit-border-radius: 6px 0 0 0; }
 
-.arras-options-wrapper	{ border-top: 3px solid #AAA; min-height: 820px; }
+.arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
-.padding-content		{ padding: 10px; }
-.padding-content h3		{ font-size: 14px; margin: 10px 0 0; }
+.padding-content		{ padding: 0 10px 10px; }
+.padding-content h3		{ font-size: 12px; margin: 10px 0 0; padding: 10px 0 0; }
 .form-table				{ margin-bottom: 0 !important; }
-.form-table th,.largetext	{ font-size: 12px; }
+.form-table th			{ font-size: 11px; }
+.form-table .largetext	{ font-size: 12px; }
+.form-table td			{ max-width: 500px; }
+.form-table tr:last-child	{ border-bottom: 1px solid #DEDEDE; }
+.form-table tr:last-child td { padding-bottom: 20px; }
 .form-table select		{ width: 275px; }
 .version				{ font-size: 12px !important; font-weight: bold; padding: 10px !important; }
 

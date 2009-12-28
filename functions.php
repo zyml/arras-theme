@@ -52,7 +52,7 @@ require_once ARRAS_LIB . '/filters.php';
 require_once ARRAS_LIB . '/template.php';
 require_once ARRAS_LIB . '/styles.php';
 
-require_once ARRAS_LIB . '/widgets-legacy.php';
+require_once ARRAS_LIB . '/widgets.php';
 
 require_once ARRAS_LIB . '/admin/options.php';
 arras_flush_options();

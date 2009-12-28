@@ -12,7 +12,7 @@
 
 </table>
 
-<h3><?php _e('RSS Feeds', 'arras') ?></h3>
+<h3><?php _e('Site Information', 'arras') ?></h3>
 <table class="form-table">
 
 <tr valign="top">
@@ -28,6 +28,13 @@
 <td>
 <?php echo arras_form_input(array('name' => 'arras-rss-comments-url', 'id' => 'arras-rss-comments-url', 'class' => 'code', 'size' => '65', 'value' => arras_get_option('comments_feed_url') )) ?><br />
 <?php _e('This will replace the default WordPress RSS comments feed to this. Useful if you have decided to use third-party services like <a href="http://feedburner.google.com/">Feedburner</a>.', 'arras') ?>
+</td>
+</tr>
+
+<tr valign="top">
+<th scope="row"><label for="arras-twitter"><?php _e('Twitter Username', 'arras') ?></label></th>
+<td>
+<?php echo htmlentities('http://www.twitter.com/') ?><?php echo arras_form_input(array('name' => 'arras-twitter', 'id' => 'arras-twitter', 'class' => 'code', 'size' => '15', 'value' => arras_get_option('twitter_username') )) ?>
 </td>
 </tr>
 

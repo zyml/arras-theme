@@ -26,11 +26,14 @@
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" />
 
 <?php
+wp_enqueue_script('cufon', get_template_directory_uri() . '/js/cufon-yui.min.js', null, null, false);
+wp_enqueue_script('cufon-font', get_template_directory_uri() . '/js/BPreplay.font.js', null, null, false);
+
 wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-1.3.2.min.js', null, '1.3.2', false);
 wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui-1.7.2.min.js', 'jquery', '1.7.2', false); 
 
 if ( is_home() || is_front_page() ) {
-	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.lite.min.js', 'jquery', null, true);
+	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', 'jquery', null, true);
 }
 
 if ( !function_exists('pixopoint_menu') ) {
@@ -42,7 +45,6 @@ if ( is_singular() ) {
 	wp_enqueue_script('comment-reply');
 	wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
 }
-
 wp_head();
 arras_head();
 ?>
@@ -100,17 +102,17 @@ arras_head();
 				?>
 			</ul>
 		<?php endif ?>
-			<ul class="rss clearfix">
+			<ul class="quick-nav clearfix">
 				<?php if ($feed == '') : ?>
-					<li><a href="<?php bloginfo('rss2_url'); ?>"><?php _e('Posts', 'arras') ?></a></li>
+					<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
 				<?php else : ?>
-					<li><a href="<?php echo $feed; ?>"><?php _e('Posts', 'arras') ?></a></li>
+					<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $feed; ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
 				<?php endif; ?>
-				<?php if ($comments_feed == '') : ?>
-					<li><a href="<?php bloginfo('comments_rss2_url'); ?>"><?php _e('Comments', 'arras') ?></a></li>
-				<?php else : ?>
-					<li><a href="<?php echo $comments_feed; ?>"><?php _e('Comments', 'arras') ?></a></li>
-				<?php endif; ?>
+				
+				<?php $twitter_username = arras_get_option('twitter_username'); ?>
+				<?php if ($twitter_username != '') : ?>
+					<li><a id="twitter" title="<?php printf( __( '%s Twitter', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="http://www.twitter.com/<?php echo $twitter_username ?>/"><?php _e('Twitter', 'arras') ?></a></li>
+				<?php endif ?>
 			</ul>
 		</div><!-- #nav-content -->
     </div><!-- #nav -->

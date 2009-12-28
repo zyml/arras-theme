@@ -13,8 +13,8 @@ if ( post_password_required() ) {
 			<?php wp_list_comments('type=comment&callback=arras_list_comments'); ?>
 		</ol>
 		<div class="comments-navigation clearfix">
-			<div class="floatleft"><?php previous_comments_link() ?></div>
-		    <div class="floatright"><?php next_comments_link() ?></div>
+			<div class="floatleft"><?php previous_comments_link( __('&laquo; View Older', 'arras') ) ?></div>
+		    <div class="floatright"><?php next_comments_link( __('View Newer &raquo;', 'arras') ) ?></div>
 		</div>
 	<?php endif; ?>
 	

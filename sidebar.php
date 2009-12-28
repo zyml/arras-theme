@@ -31,7 +31,7 @@
 				</div>
 			</li>
 			<li class="widgetcontainer clearfix">
-				<h5 class="widgettitle"><?php _e('Recent Posts', 'arras') ?></h5>
+				<h5 class="widgettitle"><?php _e('Tag Cloud', 'arras') ?></h5>
 				<div class="tags widgetcontent">
 				<?php wp_tag_cloud(); ?>
 				</div>

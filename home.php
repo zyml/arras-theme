@@ -12,20 +12,20 @@ $stickies = get_option('sticky_posts');
 <div id="content" class="section">
 <?php arras_above_content() ?>
 
-<?php if ( ( $featured1_cat = arras_get_option('featured_cat1') ) !== '' && $featured1_cat != '-1' ) : ?>
-    <!-- Featured Articles #1 -->
+<?php if ( ( $featured1_cat = arras_get_option('slideshow_cat') ) !== '' && $featured1_cat != '-1' ) : ?>
+    <!-- Featured Slideshow -->
     <div class="featured clearfix">
     <?php
 	if ($featured1_cat == '-5') {
 		if (count($stickies) > 0) 
-			$query = array('post__in' => $stickies, 'showposts' => arras_get_option('featured1_count') );
+			$query = array('post__in' => $stickies, 'showposts' => arras_get_option('slideshow_count') );
 	} elseif ($featured1_cat == '0') {
-		$query = 'showposts=' . arras_get_option('featured1_count');
+		$query = 'showposts=' . arras_get_option('slideshow_count');
 	} else {
-		$query = 'showposts=' . arras_get_option('featured1_count') . '&cat=' . $featured1_cat;
+		$query = 'showposts=' . arras_get_option('slideshow_count') . '&cat=' . $featured1_cat;
 	}
 	
-	$q = new WP_Query( apply_filters('arras_featured1_query', $query) );
+	$q = new WP_Query( apply_filters('arras_slideshow_query', $query) );
 	?> 
     	<div id="controls" style="display: none;">
 			<a href="" class="prev"><?php _e('Prev', 'arras') ?></a>
@@ -35,16 +35,8 @@ $stickies = get_option('sticky_posts');
         	<?php $count = 0; ?>
     		<?php if ($q->have_posts()) : while ($q->have_posts()) : $q->the_post(); ?>
     		<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
-	<?php
-	if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) {
-		$w = ARRAS_3COL_FULL_WIDTH;
-		$h = ARRAS_3COL_FULL_HEIGHT;
-	} else {
-		$w = ARRAS_2COL_FULL_WIDTH; 
-		$h = ARRAS_2COL_FULL_HEIGHT;
-	}
-	?>
-            	<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark" style="background: url(<?php echo arras_get_thumbnail($w, $h); ?>) no-repeat;">
+
+            	<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark" style="background: url(<?php echo arras_get_thumbnail('featured-slideshow-thumb'); ?>) no-repeat #1E1B1A;">
                 <span class="featured-entry">
                     <span class="entry-title"><?php the_title(); ?></span>
                     <span class="entry-summary"><?php echo arras_strip_content(get_the_excerpt(), 20); ?></span>
@@ -57,26 +49,32 @@ $stickies = get_option('sticky_posts');
     </div>
 <?php endif; ?>
 
-<!-- Featured Articles #2 -->
-<?php if (!$paged) : if ( ($featured2_cat = arras_get_option('featured_cat2') ) !== '' && $featured2_cat != '-1' ) : ?>
+<!-- Featured Articles -->
+<?php if (!$paged) : if ( ($featured2_cat = arras_get_option('featured_cat') ) !== '' && $featured2_cat != '-1' ) : ?>
+<div id="index-featured">
+<div class="home-title"><?php _e('Featured', 'arras') ?></div>
 	<?php
 	if ($featured2_cat == '-5') {
 		if (count($stickies) > 0) 
-			$query2 = array('post__in' => $stickies, 'showposts' => arras_get_option('featured2_count') );
+			$query2 = array('post__in' => $stickies, 'showposts' => arras_get_option('featured_count') );
 	} elseif ($featured2_cat == '0') {
-		$query2 = 'showposts=' . arras_get_option('featured2_count');
+		$query2 = 'showposts=' . arras_get_option('featured_count');
 	} else {
-		$query2 = 'showposts=' . arras_get_option('featured2_count') . '&cat=' . $featured2_cat;
+		$query2 = 'showposts=' . arras_get_option('featured_count') . '&cat=' . $featured2_cat;
 	}
 	
-	$q2 = new WP_Query( apply_filters('arras_featured2_query', $query2) );
-	arras_get_posts('featured2', $q2);
+	$q2 = new WP_Query( apply_filters('arras_featured_query', $query2) );
+	arras_get_posts('featured', $q2);
 	?>
+</div><!-- #index-featured -->
 <?php endif; endif; ?>
+
 
 <?php arras_above_index_news_post() ?>
 
 <!-- News Articles -->
+<div id="index-news">
+<div class="home-title"><?php _e('Latest Headlines', 'arras') ?></div>
 <?php
 $news_query = array(
 	'cat' => arras_get_option('news_cat'),
@@ -87,7 +85,7 @@ $news_query = array(
 // if you are a WP plugin freak you can use 'arras_news_query' filter to override the query
 wp_reset_query(); query_posts(apply_filters('arras_news_query', $news_query));
 
-arras_get_posts('index') ?>
+arras_get_posts('news') ?>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
 	<div class="navigation clearfix">
@@ -95,6 +93,7 @@ arras_get_posts('index') ?>
 		<div class="floatright"><?php previous_posts_link( __('Newer Entries', 'arras') ) ?></div>
 	</div>
 <?php } ?>
+</div><!-- #index-news -->
 
 <?php arras_below_index_news_post() ?>
 

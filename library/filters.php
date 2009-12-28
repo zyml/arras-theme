@@ -1,10 +1,7 @@
 <?php
-
-/* Version 1.2 - Check for backward compatibility on comments_template (WordPress 2.7) */
 function legacy_comments($file) {
-	if ( !function_exists('wp_list_comments') ) 
-		$file = TEMPLATEPATH . '/legacy.comments.php';
-	return $file;
+	if ( function_exists('wp_list_comments') ) 
+		return $file;
 }
 
 /* Remove Gallery CSS to make code more compliant */
@@ -18,28 +15,24 @@ function remove_gallery_css() {
  */
 function arras_newsheader($page_type) {
 	global $post;
-	$postheader = '';
 	
-	if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) {
-		$w = ARRAS_3COL_MINI_WIDTH;
-		$h = ARRAS_3COL_MINI_HEIGHT;
+	$postheader = '<div class="entry-thumbnails">';
+	$postheader .= '<a class="entry-thumbnails-link" href="' . get_permalink() . '">';
+
+	if ( ($thumbnail = arras_get_thumbnail($page_type . '-post-thumb')) ) {	
+		$postheader .= '<img src="' . $thumbnail . '" alt="' . get_the_title() . '" title="' . get_the_title()	. '" />';	
 	} else {
-		$w = ARRAS_2COL_MINI_WIDTH; 
-		$h = ARRAS_2COL_MINI_HEIGHT;
-	}
-	
-	$postheader .= '<div class="entry-thumbnails"><a class="entry-thumbnails-link" href="' . get_permalink() . '">';
-	
-	if ( ($thumbnail = arras_get_thumbnail($w, $h)) ) {
-		$postheader .= '<img src="' . arras_get_thumbnail($w,$h) . '" alt="' . get_the_title() . '" title="' . get_the_title()	. '" />';
-	} else {
-		$postheader .= get_the_title();
+		$postheader .= '<span style="display: none">' . get_the_title() . '</span>';
 	}
 	
 	$postheader .= '</a>';
 	
-	$postheader .= '<span class="entry-meta"><a href="' . get_permalink() . '"><span class="entry-comments">' . get_comments_number() . '</span></a>';
-	$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr></span></div>';
+	if ( arras_get_option($page_type . '_display_meta_inpic') ) {	
+		$postheader .= '<span class="entry-meta"><a href="' . get_permalink() . '"><span class="entry-comments">' . get_comments_number() . '</span></a>';
+		$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr></span>';
+	}
+	
+	$postheader .= '</div>';
 	
 	$postheader .= '<h3 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h3>';
 	
@@ -100,48 +93,7 @@ function arras_postheader() {
 		$postheader .= '</div>';
 	}
 	
-	$lead = get_post_meta($post->ID, ARRAS_POST_THUMBNAIL, true);
-	if ( $lead ) {
-		if ( arras_get_option('layout') == '3c-r-fixed' || arras_get_option('layout') == '3c-fixed' ) {
-			$w = ARRAS_3COL_FULL_WIDTH;
-			$h = ARRAS_3COL_FULL_HEIGHT;
-		} else {
-			$w = ARRAS_2COL_FULL_WIDTH; 
-			$h = ARRAS_2COL_FULL_HEIGHT;
-		}
-		$postheader .= '<div class="entry-photo"><img src="' . arras_get_thumbnail($w, $h) . '" alt="' . get_the_title() . '" title="' . get_the_title() . '" /></div>';	
-	}
-	
-	if ( arras_get_option('postbar_header') && is_single() && !is_attachment() ) {
-		$postheader .= arras_postbar();
-	}
-	
 	echo apply_filters('arras_postheader', $postheader);
-}
-
-/**
- * Called to display important links for single posts
- * @since 1.3.3
- */
-function arras_postbar($echo = false) {
-	global $post;
-	
-	$postbar .= '<ul class="postbar clearfix">';
-	$postbar .= '<li><a href="' . get_comments_link() . '">' . __('Comments', 'arras') . ' [' . get_comments_number() . ']</a></li>';
-	if ( function_exists('wp_print') ) $postbar .= '<li>' . print_link('', '', false) . '</li>';
-	if ( function_exists('wp_email') ) $postbar .= '<li>' . email_link('', '', false) . '</li>';
-	
-	// Add social bookmarking buttons
-	$postbar .= '<li><a href="http://digg.com/submit?phase=2&amp;url=' . get_permalink() . '&amp;title=' . get_the_title() . '">' . __('Digg it!', 'arras') . '</a></li>';
-	$postbar .= '<li><a href="http://www.facebook.com/share.php?u=' . get_permalink() . '&amp;t=' . get_the_title() . '">' . __('Facebook', 'arras') . '</a></li>';
-	
-	if (current_user_can('edit_post')) {
-		$postbar .= '<li><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&post=' . $post->ID . '">' . __('Edit Post', 'arras') . '</a></li>';
-	}
-	$postbar .= '</ul>';
-	
-	if ($echo) echo apply_filters('arras_postbar', $postbar);
-	else return apply_filters('arras_postbar', $postbar);
 }
 
 /**
@@ -150,11 +102,7 @@ function arras_postbar($echo = false) {
  */
 function arras_postfooter() {
 	global $id, $post;
-	
-	if ( arras_get_option('postbar_footer') && !is_attachment() ) {
-		$postfooter .= arras_postbar(); // the postbar links have been moved to arras_postbar() function
-	}
-	
+
 	echo apply_filters('arras_postfooter', $postfooter);
 }
 
@@ -189,8 +137,8 @@ function arras_postmeta($content) {
  * @since	1.2.2
  */
 function arras_post_notfound() {
-	$postcontent = '<h2>' . __('That \'something\' you are looking for isn\'t here!', 'buffet') . '</h2>';
-	$postcontent .= '<p>' . __('<strong>We\'re very sorry, but that page doesn\'t exist or has been moved.</strong><br />Please make sure you have the right URL.', 'buffet') . '</p>';
+	$postcontent = '<h2>' . __('That \'something\' you are looking for isn\'t here!', 'arras') . '</h2>';
+	$postcontent .= '<p>' . __('<strong>We\'re very sorry, but that page doesn\'t exist or has been moved.</strong><br />Please make sure you have the right URL.', 'arras') . '</p>';
 	
 	echo apply_filters('arras_post_notfound', $postcontent);	
 }
