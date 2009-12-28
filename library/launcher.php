@@ -3,8 +3,14 @@
 if ( function_exists('add_theme_support') ) {
 	add_theme_support('post-thumbnails');
 	
+	$layout = arras_get_option('layout');
+	if ($layout == '3c-fixed' || $layout == '3c-r-fixed') {
+		add_image_size( 'featured-slideshow-thumb', 490, 225, true );
+	} else {
+		add_image_size( 'featured-slideshow-thumb', 640, 250, true );
+	}
+	
 	add_image_size( 'sidebar-thumb', 36, 36, true );
-	add_image_size( 'featured-slideshow-thumb', 640, 250, true );
 	add_image_size( 'featured-post-thumb', arras_get_option('featured_thumb_w'), arras_get_option('featured_thumb_h'), true );
 	add_image_size( 'news-post-thumb', arras_get_option('news_thumb_w'), arras_get_option('news_thumb_h'), true );
 }

@@ -153,11 +153,6 @@ img.alignleft			{ border: 3px solid #EEE; }
 .featured-entry .entry-title	{ color: #FFF; padding: 10px 15px 5px; display: block; font-size: 18px; font-weight: bold; }
 .featured-entry .entry-summary	{ padding: 0 15px; margin: 0; display: block; }
 
-.layout-3c-r-fixed .featured, .layout-3c-fixed .featured	{ height: 225px; }
-.layout-3c-r-fixed #controls, .layout-3c-r-fixed .featured-article, .layout-3c-fixed #controls, .layout-3c-fixed .featured-article	{ width: 480px; }
-.layout-3c-r-fixed .featured-article, .layout-3c-fixed .featured-article	{ height: 225px; }
-.layout-3c-r-fixed .featured-entry, .layout-3c-fixed .featured-entry		{ height: 100px; top: 125px; }
-
 /* bottom content */
 #bottom-content-1, #bottom-content-2	{ list-style: none; float: left; width: 320px; margin: 0 10px 10px 0; overflow: hidden; padding: 0; }
 #bottom-content-1 .xoxo, #bottom-content-2 .xoxo	{ margin: 0; }
