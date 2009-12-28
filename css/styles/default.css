@@ -108,8 +108,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 /* sidebar */
 .sidebar				{ }
 .sidebar .xoxo			{ list-style: none; padding: 0; margin: 0; }
-.widgetcontainer ul, .widgetcontent .xoxo, .widgetcontainer ol	{ list-style: disc; margin-left: 5px; padding: 0; }
-.widgetcontainer li		{ padding: 0 0 10px; margin: 0 0 10px; border-bottom: 1px dotted #CCC; }
+.widgetcontainer ul, .widgetcontent .xoxo, .widgetcontainer ol	{ list-style: disc; margin: 0 0 0 15px; padding: 0; }
+.widgetcontainer li		{ margin: 3px 0; }
 .widgetcontainer li a:visited, .widgetcontainer li a:link	{ text-decoration: none; font-weight: bold; font-size: 12px; }
 .widgetcontainer li a:hover	{ border-bottom: 1px dotted #635957; }
 .widgetcontainer input[type=text], .widgetcontainer input[type=password]	{ width: 80%; }
@@ -130,8 +130,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 #multi-sidebar .tabs .ui-tabs-selected a:link, #multi-sidebar .tabs .ui-tabs-selected a:visited	{ color: #37322F; }			
 #multi-sidebar #s-tags a:link, #multi-sidebar #s-tags a:visited	{ font-weight: bold; text-decoration: none; padding: 0 2px; }
 #multi-sidebar .widgetcontainer	{ background: #FFF; border: 1px solid #CCC; margin-bottom: 10px; padding: 10px; }
-#multi-sidebar .widgetcontainer ul	{ list-style: none; margin: 0 0 0 5px; }
-#multi-sidebar .widgetcontainer li	{ }
+#multi-sidebar .widgetcontainer ul, .featured-stories	{ list-style: none !important; margin: 0 0 0 5px !important; }
+#multi-sidebar .widgetcontainer li, .featured-stories li	{ padding: 0 0 10px; margin: 0 0 10px; border-bottom: 1px dotted #CCC; }
 #multi-sidebar .recentcomments a	{ font-weight: normal; }
 
 #wp-calendar			{ width: 100%; }
@@ -221,6 +221,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .entry-content ul li, .entry-content ol li	{ margin: 1em 0; }
 
 .single-post 			{ padding: 0 10px; }
+.page .entry-content	{ margin: 0 0 20px; }
 
 .layout-3c-r-fixed .post .entry-photo, .layout-3c-r-fixed .single-post .entry-photo, .layout-3c-fixed .post .entry-photo, .layout-3c-fixed .single-post .entry-photo	{ width: 480px; }
 
@@ -290,6 +291,7 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 
 #commentsform			{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; margin: 0 10px 10px 0; padding: 10px; overflow: hidden; }
 #commentsform textarea	{ width: 98%; height: 150px; padding: 5px; font: 14px 'Lucida Grande',Arial,Helvetica,sans-serif; }
+#commentsform .error	{ display: block; padding: 5px; }
 #cancel-comment-reply-link	{ font-size: 11px; padding: 0 10px; }
 
 .pingbacks				{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; padding: 15px 10px 15px 30px; margin: 0 10px 20px 0; }

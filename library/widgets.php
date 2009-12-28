@@ -235,7 +235,7 @@ class Arras_Featured_Stories extends WP_Widget {
 		$r = new WP_Query( array('showposts' => 5, 'cat' => $cat) );
 		if ($r->have_posts()) {
 		
-		echo '<ul>';
+		echo '<ul class="featured-stories">';
 		while ($r->have_posts()) : $r->the_post();
 		?>
 		<li class="clearfix">
