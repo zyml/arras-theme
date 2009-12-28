@@ -6,7 +6,7 @@ Author: zy (Melvin Lee)
 */
 
 if ( $related_query->have_posts() ) {
-	echo '<ul>';
+	echo '<ul class="related-posts">';
 	while ( $related_query->have_posts() ) {
 		$related_query->the_post();
 		?>
