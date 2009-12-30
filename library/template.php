@@ -151,11 +151,7 @@ function arras_get_thumbnail($size = 'thumbnail', $id = 1) {
 					$h = get_option('thumbnail_size_h');
 			}
 			
-			if (ARRAS_THUMB == 'phpthumb') {
-				return '<img src="' . get_bloginfo('template_directory') . '/library/phpthumb/phpThumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_title() . '" title="' . get_the_title . '" />';
-			} else {
-				return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_title() . '" title="' . get_the_title . '" />';
-			}
+			return get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
 		}
 		
 	}
