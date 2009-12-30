@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-28 22:25+0800\n"
+"POT-Creation-Date: 2009-12-30 22:27+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -350,30 +350,30 @@ msgstr ""
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
-#: ../library/template.php:196
-#: ../library/template.php:215
+#: ../library/template.php:192
+#: ../library/template.php:211
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../library/template.php:256
+#: ../library/template.php:252
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:259
+#: ../library/template.php:255
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:259
+#: ../library/template.php:255
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:259
+#: ../library/template.php:255
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:259
+#: ../library/template.php:255
 msgid "g:i A"
 msgstr ""
 
@@ -457,8 +457,11 @@ msgid "Do not display in Home"
 msgstr ""
 
 #: ../library/admin/admin.php:3
-#: ../library/admin/admin.php:4
 msgid "Arras Theme"
+msgstr ""
+
+#: ../library/admin/admin.php:4
+msgid "Arras Theme Options"
 msgstr ""
 
 #: ../library/admin/admin.php:4
@@ -514,6 +517,7 @@ msgstr ""
 #: ../library/admin/templates/arras-design.php:37
 #: ../library/admin/templates/arras-general.php:64
 #: ../library/admin/templates/arras-layout.php:186
+#: ../library/admin/templates/arras-navigation.php:48
 #: ../library/admin/templates/arras-thumbnails.php:36
 msgid "Save Changes"
 msgstr ""
@@ -763,17 +767,13 @@ msgstr ""
 msgid "To organise and arrange the links in the top navigation, you can create a link category with all the links you want to display at the main navigation and assign the link category here."
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:49
+#: ../library/admin/templates/arras-navigation.php:53
 #, php-format
 msgid "You have %s installed."
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:52
-msgid "Customize Main Navigation"
-msgstr ""
-
-#: ../library/admin/templates/arras-navigation.php:53
-msgid "(Any changes made here will be lost)"
+#: ../library/admin/templates/arras-navigation.php:56
+msgid "You will need to go to their respective plugin settings page to adjust the navigation bar."
 msgstr ""
 
 #: ../library/admin/templates/arras-thumbnails.php:5
@@ -827,68 +827,88 @@ msgstr ""
 msgid "Clear Thumbnail Cache"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:7
-msgid "Arras Theme Options"
-msgstr ""
-
-#: ../library/admin/templates/options_page.php:14
+#: ../library/admin/templates/options_page.php:12
 #, php-format
 msgid "The thumbnails cache directory (%s) is not writable. You will need to set the directory's permissions 755 or 777 for the thumbnails to work."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:17
+#: ../library/admin/templates/options_page.php:15
 msgid "More about Changing File/Folder Permissions"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:23
+#: ../library/admin/templates/options_page.php:21
 msgid "The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:41
-msgid "Donate!"
-msgstr ""
-
-#: ../library/admin/templates/options_page.php:45
-msgid "Community Forums"
-msgstr ""
-
-#: ../library/admin/templates/options_page.php:51
+#: ../library/admin/templates/options_page.php:30
 msgid "General"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:52
+#: ../library/admin/templates/options_page.php:31
 msgid "Navigation"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:53
+#: ../library/admin/templates/options_page.php:32
 msgid "Layout"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:54
+#: ../library/admin/templates/options_page.php:33
 msgid "Design"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:55
+#: ../library/admin/templates/options_page.php:34
 msgid "Thumbnails"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:56
+#: ../library/admin/templates/options_page.php:35
 msgid "Reset"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:68
+#: ../library/admin/templates/options_page.php:47
 msgid "Revert to Default Settings"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:69
+#: ../library/admin/templates/options_page.php:48
 msgid "If you do screw up, you can reset the settings here."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:70
+#: ../library/admin/templates/options_page.php:49
 msgid "<strong>NOTE: This will erase all your settings!</strong>"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:72
+#: ../library/admin/templates/options_page.php:51
 msgid "Uninstall / Reset Arras.Theme"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:61
+msgid "Helpful Links"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:63
+msgid "Documentation Wiki"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:64
+msgid "Community Forums"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:65
+msgid "Bug Tracker / Repository"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:70
+msgid "Recommended Plugins"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:82
+msgid "Donate!"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:83
+msgid "If you are using Arras Theme and like it, donate to the author!"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:94
+msgid "Donate using PayPal"
 msgstr ""
 
