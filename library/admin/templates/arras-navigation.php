@@ -44,6 +44,10 @@ foreach ( get_categories('type=link&hide_empty=0') as $c ) {
 
 </table>
 
+<p class="submit">
+<input class="button-primary" type="submit" name="save" value="<?php _e('Save Changes', 'arras') ?>" />
+</p>
+
 <?php else: ?>
 
 <p><?php printf( __('You have %s installed.', 'arras'), '<a href="http://pixopoint.com/multi-level-navigation/">Multi-level Navigation Plugin for WordPress</a>'); ?>
