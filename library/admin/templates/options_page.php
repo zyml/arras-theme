@@ -1,11 +1,9 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
 <?php include 'functions.php'; ?>
 
-<div class="wrap">
+<div class="wrap clearfix">
 
-<div class="clearfix">
 <h2 id="arras-header"><?php _e('Arras Theme Options', 'arras') ?></h2>
-</div>
 
 <?php if (!arras_cache_is_writable) : ?>
 <div class="error">
@@ -25,25 +23,6 @@
 <?php endif ?>
 
 <?php echo $notices ?>
-
-<ul id="arras-help-links">
-<li id="donate-form">
-	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-		<input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="business" value="zy@zy.sg" />
-		<input type="hidden" name="item_name" value="Arras Theme Donation" />
-		<input type="hidden" name="item_number" value="arrastheme_2009_donation" />
-		<input type="hidden" name="no_shipping" value="1" />
-		<input type="hidden" name="return" value="http://www.arrastheme.com/" />
-		<input type="hidden" name="cancel_return" value="http://www.arrastheme.com/" />
-		<input type="hidden" name="currency_code" value="USD" />
-		<input type="hidden" name="tax" value="0" />
-		<input type="hidden" name="bn" value="PP-DonationsBF" />
-		<input class="button-primary" type="submit" name="submit" value="<?php _e('Donate!', 'arras') ?>" />
-		<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-	</form>
-</li>
-<li><a class="button-secondary" href="http://www.arrastheme.com/forums/"><?php _e('Community Forums', 'arras') ?></a></li>
-</ul>
 
 <form id="arras-settings-form" method="post" action="themes.php?page=arras-options&_wpnonce=<?php echo $nonce ?>">
 
@@ -73,8 +52,54 @@
 	</p>
 </div>
 
+</div>
+
 </form>
+
+<div id="arras-right-col">
+	<div class="postbox">
+		<h3><span><?php _e('Helpful Links', 'arras') ?></span></h3>
+		<ul>
+			<li><a href="http://www.arrastheme.com/wiki/"><?php _e('Documentation Wiki', 'arras') ?></a></li>
+			<li><a href="http://www.arrastheme.com/forums/"><?php _e('Community Forums', 'arras') ?></a></li>
+			<li><a href="http://arras-theme.googlecode.com/"><?php _e('Bug Tracker / Repository', 'arras') ?></a></li>
+		</ul>
+	</div>
+	
+	<div class="postbox">
+		<h3><span><?php _e('Recommended Plugins', 'arras') ?></span></h3>
+		<ul>
+			<li><a href="http://www.viper007bond.com/wordpress-plugins/regenerate-thumbnails/">Rengenerate Thumbnails</a></li>
+			<li><a href="http://pixopoint.com/products/pixopoint-menu/">PixoPoint Menu Plugin</a></li>
+			<li><a href="http://lesterchan.net/portfolio/programming/php/#wp-pagenavi">WP-PageNavi</a></li>
+			<li><a href="http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/">FancyBox for WordPress</a></li>
+			<li><a href="http://sexybookmarks.net/">SexyBookmarks</a></li>
+			<li><a href="http://mitcho.com/code/yarpp/">Yet Another Related Posts Plugin</a></li>
+		</ul>
+	</div>
+	
+	<div class="postbox">
+		<h3><span><?php _e('Donate!', 'arras') ?></span></h3>
+		<p><?php _e('If you are using Arras Theme and like it, donate to the author!', 'arras') ?></p>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="business" value="zy@zy.sg" />
+			<input type="hidden" name="item_name" value="Arras Theme Donation" />
+			<input type="hidden" name="item_number" value="arrastheme_2010_donation" />
+			<input type="hidden" name="no_shipping" value="1" />
+			<input type="hidden" name="return" value="http://www.arrastheme.com/" />
+			<input type="hidden" name="cancel_return" value="http://www.arrastheme.com/" />
+			<input type="hidden" name="currency_code" value="USD" />
+			<input type="hidden" name="tax" value="0" />
+			<input type="hidden" name="bn" value="PP-DonationsBF" />
+			<input class="button-primary" type="submit" name="submit" value="<?php _e('Donate using PayPal', 'arras') ?>" />
+			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+		</form>
+	</div>
+	
+</div>
+
 </div><!-- .wrap -->
+
 
 <?php
 /* End of file options_page.php */

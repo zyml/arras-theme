@@ -50,11 +50,10 @@ foreach ( get_categories('type=link&hide_empty=0') as $c ) {
 
 <?php else: ?>
 
-<p><?php printf( __('You have %s installed.', 'arras'), '<a href="http://pixopoint.com/multi-level-navigation/">Multi-level Navigation Plugin for WordPress</a>'); ?>
+<p><?php printf( __('You have %s installed.', 'arras'), '<em>Multi-level Navigation Plugin for WordPress</em> or <em>PixoPoint Menu Plugin</em>'); ?>
 </p>
 
-<p><a class="button-secondary" href="options-general.php?page=multileveloptions"><?php _e('Customize Main Navigation', 'arras') ?></a> 
-<?php _e('(Any changes made here will be lost)', 'arras') ?></p>
+<p><?php _e('You will need to go to their respective plugin settings page to adjust the navigation bar.', 'arras') ?></p>
 
 <?php endif ?>
 
