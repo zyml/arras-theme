@@ -46,7 +46,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 							$f->the_post();
 							?>
 							<li class="clearfix">
-							<?php if (function_exists('the_post_thumbnail') the_post_thumbnail('sidebar-thumb') ?>
+							<?php if (function_exists('the_post_thumbnail')) the_post_thumbnail('sidebar-thumb') ?>
 							<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
 							<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
 							<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
@@ -72,7 +72,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 						$f->the_post();
 						?>
 						<li class="clearfix">
-						<?php if (function_exists('get_the_post_thumbnail') echo get_the_post_thumbnail( get_the_ID(), 'sidebar-thumb' ) ?>
+						<?php if (function_exists('get_the_post_thumbnail')) echo get_the_post_thumbnail( get_the_ID(), 'sidebar-thumb' ) ?>
 						<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
 						<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
 						<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
@@ -239,7 +239,7 @@ class Arras_Featured_Stories extends WP_Widget {
 		while ($r->have_posts()) : $r->the_post();
 		?>
 		<li class="clearfix">
-			<?php if (function_exists('the_post_thumbnail') the_post_thumbnail( 'sidebar-thumb', get_the_ID() ) ?>
+			<?php if (function_exists('the_post_thumbnail')) the_post_thumbnail( 'sidebar-thumb', get_the_ID() ) ?>
 			<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
 			<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
 			<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
