@@ -144,8 +144,8 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		$order = $instance['order'];
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id('display_home') ?>"><?php _e('Display in Home Only', 'arras') ?></label>
 		<input type="checkbox" name="<?php echo $this->get_field_name('display_home') ?>" <?php if ($instance['display_home']) : ?> checked="checked" <?php endif ?> />
+		<label for="<?php echo $this->get_field_id('display_home') ?>"><?php _e('Display in homepage?', 'arras') ?></label>
 		</p>
 		
 		<p>
@@ -232,7 +232,7 @@ class Arras_Featured_Stories extends WP_Widget {
 		echo $before_widget;
 		echo $before_title . $title . $after_title;
 		
-		$r = new WP_Query( array('showposts' => 5, 'cat' => $cat) );
+		$r = new WP_Query( array('showposts' => $instance['postcount'], 'cat' => $cat) );
 		if ($r->have_posts()) {
 		
 		echo '<ul class="featured-stories">';
@@ -243,10 +243,14 @@ class Arras_Featured_Stories extends WP_Widget {
 			<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
 			<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
 			<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
+			
+			<?php if ($instance['show_excerpts']) : ?>
 			<p class="excerpt">
 			<?php echo get_the_excerpt() ?>
 			</p>
 			<a class="sidebar-read-more" href="<?php the_permalink() ?>"><?php _e('Read More', 'arras') ?></a>
+			<?php endif ?>
+			
 		</li>
 		<?php
 		endwhile;
@@ -261,13 +265,21 @@ class Arras_Featured_Stories extends WP_Widget {
 		
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['featured_cat'] = strip_tags($new_instance['featured_cat']);
+		$instance['postcount'] = (int)strip_tags($new_instance['postcount']);
 		$instance['no_display_in_home'] = strip_tags($new_instance['no_display_in_home']);
+		$instance['show_excerpts'] = strip_tags($new_instance['show_excerpts']);
 		
 		return $instance;
 	}
 	
 	function form($instance) {
-		$instance = wp_parse_args( (array)$instance, array('title' => __('Featured Stories', 'arras'), 'featured_cat' => 0, 'no_display_in_home' => true) );
+		$instance = wp_parse_args( (array)$instance, array(
+			'title' 				=> __('Featured Stories', 'arras'), 
+			'featured_cat' 			=> 0, 
+			'postcount' 			=> 5, 
+			'no_display_in_home' 	=> true, 
+			'show_excerpts' 		=> true 
+		) );
 		
 		$cats = array('0' => __('All Categories', 'arras') );
 		foreach( get_categories('hide_empty=0') as $c ) {
@@ -287,9 +299,23 @@ class Arras_Featured_Stories extends WP_Widget {
 			<?php endforeach ?>
 		</select>
 		</p>
+		
+		<p><label for="<?php echo $this->get_field_id('postcount') ?>"><?php _e('How many items would you like to display?', 'arras') ?></label>
+		<select id="<?php echo $this->get_field_id('postcount') ?>" name="<?php echo $this->get_field_name('postcount') ?>">
+			<?php for ($i = 1; $i <= 20; $i++ ) : ?>
+			<option value="<?php echo $i ?>"<?php if ($i == $instance['postcount']) : ?> selected="selected"<?php endif ?>><?php echo $i ?>
+			</option>
+			<?php endfor; ?>
+		</select>
+		</p>
+		
 		<p>
-		<label for="<?php echo $this->get_field_id('no_display_in_home') ?>"><?php _e('Do not display in Home', 'arras') ?></label>
 		<input type="checkbox" name="<?php echo $this->get_field_name('no_display_in_home') ?>" <?php if ($instance['no_display_in_home']) : ?> checked="checked" <?php endif ?> />
+		<label for="<?php echo $this->get_field_id('no_display_in_home') ?>"><?php _e('Don\'t display in homepage?', 'arras') ?></label>
+		</p>
+		<p>
+		<input type="checkbox" name="<?php echo $this->get_field_name('show_excerpts') ?>" <?php if ($instance['show_excerpts']) : ?> checked="checked" <?php endif ?> />
+		<label for="<?php echo $this->get_field_id('show_excerpts') ?>"><?php _e('Show post excerpts?', 'arras') ?></label>
 		</p>
 		<?php
 	}
