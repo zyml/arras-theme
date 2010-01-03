@@ -19,7 +19,9 @@ if ($style_dir) {
 <th scope="row"><label for="arras-layout-col"><?php _e('Overall Layout', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_dropdown('arras-layout-col', $arras_registered_alt_layouts, arras_get_option('layout')) ?><br />
+<span style="color: red">
 <?php _e('Once you have changed your layout settings, you will need to regenerate the thumbnails using the <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin.', 'arras') ?>
+</span>
 </td>
 </tr>
 

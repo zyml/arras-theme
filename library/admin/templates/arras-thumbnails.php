@@ -4,7 +4,7 @@
 
 <h3><?php _e('Thumbnail Sizes', 'arras') ?></h3>
 
-<p><?php _e('These options below only work for WordPress 2.9 and above. If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate the thumbnails using the <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin.', 'arras') ?></p>
+<p style="color: red"><?php _e('If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate the thumbnails using the <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin.', 'arras') ?></p>
 
 <table class="form-table">
 

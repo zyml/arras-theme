@@ -20,7 +20,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #arras-tabs li:first-child a	{ -moz-border-radius: 6px 0 0 0; -webkit-border-radius: 6px 0 0 0; }
 #arras-tabs li:last-child a	{ border-right: 1px solid #E3E3E3; -moz-border-radius: 0 6px 0 0; -webkit-border-radius: 6px 0 0 0; }
 
-.arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 770px; }
+.arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 760px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .padding-content		{ padding: 0 10px 10px; }
 .padding-content h3		{ font-size: 12px; margin: 10px 0 0; padding: 10px 0 0; }
