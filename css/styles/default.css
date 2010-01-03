@@ -215,6 +215,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .single .post .entry-content p, .single-post .entry-content p	{ line-height: 1.8em; }
 .entry-content ul, .entry-content ol	{ padding: 1em 2.5em; }
 .entry-content ul li, .entry-content ol li	{ margin: 1em 0; }
+.post-edit-link:link, .post-edit-link:visited	{ width: 16px; height: 16px; background: url(../../images/document-open.png) no-repeat; text-decoration: none; padding: 0 0 0 24px; }
 
 .single-post 			{ padding: 0 10px; }
 .page .entry-content	{ margin: 0 0 20px; }

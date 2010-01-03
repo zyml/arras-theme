@@ -68,9 +68,10 @@ function arras_postheader() {
 		else $postheader = '<h2 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h2>';		
 	}
 	
+	$postheader .= '<div class="entry-info">';
+
+	
 	if ( !is_page() ) {
-		$postheader .= '<div class="entry-info">';
-		
 		if ( arras_get_option('post_author') ) {
 			$postheader .= sprintf( __('<span class="entry-author">By %s</span>', 'arras'), '<address class="author vcard">' . get_the_author() . '</address>' );
 		}
@@ -90,8 +91,12 @@ function arras_postheader() {
 		if ( arras_get_option('post_tags') && !is_attachment() )
 			$postheader .= '<span class="tags"><strong>' . __('Tags:', 'arras') . '</strong>' . get_the_tag_list(' ', ', ', ' ') . '</span>';
 		
-		$postheader .= '</div>';
+		
 	}
+	
+	$postheader .= '<a class="post-edit-link" href="' . get_edit_post_link($id) . '" title="' . __('Edit Post', 'arras') . '">' . __('Edit Post', 'arras') . '</a>';
+	
+	$postheader .= '</div>';
 	
 	echo apply_filters('arras_postheader', $postheader);
 }
