@@ -208,7 +208,7 @@ function arras_get_posts($page_type, $query = null) {
 			} else {
 				echo get_the_excerpt();
 				?>
-				<p class="quick-read-more"><a href=<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>">
+				<p class="quick-read-more"><a href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>">
 				<?php _e('Read More', 'arras') ?>
 				</a></p>
 				<?php
