@@ -94,7 +94,9 @@ function arras_postheader() {
 		
 	}
 	
-	$postheader .= '<a class="post-edit-link" href="' . get_edit_post_link($id) . '" title="' . __('Edit Post', 'arras') . '">' . __('Edit Post', 'arras') . '</a>';
+	if (current_user_can('edit_post')) {
+		$postheader .= '<a class="post-edit-link" href="' . get_edit_post_link($id) . '" title="' . __('Edit Post', 'arras') . '">' . __('Edit Post', 'arras') . '</a>';
+	}
 	
 	$postheader .= '</div>';
 	
