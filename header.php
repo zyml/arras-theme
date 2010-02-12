@@ -26,9 +26,6 @@
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" />
 
 <?php
-wp_enqueue_script('cufon', get_template_directory_uri() . '/js/cufon-yui.min.js', null, null, false);
-wp_enqueue_script('cufon-font', get_template_directory_uri() . '/js/BPreplay.font.js', null, null, false);
-
 wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-1.3.2.min.js', null, '1.3.2', false);
 wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui-1.7.2.min.js', 'jquery', '1.7.2', false); 
 

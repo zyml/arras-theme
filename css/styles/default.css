@@ -64,8 +64,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 /* header */
 #header					{ background: #1e1b1a; border-bottom: 5px solid #383332; padding: 0 0 20px 0; }
 #branding				{ width: 960px; margin: 0 auto; }
-.logo					{ max-width: 590px; float: left; margin: 23px 0 0 10px; }
-.blog-name				{ font-family: 'Segoe UI', Arial, Helvetica, sans-serif; font-size: 22px; margin: 0; line-height: 1em; display: block; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+.logo					{ max-width: 590px; float: left; margin: 21px 0 0 10px; }
+.blog-name				{ font-family: 'Segoe UI', Arial, Helvetica, sans-serif; font-size: 22px; margin: 0 0 3px; line-height: 1em; display: block; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
 .blog-name a:link, .blog-name a:visited	{ color: #FFF; text-decoration: none; }
 /*.blog-name a:link, .blog-name a:visited	{  text-indent: -9000px; background: url(../../images/icons/logo.png) no-repeat; width: 450px; height: 22px; display: block; }*/
 .blog-name a:hover		{ }
