@@ -11,5 +11,3 @@ $('#commentform').validate();
 <?php endif ?>
 	
 });
-
-Cufon.replace('.blog-name');
