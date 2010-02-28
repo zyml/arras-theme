@@ -80,6 +80,10 @@ function arras_postheader() {
 			$postheader .= sprintf( __('<strong>Published:</strong> %s', 'arras'), '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr>');
 		}
 		
+		if (current_user_can('edit_post')) {
+			$postheader .= '<a class="post-edit-link" href="' . get_edit_post_link($id) . '" title="' . __('Edit Post', 'arras') . '">' . __('(Edit Post)', 'arras') . '</a>';
+		}
+		
 		if ( arras_get_option('post_cats') ) {
 			$post_cats = array();
 			$cats = get_the_category();
@@ -93,11 +97,7 @@ function arras_postheader() {
 		
 		
 	}
-	
-	if (current_user_can('edit_post')) {
-		$postheader .= '<a class="post-edit-link" href="' . get_edit_post_link($id) . '" title="' . __('Edit Post', 'arras') . '">' . __('Edit Post', 'arras') . '</a>';
-	}
-	
+
 	$postheader .= '</div>';
 	
 	echo apply_filters('arras_postheader', $postheader);
