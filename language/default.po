@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 22:27+0800\n"
+"POT-Creation-Date: 2010-02-28 17:12+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -74,19 +74,19 @@ msgstr ""
 
 #: ../attachment.php:18
 #: ../page.php:18
-#: ../single.php:18
+#: ../single.php:19
 msgid "<p>Read the rest of this entry &raquo;</p>"
 msgstr ""
 
 #: ../attachment.php:20
 #: ../page.php:19
-#: ../single.php:19
+#: ../single.php:20
 msgid "<p><strong>Pages:</strong> "
 msgstr ""
 
 #: ../attachment.php:27
 #: ../page.php:28
-#: ../single.php:28
+#: ../single.php:29
 msgid "About the Author"
 msgstr ""
 
@@ -201,23 +201,23 @@ msgstr ""
 msgid "%s latest comments"
 msgstr ""
 
-#: ../header.php:107
-#: ../header.php:109
+#: ../header.php:104
+#: ../header.php:106
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../header.php:107
-#: ../header.php:109
+#: ../header.php:104
+#: ../header.php:106
 msgid "RSS Feed"
 msgstr ""
 
-#: ../header.php:114
+#: ../header.php:111
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../header.php:114
+#: ../header.php:111
 msgid "Twitter"
 msgstr ""
 
@@ -271,19 +271,19 @@ msgstr ""
 msgid "Search %s"
 msgstr ""
 
-#: ../sidebar.php:8
+#: ../sidebar.php:10
 msgid "Welcome to Arras Theme!"
 msgstr ""
 
-#: ../sidebar.php:11
+#: ../sidebar.php:13
 msgid "Arras Theme is a WordPress theme designed for news or review sites with lots of customisable features."
 msgstr ""
 
-#: ../sidebar.php:16
+#: ../sidebar.php:18
 msgid "Recent Posts"
 msgstr ""
 
-#: ../sidebar.php:34
+#: ../sidebar.php:36
 msgid "Tag Cloud"
 msgstr ""
 
@@ -303,30 +303,38 @@ msgstr ""
 msgid "No posts at the moment. Check back again later!"
 msgstr ""
 
-#: ../library/filters.php:75
+#: ../library/filters.php:76
 #, php-format
 msgid "<span class=\"entry-author\">By %s</span>"
 msgstr ""
 
-#: ../library/filters.php:79
+#: ../library/filters.php:80
 #, php-format
 msgid "<strong>Published:</strong> %s"
 msgstr ""
 
-#: ../library/filters.php:87
+#: ../library/filters.php:84
+msgid "Edit Post"
+msgstr ""
+
+#: ../library/filters.php:84
+msgid "(Edit Post)"
+msgstr ""
+
+#: ../library/filters.php:92
 #, php-format
 msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
 msgstr ""
 
-#: ../library/filters.php:91
+#: ../library/filters.php:96
 msgid "Tags:"
 msgstr ""
 
-#: ../library/filters.php:140
+#: ../library/filters.php:147
 msgid "That 'something' you are looking for isn't here!"
 msgstr ""
 
-#: ../library/filters.php:141
+#: ../library/filters.php:148
 msgid "<strong>We're very sorry, but that page doesn't exist or has been moved.</strong><br />Please make sure you have the right URL."
 msgstr ""
 
@@ -385,8 +393,8 @@ msgstr ""
 msgid "Tabbed Sidebar"
 msgstr ""
 
-#: ../library/widgets.php:147
-msgid "Display in Home Only"
+#: ../library/widgets.php:148
+msgid "Display in homepage?"
 msgstr ""
 
 #: ../library/widgets.php:152
@@ -435,25 +443,33 @@ msgid "Featured stories containing post thumbnails and the excerpt."
 msgstr ""
 
 #: ../library/widgets.php:220
-#: ../library/widgets.php:270
+#: ../library/widgets.php:277
 msgid "Featured Stories"
 msgstr ""
 
-#: ../library/widgets.php:272
+#: ../library/widgets.php:284
 #: ../library/admin/templates/arras-layout.php:3
 msgid "All Categories"
 msgstr ""
 
-#: ../library/widgets.php:278
+#: ../library/widgets.php:290
 msgid "Title:"
 msgstr ""
 
-#: ../library/widgets.php:281
+#: ../library/widgets.php:293
 msgid "Featured Category:"
 msgstr ""
 
-#: ../library/widgets.php:291
-msgid "Do not display in Home"
+#: ../library/widgets.php:303
+msgid "How many items would you like to display?"
+msgstr ""
+
+#: ../library/widgets.php:314
+msgid "Don't display in homepage?"
+msgstr ""
+
+#: ../library/widgets.php:318
+msgid "Show post excerpts?"
 msgstr ""
 
 #: ../library/admin/admin.php:3
@@ -501,20 +517,28 @@ msgstr ""
 msgid "Overall Layout"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:22
+#: ../library/admin/templates/arras-design.php:23
 msgid "Once you have changed your layout settings, you will need to regenerate the thumbnails using the <a href=\"http://wordpress.org/extend/plugins/regenerate-thumbnails/\">Regenerate Thumbnails</a> plugin."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:27
+#: ../library/admin/templates/arras-design.php:29
 msgid "Default Style"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:30
+#: ../library/admin/templates/arras-design.php:32
 #, php-format
 msgid "Alternate stylesheets are placed in %s."
 msgstr ""
 
 #: ../library/admin/templates/arras-design.php:37
+msgid "Custom Header"
+msgstr ""
+
+#: ../library/admin/templates/arras-design.php:39
+msgid "Set Custom Header"
+msgstr ""
+
+#: ../library/admin/templates/arras-design.php:46
 #: ../library/admin/templates/arras-general.php:64
 #: ../library/admin/templates/arras-layout.php:186
 #: ../library/admin/templates/arras-navigation.php:48
@@ -781,7 +805,7 @@ msgid "Thumbnail Sizes"
 msgstr ""
 
 #: ../library/admin/templates/arras-thumbnails.php:7
-msgid "These options below only work for WordPress 2.9 and above. If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate the thumbnails using the <a href=\"http://wordpress.org/extend/plugins/regenerate-thumbnails/\">Regenerate Thumbnails</a> plugin."
+msgid "If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate the thumbnails using the <a href=\"http://wordpress.org/extend/plugins/regenerate-thumbnails/\">Regenerate Thumbnails</a> plugin."
 msgstr ""
 
 #: ../library/admin/templates/arras-thumbnails.php:12
