@@ -33,6 +33,13 @@ if ($style_dir) {
 </td>
 </tr>
 
+<tr valign="top">
+<th scope="row"><label for="arras-style"><?php _e('Custom Header', 'arras') ?></label></th>
+<td>
+<a href="<?php bloginfo('url') ?>/wp-admin/themes.php?page=custom-header"><strong><?php _e('Set Custom Header', 'arras') ?></strong></a>
+</td>
+</tr>
+
 </table>
 
 <p class="submit">
