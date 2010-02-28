@@ -1,5 +1,7 @@
 </div><!-- #container -->
 
+<?php wp_reset_query() ?>
+
 <div id="primary" class="aside main-aside sidebar">
 <?php arras_above_sidebar() ?>  
 	<ul class="xoxo">
