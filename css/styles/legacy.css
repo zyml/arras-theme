@@ -242,10 +242,10 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 /* wp-pagenavi */
 .wp-pagenavi			{ margin: 0 0 10px; font-size: 12px; }
-.wp-pagenavi a:link, .wp-pagenavi a:visited	{ padding: 3px 4px; margin: 2px; text-decoration: none; background: #FFF; border: 1px solid #CCC; }
+.wp-pagenavi a:link, .wp-pagenavi a:visited	{ padding: 3px 4px; margin: 2px; text-decoration: none; background: #FFF; border: 1px solid #CCC !important; }
 .wp-pagenavi a:hover	{ color: #000; }
-.wp-pagenavi span.pages, .wp-pagenavi span.extend	{ padding: 3px 4px; background: #FFF; margin: 2px; border: 1px solid #CCC; }
-.wp-pagenavi span.current	{ padding: 3px 4px; background: #FFF; margin: 2px; font-weight: bold; border: 1px solid #CCC; }
+.wp-pagenavi span.pages, .wp-pagenavi span.extend	{ padding: 3px 4px; background: #FFF; margin: 2px; border: 1px solid #CCC !important; }
+.wp-pagenavi span.current	{ padding: 3px 4px; background: #FFF; margin: 2px; font-weight: bold; border: 1px solid #CCC !important; }
 .wp-pagenavi span.pages	{ margin-left: 0; }
 
 /* wp125 */
@@ -308,7 +308,7 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 #footer .footer-message	{ border-left: 1px solid #EEE; float: left; overflow: hidden; margin: 10px 0 0; padding: 0; }
 #footer .footer-message .widgetcontainer	{ width: 215px; overflow: hidden; }
 #footer-sidebar		{ width: 690px; float: left; overflow: hidden; margin: 10px 10px 0; padding: 0; }
-#footer-sidebar .widgetcontainer	{ float: left; margin: 0 0 15px 0; max-width: 250px; max-height: 120px; }
+#footer-sidebar .widgetcontainer	{ float: left; margin: 0; max-width: 250px; }
 #footer-sidebar ul	{ list-style: square; }
 #footer-sidebar li	{ margin: 0 0 3px; }
 #footer .widgetcontent a:link, #footer .widgetcontent a:visited	{ font-size: 11px; }
