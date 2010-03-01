@@ -146,6 +146,10 @@ function arras_get_thumbnail($size = 'thumbnail', $id = 1) {
 					$w = arras_get_option('news_thumb_w');
 					$h = arras_get_option('news_thumb_h');				
 					break;
+				case 'archive-post-thumb':
+					$w = arras_get_option('news_thumb_w');
+					$h = arras_get_option('news_thumb_h');				
+					break;
 				default:
 					$w = get_option('thumbnail_size_w');
 					$h = get_option('thumbnail_size_h');
@@ -160,8 +164,6 @@ function arras_get_thumbnail($size = 'thumbnail', $id = 1) {
 
 function arras_get_posts($page_type, $query = null) {
 	global $post, $wp_query;
-	
-	if ($page_type == 'archive') $page_type = 'news';
 	
 	if (!$query) $query = $wp_query;
 	if ( $query->have_posts() ) : ?>
