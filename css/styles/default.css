@@ -210,6 +210,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 .single .post .entry-title a:hover, .single-post .entry-title a:hover	{ }
 .single .post .entry-info, .single-post .entry-info	{ margin-bottom: 15px; color: #848485; }
 .single .post .entry-cat, .single-post .entry-cat	{ display: block; color: #848485; margin: 5px 0; }
+.single-post .entry-cat a:link, .single-post .entry-cat a:visited	{ color: #666; }
+.single-post .entry-cat a:hover	{ color: #333; }
 .single .post .entry-author, .single-post .entry-author { font-weight: bold; margin: 0 10px 0 0; color: #848485; }
 .single .post .entry-author address, .single-post .entry-author address	{ display: inline; font-style: normal; }
 .single .post .tags, .single-post .tags			{ display: block; margin: 5px 0; color: #848485; }

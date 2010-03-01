@@ -87,7 +87,7 @@ function arras_postheader() {
 		if ( arras_get_option('post_cats') ) {
 			$post_cats = array();
 			$cats = get_the_category();
-			foreach ($cats as $c) $post_cats[] = $c->cat_name;
+			foreach ($cats as $c) $post_cats[] = '<a href="' . get_category_link($c->cat_ID) . '">' . $c->cat_name . '</a>';
 			
 			$postheader .= sprintf( __('<span class="entry-cat"><strong>Posted in: </strong>%s</span>', 'arras'), implode(', ', $post_cats) );
 		}
