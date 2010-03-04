@@ -150,7 +150,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 #featured-slideshow		{ position: relative; height: 250px; margin-right: 20px; }			
 
 .featured-article		{ display: block; width: 640px; height: 250px; text-decoration: none !important; }
-.featured-entry			{ position: relative; top: 165px; overflow: hidden; background: #000; height: 85px; color: #a7a7a7; padding: 0; display: block; opacity: 0.8; }
+.featured-entry			{ position: relative; top: 165px; overflow: hidden; background: #000; height: 85px; color: #a7a7a7; padding: 0; display: block; opacity: 0.8; filter: alpha(opacity = 80); }
 .featured-entry .entry-title	{ color: #FFF; padding: 10px 15px 5px; display: block; font-size: 18px; font-weight: bold; }
 .featured-entry .entry-summary	{ padding: 0 15px; margin: 0; display: block; }
 
