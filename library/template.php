@@ -24,6 +24,12 @@ function arras_document_title() {
 	}
 }
 
+function arras_document_description() {
+	if ( !class_exists('All_in_One_SEO_Pack') ) {
+		echo '<meta name="description" content="' . get_bloginfo('description') . '" />';
+	}
+}
+
 function arras_override_styles() {
 ?>
 

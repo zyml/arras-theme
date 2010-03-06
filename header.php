@@ -2,7 +2,7 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php arras_document_title() ?></title>
-<meta name="description" content="<?php bloginfo('description') ?>" />
+<?php arras_document_description() ?>
 <?php if ( is_search() || is_author() ) : ?>
 <meta name="robots" content="noindex, nofollow" />
 <?php endif ?>
