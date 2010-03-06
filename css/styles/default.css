@@ -56,6 +56,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .tags a:hover					{ border-bottom: 1px solid #1A8DFF; }
 
 .xoxo					{ padding: 0; }
+.arras					{ color: #383332 !important; }
 
 /* structure */
 #wrapper				{ min-height: 100%; position: relative; }
@@ -297,15 +298,14 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 .search-results-content .searchform, .sidebar .searchform { padding: 5px 4px; border: 4px solid #CCC; background: #EFEFEF; width: 250px; }
 
 /* footer */
-#footer				{ margin: 5px auto; width: 980px; background: #f6f4eb; padding-bottom: 10px; border: 1px solid #d3d1c7;  }
-#footer .widgetcontainer	{ padding: 5px 10px; }
-#footer .widgettitle	{ background: none; border: none; text-transform: uppercase; font-size: 10px; color: #333; padding: 0 0 10px; }
-#footer .widgetcontent	{ font-size: 11px; background: none; padding: 0; border: none; }
-#footer .footer-message	{ border-left: 1px solid #EEE; float: left; overflow: hidden; margin: 10px 0 0; padding: 0; }
-#footer .footer-message .widgetcontainer	{ width: 215px; overflow: hidden; }
-#footer-sidebar		{ width: 690px; float: left; overflow: hidden; margin: 10px 10px 0; padding: 0; }
+#footer				{ margin: 5px auto; width: 980px; background: #ECEBE6; padding-bottom: 10px; border: 1px solid #CCC; }
+#footer .widgetcontainer	{ padding: 5px 10px; min-width: 150px; }
+#footer .widgettitle	{ background: none; border: none; font-size: 14px; color: #444; padding: 0 0 10px; letter-spacing: -1px; }
+#footer .widgetcontent	{ font-size: 12px; background: none; padding: 0; border: none; }
+#footer .footer-message	{ margin: 0; padding: 10px 15px 0; font-size: 11px; }
+#footer .footer-message p { margin: 0 0 0.5em; }
+#footer-sidebar		{ overflow: hidden; margin: 10px 10px 0; padding: 0 0 10px; border-bottom: 1px solid #CCC; }
 #footer-sidebar .widgetcontainer	{ float: left; margin: 0; max-width: 250px; }
-#footer-sidebar ul	{ list-style: square; }
+#footer-sidebar ul	{ list-style: none; margin: 0; padding: 0; }
 #footer-sidebar li	{ margin: 0 0 3px; }
-#footer .widgetcontent a:link, #footer .widgetcontent a:visited	{ font-size: 11px; }
 

@@ -11,5 +11,6 @@ $('#commentform').validate();
 <?php endif ?>
 
 $('.posts-default').equalHeights();
+$('#footer ul').equalHeights();
 
 });
