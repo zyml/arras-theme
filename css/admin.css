@@ -6,7 +6,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #arras-right-col .postbox h3	{ font-size: 11px; line-height: 1; padding: 6px 9px; margin: 0 0 5px; }
 #arras-right-col .postbox li	{ list-style: circle; margin: 7px 22px; font-size: 11px !important; }
 #arras-right-col .postbox li a	{ text-decoration: none; }
-#arras-right-col .button-primary{ margin: 0 10px 10px; font-size: 11px !important; padding: 5px 7px; }
+#arras-right-col .button-primary{ margin: 0 10px 10px; font-size: 11px !important; padding: 5px 7px; display: inline-block; }
 
 #arras-settings-form	{ float: left; margin: 0 10px 0 0; }
 #arras-settings-form th { padding: 10px 0; }
