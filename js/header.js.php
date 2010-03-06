@@ -9,5 +9,7 @@ $('.sf-menu').superfish({autoArrows: false, speed: 'fast', dropShadows: 'true'})
 <?php if (is_singular()) : ?>
 $('#commentform').validate();
 <?php endif ?>
-	
+
+$('.posts-default').equalHeights();
+
 });

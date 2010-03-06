@@ -170,7 +170,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-default .entry-title a:link, .posts-default .entry-title a:visited	{ color: #373331; text-decoration: none; }
 .posts-default .entry-title a:hover	{ }
 .posts-default .entry-summary, .posts-quick .entry-summary	{ color: #111; overflow: hidden; }
-.posts-default .entry-summary	{ height: 60px; }
+.posts-default .entry-summary	{ }
 
 .entry-thumbnails	{ clear: both; display: inline-block; border: 1px solid #CCC; }
 .entry-thumbnails:hover	{ border-color: #383332; }

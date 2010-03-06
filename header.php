@@ -42,6 +42,9 @@ if ( is_singular() ) {
 	wp_enqueue_script('comment-reply');
 	wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
 }
+
+wp_enqueue_script('jquery-equalheights', get_template_directory_uri() . '/js/jquery.equalheights.min.js', 'jquery', null, false);
+
 wp_head();
 arras_head();
 ?>
