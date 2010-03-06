@@ -12,7 +12,9 @@
     </div>
 </div>
 
+<div id="archive-posts">
 <?php arras_get_posts('archive') ?>
+</div>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
     <div class="navigation">
