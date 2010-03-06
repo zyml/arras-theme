@@ -74,13 +74,13 @@ function arras_alternate_style() {
 	global $theme_data, $arras_registered_alt_styles;
 	
 	if (ARRAS_CHILD && count($arras_registered_alt_styles) > 0) {
-		echo '<link rel="stylesheet=" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen, projector" />';
+		echo '<link rel="stylesheet=" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen,projection" />';
 	} else {
 		echo '
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/screen.css" type="text/css" media="screen,projector" />
+<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/screen.css" type="text/css" media="screen,projection" />
 <link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/print.css" type="text/css" media="print" />
 <!--[if IE 6]>
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/ie.css" type="text/css" media="screen,projector" />
+<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/ie.css" type="text/css" media="screen,projection" />
 <![endif]-->
 		';
 
@@ -88,16 +88,16 @@ function arras_alternate_style() {
 		$scheme = arras_get_option('style');
 		if ( $scheme != 'default' )
 			echo '
-<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projector" />
+<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projection" />
 			';
 		else
 			echo '
-<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/default.css" type="text/css" media="screen,projector" />
+<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/default.css" type="text/css" media="screen,projection" />
 			';
 		
 		if (!ARRAS_CHILD) {
 			echo '
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/user.css" type="text/css" media="screen,projector" />
+<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/user.css" type="text/css" media="screen,projection" />
 ';
 		}
 	}
