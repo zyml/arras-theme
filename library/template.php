@@ -168,6 +168,66 @@ function arras_get_thumbnail($size = 'thumbnail', $id = 1) {
 	
 }
 
+function arras_render_posts($query = null, $display_type = 'default', $page_type = 'news') {
+	global $post, $wp_query;
+	
+	if (!$query) $query = $wp_query;
+	if ($query->have_posts()) {	
+		switch($display_type) {
+			case 'traditional': ?>
+				<div class="traditional hfeed">
+				<?php while ($query->have_posts()) : $query->the_post() ?>
+				<div <?php arras_single_post_class() ?>>
+					<?php arras_postheader() ?>
+					<div class="entry-content"><?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?></div>
+					<?php arras_postfooter() ?>
+				</div>
+				<?php endwhile; ?>
+				</div><!-- .traditional -->
+			<?php break;
+			case 'line': ?>
+				<ul class="hfeed posts-line clearfix">
+				<?php while ($query->have_posts()) : $query->the_post() ?>
+				<li <?php arras_post_class() ?>>
+				
+					<?php if(!is_archive()) : ?>
+					<span class="entry-cat">
+						<?php $cats = get_the_category(); 
+						if (arras_get_option('news_cat')) echo $cats[1]->cat_name;
+						else echo $cats[0]->cat_name; ?>
+					</span>
+					<?php endif ?>
+					
+					<h3 class="entry-title"><a rel="bookmark" href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>"><?php the_title() ?></a></h3>
+					<span class="entry-comments"><?php comments_number() ?></span>
+				</li>
+				<?php endwhile; ?>
+				</ul>
+			<?php break;
+			default: ?>
+				<ul class="hfeed posts-<?php echo $display_type ?> clearfix">
+				<?php while ($query->have_posts()) : $query->the_post() ?>
+				<li <?php arras_post_class() ?>>
+					
+					<?php arras_newsheader($page_type) ?>
+					<div class="entry-summary">
+						<?php echo get_the_excerpt() ?>
+						<p class="quick-read-more"><a href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>">
+						<?php _e('Read More', 'arras') ?>
+						</a></p>
+					</div>
+					<?php arras_newsfooter($page_type) ?>		
+				</li>
+				<?php endwhile; ?>
+				</ul>
+			<?php
+		}	
+	}
+	
+	wp_reset_query();
+}
+
+/* Deprecated - use arras_render_posts() instead */ 
 function arras_get_posts($page_type, $query = null) {
 	global $post, $wp_query;
 	

@@ -23,7 +23,7 @@
     <?php endif; ?>
     
 	<div id="archive-posts">
-	<?php arras_get_posts('archive') ?>    
+	<?php arras_render_posts(null, arras_get_option('archive_display'), 'archive') ?>    
  
 	<?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
     	<div class="navigation clearfix">
