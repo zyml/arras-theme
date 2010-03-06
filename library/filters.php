@@ -128,7 +128,7 @@ function arras_postmeta($content) {
 		foreach($custom_fields_list as $field_id => $field_name) {
 			if ( $field_value = get_post_meta($post->ID, $field_id, true) ) {
 				$postmeta .= '<div class="single-post-meta clearfix">';
-				$postmeta .= '<span class="single-post-meta-field single-post-meta-' . $field_id . '">' . $field_name . ':</span>';
+				$postmeta .= '<span class="single-post-meta-field single-post-meta-' . $field_id . '">' . $field_name . '</span>';
 				$postmeta .= '<span class="single-post-meta-value single-post-meta-' . $field_id . '-value">' . $field_value . '</span>';
 				$postmeta .= '</div>';
 			}

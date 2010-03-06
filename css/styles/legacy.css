@@ -214,7 +214,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .single .post .entry-photo, .single-post .entry-photo	{ width: 630px; margin: 0 auto 10px; }
 .single .post .entry-content, .single-post .entry-content	{ margin: 20px 0; font-size: 14px; }
 .single .post .entry-content p, .single-post .entry-content p	{ line-height: 1.8em; }
-.entry-content ul, .entry-content ol	{ padding: 1em 2.5em; }
+.entry-content ul, .entry-content ol	{ padding: 0.5em 1.5em; }
 .entry-content ul li, .entry-content ol li	{ margin: 1em 0; }
 .post-edit-link:link, .post-edit-link:visited	{ text-decoration: none; padding: 0 0 0 14px; }
 
@@ -223,9 +223,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 .layout-3c-r-fixed .post .entry-photo, .layout-3c-r-fixed .single-post .entry-photo, .layout-3c-fixed .post .entry-photo, .layout-3c-fixed .single-post .entry-photo	{ width: 480px; }
 
-.single-post-meta		{ padding: 4px; margin: 0 10px 10px; background: #F0F0F0; }
-.single-post-meta-field	{ clear: left; float: left; width: 15%; font-weight: bold; color: #000; background: #F0F0F0; }
-.single-post-meta-value	{ float: left; width: 80%; color: #333; background: #F0F0F0; }
+.single-post-meta-field { background: #0052A3; display: block; border: 1px solid #1A8DFF; padding: 5px 10px; color: #FFF; font-weight: 700; }
+.single-post-meta-value	{ border: 1px solid #CCC; padding: 5px 10px; background: #F0F0F0; display: block; }
 
 .module-title, .feed-title	{ line-height: 1em; color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 7px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; display: block; }
 .feed-title				{ border-bottom: none; }
