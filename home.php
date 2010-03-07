@@ -12,6 +12,8 @@ $stickies = get_option('sticky_posts');
 <div id="content" class="section">
 <?php arras_above_content() ?>
 
+<?php if (!$paged) : ?>
+
 <?php if ( ( $featured1_cat = arras_get_option('slideshow_cat') ) !== '' && $featured1_cat != '-1' ) : ?>
     <!-- Featured Slideshow -->
     <div class="featured clearfix">
@@ -50,7 +52,7 @@ $stickies = get_option('sticky_posts');
 <?php endif; ?>
 
 <!-- Featured Articles -->
-<?php if (!$paged) : if ( ($featured2_cat = arras_get_option('featured_cat') ) !== '' && $featured2_cat != '-1' ) : ?>
+<?php if ( ($featured2_cat = arras_get_option('featured_cat') ) !== '' && $featured2_cat != '-1' ) : ?>
 <div id="index-featured">
 <div class="home-title"><?php _e('Featured', 'arras') ?></div>
 	<?php
@@ -67,7 +69,7 @@ $stickies = get_option('sticky_posts');
 	arras_render_posts($q2, arras_get_option('featured_display'), 'featured');
 	?>
 </div><!-- #index-featured -->
-<?php endif; endif; ?>
+<?php endif; ?>
 
 
 <?php arras_above_index_news_post() ?>
@@ -113,6 +115,23 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 	</ul>
 	<?php endif; ?>
 </div>
+
+<?php else: ?>
+
+<div class="home-title"><?php _e('Latest Headlines', 'arras') ?></div>
+
+<div id="archive-posts">
+	<?php arras_render_posts(null, arras_get_option('archive_display'), 'archive') ?>    
+ 
+	<?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
+    	<div class="navigation clearfix">
+			<div class="floatLeft"><?php next_posts_link( __('&laquo; Older Entries', 'arras') ) ?></div>
+			<div class="floatRight"><?php previous_posts_link( __('Newer Entries &raquo;', 'arras') ) ?></div>
+		</div>
+    <?php } ?>
+</div><!-- #archive-posts -->
+
+<?php endif; ?>
 
 <?php arras_below_content() ?>
 </div><!-- #content -->
