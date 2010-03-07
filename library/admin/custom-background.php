@@ -1,5 +1,4 @@
 <?php
-include_once 'templates/functions.php';
 
 $arras_custom_bg_options = maybe_unserialize(get_option('arras_custom_bg_options'));
 if (!$arras_custom_bg_options) {
@@ -12,6 +11,7 @@ if (!$arras_custom_bg_options) {
 		'color'			=> '#F1EFE6'
 	);
 }
+update_option('arras_custom_bg_options', maybe_serialize($arras_custom_bg_options));
 
 function arras_custom_background_scripts() {
 	wp_enqueue_script('farbtastic');
@@ -24,6 +24,8 @@ function arras_custom_background_styles() {
 
 function arras_custom_background() {
 	global $arras_custom_bg_options;
+	
+	include_once 'templates/functions.php';
 	
 	$notices = '';
 	
