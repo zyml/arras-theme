@@ -40,6 +40,13 @@ if ($style_dir) {
 </td>
 </tr>
 
+<tr valign="top">
+<th scope="row"><label for="arras-style"><?php _e('Custom Background', 'arras') ?></label></th>
+<td>
+<a href="<?php bloginfo('url') ?>/wp-admin/admin.php?page=custom-background"><strong><?php _e('Set Custom Background', 'arras') ?></strong></a>
+</td>
+</tr>
+
 </table>
 
 <p class="submit">

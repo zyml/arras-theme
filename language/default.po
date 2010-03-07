@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 00:08+0800\n"
+"POT-Creation-Date: 2010-03-08 00:11+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -502,6 +502,7 @@ msgstr ""
 
 #: ../library/admin/admin.php:7
 #: ../library/admin/custom-background.php:101
+#: ../library/admin/templates/arras-design.php:44
 msgid "Custom Background"
 msgstr ""
 
@@ -581,7 +582,7 @@ msgid "Background Color"
 msgstr ""
 
 #: ../library/admin/custom-background.php:131
-#: ../library/admin/templates/arras-design.php:46
+#: ../library/admin/templates/arras-design.php:53
 #: ../library/admin/templates/arras-general.php:64
 #: ../library/admin/templates/arras-layout.php:186
 #: ../library/admin/templates/arras-navigation.php:48
@@ -632,6 +633,10 @@ msgstr ""
 
 #: ../library/admin/templates/arras-design.php:39
 msgid "Set Custom Header"
+msgstr ""
+
+#: ../library/admin/templates/arras-design.php:46
+msgid "Set Custom Background"
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:5
