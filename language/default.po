@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-28 17:12+0800\n"
+"POT-Creation-Date: 2010-03-08 00:08+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -16,15 +16,15 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:6
+#: ../404.php:7
 msgid "Error 404 - Not Found"
 msgstr ""
 
-#: ../404.php:7
+#: ../404.php:9
 msgid ""
 "<p><strong>We're very sorry, but that page doesn't exist or has been moved.</strong><br />\n"
-"Please make sure you have the right URL.</p>\n"
-"<p>If you still can't find what you're looking for, try using the search form below.<br />"
+"\t\tPlease make sure you have the right URL.</p>\n"
+"\t\t<p>If you still can't find what you're looking for, try using the search form below.<br />"
 msgstr ""
 
 #: ../archive.php:10
@@ -61,14 +61,16 @@ msgid "Archives"
 msgstr ""
 
 #: ../archive.php:30
-#: ../search.php:19
-#: ../search.php:40
+#: ../home.php:128
+#: ../search.php:22
+#: ../search.php:42
 msgid "&laquo; Older Entries"
 msgstr ""
 
 #: ../archive.php:31
-#: ../search.php:20
-#: ../search.php:41
+#: ../home.php:129
+#: ../search.php:21
+#: ../search.php:43
 msgid "Newer Entries &raquo;"
 msgstr ""
 
@@ -185,7 +187,7 @@ msgstr ""
 msgid "Cancel Reply"
 msgstr ""
 
-#: ../footer.php:15
+#: ../footer.php:11
 msgid "About Arras Theme"
 msgstr ""
 
@@ -201,47 +203,48 @@ msgstr ""
 msgid "%s latest comments"
 msgstr ""
 
-#: ../header.php:104
-#: ../header.php:106
+#: ../header.php:107
+#: ../header.php:109
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../header.php:104
-#: ../header.php:106
+#: ../header.php:107
+#: ../header.php:109
 msgid "RSS Feed"
 msgstr ""
 
-#: ../header.php:111
+#: ../header.php:114
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../header.php:111
+#: ../header.php:114
 msgid "Twitter"
 msgstr ""
 
-#: ../home.php:31
+#: ../home.php:33
 msgid "Prev"
 msgstr ""
 
-#: ../home.php:32
+#: ../home.php:34
 msgid "Next"
 msgstr ""
 
-#: ../home.php:55
+#: ../home.php:57
 msgid "Featured"
 msgstr ""
 
-#: ../home.php:77
+#: ../home.php:79
+#: ../home.php:121
 msgid "Latest Headlines"
 msgstr ""
 
-#: ../home.php:92
+#: ../home.php:91
 msgid "Older Entries"
 msgstr ""
 
-#: ../home.php:93
+#: ../home.php:92
 msgid "Newer Entries"
 msgstr ""
 
@@ -254,11 +257,11 @@ msgstr ""
 msgid "Search Results for <strong>&#8216;%s&#8217;</strong></p>"
 msgstr ""
 
-#: ../search.php:29
+#: ../search.php:31
 msgid "<strong>Sorry, we couldn't find any results based on your search query.</strong>"
 msgstr ""
 
-#: ../search.php:34
+#: ../search.php:36
 msgid "Blog Archive"
 msgstr ""
 
@@ -330,58 +333,64 @@ msgstr ""
 msgid "Tags:"
 msgstr ""
 
-#: ../library/filters.php:147
+#: ../library/filters.php:148
 msgid "That 'something' you are looking for isn't here!"
 msgstr ""
 
-#: ../library/filters.php:148
-msgid "<strong>We're very sorry, but that page doesn't exist or has been moved.</strong><br />Please make sure you have the right URL."
+#: ../library/filters.php:149
+msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
 msgstr ""
 
-#: ../library/launcher.php:83
-msgid "1 Column Layout (No Sidebars)"
+#: ../library/filters.php:153
+msgid "Perhaps searching for it might help?"
 msgstr ""
 
 #: ../library/launcher.php:84
-msgid "2 Column Layout (Right Sidebar)"
+msgid "1 Column Layout (No Sidebars)"
 msgstr ""
 
 #: ../library/launcher.php:85
-msgid "2 Column Layout (Left Sidebar)"
+msgid "2 Column Layout (Right Sidebar)"
 msgstr ""
 
 #: ../library/launcher.php:86
-msgid "3 Column Layout (Left & Right Sidebars)"
+msgid "2 Column Layout (Left Sidebar)"
 msgstr ""
 
 #: ../library/launcher.php:87
+msgid "3 Column Layout (Left & Right Sidebars)"
+msgstr ""
+
+#: ../library/launcher.php:88
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
-#: ../library/template.php:192
-#: ../library/template.php:211
+#: ../library/template.php:201
+#: ../library/template.php:215
+#: ../library/template.php:260
+#: ../library/template.php:279
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../library/template.php:252
+#: ../library/template.php:320
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:255
+#: ../library/template.php:323
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:255
+#: ../library/template.php:323
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:255
+#: ../library/template.php:323
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:255
+#: ../library/template.php:323
 msgid "g:i A"
 msgstr ""
 
@@ -393,82 +402,83 @@ msgstr ""
 msgid "Tabbed Sidebar"
 msgstr ""
 
-#: ../library/widgets.php:148
+#: ../library/widgets.php:149
 msgid "Display in homepage?"
 msgstr ""
 
-#: ../library/widgets.php:152
+#: ../library/widgets.php:153
 msgid "Tabbed Sidebar Order:"
 msgstr ""
 
-#: ../library/widgets.php:158
+#: ../library/widgets.php:159
 msgid "The popular posts option is only enabled when the plugin <a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Popularity Contest</a> is enabled."
 msgstr ""
 
-#: ../library/widgets.php:164
+#: ../library/widgets.php:165
+#: ../library/admin/custom-background.php:123
 #: ../library/admin/templates/arras-navigation.php:3
 msgid "None"
 msgstr ""
 
-#: ../library/widgets.php:165
+#: ../library/widgets.php:166
 msgid "Featured Posts"
 msgstr ""
 
-#: ../library/widgets.php:166
+#: ../library/widgets.php:167
 msgid "Latest Posts"
 msgstr ""
 
-#: ../library/widgets.php:167
+#: ../library/widgets.php:168
 msgid "Recent Comments"
 msgstr ""
 
-#: ../library/widgets.php:172
+#: ../library/widgets.php:173
 msgid "Popular Posts"
 msgstr ""
 
-#: ../library/widgets.php:190
+#: ../library/widgets.php:191
 msgid "Latest"
 msgstr ""
 
-#: ../library/widgets.php:191
+#: ../library/widgets.php:192
 msgid "Comments"
 msgstr ""
 
-#: ../library/widgets.php:193
+#: ../library/widgets.php:194
 msgid "Popular"
 msgstr ""
 
-#: ../library/widgets.php:218
+#: ../library/widgets.php:219
 msgid "Featured stories containing post thumbnails and the excerpt."
 msgstr ""
 
-#: ../library/widgets.php:220
-#: ../library/widgets.php:277
+#: ../library/widgets.php:221
+#: ../library/widgets.php:278
 msgid "Featured Stories"
 msgstr ""
 
-#: ../library/widgets.php:284
+#: ../library/widgets.php:285
 #: ../library/admin/templates/arras-layout.php:3
 msgid "All Categories"
 msgstr ""
 
-#: ../library/widgets.php:290
+#: ../library/widgets.php:291
 msgid "Title:"
 msgstr ""
 
-#: ../library/widgets.php:293
+#: ../library/widgets.php:294
 msgid "Featured Category:"
 msgstr ""
 
-#: ../library/widgets.php:303
+#: ../library/widgets.php:304
 msgid "How many items would you like to display?"
 msgstr ""
 
-#: ../library/widgets.php:314
+#: ../library/widgets.php:315
 msgid "Don't display in homepage?"
 msgstr ""
 
-#: ../library/widgets.php:318
+#: ../library/widgets.php:319
 msgid "Show post excerpts?"
 msgstr ""
 
@@ -477,6 +487,7 @@ msgid "Arras Theme"
 msgstr ""
 
 #: ../library/admin/admin.php:4
+#: ../library/admin/admin.php:5
 msgid "Arras Theme Options"
 msgstr ""
 
@@ -484,16 +495,105 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: ../library/admin/admin.php:22
+#: ../library/admin/admin.php:5
+#: ../library/admin/templates/arras-design.php:37
+msgid "Custom Header"
+msgstr ""
+
+#: ../library/admin/admin.php:7
+#: ../library/admin/custom-background.php:101
+msgid "Custom Background"
+msgstr ""
+
+#: ../library/admin/admin.php:27
+#: ../library/admin/custom-background.php:79
 msgid "Your settings have been saved to the database."
 msgstr ""
 
-#: ../library/admin/admin.php:28
+#: ../library/admin/admin.php:33
+#: ../library/admin/custom-background.php:42
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:39
+#: ../library/admin/admin.php:44
 msgid "Thumbnail cache has been cleared."
+msgstr ""
+
+#: ../library/admin/custom-background.php:107
+msgid "Upload Background Image"
+msgstr ""
+
+#: ../library/admin/custom-background.php:111
+msgid "Background Attachment"
+msgstr ""
+
+#: ../library/admin/custom-background.php:112
+msgid "Fixed"
+msgstr ""
+
+#: ../library/admin/custom-background.php:113
+msgid "Scroll (along with the rest of the page)"
+msgstr ""
+
+#: ../library/admin/custom-background.php:114
+msgid "Horizontal Position"
+msgstr ""
+
+#: ../library/admin/custom-background.php:115
+msgid "Left"
+msgstr ""
+
+#: ../library/admin/custom-background.php:116
+#: ../library/admin/custom-background.php:120
+msgid "Center"
+msgstr ""
+
+#: ../library/admin/custom-background.php:117
+msgid "Right"
+msgstr ""
+
+#: ../library/admin/custom-background.php:118
+msgid "Vertical Position"
+msgstr ""
+
+#: ../library/admin/custom-background.php:119
+msgid "Top"
+msgstr ""
+
+#: ../library/admin/custom-background.php:121
+msgid "Bottom"
+msgstr ""
+
+#: ../library/admin/custom-background.php:122
+msgid "Repeat Background Image?"
+msgstr ""
+
+#: ../library/admin/custom-background.php:124
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ../library/admin/custom-background.php:125
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ../library/admin/custom-background.php:126
+msgid "Background Color"
+msgstr ""
+
+#: ../library/admin/custom-background.php:131
+#: ../library/admin/templates/arras-design.php:46
+#: ../library/admin/templates/arras-general.php:64
+#: ../library/admin/templates/arras-layout.php:186
+#: ../library/admin/templates/arras-navigation.php:48
+msgid "Save Changes"
+msgstr ""
+
+#: ../library/admin/custom-background.php:132
+msgid "Reset"
+msgstr ""
+
+#: ../library/admin/custom-background.php:135
+msgid "Current Background Image"
 msgstr ""
 
 #: ../library/admin/options.php:35
@@ -530,20 +630,8 @@ msgstr ""
 msgid "Alternate stylesheets are placed in %s."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:37
-msgid "Custom Header"
-msgstr ""
-
 #: ../library/admin/templates/arras-design.php:39
 msgid "Set Custom Header"
-msgstr ""
-
-#: ../library/admin/templates/arras-design.php:46
-#: ../library/admin/templates/arras-general.php:64
-#: ../library/admin/templates/arras-layout.php:186
-#: ../library/admin/templates/arras-navigation.php:48
-#: ../library/admin/templates/arras-thumbnails.php:36
-msgid "Save Changes"
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:5
@@ -884,10 +972,6 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:35
-msgid "Reset"
-msgstr ""
-
 #: ../library/admin/templates/options_page.php:47
 msgid "Revert to Default Settings"
 msgstr ""
@@ -932,7 +1016,7 @@ msgstr ""
 msgid "If you are using Arras Theme and like it, donate to the author!"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:94
+#: ../library/admin/templates/options_page.php:84
 msgid "Donate using PayPal"
 msgstr ""
 
