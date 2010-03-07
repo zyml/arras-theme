@@ -19,7 +19,7 @@ blockquote p:last-child	{ margin: 0 0 5px; }
 code					{ background: #EAEAEA; color: #333; font-family: Consolas, Monaco, Courier, monospace; font-size: 11px; margin: 1px 0; padding: 1px 3px; }
 pre code				{ background: #322E2C; border: 1px solid #635957; color: #FFF; display: block; overflow: scroll; padding: 1.5em 1.75em; }
 
-input[type=text], input[type=password], textarea	{ background: url(../../images/form.jpg) repeat-x top #FFF; border: 1px solid #CCC; padding: 3px; }
+input[type=text], input[type=password], textarea	{ background: url(../../images/form.jpg) repeat-x top #FFF; border: 1px solid #CCC; padding: 5px 3px; }
 input[type=submit], #wp-email-submit    { font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; background: url(../../images/feed-title-white.jpg) repeat-x; border: 1px solid #CCC; padding: 5px 10px; font-size: 12px; color: #000; font-weight: 700; }
 input[type=submit]:hover, #wp-email-submit:hover    { background: #313428; color: #FFF; }
 
@@ -198,7 +198,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 /* single post */
 .single .post, .single-post	{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 0 15px; }
-.single .post .entry-title, .single-post .entry-title	{ font-size: 22px; font-weight: 700; padding: 0; margin: 15px 0 5px; }
+.single .post .entry-title, .single-post .entry-title	{ font-size: 22px; font-weight: 700; padding: 0; margin: 15px 0 5px; letter-spacing: -1px;  }
 .single .post .entry-title a:link, .single .post .entry-title a:visited, .single-post .entry-title a:link, .single-post .entry-title a:visited	{ text-decoration: none; }
 .single .post .entry-info, .single-post .entry-info	{ margin-bottom: 15px; color: #848485; }
 .single .post .entry-cat, .single-post .entry-cat	{ display: block; color: #848485; margin: 5px 0; }
@@ -210,8 +210,10 @@ img.alignleft			{ border: 3px solid #EEE; }
 .single .post .entry-photo, .single-post .entry-photo	{ width: 630px; margin: 0 auto 10px; }
 .single .post .entry-content, .single-post .entry-content	{ margin: 20px 0; font-size: 14px; }
 .single .post .entry-content p, .single-post .entry-content p	{ line-height: 1.8em; }
-.entry-content ul, .entry-content ol	{ padding: 0.5em 1.5em; }
-.entry-content ul li, .entry-content ol li	{ margin: 1em 0; }
+.entry-content ul, .entry-content ol	{ padding: 0 1em 0.5em; }
+.entry-content ul li, .entry-content ol li	{ margin: 0.5em 0; }
+.entry-content h3 { font-size: 16px; }
+.entry-content form { margin: 1em 0; }
 .post-edit-link:link, .post-edit-link:visited	{ text-decoration: none; padding: 0 0 0 14px; }
 
 .single-post 			{ padding: 0 10px; }
