@@ -144,8 +144,22 @@ function arras_postmeta($content) {
  * @since	1.2.2
  */
 function arras_post_notfound() {
-	$postcontent = '<h2>' . __('That \'something\' you are looking for isn\'t here!', 'arras') . '</h2>';
-	$postcontent .= '<p>' . __('<strong>We\'re very sorry, but that page doesn\'t exist or has been moved.</strong><br />Please make sure you have the right URL.', 'arras') . '</p>';
+	$postcontent = '<div class="single-post">';
+	$postcontent .= '<h1 class="entry-title">' . __('That \'something\' you are looking for isn\'t here!', 'arras') . '</h2>';
+	$postcontent .= '<div class="entry-content"><p>' . __('<strong>We\'re very sorry, but the page that you are looking for doesn\'t exist or has been moved.</strong>', 'arras') . '</p>';
+	
+	
+	$postcontent .= '<form method="get" class="clearfix" action="' . get_bloginfo('url') . '">
+	' . __('Perhaps searching for it might help?', 'arras') . '<br />
+	<input type="text" value="" name="s" class="s" size="30" onfocus="this.value=\'\'" />
+	<input type="submit" class="searchsubmit" value="' . __('Search', 'arras') . '" title="' . sprintf( __('Search %s', 'arras'), wp_specialchars( get_bloginfo('name'), 1 ) ) . '" />
+	</form>';
+	
+	$postcontent .= '<h3>Latest Posts</h3>';
+	$postcontent .= '<ul>';
+	$postcontent .= wp_get_archives('type=postbypost&limit=10&format=custom&before=<li>&after=</li>&echo=0');
+	$postcontent .= '</ul>';
+	$postcontent .= '</div></div>';
 	
 	echo apply_filters('arras_post_notfound', $postcontent);	
 }
