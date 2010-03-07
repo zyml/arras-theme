@@ -61,7 +61,8 @@ if ( !get_option('arras_options') ) arras_update_options();
 
 if ( is_admin() ) require_once ARRAS_LIB . '/admin/admin.php';
 
-require_once ARRAS_LIB . '/custom-header.php';
+require_once ARRAS_LIB . '/admin/custom-header.php';
+require_once ARRAS_LIB . '/admin/custom-background.php';
 
 require_once ARRAS_LIB . '/launcher.php';
 ?>
