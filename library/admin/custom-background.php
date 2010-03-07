@@ -149,7 +149,7 @@ function arras_add_custom_background() {
 	$img = wp_get_attachment_image_src($arras_custom_bg_options['id'], 'full');
 ?>
 <style type="text/css">
-#outer { background:<?php if($arras_custom_bg_options['id'] != 0) echo ' url(' . $img[0] . ')'; ?> <?php echo $arras_custom_bg_options['pos-x'] . ' ' . $arras_custom_bg_options['pos-y'] . ' ' . $arras_custom_bg_options['attachment'] . ' ' . $arras_custom_bg_options['color']; ?> !important; }
+#outer { background:<?php if($arras_custom_bg_options['id'] != 0) echo ' url(' . $img[0] . ')'; ?> <?php echo $arras_custom_bg_options['pos-x'] . ' ' . $arras_custom_bg_options['pos-y'] . ' ' . $arras_custom_bg_options['attachment'] . ' ' . $arras_custom_bg_options['repeat'] . ' ' . $arras_custom_bg_options['color']; ?> !important; }
 </style>
 <?php
 }
