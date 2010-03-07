@@ -192,7 +192,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-line a:link, .posts-line a:visited	{ color: #373331; }
 .posts-line .entry-comments	{ float: right; font-size: 11px; color: #848485; }
 
-.navigation				{ margin: 10px 10px 0 0; }
+.navigation				{ margin: 0 10px 10px 0; }
 
 .home-title				{ letter-spacing: -1px; text-transform: uppercase; font-weight: 700; font-size: 14px; padding: 0 0 5px; border-bottom: 1px solid #BBB; margin: 0 15px 10px 0; color: #646465; }
 
