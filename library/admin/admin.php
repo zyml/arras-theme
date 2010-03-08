@@ -22,18 +22,21 @@ function arras_admin() {
 		//print_r($_POST);
 		
 		if ( isset($_REQUEST['save']) ) {
+			check_admin_referer('arras-admin');
 			$arras_options->save_options();
 			arras_update_options();
 			$notices = '<div class="updated"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
 		}
 		
 		if ( isset($_REQUEST['reset']) ) {
+			check_admin_referer('arras-admin');
 			delete_option('arras_options');
 			arras_flush_options();
 			$notices = '<div class="updated"><p>' . __('Your settings have been reverted to the defaults.', 'arras') . '</p></div>';
 		}
 		
 		if ( isset($_REQUEST['clearcache']) ) {
+			check_admin_referer('arras-admin');
 			$cache_location = get_template_directory() . '/library/cache';
 			if ( !$dh = @opendir($cache_location) ) return false;
 			while ( false !== ($obj = readdir($dh)) ) {
@@ -44,7 +47,6 @@ function arras_admin() {
 			$notices = '<div class="updated"><p>' . __('Thumbnail cache has been cleared.', 'arras') . '</p></div>';
 		}
 		
-		$nonce = wp_create_nonce('arras-admin'); // create nonce token for security
 		include 'templates/options_page.php';
 	}
 }

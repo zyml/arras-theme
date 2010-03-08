@@ -24,7 +24,8 @@
 
 <?php echo $notices ?>
 
-<form id="arras-settings-form" method="post" action="themes.php?page=arras-options&_wpnonce=<?php echo $nonce ?>">
+<form id="arras-settings-form" method="post" action="themes.php?page=arras-options">
+<?php wp_nonce_field('arras-admin'); ?>
 
 <ul id="arras-tabs" class="clearfix">
 	<li><a href="#general-settings"><?php _e('General', 'arras') ?></a></li>

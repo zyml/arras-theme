@@ -31,6 +31,7 @@ function arras_custom_background() {
 	$notices = '';
 	
 	if ( isset($_REQUEST['reset']) ) {
+		check_admin_referer('arras-custom-background');
 		$arras_custom_bg_options = array(
 			'id' 			=> 0,
 			'attachment' 	=> 'scroll',
