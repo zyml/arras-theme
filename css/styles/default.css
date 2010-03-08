@@ -61,7 +61,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 /* structure */
 #wrapper				{ min-height: 100%; position: relative; }
 #outer					{ padding: 20px 0; }
-#main					{ padding: 10px 10px 0; z-index: 0; *z-index: -1; background: #f7f6f0; border: 1px solid #d3d1c7; }
+#main					{ padding: 10px 10px 0; background: #f7f6f0; border: 1px solid #d3d1c7; }
 /*#main { background: url(../../images/12_col.gif); } */
 
 /* header */
@@ -135,12 +135,12 @@ img.alignleft			{ border: 3px solid #EEE; }
 #wp-calendar caption	{ color: #333; font-size: 12px; font-weight: 700; margin: 0 0 0 -1px; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
 						
 /* featured slideshow */
-.featured				{ margin: 0 10px 20px 0; height: 250px; border: 5px solid #C1BCA7; }
-#controls				{ position: absolute; float: left; z-index: 100; width: 620px; padding: 100px 0 0 10px; }
+.featured				{ margin: 0 10px 20px 0; height: 250px; border: 5px solid #CCC; }
+#controls				{ position: relative; float: left; z-index: 100; top: 90px;  }
 
 #controls .next, #controls .prev	{ text-indent: -9000px; width: 30px; height: 30px; display: block; z-index: 1000; opacity: 0.7; }
-#controls .prev			{ background: url(../../images/prev.png) no-repeat; float: left; }
-#controls .next			{ background: url(../../images/next.png) no-repeat; float: right; }
+#controls .prev			{ background: url(../../images/prev.png) no-repeat; float: left; position: absolute; left: 5px; }
+#controls .next			{ background: url(../../images/next.png) no-repeat; float: right; position: absolute; left: 605px; }
 #controls .next:hover, #controls .prev:hover	{ opacity: 1; }
 
 #featured-slideshow		{ position: relative; height: 250px; margin-right: 20px; }			
