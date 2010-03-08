@@ -8,7 +8,8 @@ if (!$arras_custom_bg_options) {
 		'pos-x'			=> 'center',
 		'pos-y'			=> 'top',
 		'repeat'		=> 'no-repeat',
-		'color'			=> '#F1EFE6'
+		'color'			=> '#F1EFE6',
+		'foreground'	=> false
 	);
 }
 update_option('arras_custom_bg_options', maybe_serialize($arras_custom_bg_options));
@@ -36,7 +37,8 @@ function arras_custom_background() {
 			'pos-x'			=> 'center',
 			'pos-y'			=> 'center',
 			'repeat'		=> 'no-repeat',
-			'color'			=> '#F1EFE6'
+			'color'			=> '#F1EFE6',
+			'foreground'	=> false
 		);
 		update_option('arras_custom_bg_options', maybe_serialize($arras_custom_bg_options));
 		$notices = '<div class="updated"><p>' . __('Your settings have been reverted to the defaults.', 'arras') . '</p></div>';
@@ -73,6 +75,7 @@ function arras_custom_background() {
 		$arras_custom_bg_options['pos-y'] = stripslashes($_POST['bg-pos-y']);
 		$arras_custom_bg_options['repeat'] = stripslashes($_POST['bg-repeat']);
 		$arras_custom_bg_options['color'] = stripslashes($_POST['bg-color']);
+		$arras_custom_bg_options['foreground'] = (boolean)stripslashes($_POST['foreground']);
 		
 		update_option('arras_custom_bg_options', maybe_serialize($arras_custom_bg_options));
 		
@@ -127,6 +130,7 @@ function arras_custom_background() {
 					<input type="text" id="bg-color" name="bg-color" size="7" value="<?php echo $arras_custom_bg_options['color']; ?>" />
 					<div id="colorpicker"></div>
 				</p>
+				<p><?php echo arras_form_checkbox('foreground', true, $arras_custom_bg_options['foreground']); ?> <label style="display: inline" for="foreground"><?php _e('Semi-Transparent Foreground', 'arras') ?></label><br /><?php _e('This feature does not work in IE6.', 'arras') ?></p>
 			</div>
 			<p><input name="save" class="button-primary" type="submit" value="<?php _e('Save Changes', 'arras') ?>" />
 			<input name="reset" class="button-secondary" type="submit" value="<?php _e('Reset', 'arras') ?>" /></p>
@@ -150,6 +154,11 @@ function arras_add_custom_background() {
 ?>
 #outer { background:<?php if($arras_custom_bg_options['id'] != 0) echo ' url(' . $img[0] . ')'; ?> <?php echo $arras_custom_bg_options['pos-x'] . ' ' . $arras_custom_bg_options['pos-y'] . ' ' . $arras_custom_bg_options['attachment'] . ' ' . $arras_custom_bg_options['repeat'] . ' ' . $arras_custom_bg_options['color']; ?> !important; }
 <?php
+if ($arras_custom_bg_options['foreground']) :
+?>
+#main { background: url(<?php echo get_template_directory_uri() ?>/images/foreground.png) !important; }
+<?php
+endif;
 }
 add_action('arras_custom_styles', 'arras_add_custom_background');
 
