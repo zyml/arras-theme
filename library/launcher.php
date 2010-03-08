@@ -70,6 +70,7 @@ register_sidebar( array(
 
 // Header Actions
 add_action('arras_head', 'arras_override_styles');
+add_action('arras_custom_styles', 'arras_layout_styles');
 
 // Footer Actions
 add_action('wp_footer', 'arras_js_footer');
