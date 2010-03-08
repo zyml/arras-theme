@@ -131,7 +131,7 @@ function arras_custom_background() {
 					<input type="text" id="bg-color" name="bg-color" size="7" value="<?php echo $arras_custom_bg_options['color']; ?>" />
 					<div id="colorpicker"></div>
 				</p>
-				<p><?php echo arras_form_checkbox('foreground', true, $arras_custom_bg_options['foreground']); ?> <label style="display: inline" for="foreground"><?php _e('Semi-Transparent Foreground', 'arras') ?></label><br /><?php _e('This feature does not work in IE6.', 'arras') ?></p>
+				<p><?php echo arras_form_checkbox('foreground', true, (boolean)$arras_custom_bg_options['foreground'], 'id="foreground"'); ?> <label style="display: inline" for="foreground"><?php _e('Semi-Transparent Foreground', 'arras') ?></label><br /><?php _e('This feature does not work in IE6.', 'arras') ?></p>
 			</div>
 			<p><input name="save" class="button-primary" type="submit" value="<?php _e('Save Changes', 'arras') ?>" />
 			<input name="reset" class="button-secondary" type="submit" value="<?php _e('Reset', 'arras') ?>" /></p>
