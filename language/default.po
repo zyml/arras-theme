@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 00:11+0800\n"
+"POT-Creation-Date: 2010-03-08 22:52+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -333,64 +333,64 @@ msgstr ""
 msgid "Tags:"
 msgstr ""
 
-#: ../library/filters.php:148
+#: ../library/filters.php:152
 msgid "That 'something' you are looking for isn't here!"
 msgstr ""
 
-#: ../library/filters.php:149
+#: ../library/filters.php:153
 msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
 msgstr ""
 
-#: ../library/filters.php:153
+#: ../library/filters.php:157
 msgid "Perhaps searching for it might help?"
 msgstr ""
 
-#: ../library/launcher.php:84
+#: ../library/launcher.php:85
 msgid "1 Column Layout (No Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:85
+#: ../library/launcher.php:86
 msgid "2 Column Layout (Right Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:86
+#: ../library/launcher.php:87
 msgid "2 Column Layout (Left Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:87
+#: ../library/launcher.php:88
 msgid "3 Column Layout (Left & Right Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:88
+#: ../library/launcher.php:89
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
-#: ../library/template.php:201
-#: ../library/template.php:215
-#: ../library/template.php:260
-#: ../library/template.php:279
+#: ../library/template.php:202
+#: ../library/template.php:216
+#: ../library/template.php:261
+#: ../library/template.php:280
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../library/template.php:320
+#: ../library/template.php:321
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:323
+#: ../library/template.php:324
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:323
+#: ../library/template.php:324
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:323
+#: ../library/template.php:324
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:323
+#: ../library/template.php:324
 msgid "g:i A"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgid "The popular posts option is only enabled when the plugin <a href=\"http:/
 msgstr ""
 
 #: ../library/widgets.php:165
-#: ../library/admin/custom-background.php:123
+#: ../library/admin/custom-background.php:127
 #: ../library/admin/templates/arras-navigation.php:3
 msgid "None"
 msgstr ""
@@ -501,99 +501,107 @@ msgid "Custom Header"
 msgstr ""
 
 #: ../library/admin/admin.php:7
-#: ../library/admin/custom-background.php:101
+#: ../library/admin/custom-background.php:105
 #: ../library/admin/templates/arras-design.php:44
 msgid "Custom Background"
 msgstr ""
 
-#: ../library/admin/admin.php:27
-#: ../library/admin/custom-background.php:79
+#: ../library/admin/admin.php:28
+#: ../library/admin/custom-background.php:83
 msgid "Your settings have been saved to the database."
 msgstr ""
 
-#: ../library/admin/admin.php:33
-#: ../library/admin/custom-background.php:42
+#: ../library/admin/admin.php:35
+#: ../library/admin/custom-background.php:45
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:44
+#: ../library/admin/admin.php:47
 msgid "Thumbnail cache has been cleared."
 msgstr ""
 
-#: ../library/admin/custom-background.php:107
+#: ../library/admin/custom-background.php:111
 msgid "Upload Background Image"
 msgstr ""
 
-#: ../library/admin/custom-background.php:111
+#: ../library/admin/custom-background.php:115
 msgid "Background Attachment"
 msgstr ""
 
-#: ../library/admin/custom-background.php:112
+#: ../library/admin/custom-background.php:116
 msgid "Fixed"
 msgstr ""
 
-#: ../library/admin/custom-background.php:113
+#: ../library/admin/custom-background.php:117
 msgid "Scroll (along with the rest of the page)"
 msgstr ""
 
-#: ../library/admin/custom-background.php:114
+#: ../library/admin/custom-background.php:118
 msgid "Horizontal Position"
 msgstr ""
 
-#: ../library/admin/custom-background.php:115
+#: ../library/admin/custom-background.php:119
 msgid "Left"
 msgstr ""
 
-#: ../library/admin/custom-background.php:116
 #: ../library/admin/custom-background.php:120
+#: ../library/admin/custom-background.php:124
 msgid "Center"
 msgstr ""
 
-#: ../library/admin/custom-background.php:117
+#: ../library/admin/custom-background.php:121
 msgid "Right"
 msgstr ""
 
-#: ../library/admin/custom-background.php:118
+#: ../library/admin/custom-background.php:122
 msgid "Vertical Position"
 msgstr ""
 
-#: ../library/admin/custom-background.php:119
+#: ../library/admin/custom-background.php:123
 msgid "Top"
 msgstr ""
 
-#: ../library/admin/custom-background.php:121
+#: ../library/admin/custom-background.php:125
 msgid "Bottom"
 msgstr ""
 
-#: ../library/admin/custom-background.php:122
+#: ../library/admin/custom-background.php:126
 msgid "Repeat Background Image?"
 msgstr ""
 
-#: ../library/admin/custom-background.php:124
+#: ../library/admin/custom-background.php:128
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: ../library/admin/custom-background.php:125
+#: ../library/admin/custom-background.php:129
 msgid "Repeat Vertically"
 msgstr ""
 
-#: ../library/admin/custom-background.php:126
+#: ../library/admin/custom-background.php:130
 msgid "Background Color"
 msgstr ""
 
-#: ../library/admin/custom-background.php:131
+#: ../library/admin/custom-background.php:134
+msgid "Semi-Transparent Foreground"
+msgstr ""
+
+#: ../library/admin/custom-background.php:134
+msgid "This feature does not work in IE6."
+msgstr ""
+
+#: ../library/admin/custom-background.php:136
 #: ../library/admin/templates/arras-design.php:53
 #: ../library/admin/templates/arras-general.php:64
-#: ../library/admin/templates/arras-layout.php:186
+#: ../library/admin/templates/arras-layout.php:190
 #: ../library/admin/templates/arras-navigation.php:48
 msgid "Save Changes"
 msgstr ""
 
-#: ../library/admin/custom-background.php:132
+#: ../library/admin/custom-background.php:137
 msgid "Reset"
 msgstr ""
 
-#: ../library/admin/custom-background.php:135
+#: ../library/admin/custom-background.php:140
 msgid "Current Background Image"
 msgstr ""
 
@@ -831,18 +839,22 @@ msgid "Tags (Header)"
 msgstr ""
 
 #: ../library/admin/templates/arras-layout.php:163
+msgid "Post Thumbnail"
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:167
 msgid "Author Information"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:169
+#: ../library/admin/templates/arras-layout.php:173
 msgid "Position of Custom Fields"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:171
+#: ../library/admin/templates/arras-layout.php:175
 msgid "Before the Post Content"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:172
+#: ../library/admin/templates/arras-layout.php:176
 msgid "After the Post Content"
 msgstr ""
 
@@ -957,71 +969,71 @@ msgstr ""
 msgid "The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:30
+#: ../library/admin/templates/options_page.php:31
 msgid "General"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:31
+#: ../library/admin/templates/options_page.php:32
 msgid "Navigation"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:32
+#: ../library/admin/templates/options_page.php:33
 msgid "Layout"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:33
+#: ../library/admin/templates/options_page.php:34
 msgid "Design"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:34
+#: ../library/admin/templates/options_page.php:35
 msgid "Thumbnails"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:47
+#: ../library/admin/templates/options_page.php:48
 msgid "Revert to Default Settings"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:48
+#: ../library/admin/templates/options_page.php:49
 msgid "If you do screw up, you can reset the settings here."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:49
+#: ../library/admin/templates/options_page.php:50
 msgid "<strong>NOTE: This will erase all your settings!</strong>"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:51
+#: ../library/admin/templates/options_page.php:52
 msgid "Uninstall / Reset Arras.Theme"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:61
+#: ../library/admin/templates/options_page.php:62
 msgid "Helpful Links"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:63
+#: ../library/admin/templates/options_page.php:64
 msgid "Documentation Wiki"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:64
+#: ../library/admin/templates/options_page.php:65
 msgid "Community Forums"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:65
+#: ../library/admin/templates/options_page.php:66
 msgid "Bug Tracker / Repository"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:70
+#: ../library/admin/templates/options_page.php:71
 msgid "Recommended Plugins"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:82
+#: ../library/admin/templates/options_page.php:83
 msgid "Donate!"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:83
+#: ../library/admin/templates/options_page.php:84
 msgid "If you are using Arras Theme and like it, donate to the author!"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:84
+#: ../library/admin/templates/options_page.php:85
 msgid "Donate using PayPal"
 msgstr ""
 
