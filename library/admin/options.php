@@ -16,7 +16,7 @@ class Options {
 	var $featured_display_meta_inpic, $news_display_meta_inpic;
 	
 	// added in 1.3.4
-	var $post_author, $post_date, $post_cats, $post_tags, $postbar_footer;
+	var $post_author, $post_date, $post_cats, $post_tags, $postbar_footer, $single_thumbs;
 	
 	// Thumbnail Sizes - added in 1.4.0
 	var $featured_thumb_w, $featured_thumb_h, $news_thumb_w, $news_thumb_h;
@@ -56,6 +56,7 @@ class Options {
 		$this->post_date = true;
 		$this->post_cats = true;
 		$this->post_tags = true;
+		$this->single_thumbs = false;
 		
 		$this->single_meta_pos = 'top';
 		$this->single_custom_fields = 'Score:score,Pros:pros,Cons:cons';
@@ -118,6 +119,7 @@ class Options {
 		$this->post_date = (boolean)$_POST['arras-layout-post-date'];
 		$this->post_cats = (boolean)$_POST['arras-layout-post-cats'];
 		$this->post_tags = (boolean)$_POST['arras-layout-post-tags'];
+		$this->single_thumbs = (boolean)$_POST['arras-layout-single-thumbs'];
 		
 		$this->featured_display_meta_inpic = (boolean)$_POST['arras-layout-featured2-meta'];
 		$this->news_display_meta_inpic = (boolean)$_POST['arras-layout-news-meta'];

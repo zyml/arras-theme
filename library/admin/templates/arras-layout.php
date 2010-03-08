@@ -159,6 +159,10 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <label for="arras-layout-post-tags"><?php _e('Tags (Header)', 'arras') ?></label>
 <br />
 
+<?php echo arras_form_checkbox('arras-layout-single-thumbs', 'show', arras_get_option('single_thumbs'), 'id="arras-layout-single-thumbs"') ?> 
+<label for="arras-layout-single-thumbs"><?php _e('Post Thumbnail', 'arras') ?></label>
+<br />
+
 <?php echo arras_form_checkbox('arras-layout-single-author', 'show', arras_get_option('display_author'), 'id="arras-layout-single-author"') ?> 
 <label for="arras-layout-single-author"><?php _e('Author Information', 'arras') ?></label>
 

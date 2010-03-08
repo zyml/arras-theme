@@ -204,7 +204,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .single .post .entry-author, .single-post .entry-author { font-weight: bold; margin: 0 10px 0 0; color: #848485; }
 .single .post .entry-author address, .single-post .entry-author address	{ display: inline; font-style: normal; }
 .single .post .tags, .single-post .tags			{ display: block; margin: 5px 0; color: #848485; }
-.single .post .entry-photo, .single-post .entry-photo	{ width: 630px; margin: 0 auto 10px; }
+.single .post .entry-photo, .single-post .entry-photo	{ width: 616px; margin: 10px 0; overflow: hidden; border: 1px solid #CCC; }
 .single .post .entry-content, .single-post .entry-content	{ margin: 20px 0; font-size: 12px; }
 .single .post .entry-content p, .single-post .entry-content p	{ line-height: 1.8em; }
 .entry-content ul, .entry-content ol	{ padding: 0 1.5em 0.5em; }

@@ -97,6 +97,10 @@ function arras_postheader() {
 		
 		
 	}
+	
+		if ( arras_get_option('single_thumbs') ) {
+			$postheader .= '<div class="entry-photo"><img src="' . arras_get_thumbnail('featured-slideshow-thumb') . '" alt="' . get_the_title() . '" title="' . get_the_title() . '" /></div>';
+		}
 
 	$postheader .= '</div>';
 	
