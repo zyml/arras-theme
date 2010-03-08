@@ -165,7 +165,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-default .entry-title	{ font-weight: bold; font-size: 12px; margin: 5px 0; line-height: 1.3em; }
 .posts-default .entry-title a:link, .posts-default .entry-title a:visited	{ color: #0052A3; text-decoration: none; }
 .posts-default .entry-summary, .posts-quick .entry-summary	{ color: #111; overflow: hidden; }
-.posts-default .entry-summary	{ height: 58px; font-size: 11px; }
+.posts-default .entry-summary	{ font-size: 11px; }
+.no-js .posts-default .entry-summary	{ height: 58px; }
 
 .entry-thumbnails	{ clear: both; display: inline-block; border: 1px solid #CCC; }
 .entry-thumbnails:hover	{ border-color: #383332; }
@@ -298,6 +299,7 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 /* footer */
 #footer				{ margin: 5px auto; width: 980px; background: #FFF; padding-bottom: 10px; border: 1px solid #CCC; }
 #footer .widgetcontainer	{ padding: 5px 10px; min-width: 150px; }
+.no-js #footer .widgetcontainer { height: 190px; }
 #footer .widgettitle	{ background: none; border: none; font-size: 11px; color: #444; padding: 0 0 10px; text-transform: uppercase; }
 #footer .widgetcontent	{ font-size: 11px; background: none; padding: 0; border: none; }
 #footer .footer-message	{ margin: 0; padding: 10px 15px 0; font-size: 11px; }

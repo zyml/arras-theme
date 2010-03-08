@@ -116,7 +116,7 @@ function arras_alternate_style() {
  */
 function arras_body_class() {
 	if ( function_exists('body_class') ) {
-		return body_class( array('layout-' . arras_get_option('layout'), 'style-' . arras_get_option('style')) );
+		return body_class( array('layout-' . arras_get_option('layout'), 'style-' . arras_get_option('style'), 'no-js') );
 	}
 }
 

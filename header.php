@@ -63,6 +63,15 @@ arras_head();
 </head>
 
 <body <?php arras_body_class() ?>>
+<script type="text/javascript">
+//<![CDATA[
+(function(){
+var c = document.body.className;
+c = c.replace(/no-js/, 'js');
+document.body.className = c;
+})();
+//]]>
+</script>
 <?php arras_body() ?>
 <div id="wrapper">
 

@@ -165,7 +165,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-default .entry-title	{ font-weight: 700; font-size: 14px; margin: 5px 0; line-height: 1.3em; }
 .posts-default .entry-title a:link, .posts-default .entry-title a:visited	{ color: #373331; text-decoration: none; }
 .posts-default .entry-summary, .posts-quick .entry-summary	{ color: #111; overflow: hidden; }
-.posts-default .entry-summary	{ height: 60px; }
+.no-js .posts-default .entry-summary	{ height: 60px; }
 
 .entry-thumbnails	{ clear: both; display: inline-block; border: 1px solid #CCC; }
 .entry-thumbnails:hover	{ border-color: #383332; }
@@ -302,6 +302,7 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 /* footer */
 #footer				{ margin: 5px auto; width: 980px; background: #ECEBE6; padding-bottom: 10px; border: 1px solid #CCC; }
 #footer .widgetcontainer	{ padding: 5px 10px; min-width: 150px; }
+.no-js #footer .widgetcontainer { height: 190px; }
 #footer .widgettitle	{ background: none; border: none; font-size: 14px; color: #444; padding: 0 0 10px; letter-spacing: -1px; }
 #footer .widgetcontent	{ font-size: 12px; background: none; padding: 0; border: none; }
 #footer .footer-message	{ margin: 0; padding: 10px 15px 0; font-size: 11px; }
