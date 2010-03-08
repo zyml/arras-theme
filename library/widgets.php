@@ -24,8 +24,8 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		
 		$featured = arras_get_option('featured_cat');
 		?>
-		<li id="multi-sidebar-container">
-		<div id="multi-sidebar" class="clearfix">
+		<li class="multi-sidebar-container">
+		<div class="multi-sidebar clearfix">
 		<ul class="tabs clearfix">
 		<?php $this->render_sidebar_tabs($instance['order'], is_numeric($featured)) ?>
 		</ul>

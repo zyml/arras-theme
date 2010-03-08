@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-$('#multi-sidebar').tabs();
+$('.multi-sidebar').tabs();
 
 <?php if (!function_exists('pixopoint_menu')) : ?>
 $('.sf-menu').superfish({autoArrows: false, speed: 'fast', dropShadows: 'true'});
@@ -12,5 +12,7 @@ $('#commentform').validate();
 
 $('.posts-default').equalHeights();
 $('#footer ul').equalHeights();
+
+<?php do_action('arras_custom_scripts') ?>
 
 });
