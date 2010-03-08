@@ -127,7 +127,10 @@ function arras_get_thumbnail($size = 'thumbnail', $id = 1) {
 	// get post thumbnail (WordPress 2.9+)
 	if ( function_exists('has_post_thumbnail') && has_post_thumbnail($id) ) {
 		$image_src = wp_get_attachment_image_src( get_post_thumbnail_id($id), $size );
-		return $image_src[0];
+		
+		if (!$image_src[0]) return false;
+		else return $image_src[0];
+		
 	} else {
 	// go back to legacy (phpThumb or timThumb)
 		$thumbnail = get_post_meta($id, ARRAS_POST_THUMBNAIL, true);
