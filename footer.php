@@ -15,8 +15,6 @@
     
     <?php wp_footer() ?>
 	<?php arras_footer() ?>
-	
-	</div><!-- #outer -->
 
 </div><!-- #wrapper -->
 </body>
