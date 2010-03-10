@@ -215,10 +215,18 @@ function arras_render_posts($query = null, $display_type = 'default', $page_type
 					
 					<?php arras_newsheader($page_type) ?>
 					<div class="entry-summary">
-						<?php echo get_the_excerpt() ?>
-						<p class="quick-read-more"><a href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>">
-						<?php _e('Read More', 'arras') ?>
-						</a></p>
+						<?php 
+						if ($display_type == 'default') {
+							echo arras_strip_content( get_the_excerpt(), 30 );
+						} else {
+							echo get_the_excerpt();
+							?>
+							<p class="quick-read-more"><a href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>">
+							<?php _e('Read More', 'arras') ?>
+							</a></p>
+							<?php
+						} 
+					?>
 					</div>
 					<?php arras_newsfooter($page_type) ?>		
 				</li>
