@@ -11,7 +11,7 @@ $('#commentform').validate();
 <?php endif ?>
 
 $('.posts-default').equalHeights();
-$('#footer ul').equalHeights();
+$('#footer-sidebar').equalHeights();
 
 <?php do_action('arras_custom_scripts') ?>
 
