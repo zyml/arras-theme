@@ -8,7 +8,11 @@ function header_style() {
 ?>
 	<style type="text/css">
 	#branding { background: url(<?php header_image() ?>) no-repeat; }
+	<?php if (get_header_textcolor() != 'blank') : ?>
 	.blog-name, .blog-name a, .blog-description { color: #<?php header_textcolor() ?> !important; }
+	<?php else: ?>
+	.blog-name, .blog-name a, .blog-description { display: none; }
+	<?php endif; ?>
 	.blog-description { opacity: 0.5; zoom: 1; filter: alpha(opacity = 50); }
 	</style>
 <?php
