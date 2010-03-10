@@ -66,7 +66,7 @@ $news_thumb_h = arras_get_option('news_thumb_h');
 
 <?php if (strpos($layout, '1c') !== false) : ?>
 .featured, .featured-article { height: 300px; }
-.featured-article { width: 940px; }
+.featured-article { width: 950px; }
 #controls { width: 920px; padding-top: 120px; }
 .featured-entry	{ height: 100px; top: 200px; }
 <?php elseif (strpos($layout, '3c') !== false) : ?>
