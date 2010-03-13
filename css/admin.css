@@ -32,10 +32,12 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #custom-bg-options		{ float: left; width: 300px; padding: 10px; background: #FFF; border: 1px solid #EEE; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 #colorpicker			{ position: absolute; float: left; background: #F0F0F0; border: 1px solid #EEE; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 
+#thumbnails hr			{ background: #DDD; color: #DDD; border-color: #DDD; }
+
 .arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 760px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .padding-content		{ padding: 0 10px 10px; }
-.padding-content h3		{ font-size: 12px; margin: 10px 0 0; padding: 10px 0 0; }
+.padding-content h3		{ font-size: 14px; margin: 10px 0 0; padding: 10px 0 0; }
 .form-table				{ margin-bottom: 0 !important; }
 .form-table th			{ font-size: 11px; min-width: 200px; }
 .form-table .largetext	{ font-size: 12px; }
@@ -43,7 +45,9 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 .form-table tr:last-child	{ border-bottom: 1px solid #DEDEDE; }
 .form-table tr:last-child td { padding-bottom: 20px; }
 .form-table select		{ width: 275px; }
-.version				{ font-size: 12px !important; font-weight: bold; padding: 10px !important; }
+.version				{ padding: 10px !important; }
+.version p				{ font-size: 11px; }
+.version .number		{ font-size: 12px !important; font-weight: bold; }
 
 .hide, .ui-tabs-hide	{ display: none !important; }
 

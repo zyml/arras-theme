@@ -37,7 +37,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <table class="form-table">
 
 <tr valign="top">
-<th scope="row"><label for="arras-display-featured-title"><?php _e('Title', 'arras') ?></label></th>
+<th scope="row"><label for="arras-layout-featured-title"><?php _e('Title', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_input(array('name' => 'arras-layout-featured-title', 'id' => 'arras-layout-featured-title', 'style' => 'width:60%', 'value' => arras_get_option('featured_title') )) ?>
 </td>
@@ -89,7 +89,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <table class="form-table">
 
 <tr valign="top">
-<th scope="row"><label for="arras-display-news-title"><?php _e('Title', 'arras') ?></label></th>
+<th scope="row"><label for="arras-layout-news-title"><?php _e('Title', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_input(array('name' => 'arras-layout-news-title', 'id' => 'arras-layout-news-title', 'style' => 'width:60%', 'value' => arras_get_option('news_title') )) ?>
 </td>

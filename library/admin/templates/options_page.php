@@ -61,7 +61,6 @@
 	<div class="postbox">
 		<h3><span><?php _e('Helpful Links', 'arras') ?></span></h3>
 		<ul>
-			<li><a href="http://www.arrastheme.com/wiki/"><?php _e('Documentation Wiki', 'arras') ?></a></li>
 			<li><a href="http://www.arrastheme.com/forums/"><?php _e('Community Forums', 'arras') ?></a></li>
 			<li><a href="http://arras-theme.googlecode.com/"><?php _e('Bug Tracker / Repository', 'arras') ?></a></li>
 		</ul>

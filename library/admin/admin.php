@@ -25,14 +25,14 @@ function arras_admin() {
 			check_admin_referer('arras-admin');
 			$arras_options->save_options();
 			arras_update_options();
-			$notices = '<div class="updated"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
+			$notices = '<div class="updated fade"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
 		}
 		
 		if ( isset($_REQUEST['reset']) ) {
 			check_admin_referer('arras-admin');
 			delete_option('arras_options');
 			arras_flush_options();
-			$notices = '<div class="updated"><p>' . __('Your settings have been reverted to the defaults.', 'arras') . '</p></div>';
+			$notices = '<div class="updated fade"><p>' . __('Your settings have been reverted to the defaults.', 'arras') . '</p></div>';
 		}
 		
 		if ( isset($_REQUEST['clearcache']) ) {
@@ -44,7 +44,7 @@ function arras_admin() {
 				@unlink(trailingslashit($cache_location) . $obj);
 			}
 			closedir($dh);
-			$notices = '<div class="updated"><p>' . __('Thumbnail cache has been cleared.', 'arras') . '</p></div>';
+			$notices = '<div class="updated fade"><p>' . __('Thumbnail cache has been cleared.', 'arras') . '</p></div>';
 		}
 		
 		include 'templates/options_page.php';
