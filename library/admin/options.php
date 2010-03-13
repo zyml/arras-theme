@@ -66,7 +66,8 @@ class Options {
 		$this->single_custom_fields = 'Score:score,Pros:pros,Cons:cons';
 		
 		$this->featured_display_meta_inpic = true;
-		$this->news_display_meta_inpic = true;
+		$this->news_display_meta_inpic = false;
+		$this->archive_display_meta_inpic = false;
 		
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
@@ -130,6 +131,7 @@ class Options {
 		
 		$this->featured_display_meta_inpic = (boolean)$_POST['arras-layout-featured2-meta'];
 		$this->news_display_meta_inpic = (boolean)$_POST['arras-layout-news-meta'];
+		$this->archive_display_meta_inpic = (boolean)$_POST['arras-layout-archive-meta'];
 		
 		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];
 		$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];

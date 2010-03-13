@@ -148,6 +148,14 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </td>
 </tr>
 
+<tr valign="top">
+<td></td>
+<td>
+<?php echo arras_form_checkbox('arras-layout-archive-meta', 'show', arras_get_option('archive_display_meta_inpic'), 'id="arras-layout-archive-meta"') ?> 
+<label for="arras-layout-archive-meta"><?php _e('Display date and comments count in post thumbnails', 'arras') ?></label>
+</td>
+</tr>
+
 </table>
 
 <h3><?php _e('Single Post', 'arras') ?></h3>
