@@ -47,9 +47,9 @@ function arras_layout_styles() {
 $featured_thumb_w = arras_get_option('featured_thumb_w');
 $featured_thumb_h = arras_get_option('featured_thumb_h');
 ?>
-#index-featured .posts-default .post { width: <?php echo $featured_thumb_w ?>px; }
+#index-featured .posts-default .post { width: <?php echo $featured_thumb_w + 10 ?>px; }
 #index-featured .posts-default img, #index-featured .entry-thumbnails-link { width: <?php echo $featured_thumb_w ?>px; height: <?php echo $featured_thumb_h ?>px; }
-#index-featured .entry-thumbnails { width: <?php echo $featured_thumb_w ?>px; height: <?php echo $featured_thumb_h ?>px; }
+#index-featured .entry-thumbnails { width: <?php echo $featured_thumb_w +10 ?>px; height: <?php echo $featured_thumb_h + 10 ?>px; }
 #index-featured .posts-default .entry-meta, #index-featured .posts-quick .entry-meta { width: <?php echo $featured_thumb_w ?>px; }
 #index-featured .posts-quick .entry-meta { margin: <?php echo $featured_thumb_h - 25 ?>px 0 0 -<?php echo $featured_thumb_w + 15 ?>px; }
 <?php
@@ -325,7 +325,7 @@ function arras_list_comments($comment, $args, $depth) {
 			<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 			</div>
 			<div class="comment-author vcard">
-			<?php echo get_avatar($comment, $size = 48) ?>
+			<?php echo get_avatar($comment, $size = 32) ?>
 			<cite class="fn"><?php echo get_comment_author_link() ?></cite>
 			</div>
 			<?php if ( $comment->comment_approved == '0' ) : ?>

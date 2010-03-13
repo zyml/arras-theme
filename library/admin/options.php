@@ -67,10 +67,10 @@ class Options {
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
 		
-		$this->featured_thumb_w = 205;
+		$this->featured_thumb_w = 195;
 		$this->featured_thumb_h = 110;
 		
-		$this->news_thumb_w = 205;
+		$this->news_thumb_w = 110;
 		$this->news_thumb_h = 110;
 	}
 	
