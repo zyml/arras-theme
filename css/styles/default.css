@@ -197,7 +197,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 .navigation				{ margin: 0 10px 10px 0; }
 
-.home-title				{ text-transform: uppercase; font-weight: 700; font-size: 15px; padding: 8px 3px; border-bottom: 1px solid #DDD; margin: 0 15px 20px 0; color: #383331; }
+.home-title				{ text-transform: uppercase; font-weight: 700; font-size: 14px; padding: 8px 3px; border-bottom: 1px solid #DDD; margin: 0 15px 20px 0; color: #383331; }
 
 /* single post */
 .single .post, .single-post	{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 0 15px; }
