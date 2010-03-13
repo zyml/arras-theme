@@ -15,6 +15,7 @@ class Options {
 	var $archive_display, $archive_news_thumbs;
 	var $display_author, $single_meta_pos, $single_custom_fields;
 	var $featured_display_meta_inpic, $news_display_meta_inpic;
+	var $node_based_limit_words;
 	
 	// added in 1.3.4
 	var $post_author, $post_date, $post_cats, $post_tags, $postbar_footer, $single_thumbs;
@@ -69,6 +70,8 @@ class Options {
 		$this->news_display_meta_inpic = false;
 		$this->archive_display_meta_inpic = false;
 		
+		$this->node_based_limit_words = 30;
+		
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
 		
@@ -108,6 +111,8 @@ class Options {
 		$this->topnav_home = (string)$_POST['arras-nav-home'];
 		$this->topnav_display = (string)$_POST['arras-nav-display'];
 		$this->topnav_linkcat = (int)$_POST['arras-nav-linkcat'];
+		
+		$this->node_based_limit_words = (int)$_POST['arras-layout-limit-words'];
 		
 		$this->slideshow_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
 		$this->featured_count = (int)stripslashes($_POST['arras-layout-featured2-count']);

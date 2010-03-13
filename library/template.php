@@ -217,7 +217,7 @@ function arras_render_posts($query = null, $display_type = 'default', $page_type
 					<div class="entry-summary">
 						<?php 
 						if ($display_type == 'default') {
-							echo arras_strip_content( get_the_excerpt(), 30 );
+							echo arras_strip_content( get_the_excerpt(), arras_get_option('node_based_limit_words') );
 						} else {
 							echo get_the_excerpt();
 							?>

@@ -8,6 +8,19 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 <div id="layout" class="padding-content">
 
+<h3><?php _e('Display Types - Node Based', 'arras') ?></h3>
+
+<table class="form-table">
+
+<tr valign="top">
+<th scope="row"><label for="arras-layout-limit-words"><?php _e('Limit Excerpts', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-layout-limit-words', 'id' => 'arras-layout-limit-words', 'size' => '5', 'value' => arras_get_option('node_based_limit_words'), 'maxlength' => 3 )) ?>
+ <?php ' ' . _e('words', 'arras') ?>
+</td>
+</tr>
+</table>
+
 <h3><?php _e('Featured Slideshow', 'arras') ?></h3>
 <table class="form-table">
 
