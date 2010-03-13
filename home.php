@@ -54,7 +54,7 @@ $stickies = get_option('sticky_posts');
 <!-- Featured Articles -->
 <?php if ( ($featured2_cat = arras_get_option('featured_cat') ) !== '' && $featured2_cat != '-1' ) : ?>
 <div id="index-featured">
-<div class="home-title"><?php _e('Featured', 'arras') ?></div>
+<div class="home-title"><?php echo arras_get_option('featured_title') ?></div>
 	<?php
 	if ($featured2_cat == '-5') {
 		if (count($stickies) > 0) 
@@ -76,7 +76,7 @@ $stickies = get_option('sticky_posts');
 
 <!-- News Articles -->
 <div id="index-news">
-<div class="home-title"><?php _e('Latest Headlines', 'arras') ?></div>
+<div class="home-title"><?php echo arras_get_option('news_title') ?></div>
 <?php
 $news_query_args = array(
 	'cat' => arras_get_option('news_cat'),

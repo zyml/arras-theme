@@ -57,7 +57,6 @@ require_once ARRAS_LIB . '/widgets.php';
 require_once ARRAS_LIB . '/admin/options.php';
 
 arras_flush_options();
-if ( !get_option('arras_options') ) arras_update_options();
 
 if ( is_admin() ) require_once ARRAS_LIB . '/admin/admin.php';
 

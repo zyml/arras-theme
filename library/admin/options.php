@@ -10,6 +10,7 @@ class Options {
 	var $topnav_home, $topnav_display, $topnav_linkcat;
 	// Layout
 	var $slideshow_count, $featured_count, $index_count;
+	var $featured_title, $news_title;
 	var $featured_display, $news_display, $index_news_thumbs;
 	var $archive_display, $archive_news_thumbs;
 	var $display_author, $single_meta_pos, $single_custom_fields;
@@ -40,6 +41,9 @@ class Options {
 		$this->topnav_home = __('Home', 'arras');
 		$this->topnav_display = 'categories';
 		$this->topnav_linkcat = 0;
+		
+		$this->featured_title = __('Featured Stories', 'arras');
+		$this->news_title = __('Latest Headlines', 'arras');
 		
 		$this->slideshow_count = 4;
 		$this->featured_count = 3;
@@ -109,6 +113,9 @@ class Options {
 		
 		$this->index_count = (int)stripslashes($_POST['arras-layout-index-count']);
 		
+		$this->featured_title = (string)$_POST['arras-layout-featured-title'];
+		$this->news_title = (string)$_POST['arras-layout-news-title'];
+		
 		$this->featured_display = (string)$_POST['arras-layout-featured2-display'];
 		$this->news_display = (string)$_POST['arras-layout-index-newsdisplay'];
 		$this->archive_display = (string)$_POST['arras-layout-archive-newsdisplay'];
@@ -145,7 +152,10 @@ function arras_flush_options() {
 	$arras_options = new Options;
 	$arras_options->get_options();
 	
-	if ( !get_option('arras_options') ) $arras_options->default_options();
+	if ( !get_option('arras_options') ) {
+		$arras_options->default_options();
+		arras_update_options();
+	}
 }
 
 function arras_update_options() {

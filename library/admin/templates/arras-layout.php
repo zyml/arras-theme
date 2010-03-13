@@ -37,6 +37,13 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <table class="form-table">
 
 <tr valign="top">
+<th scope="row"><label for="arras-display-featured-title"><?php _e('Title', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-layout-featured-title', 'id' => 'arras-layout-featured-title', 'style' => 'width:60%', 'value' => arras_get_option('featured_title') )) ?>
+</td>
+</tr>
+
+<tr valign="top">
 <th scope="row"><label for="arras-cat-featured2"><?php _e('Show Category', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_dropdown('arras-cat-featured2', array(
@@ -80,6 +87,13 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 <h3><?php _e('Index Page - News Posts', 'arras') ?></h3>
 <table class="form-table">
+
+<tr valign="top">
+<th scope="row"><label for="arras-display-news-title"><?php _e('Title', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-layout-news-title', 'id' => 'arras-layout-news-title', 'style' => 'width:60%', 'value' => arras_get_option('news_title') )) ?>
+</td>
+</tr>
 
 <tr valign="top">
 <th scope="row"><label for="arras-cat-news"><?php _e('News Category', 'arras') ?></label></th>
