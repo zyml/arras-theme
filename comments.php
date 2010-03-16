@@ -8,7 +8,7 @@ if ( post_password_required() ) {
 ?>
 <?php if ( have_comments() ) : ?>
 	<?php if ( !empty($comments_by_type['comment']) ) : ?>  
-	<h4 class="module-title"><?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __ngettext('% Comment', '% Comments', get_comments_number(), 'arras') ); ?></h4>
+	<h4 class="module-title"><?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), _n('% Comment', '% Comments', get_comments_number(), 'arras') ); ?></h4>
 		<ol id="commentlist" class="clearfix">
 			<?php wp_list_comments('type=comment&callback=arras_list_comments'); ?>
 		</ol>
