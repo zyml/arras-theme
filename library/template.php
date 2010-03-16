@@ -172,10 +172,15 @@ function arras_get_thumbnail($size = 'thumbnail', $id = 1) {
 	
 }
 
-function arras_render_posts($query = null, $display_type = 'default', $page_type = 'news') {
+function arras_render_posts($args = null, $display_type = 'default', $page_type = 'news') {
 	global $post, $wp_query;
 	
-	if (!$query) $query = $wp_query;
+	if (!$args) {
+		$query = $wp_query;
+	} else {
+		$query = new WP_Query($args);
+	}
+	
 	if ($query->have_posts()) {	
 		switch($display_type) {
 			case 'traditional': ?>

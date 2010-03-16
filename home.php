@@ -65,8 +65,7 @@ $stickies = get_option('sticky_posts');
 		$query2 = 'showposts=' . arras_get_option('featured_count') . '&cat=' . $featured2_cat;
 	}
 	
-	$q2 = new WP_Query($query2);
-	arras_render_posts($q2, arras_get_option('featured_display'), 'featured');
+	arras_render_posts($query2, arras_get_option('featured_display'), 'featured');
 	?>
 </div><!-- #index-featured -->
 <?php endif; ?>
