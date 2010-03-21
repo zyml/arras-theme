@@ -106,7 +106,7 @@ document.body.className = c;
 			} else if (arras_get_option('topnav_display') == 'linkcat') {
 				wp_list_bookmarks('category='.arras_get_option('topnav_linkcat').'&hierarchical=0&show_private=1&hide_invisible=0&title_li=&categorize=0&orderby=id'); 
 			} else {
-				wp_list_categories('number=11&hierarchical=1&orderby=id&hide_empty=1&title_li=');	
+				wp_list_categories('hierarchical=1&orderby=id&hide_empty=1&title_li=');	
 			}
 			?>
 		</ul>
