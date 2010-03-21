@@ -187,10 +187,11 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-default .entry-meta a:link, .posts-default .entry-meta a:visited, .posts-quick .entry-meta a:link, .posts-quick .entry-meta a:visited	{ color: #FFF; text-decoration: none; }
 .posts-default .entry-comments, .posts-quick .entry-comments { float: right; margin: 5px 5px 0; background: url(../../images/comments.gif) no-repeat left center; padding: 0 0 0 12px; }
 .posts-default .published, .posts-quick .published	{ text-transform: uppercase; float: left; margin: 5px 5px 0; font-size: 10px; color: #999; border-bottom: none; }
-.posts-line				{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 10px; }
+.posts-line				{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 10px; line-height: 1.4em; }
 .posts-line	li			{ padding: 7px 0; border-bottom: 1px solid #EEE; }
 .posts-line .entry-cat	{ float: left; font-size: 11px; width: 100px; overflow: hidden; color: #848485; }
-.posts-line .entry-title	{ float: left; font-size: 12px; margin: 0; }
+.posts-line .entry-title	{ float: left; font-size: 12px; margin: 0; max-width: 450px; line-height: 1.4em; }
+.layout-3c-fixed .posts-line .entry-title, .layout-3c-r-fixed .posts-line .entry-title { max-width: 300px; }
 .posts-line a:link, .posts-line a:visited	{ color: #373331; }
 .posts-line .entry-comments	{ float: right; font-size: 11px; color: #848485; }
 
