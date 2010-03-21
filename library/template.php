@@ -72,13 +72,15 @@ $news_thumb_h = arras_get_option('news_thumb_h');
 <?php if (strpos($layout, '1c') !== false) : ?>
 .featured, .featured-article { height: 300px; }
 .featured-article { width: 950px; }
-#controls { width: 920px; padding-top: 120px; }
+#controls { width: 920px; top: 120px; }
+#controls .next { left: 915px; }
 .featured-entry	{ height: 100px; top: 200px; }
 <?php elseif (strpos($layout, '3c') !== false) : ?>
 .featured, .featured-article { height: 225px; }
 .featured-article { width: 490px; }
-#controls { width: 470px; padding-top: 70px; }
-.featured-entry	{ height: 100px; top: 125px; }
+#controls { width: 450px; top: 85px; }
+#controls .next { left: 455px; }
+.featured-entry	{ height: 80px; top: 145px; }
 <?php endif;
 }
 
