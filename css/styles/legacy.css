@@ -143,7 +143,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 #controls .next			{ background: url(../../images/next.png) no-repeat; float: right; position: absolute; left: 605px; }
 #controls .next:hover, #controls .prev:hover	{ opacity: 1; }
 
-#featured-slideshow		{ position: relative; height: 250px; margin-right: 20px; z-index: 0 !important; }			
+#featured-slideshow		{ position: relative; margin-right: 20px; z-index: 0 !important; }			
 
 .featured-article		{ display: block; width: 640px; height: 250px; text-decoration: none !important; background-position: center !important; }
 .featured-entry			{ position: relative; top: 165px; overflow: hidden; background: #000; height: 85px; color: #a7a7a7; padding: 0; display: block; opacity: 0.8; filter: alpha(opacity = 80); }
