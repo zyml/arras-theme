@@ -171,11 +171,10 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 .entry-thumbnails	{ clear: both; display: inline-block; }
 .entry-thumbnails:hover	{ border-color: #383332; }
-.entry-thumbnails-link { float: left; margin-right: 15px; background: #111; display: block; }
+.entry-thumbnails-link { float: left; background: #111; display: block; text-decoration: none !important; }
 
 .posts-quick			{ margin: 0 10px 10px 0; padding: 0; }
 .posts-quick li			{ padding: 0 10px 0 0; border-bottom: 1px solid #CCC; margin: 0 0 10px; }
-.posts-quick img		{ text-indent: -9000px; }
 .posts-quick .entry-title	{ font-weight: 700; font-size: 16px; margin: 0 0 5px; line-height: 1.3em; }
 .posts-quick .entry-title a:link, .posts-quick .entry-title a:visited	{ color: #373331; text-decoration: none; }
 .posts-quick .entry-summary	{ font-size: 12px; line-height: 1.6em; margin-bottom: 15px; }
@@ -184,7 +183,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-quick .quick-read-more	{ margin: 10px 0 0; }
 .posts-quick .quick-read-more a:link, .posts-quick .quick-read-more a:visited	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 4px 10px; margin: 0; border: 1px solid #CCC; font-weight: 700; zoom: 1; *display: inline; display: inline-block; }
 .posts-quick .quick-read-more a:hover { background: #383332; color: #FFF; }
-.posts-default .entry-meta, .posts-quick .entry-meta	{ color: #CCC; float: left; background: #000; height: 25px; display: block; margin: -30px 0 0 5px; font-weight: 700; opacity: 0.7; }
+.posts-default .entry-meta, .posts-quick .entry-meta	{ color: #CCC; float: left; background: #000; height: 25px; display: block; margin: -25px 0 0; font-weight: 700; opacity: 0.7; }
 .posts-default .entry-meta a:link, .posts-default .entry-meta a:visited, .posts-quick .entry-meta a:link, .posts-quick .entry-meta a:visited	{ color: #FFF; text-decoration: none; }
 .posts-default .entry-comments, .posts-quick .entry-comments { float: right; margin: 5px 5px 0; background: url(../../images/comments.gif) no-repeat left center; padding: 0 0 0 12px; }
 .posts-default .published, .posts-quick .published	{ text-transform: uppercase; float: left; margin: 5px 5px 0; font-size: 10px; color: #999; border-bottom: none; }
