@@ -99,7 +99,7 @@ document.body.className = c;
 	<?php pixopoint_menu(); ?>
 	<?php else : ?>
 		<ul class="sf-menu menu clearfix">
-			<li><a href="<?php bloginfo('url') ?>"><?php echo arras_get_option('topnav_home') ?></a></li>
+			<li><a href="<?php bloginfo('url') ?>"><?php _e( arras_get_option('topnav_home') ) ?></a></li>
 			<?php 
 			if (arras_get_option('topnav_display') == 'pages') {
 				wp_list_pages('sort_column=menu_order&title_li=');
