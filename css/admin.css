@@ -6,7 +6,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #arras-right-col .postbox h3	{ font-size: 11px; line-height: 1; padding: 6px 9px; margin: 0 0 5px; }
 #arras-right-col .postbox li	{ list-style: circle; margin: 7px 22px; font-size: 11px !important; }
 #arras-right-col .postbox li a	{ text-decoration: none; }
-#arras-right-col .button-primary{ margin: 0 10px 10px; font-size: 11px !important; padding: 5px 7px; }
+#arras-right-col .button-primary{ margin: 0 10px 10px; font-size: 11px !important; padding: 5px 7px; display: inline-block; }
 
 #arras-settings-form	{ float: left; margin: 0 10px 0 0; }
 #arras-settings-form th { padding: 10px 0; }
@@ -20,10 +20,24 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #arras-tabs li:first-child a	{ -moz-border-radius: 6px 0 0 0; -webkit-border-radius: 6px 0 0 0; }
 #arras-tabs li:last-child a	{ border-right: 1px solid #E3E3E3; -moz-border-radius: 0 6px 0 0; -webkit-border-radius: 6px 0 0 0; }
 
+#arras-custom-bg-form	{ margin: 1em 0; }
+#arras-custom-bg-form label { display: block; font-weight: bold; margin: 0 0 5px; }
+#arras-custom-bg-form input { padding: 4px 5px; margin: 2px 5px 2px 0; }
+#arras-custom-bg-form .upload-bg { padding: 0 0 10px; border-bottom: 1px solid #CCC; margin: 0 0 10px; }
+#arras-custom-bg-form .advanced p  { font-size: 11px; }
+#arras-custom-bg-form .advanced label { font-size: 12px; }
+#custom-bg-preview		{ float: left; margin: 0 20px 0; }
+#custom-bg-preview h3	{ font-size: 12px; }
+#custom-bg-preview img	{ border: 3px solid #CCC; width: 600px; overflow: hidden; }
+#custom-bg-options		{ float: left; width: 300px; padding: 10px; background: #FFF; border: 1px solid #EEE; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+#colorpicker			{ position: absolute; float: left; background: #F0F0F0; border: 1px solid #EEE; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+
+#thumbnails hr			{ background: #DDD; color: #DDD; border-color: #DDD; }
+
 .arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 760px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .padding-content		{ padding: 0 10px 10px; }
-.padding-content h3		{ font-size: 12px; margin: 10px 0 0; padding: 10px 0 0; }
+.padding-content h3		{ font-size: 14px; margin: 10px 0 0; padding: 10px 0 0; }
 .form-table				{ margin-bottom: 0 !important; }
 .form-table th			{ font-size: 11px; min-width: 200px; }
 .form-table .largetext	{ font-size: 12px; }
@@ -31,7 +45,9 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 .form-table tr:last-child	{ border-bottom: 1px solid #DEDEDE; }
 .form-table tr:last-child td { padding-bottom: 20px; }
 .form-table select		{ width: 275px; }
-.version				{ font-size: 12px !important; font-weight: bold; padding: 10px !important; }
+.version				{ padding: 10px !important; }
+.version p				{ font-size: 11px; }
+.version .number		{ font-size: 12px !important; font-weight: bold; }
 
 .hide, .ui-tabs-hide	{ display: none !important; }
 

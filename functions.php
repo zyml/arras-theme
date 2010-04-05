@@ -55,11 +55,13 @@ require_once ARRAS_LIB . '/styles.php';
 require_once ARRAS_LIB . '/widgets.php';
 
 require_once ARRAS_LIB . '/admin/options.php';
+
 arras_flush_options();
 
 if ( is_admin() ) require_once ARRAS_LIB . '/admin/admin.php';
 
-require_once ARRAS_LIB . '/custom-header.php';
+require_once ARRAS_LIB . '/admin/custom-header.php';
+require_once ARRAS_LIB . '/admin/custom-background.php';
 
 require_once ARRAS_LIB . '/launcher.php';
 ?>

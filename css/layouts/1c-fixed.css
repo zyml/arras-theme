@@ -4,7 +4,7 @@ DESCRIPTION:
 */
 
 #main {
-    width: 980px;
+    width: 960px;
     margin:0 auto;
 	overflow:hidden;
     position:relative;
@@ -15,7 +15,7 @@ DESCRIPTION:
 	margin: 0 auto;   
 }
 #content {
-	margin: 0 0 0 10px;
+	margin: 0;
 }
 #primary {
 	display: none;

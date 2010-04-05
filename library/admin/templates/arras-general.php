@@ -7,7 +7,10 @@
 
 <tr valign="top">
 <th scope="row"><?php _e('Current Version', 'arras') ?></th>
-<td class="version"><?php echo ARRAS_VERSION ?></td>
+<td class="version">
+<span class="number"><?php echo ARRAS_VERSION ?></span>
+<p><?php _e('If you have recently upgraded Arras Theme to a new release, it is <span style="color: red">highly recommended</span> that you reset your theme options, clear your browser cache and restart your browser before proceeding.', 'arras') ?></p>
+</td>
 </tr>
 
 </table>

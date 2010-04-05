@@ -24,8 +24,8 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		
 		$featured = arras_get_option('featured_cat');
 		?>
-		<li id="multi-sidebar-container">
-		<div id="multi-sidebar" class="clearfix">
+		<li class="multi-sidebar-container">
+		<div class="multi-sidebar clearfix">
 		<ul class="tabs clearfix">
 		<?php $this->render_sidebar_tabs($instance['order'], is_numeric($featured)) ?>
 		</ul>
@@ -86,9 +86,9 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 				break;
 				
 				case 'comments':
-				
+
 				echo '<div id="s-comments" class="widgetcontainer clearfix">';
-				$comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_approved = '1' ORDER BY comment_date_gmt DESC LIMIT 8");
+				$comments = get_comments( array('status' => 'approve', 'number' => 8) );
 				
 				if ($comments) {
 					echo '<ul id="recentcomments">';
@@ -101,6 +101,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 					}
 					echo '</ul>';
 				}
+				
 				
 				echo '</div><!-- #s-comments -->';
 				

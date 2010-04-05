@@ -20,7 +20,7 @@ if ($style_dir) {
 <td>
 <?php echo arras_form_dropdown('arras-layout-col', $arras_registered_alt_layouts, arras_get_option('layout')) ?><br />
 <span style="color: red">
-<?php _e('Once you have changed your layout settings, you will need to regenerate the thumbnails using the <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin.', 'arras') ?>
+<?php _e('Once you have changed your layout settings, you will need to adjust your thumbnail sizes manually and regenerate them using the <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin.', 'arras') ?>
 </span>
 </td>
 </tr>
@@ -30,6 +30,7 @@ if ($style_dir) {
 <td>
 <?php echo arras_form_dropdown('arras-style', $styles, arras_get_option('style') ) ?><br />
 <?php printf( __('Alternate stylesheets are placed in %s.', 'arras'), '<code>wp-content/themes/' .get_stylesheet(). '/css/styles/</code>' ) ?>
+<br /><?php _e('If you wish to continue using the 1.3.x style, you can do so by selecting <strong>legacy.css</strong>.', 'arras') ?>
 </td>
 </tr>
 
@@ -37,6 +38,13 @@ if ($style_dir) {
 <th scope="row"><label for="arras-style"><?php _e('Custom Header', 'arras') ?></label></th>
 <td>
 <a href="<?php bloginfo('url') ?>/wp-admin/themes.php?page=custom-header"><strong><?php _e('Set Custom Header', 'arras') ?></strong></a>
+</td>
+</tr>
+
+<tr valign="top">
+<th scope="row"><label for="arras-style"><?php _e('Custom Background', 'arras') ?></label></th>
+<td>
+<a href="<?php bloginfo('url') ?>/wp-admin/admin.php?page=arras-custom-background"><strong><?php _e('Set Custom Background', 'arras') ?></strong></a>
 </td>
 </tr>
 

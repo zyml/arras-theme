@@ -2,7 +2,7 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php arras_document_title() ?></title>
-<meta name="description" content="<?php bloginfo('description') ?>" />
+<?php arras_document_description() ?>
 <?php if ( is_search() || is_author() ) : ?>
 <meta name="robots" content="noindex, nofollow" />
 <?php endif ?>
@@ -42,6 +42,9 @@ if ( is_singular() ) {
 	wp_enqueue_script('comment-reply');
 	wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
 }
+
+wp_enqueue_script('jquery-equalheights', get_template_directory_uri() . '/js/jquery.equalheights.min.js', 'jquery', null, false);
+
 wp_head();
 arras_head();
 ?>
@@ -60,60 +63,71 @@ arras_head();
 </head>
 
 <body <?php arras_body_class() ?>>
+<script type="text/javascript">
+//<![CDATA[
+(function(){
+var c = document.body.className;
+c = c.replace(/no-js/, 'js');
+document.body.className = c;
+})();
+//]]>
+</script>
 <?php arras_body() ?>
-<div id="wrapper">
 
-    <div id="header">
-    	<div id="branding" class="clearfix">
-        <div class="logo clearfix">
-        	<?php if ( is_home() || is_front_page() ) : ?>
-            <h1 class="blog-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-            <h2 class="blog-description"><?php bloginfo('description'); ?></h2>
-            <?php else: ?>
-            <span class="blog-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></span>
-            <span class="blog-description"><?php bloginfo('description'); ?></span>
-            <?php endif ?>
-        </div>
-        <div id="searchbar">
-            <?php include (TEMPLATEPATH . '/searchform.php'); ?>  
-        </div>
-        </div><!-- #branding -->
-    </div><!-- #header -->
-	
-	<?php arras_above_nav() ?>
-    <div id="nav">
-    	<div id="nav-content" class="clearfix">
-		<?php if ( function_exists('pixopoint_menu') ): ?>
-		<?php pixopoint_menu(); ?>
-		<?php else : ?>
-			<ul class="sf-menu menu clearfix">
-				<li><a href="<?php bloginfo('url') ?>"><?php echo arras_get_option('topnav_home') ?></a></li>
-				<?php 
-				if (arras_get_option('topnav_display') == 'pages') {
-					wp_list_pages('sort_column=menu_order&title_li=');
-				} else if (arras_get_option('topnav_display') == 'linkcat') {
-					wp_list_bookmarks('category='.arras_get_option('topnav_linkcat').'&hierarchical=0&show_private=1&hide_invisible=0&title_li=&categorize=0&orderby=id'); 
-				} else {
-					wp_list_categories('number=11&hierarchical=1&orderby=id&hide_empty=1&title_li=');	
-				}
-				?>
-			</ul>
+
+<div id="header">
+	<div id="branding" class="clearfix">
+	<div class="logo clearfix">
+		<?php if ( is_home() || is_front_page() ) : ?>
+		<h1 class="blog-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+		<h2 class="blog-description"><?php bloginfo('description'); ?></h2>
+		<?php else: ?>
+		<span class="blog-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></span>
+		<span class="blog-description"><?php bloginfo('description'); ?></span>
 		<?php endif ?>
-			<ul class="quick-nav clearfix">
-				<?php if ($feed == '') : ?>
-					<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
-				<?php else : ?>
-					<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $feed; ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
-				<?php endif; ?>
-				
-				<?php $twitter_username = arras_get_option('twitter_username'); ?>
-				<?php if ($twitter_username != '') : ?>
-					<li><a id="twitter" title="<?php printf( __( '%s Twitter', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="http://www.twitter.com/<?php echo $twitter_username ?>/"><?php _e('Twitter', 'arras') ?></a></li>
-				<?php endif ?>
-			</ul>
-		</div><!-- #nav-content -->
-    </div><!-- #nav -->
-	<?php arras_below_nav() ?>
-    
+	</div>
+	<div id="searchbar">
+		<?php include (TEMPLATEPATH . '/searchform.php'); ?>  
+	</div>
+	</div><!-- #branding -->
+</div><!-- #header -->
+
+<?php arras_above_nav() ?>
+<div id="nav">
+	<div id="nav-content" class="clearfix">
+	<?php if ( function_exists('pixopoint_menu') ): ?>
+	<?php pixopoint_menu(); ?>
+	<?php else : ?>
+		<ul class="sf-menu menu clearfix">
+			<li><a href="<?php bloginfo('url') ?>"><?php _e( arras_get_option('topnav_home') ) ?></a></li>
+			<?php 
+			if (arras_get_option('topnav_display') == 'pages') {
+				wp_list_pages('sort_column=menu_order&title_li=');
+			} else if (arras_get_option('topnav_display') == 'linkcat') {
+				wp_list_bookmarks('category='.arras_get_option('topnav_linkcat').'&hierarchical=0&show_private=1&hide_invisible=0&title_li=&categorize=0&orderby=id'); 
+			} else {
+				wp_list_categories('hierarchical=1&orderby=id&hide_empty=1&title_li=');	
+			}
+			?>
+		</ul>
+	<?php endif ?>
+		<ul class="quick-nav clearfix">
+			<?php if ($feed == '') : ?>
+				<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
+			<?php else : ?>
+				<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $feed; ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
+			<?php endif; ?>
+			
+			<?php $twitter_username = arras_get_option('twitter_username'); ?>
+			<?php if ($twitter_username != '') : ?>
+				<li><a id="twitter" title="<?php printf( __( '%s Twitter', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="http://www.twitter.com/<?php echo $twitter_username ?>/"><?php _e('Twitter', 'arras') ?></a></li>
+			<?php endif ?>
+		</ul>
+	</div><!-- #nav-content -->
+</div><!-- #nav -->
+<?php arras_below_nav() ?>
+
+<div id="wrapper">	
+  
 	<div id="main" class="clearfix">
     <div id="container" class="clearfix">

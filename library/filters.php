@@ -25,13 +25,13 @@ function arras_newsheader($page_type) {
 		$postheader .= '<span style="display: none">' . get_the_title() . '</span>';
 	}
 	
-	$postheader .= '</a>';
-	
 	if ( arras_get_option($page_type . '_display_meta_inpic') ) {	
-		$postheader .= '<span class="entry-meta"><a href="' . get_permalink() . '"><span class="entry-comments">' . get_comments_number() . '</span></a>';
+		$postheader .= '<span class="entry-meta"><span class="entry-comments">' . get_comments_number() . '</span>';
 		$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr></span>';
 	}
 	
+	$postheader .= '</a>';
+
 	$postheader .= '</div>';
 	
 	$postheader .= '<h3 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h3>';
@@ -87,7 +87,7 @@ function arras_postheader() {
 		if ( arras_get_option('post_cats') ) {
 			$post_cats = array();
 			$cats = get_the_category();
-			foreach ($cats as $c) $post_cats[] = $c->cat_name;
+			foreach ($cats as $c) $post_cats[] = '<a href="' . get_category_link($c->cat_ID) . '">' . $c->cat_name . '</a>';
 			
 			$postheader .= sprintf( __('<span class="entry-cat"><strong>Posted in: </strong>%s</span>', 'arras'), implode(', ', $post_cats) );
 		}
@@ -97,6 +97,10 @@ function arras_postheader() {
 		
 		
 	}
+	
+		if ( arras_get_option('single_thumbs') && ($single_thumbnail = arras_get_thumbnail('featured-slideshow-thumb')) ) {
+			$postheader .= '<div class="entry-photo"><img src="' . $single_thumbnail . '" alt="' . get_the_title() . '" title="' . get_the_title() . '" /></div>';
+		}
 
 	$postheader .= '</div>';
 	
@@ -128,7 +132,7 @@ function arras_postmeta($content) {
 		foreach($custom_fields_list as $field_id => $field_name) {
 			if ( $field_value = get_post_meta($post->ID, $field_id, true) ) {
 				$postmeta .= '<div class="single-post-meta clearfix">';
-				$postmeta .= '<span class="single-post-meta-field single-post-meta-' . $field_id . '">' . $field_name . ':</span>';
+				$postmeta .= '<span class="single-post-meta-field single-post-meta-' . $field_id . '">' . $field_name . '</span>';
 				$postmeta .= '<span class="single-post-meta-value single-post-meta-' . $field_id . '-value">' . $field_value . '</span>';
 				$postmeta .= '</div>';
 			}
@@ -144,8 +148,22 @@ function arras_postmeta($content) {
  * @since	1.2.2
  */
 function arras_post_notfound() {
-	$postcontent = '<h2>' . __('That \'something\' you are looking for isn\'t here!', 'arras') . '</h2>';
-	$postcontent .= '<p>' . __('<strong>We\'re very sorry, but that page doesn\'t exist or has been moved.</strong><br />Please make sure you have the right URL.', 'arras') . '</p>';
+	$postcontent = '<div class="single-post">';
+	$postcontent .= '<h1 class="entry-title">' . __('That \'something\' you are looking for isn\'t here!', 'arras') . '</h2>';
+	$postcontent .= '<div class="entry-content"><p>' . __('<strong>We\'re very sorry, but the page that you are looking for doesn\'t exist or has been moved.</strong>', 'arras') . '</p>';
+	
+	
+	$postcontent .= '<form method="get" class="clearfix" action="' . get_bloginfo('url') . '">
+	' . __('Perhaps searching for it might help?', 'arras') . '<br />
+	<input type="text" value="" name="s" class="s" size="30" onfocus="this.value=\'\'" />
+	<input type="submit" class="searchsubmit" value="' . __('Search', 'arras') . '" title="' . sprintf( __('Search %s', 'arras'), wp_specialchars( get_bloginfo('name'), 1 ) ) . '" />
+	</form>';
+	
+	$postcontent .= '<h3>Latest Posts</h3>';
+	$postcontent .= '<ul>';
+	$postcontent .= wp_get_archives('type=postbypost&limit=10&format=custom&before=<li>&after=</li>&echo=0');
+	$postcontent .= '</ul>';
+	$postcontent .= '</div></div>';
 	
 	echo apply_filters('arras_post_notfound', $postcontent);	
 }

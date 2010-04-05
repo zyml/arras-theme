@@ -12,6 +12,8 @@ $stickies = get_option('sticky_posts');
 <div id="content" class="section">
 <?php arras_above_content() ?>
 
+<?php if (!$paged) : ?>
+
 <?php if ( ( $featured1_cat = arras_get_option('slideshow_cat') ) !== '' && $featured1_cat != '-1' ) : ?>
     <!-- Featured Slideshow -->
     <div class="featured clearfix">
@@ -50,9 +52,9 @@ $stickies = get_option('sticky_posts');
 <?php endif; ?>
 
 <!-- Featured Articles -->
-<?php if (!$paged) : if ( ($featured2_cat = arras_get_option('featured_cat') ) !== '' && $featured2_cat != '-1' ) : ?>
+<?php if ( ($featured2_cat = arras_get_option('featured_cat') ) !== '' && $featured2_cat != '-1' ) : ?>
 <div id="index-featured">
-<div class="home-title"><?php _e('Featured', 'arras') ?></div>
+<div class="home-title"><?php _e( arras_get_option('featured_title') ) ?></div>
 	<?php
 	if ($featured2_cat == '-5') {
 		if (count($stickies) > 0) 
@@ -63,29 +65,25 @@ $stickies = get_option('sticky_posts');
 		$query2 = 'showposts=' . arras_get_option('featured_count') . '&cat=' . $featured2_cat;
 	}
 	
-	$q2 = new WP_Query( apply_filters('arras_featured_query', $query2) );
-	arras_get_posts('featured', $q2);
+	arras_render_posts($query2, arras_get_option('featured_display'), 'featured');
 	?>
 </div><!-- #index-featured -->
-<?php endif; endif; ?>
+<?php endif; ?>
 
 
 <?php arras_above_index_news_post() ?>
 
 <!-- News Articles -->
 <div id="index-news">
-<div class="home-title"><?php _e('Latest Headlines', 'arras') ?></div>
+<div class="home-title"><?php _e( arras_get_option('news_title') ) ?></div>
 <?php
-$news_query = array(
+$news_query_args = array(
 	'cat' => arras_get_option('news_cat'),
 	'paged' => $paged,
 	'showposts' => ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) )
 );
-
-// if you are a WP plugin freak you can use 'arras_news_query' filter to override the query
-wp_reset_query(); query_posts(apply_filters('arras_news_query', $news_query));
-
-arras_get_posts('news') ?>
+query_posts($news_query_args);
+arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
 	<div class="navigation clearfix">
@@ -116,6 +114,23 @@ arras_get_posts('news') ?>
 	</ul>
 	<?php endif; ?>
 </div>
+
+<?php else: ?>
+
+<div class="home-title"><?php _e('Latest Headlines', 'arras') ?></div>
+
+<div id="archive-posts">
+	<?php arras_render_posts(null, arras_get_option('archive_display'), 'archive') ?>    
+ 
+	<?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
+    	<div class="navigation clearfix">
+			<div class="floatleft"><?php next_posts_link( __('&laquo; Older Entries', 'arras') ) ?></div>
+			<div class="floatright"><?php previous_posts_link( __('Newer Entries &raquo;', 'arras') ) ?></div>
+		</div>
+    <?php } ?>
+</div><!-- #archive-posts -->
+
+<?php endif; ?>
 
 <?php arras_below_content() ?>
 </div><!-- #content -->

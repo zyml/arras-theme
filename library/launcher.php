@@ -16,6 +16,7 @@ if ( function_exists('add_theme_support') ) {
 	add_image_size( 'sidebar-thumb', 36, 36, true );
 	add_image_size( 'featured-post-thumb', arras_get_option('featured_thumb_w'), arras_get_option('featured_thumb_h'), true );
 	add_image_size( 'news-post-thumb', arras_get_option('news_thumb_w'), arras_get_option('news_thumb_h'), true );
+	add_image_size( 'archive-post-thumb', arras_get_option('news_thumb_w'), arras_get_option('news_thumb_h'), true );
 }
 
 // Remove existing actions
@@ -69,6 +70,7 @@ register_sidebar( array(
 
 // Header Actions
 add_action('arras_head', 'arras_override_styles');
+add_action('arras_custom_styles', 'arras_layout_styles');
 
 // Footer Actions
 add_action('wp_footer', 'arras_js_footer');

@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-$('#multi-sidebar').tabs();
+$('.multi-sidebar').tabs();
 
 <?php if (!function_exists('pixopoint_menu')) : ?>
 $('.sf-menu').superfish({autoArrows: false, speed: 'fast', dropShadows: 'true'});
@@ -9,5 +9,10 @@ $('.sf-menu').superfish({autoArrows: false, speed: 'fast', dropShadows: 'true'})
 <?php if (is_singular()) : ?>
 $('#commentform').validate();
 <?php endif ?>
-	
+
+$('.posts-default').equalHeights();
+$('#footer-sidebar').equalHeights();
+
+<?php do_action('arras_custom_scripts') ?>
+
 });

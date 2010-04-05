@@ -12,12 +12,14 @@
     </div>
 </div>
 
-<?php arras_get_posts('archive') ?>
+<div id="archive-posts">
+<?php arras_render_posts(null, arras_get_option('archive_display'), 'archive'); ?>
+</div>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
     <div class="navigation">
-		<div class="floatRight"><?php next_posts_link( __('&laquo; Older Entries', 'arras') ) ?></div>
-		<div class="floatLeft"><?php previous_posts_link( __('Newer Entries &raquo;', 'arras') ) ?></div>
+		<div class="floatleft"><?php previous_posts_link( __('Newer Entries &raquo;', 'arras') ) ?></div>
+		<div class="floatright"><?php next_posts_link( __('&laquo; Older Entries', 'arras') ) ?></div>
     </div>
 <?php } ?>
 
@@ -37,8 +39,8 @@
     
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
     <div class="navigation clearfix">
-		<div class="floatLeft"><?php next_posts_link( __('&laquo; Older Entries', 'arras') ) ?></div>
-		<div class="floatRight"><?php previous_posts_link( __('Newer Entries &raquo;', 'arras') ) ?></div>
+		<div class="floatleft"><?php next_posts_link( __('&laquo; Older Entries', 'arras') ) ?></div>
+		<div class="floatright"><?php previous_posts_link( __('Newer Entries &raquo;', 'arras') ) ?></div>
     </div>
 <?php } ?>  
 <?php endif; ?>

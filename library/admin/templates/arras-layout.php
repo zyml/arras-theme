@@ -8,6 +8,19 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 <div id="layout" class="padding-content">
 
+<h3><?php _e('Display Types - Node Based', 'arras') ?></h3>
+
+<table class="form-table">
+
+<tr valign="top">
+<th scope="row"><label for="arras-layout-limit-words"><?php _e('Limit Excerpts', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-layout-limit-words', 'id' => 'arras-layout-limit-words', 'size' => '5', 'value' => arras_get_option('node_based_limit_words'), 'maxlength' => 3 )) ?>
+ <?php ' ' . _e('words', 'arras') ?>
+</td>
+</tr>
+</table>
+
 <h3><?php _e('Featured Slideshow', 'arras') ?></h3>
 <table class="form-table">
 
@@ -35,6 +48,13 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 <h3><?php _e('Featured Posts #1', 'arras') ?></h3>
 <table class="form-table">
+
+<tr valign="top">
+<th scope="row"><label for="arras-layout-featured-title"><?php _e('Title', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-layout-featured-title', 'id' => 'arras-layout-featured-title', 'style' => 'width:60%', 'value' => arras_get_option('featured_title') )) ?>
+</td>
+</tr>
 
 <tr valign="top">
 <th scope="row"><label for="arras-cat-featured2"><?php _e('Show Category', 'arras') ?></label></th>
@@ -80,6 +100,13 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 <h3><?php _e('Index Page - News Posts', 'arras') ?></h3>
 <table class="form-table">
+
+<tr valign="top">
+<th scope="row"><label for="arras-layout-news-title"><?php _e('Title', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-layout-news-title', 'id' => 'arras-layout-news-title', 'style' => 'width:60%', 'value' => arras_get_option('news_title') )) ?>
+</td>
+</tr>
 
 <tr valign="top">
 <th scope="row"><label for="arras-cat-news"><?php _e('News Category', 'arras') ?></label></th>
@@ -134,6 +161,14 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </td>
 </tr>
 
+<tr valign="top">
+<td></td>
+<td>
+<?php echo arras_form_checkbox('arras-layout-archive-meta', 'show', arras_get_option('archive_display_meta_inpic'), 'id="arras-layout-archive-meta"') ?> 
+<label for="arras-layout-archive-meta"><?php _e('Display date and comments count in post thumbnails', 'arras') ?></label>
+</td>
+</tr>
+
 </table>
 
 <h3><?php _e('Single Post', 'arras') ?></h3>
@@ -157,6 +192,10 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 <?php echo arras_form_checkbox('arras-layout-post-tags', 'show', arras_get_option('post_tags'), 'id="arras-layout-post-tags"') ?> 
 <label for="arras-layout-post-tags"><?php _e('Tags (Header)', 'arras') ?></label>
+<br />
+
+<?php echo arras_form_checkbox('arras-layout-single-thumbs', 'show', arras_get_option('single_thumbs'), 'id="arras-layout-single-thumbs"') ?> 
+<label for="arras-layout-single-thumbs"><?php _e('Post Thumbnail', 'arras') ?></label>
 <br />
 
 <?php echo arras_form_checkbox('arras-layout-single-author', 'show', arras_get_option('display_author'), 'id="arras-layout-single-author"') ?> 

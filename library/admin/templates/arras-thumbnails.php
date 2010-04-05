@@ -36,7 +36,7 @@
 <input class="button-primary" type="submit" name="save" value="<?php _e('Save Changes', 'arras') ?>" />
 </p>
 
-<h3><?php _e('Clear timThumb Thumbnail Cache (Leagcy)', 'arras') ?></h3>
+<h3><?php _e('Clear timThumb Thumbnail Cache (Legacy)', 'arras') ?></h3>
 <p><?php _e('If you have recently changed your layout, or edited the thumbnail sizes, it is highly recommended that you clear your thumbnail cache.', 'arras') ?></p>
 <p><?php printf( __('The thumbnail cache folder is located at: %s.', 'arras'), '<code>' . ARRAS_LIB . '/cache/' . '</code>') ?><br />
 <?php _e('If this does not work, you can manually delete all the files in that folder.', 'arras') ?></p>
@@ -44,5 +44,27 @@
 <p class="submit">
 <input class="button-secondary" type="submit" name="clearcache" value="<?php _e('Clear Thumbnail Cache', 'arras') ?>" />
 </p>
+
+<h3><?php _e('Frequently Asked Questions (EN only)', 'arras') ?></h3>
+
+<p><strong>Q:</strong> How do I add thumbnails to my posts?</p>
+<p><strong>A:</strong> Starting from 1.4, the recommended method to set your thumbnails is to go to the edit page of the post you wish to add thumbnails on, find the box named <em>Post Thumbnail</em> (probably located at the bottom right) and click on <em>Set Thumbnail</em>. Upload and select your thumbnail in the pop-up box, and you are done!</p>
+<hr />
+
+<p><strong>Q:</strong> How big should I upload my images to make the thumbnails fit in the theme?</p>
+<p><strong>A:</strong> Your image should be at least <strong>960x300</strong> for 1 column layout, <strong>640x250</strong> for 2 column layout, and <strong>500x225</strong> for 3 column layout.</p>
+<hr />
+
+<p><strong>Q:</strong> The thumbnail sizes in my blog are too large. How do I fix that?</p>
+<p><strong>A:</strong> When WordPress does not have a thumbnail at a size that is needed (usually caused when the thumbnail size setting is changed), it displays the full image instead. What you can to is to download the <em>Rengerate Thumbnails</em> plugin and let it generate the thumbnail of that size for you.</p>
+<hr />
+
+<p><strong>Q:</strong> I do not like the way WordPress crops the image for me. Is there any way you can adjust it?</p>
+<p><strong>A:</strong> You can go to the <em>Media Library</em> and edit the image that is used as the thumbnail. Crop the image and apply the changes to your thumbnails. It's not accurate and you can only apply to all thumbnail sizes (unless someone writes a plugin for it).</p>
+<hr />
+
+<p><strong>Q:</strong> I am currently using the legacy (timThumb) method and would like to use the new method. Is there a way I can switch those old posts to use the new method?</p>
+<p><strong>A:</strong> You can try using the <a href="http://wordpress.org/extend/plugins/get-the-image">Get the Image</a> plugin.</p>
+<hr />
 
 </div><!-- #thumbnails -->

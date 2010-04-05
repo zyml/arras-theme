@@ -10,13 +10,15 @@ class Options {
 	var $topnav_home, $topnav_display, $topnav_linkcat;
 	// Layout
 	var $slideshow_count, $featured_count, $index_count;
+	var $featured_title, $news_title;
 	var $featured_display, $news_display, $index_news_thumbs;
 	var $archive_display, $archive_news_thumbs;
 	var $display_author, $single_meta_pos, $single_custom_fields;
 	var $featured_display_meta_inpic, $news_display_meta_inpic;
+	var $node_based_limit_words;
 	
 	// added in 1.3.4
-	var $post_author, $post_date, $post_cats, $post_tags, $postbar_footer;
+	var $post_author, $post_date, $post_cats, $post_tags, $postbar_footer, $single_thumbs;
 	
 	// Thumbnail Sizes - added in 1.4.0
 	var $featured_thumb_w, $featured_thumb_h, $news_thumb_w, $news_thumb_h;
@@ -41,6 +43,9 @@ class Options {
 		$this->topnav_display = 'categories';
 		$this->topnav_linkcat = 0;
 		
+		$this->featured_title = __('Featured Stories', 'arras');
+		$this->news_title = __('Latest Headlines', 'arras');
+		
 		$this->slideshow_count = 4;
 		$this->featured_count = 3;
 		
@@ -56,20 +61,24 @@ class Options {
 		$this->post_date = true;
 		$this->post_cats = true;
 		$this->post_tags = true;
+		$this->single_thumbs = false;
 		
 		$this->single_meta_pos = 'top';
 		$this->single_custom_fields = 'Score:score,Pros:pros,Cons:cons';
 		
 		$this->featured_display_meta_inpic = true;
-		$this->news_display_meta_inpic = true;
+		$this->news_display_meta_inpic = false;
+		$this->archive_display_meta_inpic = false;
+		
+		$this->node_based_limit_words = 30;
 		
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
 		
-		$this->featured_thumb_w = 205;
+		$this->featured_thumb_w = 195;
 		$this->featured_thumb_h = 110;
 		
-		$this->news_thumb_w = 205;
+		$this->news_thumb_w = 110;
 		$this->news_thumb_h = 110;
 	}
 	
@@ -103,10 +112,15 @@ class Options {
 		$this->topnav_display = (string)$_POST['arras-nav-display'];
 		$this->topnav_linkcat = (int)$_POST['arras-nav-linkcat'];
 		
+		$this->node_based_limit_words = (int)$_POST['arras-layout-limit-words'];
+		
 		$this->slideshow_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
 		$this->featured_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
 		
 		$this->index_count = (int)stripslashes($_POST['arras-layout-index-count']);
+		
+		$this->featured_title = (string)$_POST['arras-layout-featured-title'];
+		$this->news_title = (string)$_POST['arras-layout-news-title'];
 		
 		$this->featured_display = (string)$_POST['arras-layout-featured2-display'];
 		$this->news_display = (string)$_POST['arras-layout-index-newsdisplay'];
@@ -118,9 +132,11 @@ class Options {
 		$this->post_date = (boolean)$_POST['arras-layout-post-date'];
 		$this->post_cats = (boolean)$_POST['arras-layout-post-cats'];
 		$this->post_tags = (boolean)$_POST['arras-layout-post-tags'];
+		$this->single_thumbs = (boolean)$_POST['arras-layout-single-thumbs'];
 		
 		$this->featured_display_meta_inpic = (boolean)$_POST['arras-layout-featured2-meta'];
 		$this->news_display_meta_inpic = (boolean)$_POST['arras-layout-news-meta'];
+		$this->archive_display_meta_inpic = (boolean)$_POST['arras-layout-archive-meta'];
 		
 		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];
 		$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];
@@ -143,7 +159,10 @@ function arras_flush_options() {
 	$arras_options = new Options;
 	$arras_options->get_options();
 	
-	if ( !get_option('arras_options') ) $arras_options->default_options();
+	if ( !get_option('arras_options') ) {
+		$arras_options->default_options();
+		arras_update_options();
+	}
 }
 
 function arras_update_options() {
