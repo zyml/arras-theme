@@ -27,6 +27,14 @@ class Options {
 	var $layout, $style;
 	
 	
+	function __construct() {
+		$this->default_options();
+	}
+	
+	function Options() {
+		return $this->__construct();
+	}
+	
 	function default_options() {
 		$this->version = ARRAS_VERSION;
 		$this->donate = false;
@@ -80,19 +88,6 @@ class Options {
 		
 		$this->news_thumb_w = 110;
 		$this->news_thumb_h = 110;
-	}
-	
-	function get_options() {		
-		$saved_options = unserialize(get_option('arras_options'));
-		if (!empty($saved_options) && is_object($saved_options)) {
-			foreach($saved_options as $name => $value) {
-				// Apply filters if qTranslate is enabled
-				if ( function_exists('qtrans_init') && (!isset($_GET['page']) || $_GET['page'] != 'arras-options') ) 
-					$value = qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage($value);
-					
-				$this->$name = $value;
-			}	
-		}
 	}
 	
 	function save_options() {
@@ -153,16 +148,18 @@ class Options {
 
 }
 
+
 function arras_flush_options() {
 	global $arras_options;
 	
-	$arras_options = new Options;
-	$arras_options->get_options();
-	
-	if ( !get_option('arras_options') ) {
-		$arras_options->default_options();
-		arras_update_options();
+	$opts = maybe_unserialize( get_option('arras_options') );
+	if (is_a($opts, 'Options')) {
+		$arras_options = $opts;
+	} else {
+		$arras_options = new Options();
 	}
+	
+	return $arras_options;
 }
 
 function arras_update_options() {
