@@ -48,6 +48,7 @@ define( ARRAS_THUMB, 'timthumb' );
 
 // Load library files
 require_once ARRAS_LIB . '/actions.php';
+require_once ARRAS_LIB . '/deprecated.php';
 require_once ARRAS_LIB . '/filters.php';
 require_once ARRAS_LIB . '/template.php';
 require_once ARRAS_LIB . '/styles.php';
