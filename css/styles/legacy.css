@@ -146,7 +146,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 #featured-slideshow		{ position: relative; margin-right: 20px; z-index: 0 !important; }			
 
 .featured-article		{ display: block; width: 640px; height: 250px; text-decoration: none !important; background-position: center !important; }
-.featured-entry			{ position: relative; top: 165px; overflow: hidden; background: #000; height: 85px; color: #a7a7a7; padding: 0; display: block; opacity: 0.8; filter: alpha(opacity = 80); }
+.featured-article img	{ width: 640px; height: 250px; }
+.featured-entry			{ position: relative; top: -85px; overflow: hidden; background: #000; height: 85px; color: #a7a7a7; padding: 0; display: block; opacity: 0.8; filter: alpha(opacity = 80); }
 .featured-entry .entry-title	{ color: #FFF; padding: 10px 15px 5px; display: block; font-size: 18px; font-weight: bold; }
 .featured-entry .entry-summary	{ padding: 0 15px; margin: 0; display: block; }
 

@@ -18,12 +18,7 @@ function arras_newsheader($page_type) {
 	
 	$postheader = '<div class="entry-thumbnails">';
 	$postheader .= '<a class="entry-thumbnails-link" href="' . get_permalink() . '">';
-
-	if ( ($thumbnail = arras_get_thumbnail($page_type . '-post-thumb')) ) {	
-		$postheader .= '<img src="' . $thumbnail . '" alt="' . get_the_title() . '" title="' . get_the_title()	. '" />';	
-	} else {
-		$postheader .= '<span style="display: none">' . get_the_title() . '</span>';
-	}
+	$postheader .= arras_get_thumbnail($page_type . '-post-thumb');
 	
 	if ( arras_get_option($page_type . '_display_meta_inpic') ) {	
 		$postheader .= '<span class="entry-meta"><span class="entry-comments">' . get_comments_number() . '</span>';
@@ -98,8 +93,8 @@ function arras_postheader() {
 		
 	}
 	
-		if ( arras_get_option('single_thumbs') && ($single_thumbnail = arras_get_thumbnail('featured-slideshow-thumb')) ) {
-			$postheader .= '<div class="entry-photo"><img src="' . $single_thumbnail . '" alt="' . get_the_title() . '" title="' . get_the_title() . '" /></div>';
+		if ( arras_get_option('single_thumbs') ) {
+			$postheader .= '<div class="entry-photo">' . arras_get_thumbnail('featured-slideshow-thumb') . '</div>';
 		}
 
 	$postheader .= '</div>';

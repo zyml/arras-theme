@@ -72,15 +72,17 @@ $news_thumb_h = arras_get_option('news_thumb_h');
 <?php if (strpos($layout, '1c') !== false) : ?>
 .featured, .featured-article { height: 300px; }
 .featured-article { width: 950px; }
+.featured-article img { width: 950px; height: 300px; }
 #controls { width: 920px; top: 120px; }
 #controls .next { left: 915px; }
-.featured-entry	{ height: 100px; top: 200px; }
+.featured-entry	{ height: 100px; top: -100px; }
 <?php elseif (strpos($layout, '3c') !== false) : ?>
 .featured, .featured-article { height: 225px; }
 .featured-article { width: 490px; }
+.featured-article img { width: 490px; height: 225px; }
 #controls { width: 450px; top: 85px; }
 #controls .next { left: 455px; }
-.featured-entry	{ height: 80px; top: 145px; }
+.featured-entry	{ height: 80px; top: -80px; }
 <?php endif;
 }
 
@@ -127,57 +129,51 @@ function arras_body_class() {
 	}
 }
 
-function arras_get_thumbnail($size = 'thumbnail', $id = 1) {
-	global $post;	
+function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
+	global $post;
 	if ($post) $id = $post->ID;
 	
-	// get post thumbnail (WordPress 2.9+)
-	if ( function_exists('has_post_thumbnail') && has_post_thumbnail($id) ) {
-		$image_src = wp_get_attachment_image_src( get_post_thumbnail_id($id), $size );
-		
-		if (!$image_src[0]) return false;
-		else return $image_src[0];
-		
+	// get post thumbnail (WordPress 2.9)
+	if (function_exists('has_post_thumbnail')) {
+		if (has_post_thumbnail($id)) {
+			return get_the_post_thumbnail($id, $size);
+		}
 	} else {
 	// go back to legacy (phpThumb or timThumb)
 		$thumbnail = get_post_meta($id, ARRAS_POST_THUMBNAIL, true);
 		
-		if (!$thumbnail) {
-			return false;
-		} else {
-		
-			switch($size) {
-				case 'sidebar-thumb':
-					$w = 36;
-					$h = 36;
-					break;
-				case 'featured-slideshow-thumb':
-					$w = 640;
-					$h = 250;
-					break;
-				case 'featured-post-thumb':
-					$w = arras_get_option('featured_thumb_w');
-					$h = arras_get_option('featured_thumb_h');
-					break;
-				case 'news-post-thumb':
-					$w = arras_get_option('news_thumb_w');
-					$h = arras_get_option('news_thumb_h');				
-					break;
-				case 'archive-post-thumb':
-					$w = arras_get_option('news_thumb_w');
-					$h = arras_get_option('news_thumb_h');				
-					break;
-				default:
-					$w = get_option('thumbnail_size_w');
-					$h = get_option('thumbnail_size_h');
-			}
-			
-			return get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+		switch($size) {
+			case 'sidebar-thumb':
+				$w = 36;
+				$h = 36;
+				break;
+			case 'featured-slideshow-thumb':
+				$w = 640;
+				$h = 250;
+				break;
+			case 'featured-post-thumb':
+				$w = arras_get_option('featured_thumb_w');
+				$h = arras_get_option('featured_thumb_h');
+				break;
+			case 'news-post-thumb':
+				$w = arras_get_option('news_thumb_w');
+				$h = arras_get_option('news_thumb_h');				
+				break;
+			case 'archive-post-thumb':
+				$w = arras_get_option('news_thumb_w');
+				$h = arras_get_option('news_thumb_h');				
+				break;
+			default:
+				$w = get_option('thumbnail_size_w');
+				$h = get_option('thumbnail_size_h');
 		}
 		
+		return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_title() . '" title="' . get_the_title . '" />';
 	}
 	
+	return '<img src="' . get_bloginfo('template_directory') . '/images/thumbnail.png" alt="' . get_the_title() . '" title="' . get_the_title() . '" />';	
 }
+
 
 function arras_render_posts($args = null, $display_type = 'default', $page_type = 'news') {
 	global $post, $wp_query;

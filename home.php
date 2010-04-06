@@ -38,7 +38,8 @@ $stickies = get_option('sticky_posts');
     		<?php if ($q->have_posts()) : while ($q->have_posts()) : $q->the_post(); ?>
     		<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
 
-            	<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark" style="background: url(<?php echo arras_get_thumbnail('featured-slideshow-thumb'); ?>) no-repeat #1E1B1A;">
+            	<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark">
+				<?php echo arras_get_thumbnail('featured-slideshow-thumb'); ?>
                 <span class="featured-entry">
                     <span class="entry-title"><?php the_title(); ?></span>
                     <span class="entry-summary"><?php echo arras_strip_content(get_the_excerpt(), 20); ?></span>
