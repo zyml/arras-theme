@@ -201,7 +201,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .home-title				{ text-transform: uppercase; font-weight: bold; font-size: 11px; padding: 6px 10px;  background: url(../../images/feed-title-white.jpg) repeat-x #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; color: #333; }
 
 /* single post */
-.single .post, .single-post	{ background: url(../../images/content-bg.jpg) repeat-x top #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 0 15px; }
+.single .post, #main .single-post	{ background: url(../../images/content-bg.jpg) repeat-x top #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 0 10px; }
 .single .post .entry-title, .single-post .entry-title	{ font-size: 22px; font-weight: bold; padding: 10px 0 0; margin: 10px 0 5px; }
 .single .post .entry-title a:link, .single .post .entry-title a:visited, .single-post .entry-title a:link, .single-post .entry-title a:visited	{ text-decoration: none; }
 .single .post .entry-info, .single-post .entry-info	{ margin-bottom: 15px; color: #848485; }
@@ -218,7 +218,6 @@ img.alignleft			{ border: 3px solid #EEE; }
 .entry-content form { margin: 1em 0; }
 .post-edit-link:link, .post-edit-link:visited	{ text-decoration: none; padding: 0 0 0 14px; }
 
-.single-post 			{ padding: 0 10px; }
 .page .entry-content	{ margin: 0 0 20px; }
 
 .layout-3c-r-fixed .post .entry-photo, .layout-3c-r-fixed .single-post .entry-photo, .layout-3c-fixed .post .entry-photo, .layout-3c-fixed .single-post .entry-photo	{ width: 480px; }

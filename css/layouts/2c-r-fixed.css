@@ -38,7 +38,7 @@ DESCRIPTION: Two-column 950px fixed layout with one sidebar right of content
 #subsidiary #third {
     margin:0;
 }
-#main .module, .single-post {
+#main .module, #main .single-post {
 	margin-right: 10px;
 }
 .fixed {
