@@ -23,7 +23,11 @@
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
+<?php if ( !file_exists(ABSPATH . 'favicon.ico') ) : ?>
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" />
+<?php else: ?>
+<link rel="shortcut icon" href="<?php echo get_bloginfo('url') ?>/favicon.ico" />
+<?php endif; ?>
 
 <?php
 wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-1.3.2.min.js', null, '1.3.2', false);
