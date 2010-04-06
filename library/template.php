@@ -7,7 +7,7 @@ function arras_get_page_no() {
 function arras_document_title() {
 	if ( function_exists('seo_title_tag') ) {
 		seo_title_tag();
-	} else if ( class_exists('All_in_One_SEO_Pack') || class_exists('HeadSpace2_Admin') ) {
+	} else if ( class_exists('All_in_One_SEO_Pack') || class_exists('HeadSpace2_Admin') || class_exists('Platinum_SEO_Pack') ) {
 		if(is_front_page() || is_home()) {
 			echo get_bloginfo('name') . ': ' . get_bloginfo('description');
 		} else {
@@ -25,7 +25,7 @@ function arras_document_title() {
 }
 
 function arras_document_description() {
-	if ( !class_exists('All_in_One_SEO_Pack') ) {
+	if ( !class_exists('All_in_One_SEO_Pack') || !class_exists('Platinum_SEO_Pack') ) {
 		echo '<meta name="description" content="' . get_bloginfo('description') . '" />';
 	}
 }
