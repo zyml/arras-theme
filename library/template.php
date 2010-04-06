@@ -89,33 +89,24 @@ $news_thumb_h = arras_get_option('news_thumb_h');
 function arras_alternate_style() {
 	global $theme_data, $arras_registered_alt_styles;
 	
-	if (ARRAS_CHILD && count($arras_registered_alt_styles) > 0) {
-		echo '<link rel="stylesheet=" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen,projection" />';
-	} else {
-		echo '
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/screen.css" type="text/css" media="screen,projection" />
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/print.css" type="text/css" media="print" />
-<!--[if IE 6]>
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/ie.css" type="text/css" media="screen,projection" />
-<![endif]-->
-		';
+	echo '
+	<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/screen.css" type="text/css" media="screen,projection" />
+	<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/print.css" type="text/css" media="print" />
+	<!--[if IE 6]>
+	<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/ie.css" type="text/css" media="screen,projection" />
+	<![endif]-->
+	';
 
+	$scheme = arras_get_option('style');
+	if ( $scheme != 'default' )
+		echo '<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projection" />';
+	else
+		echo '<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/default.css" type="text/css" media="screen,projection" />';
 	
-		$scheme = arras_get_option('style');
-		if ( $scheme != 'default' )
-			echo '
-<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projection" />
-			';
-		else
-			echo '
-<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/default.css" type="text/css" media="screen,projection" />
-			';
-		
-		if (!ARRAS_CHILD) {
-			echo '
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/user.css" type="text/css" media="screen,projection" />
-';
-		}
+	if (!ARRAS_CHILD) {
+		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/user.css" type="text/css" media="screen,projection" />';
+	} else {
+		echo '<link rel="stylesheet=" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen,projection" />';
 	}
 }
 
