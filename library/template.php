@@ -330,16 +330,6 @@ function arras_js_footer() {
 jQuery(document).ready(function($) {
 
 <?php if (is_home() || is_front_page()) : ?>
-$('.featured').hover( 
-	function() {
-		$('#featured-slideshow').cycle('pause');
-		$('#controls').fadeIn();
-	}, 
-	function() {
-		$('#featured-slideshow').cycle('resume');
-		$('#controls').fadeOut();
-	}
-);
 $('#featured-slideshow').cycle({
 	fx: 'fade',
 	speed: 250,
@@ -347,7 +337,6 @@ $('#featured-slideshow').cycle({
 	prev: '#controls .prev',
 	timeout: 6000
 });
-
 <?php endif ?>
 	
 });

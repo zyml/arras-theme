@@ -29,7 +29,7 @@ $stickies = get_option('sticky_posts');
 	
 	$q = new WP_Query( apply_filters('arras_slideshow_query', $query) );
 	?> 
-    	<div id="controls" style="display: none;">
+    	<div id="controls">
 			<a href="" class="prev"><?php _e('Prev', 'arras') ?></a>
 			<a href="" class="next"><?php _e('Next', 'arras') ?></a>
         </div>
