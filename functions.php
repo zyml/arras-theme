@@ -14,10 +14,8 @@ if (function_exists('qtrans_init')) {
 	remove_filter('option_arras_options', 'qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage', 0);	
 }
 
-$theme_data = get_theme( get_current_theme() );
-define( ARRAS_CHILD, (boolean)($theme_data['Parent Theme'] == 'Arras Theme') );
-
-$parent_data = get_theme('Arras Theme');
+$child_data = get_theme_data(STYLESHEETPATH . '/style.css');
+define( ARRAS_CHILD, (boolean)($child_data['Template'] != '') );
 
 // Define post meta fields
 define( ARRAS_POST_THUMBNAIL, 'thumb' );
