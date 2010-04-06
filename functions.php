@@ -25,19 +25,6 @@ define( ARRAS_REVIEW_SCORE, 'score' );
 define( ARRAS_REVIEW_PROS, 'pros' );
 define( ARRAS_REVIEW_CONS, 'cons' );
 
-// Define thumbnail width and height
-define( ARRAS_2COL_MINI_WIDTH, '190' );
-define( ARRAS_2COL_MINI_HEIGHT, '100' );
-
-define( ARRAS_2COL_FULL_WIDTH, '630' );
-define( ARRAS_2COL_FULL_HEIGHT, '250' );
-
-define( ARRAS_3COL_MINI_WIDTH, '220' );
-define( ARRAS_3COL_MINI_HEIGHT, '100' );
-
-define( ARRAS_3COL_FULL_WIDTH, '480' );
-define( ARRAS_3COL_FULL_HEIGHT, '225' );
-
 // Define PHP file constants
 define( ARRAS_DIR, TEMPLATEPATH );
 define( ARRAS_LIB, ARRAS_DIR . '/library' );
