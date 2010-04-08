@@ -1,10 +1,10 @@
 <?php
 function arras_addmenu() {
-	$options_page = add_menu_page( '', __('Arras Theme', 'arras'), 8, 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63);
-	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Theme Options', 'arras'), 8, 'arras-options', 'arras_admin' );
-	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Custom Header', 'arras'), 8, 'custom-header', 'custom-header' );
+	$options_page = add_menu_page( '', __('Arras Theme', 'arras'), 'switch_themes', 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63);
+	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Theme Options', 'arras'), 'switch_themes', 'arras-options', 'arras_admin' );
+	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Custom Header', 'arras'), 'switch_themes', 'custom-header', 'custom-header' );
 	
-	$custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 8, 'arras-custom-background', 'arras_custom_background' );
+	$custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 'switch_themes', 'arras-custom-background', 'arras_custom_background' );
 
 	add_action('admin_print_scripts-'. $options_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-'. $options_page, 'arras_admin_styles');
