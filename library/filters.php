@@ -65,12 +65,13 @@ function arras_postheader() {
 
 	
 	if ( !is_page() ) {
+	
 		if ( arras_get_option('post_author') ) {
 			$postheader .= sprintf( __('<span class="entry-author">By %s</span>', 'arras'), '<address class="author vcard">' . get_the_author() . '</address>' );
 		}
 		
 		if ( arras_get_option('post_date') ) {
-			$postheader .= sprintf( __('<strong>Published:</strong> %s', 'arras'), '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr>');
+			$postheader .= ' &ndash; <abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') . '</abbr>');
 		}
 		
 		if (current_user_can('edit_post')) {
@@ -85,17 +86,13 @@ function arras_postheader() {
 			$postheader .= sprintf( __('<span class="entry-cat"><strong>Posted in: </strong>%s</span>', 'arras'), implode(', ', $post_cats) );
 		}
 		
-		if ( arras_get_option('post_tags') && !is_attachment() )
-			$postheader .= '<span class="tags"><strong>' . __('Tags:', 'arras') . '</strong>' . get_the_tag_list(' ', ', ', ' ') . '</span>';
-		
-		
 	}
 	
-		if ( arras_get_option('single_thumbs') ) {
-			$postheader .= '<div class="entry-photo">' . arras_get_thumbnail('featured-slideshow-thumb') . '</div>';
-		}
-
 	$postheader .= '</div>';
+	
+	if ( arras_get_option('single_thumbs') ) {
+		$postheader .= '<div class="entry-photo">' . arras_get_thumbnail('featured-slideshow-thumb') . '</div>';
+	}
 	
 	echo apply_filters('arras_postheader', $postheader);
 }
@@ -108,6 +105,9 @@ function arras_postfooter() {
 	global $id, $post;
 	
 	$postfooter = '';
+	
+	if ( arras_get_option('post_tags') && !is_attachment() )
+			$postfooter .= '<div class="tags"><strong>' . __('Tags:', 'arras') . '</strong>' . get_the_tag_list(' ', ', ', ' ') . '</div>';
 
 	echo apply_filters('arras_postfooter', $postfooter);
 }
