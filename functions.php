@@ -14,22 +14,24 @@ if (function_exists('qtrans_init')) {
 	remove_filter('option_arras_options', 'qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage', 0);	
 }
 
+$parent_data = get_theme_data(TEMPLATEPATH . '/style.css');
 $child_data = get_theme_data(STYLESHEETPATH . '/style.css');
-define( ARRAS_CHILD, (boolean)($child_data['Template'] != '') );
+define( 'ARRAS_CHILD', (boolean)($child_data['Template'] != '') );
 
 // Define post meta fields
-define( ARRAS_POST_THUMBNAIL, 'thumb' );
-define( ARRAS_REVIEW_SCORE, 'score' );
-define( ARRAS_REVIEW_PROS, 'pros' );
-define( ARRAS_REVIEW_CONS, 'cons' );
+define( 'ARRAS_POST_THUMBNAIL', 'thumb' );
+define( 'ARRAS_REVIEW_SCORE', 'score' );
+define( 'ARRAS_REVIEW_PROS', 'pros' );
+define( 'ARRAS_REVIEW_CONS', 'cons' );
 
 // Define PHP file constants
-define( ARRAS_DIR, TEMPLATEPATH );
-define( ARRAS_LIB, ARRAS_DIR . '/library' );
-define( ARRAS_VERSION, $parent_data['Version'] );
+define( 'ARRAS_DIR', TEMPLATEPATH );
+define( 'ARRAS_LIB', ARRAS_DIR . '/library' );
+define( 'ARRAS_VERSION', $parent_data['Version'] );
+
 
 // Thumbnail generator
-define( ARRAS_THUMB, 'timthumb' );
+define( 'ARRAS_THUMB', 'timthumb' );
 
 // Load library files
 require_once ARRAS_LIB . '/actions.php';
