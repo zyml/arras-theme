@@ -1,7 +1,11 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
 <?php
 $linkcats['0'] = __('None', 'arras');
-foreach ( get_categories('type=link&hide_empty=0') as $c ) {
+
+// type=link is deprecated in WP3.0 (need to compat this...)
+$lc = get_categories('type=link&hide_empty=0');
+
+foreach ( $lc as $c ) {
 	$linkcats[$c->cat_ID] = $c->cat_name;
 }
 ?>

@@ -5,7 +5,7 @@
 
 <h2 id="arras-header"><?php _e('Arras Theme Options', 'arras') ?></h2>
 
-<?php if (!arras_cache_is_writable) : ?>
+<?php if (!arras_cache_is_writable()) : ?>
 <div class="error">
 	<p>
 		<?php printf( 
@@ -16,7 +16,7 @@
 </div><!-- .error -->
 <?php endif ?>
 
-<?php if (!arras_gd_is_installed) : ?>
+<?php if (!arras_gd_is_installed()) : ?>
 <div class="error">
 	<p><?php _e('The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information.', 'arras') ?></p>
 </div>
