@@ -72,7 +72,6 @@
 		<h3><span><?php _e('Recommended Plugins', 'arras') ?></span></h3>
 		<ul>
 			<li><a href="http://www.viper007bond.com/wordpress-plugins/regenerate-thumbnails/">Rengenerate Thumbnails</a></li>
-			<li><a href="http://pixopoint.com/products/pixopoint-menu/">PixoPoint Menu Plugin</a></li>
 			<li><a href="http://lesterchan.net/portfolio/programming/php/#wp-pagenavi">WP-PageNavi</a></li>
 			<li><a href="http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/">FancyBox for WordPress</a></li>
 			<li><a href="http://sexybookmarks.net/">SexyBookmarks</a></li>
