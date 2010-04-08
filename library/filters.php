@@ -42,7 +42,7 @@ function arras_newsfooter($page_type) {
 	global $post;
 	
 	$postfooter = '';
-	if ( arras_get_option($page_type . '_news_display') == 'quick' ) {
+	if ( arras_get_option($page_type . '_display') == 'quick' ) {
 		$postfooter .= '<p class="quick-read-more"><strong><a href="' . get_permalink() . '">' . __('Read More', 'arras') . '</a></strong></p>';
 	}
 	echo apply_filters('arras_newsfooter', $postfooter);
@@ -108,6 +108,8 @@ function arras_postheader() {
  */
 function arras_postfooter() {
 	global $id, $post;
+	
+	$postfooter = '';
 
 	echo apply_filters('arras_postfooter', $postfooter);
 }

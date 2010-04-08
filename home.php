@@ -99,7 +99,7 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 <?php $sidebars = wp_get_sidebars_widgets(); ?>
 
 <div id="bottom-content-1">
-	<?php if ( $sidebars['sidebar-4'] ) : ?>
+	<?php if ( isset($sidebars['sidebar-4']) ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #1') ) : ?>
         <?php endif; ?>
@@ -108,7 +108,7 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 </div>
 
 <div id="bottom-content-2">
-	<?php if ( $sidebars['sidebar-5'] ) : ?>
+	<?php if ( isset($sidebars['sidebar-5']) ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #2') ) : ?>
         <?php endif; ?>
