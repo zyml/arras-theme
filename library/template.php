@@ -60,13 +60,13 @@ $news_thumb_h = arras_get_option('news_thumb_h');
 #index-news .posts-default .post { width: <?php echo $news_thumb_w + 10 ?>px; }
 #index-news .posts-default img, #index-news .posts-default .entry-thumbnails-link { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
 #index-news .posts-default .entry-thumbnails { width: <?php echo $news_thumb_w +10 ?>px; height: <?php echo $news_thumb_h + 10 ?>px; }
-#index-news .posts-quick .entry-thumbnails { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
+#index-news .posts-quick .entry-thumbnails img { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
 #index-news .posts-default .entry-meta, #index-news .posts-quick .entry-meta { width: <?php echo $news_thumb_w ?>px; }
 
 #archive-posts .posts-default .post { width: <?php echo $news_thumb_w + 10 ?>px; }
 #archive-posts .posts-default img, #archive-posts .posts-default .entry-thumbnails-link { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
 #archive-posts .posts-default .entry-thumbnails { width: <?php echo $news_thumb_w +10 ?>px; height: <?php echo $news_thumb_h + 10 ?>px; }
-#archive-posts .posts-quick .entry-thumbnails { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
+#archive-posts .posts-quick .entry-thumbnails img { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
 #archive-posts .posts-default .entry-meta, #archive-posts .posts-quick .entry-meta { width: <?php echo $news_thumb_w ?>px; }
 <?php $layout = arras_get_option('layout') ?>
 
