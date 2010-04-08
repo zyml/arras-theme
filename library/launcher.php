@@ -2,6 +2,7 @@
 // Add Post Thumbnail Support (WordPress 2.9+)
 if ( function_exists('add_theme_support') ) {
 	add_theme_support('post-thumbnails');
+	add_theme_support('nav-menus');
 	
 	$layout = arras_get_option('layout');
 	
