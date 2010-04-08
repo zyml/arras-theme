@@ -78,8 +78,8 @@ function arras_custom_background() {
 		$arras_custom_bg_options['pos-y'] = stripslashes($_POST['bg-pos-y']);
 		$arras_custom_bg_options['repeat'] = stripslashes($_POST['bg-repeat']);
 		$arras_custom_bg_options['color'] = stripslashes($_POST['bg-color']);
-		$arras_custom_bg_options['foreground'] = (boolean)stripslashes($_POST['foreground']);
-		$arras_custom_bg_options['wrap'] = (boolean)stripslashes($_POST['wrap']);
+		$arras_custom_bg_options['foreground'] = (boolean)(isset($_POST['foreground']));
+		$arras_custom_bg_options['wrap'] = (boolean)(isset($_POST['wrap']));
 		
 		update_option('arras_custom_bg_options', maybe_serialize($arras_custom_bg_options));
 		
