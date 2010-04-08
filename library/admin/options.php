@@ -92,6 +92,7 @@ class Options {
 	
 	function save_options() {
 		$this->version = ARRAS_VERSION;
+		$this->donate = !isset($_POST['arras-credits']);
 		
 		$this->feed_url = (string)$_POST['arras-rss-feed-url'];
 		$this->comments_feed_url = (string)$_POST['arras-rss-comments-url'];

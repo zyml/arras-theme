@@ -60,5 +60,28 @@ function arras_admin_styles() {
 ?> <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/admin.css" type="text/css" /> <?php
 }
 
+function get_remote_array($url) {
+	if ( function_exists('wp_remote_request') ) {	
+		$options = array();
+		$options['headers'] = array(
+			'User-Agent' => 'Arras Theme Feed Grabber' . ARRAS_VERSION . '; (' . get_bloginfo('url') .')'
+		 );
+		 
+		$response = wp_remote_request($url, $options);
+		
+		if ( is_wp_error( $response ) )
+			return false;
+	
+		if ( 200 != $response['response']['code'] )
+			return false;
+		
+		$content = unserialize($response['body']);
+
+		if (is_array($content)) 
+			return $content;
+	}
+	return false;	
+}
+
 /* End of file admin.php */
 /* Location: ./library/admin/admin.php */

@@ -79,11 +79,26 @@
 		</ul>
 	</div>
 	
+	<?php if ( !arras_get_option('donate') ) : ?>
+	<div class="postbox">
+		<h3><span><?php _e('Translations', 'arras') ?></span></h3>
+		<p>Oops! No translations available for 1.4.3. Translators will be credited here.</p>
+	</div>
+	
 	<div class="postbox">
 		<h3><span><?php _e('Donate!', 'arras') ?></span></h3>
+		<p><?php _e('Many thanks to the following recent donators:', 'arras') ?></p>
+		<?php $donators = get_remote_array('http://api.arrastheme.com/donators.php'); ?>
+		<ul>
+		<?php 
+		foreach ($donators as $donator) {
+			echo '<li><a href="' . $donator[1] . '">' . $donator[0] . '</a></li>';
+		} ?>
+		</ul>
 		<p><?php _e('If you are using Arras Theme and like it, donate to the author!', 'arras') ?></p>
 		<a class="button-primary" href="http://www.arrastheme.com/donate/"><?php _e('Donate using PayPal', 'arras') ?></a>
 	</div>
+	<?php endif; ?>
 	
 </div>
 
