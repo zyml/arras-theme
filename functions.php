@@ -9,6 +9,10 @@ if (class_exists('xili_language')) {
 	load_theme_textdomain('arras', get_template_directory() . '/language');
 }
 
+$locale = get_locale();
+$locale_file = TEMPLATEPATH . "/language/$locale.php";
+if ( is_readable( $locale_file ) ) require_once( $locale_file );
+
 // Remove filter on theme options if qTranslate is enabled
 if (function_exists('qtrans_init')) {
 	remove_filter('option_arras_options', 'qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage', 0);	
