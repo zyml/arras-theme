@@ -143,6 +143,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 #controls .prev			{ background: url(../../images/prev.png) no-repeat; float: left; position: absolute; left: 5px; }
 #controls .next			{ background: url(../../images/next.png) no-repeat; float: right; position: absolute; left: 605px; }
 #controls .next:hover, #controls .prev:hover	{ opacity: 1; }
+#controls a:focus		{ outline: none; }
 
 #featured-slideshow		{ position: relative; margin-right: 20px; z-index: 0 !important; }			
 
