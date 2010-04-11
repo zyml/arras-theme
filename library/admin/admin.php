@@ -6,6 +6,7 @@ function arras_addmenu() {
 	
 	$custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 'switch_themes', 'arras-custom-background', 'arras_custom_background' );
 
+	add_action('admin_head', 'arras_donors_ajax');
 	add_action('admin_print_scripts-'. $options_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-'. $options_page, 'arras_admin_styles');
 	
@@ -82,6 +83,37 @@ function get_remote_array($url) {
 	}
 	return false;	
 }
+
+function arras_donors_ajax() {
+?>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			var data = { action: 'arras_donors_callback' };
+		
+			jQuery.post(ajaxurl, data, function(response) {
+				jQuery('#donors-list').append(response);
+			});
+		});
+	</script>
+<?php	
+}
+
+function arras_donors_callback() {
+?>
+	<?php $donors = @get_remote_array('http://api.arrastheme.com/donators.php'); ?>
+	<?php if ($donors) : ?>
+	<p><?php _e('Many thanks to the following recent donors:', 'arras') ?></p>
+	<ul>
+	<?php 
+	foreach ($donors as $donor) {
+		echo '<li><a href="' . $donor[1] . '">' . $donor[0] . '</a></li>';
+	} ?>
+	</ul>
+	<?php endif ?>
+<?php
+	die();
+}
+add_action('wp_ajax_arras_donors_callback', 'arras_donors_callback');
 
 /* End of file admin.php */
 /* Location: ./library/admin/admin.php */
