@@ -1,5 +1,10 @@
 <?php
-// Add Post Thumbnail Support (WordPress 2.9+)
+// Redirect to theme options after activation
+if (is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
+	header( 'Location: ' . admin_url() . 'admin.php?page=arras-options' ) ;
+}
+
+// Add Theme Support (WordPress 2.9+)
 if ( function_exists('add_theme_support') ) {
 	add_theme_support('post-thumbnails');
 	add_theme_support('nav-menus');
