@@ -2,6 +2,7 @@
 // Add Post Thumbnail Support (WordPress 2.9+)
 if ( function_exists('add_theme_support') ) {
 	add_theme_support('post-thumbnails');
+	add_theme_support('nav-menus');
 	
 	$layout = arras_get_option('layout');
 	
@@ -81,13 +82,11 @@ if (is_admin()) {
 }
 
 // Alternate Styles & Layouts
-if (!ARRAS_CHILD) {
-	register_alternate_layout( '1c-fixed', __('1 Column Layout (No Sidebars)', 'arras') );
-	register_alternate_layout( '2c-r-fixed', __('2 Column Layout (Right Sidebar)', 'arras') );
-	register_alternate_layout( '2c-l-fixed', __('2 Column Layout (Left Sidebar)', 'arras') );
-	register_alternate_layout( '3c-fixed', __('3 Column Layout (Left & Right Sidebars)', 'arras') );
-	register_alternate_layout( '3c-r-fixed', __('3 Column Layout (Right Sidebars)', 'arras') );
-}
+register_alternate_layout( '1c-fixed', __('1 Column Layout (No Sidebars)', 'arras') );
+register_alternate_layout( '2c-r-fixed', __('2 Column Layout (Right Sidebar)', 'arras') );
+register_alternate_layout( '2c-l-fixed', __('2 Column Layout (Left Sidebar)', 'arras') );
+register_alternate_layout( '3c-fixed', __('3 Column Layout (Left & Right Sidebars)', 'arras') );
+register_alternate_layout( '3c-r-fixed', __('3 Column Layout (Right Sidebars)', 'arras') );
 
 // Filters
 add_filter('comments_template', 'legacy_comments');

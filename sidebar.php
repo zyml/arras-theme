@@ -18,7 +18,7 @@
 				<h5 class="widgettitle"><?php _e('Recent Posts', 'arras') ?></h5>
 				<div class="widgetcontent">
 <?php 
-				$r = new WP_Query(array('showposts' => $number, 'what_to_show' => 'posts', 'nopaging' => 0, 'post_status' => 'publish', 'caller_get_posts' => 1));
+				$r = new WP_Query(array('showposts' => 10, 'what_to_show' => 'posts', 'nopaging' => 0, 'post_status' => 'publish', 'caller_get_posts' => 1));
 				if ($r->have_posts()) :
 ?>
 				<ul>

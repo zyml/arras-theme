@@ -92,6 +92,7 @@ class Options {
 	
 	function save_options() {
 		$this->version = ARRAS_VERSION;
+		$this->donate = !isset($_POST['arras-credits']);
 		
 		$this->feed_url = (string)$_POST['arras-rss-feed-url'];
 		$this->comments_feed_url = (string)$_POST['arras-rss-comments-url'];
@@ -103,9 +104,11 @@ class Options {
 		$this->featured_cat = (int)$_POST['arras-cat-featured2'];
 		$this->news_cat = (int)$_POST['arras-cat-news'];
 		
-		$this->topnav_home = (string)$_POST['arras-nav-home'];
-		$this->topnav_display = (string)$_POST['arras-nav-display'];
-		$this->topnav_linkcat = (int)$_POST['arras-nav-linkcat'];
+		if ( !function_exists('wp_nav_menu') ) {
+			$this->topnav_home = (string)$_POST['arras-nav-home'];
+			$this->topnav_display = (string)$_POST['arras-nav-display'];
+			$this->topnav_linkcat = (int)$_POST['arras-nav-linkcat'];
+		}
 		
 		$this->node_based_limit_words = (int)$_POST['arras-layout-limit-words'];
 		
@@ -121,16 +124,18 @@ class Options {
 		$this->news_display = (string)$_POST['arras-layout-index-newsdisplay'];
 		$this->archive_display = (string)$_POST['arras-layout-archive-newsdisplay'];
 		
-		$this->display_author = (boolean)$_POST['arras-layout-single-author'];
+		$this->display_author = isset($_POST['arras-layout-single-author']);
 		
-		$this->post_author = (boolean)$_POST['arras-layout-post-author'];
-		$this->post_date = (boolean)$_POST['arras-layout-post-date'];
-		$this->post_cats = (boolean)$_POST['arras-layout-post-cats'];
-		$this->post_tags = (boolean)$_POST['arras-layout-post-tags'];
+		$this->post_author = isset($_POST['arras-layout-post-author']);
+		$this->post_date = isset($_POST['arras-layout-post-date']);
+		$this->post_cats = isset($_POST['arras-layout-post-cats']);
+		$this->post_tags = isset($_POST['arras-layout-post-tags']);
+		$this->single_thumbs = isset($_POST['arras-layout-single-thumbs']);
 		$this->single_thumbs = (boolean)$_POST['arras-layout-single-thumbs'];
 		
-		$this->featured_display_meta_inpic = (boolean)$_POST['arras-layout-featured2-meta'];
-		$this->news_display_meta_inpic = (boolean)$_POST['arras-layout-news-meta'];
+		$this->featured_display_meta_inpic = isset($_POST['arras-layout-featured2-meta']);
+		$this->news_display_meta_inpic = isset($_POST['arras-layout-news-meta']);
+		$this->archive_display_meta_inpic = isset($_POST['arras-layout-archive-meta']);
 		$this->archive_display_meta_inpic = (boolean)$_POST['arras-layout-archive-meta'];
 		
 		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];

@@ -7,7 +7,7 @@ function arras_get_page_no() {
 function arras_document_title() {
 	if ( function_exists('seo_title_tag') ) {
 		seo_title_tag();
-	} else if ( class_exists('All_in_One_SEO_Pack') || class_exists('HeadSpace2_Admin') ) {
+	} else if ( class_exists('All_in_One_SEO_Pack') || class_exists('HeadSpace2_Admin') || class_exists('Platinum_SEO_Pack') ) {
 		if(is_front_page() || is_home()) {
 			echo get_bloginfo('name') . ': ' . get_bloginfo('description');
 		} else {
@@ -25,14 +25,15 @@ function arras_document_title() {
 }
 
 function arras_document_description() {
-	if ( !class_exists('All_in_One_SEO_Pack') ) {
+	if ( !class_exists('All_in_One_SEO_Pack') || !class_exists('Platinum_SEO_Pack') ) {
 		echo '<meta name="description" content="' . get_bloginfo('description') . '" />';
 	}
 }
 
 function arras_override_styles() {
+	global $arras_registered_alt_layouts;
 ?>
-<?php global $arras_registered_alt_layouts; if ( count($arras_registered_alt_layouts) > 0 ) : ?>
+<?php if ( count($arras_registered_alt_layouts) > 0 ) : ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/layouts/<?php echo arras_get_option('layout') ?>.css" type="text/css" />
 <?php endif; ?>
 
@@ -59,61 +60,54 @@ $news_thumb_h = arras_get_option('news_thumb_h');
 #index-news .posts-default .post { width: <?php echo $news_thumb_w + 10 ?>px; }
 #index-news .posts-default img, #index-news .posts-default .entry-thumbnails-link { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
 #index-news .posts-default .entry-thumbnails { width: <?php echo $news_thumb_w +10 ?>px; height: <?php echo $news_thumb_h + 10 ?>px; }
-#index-news .posts-quick .entry-thumbnails { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
+#index-news .posts-quick .entry-thumbnails img { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
 #index-news .posts-default .entry-meta, #index-news .posts-quick .entry-meta { width: <?php echo $news_thumb_w ?>px; }
 
 #archive-posts .posts-default .post { width: <?php echo $news_thumb_w + 10 ?>px; }
 #archive-posts .posts-default img, #archive-posts .posts-default .entry-thumbnails-link { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
 #archive-posts .posts-default .entry-thumbnails { width: <?php echo $news_thumb_w +10 ?>px; height: <?php echo $news_thumb_h + 10 ?>px; }
-#archive-posts .posts-quick .entry-thumbnails { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
+#archive-posts .posts-quick .entry-thumbnails img { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
 #archive-posts .posts-default .entry-meta, #archive-posts .posts-quick .entry-meta { width: <?php echo $news_thumb_w ?>px; }
 <?php $layout = arras_get_option('layout') ?>
 
 <?php if (strpos($layout, '1c') !== false) : ?>
 .featured, .featured-article { height: 300px; }
 .featured-article { width: 950px; }
+.featured-article img { width: 950px; height: 300px; }
 #controls { width: 920px; top: 120px; }
 #controls .next { left: 915px; }
-.featured-entry	{ height: 100px; top: 200px; }
+.featured-entry	{ height: 100px; top: -100px; }
 <?php elseif (strpos($layout, '3c') !== false) : ?>
 .featured, .featured-article { height: 225px; }
 .featured-article { width: 490px; }
+.featured-article img { width: 490px; height: 225px; }
 #controls { width: 450px; top: 85px; }
 #controls .next { left: 455px; }
-.featured-entry	{ height: 80px; top: 145px; }
+.featured-entry	{ height: 80px; top: -80px; }
 <?php endif;
 }
 
 function arras_alternate_style() {
 	global $theme_data, $arras_registered_alt_styles;
 	
-	if (ARRAS_CHILD && count($arras_registered_alt_styles) > 0) {
-		echo '<link rel="stylesheet=" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen,projection" />';
-	} else {
-		echo '
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/screen.css" type="text/css" media="screen,projection" />
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/print.css" type="text/css" media="print" />
-<!--[if IE 6]>
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/ie.css" type="text/css" media="screen,projection" />
-<![endif]-->
-		';
+	echo '
+	<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/screen.css" type="text/css" media="screen,projection" />
+	<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/print.css" type="text/css" media="print" />
+	<!--[if IE 6]>
+	<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/ie.css" type="text/css" media="screen,projection" />
+	<![endif]-->
+	';
 
+	$scheme = arras_get_option('style');
+	if ( $scheme != 'default' )
+		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projection" />';
+	else
+		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/styles/default.css" type="text/css" media="screen,projection" />';
 	
-		$scheme = arras_get_option('style');
-		if ( $scheme != 'default' )
-			echo '
-<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projection" />
-			';
-		else
-			echo '
-<link rel="stylesheet" href="' . get_bloginfo('stylesheet_directory') . '/css/styles/default.css" type="text/css" media="screen,projection" />
-			';
-		
-		if (!ARRAS_CHILD) {
-			echo '
-<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/user.css" type="text/css" media="screen,projection" />
-';
-		}
+	if (!ARRAS_CHILD) {
+		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/user.css" type="text/css" media="screen,projection" />';
+	} else {
+		echo '<link rel="stylesheet=" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen,projection" />';
 	}
 }
 
@@ -127,57 +121,51 @@ function arras_body_class() {
 	}
 }
 
-function arras_get_thumbnail($size = 'thumbnail', $id = 1) {
-	global $post;	
+function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
+	global $post;
 	if ($post) $id = $post->ID;
 	
-	// get post thumbnail (WordPress 2.9+)
-	if ( function_exists('has_post_thumbnail') && has_post_thumbnail($id) ) {
-		$image_src = wp_get_attachment_image_src( get_post_thumbnail_id($id), $size );
-		
-		if (!$image_src[0]) return false;
-		else return $image_src[0];
-		
+	// get post thumbnail (WordPress 2.9)
+	if (function_exists('has_post_thumbnail')) {
+		if (has_post_thumbnail($id)) {
+			return get_the_post_thumbnail($id, $size);
+		}
 	} else {
 	// go back to legacy (phpThumb or timThumb)
 		$thumbnail = get_post_meta($id, ARRAS_POST_THUMBNAIL, true);
 		
-		if (!$thumbnail) {
-			return false;
-		} else {
-		
-			switch($size) {
-				case 'sidebar-thumb':
-					$w = 36;
-					$h = 36;
-					break;
-				case 'featured-slideshow-thumb':
-					$w = 640;
-					$h = 250;
-					break;
-				case 'featured-post-thumb':
-					$w = arras_get_option('featured_thumb_w');
-					$h = arras_get_option('featured_thumb_h');
-					break;
-				case 'news-post-thumb':
-					$w = arras_get_option('news_thumb_w');
-					$h = arras_get_option('news_thumb_h');				
-					break;
-				case 'archive-post-thumb':
-					$w = arras_get_option('news_thumb_w');
-					$h = arras_get_option('news_thumb_h');				
-					break;
-				default:
-					$w = get_option('thumbnail_size_w');
-					$h = get_option('thumbnail_size_h');
-			}
-			
-			return get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1';
+		switch($size) {
+			case 'sidebar-thumb':
+				$w = 36;
+				$h = 36;
+				break;
+			case 'featured-slideshow-thumb':
+				$w = 640;
+				$h = 250;
+				break;
+			case 'featured-post-thumb':
+				$w = arras_get_option('featured_thumb_w');
+				$h = arras_get_option('featured_thumb_h');
+				break;
+			case 'news-post-thumb':
+				$w = arras_get_option('news_thumb_w');
+				$h = arras_get_option('news_thumb_h');				
+				break;
+			case 'archive-post-thumb':
+				$w = arras_get_option('news_thumb_w');
+				$h = arras_get_option('news_thumb_h');				
+				break;
+			default:
+				$w = get_option('thumbnail_size_w');
+				$h = get_option('thumbnail_size_h');
 		}
 		
+		return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_title() . '" title="' . get_the_title . '" />';
 	}
 	
+	return '<img src="' . get_bloginfo('template_directory') . '/images/thumbnail.png" alt="' . get_the_title() . '" title="' . get_the_title() . '" />';	
 }
+
 
 function arras_render_posts($args = null, $display_type = 'default', $page_type = 'news') {
 	global $post, $wp_query;
@@ -334,16 +322,6 @@ function arras_js_footer() {
 jQuery(document).ready(function($) {
 
 <?php if (is_home() || is_front_page()) : ?>
-$('.featured').hover( 
-	function() {
-		$('#featured-slideshow').cycle('pause');
-		$('#controls').fadeIn();
-	}, 
-	function() {
-		$('#featured-slideshow').cycle('resume');
-		$('#controls').fadeOut();
-	}
-);
 $('#featured-slideshow').cycle({
 	fx: 'fade',
 	speed: 250,
@@ -351,7 +329,6 @@ $('#featured-slideshow').cycle({
 	prev: '#controls .prev',
 	timeout: 6000
 });
-
 <?php endif ?>
 	
 });

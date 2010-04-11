@@ -10,30 +10,34 @@
 <?php arras_alternate_style() ?>
 
 <?php if ( ($feed = arras_get_option('feed_url') ) == '' ) : ?>
-<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
+<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
 <?php else : ?>
-<link rel="alternate" type="application/rss+xml" href="<?php echo $feed ?>" title="<?php printf( __( '%s latest posts', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
+<link rel="alternate" type="application/rss+xml" href="<?php echo $feed ?>" title="<?php printf( __( '%s latest posts', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
 <?php endif; ?>
 
 <?php if ( ($comments_feed = arras_get_option('comments_feed_url') ) == '' ) : ?>
-<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
+<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
 <?php else : ?>
-<link rel="alternate" type="application/rss+xml" href="<?php echo $comments_feed ?>" title="<?php printf( __( '%s latest comments', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
+<link rel="alternate" type="application/rss+xml" href="<?php echo $comments_feed ?>" title="<?php printf( __( '%s latest comments', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
 <?php endif; ?>
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
+<?php if ( !file_exists(ABSPATH . 'favicon.ico') ) : ?>
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" />
+<?php else: ?>
+<link rel="shortcut icon" href="<?php echo get_bloginfo('url') ?>/favicon.ico" />
+<?php endif; ?>
 
 <?php
-wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-1.3.2.min.js', null, '1.3.2', false);
-wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui-1.7.2.min.js', 'jquery', '1.7.2', false); 
+wp_enqueue_script('jquery');
+wp_enqueue_script('jquery-ui-tabs', null, array('jquery-ui-core', 'jquery'), null, false); 
 
 if ( is_home() || is_front_page() ) {
 	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', 'jquery', null, true);
 }
 
-if ( !function_exists('pixopoint_menu') ) {
+if ( !function_exists('wp_nav_menu') && !function_exists('pixopoint_menu') ) {
 	wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/superfish/hoverIntent.js', 'jquery', null, false);
 	wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish/superfish.js', 'jquery', null, false);
 }
@@ -95,11 +99,14 @@ document.body.className = c;
 <?php arras_above_nav() ?>
 <div id="nav">
 	<div id="nav-content" class="clearfix">
-	<?php if ( function_exists('pixopoint_menu') ): ?>
-	<?php pixopoint_menu(); ?>
-	<?php else : ?>
+	<?php 
+	if ( function_exists('wp_nav_menu') ) {
+		wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'sf-menu menu clearfix') );
+	} elseif ( function_exists('pixopoint_menu') ) {
+		pixopoint_menu();
+	} else { ?>
 		<ul class="sf-menu menu clearfix">
-			<li><a href="<?php bloginfo('url') ?>"><?php _e( arras_get_option('topnav_home') ) ?></a></li>
+			<li><a href="<?php bloginfo('url') ?>"><?php _e( arras_get_option('topnav_home') ); ?></a></li>
 			<?php 
 			if (arras_get_option('topnav_display') == 'pages') {
 				wp_list_pages('sort_column=menu_order&title_li=');
@@ -110,17 +117,17 @@ document.body.className = c;
 			}
 			?>
 		</ul>
-	<?php endif ?>
+	<?php } ?>
 		<ul class="quick-nav clearfix">
 			<?php if ($feed == '') : ?>
-				<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
+				<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
 			<?php else : ?>
-				<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $feed; ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
+				<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $feed; ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
 			<?php endif; ?>
 			
 			<?php $twitter_username = arras_get_option('twitter_username'); ?>
 			<?php if ($twitter_username != '') : ?>
-				<li><a id="twitter" title="<?php printf( __( '%s Twitter', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" href="http://www.twitter.com/<?php echo $twitter_username ?>/"><?php _e('Twitter', 'arras') ?></a></li>
+				<li><a id="twitter" title="<?php printf( __( '%s Twitter', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="http://www.twitter.com/<?php echo $twitter_username ?>/"><?php _e('Twitter', 'arras') ?></a></li>
 			<?php endif ?>
 		</ul>
 	</div><!-- #nav-content -->

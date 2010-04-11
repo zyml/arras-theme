@@ -1,9 +1,10 @@
 <?php
 function arras_addmenu() {
-	$options_page = add_menu_page( __('Arras Theme', 'arras'), __('Arras Theme', 'arras'), 'switch_themes', 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63 );
+	$options_page = add_menu_page( '', __('Arras Theme', 'arras'), 'switch_themes', 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63);
 	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Theme Options', 'arras'), 'switch_themes', 'arras-options', 'arras_admin' );
+	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Custom Header', 'arras'), 'switch_themes', 'custom-header', 'custom-header' );
 	
-	$custom_background_page = add_theme_page( __('Background', 'arras'), __('Background', 'arras'), 'switch_themes', 'arras-custom-background', 'arras_custom_background' );
+	$custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 'switch_themes', 'arras-custom-background', 'arras_custom_background' );
 
 	add_action('admin_print_scripts-'. $options_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-'. $options_page, 'arras_admin_styles');
@@ -57,6 +58,29 @@ function arras_admin_scripts() {
 
 function arras_admin_styles() {
 ?> <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/admin.css" type="text/css" /> <?php
+}
+
+function get_remote_array($url) {
+	if ( function_exists('wp_remote_request') ) {	
+		$options = array();
+		$options['headers'] = array(
+			'User-Agent' => 'Arras Theme Feed Grabber' . ARRAS_VERSION . '; (' . get_bloginfo('url') .')'
+		 );
+		 
+		$response = wp_remote_request($url, $options);
+		
+		if ( is_wp_error( $response ) )
+			return false;
+	
+		if ( 200 != $response['response']['code'] )
+			return false;
+		
+		$content = unserialize($response['body']);
+
+		if (is_array($content)) 
+			return $content;
+	}
+	return false;	
 }
 
 /* End of file admin.php */

@@ -146,7 +146,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 #featured-slideshow		{ position: relative; margin-right: 20px; z-index: 0 !important; }			
 
 .featured-article		{ display: block; width: 640px; height: 250px; text-decoration: none !important; background-position: center !important; }
-.featured-entry			{ position: relative; top: 165px; overflow: hidden; background: #000; height: 85px; color: #a7a7a7; padding: 0; display: block; opacity: 0.8; filter: alpha(opacity = 80); }
+.featured-article img	{ width: 640px; height: 250px; }
+.featured-entry			{ position: relative; top: -85px; overflow: hidden; background: #000; height: 85px; color: #a7a7a7; padding: 0; display: block; opacity: 0.8; filter: alpha(opacity = 80); }
 .featured-entry .entry-title	{ color: #FFF; padding: 10px 15px 5px; display: block; font-size: 18px; font-weight: 700; }
 .featured-entry .entry-summary	{ padding: 0 15px; margin: 0; display: block; }
 
@@ -200,26 +201,32 @@ img.alignleft			{ border: 3px solid #EEE; }
 .home-title				{ text-transform: uppercase; font-weight: 700; font-size: 14px; padding: 8px 3px; border-bottom: 1px solid #DDD; margin: 0 15px 20px 0; color: #383331; }
 
 /* single post */
-.single .post, .single-post	{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 0 15px; }
+.single .post, #main .single-post	{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 15px 0; padding: 0 15px; }
 .single .post .entry-title, .single-post .entry-title	{ font-size: 24px; font-weight: 700; padding: 0; margin: 20px 0 15px; letter-spacing: -1px;  }
 .single .post .entry-title a:link, .single .post .entry-title a:visited, .single-post .entry-title a:link, .single-post .entry-title a:visited	{ text-decoration: none; }
-.single .post .entry-info, .single-post .entry-info	{ margin-bottom: 15px; color: #848485; }
+.single .post .entry-info, .single-post .entry-info	{ padding-bottom: 10px; margin-bottom: 10px; color: #848485; font-size: 11px; text-transform: uppercase; border-bottom: 1px dotted #CCC; }
+.single .post .entry-info .published, .single-post .entry-info .published { border: none; }
 .single .post .entry-cat, .single-post .entry-cat	{ display: block; color: #848485; margin: 5px 0 0; }
-.single-post .entry-cat a:link, .single-post .entry-cat a:visited	{ color: #666; }
+.single-post .entry-cat a:link, .single-post .entry-cat a:visited	{ color: #666; text-decoration: none; }
 .single-post .entry-cat a:hover	{ color: #333; }
-.single .post .entry-author, .single-post .entry-author { font-weight: 700; margin: 0 10px 0 0; color: #848485; }
+.single .post .entry-author, .single-post .entry-author { font-weight: 700; margin: 0; color: #848485; }
 .single .post .entry-author address, .single-post .entry-author address	{ display: inline; font-style: normal; }
-.single .post .tags, .single-post .tags			{ display: block; margin: 2px 0 0; color: #848485; }
-.single .post .entry-photo, .single-post .entry-photo	{ width: 616px; margin: 10px 0; overflow: hidden; border: 1px solid #CCC; }
-.single .post .entry-content, .single-post .entry-content	{ margin: 20px 0; font-size: 12px; }
-.single .post .entry-content p, .single-post .entry-content p	{ line-height: 1.8em; }
-.entry-content ul, .entry-content ol	{ padding: 0 1em 0.5em; }
-.entry-content ul li, .entry-content ol li	{ margin: 0.5em 0; }
+#main .single .post .tags, #main .single-post .tags { margin: 15px 0; padding: 15px 0 0; color: #848485; border-top: 1px dotted #CCC; }
+#main .single .post .tags strong, #main .single-post .tags strong { text-transform: uppercase; font-size: 11px; }
+.single .post .entry-photo img, .single-post .entry-photo img	{ margin: 10px 0; overflow: hidden; border: 1px solid #CCC; }
+
+.entry-content, .entry-content	{ margin: 20px 0; font-size: 12px; line-height: 1.5em; }
+.entry-content p, .entry-content p	{ }
+.entry-content ul { padding: 0 1.2em 0.5em; }
+.entry-content ol { padding: 0 1.5em 0.5em; }
+.entry-content ul li, .entry-content ol li { margin: 0.5em 0; }
+.entry-content blockquote { font-style: italic; }
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 { margin: 1.2em 0 0; }
 .entry-content h3 { font-size: 16px; }
 .entry-content form { margin: 1em 0; }
+
 .post-edit-link:link, .post-edit-link:visited	{ text-decoration: none; padding: 0 0 0 14px; }
 
-.single-post 			{ padding: 0 10px; }
 .page .entry-content	{ margin: 0 0 20px; }
 
 .layout-3c-r-fixed .post .entry-photo, .layout-3c-r-fixed .single-post .entry-photo, .layout-3c-fixed .post .entry-photo, .layout-3c-fixed .single-post .entry-photo	{ width: 480px; }

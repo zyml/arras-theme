@@ -9,42 +9,33 @@ if (class_exists('xili_language')) {
 	load_theme_textdomain('arras', get_template_directory() . '/language');
 }
 
+$locale = get_locale();
+$locale_file = TEMPLATEPATH . "/language/$locale.php";
+if ( is_readable( $locale_file ) ) require_once( $locale_file );
+
 // Remove filter on theme options if qTranslate is enabled
 if (function_exists('qtrans_init')) {
 	remove_filter('option_arras_options', 'qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage', 0);	
 }
 
-$theme_data = get_theme( get_current_theme() );
-define( ARRAS_CHILD, (boolean)($theme_data['Parent Theme'] == 'Arras Theme') );
-
-$parent_data = get_theme('Arras Theme');
+$parent_data = get_theme_data(TEMPLATEPATH . '/style.css');
+$child_data = get_theme_data(STYLESHEETPATH . '/style.css');
+define( 'ARRAS_CHILD', (boolean)($child_data['Template'] != '') );
 
 // Define post meta fields
-define( ARRAS_POST_THUMBNAIL, 'thumb' );
-define( ARRAS_REVIEW_SCORE, 'score' );
-define( ARRAS_REVIEW_PROS, 'pros' );
-define( ARRAS_REVIEW_CONS, 'cons' );
-
-// Define thumbnail width and height
-define( ARRAS_2COL_MINI_WIDTH, '190' );
-define( ARRAS_2COL_MINI_HEIGHT, '100' );
-
-define( ARRAS_2COL_FULL_WIDTH, '630' );
-define( ARRAS_2COL_FULL_HEIGHT, '250' );
-
-define( ARRAS_3COL_MINI_WIDTH, '220' );
-define( ARRAS_3COL_MINI_HEIGHT, '100' );
-
-define( ARRAS_3COL_FULL_WIDTH, '480' );
-define( ARRAS_3COL_FULL_HEIGHT, '225' );
+define( 'ARRAS_POST_THUMBNAIL', 'thumb' );
+define( 'ARRAS_REVIEW_SCORE', 'score' );
+define( 'ARRAS_REVIEW_PROS', 'pros' );
+define( 'ARRAS_REVIEW_CONS', 'cons' );
 
 // Define PHP file constants
-define( ARRAS_DIR, TEMPLATEPATH );
-define( ARRAS_LIB, ARRAS_DIR . '/library' );
-define( ARRAS_VERSION, $parent_data['Version'] );
+define( 'ARRAS_DIR', TEMPLATEPATH );
+define( 'ARRAS_LIB', ARRAS_DIR . '/library' );
+define( 'ARRAS_VERSION', $parent_data['Version'] );
+
 
 // Thumbnail generator
-define( ARRAS_THUMB, 'timthumb' );
+define( 'ARRAS_THUMB', 'timthumb' );
 
 // Load library files
 require_once ARRAS_LIB . '/actions.php';

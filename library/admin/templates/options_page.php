@@ -5,7 +5,7 @@
 
 <h2 id="arras-header"><?php _e('Arras Theme Options', 'arras') ?></h2>
 
-<?php if (!arras_cache_is_writable) : ?>
+<?php if (!arras_cache_is_writable()) : ?>
 <div class="error">
 	<p>
 		<?php printf( 
@@ -16,7 +16,7 @@
 </div><!-- .error -->
 <?php endif ?>
 
-<?php if (!arras_gd_is_installed) : ?>
+<?php if (!arras_gd_is_installed()) : ?>
 <div class="error">
 	<p><?php _e('The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information.', 'arras') ?></p>
 </div>
@@ -29,7 +29,8 @@
 
 <ul id="arras-tabs" class="clearfix">
 	<li><a href="#general-settings"><?php _e('General', 'arras') ?></a></li>
-	<li><a href="#navigation"><?php _e('Navigation', 'arras') ?></a></li>
+	<?php if (!function_exists('wp_nav_menu')) : ?><li><a href="#navigation"><?php _e('Navigation', 'arras') ?></a></li><?php endif; ?>
+	<li><a href="#home"><?php _e('Home', 'arras') ?></a></li>
 	<li><a href="#layout"><?php _e('Layout', 'arras') ?></a></li>
 	<li><a href="#design"><?php _e('Design', 'arras') ?></a></li>
 	<li><a href="#thumbnails"><?php _e('Thumbnails', 'arras') ?></a></li>
@@ -39,7 +40,8 @@
 <div class="clearfix arras-options-wrapper">
 
 <?php include 'arras-general.php' ?>
-<?php include 'arras-navigation.php' ?>
+<?php if (!function_exists('wp_nav_menu')) include 'arras-navigation.php' ?>
+<?php include 'arras-home.php' ?>
 <?php include 'arras-layout.php' ?>
 <?php include 'arras-design.php' ?>
 <?php include 'arras-thumbnails.php' ?>
@@ -70,7 +72,6 @@
 		<h3><span><?php _e('Recommended Plugins', 'arras') ?></span></h3>
 		<ul>
 			<li><a href="http://www.viper007bond.com/wordpress-plugins/regenerate-thumbnails/">Rengenerate Thumbnails</a></li>
-			<li><a href="http://pixopoint.com/products/pixopoint-menu/">PixoPoint Menu Plugin</a></li>
 			<li><a href="http://lesterchan.net/portfolio/programming/php/#wp-pagenavi">WP-PageNavi</a></li>
 			<li><a href="http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/">FancyBox for WordPress</a></li>
 			<li><a href="http://sexybookmarks.net/">SexyBookmarks</a></li>
@@ -78,11 +79,26 @@
 		</ul>
 	</div>
 	
+	<?php if ( !arras_get_option('donate') ) : ?>
+	<div class="postbox">
+		<h3><span><?php _e('Translations', 'arras') ?></span></h3>
+		<p>Oops! No translations available for 1.4.3. Translators will be credited here.</p>
+	</div>
+	
 	<div class="postbox">
 		<h3><span><?php _e('Donate!', 'arras') ?></span></h3>
+		<p><?php _e('Many thanks to the following recent donators:', 'arras') ?></p>
+		<?php $donators = get_remote_array('http://api.arrastheme.com/donators.php'); ?>
+		<ul>
+		<?php 
+		foreach ($donators as $donator) {
+			echo '<li><a href="' . $donator[1] . '">' . $donator[0] . '</a></li>';
+		} ?>
+		</ul>
 		<p><?php _e('If you are using Arras Theme and like it, donate to the author!', 'arras') ?></p>
 		<a class="button-primary" href="http://www.arrastheme.com/donate/"><?php _e('Donate using PayPal', 'arras') ?></a>
 	</div>
+	<?php endif; ?>
 	
 </div>
 

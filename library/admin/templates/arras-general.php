@@ -2,7 +2,7 @@
 
 <div id="general-settings" class="padding-content">
 
-<h3><?php _e('Theme Updates', 'arras') ?></h3>
+<h3><?php _e('Theme Information', 'arras') ?></h3>
 <table class="form-table">
 
 <tr valign="top">
@@ -10,6 +10,14 @@
 <td class="version">
 <span class="number"><?php echo ARRAS_VERSION ?></span>
 <p><?php _e('If you have recently upgraded Arras Theme to a new release, it is <span style="color: red">highly recommended</span> that you reset your theme options, clear your browser cache and restart your browser before proceeding.', 'arras') ?></p>
+</td>
+</tr>
+
+<tr valign="top">
+<th scope="row"><label for="arras-credits"><?php _e('Display Credits', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_checkbox('arras-credits', 'show', !arras_get_option('donate'), 'id="arras-credits"') ?> 
+<?php _e('Credits will only appear to the right of the theme options page.', 'arras') ?>
 </td>
 </tr>
 
