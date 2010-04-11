@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 01:12+0800\n"
+"POT-Creation-Date: 2010-04-11 23:50+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -203,24 +203,33 @@ msgstr ""
 msgid "%s latest comments"
 msgstr ""
 
-#: ../header.php:116
-#: ../header.php:118
+#: ../header.php:123
+#: ../header.php:125
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../header.php:116
-#: ../header.php:118
+#: ../header.php:123
+#: ../header.php:125
 msgid "RSS Feed"
 msgstr ""
 
-#: ../header.php:123
+#: ../header.php:130
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../header.php:123
+#: ../header.php:130
 msgid "Twitter"
+msgstr ""
+
+#: ../header.php:135
+#, php-format
+msgid "%s Facebook"
+msgstr ""
+
+#: ../header.php:135
+msgid "Facebook"
 msgstr ""
 
 #: ../home.php:33
@@ -301,91 +310,86 @@ msgstr ""
 msgid "No posts at the moment. Check back again later!"
 msgstr ""
 
-#: ../library/filters.php:76
-#, php-format
-msgid "<span class=\"entry-author\">By %s</span>"
-msgstr ""
-
-#: ../library/filters.php:80
-#, php-format
-msgid "<strong>Published:</strong> %s"
-msgstr ""
-
-#: ../library/filters.php:84
-msgid "Edit Post"
-msgstr ""
-
-#: ../library/filters.php:84
-msgid "(Edit Post)"
-msgstr ""
-
-#: ../library/filters.php:92
-#, php-format
-msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
-msgstr ""
-
-#: ../library/filters.php:96
-msgid "Tags:"
-msgstr ""
-
-#: ../library/filters.php:152
-msgid "That 'something' you are looking for isn't here!"
-msgstr ""
-
-#: ../library/filters.php:153
-msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
-msgstr ""
-
-#: ../library/filters.php:157
-msgid "Perhaps searching for it might help?"
-msgstr ""
-
-#: ../library/launcher.php:85
-msgid "1 Column Layout (No Sidebars)"
-msgstr ""
-
-#: ../library/launcher.php:86
-msgid "2 Column Layout (Right Sidebar)"
-msgstr ""
-
-#: ../library/launcher.php:87
-msgid "2 Column Layout (Left Sidebar)"
-msgstr ""
-
-#: ../library/launcher.php:88
-msgid "3 Column Layout (Left & Right Sidebars)"
-msgstr ""
-
-#: ../library/launcher.php:89
-msgid "3 Column Layout (Right Sidebars)"
-msgstr ""
-
+#: ../library/deprecated.php:32
+#: ../library/deprecated.php:51
 #: ../library/template.php:205
 #: ../library/template.php:224
-#: ../library/template.php:272
-#: ../library/template.php:291
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../library/template.php:332
+#: ../library/filters.php:70
+#, php-format
+msgid "<span class=\"entry-author\">By %s</span>"
+msgstr ""
+
+#: ../library/filters.php:78
+msgid "Edit Post"
+msgstr ""
+
+#: ../library/filters.php:78
+msgid "(Edit Post)"
+msgstr ""
+
+#: ../library/filters.php:86
+#, php-format
+msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
+msgstr ""
+
+#: ../library/filters.php:110
+msgid "Tags:"
+msgstr ""
+
+#: ../library/filters.php:147
+msgid "That 'something' you are looking for isn't here!"
+msgstr ""
+
+#: ../library/filters.php:148
+msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
+msgstr ""
+
+#: ../library/filters.php:152
+msgid "Perhaps searching for it might help?"
+msgstr ""
+
+#: ../library/launcher.php:90
+msgid "1 Column Layout (No Sidebars)"
+msgstr ""
+
+#: ../library/launcher.php:91
+msgid "2 Column Layout (Right Sidebar)"
+msgstr ""
+
+#: ../library/launcher.php:92
+msgid "2 Column Layout (Left Sidebar)"
+msgstr ""
+
+#: ../library/launcher.php:93
+msgid "3 Column Layout (Left & Right Sidebars)"
+msgstr ""
+
+#: ../library/launcher.php:94
+msgid "3 Column Layout (Right Sidebars)"
+msgstr ""
+
+#: ../library/template.php:265
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:335
+#: ../library/template.php:268
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:335
+#: ../library/template.php:268
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:335
+#: ../library/template.php:268
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:335
+#: ../library/template.php:268
 msgid "g:i A"
 msgstr ""
 
@@ -411,11 +415,11 @@ msgstr ""
 
 #: ../library/widgets.php:165
 #: ../library/admin/custom-background.php:130
-#: ../library/admin/templates/arras-navigation.php:3
 msgid "None"
 msgstr ""
 
 #: ../library/widgets.php:166
+#: ../library/admin/templates/arras-home.php:36
 msgid "Featured Posts"
 msgstr ""
 
@@ -453,12 +457,12 @@ msgstr ""
 
 #: ../library/widgets.php:221
 #: ../library/widgets.php:278
-#: ../library/admin/options.php:46
+#: ../library/admin/options.php:54
 msgid "Featured Stories"
 msgstr ""
 
 #: ../library/widgets.php:285
-#: ../library/admin/templates/arras-layout.php:3
+#: ../library/admin/templates/arras-home.php:3
 msgid "All Categories"
 msgstr ""
 
@@ -506,18 +510,22 @@ msgstr ""
 msgid "Custom Background"
 msgstr ""
 
-#: ../library/admin/admin.php:28
+#: ../library/admin/admin.php:29
 #: ../library/admin/custom-background.php:86
 msgid "Your settings have been saved to the database."
 msgstr ""
 
-#: ../library/admin/admin.php:35
+#: ../library/admin/admin.php:36
 #: ../library/admin/custom-background.php:47
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:47
+#: ../library/admin/admin.php:48
 msgid "Thumbnail cache has been cleared."
+msgstr ""
+
+#: ../library/admin/admin.php:105
+msgid "Many thanks to the following recent donors:"
 msgstr ""
 
 #: ../library/admin/custom-background.php:114
@@ -599,9 +607,8 @@ msgstr ""
 
 #: ../library/admin/custom-background.php:142
 #: ../library/admin/templates/arras-design.php:54
-#: ../library/admin/templates/arras-general.php:67
-#: ../library/admin/templates/arras-layout.php:225
-#: ../library/admin/templates/arras-navigation.php:48
+#: ../library/admin/templates/arras-general.php:83
+#: ../library/admin/templates/arras-home.php:138
 msgid "Save Changes"
 msgstr ""
 
@@ -613,16 +620,16 @@ msgstr ""
 msgid "Current Background Image"
 msgstr ""
 
-#: ../library/admin/options.php:37
+#: ../library/admin/options.php:45
 msgid "Copyright"
 msgstr ""
 
-#: ../library/admin/options.php:38
+#: ../library/admin/options.php:46
 #, php-format
 msgid "Copyright %s. All Rights Reserved."
 msgstr ""
 
-#: ../library/admin/options.php:42
+#: ../library/admin/options.php:50
 msgid "Home"
 msgstr ""
 
@@ -660,7 +667,7 @@ msgid "Set Custom Background"
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:5
-msgid "Theme Updates"
+msgid "Theme Information"
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:9
@@ -671,40 +678,168 @@ msgstr ""
 msgid "If you have recently upgraded Arras Theme to a new release, it is <span style=\"color: red\">highly recommended</span> that you reset your theme options, clear your browser cache and restart your browser before proceeding."
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:18
+#: ../library/admin/templates/arras-general.php:17
+msgid "Display Credits"
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:20
+msgid "Credits will only appear to the right of the theme options page."
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:26
 msgid "Site Information"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:22
+#: ../library/admin/templates/arras-general.php:30
 msgid "RSS Feed (URL)"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:25
+#: ../library/admin/templates/arras-general.php:33
 msgid "This will replace the default WordPress RSS feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:30
+#: ../library/admin/templates/arras-general.php:38
 msgid "RSS Comments Feed (URL)"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:33
+#: ../library/admin/templates/arras-general.php:41
 msgid "This will replace the default WordPress RSS comments feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:38
+#: ../library/admin/templates/arras-general.php:46
 msgid "Twitter Username"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:46
+#: ../library/admin/templates/arras-general.php:53
+msgid "Facebook Profile (URL)"
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:56
+msgid "Link to your Facebook profile."
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:62
 msgid "Footer Information"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:50
+#: ../library/admin/templates/arras-general.php:66
 msgid "Footer Title"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:60
+#: ../library/admin/templates/arras-general.php:76
 msgid "Usually your website's copyright information would go here.<br /> It would be great if you could include a link to WordPress and even greater if you could include a link to the theme website. :)"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:11
+msgid "Featured Slideshow"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:15
+#: ../library/admin/templates/arras-home.php:47
+msgid "Show Category"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:18
+msgid "Don't Show Featured Slideshow"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:19
+#: ../library/admin/templates/arras-home.php:51
+msgid "Stickied Posts"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:20
+#: ../library/admin/templates/arras-home.php:52
+msgid "Available Categories"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:22
+msgid "Articles from this category will be shown on the featured slideshow of the index page. <br />You can also specify your stickied posts as the featured 'category'."
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:27
+msgid "Show Posts"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:30
+#: ../library/admin/templates/arras-home.php:73
+#: ../library/admin/templates/arras-home.php:121
+msgid "posts"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:40
+#: ../library/admin/templates/arras-home.php:92
+msgid "Title"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:50
+msgid "Don't Show Featured Posts #2"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:54
+msgid "Articles from this category will be shown below the featured slideshow of the index page. <br />You can also specify your stickied posts as the featured 'category'."
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:59
+msgid "Display Type"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:63
+#: ../library/admin/templates/arras-home.php:111
+msgid "Node Based"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:63
+#: ../library/admin/templates/arras-home.php:111
+msgid "Quick Preview"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:63
+#: ../library/admin/templates/arras-home.php:111
+msgid "Per Line"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:63
+#: ../library/admin/templates/arras-home.php:111
+msgid "Traditional"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:70
+msgid "Post Count"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:81
+#: ../library/admin/templates/arras-home.php:131
+msgid "Display date and comments count in post thumbnails"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:88
+msgid "News Posts"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:99
+msgid "News Category"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:102
+msgid "The news category will be shown below the featured section in the index page."
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:107
+msgid "News Display Type"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:118
+msgid "News Count"
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:122
+#, php-format
+msgid "By default, the theme retrieves %s posts, based on your WordPress settings."
+msgstr ""
+
+#: ../library/admin/templates/arras-home.php:123
+msgid "You can override the setting here."
 msgstr ""
 
 #: ../library/admin/templates/arras-layout.php:11
@@ -720,222 +855,101 @@ msgid "words"
 msgstr ""
 
 #: ../library/admin/templates/arras-layout.php:24
-msgid "Featured Slideshow"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:28
-#: ../library/admin/templates/arras-layout.php:60
-msgid "Show Category"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:31
-msgid "Don't Show Featured Slideshow"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:32
-#: ../library/admin/templates/arras-layout.php:64
-msgid "Stickied Posts"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:33
-#: ../library/admin/templates/arras-layout.php:65
-msgid "Available Categories"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:35
-msgid "Articles from this category will be shown on the featured slideshow of the index page. <br />You can also specify your stickied posts as the featured 'category'."
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:40
-msgid "Show Posts"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:43
-#: ../library/admin/templates/arras-layout.php:86
-#: ../library/admin/templates/arras-layout.php:134
-msgid "posts"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:49
-msgid "Featured Posts #1"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:53
-#: ../library/admin/templates/arras-layout.php:105
-msgid "Title"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:63
-msgid "Don't Show Featured Posts #2"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:67
-msgid "Articles from this category will be shown below the featured slideshow of the index page. <br />You can also specify your stickied posts as the featured 'category'."
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:72
-msgid "Display Type"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:76
-#: ../library/admin/templates/arras-layout.php:124
-#: ../library/admin/templates/arras-layout.php:158
-msgid "Node Based"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:76
-#: ../library/admin/templates/arras-layout.php:124
-#: ../library/admin/templates/arras-layout.php:158
-msgid "Quick Preview"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:76
-#: ../library/admin/templates/arras-layout.php:124
-#: ../library/admin/templates/arras-layout.php:158
-msgid "Per Line"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:76
-#: ../library/admin/templates/arras-layout.php:124
-#: ../library/admin/templates/arras-layout.php:158
-msgid "Traditional"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:83
-msgid "Post Count"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:94
-#: ../library/admin/templates/arras-layout.php:144
-#: ../library/admin/templates/arras-layout.php:168
-msgid "Display date and comments count in post thumbnails"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:101
-msgid "Index Page - News Posts"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:112
-msgid "News Category"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:115
-msgid "The news category will be shown below the featured section in the index page."
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:120
-msgid "News Display Type"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:131
-msgid "News Count"
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:135
-#, php-format
-msgid "By default, the theme retrieves %s posts, based on your WordPress settings."
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:136
-msgid "You can override the setting here."
-msgstr ""
-
-#: ../library/admin/templates/arras-layout.php:150
 msgid "Archive / Search"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:154
+#: ../library/admin/templates/arras-layout.php:28
 msgid "Posts Display Type"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:174
+#: ../library/admin/templates/arras-layout.php:48
 msgid "Single Post"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:178
+#: ../library/admin/templates/arras-layout.php:52
 msgid "Display in Single Posts"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:182
+#: ../library/admin/templates/arras-layout.php:56
 msgid "Author (Header)"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:186
+#: ../library/admin/templates/arras-layout.php:60
 msgid "Publish Date (Header)"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:190
+#: ../library/admin/templates/arras-layout.php:64
 msgid "Categories (Header)"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:194
+#: ../library/admin/templates/arras-layout.php:68
 msgid "Tags (Header)"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:198
+#: ../library/admin/templates/arras-layout.php:72
 msgid "Post Thumbnail"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:202
+#: ../library/admin/templates/arras-layout.php:76
 msgid "Author Information"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:208
+#: ../library/admin/templates/arras-layout.php:82
 msgid "Position of Custom Fields"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:210
+#: ../library/admin/templates/arras-layout.php:84
 msgid "Before the Post Content"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:211
+#: ../library/admin/templates/arras-layout.php:85
 msgid "After the Post Content"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:11
+#: ../library/admin/templates/arras-navigation.php:15
 msgid "Main Navigation"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:15
+#: ../library/admin/templates/arras-navigation.php:19
 #, php-format
 msgid "It is highly recommended that you use the %s for better control of the main navigation."
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:21
+#: ../library/admin/templates/arras-navigation.php:25
 msgid "Home Link"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:24
+#: ../library/admin/templates/arras-navigation.php:28
 msgid "You can change the name of the home link at the main navigation."
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:29
+#: ../library/admin/templates/arras-navigation.php:33
 msgid "Top Navigation Display"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:31
+#: ../library/admin/templates/arras-navigation.php:35
 msgid "Categories"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:32
+#: ../library/admin/templates/arras-navigation.php:36
 msgid "Pages"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:33
-#: ../library/admin/templates/arras-navigation.php:38
+#: ../library/admin/templates/arras-navigation.php:37
+#: ../library/admin/templates/arras-navigation.php:42
 msgid "Link Category"
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:41
+#: ../library/admin/templates/arras-navigation.php:45
 msgid "To organise and arrange the links in the top navigation, you can create a link category with all the links you want to display at the main navigation and assign the link category here."
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:53
+#: ../library/admin/templates/arras-navigation.php:57
 #, php-format
 msgid "You have %s installed."
 msgstr ""
 
-#: ../library/admin/templates/arras-navigation.php:56
+#: ../library/admin/templates/arras-navigation.php:60
 msgid "You will need to go to their respective plugin settings page to adjust the navigation bar."
 msgstr ""
 
@@ -1015,59 +1029,63 @@ msgstr ""
 msgid "Navigation"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:33
+#: ../library/admin/templates/options_page.php:34
 msgid "Layout"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:34
+#: ../library/admin/templates/options_page.php:35
 msgid "Design"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:35
+#: ../library/admin/templates/options_page.php:36
 msgid "Thumbnails"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:48
+#: ../library/admin/templates/options_page.php:50
 msgid "Revert to Default Settings"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:49
+#: ../library/admin/templates/options_page.php:51
 msgid "If you do screw up, you can reset the settings here."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:50
+#: ../library/admin/templates/options_page.php:52
 msgid "<strong>NOTE: This will erase all your settings!</strong>"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:52
+#: ../library/admin/templates/options_page.php:54
 msgid "Uninstall / Reset Arras.Theme"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:62
+#: ../library/admin/templates/options_page.php:64
 msgid "Helpful Links"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:64
+#: ../library/admin/templates/options_page.php:66
 msgid "Community Forums"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:65
+#: ../library/admin/templates/options_page.php:67
 msgid "Bug Tracker / Repository"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:70
+#: ../library/admin/templates/options_page.php:72
 msgid "Recommended Plugins"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:82
+#: ../library/admin/templates/options_page.php:84
+msgid "Translations"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:89
 msgid "Donate!"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:83
+#: ../library/admin/templates/options_page.php:93
 msgid "If you are using Arras Theme and like it, donate to the author!"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:84
+#: ../library/admin/templates/options_page.php:94
 msgid "Donate using PayPal"
 msgstr ""
 
