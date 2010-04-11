@@ -129,6 +129,11 @@ document.body.className = c;
 			<?php if ($twitter_username != '') : ?>
 				<li><a id="twitter" title="<?php printf( __( '%s Twitter', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="http://www.twitter.com/<?php echo $twitter_username ?>/"><?php _e('Twitter', 'arras') ?></a></li>
 			<?php endif ?>
+			
+			<?php $facebook_profile = arras_get_option('facebook_profile'); ?>
+			<?php if ($facebook_profile != '') : ?>
+				<li><a id="facebook" title="<?php printf( __( '%s Facebook', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $facebook_profile ?>/"><?php _e('Facebook', 'arras') ?></a></li>
+			<?php endif ?>
 		</ul>
 	</div><!-- #nav-content -->
 </div><!-- #nav -->

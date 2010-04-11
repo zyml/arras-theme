@@ -3,7 +3,7 @@
 class Options {
 	
 	// General Settings
-	var $version, $donate, $feed_url, $comments_feed_url, $twitter_username, $footer_title, $footer_message;
+	var $version, $donate, $feed_url, $comments_feed_url, $twitter_username, $facebook_profile, $footer_title, $footer_message;
 	// Categories
 	var $slideshow_cat, $featured_cat, $news_cat;
 	// Navigation
@@ -97,6 +97,7 @@ class Options {
 		$this->feed_url = (string)$_POST['arras-rss-feed-url'];
 		$this->comments_feed_url = (string)$_POST['arras-rss-comments-url'];
 		$this->twitter_username = (string)$_POST['arras-twitter'];
+		$this->facebook_profile = (string)$_POST['arras-facebook'];
 		$this->footer_title = (string)stripslashes($_POST['arras-footer-title']);
 		$this->footer_message = (string)($_POST['arras-footer-message']);
 		

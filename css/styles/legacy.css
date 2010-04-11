@@ -97,6 +97,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 .quick-nav #rss			{ background: url(../../images/rss.png) no-repeat; }
 .quick-nav #twitter		{ background: url(../../images/twitter.png) no-repeat; }
+.quick-nav #facebook	{ background: url(../../images/facebook.png) no-repeat; }
 
 /* search bar */
 #searchbar				{ float: right; overflow: hidden; margin: 25px 0 0; }
