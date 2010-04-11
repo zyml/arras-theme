@@ -89,7 +89,6 @@ register_alternate_layout( '3c-fixed', __('3 Column Layout (Left & Right Sidebar
 register_alternate_layout( '3c-r-fixed', __('3 Column Layout (Right Sidebars)', 'arras') );
 
 // Filters
-add_filter('comments_template', 'legacy_comments');
 add_filter('gallery_style', 'remove_gallery_css');
 
 
