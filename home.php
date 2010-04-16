@@ -1,13 +1,6 @@
 <?php get_header(); ?>
 
-<?php
-if ( function_exists('dsq_comment_count') ) {
-	remove_action('loop_end', 'dsq_comment_count');
-	add_action('arras_above_index_news_post', 'dsq_comment_count');
-}
-
-$stickies = get_option('sticky_posts');
-?>
+<?php $stickies = get_option('sticky_posts'); ?>
 
 <div id="content" class="section">
 <?php arras_above_content() ?>
@@ -35,6 +28,7 @@ $stickies = get_option('sticky_posts');
         </div>
     	<div id="featured-slideshow">
         	<?php $count = 0; ?>
+		<?php remove_action('loop_end', 'dsq_loop_end'); // remove DISQUS action hook ?>
     		<?php if ($q->have_posts()) : while ($q->have_posts()) : $q->the_post(); ?>
     		<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
 
@@ -48,6 +42,7 @@ $stickies = get_option('sticky_posts');
             	</a>
         	</div>
     		<?php $count++; endwhile; endif; ?>
+		<?php add_action('loop_end', 'dsq_loop_end'); // add it back for other queries to use ?>
     	</div>
     </div>
 <?php endif; ?>
