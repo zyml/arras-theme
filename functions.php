@@ -43,7 +43,7 @@ require_once ARRAS_LIB . '/deprecated.php';
 require_once ARRAS_LIB . '/filters.php';
 require_once ARRAS_LIB . '/template.php';
 require_once ARRAS_LIB . '/styles.php';
-
+require_once ARRAS_LIB . '/slideshow.php';
 require_once ARRAS_LIB . '/widgets.php';
 
 require_once ARRAS_LIB . '/admin/options.php';

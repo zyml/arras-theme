@@ -82,9 +82,6 @@ add_action('arras_head', 'arras_add_style_css');
 add_action('arras_head', 'arras_override_styles');
 add_action('arras_custom_styles', 'arras_layout_styles');
 
-// Footer Actions
-add_action('wp_footer', 'arras_js_footer');
-
 // Options
 if (is_admin()) {
 	add_action('admin_menu', 'arras_addmenu');

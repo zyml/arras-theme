@@ -234,27 +234,5 @@ function arras_strip_content($content, $limit) {
 	}
 }
 
-function arras_js_footer() {
-?>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-
-<?php if (is_home() || is_front_page()) : ?>
-$('#featured-slideshow').cycle({
-	fx: 'fade',
-	speed: 250,
-	next: '#controls .next',
-	prev: '#controls .prev',
-	timeout: 6000
-});
-<?php endif ?>
-	
-});
-</script>
-	
-<?php
-}
-
 /* End of file template.php */
 /* Location: ./library/template.php */
