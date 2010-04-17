@@ -48,6 +48,8 @@
     </div>
 <?php endif; ?>
 
+<?php arras_above_index_featured_post() ?>
+
 <!-- Featured Articles -->
 <?php if ( ($featured2_cat = arras_get_option('featured_cat') ) !== '' && $featured2_cat != '-1' ) : ?>
 <div id="index-featured">
@@ -66,7 +68,6 @@
 	?>
 </div><!-- #index-featured -->
 <?php endif; ?>
-
 
 <?php arras_above_index_news_post() ?>
 
