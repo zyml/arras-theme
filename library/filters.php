@@ -1,9 +1,4 @@
 <?php
-function legacy_comments($file) {
-	if ( function_exists('wp_list_comments') ) 
-		return $file;
-}
-
 /* Remove Gallery CSS to make code more compliant */
 function remove_gallery_css() {
 	return '<div class="gallery">';	
