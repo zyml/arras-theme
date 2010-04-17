@@ -102,18 +102,46 @@ function arras_donors_callback() {
 ?>
 	<?php $donors = @get_remote_array('http://api.arrastheme.com/donators.php'); ?>
 	<?php if ($donors) : ?>
-	<p><?php _e('Many thanks to the following recent donors:', 'arras') ?></p>
-	<ul>
-	<?php 
-	foreach ($donors as $donor) {
-		echo '<li><a href="' . $donor[1] . '">' . $donor[0] . '</a></li>';
-	} ?>
-	</ul>
+	<p><?php _e('Also, we would like to thank the following few who have supported this theme via their donations:', 'arras') ?></p>
+	<p>
+	<?php
+	$i = count($donors);
+	foreach ($donors as $donor)
+	{
+		if ($donor[1])
+			echo "<a href=\"$donor[1]\">$donor[0]</a>";
+		else
+			echo $donor[0];
+		$i--;
+		if ($i == 1)
+			echo " & ";
+		elseif ($i)
+			echo ", ";
+	}
+	?>
+	</p>
 	<?php endif ?>
 <?php
 	die();
 }
 add_action('wp_ajax_arras_donors_callback', 'arras_donors_callback');
+
+function arras_get_contributors($arr) {
+	ksort($arr);
+	$i = count($arr);
+	foreach ($arr as $name => $url)
+	{
+		if ($url)
+			echo "<a href=\"$url\">$name</a>";
+		else
+			echo $name;
+		$i--;
+		if ($i == 1)
+			echo " & ";
+		elseif ($i)
+			echo ", ";
+	}
+}
 
 /* End of file admin.php */
 /* Location: ./library/admin/admin.php */

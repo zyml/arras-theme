@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 23:50+0800\n"
+"POT-Creation-Date: 2010-04-18 01:01+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -61,32 +61,35 @@ msgid "Archives"
 msgstr ""
 
 #: ../archive.php:30
-#: ../home.php:128
+#: ../home.php:84
 #: ../search.php:22
 #: ../search.php:42
 msgid "&laquo; Older Entries"
 msgstr ""
 
 #: ../archive.php:31
-#: ../home.php:129
+#: ../home.php:85
 #: ../search.php:21
 #: ../search.php:43
 msgid "Newer Entries &raquo;"
 msgstr ""
 
 #: ../attachment.php:18
+#: ../page-onecolumn.php:24
 #: ../page.php:18
 #: ../single.php:19
 msgid "<p>Read the rest of this entry &raquo;</p>"
 msgstr ""
 
 #: ../attachment.php:20
+#: ../page-onecolumn.php:25
 #: ../page.php:19
 #: ../single.php:20
 msgid "<p><strong>Pages:</strong> "
 msgstr ""
 
 #: ../attachment.php:27
+#: ../page-onecolumn.php:34
 #: ../page.php:28
 #: ../single.php:29
 msgid "About the Author"
@@ -102,12 +105,10 @@ msgstr ""
 
 #: ../comments.php:11
 #: ../comments.php:28
-#: ../yarpp-template-arras.php:17
 msgid "No Comments"
 msgstr ""
 
 #: ../comments.php:11
-#: ../yarpp-template-arras.php:17
 msgid "1 Comment"
 msgstr ""
 
@@ -127,11 +128,11 @@ msgstr ""
 msgid "Start the ball rolling by posting a comment on this article!"
 msgstr ""
 
-#: ../comments.php:31
+#: ../comments.php:34
 msgid "Comments Closed"
 msgstr ""
 
-#: ../comments.php:32
+#: ../comments.php:35
 msgid "Comments are closed. You will not be able to post a comment in this post."
 msgstr ""
 
@@ -191,64 +192,56 @@ msgstr ""
 msgid "About Arras Theme"
 msgstr ""
 
+#: ../header.php:11
 #: ../header.php:13
-#: ../header.php:15
 #, php-format
 msgid "%s latest posts"
 msgstr ""
 
+#: ../header.php:17
 #: ../header.php:19
-#: ../header.php:21
 #, php-format
 msgid "%s latest comments"
 msgstr ""
 
+#: ../header.php:121
 #: ../header.php:123
-#: ../header.php:125
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
+#: ../header.php:121
 #: ../header.php:123
-#: ../header.php:125
 msgid "RSS Feed"
 msgstr ""
 
-#: ../header.php:130
+#: ../header.php:128
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../header.php:130
+#: ../header.php:128
 msgid "Twitter"
 msgstr ""
 
-#: ../header.php:135
+#: ../header.php:133
 #, php-format
 msgid "%s Facebook"
 msgstr ""
 
-#: ../header.php:135
+#: ../header.php:133
 msgid "Facebook"
 msgstr ""
 
-#: ../home.php:33
-msgid "Prev"
-msgstr ""
-
-#: ../home.php:34
-msgid "Next"
-msgstr ""
-
-#: ../home.php:91
+#: ../home.php:47
 msgid "Older Entries"
 msgstr ""
 
-#: ../home.php:92
+#: ../home.php:48
 msgid "Newer Entries"
 msgstr ""
 
-#: ../home.php:121
+#: ../home.php:77
 msgid "Latest Headlines"
 msgstr ""
 
@@ -295,101 +288,120 @@ msgid "Tag Cloud"
 msgstr ""
 
 #: ../yarpp-template-arras.php:16
+#: ../library/widgets.php:51
+#: ../library/widgets.php:77
+#: ../library/widgets.php:245
 msgid "d F Y g:i A"
 msgstr ""
 
 #: ../yarpp-template-arras.php:17
+#: ../library/widgets.php:52
+#: ../library/widgets.php:78
+#: ../library/widgets.php:246
 msgid "% Comments"
 msgstr ""
 
 #: ../yarpp-template-arras.php:21
+#: ../library/deprecated.php:52
+#: ../library/template.php:148
+#: ../library/widgets.php:252
 msgid "Read More"
 msgstr ""
 
 #: ../yarpp-template-arras.php:27
+#: ../library/widgets.php:42
+#: ../library/widgets.php:68
 msgid "No posts at the moment. Check back again later!"
 msgstr ""
 
 #: ../library/deprecated.php:32
 #: ../library/deprecated.php:51
-#: ../library/template.php:205
-#: ../library/template.php:224
+#: ../library/template.php:128
+#: ../library/template.php:147
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../library/filters.php:70
+#: ../library/filters.php:65
 #, php-format
 msgid "<span class=\"entry-author\">By %s</span>"
 msgstr ""
 
-#: ../library/filters.php:78
+#: ../library/filters.php:73
 msgid "Edit Post"
 msgstr ""
 
-#: ../library/filters.php:78
+#: ../library/filters.php:73
 msgid "(Edit Post)"
 msgstr ""
 
-#: ../library/filters.php:86
+#: ../library/filters.php:81
 #, php-format
 msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
 msgstr ""
 
-#: ../library/filters.php:110
+#: ../library/filters.php:105
 msgid "Tags:"
 msgstr ""
 
-#: ../library/filters.php:147
+#: ../library/filters.php:142
 msgid "That 'something' you are looking for isn't here!"
 msgstr ""
 
-#: ../library/filters.php:148
+#: ../library/filters.php:143
 msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
 msgstr ""
 
-#: ../library/filters.php:152
+#: ../library/filters.php:147
 msgid "Perhaps searching for it might help?"
 msgstr ""
 
-#: ../library/launcher.php:90
+#: ../library/launcher.php:86
 msgid "1 Column Layout (No Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:91
+#: ../library/launcher.php:87
 msgid "2 Column Layout (Right Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:92
+#: ../library/launcher.php:88
 msgid "2 Column Layout (Left Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:93
+#: ../library/launcher.php:89
 msgid "3 Column Layout (Left & Right Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:94
+#: ../library/launcher.php:90
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
-#: ../library/template.php:265
+#: ../library/slideshow.php:21
+msgid "Prev"
+msgstr ""
+
+#: ../library/slideshow.php:22
+msgid "Next"
+msgstr ""
+
+#: ../library/template.php:188
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:268
+#: ../library/template.php:191
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:268
+#: ../library/template.php:191
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:268
+#: ../library/template.php:191
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:268
+#: ../library/template.php:191
 msgid "g:i A"
 msgstr ""
 
@@ -419,7 +431,6 @@ msgid "None"
 msgstr ""
 
 #: ../library/widgets.php:166
-#: ../library/admin/templates/arras-home.php:36
 msgid "Featured Posts"
 msgstr ""
 
@@ -462,7 +473,6 @@ msgid "Featured Stories"
 msgstr ""
 
 #: ../library/widgets.php:285
-#: ../library/admin/templates/arras-home.php:3
 msgid "All Categories"
 msgstr ""
 
@@ -500,13 +510,11 @@ msgid "Theme Options"
 msgstr ""
 
 #: ../library/admin/admin.php:5
-#: ../library/admin/templates/arras-design.php:38
 msgid "Custom Header"
 msgstr ""
 
 #: ../library/admin/admin.php:7
 #: ../library/admin/custom-background.php:108
-#: ../library/admin/templates/arras-design.php:45
 msgid "Custom Background"
 msgstr ""
 
@@ -525,7 +533,7 @@ msgid "Thumbnail cache has been cleared."
 msgstr ""
 
 #: ../library/admin/admin.php:105
-msgid "Many thanks to the following recent donors:"
+msgid "Also, we would like to thank the following few who have supported this theme via their donations:"
 msgstr ""
 
 #: ../library/admin/custom-background.php:114
@@ -606,9 +614,6 @@ msgid "Apply Background from Top"
 msgstr ""
 
 #: ../library/admin/custom-background.php:142
-#: ../library/admin/templates/arras-design.php:54
-#: ../library/admin/templates/arras-general.php:83
-#: ../library/admin/templates/arras-home.php:138
 msgid "Save Changes"
 msgstr ""
 
@@ -786,21 +791,25 @@ msgstr ""
 
 #: ../library/admin/templates/arras-home.php:63
 #: ../library/admin/templates/arras-home.php:111
+#: ../library/admin/templates/arras-layout.php:32
 msgid "Node Based"
 msgstr ""
 
 #: ../library/admin/templates/arras-home.php:63
 #: ../library/admin/templates/arras-home.php:111
+#: ../library/admin/templates/arras-layout.php:32
 msgid "Quick Preview"
 msgstr ""
 
 #: ../library/admin/templates/arras-home.php:63
 #: ../library/admin/templates/arras-home.php:111
+#: ../library/admin/templates/arras-layout.php:32
 msgid "Per Line"
 msgstr ""
 
 #: ../library/admin/templates/arras-home.php:63
 #: ../library/admin/templates/arras-home.php:111
+#: ../library/admin/templates/arras-layout.php:32
 msgid "Traditional"
 msgstr ""
 
@@ -810,6 +819,7 @@ msgstr ""
 
 #: ../library/admin/templates/arras-home.php:81
 #: ../library/admin/templates/arras-home.php:131
+#: ../library/admin/templates/arras-layout.php:42
 msgid "Display date and comments count in post thumbnails"
 msgstr ""
 
@@ -1008,84 +1018,120 @@ msgstr ""
 msgid "Frequently Asked Questions (EN only)"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:12
+#: ../library/admin/templates/options_page.php:29
 #, php-format
 msgid "The thumbnails cache directory (%s) is not writable. You will need to set the directory's permissions 755 or 777 for the thumbnails to work."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:15
+#: ../library/admin/templates/options_page.php:32
 msgid "More about Changing File/Folder Permissions"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:21
+#: ../library/admin/templates/options_page.php:38
 msgid "The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:31
+#: ../library/admin/templates/options_page.php:48
 msgid "General"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:32
+#: ../library/admin/templates/options_page.php:49
 msgid "Navigation"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:34
+#: ../library/admin/templates/options_page.php:51
 msgid "Layout"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:35
+#: ../library/admin/templates/options_page.php:52
 msgid "Design"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:36
+#: ../library/admin/templates/options_page.php:53
 msgid "Thumbnails"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:50
+#: ../library/admin/templates/options_page.php:67
 msgid "Revert to Default Settings"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:51
+#: ../library/admin/templates/options_page.php:68
 msgid "If you do screw up, you can reset the settings here."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:52
+#: ../library/admin/templates/options_page.php:69
 msgid "<strong>NOTE: This will erase all your settings!</strong>"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:54
+#: ../library/admin/templates/options_page.php:71
 msgid "Uninstall / Reset Arras.Theme"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:64
+#: ../library/admin/templates/options_page.php:81
 msgid "Helpful Links"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:66
-msgid "Community Forums"
-msgstr ""
-
-#: ../library/admin/templates/options_page.php:67
-msgid "Bug Tracker / Repository"
-msgstr ""
-
-#: ../library/admin/templates/options_page.php:72
-msgid "Recommended Plugins"
+#: ../library/admin/templates/options_page.php:83
+msgid "Quick Start Guide"
 msgstr ""
 
 #: ../library/admin/templates/options_page.php:84
-msgid "Translations"
+msgid "Community Forums"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:89
-msgid "Donate!"
+#: ../library/admin/templates/options_page.php:85
+msgid "Bug Tracker / Repository"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:93
-msgid "If you are using Arras Theme and like it, donate to the author!"
+#: ../library/admin/templates/options_page.php:90
+msgid "Recommended Plugins"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:94
+#: ../library/admin/templates/options_page.php:101
+msgid "How to Support?"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:102
+msgid "There are many ways you can support this theme:"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:104
+msgid "Share other about the theme"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:105
+msgid "Report bugs / Send patches"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:106
+msgid "Contribute to the forums / wiki"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:107
+msgid "Translate the theme"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:108
+msgid "Send in a donation!"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:110
 msgid "Donate using PayPal"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:115
+msgid "Thanks!"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:116
+msgid "Many thanks to those who have contributed to the theme:"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:117
+msgid "Forum Contributors"
+msgstr ""
+
+#: ../library/admin/templates/options_page.php:119
+msgid "Translators"
 msgstr ""
 

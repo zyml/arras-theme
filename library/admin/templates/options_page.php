@@ -1,6 +1,23 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
 <?php include 'functions.php'; ?>
 
+<?php
+$forum_contributors = array(
+	'Giovanni' => 'http://www.animeblog.nl/',
+	'dgodfather' => 'http://trusupremekillaz.com/tskgaming',
+	'Charles' => 'http://www.claireraborar.com/travel',
+	'Nedrago' => 'http://www.nedrago.com/',
+	'Dan' => 'http://www.techunfolding.com/'
+);
+$translators = array(
+	'er_mejor (Spanish)' => 'http://www.teusoft.com/',
+	'kokaz84 (French)' => 'http://micromanga.free.fr/',
+	'cngamers (Chinese)' => '',
+	'lesta (Romanian)' => '',
+	'Michael Wenzl (German)' => 'http://www.michaelwenzl.de/'
+);
+?>
+
 <div class="wrap clearfix">
 
 <h2 id="arras-header"><?php _e('Arras Theme Options', 'arras') ?></h2>
@@ -63,6 +80,7 @@
 	<div class="postbox">
 		<h3><span><?php _e('Helpful Links', 'arras') ?></span></h3>
 		<ul>
+			<li><a href="http://www.arrastheme.com/wiki/doku.php/quick_start_guide"><?php _e('Quick Start Guide', 'arras') ?></a></li>
 			<li><a href="http://www.arrastheme.com/forums/"><?php _e('Community Forums', 'arras') ?></a></li>
 			<li><a href="http://arras-theme.googlecode.com/"><?php _e('Bug Tracker / Repository', 'arras') ?></a></li>
 		</ul>
@@ -79,27 +97,37 @@
 		</ul>
 	</div>
 	
+	<div class="postbox">
+		<h3><span><?php _e('How to Support?', 'arras') ?></span></h3>
+		<p><?php _e('There are many ways you can support this theme:', 'arras') ?></p>
+		<ul>
+			<li><?php _e('Share other about the theme', 'arras') ?></li>
+			<li><?php _e('Report bugs / Send patches', 'arras') ?></li>
+			<li><?php _e('Contribute to the forums / wiki', 'arras') ?></li>
+			<li><?php _e('Translate the theme', 'arras') ?></li>
+			<li><strong><?php _e('Send in a donation!', 'arras') ?></strong></li>
+		</ul>
+		<p><a class="button-primary" href="http://www.arrastheme.com/donate/"><?php _e('Donate using PayPal', 'arras') ?></a></p>
+	</div>
+	
 	<?php if ( !arras_get_option('donate') ) : ?>
 	<div class="postbox">
-		<h3><span><?php _e('Translations', 'arras') ?></span></h3>
-		<p>Oops! No translations available for 1.4.3. Translators will be credited here.</p>
-	</div>
-	
-	<div class="postbox">
-		<h3><span><?php _e('Donate!', 'arras') ?></span></h3>
+		<h3><span><?php _e('Thanks!', 'arras') ?></span></h3>
+		<p><?php _e('Many thanks to those who have contributed to the theme:', 'arras') ?></p>
+		<p><strong><?php _e('Forum Contributors', 'arras') ?></strong><br />
+		<?php arras_get_contributors($forum_contributors) ?></p>
+		<p><strong><?php _e('Translators', 'arras') ?></strong><br />
+		<?php arras_get_contributors($translators) ?></p>
 		<div id="donors-list">
-		
 		</div>
-		<p><?php _e('If you are using Arras Theme and like it, donate to the author!', 'arras') ?></p>
-		<a class="button-primary" href="http://www.arrastheme.com/donate/"><?php _e('Donate using PayPal', 'arras') ?></a>
 	</div>
 	<?php endif; ?>
-	
+
 </div>
 
 </div><!-- .wrap -->
 
-
 <?php
+
 /* End of file options_page.php */
 /* Location: ./library/admin/templates/options_page.php */
