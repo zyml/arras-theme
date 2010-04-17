@@ -33,9 +33,7 @@ if ( post_password_required() ) {
 <?php if ('closed' == $post->comment_status) : ?>
 	<h4 class="module-title"><?php _e('Comments Closed', 'arras') ?></h4>
 	<p class="nocomments"><?php _e('Comments are closed. You will not be able to post a comment in this post.', 'arras') ?></p>
-<?php endif ?>
-
-<?php if ('open' == $post->comment_status) : ?>
+<?php else: ?>
 <div id="respond">
 <h4 class="module-title"><?php comment_form_title( __('Leave a Reply', 'arras'), __('Leave a Reply to %s', 'arras') ); ?></h4>
  <div id="commentsform">
