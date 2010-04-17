@@ -7,8 +7,6 @@
 <meta name="robots" content="noindex, nofollow" />
 <?php endif ?>
 
-<?php arras_alternate_style() ?>
-
 <?php if ( ($feed = arras_get_option('feed_url') ) == '' ) : ?>
 <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
 <?php else : ?>

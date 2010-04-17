@@ -75,6 +75,10 @@ register_sidebar( array(
 // Registering widgets have been moved to the respective widget files
 
 // Header Actions
+add_action('arras_head', 'arras_add_blueprint_css');
+add_action('arras_head', 'arras_add_layout_css');
+add_action('arras_head', 'arras_add_style_css');
+
 add_action('arras_head', 'arras_override_styles');
 add_action('arras_custom_styles', 'arras_layout_styles');
 
