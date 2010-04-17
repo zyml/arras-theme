@@ -26,7 +26,7 @@ input[type=submit]:hover, #wp-email-submit:hover    { background: #313428; color
 
 table					{ border-collapse: collapse; border-spacing: 0; border: 1px solid #CCC; }
 th, td					{ padding: 5px; border: 1px solid #CCC; border-width: 1px; }
-th, thead th			{ font-weight: 700; color: #333; background: url(../../images/topnav.jpg) repeat-x top #CCC; }
+th, thead th			{ font-weight: 700; color: #333; background: #DDD; }
 td, tbody td			{ background: #F0F0F0; }
 
 /* common classes */
@@ -132,9 +132,9 @@ img.alignleft			{ border: 3px solid #EEE; }
 .multi-sidebar .widgetcontainer li, .featured-stories li,  .related-posts li	{ padding: 0 0 10px; margin: 0 0 10px; border-bottom: 1px dotted #CCC; }
 .multi-sidebar .recentcomments a	{ font-weight: normal; }
 
-#wp-calendar			{ width: 100%; }
-#wp-calendar caption	{ color: #333; font-size: 12px; font-weight: 700; margin: 0 0 0 -1px; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
-						
+#wp-calendar			{ width: 100%; border: 1px solid #999; }
+#wp-calendar caption	{ color: #333; font-size: 12px; font-weight: 700; margin: 0; padding: 5px 9px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
+
 /* featured slideshow */
 .featured				{ margin: 0 10px 20px 0; height: 250px; border: 5px solid #CCC; }
 #controls				{ position: relative; float: left; z-index: 100; top: 90px;  }
