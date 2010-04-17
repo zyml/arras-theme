@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-18 01:01+0800\n"
+"POT-Creation-Date: 2010-04-18 01:19+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -260,6 +260,10 @@ msgstr ""
 
 #: ../search.php:36
 msgid "Blog Archive"
+msgstr ""
+
+#: ../searchform.php:2
+msgid "Search..."
 msgstr ""
 
 #: ../searchform.php:3
