@@ -67,5 +67,22 @@ $('#featured-slideshow').cycle({
 }
 add_action('arras_footer', 'arras_add_slideshow_js');
 
+function arras_get_slideshow_thumb_size($layout = '') {
+	
+	if (!$layout) {
+		$layout = arras_get_option('layout');
+	}
+	
+	if ( strpos($layout, '1c') !== false ) {
+		$size = array(940, 300);
+	} else if ( strpos($layout, '3c') !== false ) {
+		$size = array(490, 225);
+	} else {
+		$size = array(640, 250);
+	}
+	
+	return apply_filters('arras_slideshow_thumb_size', $size);
+}
+
 /* End of file slideshow.php */
 /* Location: ./library/slideshow.php */

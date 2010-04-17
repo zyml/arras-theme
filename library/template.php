@@ -49,18 +49,22 @@ function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
 		if (has_post_thumbnail($id)) {
 			return get_the_post_thumbnail($id, $size);
 		}
-	} else {
+	}
+	
 	// go back to legacy (phpThumb or timThumb)
-		$thumbnail = get_post_meta($id, ARRAS_POST_THUMBNAIL, true);
-		
+	$thumbnail = get_post_meta($id, ARRAS_POST_THUMBNAIL, true);
+	
+	if ($thumbnail != '') {
 		switch($size) {
 			case 'sidebar-thumb':
-				$w = 36;
-				$h = 36;
+				$sidebar_thumb_size = arras_get_sidebar_thumb_size();
+				$w = $sidebar_thumb_size[0];
+				$h = $sidebar_thumb_size[1];
 				break;
 			case 'featured-slideshow-thumb':
-				$w = 640;
-				$h = 250;
+				$slideshow_thumb_size = arras_get_slideshow_thumb_size();
+				$w = $slideshow_thumb_size[0];
+				$h = $slideshow_thumb_size[1];
 				break;
 			case 'featured-post-thumb':
 				$w = arras_get_option('featured_thumb_w');
@@ -232,6 +236,11 @@ function arras_strip_content($content, $limit) {
 		//otherwise
 		return implode(' ', $words); 
 	}
+}
+
+function arras_get_sidebar_thumb_size() {
+	$_default_size = array(36, 36);
+	return apply_filters('arras_sidebar_thumb_size', $_default_size);
 }
 
 /* End of file template.php */

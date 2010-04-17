@@ -1,6 +1,6 @@
 <?php
 // Redirect to theme options after activation
-if (is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
+if (is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 	header( 'Location: ' . admin_url() . 'admin.php?page=arras-options' ) ;
 }
 
@@ -9,17 +9,12 @@ if ( function_exists('add_theme_support') ) {
 	add_theme_support('post-thumbnails');
 	add_theme_support('nav-menus');
 	
-	$layout = arras_get_option('layout');
+	$slideshow_thumb_size = arras_get_slideshow_thumb_size();
+	add_image_size( 'featured-slideshow-thumb', $slideshow_thumb_size[0], $slideshow_thumb_size[1], true );
 	
-	if ( strpos($layout, '1c') !== false ) {
-		add_image_size( 'featured-slideshow-thumb', 940, 300, true );
-	} else if ( strpos($layout, '3c') !== false ) {
-		add_image_size( 'featured-slideshow-thumb', 490, 225, true );
-	} else {
-		add_image_size( 'featured-slideshow-thumb', 640, 250, true );
-	}
+	$sidebar_thumb_size = arras_get_sidebar_thumb_size();
+	add_image_size( 'sidebar-thumb', $sidebar_thumb_size[0], $sidebar_thumb_size[1], true );
 	
-	add_image_size( 'sidebar-thumb', 36, 36, true );
 	add_image_size( 'featured-post-thumb', arras_get_option('featured_thumb_w'), arras_get_option('featured_thumb_h'), true );
 	add_image_size( 'news-post-thumb', arras_get_option('news_thumb_w'), arras_get_option('news_thumb_h'), true );
 	add_image_size( 'archive-post-thumb', arras_get_option('news_thumb_w'), arras_get_option('news_thumb_h'), true );
