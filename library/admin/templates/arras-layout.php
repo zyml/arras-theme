@@ -27,11 +27,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <tr valign="top">
 <th scope="row"><label for="arras-layout-archive-newsdisplay"><?php _e('Posts Display Type', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_dropdown(
-	'arras-layout-archive-newsdisplay',
-	array( 'default' => __('Node Based', 'arras'), 'quick' => __('Quick Preview', 'arras'), 'line' => __('Per Line', 'arras'), 'traditional' => __('Traditional', 'arras') ),
-	arras_get_option('archive_display')
-); ?>
+<?php echo arras_form_dropdown( 'arras-layout-archive-newsdisplay', arras_get_tapestries_select(), arras_get_option('archive_display') ); ?>
 </td>
 </tr>
 
