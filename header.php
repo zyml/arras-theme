@@ -55,12 +55,7 @@ arras_head();
 </script>
 
 <!--[if IE 6]>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" media="screen, projector" />
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.supersleight.min.js"></script>
-<script type="text/javascript">
-	$('#controls').supersleight( {shim: '<?php bloginfo('template_url') ?>/images/x.gif'} );
-	$('.featured-article').supersleight( {shim: '<?php bloginfo('template_url') ?>/images/x.gif'} );
-</script>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" />
 <![endif]-->
 </head>
 
