@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 
-<?php $stickies = get_option('sticky_posts'); ?>
+<?php 
+$stickies = get_option('sticky_posts');
+
+$slideshow_cat	= arras_get_option('slideshow_cat');
+$featured_cat 	= arras_get_option('featured_cat');
+$news_cat 		= arras_get_option('news_cat');
+
+$slideshow_count	= (int)arras_get_option('slideshow_count');
+$featured_count 	= (int)arras_get_option('featured_count');
+?>
 
 <div id="content" class="section">
 <?php arras_above_content() ?>
@@ -10,20 +19,30 @@
 <?php arras_above_index_featured_post() ?>
 
 <!-- Featured Articles -->
-<?php if ( ($featured2_cat = arras_get_option('featured_cat') ) !== '' && $featured2_cat != '-1' ) : ?>
+<?php if ( $featured_cat !== '' && $featured_cat != '-1' ) : ?>
 <div id="index-featured">
 <div class="home-title"><?php _e( arras_get_option('featured_title') ) ?></div>
 	<?php
-	if ($featured2_cat == '-5') {
-		if (count($stickies) > 0) 
-			$query2 = array('post__in' => $stickies, 'showposts' => arras_get_option('featured_count') );
-	} elseif ($featured2_cat == '0') {
-		$query2 = 'showposts=' . arras_get_option('featured_count');
+	if ($featured_cat == '-5') {
+		if (count($stickies) > 0) {
+			$query2 = array('post__in' => $stickies, 'showposts' => $featured_count );
+			if ( arras_get_option('slideshow_cat') == $featured_cat ) {
+				$query2['offset'] = $slideshow_count;
+			}
+		}
 	} else {
-		$query2 = 'showposts=' . arras_get_option('featured_count') . '&cat=' . $featured2_cat;
+		if ($featured_cat == '0') {
+			$query2 = 'showposts=' . $featured_count;
+		} else {
+			$query2 = 'showposts=' . $featured_count . '&cat=' . $featured_cat;
+		}
+		
+		if ( $slideshow_cat == $featured_cat ) {
+			$query2 .= '&offset=' . $slideshow_count;
+		}
 	}
 	
-	arras_render_posts($query2, arras_get_option('featured_display'), 'featured');
+	arras_render_posts( apply_filters('arras_featured_query', $query2), arras_get_option('featured_display'), 'featured' );
 	?>
 </div><!-- #index-featured -->
 <?php endif; ?>
@@ -35,11 +54,21 @@
 <div class="home-title"><?php _e( arras_get_option('news_title') ) ?></div>
 <?php
 $news_query_args = array(
-	'cat' => arras_get_option('news_cat'),
+	'cat' => $news_cat,
 	'paged' => $paged,
 	'showposts' => ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) )
 );
-query_posts($news_query_args);
+
+$news_offset = 0;
+if ($slideshow_cat == $news_cat) {
+	$news_offset += $slideshow_count;
+}
+if ($featured_cat == $news_cat) {
+	$news_offset += $featured_count;
+}
+$news_query_args['offset'] = $news_offset;
+
+query_posts( apply_filters('arras_news_query', $news_query_args) );
 arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
