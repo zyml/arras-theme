@@ -35,7 +35,7 @@ if ( is_home() || is_front_page() ) {
 	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', 'jquery', null, true);
 }
 
-if ( !function_exists('wp_nav_menu') && !function_exists('pixopoint_menu') ) {
+if ( !function_exists('pixopoint_menu') ) {
 	wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/superfish/hoverIntent.js', 'jquery', null, false);
 	wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish/superfish.js', 'jquery', null, false);
 }

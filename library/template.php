@@ -83,7 +83,7 @@ function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
 				$h = get_option('thumbnail_size_h');
 		}
 		
-		return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_title() . '" title="' . get_the_title . '" />';
+		return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_title() . '" title="' . get_the_title() . '" />';
 	}
 	
 	return '<img src="' . get_bloginfo('template_directory') . '/images/thumbnail.png" alt="' . get_the_title() . '" title="' . get_the_title() . '" />';	
