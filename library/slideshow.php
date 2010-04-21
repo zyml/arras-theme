@@ -57,7 +57,8 @@ $('#featured-slideshow').cycle({
 	speed: 250,
 	next: '#controls .next',
 	prev: '#controls .prev',
-	timeout: 6000
+	timeout: 6000,
+	pause: 1
 });
 <?php endif ?>
 	

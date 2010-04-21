@@ -168,8 +168,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-default .entry-title	{ font-weight: 700; font-size: 14px; margin: 5px; line-height: 1.4em;  }
 .posts-default .entry-title a:link, .posts-default .entry-title a:visited	{ color: #373331; text-decoration: none; }
 .posts-default .entry-summary, .posts-quick .entry-summary	{ color: #111; overflow: hidden; margin: 0 5px; line-height: 1.4em; }
-.posts-default .entry-thumbnails-link	{ border: 5px solid #CCC; }
-.posts-default .entry-thumbnails-link:hover { border: 5px solid #373331; }
+.posts-default .entry-thumbnails-link	{ border: 5px solid #CCC; opacity: 0.7; }
 .no-js .posts-default .entry-summary	{ height: 60px; }
 
 .entry-thumbnails	{ clear: both; display: inline-block; }
@@ -200,7 +199,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 .navigation				{ margin: 0 10px 10px 0; }
 
-.home-title				{ text-transform: uppercase; font-weight: 700; font-size: 14px; padding: 8px 3px; border-bottom: 1px solid #DDD; margin: 0 15px 20px 0; color: #383331; }
+.home-title				{ text-transform: uppercase; font-weight: 700; font-size: 14px; padding: 0 3px 8px; border-bottom: 1px solid #DDD; margin: 0 15px 10px 0; color: #383331; }
 
 /* single post */
 .single .post, #main .single-post	{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 15px 0; padding: 0 15px; }
