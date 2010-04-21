@@ -120,5 +120,13 @@ function arras_below_index_news_post() {
 	do_action('arras_below_index_news_post');	
 }
 
+/**
+ * Called before the featured posts in the index page
+ * @since 1.4.3
+ */
+function arras_above_index_featured_post() {
+	do_action('arras_above_index_featured_post');	
+}
+
 /* End of file actions.php */
 /* Location: ./library/actions.php */

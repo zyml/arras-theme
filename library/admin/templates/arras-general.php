@@ -49,6 +49,14 @@
 </td>
 </tr>
 
+<tr valign="top">
+<th scope="row"><label for="arras-facebook"><?php _e('Facebook Profile (URL)', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-facebook', 'id' => 'arras-facebook', 'class' => 'code', 'size' => '65', 'value' => arras_get_option('facebook_profile') )) ?><br />
+<?php _e('Link to your Facebook profile.', 'arras') ?>
+</td>
+</tr>
+
 </table>
 
 <h3><?php _e('Footer Information', 'arras') ?></h3>

@@ -1,49 +1,7 @@
 <?php
-function legacy_comments($file) {
-	if ( function_exists('wp_list_comments') ) 
-		return $file;
-}
-
 /* Remove Gallery CSS to make code more compliant */
 function remove_gallery_css() {
 	return '<div class="gallery">';	
-}
-
-/**
- * Called to display post heading for news in index and archive pages
- * @since 1.2.2
- */
-function arras_newsheader($page_type) {
-	global $post;
-	
-	$postheader = '<div class="entry-thumbnails">';
-	$postheader .= '<a class="entry-thumbnails-link" href="' . get_permalink() . '">';
-	$postheader .= arras_get_thumbnail($page_type . '-post-thumb');
-	
-	if ( arras_get_option($page_type . '_display_meta_inpic') ) {	
-		$postheader .= '<span class="entry-meta"><span class="entry-comments">' . get_comments_number() . '</span>';
-		$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr></span>';
-	}
-	
-	$postheader .= '</a>';
-
-	$postheader .= '</div>';
-	
-	$postheader .= '<h3 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h3>';
-	
-	echo apply_filters('arras_newsheader', $postheader);
-}
-
-/**
- * Called to display post footer for news in index and archive pages
- * @since 1.2.2
- */
-function arras_newsfooter($page_type) {
-	global $post;
-	
-	$postfooter = '';
-
-	echo apply_filters('arras_newsfooter', $postfooter);
 }
 
 /**

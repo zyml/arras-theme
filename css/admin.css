@@ -1,15 +1,17 @@
 optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif; }
 
-#arras-right-col		{ width: 220px; float: left; margin: 33px 0 0; }
+.wrap					{ width: 1080px; }
+
+#arras-right-col		{ width: 255px; float: left; margin: 33px 0 0; }
 #arras-right-col .postbox		{ margin-bottom: 10px; }
 #arras-right-col .postbox p		{ margin: 0 10px 10px; font-size: 11px; }
 #arras-right-col .postbox h3	{ font-size: 11px; line-height: 1; padding: 6px 9px; margin: 0 0 5px; }
 #arras-right-col .postbox li	{ list-style: circle; margin: 7px 22px; font-size: 11px !important; }
 #arras-right-col .postbox li a	{ text-decoration: none; }
-#arras-right-col .button-primary{ margin: 0 10px 10px; font-size: 11px !important; padding: 5px 7px; display: inline-block; }
+#arras-right-col .button-primary{ font-size: 11px !important; padding: 5px 7px; display: inline-block; }
 
 #arras-settings-form	{ float: left; margin: 0 10px 0 0; }
-#arras-settings-form th { padding: 10px 0; }
+#arras-settings-form th { padding: 10px 7px; }
 
 
 #arras-tabs				{ margin: 5px 0 0; width: 100%; }
@@ -33,11 +35,12 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #colorpicker			{ position: absolute; float: left; background: #F0F0F0; border: 1px solid #EEE; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 
 #thumbnails hr			{ background: #DDD; color: #DDD; border-color: #DDD; }
+#donors-list			{ padding: 0 0 5px; margin: 0 0 5px; }
 
 .arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 760px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .padding-content		{ padding: 0 10px 10px; }
-.padding-content h3		{ font-size: 14px; margin: 10px 0 0; padding: 10px 0 0; }
+.padding-content h3		{ font-size: 11px; margin: 10px 0 0; background: #F0F0F0; padding: 5px 7px; -moz-border-radius: 6px; -webkit-border-radius: 6px; display: inline-block; }
 .form-table				{ margin-bottom: 0 !important; }
 .form-table th			{ font-size: 11px; min-width: 200px; }
 .form-table .largetext	{ font-size: 12px; }

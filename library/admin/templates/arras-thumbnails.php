@@ -63,8 +63,4 @@
 <p><strong>A:</strong> You can go to the <em>Media Library</em> and edit the image that is used as the thumbnail. Crop the image and apply the changes to your thumbnails. It's not accurate and you can only apply to all thumbnail sizes (unless someone writes a plugin for it).</p>
 <hr />
 
-<p><strong>Q:</strong> I am currently using the legacy (timThumb) method and would like to use the new method. Is there a way I can switch those old posts to use the new method?</p>
-<p><strong>A:</strong> You can try using the <a href="http://wordpress.org/extend/plugins/get-the-image">Get the Image</a> plugin.</p>
-<hr />
-
 </div><!-- #thumbnails -->

@@ -184,5 +184,18 @@ function arras_gd_is_installed() {
 	return (boolean)function_exists('gd_info');
 }
 
+function arras_get_tapestries_select() {
+	global $arras_tapestries;
+	
+	$output = array();
+	
+	foreach($arras_tapestries as $id => $args) {
+		$output[$id] = $args['name'];
+	}
+	
+	ksort($output);
+	return $output;
+}
+
 /* End of file functions.php */
 /* Location: ./library/admin/templates/functions.php */

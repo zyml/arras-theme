@@ -2,8 +2,8 @@ jQuery(document).ready(function($) {
 
 $('.multi-sidebar').tabs();
 
-<?php if (!function_exists('wp_nav_menu') && !function_exists('pixopoint_menu')) : ?>
-$('.sf-menu').superfish({autoArrows: false, speed: 'fast', dropShadows: 'true'});
+<?php if (!function_exists('pixopoint_menu')) : ?>
+$('.sf-menu').superfish({autoArrows: true, speed: 'fast', dropShadows: 'true'});
 <?php endif ?>
 
 <?php if (is_singular()) : ?>

@@ -1,12 +1,14 @@
 <?php get_header(); ?>
 
-<?php
-if ( function_exists('dsq_comment_count') ) {
-	remove_action('loop_end', 'dsq_comment_count');
-	add_action('arras_above_index_news_post', 'dsq_comment_count');
-}
-
+<?php 
 $stickies = get_option('sticky_posts');
+
+$slideshow_cat	= arras_get_option('slideshow_cat');
+$featured_cat 	= arras_get_option('featured_cat');
+$news_cat 		= arras_get_option('news_cat');
+
+$slideshow_count	= (int)arras_get_option('slideshow_count');
+$featured_count 	= (int)arras_get_option('featured_count');
 ?>
 
 <div id="content" class="section">
@@ -14,63 +16,36 @@ $stickies = get_option('sticky_posts');
 
 <?php if (!$paged) : ?>
 
-<?php if ( ( $featured1_cat = arras_get_option('slideshow_cat') ) !== '' && $featured1_cat != '-1' ) : ?>
-    <!-- Featured Slideshow -->
-    <div class="featured clearfix">
-    <?php
-	if ($featured1_cat == '-5') {
-		if (count($stickies) > 0) 
-			$query = array('post__in' => $stickies, 'showposts' => arras_get_option('slideshow_count') );
-	} elseif ($featured1_cat == '0') {
-		$query = 'showposts=' . arras_get_option('slideshow_count');
-	} else {
-		$query = 'showposts=' . arras_get_option('slideshow_count') . '&cat=' . $featured1_cat;
-	}
-	
-	$q = new WP_Query( apply_filters('arras_slideshow_query', $query) );
-	?> 
-    	<div id="controls">
-			<a href="" class="prev"><?php _e('Prev', 'arras') ?></a>
-			<a href="" class="next"><?php _e('Next', 'arras') ?></a>
-        </div>
-    	<div id="featured-slideshow">
-        	<?php $count = 0; ?>
-    		<?php if ($q->have_posts()) : while ($q->have_posts()) : $q->the_post(); ?>
-    		<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
-
-            	<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark">
-				<?php echo arras_get_thumbnail('featured-slideshow-thumb'); ?>
-                <span class="featured-entry">
-                    <span class="entry-title"><?php the_title(); ?></span>
-                    <span class="entry-summary"><?php echo arras_strip_content(get_the_excerpt(), 20); ?></span>
-					<span class="progress"></span>
-                </span>
-            	</a>
-        	</div>
-    		<?php $count++; endwhile; endif; ?>
-    	</div>
-    </div>
-<?php endif; ?>
+<?php arras_above_index_featured_post() ?>
 
 <!-- Featured Articles -->
-<?php if ( ($featured2_cat = arras_get_option('featured_cat') ) !== '' && $featured2_cat != '-1' ) : ?>
+<?php if ( $featured_cat !== '' && $featured_cat != '-1' ) : ?>
 <div id="index-featured">
 <div class="home-title"><?php _e( arras_get_option('featured_title') ) ?></div>
 	<?php
-	if ($featured2_cat == '-5') {
-		if (count($stickies) > 0) 
-			$query2 = array('post__in' => $stickies, 'showposts' => arras_get_option('featured_count') );
-	} elseif ($featured2_cat == '0') {
-		$query2 = 'showposts=' . arras_get_option('featured_count');
+	if ($featured_cat == '-5') {
+		if (count($stickies) > 0) {
+			$query2 = array('post__in' => $stickies, 'showposts' => $featured_count );
+			if ( arras_get_option('slideshow_cat') == $featured_cat ) {
+				$query2['offset'] = $slideshow_count;
+			}
+		}
 	} else {
-		$query2 = 'showposts=' . arras_get_option('featured_count') . '&cat=' . $featured2_cat;
+		if ($featured_cat == '0') {
+			$query2 = 'showposts=' . $featured_count;
+		} else {
+			$query2 = 'showposts=' . $featured_count . '&cat=' . $featured_cat;
+		}
+		
+		if ( $slideshow_cat == $featured_cat ) {
+			$query2 .= '&offset=' . $slideshow_count;
+		}
 	}
 	
-	arras_render_posts($query2, arras_get_option('featured_display'), 'featured');
+	arras_render_posts( apply_filters('arras_featured_query', $query2), arras_get_option('featured_display'), 'featured' );
 	?>
 </div><!-- #index-featured -->
 <?php endif; ?>
-
 
 <?php arras_above_index_news_post() ?>
 
@@ -79,11 +54,21 @@ $stickies = get_option('sticky_posts');
 <div class="home-title"><?php _e( arras_get_option('news_title') ) ?></div>
 <?php
 $news_query_args = array(
-	'cat' => arras_get_option('news_cat'),
+	'cat' => $news_cat,
 	'paged' => $paged,
 	'showposts' => ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) )
 );
-query_posts($news_query_args);
+
+$news_offset = 0;
+if ($slideshow_cat == $news_cat) {
+	$news_offset += $slideshow_count;
+}
+if ($featured_cat == $news_cat) {
+	$news_offset += $featured_count;
+}
+$news_query_args['offset'] = $news_offset;
+
+query_posts( apply_filters('arras_news_query', $news_query_args) );
 arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>

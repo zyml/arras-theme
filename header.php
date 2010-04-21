@@ -7,8 +7,6 @@
 <meta name="robots" content="noindex, nofollow" />
 <?php endif ?>
 
-<?php arras_alternate_style() ?>
-
 <?php if ( ($feed = arras_get_option('feed_url') ) == '' ) : ?>
 <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
 <?php else : ?>
@@ -37,7 +35,7 @@ if ( is_home() || is_front_page() ) {
 	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', 'jquery', null, true);
 }
 
-if ( !function_exists('wp_nav_menu') && !function_exists('pixopoint_menu') ) {
+if ( !function_exists('pixopoint_menu') ) {
 	wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/superfish/hoverIntent.js', 'jquery', null, false);
 	wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish/superfish.js', 'jquery', null, false);
 }
@@ -57,12 +55,7 @@ arras_head();
 </script>
 
 <!--[if IE 6]>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" media="screen, projector" />
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.supersleight.min.js"></script>
-<script type="text/javascript">
-	$('#controls').supersleight( {shim: '<?php bloginfo('template_url') ?>/images/x.gif'} );
-	$('.featured-article').supersleight( {shim: '<?php bloginfo('template_url') ?>/images/x.gif'} );
-</script>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" />
 <![endif]-->
 </head>
 
@@ -128,6 +121,11 @@ document.body.className = c;
 			<?php $twitter_username = arras_get_option('twitter_username'); ?>
 			<?php if ($twitter_username != '') : ?>
 				<li><a id="twitter" title="<?php printf( __( '%s Twitter', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="http://www.twitter.com/<?php echo $twitter_username ?>/"><?php _e('Twitter', 'arras') ?></a></li>
+			<?php endif ?>
+			
+			<?php $facebook_profile = arras_get_option('facebook_profile'); ?>
+			<?php if ($facebook_profile != '') : ?>
+				<li><a id="facebook" title="<?php printf( __( '%s Facebook', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $facebook_profile ?>/"><?php _e('Facebook', 'arras') ?></a></li>
 			<?php endif ?>
 		</ul>
 	</div><!-- #nav-content -->
