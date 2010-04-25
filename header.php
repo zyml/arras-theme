@@ -48,15 +48,10 @@ if ( is_singular() ) {
 wp_enqueue_script('jquery-equalheights', get_template_directory_uri() . '/js/jquery.equalheights.min.js', 'jquery', null, false);
 
 wp_head();
-arras_head();
 ?>
 <script type="text/javascript">
 <?php @include 'js/header.js.php'; ?>
 </script>
-
-<!--[if IE 6]>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" />
-<![endif]-->
 </head>
 
 <body <?php arras_body_class() ?>>

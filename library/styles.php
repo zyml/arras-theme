@@ -91,11 +91,19 @@ function arras_add_style_css() {
 		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projection" />';
 	else
 		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/styles/default.css" type="text/css" media="screen,projection" />';
-	
+		
+	if ( $scheme == 'default' || $scheme == 'legacy' ) { ?>
+	<!--[if IE 6]>
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" />
+	<![endif]-->
+	<?php }
+}
+
+function arras_add_user_css() {
 	if (!ARRAS_CHILD) {
 		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/user.css" type="text/css" media="screen,projection" />';
 	} else {
-		echo '<link rel="stylesheet=" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen,projection" />';
+		echo '<link rel="stylesheet" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen,projection" />';
 	}
 }
 

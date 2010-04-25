@@ -162,11 +162,11 @@ function arras_add_custom_background() {
 	if ($arras_custom_bg_options['wrap']) $css_class = 'body';
 	else $css_class ='#wrapper';
 ?>
-<?php echo $css_class ?> { background:<?php if($arras_custom_bg_options['id'] != 0) echo ' url(' . $img[0] . ')'; ?> <?php echo $arras_custom_bg_options['pos-x'] . ' ' . $arras_custom_bg_options['pos-y'] . ' ' . $arras_custom_bg_options['attachment'] . ' ' . $arras_custom_bg_options['repeat'] . ' ' . $arras_custom_bg_options['color']; ?> !important; }
+<?php echo $css_class ?> { background:<?php if($arras_custom_bg_options['id'] != 0) echo ' url(' . $img[0] . ')'; ?> <?php echo $arras_custom_bg_options['pos-x'] . ' ' . $arras_custom_bg_options['pos-y'] . ' ' . $arras_custom_bg_options['attachment'] . ' ' . $arras_custom_bg_options['repeat'] . ' ' . $arras_custom_bg_options['color']; ?>; }
 <?php
 if ($arras_custom_bg_options['foreground']) :
 ?>
-#main { background: url(<?php echo get_template_directory_uri() ?>/images/foreground.png) !important; }
+#main { background: url(<?php echo get_template_directory_uri() ?>/images/foreground.png); }
 <?php
 endif;
 }
