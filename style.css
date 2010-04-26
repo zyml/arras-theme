@@ -34,4 +34,4 @@ img.alignleft			{ border: 3px solid #EEE; }
 @import url('css/default.css');
 
 /* User Override Stylesheet */
-@import url('css/user.css');
+@import url('user.css');
