@@ -1,23 +1,6 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
 <?php include 'functions.php'; ?>
 
-<?php
-$forum_contributors = array(
-	'Giovanni' => 'http://www.animeblog.nl/',
-	'dgodfather' => 'http://trusupremekillaz.com/tskgaming',
-	'Charles' => 'http://www.claireraborar.com/travel',
-	'Nedrago' => 'http://www.nedrago.com/',
-	'Dan' => 'http://www.techunfolding.com/'
-);
-$translators = array(
-	'er_mejor (Spanish)' => 'http://www.teusoft.com/',
-	'kokaz84 (French)' => 'http://micromanga.free.fr/',
-	'cngamers (Chinese)' => '',
-	'lesta (Romanian)' => '',
-	'Michael Wenzl (German)' => 'http://www.michaelwenzl.de/'
-);
-?>
-
 <div class="wrap clearfix">
 
 <?php screen_icon('themes') ?>
@@ -42,7 +25,7 @@ $translators = array(
 
 <?php echo $notices ?>
 
-<form id="arras-settings-form" method="post" action="themes.php?page=arras-options">
+<form enctype="multipart/form-data" id="arras-settings-form" method="post" action="themes.php?page=arras-options">
 <?php wp_nonce_field('arras-admin'); ?>
 
 <ul id="arras-tabs" class="clearfix">
@@ -69,7 +52,7 @@ $translators = array(
 	<p><?php _e('If you do screw up, you can reset the settings here.', 'arras') ?></p>
 	<p><?php _e('<strong>NOTE: This will erase all your settings!</strong>', 'arras') ?></p>
 	<p class="submit">
-	<input class="button-secondary" type="submit" name="reset" value="<?php _e('Uninstall / Reset Arras.Theme', 'arras') ?>" />
+	<input class="button-secondary" type="submit" name="reset" value="<?php _e('Uninstall / Reset Arras Theme', 'arras') ?>" />
 	</p>
 </div>
 
@@ -77,56 +60,7 @@ $translators = array(
 
 </form>
 
-<div id="arras-right-col">
-	<div class="postbox">
-		<h3><span><?php _e('Helpful Links', 'arras') ?></span></h3>
-		<ul>
-			<li><a href="http://www.arrastheme.com/wiki/doku.php/quick_start_guide"><?php _e('Quick Start Guide', 'arras') ?></a></li>
-			<li><a href="http://www.arrastheme.com/forums/"><?php _e('Community Forums', 'arras') ?></a></li>
-			<li><a href="http://arras-theme.googlecode.com/"><?php _e('Bug Tracker / Repository', 'arras') ?></a></li>
-		</ul>
-	</div>
-	
-	<div class="postbox">
-		<h3><span><?php _e('Recommended Plugins', 'arras') ?></span></h3>
-		<ul>
-			<li><a href="http://www.viper007bond.com/wordpress-plugins/regenerate-thumbnails/">Rengenerate Thumbnails</a></li>
-			<li><a href="http://lesterchan.net/portfolio/programming/php/#wp-pagenavi">WP-PageNavi</a></li>
-			<li><a href="http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/">FancyBox for WordPress</a></li>
-			<li><a href="http://sexybookmarks.net/">SexyBookmarks</a></li>
-			<li><a href="http://mitcho.com/code/yarpp/">Yet Another Related Posts Plugin</a></li>
-		</ul>
-	</div>
-	
-	<?php if ( !arras_get_option('donate') ) : ?>
-	<div class="postbox">
-		<h3><span><?php _e('How to Support?', 'arras') ?></span></h3>
-		<p><?php _e('There are many ways you can support this theme:', 'arras') ?></p>
-		<ul>
-			<li><?php _e('Share other about the theme', 'arras') ?></li>
-			<li><?php _e('Report bugs / Send patches', 'arras') ?></li>
-			<li><?php _e('Contribute to the forums / wiki', 'arras') ?></li>
-			<li><?php _e('Translate the theme', 'arras') ?></li>
-			<li><strong><?php _e('Send in a donation!', 'arras') ?></strong></li>
-		</ul>
-		<p><a class="button-primary" href="http://www.arrastheme.com/donate/"><?php _e('Donate using PayPal', 'arras') ?></a></p>
-	</div>
-	<?php endif; ?>
-	
-	<?php if ( !arras_get_option('donate') ) : ?>
-	<div class="postbox">
-		<h3><span><?php _e('Thanks!', 'arras') ?></span></h3>
-		<p><?php _e('Many thanks to those who have contributed to the theme:', 'arras') ?></p>
-		<p><strong><?php _e('Forum Contributors', 'arras') ?></strong><br />
-		<?php arras_get_contributors($forum_contributors) ?></p>
-		<p><strong><?php _e('Translators', 'arras') ?></strong><br />
-		<?php arras_get_contributors($translators) ?></p>
-		<div id="donors-list">
-		</div>
-	</div>
-	<?php endif; ?>
-
-</div>
+<?php arras_right_col() ?>
 
 </div><!-- .wrap -->
 

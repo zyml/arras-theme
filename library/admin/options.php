@@ -24,7 +24,7 @@ class Options {
 	var $featured_thumb_w, $featured_thumb_h, $news_thumb_w, $news_thumb_h;
 	
 	// Design
-	var $layout, $style;
+	var $layout, $style, $logo;
 	
 	
 	function __construct() {

@@ -35,9 +35,15 @@ if ($style_dir) {
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-style"><?php _e('Custom Header', 'arras') ?></label></th>
+<th scope="row"><label for="arras-logo"><?php _e('Custom Logo', 'arras') ?></label></th>
 <td>
-<a href="<?php bloginfo('url') ?>/wp-admin/themes.php?page=custom-header"><strong><?php _e('Set Custom Header', 'arras') ?></strong></a>
+<?php if ( arras_get_option('logo') != 0 ) {
+	echo wp_get_attachment_image(arras_get_option('logo'), 'full') . '<br />';
+	echo arras_form_checkbox('arras-delete-logo', 'show', false, 'id="arras-delete-logo"');
+?> 
+	<label for="arras-delete-logo"><?php _e('Delete existing', 'arras') ?></label>
+<?php } ?>
+<p><input type="file" id="arras-logo" name="arras-logo" size="40" /></p>
 </td>
 </tr>
 
