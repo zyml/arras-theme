@@ -77,6 +77,9 @@ add_action('arras_head', 'arras_add_style_css');
 add_action('arras_head', 'arras_override_styles');
 add_action('arras_custom_styles', 'arras_layout_styles');
 
+add_action('wp_head', 'arras_head');
+add_action('wp_head', 'arras_add_user_css', 100);
+
 // Options
 if (is_admin()) {
 	add_action('admin_menu', 'arras_addmenu');

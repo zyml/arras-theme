@@ -82,7 +82,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .sf-menu a:hover		{ color: #FFF; }
 .sf-menu li.sfhover, .sf-menu li:hover { background: #373331; }
 .sf-menu li				{ float: left; padding: 0; }
-.sf-menu ul				{ position: absolute; left: -999em; height: auto; width: 150px; margin: 1px 0 0; line-height: 1; border: none; }
+.sf-menu ul				{ position: absolute; left: -999em; height: auto; width: 150px; margin: 0; line-height: 1; border-top: 1px solid #373331; }
 .sf-menu li li			{ width: 148px; }
 .sf-menu li li a		{ background: #FFF; padding: 7px 10px; width: 128px; font-size: 12px; text-transform: none; }
 .sf-menu li ul ul		{ margin: -25px 0 0 148px; }
