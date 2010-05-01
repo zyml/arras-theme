@@ -132,7 +132,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .multi-sidebar .widgetcontainer	{ background: url(../../images/content-bg.jpg) top repeat-x #FFF; border: 1px solid #CCC; margin-bottom: 10px; padding: 10px; }
 .multi-sidebar .widgetcontainer ul, .featured-stories, .related-posts	{ list-style: none !important; margin: 0 0 0 5px !important; }
 .multi-sidebar .widgetcontainer li, .featured-stories li,  .related-posts li	{ padding: 0 0 10px; margin: 0 0 10px; border-bottom: 1px dotted #CCC; }
-.multi-sidebar .recentcomments a	{ font-weight: normal; }
+.multi-sidebar .recentcomments .author	{ font-weight: normal; font-size: 11px; }
 
 #wp-calendar			{ width: 100%; border: 1px solid #999; }
 #wp-calendar caption	{ color: #333; font-size: 12px; font-weight: 700; margin: 0; padding: 5px 9px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
