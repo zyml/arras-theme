@@ -109,8 +109,8 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 				
 				case 'tags':
 				
-				echo '<div id="s-tags" class="widgetcontainer clearfix">';
-				wp_tag_cloud('smallest=8&largest=18');
+				echo '<div id="s-tags" class="tags widgetcontainer clearfix">';
+				wp_tag_cloud('smallest=9&largest=16');
 				echo '</div><!-- #s-tags -->';
 				
 				break;
@@ -323,10 +323,46 @@ class Arras_Featured_Stories extends WP_Widget {
 	
 }
 
-// Register Widgets
-register_widget('Arras_Tabbed_Sidebar');
-register_widget('Arras_Featured_Stories');
+class Arras_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud {
+	function Arras_Widget_Tag_Cloud() {
+		$this->WP_Widget_Tag_Cloud();
+	}
 	
+	function widget( $args, $instance ) {
+		extract($args);
+		$current_taxonomy = $this->_get_current_taxonomy($instance);
+		if ( !empty($instance['title']) ) {
+			$title = $instance['title'];
+		} else {
+			if ( 'post_tag' == $current_taxonomy ) {
+				$title = __('Tags');
+			} else {
+				$tax = get_taxonomy($current_taxonomy);
+				$title = $tax->label;
+			}
+		}
+		$title = apply_filters('widget_title', $title, $instance, $this->id_base);
+
+		echo $before_widget;
+		if ( $title )
+			echo $before_title . $title . $after_title;
+		echo '<div class="widget-tag-cloud tags">';
+		wp_tag_cloud( apply_filters('widget_tag_cloud_args', array('taxonomy' => $current_taxonomy, 'smallest' => 9, 'largest' => 16) ) );
+		echo "</div>\n";
+		echo $after_widget;
+	}
+}
+
+// Register Widgets
+function arras_widgets_init() {
+	unregister_widget('WP_Widget_Tag_Cloud');
+
+	register_widget('Arras_Tabbed_Sidebar');
+	register_widget('Arras_Featured_Stories');
+	register_widget('Arras_Widget_Tag_Cloud');
+}
+
+add_action('widgets_init', 'arras_widgets_init', 1);	
 /* End of file widgets.php */
 /* Location: ./library/widgets.php */
 ?>

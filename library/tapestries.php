@@ -100,7 +100,7 @@ if (!function_exists('arras_tapestry_default')) {
 			$query->the_post();
 			?>
 			<li <?php arras_post_class() ?>>
-				<?php echo apply_filters('arras_tapestry_default_postheader', arras_generic_postheader($page_type) ) ?>
+				<?php echo apply_filters('arras_tapestry_default_postheader', arras_generic_postheader($page_type, true) ) ?>
 				<div class="entry-summary">
 					<?php echo arras_strip_content( get_the_excerpt(), arras_get_option('node_based_limit_words') ); ?>
 				</div>	
@@ -125,9 +125,10 @@ if (!function_exists('arras_tapestry_quick')) {
 			<li <?php arras_post_class() ?>>
 				<?php echo apply_filters('arras_tapestry_quick_postheader', arras_generic_postheader($page_type) ) ?>
 				<div class="entry-summary">
+					<abbr class="published" title="<?php the_time('c') ?>"><?php printf( __('Posted on %s', 'arras'), get_the_time(get_option('date_format')) ) ?></abbr>
 					<?php echo get_the_excerpt() ?>
 					<p class="quick-read-more"><a href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>">
-					<?php _e('Read More', 'arras') ?>
+					<?php _e('Full Story', 'arras') ?>
 					</a></p>
 				</div>	
 			</li>
@@ -142,14 +143,14 @@ if (!function_exists('arras_tapestry_quick')) {
  * Helper function to display headers for certain tapestries.
  * @since 1.4.3
  */
-function arras_generic_postheader($page_type) {
+function arras_generic_postheader($page_type, $show_meta = false) {
 	global $post;
 	
 	$postheader = '<div class="entry-thumbnails">';
 	$postheader .= '<a class="entry-thumbnails-link" href="' . get_permalink() . '">';
 	$postheader .= arras_get_thumbnail($page_type . '-post-thumb');
 	
-	if ( arras_get_option($page_type . '_display_meta_inpic') ) {	
+	if ($show_meta) {	
 		$postheader .= '<span class="entry-meta"><span class="entry-comments">' . get_comments_number() . '</span>';
 		$postheader .= '<abbr class="published" title="' . get_the_time('c') . '">' . get_the_time( get_option('date_format') ) . '</abbr></span>';
 	}

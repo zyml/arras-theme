@@ -14,7 +14,6 @@ class Options {
 	var $featured_display, $news_display, $index_news_thumbs;
 	var $archive_display, $archive_news_thumbs;
 	var $display_author, $single_meta_pos, $single_custom_fields;
-	var $featured_display_meta_inpic, $news_display_meta_inpic;
 	var $node_based_limit_words;
 	
 	// added in 1.3.4
@@ -74,10 +73,6 @@ class Options {
 		$this->single_meta_pos = 'top';
 		$this->single_custom_fields = 'Score:score,Pros:pros,Cons:cons';
 		
-		$this->featured_display_meta_inpic = true;
-		$this->news_display_meta_inpic = false;
-		$this->archive_display_meta_inpic = false;
-		
 		$this->node_based_limit_words = 30;
 		
 		$this->layout = '2c-r-fixed';
@@ -132,10 +127,6 @@ class Options {
 		$this->post_cats = isset($_POST['arras-layout-post-cats']);
 		$this->post_tags = isset($_POST['arras-layout-post-tags']);
 		$this->single_thumbs = isset($_POST['arras-layout-single-thumbs']);
-		
-		$this->featured_display_meta_inpic = isset($_POST['arras-layout-featured2-meta']);
-		$this->news_display_meta_inpic = isset($_POST['arras-layout-news-meta']);
-		$this->archive_display_meta_inpic = isset($_POST['arras-layout-archive-meta']);
 		
 		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];
 		$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];

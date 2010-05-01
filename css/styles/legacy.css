@@ -53,7 +53,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 .wp-caption img { margin: 0; padding: 0; border: none }
 .wp-caption .wp-caption-text { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0 }
 
-.tags a:link, .tags a:visited	{ font-weight: bold; text-decoration: none; padding: 0 2px; background: #FFF; margin-bottom: 3px; }
+.tags a:link, .tags a:visited	{ text-decoration: none; font-weight: 700; padding: 0 5px 3px; line-height: 1.3em; display: inline-block; }
+.tags a:hover					{ text-decoration: underline; }
 
 .xoxo					{ padding: 0; }
 .arras					{ color: #383332 !important; }
@@ -128,7 +129,6 @@ img.alignleft			{ border: 3px solid #EEE; }
 .multi-sidebar .tabs a:hover	{ border-bottom: 1px dotted #FFF; }
 .multi-sidebar .tabs .ui-tabs-selected	{ background: #FFF; }					
 .multi-sidebar .tabs .ui-tabs-selected a:link, .multi-sidebar .tabs .ui-tabs-selected a:visited	{ color: #37322F; }			
-.multi-sidebar #s-tags a:link, .multi-sidebar #s-tags a:visited	{ font-weight: bold; text-decoration: none; padding: 0 2px; }
 .multi-sidebar .widgetcontainer	{ background: url(../../images/content-bg.jpg) top repeat-x #FFF; border: 1px solid #CCC; margin-bottom: 10px; padding: 10px; }
 .multi-sidebar .widgetcontainer ul, .featured-stories, .related-posts	{ list-style: none !important; margin: 0 0 0 5px !important; }
 .multi-sidebar .widgetcontainer li, .featured-stories li,  .related-posts li	{ padding: 0 0 10px; margin: 0 0 10px; border-bottom: 1px dotted #CCC; }
@@ -181,17 +181,18 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-quick			{ margin: 0 10px 10px 0; padding: 10px; background: url(../../images/content-bg.jpg) repeat-x #FFF; border: 1px solid #CCC; }
 .posts-quick li			{ padding: 15px 10px 0 0; border-bottom: 1px solid #CCC; }
 .posts-quick li:first-child	{ padding-top: 5px; }
-.posts-quick .entry-title	{ font-weight: bold; font-size: 14px; margin: 0 0 5px; line-height: 1.3em; }
+.posts-quick .entry-title	{ font-weight: bold; font-size: 14px; margin: 0; line-height: 1.3em; }
 .posts-quick .entry-title a:link, .posts-quick .entry-title a:visited	{ color: #0052A3; text-decoration: none; }
 .posts-quick .entry-summary	{ font-size: 12px; line-height: 1.6em; margin-bottom: 15px; }
 .posts-quick .quick-read-more	{ font-weight: bold; font-size: 12px; padding: 10px 0 0; margin: 0; }
-.posts-quick .entry-thumbnails	{ float: left; margin: 0 10px 10px 5px; border: 3px solid #C1BCA7; }
+.posts-quick .entry-thumbnails	{ float: left; margin: 3px 10px 10px 5px; border: 2px solid #CCC; }
 .posts-quick .entry-thumbnails:hover	{ border-color: #383332; }
 .posts-quick .entry-thumbnails-link	{ margin: 0; }
+.posts-quick .published	 { display: block; font-size: 11px; color: #666; border: none; margin: 0 0 5px; }
 .posts-default .entry-meta, .posts-quick .entry-meta	{ color: #CCC; float: left; background: #000; height: 25px; display: block; margin: -25px 0 0; font-weight: 700; opacity: 0.7; }
 .posts-default .entry-meta a:link, .posts-default .entry-meta a:visited, .posts-quick .entry-meta a:link, .posts-quick .entry-meta a:visited	{ color: #FFF; text-decoration: none; }
 .posts-default .entry-comments, .posts-quick .entry-comments { float: right; margin: 5px 5px 0; background: url(../../images/comments.gif) no-repeat left center; padding: 0 0 0 12px; }
-.posts-default .published, .posts-quick .published	{ text-transform: uppercase; float: left; margin: 5px 5px 0; font-size: 10px; color: #999; border-bottom: none; }
+.posts-default .published { text-transform: uppercase; float: left; margin: 5px 5px 0; font-size: 10px; color: #999; border-bottom: none; }
 .posts-line				{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 10px; line-height: 1.4em; }
 .posts-line	li			{ padding: 7px 0; border-bottom: 1px solid #EEE; }
 .posts-line .entry-cat	{ float: left; font-size: 11px; width: 100px; overflow: hidden; color: #848485; }

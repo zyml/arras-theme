@@ -70,14 +70,6 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </td>
 </tr>
 
-<tr valign="top">
-<td></td>
-<td>
-<?php echo arras_form_checkbox('arras-layout-featured2-meta', 'show', arras_get_option('featured_display_meta_inpic'), 'id="arras-layout-featured2-meta"') ?> 
-<label for="arras-layout-featured2-meta"><?php _e('Display date and comments count in post thumbnails', 'arras') ?></label>
-</td>
-</tr>
-
 </table>
 
 
@@ -113,14 +105,6 @@ foreach( get_categories('hide_empty=0') as $c ) {
  <?php _e('posts', 'arras') ?><br />
 <?php printf(__('By default, the theme retrieves %s posts, based on your WordPress settings.', 'arras'), '<strong>' . get_option('posts_per_page') . '</strong>') ?>
  <?php _e('You can override the setting here.', 'arras') ?>
-</td>
-</tr>
-
-<tr valign="top">
-<td></td>
-<td>
-<?php echo arras_form_checkbox('arras-layout-news-meta', 'show', arras_get_option('news_display_meta_inpic'), 'id="arras-layout-news-meta"') ?> 
-<label for="arras-layout-news-meta"><?php _e('Display date and comments count in post thumbnails', 'arras') ?></label>
 </td>
 </tr>
 
