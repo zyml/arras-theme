@@ -207,7 +207,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 /* single post */
 .single .post, #main .single-post	{ background: url(../../images/content-bg.jpg) repeat-x top #FFF; border: 1px solid #CCC; margin: 0 10px 15px 0; padding: 0 15px; }
-.single .post .entry-title, .single-post .entry-title	{ font-size: 22px; font-weight: bold; padding: 10px 0 0; margin: 10px 0; }
+.single .post .entry-title, .single-post .entry-title	{ font-size: 22px; font-weight: bold; padding: 10px 0 0; margin: 10px 0; line-height: 1.3em; }
 .single .post .entry-title a:link, .single .post .entry-title a:visited, .single-post .entry-title a:link, .single-post .entry-title a:visited	{ text-decoration: none; }
 .single .post .entry-info, .single-post .entry-info	{ padding-bottom: 10px; margin-bottom: 10px; color: #848485; font-size: 11px; text-transform: uppercase; border-bottom: 1px dotted #CCC; }
 .single .post .entry-info .published, .single-post .entry-info .published { border: none; }
@@ -217,6 +217,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .single .post .entry-author, .single-post .entry-author { font-weight: 700; margin: 0; color: #848485; }
 .single .post .entry-author address, .single-post .entry-author address	{ display: inline; font-style: normal; }
 #main .single .post .tags, #main .single-post .tags { margin: 15px 0; padding: 15px 0 0; color: #848485; border-top: 1px dotted #CCC; }
+#main .single .post .tags a, #main .single-post .tags a { padding: 0; }
 #main .single .post .tags strong, #main .single-post .tags strong { text-transform: uppercase; font-size: 11px; }
 .single .post .entry-photo img, .single-post .entry-photo img	{ margin: 10px 0; overflow: hidden; border: 1px solid #CCC; }
 
