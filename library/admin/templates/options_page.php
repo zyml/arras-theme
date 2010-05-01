@@ -14,7 +14,8 @@ $translators = array(
 	'kokaz84 (French)' => 'http://micromanga.free.fr/',
 	'cngamers (Chinese)' => '',
 	'lesta (Romanian)' => '',
-	'Michael Wenzl (German)' => 'http://www.michaelwenzl.de/'
+	'Michael Wenzl (German)' => 'http://www.michaelwenzl.de/',
+	'geppe (Italian)' => ''
 );
 ?>
 
