@@ -81,8 +81,8 @@ class Options {
 		$this->featured_thumb_w = 195;
 		$this->featured_thumb_h = 110;
 		
-		$this->news_thumb_w = 110;
-		$this->news_thumb_h = 110;
+		$this->news_thumb_w = 155;
+		$this->news_thumb_h = 155;
 	}
 	
 	function save_options() {

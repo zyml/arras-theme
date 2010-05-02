@@ -21,7 +21,9 @@ $featured_count 	= (int)arras_get_option('featured_count');
 <!-- Featured Articles -->
 <?php if ( $featured_cat !== '' && $featured_cat != '-1' ) : ?>
 <div id="index-featured">
-<div class="home-title"><?php _e( arras_get_option('featured_title') ) ?></div>
+<?php if ( arras_get_option('featured_title') != '' ) : ?>
+	<div class="home-title"><?php _e( arras_get_option('featured_title'), 'arras' ) ?></div>
+<?php endif ?>
 	<?php
 	if ($featured_cat == '-5') {
 		if (count($stickies) > 0) {
@@ -51,7 +53,9 @@ $featured_count 	= (int)arras_get_option('featured_count');
 
 <!-- News Articles -->
 <div id="index-news">
+<?php if ( arras_get_option('news_title') != '' ) : ?>
 <div class="home-title"><?php _e( arras_get_option('news_title') ) ?></div>
+<?php endif ?>
 <?php
 $news_query_args = array(
 	'cat' => $news_cat,
