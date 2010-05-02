@@ -92,6 +92,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .sf-menu li:hover li a, .sf-menu li li:hover li a, .sf-menu li li li:hover li a, .sf-menu li li li li:hover li a { background: #FFF; color: #666; font-size: 11px; }
 .sf-menu .sf-with-ul	{ padding-right: 15px; }
 .sf-sub-indicator		{ background: url(../../images/dropdown.png) no-repeat; width: 5px; height: 5px; text-indent: -9999px; display: inline-block; position: relative; left: 7px; top: 11px; }
+*:first-child+html .sf-sub-indicator { top: -5px; }
 
 .quick-nav				{ float: right; list-style: none; margin: 0; padding: 0; }
 .quick-nav li			{ padding: 7px 5px 0 0; float: left; display: inline; }
@@ -169,20 +170,19 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-default .entry-title	{ font-weight: 700; font-size: 14px; margin: 5px; line-height: 1.4em;  }
 .posts-default .entry-title a:link, .posts-default .entry-title a:visited	{ color: #373331; text-decoration: none; }
 .posts-default .entry-summary, .posts-quick .entry-summary	{ color: #111; overflow: hidden; margin: 0 5px; line-height: 1.4em; }
-.posts-default .entry-thumbnails-link	{ border: 5px solid #CCC; }
+.posts-default .entry-thumbnails-link	{ border: 1px solid #E1E1E1; background: #FFF; padding: 4px; }
 .posts-default .published { text-transform: uppercase; float: left; margin: 5px 5px 0; font-size: 10px; color: #999; border-bottom: none; }
 .no-js .posts-default .entry-summary	{ height: 60px; }
 
 .entry-thumbnails	{ clear: both; display: inline-block; }
 .entry-thumbnails:hover	{ border-color: #383332; }
 .entry-thumbnails-link { float: left; background: #111; display: block; text-decoration: none !important; }
-
 .posts-quick			{ margin: 0 10px 10px 0; padding: 0; }
 .posts-quick li			{ padding: 0 10px 0 0; border-bottom: 1px dotted #CCC; margin: 0 0 10px; }
 .posts-quick .entry-title	{ font-weight: 700; font-size: 14px; margin: 5px 0 0; line-height: 1.3em; }
 .posts-quick .entry-title a:link, .posts-quick .entry-title a:visited	{ color: #373331; text-decoration: none; }
 .posts-quick .entry-summary	{ font-size: 12px; line-height: 1.6em; margin-bottom: 15px; }
-.posts-quick .entry-thumbnails	{ float: left; margin: 0 20px 10px 0; border: 5px solid #C1BCA7; }
+.posts-quick .entry-thumbnails	{ float: left; margin: 0 20px 10px 0; border: 1px solid #CCC; padding: 4px; background: #FFF; }
 .posts-quick .quick-read-more	{ margin: 10px 0 0; }
 .posts-quick .published	 { display: block; font-size: 11px; color: #666; border: none; margin: 0 0 5px; }
 .posts-quick .quick-read-more a:link, .posts-quick .quick-read-more a:visited	{ font-size: 11px; background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 3px 6px; margin: 0; border: 1px solid #CCC; font-weight: 700; zoom: 1; *display: inline; display: inline-block; }
@@ -319,6 +319,7 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 #footer .widgetcontent	{ font-size: 12px; background: none; padding: 0; border: none; }
 #footer .footer-message	{ margin: 0; padding: 10px 15px 0; font-size: 11px; }
 #footer .footer-message p { margin: 0 0 0.5em; }
+#footer .footer-message .floatright { margin-left: 20px; }
 #footer-sidebar		{ overflow: hidden; margin: 10px 10px 0; padding: 0 0 10px; border-bottom: 1px solid #CCC; }
 #footer-sidebar .widgetcontainer	{ float: left; margin: 0; max-width: 250px; }
 #footer-sidebar ul	{ list-style: none; margin: 0; padding: 0; }
