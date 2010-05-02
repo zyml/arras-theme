@@ -184,7 +184,10 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-quick .entry-summary	{ font-size: 12px; line-height: 1.6em; margin-bottom: 15px; }
 .posts-quick .entry-thumbnails	{ float: left; margin: 0 20px 10px 0; border: 1px solid #CCC; padding: 4px; background: #FFF; }
 .posts-quick .quick-read-more	{ margin: 10px 0 0; }
-.posts-quick .published	 { display: block; font-size: 11px; color: #666; border: none; margin: 0 0 5px; }
+.posts-quick .entry-info { font-size: 11px; color: #666; border: none; margin: 0 0 5px; }
+.posts-quick .entry-info abbr { padding: 0 4px 0 0; text-decoration: none; border: none; }
+.posts-quick .entry-info span { padding: 0 4px; }
+
 .posts-quick .quick-read-more a:link, .posts-quick .quick-read-more a:visited	{ font-size: 11px; background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 3px 6px; margin: 0; border: 1px solid #CCC; font-weight: 700; zoom: 1; *display: inline; display: inline-block; }
 .posts-quick .quick-read-more a:hover { background: #383332; color: #FFF; }
 .posts-default .entry-meta, .posts-quick .entry-meta	{ color: #CCC; float: left; background: #000; height: 25px; display: block; margin: -25px 0 0; font-weight: 700; opacity: 0.7; }

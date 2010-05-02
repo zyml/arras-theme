@@ -125,7 +125,9 @@ if (!function_exists('arras_tapestry_quick')) {
 			<li <?php arras_post_class() ?>>
 				<?php echo apply_filters('arras_tapestry_quick_postheader', arras_generic_postheader($page_type) ) ?>
 				<div class="entry-summary">
-					<abbr class="published" title="<?php the_time('c') ?>"><?php printf( __('Posted on %s', 'arras'), get_the_time(get_option('date_format')) ) ?></abbr>
+					<div class="entry-info">
+						<abbr class="published" title="<?php the_time('c') ?>"><?php printf( __('Posted on %s', 'arras'), get_the_time(get_option('date_format')) ) ?></abbr> | <span><?php comments_number() ?></span>
+					</div>
 					<?php echo get_the_excerpt() ?>
 					<p class="quick-read-more"><a href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>">
 					<?php _e('Full Story', 'arras') ?>

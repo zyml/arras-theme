@@ -189,7 +189,9 @@ img.alignleft			{ border: 3px solid #EEE; }
 .posts-quick .entry-thumbnails	{ float: left; margin: 3px 10px 10px 5px; border: 2px solid #CCC; }
 .posts-quick .entry-thumbnails:hover	{ border-color: #383332; }
 .posts-quick .entry-thumbnails-link	{ margin: 0; }
-.posts-quick .published	 { display: block; font-size: 11px; color: #666; border: none; margin: 0 0 5px; }
+.posts-quick .entry-info { font-size: 11px; color: #666; border: none; margin: 0 0 5px; }
+.posts-quick .entry-info abbr { padding: 0 4px 0 0; text-decoration: none; border: none; }
+.posts-quick .entry-info span { padding: 0 4px; }
 .posts-default .entry-meta, .posts-quick .entry-meta	{ color: #CCC; float: left; background: #000; height: 25px; display: block; margin: -25px 0 0; font-weight: 700; opacity: 0.7; }
 .posts-default .entry-meta a:link, .posts-default .entry-meta a:visited, .posts-quick .entry-meta a:link, .posts-quick .entry-meta a:visited	{ color: #FFF; text-decoration: none; }
 .posts-default .entry-comments, .posts-quick .entry-comments { float: right; margin: 5px 5px 0; background: url(../../images/comments.gif) no-repeat left center; padding: 0 0 0 12px; }
