@@ -53,7 +53,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <br />
 
 <?php echo arras_form_checkbox('arras-layout-post-tags', 'show', arras_get_option('post_tags'), 'id="arras-layout-post-tags"') ?> 
-<label for="arras-layout-post-tags"><?php _e('Tags (Header)', 'arras') ?></label>
+<label for="arras-layout-post-tags"><?php _e('Tags', 'arras') ?></label>
 <br />
 
 <?php echo arras_form_checkbox('arras-layout-single-thumbs', 'show', arras_get_option('single_thumbs'), 'id="arras-layout-single-thumbs"') ?> 

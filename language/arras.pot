@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arras Theme 1.4\n"
+"Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-02 02:20+0800\n"
+"POT-Creation-Date: 2010-05-02 22:11+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -61,14 +61,14 @@ msgid "Archives"
 msgstr ""
 
 #: ../archive.php:30
-#: ../home.php:113
+#: ../home.php:117
 #: ../search.php:22
 #: ../search.php:42
 msgid "&laquo; Older Entries"
 msgstr ""
 
 #: ../archive.php:31
-#: ../home.php:114
+#: ../home.php:118
 #: ../search.php:21
 #: ../search.php:43
 msgid "Newer Entries &raquo;"
@@ -233,15 +233,15 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: ../home.php:76
+#: ../home.php:80
 msgid "Older Entries"
 msgstr ""
 
-#: ../home.php:77
+#: ../home.php:81
 msgid "Newer Entries"
 msgstr ""
 
-#: ../home.php:106
+#: ../home.php:110
 msgid "Latest Headlines"
 msgstr ""
 
@@ -320,42 +320,42 @@ msgstr ""
 #: ../library/deprecated.php:32
 #: ../library/deprecated.php:51
 #: ../library/tapestries.php:82
-#: ../library/tapestries.php:130
+#: ../library/tapestries.php:132
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../library/filters.php:28
+#: ../library/filters.php:26
 #, php-format
 msgid "<span class=\"entry-author\">By %s</span>"
 msgstr ""
 
-#: ../library/filters.php:36
+#: ../library/filters.php:34
 msgid "Edit Post"
 msgstr ""
 
-#: ../library/filters.php:36
+#: ../library/filters.php:34
 msgid "(Edit Post)"
 msgstr ""
 
-#: ../library/filters.php:44
+#: ../library/filters.php:42
 #, php-format
 msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
 msgstr ""
 
-#: ../library/filters.php:68
+#: ../library/filters.php:65
 msgid "Tags:"
 msgstr ""
 
-#: ../library/filters.php:105
+#: ../library/filters.php:102
 msgid "That 'something' you are looking for isn't here!"
 msgstr ""
 
-#: ../library/filters.php:106
+#: ../library/filters.php:103
 msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
 msgstr ""
 
-#: ../library/filters.php:110
+#: ../library/filters.php:107
 msgid "Perhaps searching for it might help?"
 msgstr ""
 
@@ -399,16 +399,16 @@ msgstr ""
 msgid "Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:128
+#: ../library/tapestries.php:129
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: ../library/tapestries.php:131
+#: ../library/tapestries.php:133
 msgid "Full Story"
 msgstr ""
 
-#: ../library/tapestries.php:139
+#: ../library/tapestries.php:141
 msgid "Quick Preview"
 msgstr ""
 
@@ -894,10 +894,6 @@ msgstr ""
 msgid "Categories (Header)"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:56
-msgid "Tags (Header)"
-msgstr ""
-
 #: ../library/admin/templates/arras-layout.php:60
 msgid "Post Thumbnail"
 msgstr ""
@@ -1020,120 +1016,120 @@ msgstr ""
 msgid "Frequently Asked Questions (EN only)"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:30
+#: ../library/admin/templates/options_page.php:31
 #, php-format
 msgid "The thumbnails cache directory (%s) is not writable. You will need to set the directory's permissions 755 or 777 for the thumbnails to work."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:33
+#: ../library/admin/templates/options_page.php:34
 msgid "More about Changing File/Folder Permissions"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:39
+#: ../library/admin/templates/options_page.php:40
 msgid "The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:49
+#: ../library/admin/templates/options_page.php:50
 msgid "General"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:50
+#: ../library/admin/templates/options_page.php:51
 msgid "Navigation"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:52
+#: ../library/admin/templates/options_page.php:53
 msgid "Layout"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:53
+#: ../library/admin/templates/options_page.php:54
 msgid "Design"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:54
+#: ../library/admin/templates/options_page.php:55
 msgid "Thumbnails"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:68
+#: ../library/admin/templates/options_page.php:69
 msgid "Revert to Default Settings"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:69
+#: ../library/admin/templates/options_page.php:70
 msgid "If you do screw up, you can reset the settings here."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:70
+#: ../library/admin/templates/options_page.php:71
 msgid "<strong>NOTE: This will erase all your settings!</strong>"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:72
+#: ../library/admin/templates/options_page.php:73
 msgid "Uninstall / Reset Arras.Theme"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:82
+#: ../library/admin/templates/options_page.php:83
 msgid "Helpful Links"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:84
+#: ../library/admin/templates/options_page.php:85
 msgid "Quick Start Guide"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:85
+#: ../library/admin/templates/options_page.php:86
 msgid "Community Forums"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:86
+#: ../library/admin/templates/options_page.php:87
 msgid "Bug Tracker / Repository"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:91
+#: ../library/admin/templates/options_page.php:92
 msgid "Recommended Plugins"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:102
+#: ../library/admin/templates/options_page.php:103
 msgid "How to Support?"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:103
+#: ../library/admin/templates/options_page.php:104
 msgid "There are many ways you can support this theme:"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:105
+#: ../library/admin/templates/options_page.php:106
 msgid "Share other about the theme"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:106
+#: ../library/admin/templates/options_page.php:107
 msgid "Report bugs / Send patches"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:107
+#: ../library/admin/templates/options_page.php:108
 msgid "Contribute to the forums / wiki"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:108
+#: ../library/admin/templates/options_page.php:109
 msgid "Translate the theme"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:109
+#: ../library/admin/templates/options_page.php:110
 msgid "Send in a donation!"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:111
+#: ../library/admin/templates/options_page.php:112
 msgid "Donate using PayPal"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:116
+#: ../library/admin/templates/options_page.php:117
 msgid "Thanks!"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:117
+#: ../library/admin/templates/options_page.php:118
 msgid "Many thanks to those who have contributed to the theme:"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:118
+#: ../library/admin/templates/options_page.php:119
 msgid "Forum Contributors"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:120
+#: ../library/admin/templates/options_page.php:121
 msgid "Translators"
 msgstr ""
 
