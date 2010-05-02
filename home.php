@@ -91,6 +91,7 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 	<?php if ( isset($sidebars['sidebar-4']) ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #1') ) : ?>
+		<li></li>
         <?php endif; ?>
 	</ul>
 	<?php endif; ?>
@@ -100,6 +101,7 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 	<?php if ( isset($sidebars['sidebar-5']) ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #2') ) : ?>
+		<li></li>
         <?php endif; ?>
 	</ul>
 	<?php endif; ?>
