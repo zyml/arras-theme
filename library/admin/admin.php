@@ -2,11 +2,10 @@
 function arras_addmenu() {
 	$options_page = add_menu_page( '', __('Arras Theme', 'arras'), 'switch_themes', 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63);
 	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Theme Options', 'arras'), 'switch_themes', 'arras-options', 'arras_admin' );
-	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Custom Header', 'arras'), 'switch_themes', 'custom-header', 'custom-header' );
 	
 	$custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 'switch_themes', 'arras-custom-background', 'arras_custom_background' );
 
-	add_action('admin_head', 'arras_donors_ajax');
+	add_action('admin_head-'. $options_page, 'arras_donors_ajax');
 	add_action('admin_print_scripts-'. $options_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-'. $options_page, 'arras_admin_styles');
 	
@@ -24,6 +23,40 @@ function arras_admin() {
 		
 		if ( isset($_REQUEST['save']) ) {
 			check_admin_referer('arras-admin');
+			
+			if (!isset($_POST['arras-delete-logo'])) {
+			
+				if ($_FILES['arras-logo']['error'] != 4) {
+					$overrides = array('test_form' => false);
+					$file = wp_handle_upload($_FILES['arras-logo'], $overrides);
+
+					if ( isset($file['error']) )
+					die( $file['error'] );
+					
+					$url = $file['url'];
+					$type = $file['type'];
+					$file = $file['file'];
+					$filename = basename($file);
+
+					// Construct the object array
+					$object = array(
+					'post_title' => $filename,
+					'post_content' => $url,
+					'post_mime_type' => $type,
+					'guid' => $url);
+
+					// Save the data
+					$arras_options->logo = wp_insert_attachment($object, $file);
+					
+					// Force generate the logo thumbnail
+					$fullsizepath = get_attached_file($arras_options->logo);
+					wp_update_attachment_metadata($arras_options->logo, wp_generate_attachment_metadata($arras_options->logo, $fullsizepath));
+				}
+			
+			} else {
+				$arras_options->logo = '';
+			}
+			
 			$arras_options->save_options();
 			arras_update_options();
 			$notices = '<div class="updated fade"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';

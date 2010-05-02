@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-02 22:11+0800\n"
+"POT-Creation-Date: 2010-05-02 23:32+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -533,7 +533,6 @@ msgid "Arras Theme"
 msgstr ""
 
 #: ../library/admin/admin.php:4
-#: ../library/admin/admin.php:5
 msgid "Arras Theme Options"
 msgstr ""
 
@@ -541,30 +540,26 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: ../library/admin/admin.php:5
-msgid "Custom Header"
-msgstr ""
-
-#: ../library/admin/admin.php:7
+#: ../library/admin/admin.php:6
 #: ../library/admin/custom-background.php:108
 msgid "Custom Background"
 msgstr ""
 
-#: ../library/admin/admin.php:29
+#: ../library/admin/admin.php:62
 #: ../library/admin/custom-background.php:86
 msgid "Your settings have been saved to the database."
 msgstr ""
 
-#: ../library/admin/admin.php:36
+#: ../library/admin/admin.php:69
 #: ../library/admin/custom-background.php:47
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:48
+#: ../library/admin/admin.php:81
 msgid "Thumbnail cache has been cleared."
 msgstr ""
 
-#: ../library/admin/admin.php:105
+#: ../library/admin/admin.php:138
 msgid "Also, we would like to thank the following few who have supported this theme via their donations:"
 msgstr ""
 
@@ -695,11 +690,15 @@ msgstr ""
 msgid "If you wish to continue using the 1.3.x style, you can do so by selecting <strong>legacy.css</strong>."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:40
-msgid "Set Custom Header"
+#: ../library/admin/templates/arras-design.php:38
+msgid "Custom Logo"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:47
+#: ../library/admin/templates/arras-design.php:44
+msgid "Delete existing"
+msgstr ""
+
+#: ../library/admin/templates/arras-design.php:53
 msgid "Set Custom Background"
 msgstr ""
 

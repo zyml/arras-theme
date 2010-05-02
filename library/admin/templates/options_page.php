@@ -43,7 +43,7 @@ $translators = array(
 
 <?php echo $notices ?>
 
-<form id="arras-settings-form" method="post" action="themes.php?page=arras-options">
+<form enctype="multipart/form-data" id="arras-settings-form" method="post" action="themes.php?page=arras-options">
 <?php wp_nonce_field('arras-admin'); ?>
 
 <ul id="arras-tabs" class="clearfix">

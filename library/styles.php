@@ -22,6 +22,14 @@ function arras_override_styles() {
 }
 
 function arras_layout_styles() {
+
+$arras_logo_id = arras_get_option('logo');
+if ($arras_logo_id != 0) {
+	$arras_logo = wp_get_attachment_image_src($arras_logo_id, 'full');
+
+	echo '.blog-name a { background: url(' . $arras_logo[0] . ') no-repeat; text-indent: -9000px; width: ' . $arras_logo[1] . 'px; height: ' . $arras_logo[2] . 'px; display: block; }' . "\n";
+}
+
 $featured_thumb_w = arras_get_option('featured_thumb_w');
 $featured_thumb_h = arras_get_option('featured_thumb_h');
 ?>
