@@ -19,10 +19,8 @@ function arras_postheader() {
 		else $postheader = '<h2 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h2>';		
 	}
 	
-	$postheader .= '<div class="entry-info">';
-
-	
 	if ( !is_page() ) {
+		$postheader .= '<div class="entry-info">';
 	
 		if ( arras_get_option('post_author') ) {
 			$postheader .= sprintf( __('<span class="entry-author">By %s</span>', 'arras'), '<address class="author vcard">' . get_the_author() . '</address>' );
@@ -44,9 +42,8 @@ function arras_postheader() {
 			$postheader .= sprintf( __('<span class="entry-cat"><strong>Posted in: </strong>%s</span>', 'arras'), implode(', ', $post_cats) );
 		}
 		
+		$postheader .= '</div>';
 	}
-	
-	$postheader .= '</div>';
 	
 	if ( arras_get_option('single_thumbs') ) {
 		$postheader .= '<div class="entry-photo">' . arras_get_thumbnail('featured-slideshow-thumb') . '</div>';
@@ -64,7 +61,7 @@ function arras_postfooter() {
 	
 	$postfooter = '';
 	
-	if ( arras_get_option('post_tags') && !is_attachment() )
+	if ( arras_get_option('post_tags') && !is_attachment() && is_array(get_the_tags()) )
 			$postfooter .= '<div class="tags"><strong>' . __('Tags:', 'arras') . '</strong>' . get_the_tag_list(' ', ', ', ' ') . '</div>';
 
 	echo apply_filters('arras_postfooter', $postfooter);
