@@ -1,6 +1,7 @@
 optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif; }
 
 .wrap					{ width: 1080px; }
+.grey					{ color: #999; }
 
 #arras-right-col		{ width: 255px; float: left; margin: 33px 0 0; }
 #arras-right-col .postbox		{ margin-bottom: 10px; }

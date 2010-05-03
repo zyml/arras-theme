@@ -18,19 +18,30 @@ if ($style_dir) {
 <tr valign="top">
 <th scope="row"><label for="arras-layout-col"><?php _e('Overall Layout', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_dropdown('arras-layout-col', $arras_registered_alt_layouts, arras_get_option('layout')) ?><br />
+<?php if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
+echo arras_form_dropdown('arras-layout-col', $arras_registered_alt_layouts, arras_get_option('layout')) ?><br />
 <span style="color: red">
-<?php _e('Once you have changed your layout settings, you will need to adjust your thumbnail sizes manually and regenerate them using the <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin.', 'arras') ?>
-</span>
+<?php _e('Once you have changed your layout settings, you will need to adjust your thumbnail sizes manually and regenerate them using the <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin.', 'arras');
+?></span><?php
+} else {
+	echo '<span class="grey">' . __('The developer of the child theme has disabled layout settings.', 'arras') . '</span>';
+}
+?>
+
 </td>
 </tr>
 
 <tr valign="top">
 <th scope="row"><label for="arras-style"><?php _e('Default Style', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_dropdown('arras-style', $styles, arras_get_option('style') ) ?><br />
+<?php if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
+echo arras_form_dropdown('arras-style', $styles, arras_get_option('style') ) ?><br />
 <?php printf( __('Alternate stylesheets are placed in %s.', 'arras'), '<code>wp-content/themes/' .get_stylesheet(). '/css/styles/</code>' ) ?>
-<br /><?php _e('If you wish to continue using the 1.3.x style, you can do so by selecting <strong>legacy.css</strong>.', 'arras') ?>
+<br /><?php _e('If you wish to continue using the 1.3.x style, you can do so by selecting <strong>legacy.css</strong>.', 'arras');
+} else {
+	echo '<span class="grey">' . __('The developer of the child theme has disabled alternate stylesheets.', 'arras') . '</span>';
+}
+?>
 </td>
 </tr>
 
