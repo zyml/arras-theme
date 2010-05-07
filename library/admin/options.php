@@ -9,7 +9,7 @@ class Options {
 	// Navigation
 	var $topnav_home, $topnav_display, $topnav_linkcat;
 	// Layout
-	var $slideshow_count, $featured_count, $index_count;
+	var $slideshow_full_width, $slideshow_count, $featured_count, $index_count;
 	var $featured_title, $news_title;
 	var $featured_display, $news_display, $index_news_thumbs;
 	var $archive_display, $archive_news_thumbs;
@@ -53,6 +53,7 @@ class Options {
 		$this->featured_title = __('Featured Stories', 'arras');
 		$this->news_title = __('Latest Headlines', 'arras');
 		
+		$this->slideshow_full_width = false;
 		$this->slideshow_count = 4;
 		$this->featured_count = 3;
 		
@@ -108,6 +109,7 @@ class Options {
 		
 		$this->node_based_limit_words = (int)$_POST['arras-layout-limit-words'];
 		
+		$this->slideshow_full_width = isset($_POST['arras-slideshow-fullwidth']);
 		$this->slideshow_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
 		$this->featured_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
 		

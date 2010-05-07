@@ -38,6 +38,9 @@ define( 'ARRAS_VERSION', $parent_data['Version'] );
 define( 'ARRAS_THUMB', 'timthumb' );
 
 // Load library files
+require_once ARRAS_LIB . '/admin/options.php';
+arras_flush_options();
+
 require_once ARRAS_LIB . '/actions.php';
 require_once ARRAS_LIB . '/deprecated.php';
 require_once ARRAS_LIB . '/filters.php';
@@ -46,10 +49,6 @@ require_once ARRAS_LIB . '/template.php';
 require_once ARRAS_LIB . '/styles.php';
 require_once ARRAS_LIB . '/slideshow.php';
 require_once ARRAS_LIB . '/widgets.php';
-
-require_once ARRAS_LIB . '/admin/options.php';
-
-arras_flush_options();
 
 if ( is_admin() ) require_once ARRAS_LIB . '/admin/admin.php';
 
