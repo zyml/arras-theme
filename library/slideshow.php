@@ -3,9 +3,10 @@
 function arras_add_slideshow() {
 	if ( ( $featured1_cat = arras_get_option('slideshow_cat') ) !== '' && $featured1_cat != '-1' ) {
 	?>
-		<!-- Featured Slideshow -->
-		<div class="featured clearfix">
 		<?php
+		$stickies = get_option('sticky_posts');
+		rsort($stickies);
+		
 		if ($featured1_cat == '-5') {
 			if (count($stickies) > 0) 
 				$query = array('post__in' => $stickies, 'showposts' => arras_get_option('slideshow_count') );
@@ -16,7 +17,10 @@ function arras_add_slideshow() {
 		}
 		
 		$q = new WP_Query( apply_filters('arras_slideshow_query', $query) );
+		if ($q->have_posts()) :
 		?> 
+		<!-- Featured Slideshow -->
+		<div class="featured clearfix">
 			<div id="controls">
 				<a href="" class="prev"><?php _e('Prev', 'arras') ?></a>
 				<a href="" class="next"><?php _e('Next', 'arras') ?></a>
@@ -25,7 +29,7 @@ function arras_add_slideshow() {
 				<?php $count = 0; ?>
 			<?php
 			if (function_exists('dsq_loop_end')) remove_action('loop_end', 'dsq_loop_end'); // remove DISQUS action hook ?>
-				<?php if ($q->have_posts()) : while ($q->have_posts()) : $q->the_post(); ?>
+				<?php while ($q->have_posts()) : $q->the_post(); ?>
 				<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
 
 					<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark">
@@ -37,10 +41,11 @@ function arras_add_slideshow() {
 					</span>
 					</a>
 				</div>
-				<?php $count++; endwhile; endif; ?>
+				<?php $count++; endwhile; ?>
 			<?php if (function_exists('dsq_loop_end')) add_action('loop_end', 'dsq_loop_end'); // add it back for other queries to use ?>
 			</div>
 		</div>
+		<?php endif; ?>
 	<?php
 	}
 }

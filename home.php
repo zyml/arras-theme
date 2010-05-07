@@ -2,6 +2,7 @@
 
 <?php 
 $stickies = get_option('sticky_posts');
+rsort($stickies);
 
 $slideshow_cat	= arras_get_option('slideshow_cat');
 $featured_cat 	= arras_get_option('featured_cat');
