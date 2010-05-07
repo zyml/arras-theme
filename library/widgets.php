@@ -353,13 +353,41 @@ class Arras_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud {
 	}
 }
 
+class Arras_Widget_Search extends WP_Widget {
+
+	function Arras_Widget_Search() {
+		$widget_ops = array('classname' => 'widget_search', 'description' => __( "A search form for your site") );
+		$this->WP_Widget('search', __('Search'), $widget_ops);
+	}
+
+	function widget( $args, $instance ) {
+		extract($args);
+		
+		// Use current theme search form if it exists
+		echo '<li class="widgetcontainer clearfix"><div class="widgetcontent">';
+		get_search_form();
+		echo '</div></li>';
+	}
+
+	function form( $instance ) {
+		
+	}
+
+	function update( $new_instance, $old_instance ) {
+
+	}
+
+}
+
 // Register Widgets
 function arras_widgets_init() {
 	unregister_widget('WP_Widget_Tag_Cloud');
+	unregister_widget('WP_Widget_Search');
 
 	register_widget('Arras_Tabbed_Sidebar');
 	register_widget('Arras_Featured_Stories');
 	register_widget('Arras_Widget_Tag_Cloud');
+	register_widget('Arras_Widget_Search');
 }
 
 add_action('widgets_init', 'arras_widgets_init', 1);	
