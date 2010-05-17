@@ -54,7 +54,7 @@ echo arras_form_dropdown('arras-style', $styles, arras_get_option('style') ) ?><
 ?> 
 	<label for="arras-delete-logo"><?php _e('Delete existing', 'arras') ?></label>
 <?php } ?>
-<p id="arras-logo-field"><input type="file" id="arras-logo" name="arras-logo" size="40" /></p>
+<p id="arras-logo-field"><input type="file" id="arras-logo" name="arras-logo" size="35" /></p>
 </td>
 </tr>
 
