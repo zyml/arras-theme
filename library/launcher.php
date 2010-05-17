@@ -73,7 +73,6 @@ register_sidebar( array(
 if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
 	add_action('arras_head', 'arras_add_blueprint_css');
 	add_action('arras_head', 'arras_add_style_css');
-	add_action('arras_head', 'arras_override_styles');
 	add_action('arras_custom_styles', 'arras_layout_styles');
 }
 
@@ -88,6 +87,7 @@ if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
 	register_alternate_layout( '3c-r-fixed', __('3 Column Layout (Right Sidebars)', 'arras') );
 }
 
+add_action('arras_head', 'arras_override_styles');
 add_action('arras_custom_styles', 'arras_add_custom_logo');
 
 add_action('wp_head', 'arras_head');
