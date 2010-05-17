@@ -148,7 +148,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 #controls .next:hover, #controls .prev:hover	{ opacity: 1; }
 #controls a:focus		{ outline: none; }
 
-#featured-slideshow		{ position: relative; margin-right: 20px; z-index: 0 !important; border: 5px solid #CCC; }			
+#featured-slideshow		{ position: relative; z-index: 0 !important; border: 5px solid #CCC; }			
 
 .featured-article		{ display: block; width: 640px; height: 250px; text-decoration: none !important; background-position: center !important; }
 .featured-article img	{ width: 640px; height: 250px; }
@@ -222,6 +222,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 #main .single .post .tags, #main .single-post .tags { margin: 15px 0; padding: 15px 0 0; color: #848485; border-top: 1px dotted #CCC; }
 #main .single .post .tags a, #main .single-post .tags a { padding: 0; }
 #main .single .post .tags strong, #main .single-post .tags strong { text-transform: uppercase; font-size: 11px; }
+.single .post .entry-photo, .single-post .entry-photo	{ overflow: hidden; }
 .single .post .entry-photo img, .single-post .entry-photo img	{ margin: 10px 0; overflow: hidden; border: 1px solid #CCC; }
 
 .entry-content, .entry-content	{ margin: 20px 0; font-size: 12px; line-height: 1.5em; }
