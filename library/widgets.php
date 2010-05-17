@@ -330,26 +330,40 @@ class Arras_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud {
 	
 	function widget( $args, $instance ) {
 		extract($args);
-		$current_taxonomy = $this->_get_current_taxonomy($instance);
-		if ( !empty($instance['title']) ) {
-			$title = $instance['title'];
-		} else {
-			if ( 'post_tag' == $current_taxonomy ) {
-				$title = __('Tags');
+		
+		// for WordPress 3.0+
+		if ( function_exists('_get_current_taxonomy') ) {
+			$current_taxonomy = $this->_get_current_taxonomy($instance);
+			if ( !empty($instance['title']) ) {
+				$title = $instance['title'];
 			} else {
-				$tax = get_taxonomy($current_taxonomy);
-				$title = $tax->label;
+				if ( 'post_tag' == $current_taxonomy ) {
+					$title = __('Tags');
+				} else {
+					$tax = get_taxonomy($current_taxonomy);
+					$title = $tax->label;
+				}
 			}
-		}
-		$title = apply_filters('widget_title', $title, $instance, $this->id_base);
+			$title = apply_filters('widget_title', $title, $instance, $this->id_base);
 
-		echo $before_widget;
-		if ( $title )
-			echo $before_title . $title . $after_title;
-		echo '<div class="widget-tag-cloud tags">';
-		wp_tag_cloud( apply_filters('widget_tag_cloud_args', array('taxonomy' => $current_taxonomy, 'smallest' => 9, 'largest' => 16) ) );
-		echo "</div>\n";
-		echo $after_widget;
+			echo $before_widget;
+			if ( $title )
+				echo $before_title . $title . $after_title;
+			echo '<div class="widget-tag-cloud tags">';
+			wp_tag_cloud( apply_filters('widget_tag_cloud_args', array('taxonomy' => $current_taxonomy, 'smallest' => 9, 'largest' => 16) ) );
+			echo "</div>\n";
+			echo $after_widget;
+		} else {
+			$title = apply_filters('widget_title', empty($instance['title']) ? __('Tags') : $instance['title']);
+
+			echo $before_widget;
+			if ( $title )
+				echo $before_title . $title . $after_title;
+			echo '<div class="widget-tag-cloud tags">';
+			wp_tag_cloud(apply_filters('widget_tag_cloud_args', array()));
+			echo "</div>\n";
+			echo $after_widget;
+		}
 	}
 }
 
