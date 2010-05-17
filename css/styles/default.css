@@ -91,8 +91,8 @@ img.alignleft			{ border: 3px solid #EEE; }
 .sf-menu li ul li:hover a, .sf-menu li ul li li:hover a, .sf-menu li ul li li li:hover a, .sf-menu li ul li li li:hover a { background: #383332; color: #FFF; }
 .sf-menu li:hover li a, .sf-menu li li:hover li a, .sf-menu li li li:hover li a, .sf-menu li li li li:hover li a { background: #FFF; color: #666; font-size: 11px; }
 .sf-menu .sf-with-ul	{ padding-right: 15px; }
-.sf-sub-indicator		{ background: url(../../images/dropdown.png) no-repeat; width: 5px; height: 5px; text-indent: -9999px; display: inline-block; position: relative; left: 7px; top: 11px; }
-*:first-child+html .sf-sub-indicator { top: -5px; }
+.sf-sub-indicator		{ background: url(../../images/dropdown.png) no-repeat; width: 5px; height: 5px; text-indent: -9999px; display: inline-block; position: relative; left: 7px; top: 0; vertical-align: middle; }
+.sf-menu ul .sf-sub-indicator	{ display: none; }
 
 .quick-nav				{ float: right; list-style: none; margin: 0; padding: 0; }
 .quick-nav li			{ padding: 7px 5px 0 0; float: left; display: inline; }
