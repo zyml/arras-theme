@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-02 23:32+0800\n"
+"POT-Creation-Date: 2010-05-18 01:44+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -61,14 +61,14 @@ msgid "Archives"
 msgstr ""
 
 #: ../archive.php:30
-#: ../home.php:117
+#: ../home.php:120
 #: ../search.php:22
 #: ../search.php:42
 msgid "&laquo; Older Entries"
 msgstr ""
 
 #: ../archive.php:31
-#: ../home.php:118
+#: ../home.php:121
 #: ../search.php:21
 #: ../search.php:43
 msgid "Newer Entries &raquo;"
@@ -188,7 +188,7 @@ msgstr ""
 msgid "Cancel Reply"
 msgstr ""
 
-#: ../footer.php:11
+#: ../footer.php:13
 msgid "About Arras Theme"
 msgstr ""
 
@@ -233,15 +233,15 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: ../home.php:80
+#: ../home.php:81
 msgid "Older Entries"
 msgstr ""
 
-#: ../home.php:81
+#: ../home.php:82
 msgid "Newer Entries"
 msgstr ""
 
-#: ../home.php:110
+#: ../home.php:113
 msgid "Latest Headlines"
 msgstr ""
 
@@ -359,31 +359,31 @@ msgstr ""
 msgid "Perhaps searching for it might help?"
 msgstr ""
 
-#: ../library/launcher.php:89
+#: ../library/launcher.php:83
 msgid "1 Column Layout (No Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:90
+#: ../library/launcher.php:84
 msgid "2 Column Layout (Right Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:91
+#: ../library/launcher.php:85
 msgid "2 Column Layout (Left Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:92
+#: ../library/launcher.php:86
 msgid "3 Column Layout (Left & Right Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:93
+#: ../library/launcher.php:87
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
-#: ../library/slideshow.php:21
+#: ../library/slideshow.php:25
 msgid "Prev"
 msgstr ""
 
-#: ../library/slideshow.php:22
+#: ../library/slideshow.php:26
 msgid "Next"
 msgstr ""
 
@@ -524,8 +524,13 @@ msgstr ""
 msgid "Show post excerpts?"
 msgstr ""
 
-#: ../library/widgets.php:338
+#: ../library/widgets.php:341
+#: ../library/widgets.php:357
 msgid "Tags"
+msgstr ""
+
+#: ../library/widgets.php:373
+msgid "A search form for your site"
 msgstr ""
 
 #: ../library/admin/admin.php:3
@@ -545,22 +550,18 @@ msgstr ""
 msgid "Custom Background"
 msgstr ""
 
-#: ../library/admin/admin.php:62
+#: ../library/admin/admin.php:61
 #: ../library/admin/custom-background.php:86
 msgid "Your settings have been saved to the database."
 msgstr ""
 
-#: ../library/admin/admin.php:69
+#: ../library/admin/admin.php:68
 #: ../library/admin/custom-background.php:47
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:81
+#: ../library/admin/admin.php:80
 msgid "Thumbnail cache has been cleared."
-msgstr ""
-
-#: ../library/admin/admin.php:138
-msgid "Also, we would like to thank the following few who have supported this theme via their donations:"
 msgstr ""
 
 #: ../library/admin/custom-background.php:114
@@ -673,32 +674,40 @@ msgstr ""
 msgid "Overall Layout"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:23
+#: ../library/admin/templates/arras-design.php:24
 msgid "Once you have changed your layout settings, you will need to adjust your thumbnail sizes manually and regenerate them using the <a href=\"http://wordpress.org/extend/plugins/regenerate-thumbnails/\">Regenerate Thumbnails</a> plugin."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:29
+#: ../library/admin/templates/arras-design.php:27
+msgid "The developer of the child theme has disabled layout settings."
+msgstr ""
+
+#: ../library/admin/templates/arras-design.php:35
 msgid "Default Style"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:32
+#: ../library/admin/templates/arras-design.php:39
 #, php-format
 msgid "Alternate stylesheets are placed in %s."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:33
+#: ../library/admin/templates/arras-design.php:40
 msgid "If you wish to continue using the 1.3.x style, you can do so by selecting <strong>legacy.css</strong>."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:38
+#: ../library/admin/templates/arras-design.php:42
+msgid "The developer of the child theme has disabled alternate stylesheets."
+msgstr ""
+
+#: ../library/admin/templates/arras-design.php:49
 msgid "Custom Logo"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:44
+#: ../library/admin/templates/arras-design.php:55
 msgid "Delete existing"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:53
+#: ../library/admin/templates/arras-design.php:64
 msgid "Set Custom Background"
 msgstr ""
 
@@ -1093,7 +1102,7 @@ msgid "There are many ways you can support this theme:"
 msgstr ""
 
 #: ../library/admin/templates/options_page.php:106
-msgid "Share other about the theme"
+msgid "Tell others about the theme"
 msgstr ""
 
 #: ../library/admin/templates/options_page.php:107

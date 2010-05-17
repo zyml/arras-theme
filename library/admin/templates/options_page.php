@@ -103,7 +103,7 @@ $translators = array(
 		<h3><span><?php _e('How to Support?', 'arras') ?></span></h3>
 		<p><?php _e('There are many ways you can support this theme:', 'arras') ?></p>
 		<ul>
-			<li><?php _e('Share other about the theme', 'arras') ?></li>
+			<li><?php _e('Tell others about the theme', 'arras') ?></li>
 			<li><?php _e('Report bugs / Send patches', 'arras') ?></li>
 			<li><?php _e('Contribute to the forums / wiki', 'arras') ?></li>
 			<li><?php _e('Translate the theme', 'arras') ?></li>
