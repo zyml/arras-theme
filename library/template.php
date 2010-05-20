@@ -47,7 +47,10 @@ function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
 	// get post thumbnail (WordPress 2.9)
 	if (function_exists('has_post_thumbnail')) {
 		if (has_post_thumbnail($id)) {
-			return get_the_post_thumbnail($id, $size);
+			return get_the_post_thumbnail( $id, $size, array(
+				'alt' 	=> trim(strip_tags($post->post_excerpt)), 
+				'title' => trim(strip_tags($post->post_title))
+			) );
 		}
 	}
 	
@@ -83,10 +86,10 @@ function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
 				$h = get_option('thumbnail_size_h');
 		}
 		
-		return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_title() . '" title="' . get_the_title() . '" />';
+		return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_excerpt() . '" title="' . get_the_title() . '" />';
 	}
 	
-	return '<img src="' . get_bloginfo('template_directory') . '/images/thumbnail.png" alt="' . get_the_title() . '" title="' . get_the_title() . '" />';	
+	return '<img src="' . get_bloginfo('template_directory') . '/images/thumbnail.png" alt="' . get_the_excerpt() . '" title="' . get_the_title() . '" />';	
 }
 
 
