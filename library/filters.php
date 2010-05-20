@@ -23,7 +23,7 @@ function arras_postheader() {
 		$postheader .= '<div class="entry-info">';
 	
 		if ( arras_get_option('post_author') ) {
-			$postheader .= sprintf( __('<span class="entry-author">By %s</span>', 'arras'), '<address class="author vcard">' . get_the_author() . '</address>' );
+			$postheader .= sprintf( __('<span class="entry-author">By %s</span>', 'arras'), '<address class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta('ID') ) . '" title="' . esc_attr(get_the_author()) . '">' . get_the_author() . '</a></address>' );
 		}
 		
 		if ( arras_get_option('post_date') ) {
@@ -116,6 +116,27 @@ function arras_post_notfound() {
 	$postcontent .= '</div></div>';
 	
 	echo apply_filters('arras_post_notfound', $postcontent);	
+}
+
+/**
+ * Displays author information after post content. Can be turned off in theme options.
+ * @since 1.4.4
+ */
+function arras_post_aboutauthor() {
+	$id = get_the_author_meta('ID');
+	
+	$output = '
+		<div class="about-author clearfix">
+			<h4>' . __('About the Author', 'arras') . '</h4>
+			<a href="' . get_author_posts_url($id) . '">' . get_avatar($id, 48) . '</a>
+			<div class="author-meta">
+			<h5><a href="' . get_author_posts_url($id) . '">' . get_the_author_meta('display_name') . '</a></h5>
+			' . get_the_author_meta('description') . '
+			</div>
+		</div>
+	';
+	
+	echo apply_filters('arras_post_aboutauthor', $output);
 }
 
 /* End of file filters.php */

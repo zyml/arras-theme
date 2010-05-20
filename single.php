@@ -24,13 +24,11 @@ else add_filter('arras_postheader', 'arras_postmeta');
         <!-- <?php trackback_rdf() ?> -->
 		<?php arras_postfooter() ?>
 
-        <?php if ( arras_get_option('display_author') ) : ?>
-        <div class="about-author clearfix">
-        	<h4><?php _e('About the Author', 'arras') ?></h4>
-            <?php echo get_avatar(get_the_author_meta('ID'), 48); ?>
-            <?php the_author_meta('description'); ?>
-        </div>
-        <?php endif; ?>
+        <?php 
+		if ( arras_get_option('display_author') ) {
+			arras_post_aboutauthor();
+		}
+        ?>
     </div>
     
 	<?php arras_below_post() ?>
