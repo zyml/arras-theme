@@ -95,7 +95,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 					foreach ($comments as $comment) {
 						echo '<li class="recentcomments clearfix">';
 						echo get_avatar($comment->user_id, 36);
-						echo '<strong>' . $comment->comment_author . '</strong><br />';
+						echo '<span class="author">' . $comment->comment_author . '</span><br />';
 						echo '<a href="' . clean_url( get_comment_link($comment->comment_ID) ) . '">' . get_the_title($comment->comment_post_ID) . '</a>';
 						echo '</li>';
 					}
@@ -109,8 +109,8 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 				
 				case 'tags':
 				
-				echo '<div id="s-tags" class="widgetcontainer clearfix">';
-				wp_tag_cloud('smallest=8&largest=18');
+				echo '<div id="s-tags" class="tags widgetcontainer clearfix">';
+				wp_tag_cloud('smallest=9&largest=16');
 				echo '</div><!-- #s-tags -->';
 				
 				break;
@@ -323,10 +323,88 @@ class Arras_Featured_Stories extends WP_Widget {
 	
 }
 
-// Register Widgets
-register_widget('Arras_Tabbed_Sidebar');
-register_widget('Arras_Featured_Stories');
+class Arras_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud {
+	function Arras_Widget_Tag_Cloud() {
+		$this->WP_Widget_Tag_Cloud();
+	}
 	
+	function widget( $args, $instance ) {
+		extract($args);
+		
+		// for WordPress 3.0+
+		if ( function_exists('_get_current_taxonomy') ) {
+			$current_taxonomy = $this->_get_current_taxonomy($instance);
+			if ( !empty($instance['title']) ) {
+				$title = $instance['title'];
+			} else {
+				if ( 'post_tag' == $current_taxonomy ) {
+					$title = __('Tags');
+				} else {
+					$tax = get_taxonomy($current_taxonomy);
+					$title = $tax->label;
+				}
+			}
+			$title = apply_filters('widget_title', $title, $instance, $this->id_base);
+
+			echo $before_widget;
+			if ( $title )
+				echo $before_title . $title . $after_title;
+			echo '<div class="widget-tag-cloud tags">';
+			wp_tag_cloud( apply_filters('widget_tag_cloud_args', array('taxonomy' => $current_taxonomy, 'smallest' => 9, 'largest' => 16) ) );
+			echo "</div>\n";
+			echo $after_widget;
+		} else {
+			$title = apply_filters('widget_title', empty($instance['title']) ? __('Tags') : $instance['title']);
+
+			echo $before_widget;
+			if ( $title )
+				echo $before_title . $title . $after_title;
+			echo '<div class="widget-tag-cloud tags">';
+			wp_tag_cloud(apply_filters('widget_tag_cloud_args', array()));
+			echo "</div>\n";
+			echo $after_widget;
+		}
+	}
+}
+
+class Arras_Widget_Search extends WP_Widget {
+
+	function Arras_Widget_Search() {
+		$widget_ops = array('classname' => 'widget_search', 'description' => __( "A search form for your site") );
+		$this->WP_Widget('search', __('Search'), $widget_ops);
+	}
+
+	function widget( $args, $instance ) {
+		extract($args);
+		
+		// Use current theme search form if it exists
+		echo '<li class="widgetcontainer clearfix"><div class="widgetcontent">';
+		get_search_form();
+		echo '</div></li>';
+	}
+
+	function form( $instance ) {
+		
+	}
+
+	function update( $new_instance, $old_instance ) {
+
+	}
+
+}
+
+// Register Widgets
+function arras_widgets_init() {
+	unregister_widget('WP_Widget_Tag_Cloud');
+	unregister_widget('WP_Widget_Search');
+
+	register_widget('Arras_Tabbed_Sidebar');
+	register_widget('Arras_Featured_Stories');
+	register_widget('Arras_Widget_Tag_Cloud');
+	register_widget('Arras_Widget_Search');
+}
+
+add_action('widgets_init', 'arras_widgets_init', 1);	
 /* End of file widgets.php */
 /* Location: ./library/widgets.php */
 ?>

@@ -70,12 +70,25 @@ register_sidebar( array(
 // Registering widgets have been moved to the respective widget files
 
 // Header Actions
-add_action('arras_head', 'arras_add_blueprint_css');
-add_action('arras_head', 'arras_add_layout_css');
-add_action('arras_head', 'arras_add_style_css');
+if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
+	add_action('arras_head', 'arras_add_blueprint_css');
+	add_action('arras_head', 'arras_add_style_css');
+	add_action('arras_custom_styles', 'arras_layout_styles');
+}
+
+if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
+	add_action('arras_head', 'arras_add_layout_css');
+	
+	// Alternate Styles & Layouts
+	register_alternate_layout( '1c-fixed', __('1 Column Layout (No Sidebars)', 'arras') );
+	register_alternate_layout( '2c-r-fixed', __('2 Column Layout (Right Sidebar)', 'arras') );
+	register_alternate_layout( '2c-l-fixed', __('2 Column Layout (Left Sidebar)', 'arras') );
+	register_alternate_layout( '3c-fixed', __('3 Column Layout (Left & Right Sidebars)', 'arras') );
+	register_alternate_layout( '3c-r-fixed', __('3 Column Layout (Right Sidebars)', 'arras') );
+}
 
 add_action('arras_head', 'arras_override_styles');
-add_action('arras_custom_styles', 'arras_layout_styles');
+add_action('arras_custom_styles', 'arras_add_custom_logo');
 
 add_action('wp_head', 'arras_head');
 add_action('wp_head', 'arras_add_user_css', 100);
@@ -84,13 +97,6 @@ add_action('wp_head', 'arras_add_user_css', 100);
 if (is_admin()) {
 	add_action('admin_menu', 'arras_addmenu');
 }
-
-// Alternate Styles & Layouts
-register_alternate_layout( '1c-fixed', __('1 Column Layout (No Sidebars)', 'arras') );
-register_alternate_layout( '2c-r-fixed', __('2 Column Layout (Right Sidebar)', 'arras') );
-register_alternate_layout( '2c-l-fixed', __('2 Column Layout (Left Sidebar)', 'arras') );
-register_alternate_layout( '3c-fixed', __('3 Column Layout (Left & Right Sidebars)', 'arras') );
-register_alternate_layout( '3c-r-fixed', __('3 Column Layout (Right Sidebars)', 'arras') );
 
 // Filters
 add_filter('gallery_style', 'remove_gallery_css');

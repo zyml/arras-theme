@@ -1,6 +1,7 @@
 optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif; }
 
 .wrap					{ width: 1080px; }
+.grey					{ color: #999; }
 
 #arras-right-col		{ width: 255px; float: left; margin: 33px 0 0; }
 #arras-right-col .postbox		{ margin-bottom: 10px; }
@@ -36,6 +37,8 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 
 #thumbnails hr			{ background: #DDD; color: #DDD; border-color: #DDD; }
 #donors-list			{ padding: 0 0 5px; margin: 0 0 5px; }
+
+#arras-logo-field		{ margin: 0 0 1em; }
 
 .arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 760px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }

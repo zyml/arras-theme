@@ -17,6 +17,14 @@ function arras_body() {
 }
 
 /**
+ * Called before any content on the main container
+ * @since 1.4.3
+ */
+function arras_above_main() {
+	do_action('arras_above_main');
+}
+
+/**
  * Called before any content on the main column
  * @since 1.2.2
  */

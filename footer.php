@@ -1,9 +1,11 @@
-	<?php arras_before_footer() ?>
 	</div><!-- #main -->
+	
+	<?php arras_before_footer() ?>
     
     <div id="footer" class="clearfix">
     	<ul id="footer-sidebar" class="clearfix xoxo">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer') ) : ?>
+			<li></li>
             <?php endif; ?>
         </ul>
 		

@@ -44,10 +44,12 @@
 <div id="secondary" class="aside main-aside sidebar">
     <ul class="xoxo">
         <!-- Widgetized sidebar, if you have the plugin installed.  -->
-        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Secondary Sidebar #1') ) : ?>              
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Secondary Sidebar #1') ) : ?>
+		<li></li>		
         <?php endif; ?>
 		
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Secondary Sidebar #2') ) : ?>
+		<li></li>
 		<?php endif; ?>
     </ul>
 	<?php arras_below_sidebar() ?>  

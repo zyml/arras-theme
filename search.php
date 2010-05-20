@@ -8,7 +8,7 @@
     <h2><?php _e('Search Results', 'arras') ?></h2>
     <div class="search-results-content clearfix">
 	<p><?php printf( __('Search Results for <strong>&#8216;' . '%s' . '&#8217;</strong></p>', 'arras'), wp_specialchars($s, 1) ) ?>
-    <?php include (TEMPLATEPATH . '/searchform.php'); ?>
+    <?php get_search_form(); ?>
     </div>
 </div>
 
@@ -17,7 +17,7 @@
 </div>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
-    <div class="navigation">
+    <div class="navigation clearfix">
 		<div class="floatleft"><?php previous_posts_link( __('Newer Entries &raquo;', 'arras') ) ?></div>
 		<div class="floatright"><?php next_posts_link( __('&laquo; Older Entries', 'arras') ) ?></div>
     </div>
@@ -33,9 +33,9 @@
     </div>
 </div> 
 
-<h2 class="feed-title"><?php _e('Blog Archive', 'arras') ?></h2>
+<h2 class="home-title"><?php _e('Blog Archive', 'arras') ?></h2>
 <?php query_posts(''); ?>
-<?php arras_get_posts('archive') ?>
+<?php arras_render_posts(null, arras_get_option('archive_display'), 'archive') ?>
     
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
     <div class="navigation clearfix">

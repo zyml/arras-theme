@@ -9,12 +9,11 @@ class Options {
 	// Navigation
 	var $topnav_home, $topnav_display, $topnav_linkcat;
 	// Layout
-	var $slideshow_count, $featured_count, $index_count;
+	var $slideshow_full_width, $slideshow_count, $featured_count, $index_count;
 	var $featured_title, $news_title;
 	var $featured_display, $news_display, $index_news_thumbs;
 	var $archive_display, $archive_news_thumbs;
 	var $display_author, $single_meta_pos, $single_custom_fields;
-	var $featured_display_meta_inpic, $news_display_meta_inpic;
 	var $node_based_limit_words;
 	
 	// added in 1.3.4
@@ -54,6 +53,7 @@ class Options {
 		$this->featured_title = __('Featured Stories', 'arras');
 		$this->news_title = __('Latest Headlines', 'arras');
 		
+		$this->slideshow_full_width = false;
 		$this->slideshow_count = 4;
 		$this->featured_count = 3;
 		
@@ -74,10 +74,6 @@ class Options {
 		$this->single_meta_pos = 'top';
 		$this->single_custom_fields = 'Score:score,Pros:pros,Cons:cons';
 		
-		$this->featured_display_meta_inpic = true;
-		$this->news_display_meta_inpic = false;
-		$this->archive_display_meta_inpic = false;
-		
 		$this->node_based_limit_words = 30;
 		
 		$this->layout = '2c-r-fixed';
@@ -86,8 +82,8 @@ class Options {
 		$this->featured_thumb_w = 195;
 		$this->featured_thumb_h = 110;
 		
-		$this->news_thumb_w = 110;
-		$this->news_thumb_h = 110;
+		$this->news_thumb_w = 155;
+		$this->news_thumb_h = 155;
 	}
 	
 	function save_options() {
@@ -113,6 +109,7 @@ class Options {
 		
 		$this->node_based_limit_words = (int)$_POST['arras-layout-limit-words'];
 		
+		$this->slideshow_full_width = isset($_POST['arras-slideshow-fullwidth']);
 		$this->slideshow_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
 		$this->featured_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
 		
@@ -132,10 +129,6 @@ class Options {
 		$this->post_cats = isset($_POST['arras-layout-post-cats']);
 		$this->post_tags = isset($_POST['arras-layout-post-tags']);
 		$this->single_thumbs = isset($_POST['arras-layout-single-thumbs']);
-		
-		$this->featured_display_meta_inpic = isset($_POST['arras-layout-featured2-meta']);
-		$this->news_display_meta_inpic = isset($_POST['arras-layout-news-meta']);
-		$this->archive_display_meta_inpic = isset($_POST['arras-layout-archive-meta']);
 		
 		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];
 		$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];

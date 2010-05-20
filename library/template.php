@@ -187,5 +187,15 @@ function arras_get_sidebar_thumb_size() {
 	return apply_filters('arras_sidebar_thumb_size', $_default_size);
 }
 
+function arras_excerpt_more($excerpt) {
+	return str_replace(' [...]', '...', $excerpt);
+}
+add_filter('excerpt_more', 'arras_excerpt_more');
+
+function arras_excerpt_length($length) {
+	return 45;
+}
+add_filter('excerpt_length', 'arras_excerpt_length');
+
 /* End of file template.php */
 /* Location: ./library/template.php */

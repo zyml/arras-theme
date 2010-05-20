@@ -2,6 +2,7 @@
 
 <?php 
 $stickies = get_option('sticky_posts');
+rsort($stickies);
 
 $slideshow_cat	= arras_get_option('slideshow_cat');
 $featured_cat 	= arras_get_option('featured_cat');
@@ -21,7 +22,9 @@ $featured_count 	= (int)arras_get_option('featured_count');
 <!-- Featured Articles -->
 <?php if ( $featured_cat !== '' && $featured_cat != '-1' ) : ?>
 <div id="index-featured">
-<div class="home-title"><?php _e( arras_get_option('featured_title') ) ?></div>
+<?php if ( arras_get_option('featured_title') != '' ) : ?>
+	<div class="home-title"><?php _e( arras_get_option('featured_title'), 'arras' ) ?></div>
+<?php endif ?>
 	<?php
 	if ($featured_cat == '-5') {
 		if (count($stickies) > 0) {
@@ -51,7 +54,9 @@ $featured_count 	= (int)arras_get_option('featured_count');
 
 <!-- News Articles -->
 <div id="index-news">
+<?php if ( arras_get_option('news_title') != '' ) : ?>
 <div class="home-title"><?php _e( arras_get_option('news_title') ) ?></div>
+<?php endif ?>
 <?php
 $news_query_args = array(
 	'cat' => $news_cat,
@@ -87,6 +92,7 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 	<?php if ( isset($sidebars['sidebar-4']) ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #1') ) : ?>
+		<li></li>
         <?php endif; ?>
 	</ul>
 	<?php endif; ?>
@@ -96,6 +102,7 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 	<?php if ( isset($sidebars['sidebar-5']) ) : ?>
 	<ul class="clearfix xoxo">
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom Content #2') ) : ?>
+		<li></li>
         <?php endif; ?>
 	</ul>
 	<?php endif; ?>

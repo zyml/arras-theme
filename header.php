@@ -127,7 +127,9 @@ document.body.className = c;
 </div><!-- #nav -->
 <?php arras_below_nav() ?>
 
-<div id="wrapper">	
+<div id="wrapper">
+	
+	<?php arras_above_main() ?>
   
 	<div id="main" class="clearfix">
     <div id="container" class="clearfix">
