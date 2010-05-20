@@ -96,7 +96,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 						echo '<li class="recentcomments clearfix">';
 						echo get_avatar($comment->user_id, 36);
 						echo '<span class="author">' . $comment->comment_author . '</span><br />';
-						echo '<a href="' . clean_url( get_comment_link($comment->comment_ID) ) . '">' . get_the_title($comment->comment_post_ID) . '</a>';
+						echo '<a href="' . get_permalink($comment->comment_post_ID) . '">' . get_the_title($comment->comment_post_ID) . '</a>';
 						echo '</li>';
 					}
 					echo '</ul>';
