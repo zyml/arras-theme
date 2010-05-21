@@ -9,7 +9,8 @@ class Options {
 	// Navigation
 	var $topnav_home, $topnav_display, $topnav_linkcat;
 	// Layout
-	var $slideshow_full_width, $slideshow_count, $featured_count, $index_count;
+	var $slideshow_count, $featured_count, $index_count;
+	var $featured_offset, $news_offset;
 	var $featured_title, $news_title;
 	var $featured_display, $news_display, $index_news_thumbs;
 	var $archive_display, $archive_news_thumbs;
@@ -53,9 +54,11 @@ class Options {
 		$this->featured_title = __('Featured Stories', 'arras');
 		$this->news_title = __('Latest Headlines', 'arras');
 		
-		$this->slideshow_full_width = false;
 		$this->slideshow_count = 4;
 		$this->featured_count = 3;
+		
+		$this->featured_offset = false;
+		$this->news_offset = false;
 		
 		$this->index_count = get_option('posts_per_page');
 		
@@ -121,6 +124,9 @@ class Options {
 		$this->featured_display = (string)$_POST['arras-layout-featured2-display'];
 		$this->news_display = (string)$_POST['arras-layout-index-newsdisplay'];
 		$this->archive_display = (string)$_POST['arras-layout-archive-newsdisplay'];
+		
+		$this->featured_offset = isset($_POST['arras-layout-featured-offset']);
+		$this->news_offset = isset($_POST['arras-layout-news-offset']);
 		
 		$this->display_author = isset($_POST['arras-layout-single-author']);
 		

@@ -47,7 +47,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <th scope="row"><label for="arras-cat-featured2"><?php _e('Show Category', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_dropdown('arras-cat-featured2', array(
-	'-1' => __('Don\'t Show Featured Posts #2', 'arras'), 
+	'-1' => __('Don\'t Show Featured Posts', 'arras'), 
 	'-5' => __('Stickied Posts', 'arras'), 
 	__('Available Categories', 'arras'
 ) => $cats), arras_get_option('featured_cat') ); ?>
@@ -71,6 +71,14 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <td>
 <?php echo arras_form_input(array('name' => 'arras-layout-featured2-count', 'id' => 'arras-layout-featured2-count', 'size' => '5', 'value' => arras_get_option('featured_count'), 'maxlength' => 2 )) ?>
  <?php ' ' . _e('posts', 'arras') ?>
+</td>
+</tr>
+
+<tr valign="top">
+<th scope="row"><label for="arras-layout-featured-offset"><?php _e('Post Offset', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_checkbox('arras-layout-featured-offset', 'show', arras_get_option('featured_offset'), 'id="arras-layout-featured-offset"') ?> 
+<?php _e('Posts will offset from the slideshow if they have the same category.', 'arras') ?></label>
 </td>
 </tr>
 
@@ -113,6 +121,14 @@ foreach( get_categories('hide_empty=0') as $c ) {
  <?php _e('posts', 'arras') ?><br />
 <?php printf(__('By default, the theme retrieves %s posts, based on your WordPress settings.', 'arras'), '<strong>' . get_option('posts_per_page') . '</strong>') ?>
  <?php _e('You can override the setting here.', 'arras') ?>
+</td>
+</tr>
+
+<tr valign="top">
+<th scope="row"><label for="arras-layout-news-offset"><?php _e('Post Offset', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_checkbox('arras-layout-news-offset', 'show', arras_get_option('news_offset'), 'id="arras-layout-news-offset"') ?> 
+<?php _e('Posts will offset from the slideshow and/or featured posts if they have the same category.', 'arras') ?></label>
 </td>
 </tr>
 

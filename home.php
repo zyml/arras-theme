@@ -29,7 +29,7 @@ $featured_count 	= (int)arras_get_option('featured_count');
 	if ($featured_cat == '-5') {
 		if (count($stickies) > 0) {
 			$query2 = array('post__in' => $stickies, 'showposts' => $featured_count );
-			if ( arras_get_option('slideshow_cat') == $featured_cat ) {
+			if ( arras_get_option('featured_offset') && arras_get_option('slideshow_cat') == $featured_cat ) {
 				$query2['offset'] = $slideshow_count;
 			}
 		}
@@ -40,7 +40,7 @@ $featured_count 	= (int)arras_get_option('featured_count');
 			$query2 = 'showposts=' . $featured_count . '&cat=' . $featured_cat;
 		}
 		
-		if ( $slideshow_cat == $featured_cat ) {
+		if ( arras_get_option('featured_offset') && $slideshow_cat == $featured_cat ) {
 			$query2 .= '&offset=' . $slideshow_count;
 		}
 	}
@@ -64,14 +64,16 @@ $news_query_args = array(
 	'showposts' => ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) )
 );
 
-$news_offset = 0;
-if ($slideshow_cat == $news_cat) {
-	$news_offset += $slideshow_count;
+if ( arras_get_option('news_offset') ) {
+	$news_offset = 0;
+	if ($slideshow_cat == $news_cat) {
+		$news_offset += $slideshow_count;
+	}
+	if ($featured_cat == $news_cat) {
+		$news_offset += $featured_count;
+	}
+	$news_query_args['offset'] = $news_offset;
 }
-if ($featured_cat == $news_cat) {
-	$news_offset += $featured_count;
-}
-$news_query_args['offset'] = $news_offset;
 
 query_posts( apply_filters('arras_news_query', $news_query_args) );
 arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
