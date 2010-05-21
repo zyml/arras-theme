@@ -51,7 +51,10 @@ require_once ARRAS_LIB . '/styles.php';
 require_once ARRAS_LIB . '/slideshow.php';
 require_once ARRAS_LIB . '/widgets.php';
 
-if ( is_admin() ) require_once ARRAS_LIB . '/admin/admin.php';
+if ( is_admin() ) {
+	require_once ARRAS_LIB . '/admin/admin.php';
+	require_once ARRAS_LIB . '/admin/thumbnails.php';
+}
 
 //require_once ARRAS_LIB . '/admin/custom-header.php';
 require_once ARRAS_LIB . '/admin/custom-background.php';

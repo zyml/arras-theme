@@ -10,14 +10,14 @@ if ( function_exists('add_theme_support') ) {
 	add_theme_support('nav-menus');
 	
 	$slideshow_thumb_size = arras_get_slideshow_thumb_size();
-	add_image_size( 'featured-slideshow-thumb', $slideshow_thumb_size[0], $slideshow_thumb_size[1], true );
+	arras_add_image_size( 'featured-slideshow-thumb', __('Featured Slideshow', 'arras'),  $slideshow_thumb_size[0], $slideshow_thumb_size[1]);
 	
 	$sidebar_thumb_size = arras_get_sidebar_thumb_size();
-	add_image_size( 'sidebar-thumb', $sidebar_thumb_size[0], $sidebar_thumb_size[1], true );
+	arras_add_image_size( 'sidebar-thumb', __('Sidebar Widgets', 'arras'), $sidebar_thumb_size[0], $sidebar_thumb_size[1]);
 	
-	add_image_size( 'featured-post-thumb', arras_get_option('featured_thumb_w'), arras_get_option('featured_thumb_h'), true );
-	add_image_size( 'news-post-thumb', arras_get_option('news_thumb_w'), arras_get_option('news_thumb_h'), true );
-	add_image_size( 'archive-post-thumb', arras_get_option('news_thumb_w'), arras_get_option('news_thumb_h'), true );
+	arras_add_image_size( 'featured-post-thumb', __('Featured Posts', 'arras'), arras_get_option('featured_thumb_w'), arras_get_option('featured_thumb_h') );
+	arras_add_image_size( 'news-post-thumb', __('News Posts', 'arras'), arras_get_option('news_thumb_w'), arras_get_option('news_thumb_h') );
+	arras_add_image_size( 'archive-post-thumb', __('Archive Posts', 'arras'), arras_get_option('news_thumb_w'), arras_get_option('news_thumb_h') );
 }
 
 // Remove existing actions
