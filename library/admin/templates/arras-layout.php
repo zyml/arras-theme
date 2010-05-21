@@ -83,9 +83,4 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 </table>
 
-<p class="submit">
-<input class="button-primary" type="submit" name="save" value="<?php _e('Save Changes', 'arras') ?>" />
-<input type="hidden" name="action" value="save" />
-</p>
-
 </div><!-- #layout -->

@@ -53,7 +53,7 @@ $translators = array(
 	<li><a href="#layout"><?php _e('Layout', 'arras') ?></a></li>
 	<li><a href="#design"><?php _e('Design', 'arras') ?></a></li>
 	<li><a href="#thumbnails"><?php _e('Thumbnails', 'arras') ?></a></li>
-	<li><a href="#remove"><?php _e('Reset', 'arras') ?></a></li>
+	<li><a href="#tools"><?php _e('Tools', 'arras') ?></a></li>
 </ul>
 
 <div class="clearfix arras-options-wrapper">
@@ -64,15 +64,12 @@ $translators = array(
 <?php include 'arras-layout.php' ?>
 <?php include 'arras-design.php' ?>
 <?php include 'arras-thumbnails.php' ?>
+<?php include 'arras-tools.php' ?>
 
-<div id="remove" class="padding-content">
-	<h3><?php _e('Revert to Default Settings', 'arras') ?></h3>
-	<p><?php _e('If you do screw up, you can reset the settings here.', 'arras') ?></p>
-	<p><?php _e('<strong>NOTE: This will erase all your settings!</strong>', 'arras') ?></p>
-	<p class="submit">
-	<input class="button-secondary" type="submit" name="reset" value="<?php _e('Uninstall / Reset Arras.Theme', 'arras') ?>" />
-	</p>
-</div>
+<p class="final-submit">
+<input class="button-primary" type="submit" name="save" value="<?php _e('Save Changes', 'arras') ?>" />
+<input class="button-secondary" type="submit" name="reset" value="<?php _e('Reset Settings', 'arras') ?>" />
+</p>
 
 </div>
 
@@ -91,7 +88,6 @@ $translators = array(
 	<div class="postbox">
 		<h3><span><?php _e('Recommended Plugins', 'arras') ?></span></h3>
 		<ul>
-			<li><a href="http://www.viper007bond.com/wordpress-plugins/regenerate-thumbnails/">Rengenerate Thumbnails</a></li>
 			<li><a href="http://lesterchan.net/portfolio/programming/php/#wp-pagenavi">WP-PageNavi</a></li>
 			<li><a href="http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/">FancyBox for WordPress</a></li>
 			<li><a href="http://sexybookmarks.net/">SexyBookmarks</a></li>

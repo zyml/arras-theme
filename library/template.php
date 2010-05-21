@@ -40,59 +40,6 @@ function arras_body_class() {
 	}
 }
 
-function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
-	global $post;
-	if ($post) $id = $post->ID;
-	
-	// get post thumbnail (WordPress 2.9)
-	if (function_exists('has_post_thumbnail')) {
-		if (has_post_thumbnail($id)) {
-			return get_the_post_thumbnail( $id, $size, array(
-				'alt' 	=> trim(strip_tags($post->post_excerpt)), 
-				'title' => trim(strip_tags($post->post_title))
-			) );
-		}
-	}
-	
-	// go back to legacy (phpThumb or timThumb)
-	$thumbnail = get_post_meta($id, ARRAS_POST_THUMBNAIL, true);
-	
-	if ($thumbnail != '') {
-		switch($size) {
-			case 'sidebar-thumb':
-				$sidebar_thumb_size = arras_get_sidebar_thumb_size();
-				$w = $sidebar_thumb_size[0];
-				$h = $sidebar_thumb_size[1];
-				break;
-			case 'featured-slideshow-thumb':
-				$slideshow_thumb_size = arras_get_slideshow_thumb_size();
-				$w = $slideshow_thumb_size[0];
-				$h = $slideshow_thumb_size[1];
-				break;
-			case 'featured-post-thumb':
-				$w = arras_get_option('featured_thumb_w');
-				$h = arras_get_option('featured_thumb_h');
-				break;
-			case 'news-post-thumb':
-				$w = arras_get_option('news_thumb_w');
-				$h = arras_get_option('news_thumb_h');				
-				break;
-			case 'archive-post-thumb':
-				$w = arras_get_option('news_thumb_w');
-				$h = arras_get_option('news_thumb_h');				
-				break;
-			default:
-				$w = get_option('thumbnail_size_w');
-				$h = get_option('thumbnail_size_h');
-		}
-		
-		return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . $thumbnail . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_excerpt() . '" title="' . get_the_title() . '" />';
-	}
-	
-	return '<img src="' . get_bloginfo('template_directory') . '/images/thumbnail.png" alt="' . get_the_excerpt() . '" title="' . get_the_title() . '" />';	
-}
-
-
 function arras_render_posts($args = null, $display_type = 'default', $page_type = 'news') {
 	global $post, $wp_query, $arras_tapestries;
 	
@@ -183,11 +130,6 @@ function arras_strip_content($content, $limit) {
 		//otherwise
 		return implode(' ', $words); 
 	}
-}
-
-function arras_get_sidebar_thumb_size() {
-	$_default_size = array(36, 36);
-	return apply_filters('arras_sidebar_thumb_size', $_default_size);
 }
 
 function arras_excerpt_more($excerpt) {

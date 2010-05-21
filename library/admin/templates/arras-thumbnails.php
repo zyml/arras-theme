@@ -4,7 +4,7 @@
 
 <h3><?php _e('Thumbnail Sizes', 'arras') ?></h3>
 
-<p style="color: red"><?php _e('If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate the thumbnails using the <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin.', 'arras') ?></p>
+<p style="color: red"><?php printf( __('If you have recently changed your layout or edited the thumbnail sizes, you will need to <a href="%s">regenerate your thumbnails</a>.', 'arras'), get_bloginfo('url') . '/wp-admin/admin.php?page=arras-regen-thumbs' ) ?></p>
 
 <table class="form-table">
 
@@ -31,19 +31,6 @@
 </tr>
 
 </table>
-
-<p class="submit">
-<input class="button-primary" type="submit" name="save" value="<?php _e('Save Changes', 'arras') ?>" />
-</p>
-
-<h3><?php _e('Clear timThumb Thumbnail Cache (Legacy)', 'arras') ?></h3>
-<p><?php _e('If you have recently changed your layout, or edited the thumbnail sizes, it is highly recommended that you clear your thumbnail cache.', 'arras') ?></p>
-<p><?php printf( __('The thumbnail cache folder is located at: %s.', 'arras'), '<code>' . ARRAS_LIB . '/cache/' . '</code>') ?><br />
-<?php _e('If this does not work, you can manually delete all the files in that folder.', 'arras') ?></p>
-<p><strong><?php _e('Ensure that you have submitted any changes made before proceeding.', 'arras') ?></strong></p>
-<p class="submit">
-<input class="button-secondary" type="submit" name="clearcache" value="<?php _e('Clear Thumbnail Cache', 'arras') ?>" />
-</p>
 
 <h3><?php _e('Frequently Asked Questions (EN only)', 'arras') ?></h3>
 

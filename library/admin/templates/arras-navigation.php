@@ -48,10 +48,6 @@ foreach ( $lc as $c ) {
 
 </table>
 
-<p class="submit">
-<input class="button-primary" type="submit" name="save" value="<?php _e('Save Changes', 'arras') ?>" />
-</p>
-
 <?php else: ?>
 
 <p><?php printf( __('You have %s installed.', 'arras'), '<em>Multi-level Navigation Plugin for WordPress</em> or <em>PixoPoint Menu Plugin</em>'); ?>

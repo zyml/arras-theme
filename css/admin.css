@@ -1,9 +1,9 @@
 optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif; }
 
-.wrap					{ width: 1080px; }
+.wrap					{ width: 1040px; }
 .grey					{ color: #999; }
 
-#arras-right-col		{ width: 255px; float: left; margin: 33px 0 0; }
+#arras-right-col		{ width: 230px; float: left; margin: 33px 0 0; }
 #arras-right-col .postbox		{ margin-bottom: 10px; }
 #arras-right-col .postbox p		{ margin: 0 10px 10px; font-size: 11px; }
 #arras-right-col .postbox h3	{ font-size: 11px; line-height: 1; padding: 6px 9px; margin: 0 0 5px; }
@@ -40,6 +40,9 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 
 #arras-logo-field		{ margin: 0 0 1em; }
 
+#regenthumbsbar			{ border: 1px solid #CCC; background: #FFF; }
+.ui-progressbar-value   { background: #DEEDF7; height: 25px; } 
+
 .arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 760px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .padding-content		{ padding: 0 10px 10px; }
@@ -54,6 +57,9 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 .version				{ padding: 10px !important; }
 .version p				{ font-size: 11px; }
 .version .number		{ font-size: 12px !important; font-weight: bold; }
+#arras-settings-form .submit  { padding: 0 0 20px; border-bottom: 1px solid #CCC; }
+#arras-settings-form .final-submit { margin: 0 10px 20px; }
+#arras-settings-form .final-submit input { padding: 4px 8px; font-size: 12px !important; }
 
 .hide, .ui-tabs-hide	{ display: none !important; }
 

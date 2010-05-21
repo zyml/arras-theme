@@ -67,8 +67,4 @@ echo arras_form_dropdown('arras-style', $styles, arras_get_option('style') ) ?><
 
 </table>
 
-<p class="submit">
-<input class="button-primary" type="submit" name="save" value="<?php _e('Save Changes', 'arras') ?>" />
-</p>
-
 </div><!-- #design -->
