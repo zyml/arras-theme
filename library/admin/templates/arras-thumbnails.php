@@ -4,7 +4,7 @@
 
 <h3><?php _e('Thumbnail Sizes', 'arras') ?></h3>
 
-<p style="color: red"><?php printf( __('If you have recently changed your layout or edited the thumbnail sizes, you will need to <a href="%s">regenerate your thumbnails</a>.', 'arras'), get_bloginfo('url') . '/wp-admin/admin.php?page=arras-regen-thumbs' ) ?></p>
+<p style="color: red"><?php _e('If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate your thumbnails.', 'arras'); ?></p>
 
 <table class="form-table">
 

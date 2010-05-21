@@ -3,7 +3,7 @@
 <div id="tools" class="padding-content">
 
 <h3><?php _e('Regenerate Thumbnails', 'arras') ?></h3>
-<p><?php _e('If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate the thumbnails.', 'arras') ?></p>
+<p><?php _e('If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate your thumbnails.', 'arras') ?></p>
 <p><?php _e( 'Use this tool to regenerate thumbnails for all images that you have uploaded to your blog.', 'arras' ); ?></p>
 <p class="submit"><a class="button-secondary" href="<?php bloginfo('url') ?>/wp-admin/admin.php?page=arras-regen-thumbs"><?php _e('Regenerate Thumbnails', 'arras') ?></a></p>
 
