@@ -118,9 +118,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <th scope="row"><label for="arras-layout-index-count"><?php _e('News Count', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_input(array('name' => 'arras-layout-index-count', 'id' => 'arras-layout-index-count', 'size' => '5', 'value' => arras_get_option('index_count'), 'maxlength' => 2 )) ?>
- <?php _e('posts', 'arras') ?><br />
-<?php printf(__('By default, the theme retrieves %s posts, based on your WordPress settings.', 'arras'), '<strong>' . get_option('posts_per_page') . '</strong>') ?>
- <?php _e('You can override the setting here.', 'arras') ?>
+ <?php _e('posts', 'arras') ?>
 </td>
 </tr>
 

@@ -5,7 +5,12 @@
  * @since 1.4.4
  */
 $arras_image_sizes = array();
+
+
 $arras_custom_image_sizes = maybe_unserialize( get_option('arras_image_sizes') );
+if (!$arras_custom_image_sizes) {
+	add_option('arras_image_sizes', array());
+}
 
 /**
  * Function to add image size into both theme system.
@@ -31,7 +36,7 @@ function arras_add_image_size($id, $name, $default_width, $default_height) {
 		'dh' 	=> $default_height
 	);
 	
-	add_image_size($id, $width, $height);
+	add_image_size($id, $width, $height, true);
 }
 
 /**
@@ -61,14 +66,15 @@ function arras_get_image_size($id) {
  */
 function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
 	global $post, $arras_image_sizes;
+	
 	if ($post) $id = $post->ID;
 	
 	// get post thumbnail (WordPress 2.9)
 	if (function_exists('has_post_thumbnail')) {
 		if (has_post_thumbnail($id)) {
 			return get_the_post_thumbnail( $id, $size, array(
-				'alt' 	=> trim(strip_tags($post->post_excerpt)), 
-				'title' => trim(strip_tags($post->post_title))
+				'alt' 	=> get_the_excerpt(), 
+				'title' => get_the_title()
 			) );
 		}
 	}

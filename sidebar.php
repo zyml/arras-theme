@@ -47,10 +47,6 @@
         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Secondary Sidebar #1') ) : ?>
 		<li></li>		
         <?php endif; ?>
-		
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Secondary Sidebar #2') ) : ?>
-		<li></li>
-		<?php endif; ?>
     </ul>
 	<?php arras_below_sidebar() ?>  
 </div><!-- #secondary -->

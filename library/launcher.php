@@ -39,13 +39,6 @@ register_sidebar( array(
 	'after_title' => '</h5><div class="widgetcontent">'
 ) );
 register_sidebar( array(
-	'name' => 'Secondary Sidebar #2',
-	'before_widget' => '<li class="widgetcontainer clearfix">',
-	'after_widget' => '</div></li>',
-	'before_title' => '<h5 class="widgettitle">',
-	'after_title' => '</h5><div class="widgetcontent">'
-) );
-register_sidebar( array(
 	'name' => 'Bottom Content #1',
 	'before_widget' => '<li class="widgetcontainer clearfix">',
 	'after_widget' => '</div></li>',
