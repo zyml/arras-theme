@@ -14,12 +14,13 @@ else add_filter('arras_postheader', 'arras_postmeta');
 
         <?php arras_postheader() ?>
 
-		<div class="entry-content single-post-attachment"><?php the_attachment_link($post->post_ID, false) ?></div>
+		<div class="entry-content single-post-attachment"><?php the_attachment_link($post->post_ID, false) ?>
 		<?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?>	
-        </div>
+        
         <?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ', 'arras'), 
 			'after' => '</p>', 'next_or_number' => 'number')); ?>
-        
+        </div>
+		
 		<?php arras_postfooter() ?>
 
        <?php if ( arras_get_option('display_author') ) : ?>
@@ -45,5 +46,5 @@ else add_filter('arras_postheader', 'arras_postmeta');
 <?php arras_below_content() ?>
 </div><!-- #content -->
 
-<?php get_sidebar('sidebar-single'); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
