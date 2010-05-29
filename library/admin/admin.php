@@ -28,7 +28,7 @@ function arras_addmenu() {
 }
 
 function arras_admin() {
-	global $arras_options;
+	global $arras_options, $arras_image_sizes;
 	
 	$notices = ''; // store notices here so that options_page.php will echo it out later
 	
@@ -73,6 +73,12 @@ function arras_admin() {
 				} else {
 					$arras_options->logo = '';
 				}
+				
+				foreach ($arras_image_sizes as $id => $args) {
+					$arras_image_sizes[$id]['w'] = (int)($_POST['arras-' . $id . '-w']);
+					$arras_image_sizes[$id]['h'] = (int)($_POST['arras-' . $id . '-h']);
+				}
+				$arras_options->custom_thumbs = $arras_image_sizes;
 				
 				$arras_options->save_options();
 				arras_update_options();

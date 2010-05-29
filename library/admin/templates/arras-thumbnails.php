@@ -6,31 +6,38 @@
 
 <p style="color: red"><?php _e('If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate your thumbnails.', 'arras'); ?></p>
 
-<table class="form-table">
-
+<table class="thumbnail-sizes-table form-table">
+<?php foreach ($arras_image_sizes as $image_size_id => $image_size_args) : ?>
 <tr valign="top">
-<th scope="row"><label><?php _e('Featured Thumbnail Size', 'arras') ?></label></th>
+<th scope="row"><label><?php echo $image_size_args['name'] ?></label></th>
 <td>
-<label for="arras-featured-thumb-w"><?php _e('Width', 'arras') ?></label>
-<?php echo arras_form_input(array('name' => 'arras-featured-thumb-w', 'id' => 'arras-featured-thumb-w', 'size' => '5', 'value' => arras_get_option('featured_thumb_w'), 'maxlength' => 3 )) ?>
+<label for="arras-<?php echo $image_size_id ?>-w"><?php _e('Width', 'arras') ?></label>
+<?php echo arras_form_input(array('name' => 'arras-' . $image_size_id . '-w', 'id' => 'arras-' . $image_size_id . '-w', 'size' => '5', 'value' => $image_size_args['w'], 'maxlength' => 3 )) ?><span class="default-w hide"><?php echo $image_size_args['dw'] ?></span>
 
-<label for="arras-featured-thumb-h"><?php _e('Height', 'arras') ?></label>
-<?php echo arras_form_input(array('name' => 'arras-featured-thumb-h', 'id' => 'arras-featured-thumb-h', 'size' => '5', 'value' => arras_get_option('featured_thumb_h'), 'maxlength' => 3 )) ?>
+<label for="arras-<?php echo $image_size_id ?>-h"><?php _e('Height', 'arras') ?></label>
+<?php echo arras_form_input(array('name' => 'arras-' . $image_size_id . '-h', 'id' => 'arras-' . $image_size_id . '-h', 'size' => '5', 'value' => $image_size_args['h'], 'maxlength' => 3 )) ?><span class="default-h hide"><?php echo $image_size_args['dh'] ?></span>
+</td>
+<td class="arras-thumbnail-size-reset">
+<a class="button-secondary"><?php _e('Reset to Defaults', 'arras') ?></a>
 </td>
 </tr>
-
-<tr valign="top">
-<th scope="row"><label><?php _e('News Thumbnail Size', 'arras') ?></label></th>
-<td>
-<label for="arras-news-thumb-w"><?php _e('Width', 'arras') ?></label>
-<?php echo arras_form_input(array('name' => 'arras-news-thumb-w', 'id' => 'arras-news-thumb-w', 'size' => '5', 'value' => arras_get_option('news_thumb_w'), 'maxlength' => 3 )) ?>
-
-<label for="arras-news-thumb-h"><?php _e('Height', 'arras') ?></label>
-<?php echo arras_form_input(array('name' => 'arras-news-thumb-h', 'id' => 'arras-news-thumb-h', 'size' => '5', 'value' => arras_get_option('news_thumb_h'), 'maxlength' => 3 )) ?>
-</td>
-</tr>
-
+<?php endforeach ?>
 </table>
+
+<script type="text/javascript">
+	var j = jQuery.noConflict();
+	j(document).ready(function() {
+		j('.arras-thumbnail-size-reset .button-secondary').click( function() {
+			j(this).parent().parent().children('td').find('input').eq(0).val( j(this).parent().parent().children('td').find('.default-w').html() );
+			j(this).parent().parent().children('td').find('input').eq(1).val( j(this).parent().parent().children('td').find('.default-h').html() );
+			checkRegenThumbsField();
+		} );
+		
+		j('.thumbnail-sizes-table input').change( function() {
+			checkRegenThumbsField();
+		} );
+	});
+</script>
 
 <h3><?php _e('Frequently Asked Questions (EN only)', 'arras') ?></h3>
 
@@ -38,16 +45,9 @@
 <p><strong>A:</strong> Starting from 1.4, the recommended method to set your thumbnails is to go to the edit page of the post you wish to add thumbnails on, find the box named <em>Post Thumbnail</em> (probably located at the bottom right) and click on <em>Set Thumbnail</em>. Upload and select your thumbnail in the pop-up box, and you are done!</p>
 <hr />
 
-<p><strong>Q:</strong> How big should I upload my images to make the thumbnails fit in the theme?</p>
-<p><strong>A:</strong> Your image should be at least <strong>960x300</strong> for 1 column layout, <strong>640x250</strong> for 2 column layout, and <strong>500x225</strong> for 3 column layout.</p>
-<hr />
-
 <p><strong>Q:</strong> The thumbnail sizes in my blog are too large. How do I fix that?</p>
-<p><strong>A:</strong> When WordPress does not have a thumbnail at a size that is needed (usually caused when the thumbnail size setting is changed), it displays the full image instead. What you can to is to download the <em>Rengerate Thumbnails</em> plugin and let it generate the thumbnail of that size for you.</p>
+<p><strong>A:</strong> When WordPress does not have a thumbnail at a size that is needed (usually caused when the thumbnail size setting is changed), it displays the full image instead. You can regenerate your thumbnails by checking on the option below.</p>
 <hr />
 
-<p><strong>Q:</strong> I do not like the way WordPress crops the image for me. Is there any way you can adjust it?</p>
-<p><strong>A:</strong> You can go to the <em>Media Library</em> and edit the image that is used as the thumbnail. Crop the image and apply the changes to your thumbnails. It's not accurate and you can only apply to all thumbnail sizes (unless someone writes a plugin for it).</p>
-<hr />
 
 </div><!-- #thumbnails -->

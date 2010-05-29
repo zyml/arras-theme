@@ -5,12 +5,7 @@
  * @since 1.4.4
  */
 $arras_image_sizes = array();
-
-
-$arras_custom_image_sizes = maybe_unserialize( get_option('arras_image_sizes') );
-if (!$arras_custom_image_sizes) {
-	add_option('arras_image_sizes', array());
-}
+$arras_custom_image_sizes = arras_get_option('custom_thumbs');
 
 /**
  * Function to add image size into both theme system.
@@ -93,11 +88,6 @@ function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
 	}
 	
 	return '<img src="' . get_bloginfo('template_directory') . '/images/thumbnail.png" alt="' . get_the_excerpt() . '" title="' . get_the_title() . '" />';	
-}
-
-function arras_get_sidebar_thumb_size() {
-	$_default_size = array(36, 36);
-	return apply_filters('arras_sidebar_thumb_size', $_default_size);
 }
 
 /* End of file thumbnails.php */

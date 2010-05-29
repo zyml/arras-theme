@@ -74,7 +74,6 @@ $('#featured-slideshow').cycle({
 add_action('arras_footer', 'arras_add_slideshow_js');
 
 function arras_get_slideshow_thumb_size($layout = '') {
-	
 	if (!$layout) {
 		$layout = arras_get_option('layout');
 	}

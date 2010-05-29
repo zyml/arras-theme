@@ -58,6 +58,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 .version p				{ font-size: 11px; }
 .version .number		{ font-size: 12px !important; font-weight: bold; }
 .arras-regen-thumbs-field  { padding: 5px; margin: 0 0 5px; }
+.arras-thumbnail-size-reset .button-secondary  { display: inline-block; margin-top: 2px; }
 #arras-settings-form .submit  { padding: 0 0 20px; border-bottom: 1px solid #CCC; }
 #arras-settings-form .final-submit { margin: 0 0 20px; }
 #arras-settings-form .final-submit .button-primary, #arras-settings-form .final-submit .button-secondary { padding: 4px 8px; font-size: 12px !important; }

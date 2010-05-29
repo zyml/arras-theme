@@ -21,7 +21,7 @@ class Options {
 	var $post_author, $post_date, $post_cats, $post_tags, $postbar_footer, $single_thumbs;
 	
 	// Thumbnail Sizes - added in 1.4.0
-	var $featured_thumb_w, $featured_thumb_h, $news_thumb_w, $news_thumb_h;
+	var $custom_thumbs;
 	
 	// Design
 	var $layout, $style, $logo;
@@ -146,16 +146,9 @@ class Options {
 		if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
 			$this->style = (string)$_POST['arras-style'];
 		}
-		
-		$this->featured_thumb_w = (int)$_POST['arras-featured-thumb-w'];
-		$this->featured_thumb_h = (int)$_POST['arras-featured-thumb-h'];
-		
-		$this->news_thumb_w = (int)$_POST['arras-news-thumb-w'];
-		$this->news_thumb_h = (int)$_POST['arras-news-thumb-h'];
 	}
 
 }
-
 
 function arras_flush_options() {
 	global $arras_options;
@@ -167,12 +160,28 @@ function arras_flush_options() {
 		$arras_options = new Options();
 	}
 	
+	if ($arras_options->version != ARRAS_VERSION) {
+		arras_upgrade_options();
+	}
+	
 	return $arras_options;
 }
 
 function arras_update_options() {
 	global $arras_options;
 	update_option('arras_options', maybe_serialize($arras_options));
+}
+
+function arras_upgrade_options() {
+	$custom_thumbs = $arras_options->custom_thumbs;
+	$custom_thumbs['featured-slideshow-thumb']['w'] = $arras_options->featured_thumb_w;
+	$custom_thumbs['featured-slideshow-thumb']['h'] = $arras_options->featured_thumb_h;
+	$custom_thumbs['news-post-thumb']['w'] = $arras_options->news_thumb_w;
+	$custom_thumbs['news-post-thumb']['h'] = $arras_options->news_thumb_h;
+	
+	$arras_options->custom_thumbs = $custom_thumbs;
+	$arras_options->version = ARRAS_VERSION;
+	arras_update_options();
 }
 
 function arras_get_option($name) {
