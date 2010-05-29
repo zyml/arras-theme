@@ -95,13 +95,25 @@ function arras_admin() {
 			$notices = '<div class="updated fade"><p>' . __('Thumbnail cache has been cleared.', 'arras') . '</p></div>';
 		}
 		
-		include 'templates/options_page.php';
+		if ( isset($_REQUEST['arras-regen-thumbs']) ) {
+			check_admin_referer('arras-admin');
+			
+			echo '<div class="wrap clearfix">';
+			screen_icon('themes');
+			?> <h2 id="arras-header"><?php _e('Arras Theme Options', 'arras') ?></h2> <?php
+			arras_regen_thumbs_process();
+			echo '</div>';
+			
+		} else {
+			include 'templates/options_page.php';
+		}
 	}
 }
 
 function arras_admin_scripts() {
 	wp_enqueue_script('jquery-ui-tabs', null, 'jquery-ui-core');
 	wp_enqueue_script('arras-admin-js', get_template_directory_uri() . '/js/admin.js');
+	wp_enqueue_script('jquery-ui-progressbar', get_template_directory_uri() . '/js/jquery-ui.progressbar.min.js', null, 'jquery');
 }
 
 function arras_admin_styles() {

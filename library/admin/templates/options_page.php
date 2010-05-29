@@ -43,7 +43,7 @@ $translators = array(
 
 <?php echo $notices ?>
 
-<form enctype="multipart/form-data" id="arras-settings-form" method="post" action="themes.php?page=arras-options">
+<form enctype="multipart/form-data" id="arras-settings-form" method="post" action="admin.php?page=arras-options">
 <?php wp_nonce_field('arras-admin'); ?>
 
 <ul id="arras-tabs" class="clearfix">
@@ -66,6 +66,8 @@ $translators = array(
 <?php include 'arras-thumbnails.php' ?>
 <?php include 'arras-tools.php' ?>
 
+<p class="arras-regen-thumbs-field"><?php echo arras_form_checkbox('arras-regen-thumbs', 'show', false, 'id="arras-regen-thumbs"') ?> 
+<label for="arras-regen-thumbs"><?php _e('Regenerate post thumbnails after saving.', 'arras') ?></label></p>
 <p class="final-submit">
 <input class="button-primary" type="submit" name="save" value="<?php _e('Save Changes', 'arras') ?>" />
 <input class="button-secondary" type="submit" name="reset" value="<?php _e('Reset Settings', 'arras') ?>" />

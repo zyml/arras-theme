@@ -1,64 +1,4 @@
 <?php
-function arras_add_regenthumbs_menu() {
-	$regen_page = add_submenu_page( 'arras-options', __('Regenerate Thumbnails', 'arras'), __('Regen. Thumbnails', 'arras'), 'switch_themes', 'arras-regen-thumbs', 'arras_regen_thumbs' );
-	
-	add_action('admin_print_scripts-'. $regen_page, 'arras_regenthumbs_scripts');
-	add_action('admin_print_styles-'. $regen_page, 'arras_regenthumbs_styles');
-}
-
-function arras_regenthumbs_scripts() {
-	wp_enqueue_script('jquery-ui-progressbar', get_template_directory_uri() . '/js/jquery-ui.progressbar.min.js', null, 'jquery');
-}
-
-function arras_regenthumbs_styles() {
-?> <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/admin.css" type="text/css" /> <?php
-}
-
-
-function arras_regen_thumbs() {
-	global $wpdb;
-?>
-<div class="wrap clearfix">
-
-<?php screen_icon('themes') ?>
-<h2 id="arras-header"><?php _e('Arras Theme &ndash; Regenerate Thumbnails', 'arras') ?></h2>
-
-<div id="message" class="updated fade" style="display:none"></div>
-
-<?php
-	// If the button was clicked
-	if ( !empty($_POST['arras-regen-thumbs']) ) {
-		// Capability check
-		if ( !current_user_can('manage_options') )
-			wp_die( __('Cheatin&#8217; uh?') );
-
-		// Form nonce check
-		check_admin_referer( 'regenerate-thumbnails' );
-		arras_regen_thumbs_process();
-	} else {
-		?>
-		<p><?php _e( "Use this tool to regenerate thumbnails for all images that you have uploaded to your blog. This is useful if you have changed your layout, or edited any of the thumbnail sizes. Old thumbnails will be kept to avoid any broken images due to hard-coded URLs.", 'arras' ); ?></p>
-
-		<p><?php _e( "This process is not reversible, although you can just change your thumbnail dimensions back to the old values and click the button again if you don't like the results.", 'arras'); ?></p>
-
-		<p><?php _e( "To begin, just press the button below.", 'arras'); ?></p>
-
-		<p><?php printf( __("Based on Viper007Bond's <a href='%s'>Regenerate Thumbnails</a> plugin.", 'arras'), 'http://wordpress.org/extend/plugins/regenerate-thumbnails/' ) ?></p>
-
-		<form method="post" action="">
-		<?php wp_nonce_field('regenerate-thumbnails') ?>
-
-		<p><input type="submit" class="button hide-if-no-js" name="arras-regen-thumbs" id="arras-regen-thumbs" value="<?php _e( 'Regenerate All Thumbnails', 'arras' ) ?>" /></p>
-
-		<noscript><p><em><?php _e( 'You must enable Javascript in order to proceed!', 'arras' ) ?></em></p></noscript>
-
-		</form>
-
-		</div><!-- .wrap -->
-		<?php
-	}
-}
-
 function arras_ajax_process_image() {
 	if ( !current_user_can( 'manage_options' ) )
 		die('-1');
@@ -84,6 +24,8 @@ function arras_ajax_process_image() {
 function arras_regen_thumbs_process() {
 	global $wpdb;
 	
+	echo '<div id="message" class="updated fade" style="display:none"></div>';
+	
 	// Just query for the IDs only to reduce memory usage
 	$images = $wpdb->get_results( "SELECT ID FROM $wpdb->posts WHERE post_type = 'attachment' AND post_mime_type LIKE 'image/%'" );
 	
@@ -104,6 +46,10 @@ function arras_regen_thumbs_process() {
 		<div id="regenthumbsbar" style="position:relative;height:25px;">
 			<div id="regenthumbsbar-percent" style="position:absolute;left:50%;top:50%;width:50px;margin-left:-25px;height:25px;margin-top:-9px;font-weight:bold;text-align:center;"></div>
 		</div>
+		
+		<p class="final-submit" style="display:none">
+		<a class="button-primary" href="admin.php?page=arras-options"><?php _e('Back to Theme Options', 'arras') ?></a>
+		</p>
 
 		<script type="text/javascript">
 		// <![CDATA[
@@ -129,6 +75,7 @@ function arras_regen_thumbs_process() {
 						} else {
 							$("#message").html("<p><strong><?php echo esc_js( sprintf(__( 'All done! Processed %d images.', 'arras'), $count) ); ?></strong></p>");
 							$("#message").show();
+							$('.final-submit').show();
 						}
 
 					});

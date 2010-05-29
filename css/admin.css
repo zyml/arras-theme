@@ -45,7 +45,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 
 .arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 760px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
-.padding-content		{ padding: 0 10px 10px; }
+.padding-content		{ padding: 0 0 10px; }
 .padding-content h3		{ font-size: 11px; margin: 10px 0 0; background: #F0F0F0; padding: 5px 7px; }
 .form-table				{ margin-bottom: 0 !important; }
 .form-table th			{ font-size: 11px; min-width: 200px; }
@@ -57,9 +57,10 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 .version				{ padding: 10px !important; }
 .version p				{ font-size: 11px; }
 .version .number		{ font-size: 12px !important; font-weight: bold; }
+.arras-regen-thumbs-field  { padding: 5px; margin: 0 0 5px; }
 #arras-settings-form .submit  { padding: 0 0 20px; border-bottom: 1px solid #CCC; }
-#arras-settings-form .final-submit { margin: 0 10px 20px; }
-#arras-settings-form .final-submit input { padding: 4px 8px; font-size: 12px !important; }
+#arras-settings-form .final-submit { margin: 0 0 20px; }
+#arras-settings-form .final-submit .button-primary, #arras-settings-form .final-submit .button-secondary { padding: 4px 8px; font-size: 12px !important; }
 
 .hide, .ui-tabs-hide	{ display: none !important; }
 

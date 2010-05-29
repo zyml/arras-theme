@@ -89,7 +89,6 @@ add_action('wp_head', 'arras_add_user_css', 100);
 // Options
 if (is_admin()) {
 	add_action('admin_menu', 'arras_addmenu');
-	add_action('admin_menu', 'arras_add_regenthumbs_menu');
 	add_action('wp_ajax_regenthumbnail', 'arras_ajax_process_image');
 }
 
