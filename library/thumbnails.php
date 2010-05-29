@@ -20,7 +20,7 @@ function arras_add_image_size($id, $name, $default_width, $default_height) {
 	global $arras_image_sizes, $arras_custom_image_sizes;
 	
 	// Check from options if a custom width and height has been specified, else use defaults
-	if ($arras_custom_image_sizes[$id]) {
+	if ($arras_custom_image_sizes && $arras_custom_image_sizes[$id]) {
 		$width = $arras_custom_image_sizes[$id]['w'];
 		$height = $arras_custom_image_sizes[$id]['h'];
 	} else {

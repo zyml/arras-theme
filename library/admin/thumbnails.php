@@ -1,10 +1,9 @@
 <?php
 function arras_add_regenthumbs_menu() {
-	$regen_page = add_submenu_page( 'arras-options', __('Regenerate Thumbnails', 'arras'), __('Regen. Thumbnails', 'arras'), 'edit_options', 'arras-regen-thumbs', 'arras_regen_thumbs' );
+	$regen_page = add_submenu_page( 'arras-options', __('Regenerate Thumbnails', 'arras'), __('Regen. Thumbnails', 'arras'), 'switch_themes', 'arras-regen-thumbs', 'arras_regen_thumbs' );
 	
 	add_action('admin_print_scripts-'. $regen_page, 'arras_regenthumbs_scripts');
 	add_action('admin_print_styles-'. $regen_page, 'arras_regenthumbs_styles');
-	
 }
 
 function arras_regenthumbs_scripts() {

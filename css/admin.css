@@ -46,7 +46,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 .arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 760px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .padding-content		{ padding: 0 10px 10px; }
-.padding-content h3		{ font-size: 11px; margin: 10px 0 0; background: #F0F0F0; padding: 5px 7px; -moz-border-radius: 6px; -webkit-border-radius: 6px; display: inline-block; }
+.padding-content h3		{ font-size: 11px; margin: 10px 0 0; background: #F0F0F0; padding: 5px 7px; }
 .form-table				{ margin-bottom: 0 !important; }
 .form-table th			{ font-size: 11px; min-width: 200px; }
 .form-table .largetext	{ font-size: 12px; }
