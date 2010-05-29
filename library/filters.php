@@ -11,6 +11,8 @@ function remove_gallery_css() {
 function arras_postheader() {
 	global $post, $id;
 	
+	$postheader = '';
+	
 	if ( is_single() ) {
 		if ( is_attachment() ) $postheader .= '<h1 class="entry-title">' . get_the_title() . ' [<a href="' . get_permalink($post->post_parent) . '" rev="attachment">' . get_the_title($post->post_parent) . '</a>]</h1>';
 		else $postheader = '<h1 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h1>';
@@ -34,7 +36,7 @@ function arras_postheader() {
 			$postheader .= '<a class="post-edit-link" href="' . get_edit_post_link($id) . '" title="' . __('Edit Post', 'arras') . '">' . __('(Edit Post)', 'arras') . '</a>';
 		}
 		
-		if ( arras_get_option('post_cats') ) {
+		if ( !is_attachment() && arras_get_option('post_cats') ) {
 			$post_cats = array();
 			$cats = get_the_category();
 			foreach ($cats as $c) $post_cats[] = '<a href="' . get_category_link($c->cat_ID) . '">' . $c->cat_name . '</a>';

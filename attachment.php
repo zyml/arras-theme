@@ -14,7 +14,7 @@ else add_filter('arras_postheader', 'arras_postmeta');
 
         <?php arras_postheader() ?>
 
-		<div class="entry-content single-post-attachment"><?php the_attachment_link($post->post_ID, false) ?>
+		<div class="entry-content single-post-attachment"><?php the_attachment_link($post->ID, false) ?>
 		<?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?>	
         
         <?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ', 'arras'), 
@@ -23,13 +23,11 @@ else add_filter('arras_postheader', 'arras_postmeta');
 		
 		<?php arras_postfooter() ?>
 
-       <?php if ( arras_get_option('display_author') ) : ?>
-        <div class="about-author clearfix">
-        	<h4><?php _e('About the Author', 'arras') ?></h4>
-            <?php echo get_avatar(get_the_author_email(), 48); ?>
-            <?php the_author_meta('description'); ?>
-        </div>
-        <?php endif; ?>
+        <?php 
+		if ( arras_get_option('display_author') ) {
+			arras_post_aboutauthor();
+		}
+        ?>
     </div>
     
 	<?php arras_below_post() ?>
