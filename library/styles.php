@@ -32,8 +32,9 @@ function arras_add_custom_logo() {
 
 function arras_layout_styles() {
 
-$featured_thumb_w = arras_get_option('featured_thumb_w');
-$featured_thumb_h = arras_get_option('featured_thumb_h');
+$featured_thumb_size = arras_get_image_size('featured-post-thumb');
+$featured_thumb_w = $featured_thumb_size['w'];
+$featured_thumb_h = $featured_thumb_size['h'];
 ?>
 #index-featured .posts-default .post { width: <?php echo $featured_thumb_w + 10 ?>px; }
 #index-featured .posts-default img, #index-featured .posts-default .entry-thumbnails-link { width: <?php echo $featured_thumb_w ?>px; height: <?php echo $featured_thumb_h ?>px; }
@@ -41,8 +42,9 @@ $featured_thumb_h = arras_get_option('featured_thumb_h');
 #index-featured .posts-quick .entry-thumbnails { width: <?php echo $featured_thumb_w ?>px; height: <?php echo $featured_thumb_h ?>px; }
 #index-featured .posts-default .entry-meta, #index-featured .posts-quick .entry-meta { width: <?php echo $featured_thumb_w ?>px; }
 <?php
-$news_thumb_w = arras_get_option('news_thumb_w');
-$news_thumb_h = arras_get_option('news_thumb_h');
+$news_thumb_size = arras_get_image_size('news-post-thumb');
+$news_thumb_w = $news_thumb_size['w'];
+$news_thumb_h = $news_thumb_size['h'];
 ?>
 #index-news .posts-default .post { width: <?php echo $news_thumb_w + 10 ?>px; }
 #index-news .posts-default img, #index-news .posts-default .entry-thumbnails-link { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
@@ -50,11 +52,16 @@ $news_thumb_h = arras_get_option('news_thumb_h');
 #index-news .posts-quick .entry-thumbnails img { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
 #index-news .posts-default .entry-meta, #index-news .posts-quick .entry-meta { width: <?php echo $news_thumb_w ?>px; }
 
-#archive-posts .posts-default .post { width: <?php echo $news_thumb_w + 10 ?>px; }
-#archive-posts .posts-default img, #archive-posts .posts-default .entry-thumbnails-link { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
-#archive-posts .posts-default .entry-thumbnails { width: <?php echo $news_thumb_w +10 ?>px; height: <?php echo $news_thumb_h + 10 ?>px; }
-#archive-posts .posts-quick .entry-thumbnails img { width: <?php echo $news_thumb_w ?>px; height: <?php echo $news_thumb_h ?>px; }
-#archive-posts .posts-default .entry-meta, #archive-posts .posts-quick .entry-meta { width: <?php echo $news_thumb_w ?>px; }
+<?php
+$archive_thumb_size = arras_get_image_size('archive-post-thumb');
+$archive_thumb_w = $archive_thumb_size['w'];
+$archive_thumb_h = $archive_thumb_size['h'];
+?>
+#archive-posts .posts-default .post { width: <?php echo $archive_thumb_w + 10 ?>px; }
+#archive-posts .posts-default img, #archive-posts .posts-default .entry-thumbnails-link { width: <?php echo $archive_thumb_w ?>px; height: <?php echo $archive_thumb_h ?>px; }
+#archive-posts .posts-default .entry-thumbnails { width: <?php echo $archive_thumb_w +10 ?>px; height: <?php echo $archive_thumb_h + 10 ?>px; }
+#archive-posts .posts-quick .entry-thumbnails img { width: <?php echo $archive_thumb_w ?>px; height: <?php echo $archive_thumb_h ?>px; }
+#archive-posts .posts-default .entry-meta, #archive-posts .posts-quick .entry-meta { width: <?php echo $archive_thumb_h ?>px; }
 <?php $layout = arras_get_option('layout') ?>
 
 <?php if (strpos($layout, '1c') !== false) : ?>
