@@ -8,8 +8,8 @@
 	<div class="entry-content">
 		<?php _e('<p><strong>We\'re very sorry, but that page doesn\'t exist or has been moved.</strong><br />
 		Please make sure you have the right URL.</p>
-		<p>If you still can\'t find what you\'re looking for, try using the search form below.<br />', 'arras') ?>
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+		<p>If you still can\'t find what you\'re looking for, try using the search form below.</p>', 'arras') ?>
+		<?php get_search_form(); ?>
 	</div>
 </div>
 
