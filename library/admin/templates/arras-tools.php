@@ -10,4 +10,14 @@
 <input class="button-secondary" type="submit" name="clearcache" value="<?php _e('Clear Thumbnail Cache', 'arras') ?>" />
 </p>
 
+<h3><?php _e('Import Theme Settings (BETA)', 'arras') ?></h3>
+<p><?php _e('Import your theme settings by pasting the exported code below.', 'arras') ?></p>
+<?php echo arras_form_textarea('arras-tools-import', null, 'style="width: 90%; height: 100px;" class="code"'); ?>
+</p>
+
+<h3><?php _e('Export Theme Settings (BETA)', 'arras') ?></h3>
+<p><?php _e('You can save the following code into a text file and use it when you need to import them into another installation.', 'arras') ?></p>
+<?php echo arras_form_textarea('arras-tools-export', form_prep( base64_encode(maybe_serialize($arras_options)) ), 'style="width: 90%; height: 100px;" class="code"'); ?>
+</p>
+
 </div><!-- #tools -->

@@ -37,43 +37,47 @@ function arras_admin() {
 		
 		if ( isset($_REQUEST['save']) ) {
 			check_admin_referer('arras-admin');
-			
-			if (!isset($_POST['arras-delete-logo'])) {
-			
-				if ($_FILES['arras-logo']['error'] != 4) {
-					$overrides = array('test_form' => false);
-					$file = wp_handle_upload($_FILES['arras-logo'], $overrides);
-
-					if ( isset($file['error']) )
-					die( $file['error'] );
-					
-					$url = $file['url'];
-					$type = $file['type'];
-					$file = $file['file'];
-					$filename = basename($file);
-
-					// Construct the object array
-					$object = array(
-					'post_title' => $filename,
-					'post_content' => $url,
-					'post_mime_type' => $type,
-					'guid' => $url);
-
-					// Save the data
-					$arras_options->logo = wp_insert_attachment($object, $file);
-					
-					// Force generate the logo thumbnail
-					$fullsizepath = get_attached_file($arras_options->logo);
-					wp_update_attachment_metadata($arras_options->logo, wp_generate_attachment_metadata($arras_options->logo, $fullsizepath));
-				}
-			
+			if ( isset($_REQUEST['arras-tools-import']) && $_REQUEST['arras-tools-import'] != '' ) {
+				$new_arras_options = maybe_unserialize(base64_decode($_REQUEST['arras-tools-import']));
+				$arras_options = $new_arras_options;
+				arras_update_options();
+				$notices = '<div class="updated fade"><p>' . __('Your settings have been successfully imported.', 'arras') . '</p></div>';
 			} else {
-				$arras_options->logo = '';
+				if (!isset($_POST['arras-delete-logo'])) {
+					if ($_FILES['arras-logo']['error'] != 4) {
+						$overrides = array('test_form' => false);
+						$file = wp_handle_upload($_FILES['arras-logo'], $overrides);
+
+						if ( isset($file['error']) )
+						die( $file['error'] );
+						
+						$url = $file['url'];
+						$type = $file['type'];
+						$file = $file['file'];
+						$filename = basename($file);
+
+						// Construct the object array
+						$object = array(
+						'post_title' => $filename,
+						'post_content' => $url,
+						'post_mime_type' => $type,
+						'guid' => $url);
+
+						// Save the data
+						$arras_options->logo = wp_insert_attachment($object, $file);
+						
+						// Force generate the logo thumbnail
+						$fullsizepath = get_attached_file($arras_options->logo);
+						wp_update_attachment_metadata($arras_options->logo, wp_generate_attachment_metadata($arras_options->logo, $fullsizepath));
+					}
+				} else {
+					$arras_options->logo = '';
+				}
+				
+				$arras_options->save_options();
+				arras_update_options();
+				$notices = '<div class="updated fade"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
 			}
-			
-			$arras_options->save_options();
-			arras_update_options();
-			$notices = '<div class="updated fade"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
 		}
 		
 		if ( isset($_REQUEST['reset']) ) {
