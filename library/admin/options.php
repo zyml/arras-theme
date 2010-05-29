@@ -139,8 +139,13 @@ class Options {
 		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];
 		$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];
 		
-		$this->layout = (string)$_POST['arras-layout-col'];
-		$this->style = (string)$_POST['arras-style'];
+		if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
+			$this->layout = (string)$_POST['arras-layout-col'];
+		}
+		
+		if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
+			$this->style = (string)$_POST['arras-style'];
+		}
 		
 		$this->featured_thumb_w = (int)$_POST['arras-featured-thumb-w'];
 		$this->featured_thumb_h = (int)$_POST['arras-featured-thumb-h'];
