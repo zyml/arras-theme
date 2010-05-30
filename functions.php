@@ -61,5 +61,7 @@ require_once ARRAS_LIB . '/admin/custom-background.php';
 
 require_once ARRAS_LIB . '/launcher.php';
 
+do_action('arras_init');
+
 /* End of file functions.php */
 /* Location: ./functions.php */
