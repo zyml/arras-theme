@@ -118,15 +118,15 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 /* sidebar */
 .sidebar .xoxo			{ list-style: none; padding: 0; margin: 0; }
+.widgetcontainer		{ border: solid #CCC; border-width: 1px; background: repeat-x #FFF; line-height: 1.4em; padding: 10px; margin-bottom: 10px; }
 .widgetcontainer ul, .widgetcontent .xoxo, .widgetcontainer ol	{ list-style: disc; margin: 0 0 0 15px; padding: 0; }
 .widgetcontainer li		{ margin: 3px 0; }
 .widgetcontainer li a:visited, .widgetcontainer li a:link	{ text-decoration: none; font-weight: 700; font-size: 12px; }
 .widgetcontainer li a:hover	{ border-bottom: 1px dotted #635957; }
 .widgetcontainer input[type=text], .widgetcontainer input[type=password]	{ width: 80%; }
 .widgetcontainer .excerpt	{ font-size: 11px; margin: 5px 0; }
-.widgettitle			{ color: #333; font-size: 12px; font-weight: 700; margin: 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
+.widgettitle			{ color: #333; font-size: 12px; font-weight: 700; margin: -10px -10px 10px; padding: 5px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border-bottom: 1px solid #CCC; }
 .widgettitle a			{ color: #333; }
-.widgetcontent			{ border: solid #CCC; border-width: 1px; background: repeat-x #FFF; margin: -1px 0 10px; padding: 10px; line-height: 1.4em; }
 
 .attachment-sidebar-thumb, .multi-sidebar .recentcomments .avatar	{ float: left; border: 3px solid #CCC; width: 36px; height: 36px; margin: 0 10px 0 0; }
 .sidebar-read-more:link, .sidebar-read-more:visited	{ font-size: 11px !important; text-transform: uppercase; font-weight: 700; color: #000; }
@@ -332,9 +332,9 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 
 /* footer */
 #footer				{ margin: 20px auto 0; width: 980px; background: #ECEBE6; padding-bottom: 10px; border: 1px solid #CCC; }
-#footer .widgetcontainer	{ padding: 5px 10px; min-width: 150px; }
+#footer .widgetcontainer	{ padding: 5px 10px; min-width: 150px; background: none; border: none; }
 .no-js #footer .widgetcontainer { height: 190px; }
-#footer .widgettitle	{ background: none; border: none; font-size: 14px; color: #444; padding: 0 0 10px; letter-spacing: -1px; }
+#footer .widgettitle	{ background: none; border: none; font-size: 14px; color: #444; padding: 0 0 10px; letter-spacing: -1px; margin: 0; }
 #footer .widgetcontent	{ font-size: 12px; background: none; padding: 0; border: none; }
 #footer .footer-message	{ margin: 0; padding: 10px 15px 0; font-size: 11px; }
 #footer .footer-message p { margin: 0 0 0.5em; }

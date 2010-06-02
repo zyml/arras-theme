@@ -24,37 +24,37 @@ remove_action('wp_head', 'pagenavi_css');
 register_sidebar( array(
 	'name' => 'Primary Sidebar',
 	'before_widget' => '<li class="widgetcontainer clearfix">',
-	'after_widget' => '</div></li>',
+	'after_widget' => '</li>',
 	'before_title' => '<h5 class="widgettitle">',
-	'after_title' => '</h5><div class="widgetcontent">'
+	'after_title' => '</h5>'
 ) );
 register_sidebar( array(
 	'name' => 'Secondary Sidebar #1',
 	'before_widget' => '<li class="widgetcontainer clearfix">',
-	'after_widget' => '</div></li>',
+	'after_widget' => '</li>',
 	'before_title' => '<h5 class="widgettitle">',
-	'after_title' => '</h5><div class="widgetcontent">'
+	'after_title' => '</h5>'
 ) );
 register_sidebar( array(
 	'name' => 'Bottom Content #1',
 	'before_widget' => '<li class="widgetcontainer clearfix">',
-	'after_widget' => '</div></li>',
+	'after_widget' => '</li>',
 	'before_title' => '<h5 class="widgettitle">',
-	'after_title' => '</h5><div class="widgetcontent">'
+	'after_title' => '</h5>'
 ) );
 register_sidebar( array(
 	'name' => 'Bottom Content #2',
 	'before_widget' => '<li class="widgetcontainer clearfix">',
-	'after_widget' => '</div></li>',
+	'after_widget' => '</li>',
 	'before_title' => '<h5 class="widgettitle">',
-	'after_title' => '</h5><div class="widgetcontent">'
+	'after_title' => '</h5>'
 ) );
 register_sidebar( array(
 	'name' => 'Footer',
 	'before_widget' => '<li class="widgetcontainer clearfix">',
-	'after_widget' => '</div></li>',
+	'after_widget' => '</li>',
 	'before_title' => '<h5 class="widgettitle">',
-	'after_title' => '</h5><div class="widgetcontent">'
+	'after_title' => '</h5>'
 ) );
 
 // Registering widgets have been moved to the respective widget files

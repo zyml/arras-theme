@@ -116,6 +116,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 
 /* sidebar */
 .sidebar .xoxo			{ list-style: none; padding: 0; margin: 0; }
+.widgetcontainer		{ padding: 10px; background: url(../../images/content-bg.jpg) repeat-x #FFF; background-position: 0 26px; border: 1px solid #CCC; margin-bottom: 10px; }
 .widgetcontainer ul, .widgetcontent .xoxo, .widgetcontainer ol	{ list-style: disc; margin: 0 0 0 15px; padding: 0; }
 .widgetcontainer li		{ margin: 3px 0; }
 .widgetcontainer li a:visited, .widgetcontainer li a:link	{ text-decoration: none; font-weight: bold; font-size: 12px; }
@@ -123,7 +124,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .widgetcontainer input[type=text], .widgetcontainer input[type=password]	{ width: 80%; }
 .widgetcontainer .excerpt	{ font-size: 11px; margin: 5px 0; }
 .widgetcontainer .searchform .searchsubmit { margin: 5px 0 0; }
-.widgettitle			{ color: #333; font-size: 12px; font-weight: bold; margin: 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
+.widgettitle			{ color: #333; font-size: 12px; font-weight: bold; margin: -10px -10px 10px; padding: 5px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border-bottom: 1px solid #CCC; }
 .widgettitle a			{ color: #333; }
 .widgetcontent			{ border: solid #CCC; border-width: 0 1px 1px; background: url(../../images/content-bg.jpg) top repeat-x #FFF; margin-bottom: 10px; padding: 10px; line-height: 1.4em; }
 
@@ -333,9 +334,9 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 
 /* footer */
 #footer				{ margin: 20px auto 0; width: 960px; background: #FFF; padding-bottom: 10px; border: 1px solid #CCC; }
-#footer .widgetcontainer	{ padding: 5px 10px; min-width: 150px; }
+#footer .widgetcontainer	{ padding: 5px 10px; min-width: 150px; background: none; border: none; }
 .no-js #footer .widgetcontainer { height: 190px; }
-#footer .widgettitle	{ background: none; border: none; font-size: 11px; color: #444; padding: 0 0 10px; text-transform: uppercase; }
+#footer .widgettitle	{ background: none; border: none; font-size: 11px; color: #444; padding: 0 0 10px; text-transform: uppercase; margin: 0; }
 #footer .widgetcontent	{ font-size: 11px; background: none; padding: 0; border: none; }
 #footer .footer-message	{ margin: 0; padding: 10px 15px 0; font-size: 11px; }
 #footer .footer-message p { margin: 0 0 0.5em; }
