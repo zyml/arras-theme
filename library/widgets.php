@@ -229,7 +229,7 @@ class Arras_Featured_Stories extends WP_Widget {
 		extract($args, EXTR_SKIP);
 		
 		if ($instance['no_display_in_home'] && is_home()) {
-			echo '<li></li>'
+			echo '<li></li>';
 			return false;
 		}
 		
