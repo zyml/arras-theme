@@ -50,7 +50,7 @@ wp_enqueue_script('jquery-equalheights', get_template_directory_uri() . '/js/jqu
 wp_head();
 ?>
 <script type="text/javascript">
-<?php @include 'js/header.js.php'; ?>
+<?php @include ARRAS_DIR . '/js/header.js.php'; ?>
 </script>
 </head>
 
