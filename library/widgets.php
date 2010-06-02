@@ -20,7 +20,10 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		extract($args, EXTR_SKIP);
 		
 		if (!$instance['order']) $instance['order'] = array('featured', 'latest', 'comments', 'tags');
-		if ($instance['display_home'] && !is_home()) return;
+		if ($instance['display_home'] && !is_home()) {
+			echo '<li></li>';
+			return false;
+		}
 		
 		$featured = arras_get_option('featured_cat');
 		?>
@@ -225,7 +228,10 @@ class Arras_Featured_Stories extends WP_Widget {
 		global $wpdb;		
 		extract($args, EXTR_SKIP);
 		
-		if ($instance['no_display_in_home'] && is_home()) return;
+		if ($instance['no_display_in_home'] && is_home()) {
+			echo '<li></li>'
+			return false;
+		}
 		
 		$title = apply_filters('widget_title', $instance['title']);
 		$cat = (int)strip_tags($instance['featured_cat']);
