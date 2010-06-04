@@ -117,7 +117,7 @@ if (!function_exists('arras_tapestry_default')) {
 			$query->the_post();
 			?>
 			<li <?php arras_post_class() ?>>
-				<?php echo apply_filters('arras_tapestry_default_postheader', arras_generic_postheader($page_type, true) ) ?>
+				<?php echo apply_filters('arras_tapestry_default_postheader', arras_generic_postheader('node-based', true) ) ?>
 				<div class="entry-summary">
 					<?php echo arras_strip_content( get_the_excerpt(), arras_get_option('node_based_limit_words') ); ?>
 				</div>	
@@ -140,7 +140,7 @@ if (!function_exists('arras_tapestry_quick')) {
 			$query->the_post();
 			?>
 			<li <?php arras_post_class() ?>>
-				<?php echo apply_filters('arras_tapestry_quick_postheader', arras_generic_postheader($page_type) ) ?>
+				<?php echo apply_filters('arras_tapestry_quick_postheader', arras_generic_postheader('quick-preview') ) ?>
 				<div class="entry-summary">
 					<div class="entry-info">
 						<abbr class="published" title="<?php the_time('c') ?>"><?php printf( __('Posted on %s', 'arras'), get_the_time(get_option('date_format')) ) ?></abbr> | <span><?php comments_number() ?></span>
@@ -162,12 +162,12 @@ if (!function_exists('arras_tapestry_quick')) {
  * Helper function to display headers for certain tapestries.
  * @since 1.4.3
  */
-function arras_generic_postheader($page_type, $show_meta = false) {
+function arras_generic_postheader($tapestry, $show_meta = false) {
 	global $post;
 	
 	$postheader = '<div class="entry-thumbnails">';
 	$postheader .= '<a class="entry-thumbnails-link" href="' . get_permalink() . '">';
-	$postheader .= arras_get_thumbnail($page_type . '-post-thumb');
+	$postheader .= arras_get_thumbnail($tapestry . '-thumb');
 	
 	if ($show_meta) {	
 		$postheader .= '<span class="entry-meta"><span class="entry-comments">' . get_comments_number() . '</span>';
