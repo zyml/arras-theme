@@ -39,15 +39,11 @@ dl dd   { margin: 0 0 10px 0; line-height: 1.5em; }
 .alignleft				{ float: left; margin: 0 1em 1em 0; }
 .floatleft				{ float: left; }
 .floatright				{ float: right; }
-img.aligncenter, img.alignright, 
-img.alignleft			{ border: 3px solid #EEE; }
+img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-align: center; background: #F3F3F3; padding: 4px; }
 
 .textcenter				{ text-align: center; }
 .textright				{ text-align: right; }
 .textleft				{ text-align: left; }
-
-.noticebox				{ background-color: #fff9d7; border: 1px solid #e2c822; color: #333; margin-bottom: 20px; padding: 10px; }
-.noticebox a			{ color: #000; }
 
 .sub					{ font-size: 11px; color: #848485; }
 
@@ -143,7 +139,7 @@ img.alignleft			{ border: 3px solid #EEE; }
 .multi-sidebar .recentcomments .author	{ font-weight: normal; font-size: 11px; }
 
 #wp-calendar			{ width: 100%; border: 1px solid #999; }
-#wp-calendar caption	{ color: #333; font-size: 12px; font-weight: 700; margin: 0; padding: 5px 9px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
+#wp-calendar caption	{ color: #333; font-size: 12px; font-weight: 700; margin: 0; padding: 5px 9px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; text-align: center; }
 						
 /* featured slideshow */
 .featured				{ margin: 0 10px 20px 0; overflow: hidden; }
@@ -275,13 +271,6 @@ img.alignleft			{ border: 3px solid #EEE; }
 .wp-pagenavi span.current	{ padding: 3px 4px; background: #FFF; margin: 2px; font-weight: bold; border: 1px solid #CCC !important; }
 .wp-pagenavi span.pages	{ margin-left: 0; }
 
-/* wp125 */
-#wp125adwrap_2c			{ width: 270px !important; display: inline-block; padding: 8px 0 2px 8px; margin: 0 auto !important; }
-#wp125adwrap_2c .wp125ad{ padding: 0 !important; margin: 0 10px 10px 0 !important; }
-#wp125adwrap_2c:after	{ clear: both; content: "."; display: block; height: 0; line-height: 0; visibility: hidden; }
-html[xmlns] #wp125adwrap_2c	{ display: block; }
-* html #wp125adwrap_2c	{ height: 1%; }
-
 /* comments */
 #commentlist			{ background: #F3F3F3; border: solid #CCC; border-width: 0 1px 1px; list-style: none; padding: 10px; margin: 0 10px 0 0; }
 #commentlist li			{ margin: 0; padding-bottom: 10px; overflow: hidden; }
@@ -345,4 +334,3 @@ html[xmlns] #wp125adwrap_2c	{ display: block; }
 #footer-sidebar .widgetcontainer	{ float: left; margin: 0; max-width: 250px; }
 #footer-sidebar ul	{ list-style: none; margin: 0; padding: 0; }
 #footer-sidebar li	{ margin: 0 0 3px; }
-
