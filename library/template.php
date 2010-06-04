@@ -9,7 +9,7 @@ function arras_document_title() {
 		seo_title_tag();
 	} else if ( class_exists('All_in_One_SEO_Pack') || class_exists('HeadSpace2_Admin') || class_exists('Platinum_SEO_Pack') ) {
 		if(is_front_page() || is_home()) {
-			echo get_bloginfo('name') . ': ' . get_bloginfo('description');
+			echo get_bloginfo('name') . ' | ' . get_bloginfo('description');
 		} else {
 			wp_title('');
 		}
@@ -18,9 +18,9 @@ function arras_document_title() {
 		elseif ( is_single() ) { single_post_title(); }
         elseif ( is_home() ) { bloginfo('name'); print ' | '; bloginfo('description'); arras_get_page_no(); }
         elseif ( is_page() ) { single_post_title(''); }
-        elseif ( is_search() ) { bloginfo('name'); print ' | Search results for ' . wp_specialchars($s); arras_get_page_no(); }
+        elseif ( is_search() ) { bloginfo('name'); print ' | Search results for ' . esc_html($s); arras_get_page_no(); }
         elseif ( is_404() ) { bloginfo('name'); print ' | Not Found'; }
-        else { bloginfo('name'); wp_title('|'); arras_get_page_no(); }
+        else { bloginfo('name'); wp_title(' | '); arras_get_page_no(); }
 	}
 }
 
@@ -36,7 +36,13 @@ function arras_document_description() {
  */
 function arras_body_class() {
 	if ( function_exists('body_class') ) {
-		return body_class( array('layout-' . arras_get_option('layout'), 'style-' . arras_get_option('style'), 'no-js') );
+		$body_class = array('layout-' . arras_get_option('layout'), 'no-js');
+		
+		if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
+			$body_class[] = 'style-' . arras_get_option('style');
+		}	
+		
+		return body_class( apply_filters('arras_body_class', $body_class) );
 	}
 }
 
@@ -90,15 +96,11 @@ function arras_list_comments($comment, $args, $depth) {
 }
 
 function arras_post_class() {
-	if ( function_exists('post_class') )
-		return post_class('clearfix');
-	else return 'class="clearfix"';
+	return post_class( apply_filters('arras_post_class', 'clearfix') );
 }
 
 function arras_single_post_class() {
-	if ( function_exists('post_class') )
-		return post_class(array('clearfix', 'single-post'));
-	else return 'class="single-post clearfix"';
+	return post_class( apply_filters('arras_single_post_class', array('clearfix', 'single-post')) );
 }
 
 function arras_parse_single_custom_fields() {
