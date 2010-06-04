@@ -8,7 +8,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 <div id="layout" class="padding-content">
 
-<h3><?php _e('Display Types - Node Based', 'arras') ?></h3>
+<h3><?php _e('Tapestry: Node Based', 'arras') ?></h3>
 
 <table class="form-table">
 
