@@ -39,6 +39,23 @@ function arras_remove_all_tapestries() {
 }
 
 /**
+ * Gets tapestry callback function
+ * @since 1.4.4
+ */
+function arras_get_tapestry_callback($type, $query, $page_type) {
+	global $arras_tapestries;
+	
+	if ( count($arras_tapestries) == 0 ) return false;
+	
+	if ( $arras_tapestries[$type] ) {
+		call_user_func_array( $arras_tapestries[$type]['callback'], array($query, $page_type) );
+	} else {
+		$arr = array_values($arras_tapestries);
+		call_user_func_array( $arr[0]['callback'], array($query, $page_type) );
+	}
+}
+
+/**
  * Traditional tapestry callback function.
  * @since 1.4.3
  */

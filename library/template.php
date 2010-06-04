@@ -50,7 +50,7 @@ function arras_render_posts($args = null, $display_type = 'default', $page_type 
 	}
 	
 	if ($query->have_posts()) {	
-		call_user_func_array( $arras_tapestries[$display_type]['callback'], array($query, $page_type) );
+		arras_get_tapestry_callback($display_type, $query, $page_type);
 	}
 	
 	wp_reset_query();
