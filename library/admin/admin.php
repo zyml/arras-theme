@@ -39,9 +39,12 @@ function arras_admin() {
 			check_admin_referer('arras-admin');
 			if ( isset($_REQUEST['arras-tools-import']) && $_REQUEST['arras-tools-import'] != '' ) {
 				$new_arras_options = maybe_unserialize(base64_decode($_REQUEST['arras-tools-import']));
-				$arras_options = $new_arras_options;
-				arras_update_options();
-				$notices = '<div class="updated fade"><p>' . __('Your settings have been successfully imported.', 'arras') . '</p></div>';
+				
+				if (is_a($new_arras_options, 'Options')) {
+					$arras_options = $new_arras_options;
+					arras_update_options();
+					$notices = '<div class="updated fade"><p>' . __('Your settings have been successfully imported.', 'arras') . '</p></div>';
+				}
 			} else {
 				if (!isset($_POST['arras-delete-logo'])) {
 					if ($_FILES['arras-logo']['error'] != 4) {
