@@ -9,6 +9,12 @@ if ( function_exists('add_theme_support') ) {
 	add_theme_support('post-thumbnails');
 	add_theme_support('nav-menus');
 	
+	if ( function_exists('register_nav_menus') ) {
+		register_nav_menus(array(
+			'main-menu'	=> __('Main Menu', 'arras')
+		));
+	}
+	
 	$slideshow_thumb_size = arras_get_slideshow_thumb_size();
 	arras_add_image_size( 'featured-slideshow-thumb', __('Featured Slideshow', 'arras'), $slideshow_thumb_size[0], $slideshow_thumb_size[1]);
 	arras_add_image_size( 'sidebar-thumb', __('Sidebar Widgets', 'arras'), 36, 36);
