@@ -165,7 +165,8 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 #bottom-content-1 * .xoxo, #bottom-content-2 * .xoxo{ margin-left: 15px; }
 #bottom-content-1 .widgettitle, #bottom-content-2 .widgettitle	{ background: #F0F0F0; }
 
-.layout-3c-r-fixed #bottom-content-1, .layout-3c-r-fixed #bottom-content-2, .layout-3c-fixed #bottom-content-1, .layout-3c-fixed #bottom-content-2	{ width: 243px; }
+.layout-3c-r-fixed #bottom-content-1, .layout-3c-r-fixed #bottom-content-2, 
+.layout-3c-fixed #bottom-content-1, .layout-3c-fixed #bottom-content-2	{ width: 243px; }
 
 /* latest headlines */
 .posts-default, .posts-quick, .posts-line	{ list-style: none; margin: 0 0 20px; padding: 0; overflow: hidden; }
@@ -179,7 +180,6 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 .no-js .posts-default .entry-summary	{ height: 60px; }
 
 .entry-thumbnails	{ clear: both; display: inline-block; }
-.entry-thumbnails:hover	{ border-color: #383332; }
 .entry-thumbnails-link { float: left; background: #111; display: block; text-decoration: none !important; }
 .posts-quick			{ margin: 0 10px 10px 0; padding: 0; }
 .posts-quick li			{ padding: 0 10px 0 0; border-bottom: 1px dotted #CCC; margin: 0 0 10px; }
@@ -211,7 +211,7 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 
 /* single post */
 .single .post, #main .single-post	{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 15px 0; padding: 0 15px; }
-.single .post .entry-title, .single-post .entry-title	{ font-size: 24px; font-weight: 700; padding: 0; margin: 20px 0 10px; letter-spacing: -1px; line-height: 1.3em; }
+.single .post .entry-title, .single-post .entry-title	{ font-size: 22px; font-weight: 700; padding: 0; margin: 15px 0 5px; letter-spacing: -1px; line-height: 1.3em; }
 .single .post .entry-title a:link, .single .post .entry-title a:visited, .single-post .entry-title a:link, .single-post .entry-title a:visited	{ text-decoration: none; }
 .single .post .entry-info, .single-post .entry-info	{ padding-bottom: 10px; margin-bottom: 10px; color: #848485; font-size: 11px; text-transform: uppercase; border-bottom: 1px dotted #CCC; }
 .single .post .entry-info .published, .single-post .entry-info .published { border: none; }

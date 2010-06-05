@@ -79,9 +79,7 @@ document.body.className = c;
 		<span class="blog-description"><?php bloginfo('description'); ?></span>
 		<?php endif ?>
 	</div>
-	<div id="searchbar">
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>  
-	</div>
+	<div id="searchbar"><?php get_search_form() ?></div>
 	</div><!-- #branding -->
 </div><!-- #header -->
 
@@ -123,6 +121,8 @@ document.body.className = c;
 			<?php if ($facebook_profile != '') : ?>
 				<li><a id="facebook" title="<?php printf( __( '%s Facebook', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $facebook_profile ?>" target="_blank"><?php _e('Facebook', 'arras') ?></a></li>
 			<?php endif ?>
+			
+			<?php do_action('arras_quick_nav'); // hook to include additional social icons, etc. ?>
 		</ul>
 	</div><!-- #nav-content -->
 </div><!-- #nav -->
