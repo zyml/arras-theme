@@ -66,6 +66,21 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </td>
 </tr>
 
+<tr valign="top">
+<th scope="row"><label for="arras-layout-metapos"><?php _e('Position of Custom Fields', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_radio('arras-layout-metapos', 'top', arras_get_option('single_meta_pos') == 'top') ?> <?php _e('Before the Post Content', 'arras') ?><br />
+<?php echo arras_form_radio('arras-layout-metapos', 'bottom', arras_get_option('single_meta_pos') == 'bottom') ?> <?php _e('After the Post Content', 'arras') ?><br />
+</td>
+</tr>
+
+<tr valign="top">
+<th scope="row"><label for="arras-single-custom-fields">Single Post Custom Fields</label></th>
+<td>
+<?php echo arras_form_textarea(array('name' => 'arras-single-custom-fields', 'id' => 'arras-single-custom-fields', 'class' => 'code', 'rows' => '3', 'cols' => '70', 'value' => stripslashes(arras_get_option('single_custom_fields')) )) ?><br />
+</td>
+</tr>
+
 </table>
 
 </div><!-- #layout -->

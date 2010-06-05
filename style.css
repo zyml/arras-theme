@@ -4,7 +4,7 @@ Theme URI: http://www.arrastheme.com/
 Description: Magazine-styled theme with tons of features. Ready for alternate styles. Includes featured posts slideshow, different post layouts, multi-tabbed sidebar, custom single meta fields for reviews and many other customisable features.
 Author: Melvin Lee
 Author URI: http://www.zy.sg/
-Version: 1.4.4-dev
+Version: 1.4.4b1
 Tags: blue,brown,white,light,two-columns,three-columns,left-sidebar,right-sidebar,fixed-width,theme-options,threaded-comments,sticky-post,microformats,translation-ready
 .
 Arras Theme, like WordPress, is released under the GNU General Public License, version 2 (GPL).
@@ -16,6 +16,12 @@ If you require any support, please visit the theme website at
 http://www.arrastheme.com/.
 .
 */
+
+/* Default Stylesheet */
+@import url('css/default.css');
+
+/* User Override Stylesheet */
+@import url('user.css');
 
 /* Trick the WordPress Theme Bot *Evil* */
 .aligncenter			{ display: block; margin: 0 auto; }
@@ -30,8 +36,3 @@ img.alignleft			{ border: 3px solid #EEE; }
 .wp-caption img { margin: 0; padding: 0; border: none }
 .wp-caption .wp-caption-text { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0 }
 
-/* Default Stylesheet */
-@import url('css/default.css');
-
-/* User Override Stylesheet */
-@import url('user.css');

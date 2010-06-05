@@ -11,6 +11,10 @@ define('ARRAS_FORCE_LAYOUT', '1c-fixed');
 <div id="content" class="section">
 <?php arras_above_content() ?>
 
+<?php
+if ( arras_get_option('single_meta_pos') == 'bottom' ) add_filter('arras_postfooter', 'arras_postmeta');
+else add_filter('arras_postheader', 'arras_postmeta');
+?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<?php arras_above_post() ?>

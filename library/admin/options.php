@@ -14,7 +14,7 @@ class Options {
 	var $featured_title, $news_title;
 	var $featured_display, $news_display, $index_news_thumbs;
 	var $archive_display, $archive_news_thumbs;
-	var $display_author;
+	var $display_author, $single_meta_pos, $single_custom_fields;
 	var $node_based_limit_words;
 	
 	// added in 1.3.4
@@ -74,6 +74,9 @@ class Options {
 		$this->post_tags = true;
 		$this->single_thumbs = false;
 		
+		$this->single_meta_pos = 'top';
+		$this->single_custom_fields = 'Score:score,Pros:pros,Cons:cons';
+		
 		$this->node_based_limit_words = 30;
 		
 		$this->layout = '2c-r-fixed';
@@ -126,6 +129,9 @@ class Options {
 		$this->post_cats = isset($_POST['arras-layout-post-cats']);
 		$this->post_tags = isset($_POST['arras-layout-post-tags']);
 		$this->single_thumbs = isset($_POST['arras-layout-single-thumbs']);
+		
+		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];
+		$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];
 		
 		if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
 			$this->layout = (string)$_POST['arras-layout-col'];

@@ -242,6 +242,9 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 
 .layout-3c-r-fixed .post .entry-photo, .layout-3c-r-fixed .single-post .entry-photo, .layout-3c-fixed .post .entry-photo, .layout-3c-fixed .single-post .entry-photo	{ width: 480px; }
 
+.single-post-meta-field { background: #313428; display: block; border: 1px solid #383332; padding: 5px 10px; color: #FFF; font-weight: 700; }
+.single-post-meta-value	{ border: 1px solid #CCC; padding: 5px 10px; background: #F0F0F0; display: block; }
+
 .module-title, .feed-title	{ line-height: 1em; color: #333; font-size: 12px; font-weight: 700; margin: 0 10px 0 0; padding: 7px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; display: block; }
 .feed-title				{ border-bottom: none; }
 
