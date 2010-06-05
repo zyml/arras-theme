@@ -39,6 +39,7 @@ define( 'ARRAS_THUMB', 'timthumb' );
 
 // Load library files
 require_once ARRAS_LIB . '/admin/options.php';
+require_once ARRAS_LIB . '/admin/templates/functions.php';
 arras_flush_options();
 
 require_once ARRAS_LIB . '/actions.php';
