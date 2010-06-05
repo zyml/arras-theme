@@ -78,10 +78,17 @@ function arras_add_blueprint_css() {
 
 function arras_add_layout_css() {
 	global $arras_registered_alt_layouts;
-?>
-<?php if ( count($arras_registered_alt_layouts) > 0 ) : ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/layouts/<?php echo arras_get_option('layout') ?>.css" type="text/css" />
-<?php endif;
+	
+	if ( count($arras_registered_alt_layouts) > 0 ) {
+		
+		if ( defined('ARRAS_FORCE_LAYOUT') ) {
+			$layout = ARRAS_FORCE_LAYOUT;
+		} else {
+			$layout = arras_get_option('layout');
+		}
+	
+		?><link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/layouts/<?php echo $layout ?>.css" type="text/css" /><?php
+	}
 }
 
 function arras_add_style_css() {

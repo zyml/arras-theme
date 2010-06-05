@@ -2,11 +2,13 @@
 /*
  * Template Name: One Column Page
  */
+ 
+define('ARRAS_FORCE_LAYOUT', '1c-fixed');
 ?>
 
 <?php get_header(); ?>
 
-<div id="content" class="section" style="width:970px">
+<div id="content" class="section">
 <?php arras_above_content() ?>
 
 <?php 

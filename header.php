@@ -3,6 +3,7 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php arras_document_title() ?></title>
 <?php arras_document_description() ?>
+
 <?php if ( is_search() || is_author() ) : ?>
 <meta name="robots" content="noindex, nofollow" />
 <?php endif ?>
