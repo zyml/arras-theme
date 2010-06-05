@@ -1,6 +1,11 @@
 <?php 
 
 function arras_add_slideshow() {
+
+	if (function_exists('akpc_excerpt_compat_post')) {
+		remove_filter('get_the_excerpt', 'akpc_excerpt_compat_post', 999);
+	}
+	
 	if ( ( $featured1_cat = arras_get_option('slideshow_cat') ) !== '' && $featured1_cat != '-1' ) {
 	?>
 		<?php
@@ -28,7 +33,9 @@ function arras_add_slideshow() {
 			<div id="featured-slideshow">
 				<?php $count = 0; ?>
 			<?php
-			if (function_exists('dsq_loop_end')) remove_action('loop_end', 'dsq_loop_end'); // remove DISQUS action hook ?>
+			if (function_exists('dsq_loop_end')) remove_action('loop_end', 'dsq_loop_end'); // remove DISQUS action hook 
+			?>
+			
 				<?php while ($q->have_posts()) : $q->the_post(); ?>
 				<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
 
