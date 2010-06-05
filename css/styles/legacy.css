@@ -253,7 +253,7 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 .about-author			{ border: 1px solid #CCC; padding: 10px; margin: 0 0 10px; line-height: 1.5em; background: #FFF; font-size: 11px; }
 .about-author .author-meta { margin-left: 60px; }
 .about-author h4		{ font-size: 11px; margin: 0 0 10px; color: #333; font-weight: 700; text-transform: uppercase; }
-.about-author h5		{ margin-bottom: 3px; font-size: 12px; }
+.about-author h5		{ margin-bottom: 3px; font-size: 13px; }
 .about-author h5 a		{ text-decoration: none; }
 
 /* gd star rating */
@@ -285,7 +285,7 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 #commentlist .comment-author	{ padding: 10px 0 0 10px;}
 #commentlist .comment-content	{ padding: 0 10px; font-size: 12px; }
 #commentlist .comment-node	{ background: #FFF; border: 1px solid #EEE; }
-#commentlist .comment-meta	{ text-decoration: none; color: #999; font-size: 11px; }
+#commentlist .comment-meta, #commentlist .comment-meta abbr	{ border: none; text-decoration: none; color: #999; font-size: 11px; }
 #commentlist .comment-controls	{ background: #FFF; padding: 10px; font-weight: bold; float: right; display: none; }
 #commentlist .comment-node:hover .comment-controls { display: block; }
 #commentlist .comment-controls a:link, #commentlist .comment-controls a:visited	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 5px 10px; margin: 0; border: 1px solid #CCC; font-weight: bold; zoom: 1; *display: inline; display: inline-block; }
