@@ -13,19 +13,39 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 			'description'	=> __('Sidebar containing tabs that displays posts, comments and tags.', 'arras'),
 		);
 		$this->WP_Widget('arras_tabbed_sidebar', __('Tabbed Sidebar', 'arras'), $widget_args);
+		
+		add_action('arras_tabbed_sidebar_tab-featured', array(&$this, 'featured_tab'));
+		add_action('arras_tabbed_sidebar_tab-latest', array(&$this, 'latest_tab'));
+		add_action('arras_tabbed_sidebar_tab-comments', array(&$this, 'comments_tab'));
+		add_action('arras_tabbed_sidebar_tab-tags', array(&$this, 'tags_tab'));
+		add_action('arras_tabbed_sidebar_tab-popular', array(&$this, 'popular_tab'));
+	}
+	
+	function get_tabs() {
+		$_default_tabs = array(
+			'featured'		=> __('Featured', 'arras'), 
+			'latest'		=> __('Latest', 'arras'),
+			'comments'		=> __('Comments', 'arras'), 
+			'tags'			=> __('Tags', 'arras')
+		);
+		
+		if ( function_exists('akpc_most_popular') ) {
+			$_default_tabs['popular'] = __('Popular', 'arras');
+		}
+		
+		return apply_filters('arras_tabbed_sidebar_tabs', $_default_tabs);
 	}
 	
 	function widget($args, $instance) {
 		global $wpdb;		
 		extract($args, EXTR_SKIP);
 		
-		if (!$instance['order']) $instance['order'] = array('featured', 'latest', 'comments', 'tags');
+		if (!$instance['order']) $instance['order'] = $this->get_tabs();
+		
 		if ($instance['display_home'] && !is_home()) {
 			echo '<li></li>';
 			return false;
 		}
-		
-		$featured = arras_get_option('featured_cat');
 		?>
 		<li class="multi-sidebar-container">
 		<div class="multi-sidebar clearfix">
@@ -33,106 +53,99 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		<?php $this->render_sidebar_tabs($instance['order'], is_numeric($featured)) ?>
 		</ul>
 		<?php
-		
-		foreach( $instance['order'] as $tab ) {
-			switch($tab) {
-				case 'featured':
-				
-				if (is_numeric($featured)) {
-					echo '<div id="s-featured" class="widgetcontainer clearfix">';
-					$f = new WP_Query('showposts=8&cat=' . $featured);
-					if (!$f->have_posts()) {
-						echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
-					} else {
-						echo '<ul>';
-						while ($f->have_posts()) {
-							$f->the_post();
-							?>
-							<li class="clearfix">
-							<?php if (function_exists('the_post_thumbnail')) the_post_thumbnail('sidebar-thumb') ?>
-							<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
-							<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
-							<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
-							</li>
-							<?php
-						}
-						echo '</ul>';
-					}
-					echo '</div><!-- #s-featured -->';
-				}
-				
-				break;
-				
-				case 'latest':
-				
-				echo '<div id="s-latest" class="widgetcontainer clearfix">';
-				$f = new WP_Query('showposts=8');
-				if (!$f->have_posts()) {
-					echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
-				} else {
-					echo '<ul>';
-					while ($f->have_posts()) {
-						$f->the_post();
-						?>
-						<li class="clearfix">
-						<?php if (function_exists('get_the_post_thumbnail')) echo get_the_post_thumbnail( get_the_ID(), 'sidebar-thumb' ) ?>
-						<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
-						<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
-						<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
-						</li>
-						<?php
-					}
-					echo '</ul>';
-				}
-				echo '</div><!-- #s-latest -->';
-				
-				break;
-				
-				case 'comments':
-
-				echo '<div id="s-comments" class="widgetcontainer clearfix">';
-				$comments = get_comments( array('status' => 'approve', 'number' => 8) );
-				
-				if ($comments) {
-					echo '<ul id="recentcomments">';
-					foreach ($comments as $comment) {
-						echo '<li class="recentcomments clearfix">';
-						echo get_avatar($comment->user_id, 36);
-						echo '<span class="author">' . $comment->comment_author . '</span><br />';
-						echo '<a href="' . get_permalink($comment->comment_post_ID) . '">' . get_the_title($comment->comment_post_ID) . '</a>';
-						echo '</li>';
-					}
-					echo '</ul>';
-				}
-				
-				
-				echo '</div><!-- #s-comments -->';
-				
-				break;
-				
-				case 'tags':
-				
-				echo '<div id="s-tags" class="tags widgetcontainer clearfix">';
-				wp_tag_cloud('smallest=9&largest=16');
-				echo '</div><!-- #s-tags -->';
-				
-				break;
-				
-				case 'popular':
-				
-				echo '<div id="s-popular" class="widgetcontainer clearfix">';
-				if ( function_exists('akpc_most_popular') ) akpc_most_popular();
-				echo '</div><!-- #s-popular -->';
-				
-				break;
-			}
+		foreach ($instance['order'] as $tab) {
+			echo '<div id="s-' . $tab . '" class="widgetcontainer clearfix">';
+			do_action('arras_tabbed_sidebar_tab-' . $tab);
+			echo '</div><!-- #s-' . $tab . ' -->';
 		}
-		
 		?>
 		</div>
 		</li>
 		<?php
 		
+	}
+	
+	function featured_tab() {
+		$featured = arras_get_option('featured_cat');
+		
+		if (is_numeric($featured)) {
+			$f = new WP_Query('showposts=8&cat=' . $featured);
+			if (!$f->have_posts()) {
+				echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
+			} else {
+				echo '<ul>';
+				while ($f->have_posts()) {
+					$f->the_post();
+					?>
+					<li class="clearfix">
+					<?php if (function_exists('the_post_thumbnail')) the_post_thumbnail('sidebar-thumb') ?>
+					<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
+					<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
+					<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
+					</li>
+					<?php
+				}
+				echo '</ul>';
+			}
+		}
+	}
+	
+	function latest_tab() {
+		$f = new WP_Query('showposts=8');
+		if (!$f->have_posts()) {
+			echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
+		} else {
+			echo '<ul>';
+			while ($f->have_posts()) {
+				$f->the_post();
+				?>
+				<li class="clearfix">
+				<?php if (function_exists('get_the_post_thumbnail')) echo get_the_post_thumbnail( get_the_ID(), 'sidebar-thumb' ) ?>
+				<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
+				<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
+				<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
+				</li>
+				<?php
+			}
+			echo '</ul>';
+		}
+	}
+	
+	function comments_tab() {
+		$comments = get_comments( array('status' => 'approve', 'number' => 8) );	
+		if ($comments) {
+			echo '<ul id="recentcomments">';
+			foreach ($comments as $comment) {
+				echo '<li class="recentcomments clearfix">';
+				echo get_avatar($comment->user_id, 36);
+				echo '<span class="author">' . $comment->comment_author . '</span><br />';
+				echo '<a href="' . get_permalink($comment->comment_post_ID) . '">' . get_the_title($comment->comment_post_ID) . '</a>';
+				echo '</li>';
+			}
+			echo '</ul>';
+		}
+	}
+	
+	function tags_tab() {
+		echo '<div class="tags">';
+		if (function_exists('wp_cumulus_insert')) {
+			$args = array(
+				'width'		=> 280,
+				'height'	=> 280
+			);
+			wp_cumulus_insert($args);
+		} else {
+			wp_tag_cloud('smallest=9&largest=16');
+		}
+		echo '</div>';
+	}
+	
+	function popular_tab() {
+		if ( function_exists('akpc_most_popular') ) {
+			echo '<ul>';
+			akpc_most_popular(10, '<li>', '</li>');
+			echo '</ul>';
+		}
 	}
 	
 	function update($new_instance, $old_instance) {
@@ -164,17 +177,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	}
 	
 	function get_tabbed_opts($selected, $default) {
-		$opts = array(
-			'none' 		=> __('None', 'arras'),
-			'featured' 	=> __('Featured Posts', 'arras'),
-			'latest' 	=> __('Latest Posts', 'arras'),
-			'comments' 	=> __('Recent Comments', 'arras'),
-			'tags' 		=> __('Tag Cloud', 'arras')
-		);
-		
-		if ( function_exists('akpc_most_popular') ) {
-			$opts['popular'] = __('Popular Posts', 'arras');
-		}
+		$opts = $this->get_tabs();
 		
 		if (!$selected) $selected = $default;
 		
@@ -190,24 +193,10 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	
 	function render_sidebar_tabs($order, $show_featured) {
 		$order = array_unique($order);
-		$list = array(
-			'latest'	=> __('Latest', 'arras'),
-			'comments'	=> __('Comments', 'arras'),
-			'tags'		=> __('Tag Cloud', 'arras'),
-			'popular'	=> __('Popular', 'arras')
-		);
-		
-		$count = 0;
-		if ($show_featured) $list['featured'] = __('Featured', 'arras');
+		$list = $this->get_tabs();
 		
 		foreach ($order as $t) {
-			if (!$show_featured) {
-				if ($t == 'featured') continue;
-			}
-			if ($t != 'none') {
-				?><li><a href="#s-<?php echo $t ?>"><span><?php echo apply_filters('widget_title', $list[$t]) ?></span></a></li><?php
-			}
-			$count++;
+			?><li><a href="#s-<?php echo $t ?>"><span><?php echo $list[$t] ?></span></a></li><?php
 		}
 	}
 	
