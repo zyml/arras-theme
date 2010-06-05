@@ -56,9 +56,7 @@ if ( is_admin() ) {
 	require_once ARRAS_LIB . '/admin/thumbnails.php';
 }
 
-//require_once ARRAS_LIB . '/admin/custom-header.php';
-require_once ARRAS_LIB . '/admin/custom-background.php';
-
+require_once ARRAS_LIB . '/admin/background.php';
 require_once ARRAS_LIB . '/launcher.php';
 
 do_action('arras_init');
