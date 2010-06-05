@@ -1,5 +1,4 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
-<?php include 'functions.php'; ?>
 
 <?php
 $forum_contributors = array(

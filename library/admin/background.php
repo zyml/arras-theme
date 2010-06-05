@@ -26,9 +26,7 @@ function arras_custom_background_styles() {
 
 function arras_custom_background() {
 	global $arras_custom_bg_options;
-	
-	include_once 'templates/functions.php';
-	
+
 	$notices = '';
 	
 	if ( isset($_REQUEST['reset']) ) {

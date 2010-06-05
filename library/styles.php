@@ -40,6 +40,7 @@ $quick_preview_size = arras_get_image_size('quick-preview-thumb');
 $quick_preview_w = $quick_preview_size['w'];
 $quick_preview_h = $quick_preview_size['h'];
 ?>
+
 .posts-default .post { width: <?php echo $node_based_w + 10 ?>px; }
 .posts-default img, .posts-default .entry-thumbnails-link { width: <?php echo $node_based_w ?>px; height: <?php echo $node_based_h ?>px; }
 .posts-default .entry-thumbnails { width: <?php echo $node_based_w + 10 ?>px; height: <?php echo $node_based_h + 10 ?>px; }
@@ -47,23 +48,20 @@ $quick_preview_h = $quick_preview_size['h'];
 .posts-default .entry-meta { width: <?php echo $node_based_w ?>px; }
 .posts-quick .entry-meta { width: <?php echo $quick_preview_w ?>px; }
 
-<?php $layout = arras_get_option('layout') ?>
+<?php
+$slideshow_size = arras_get_image_size('featured-slideshow-thumb');
+$slideshow_size_w = $slideshow_size['w'];
+$slideshow_size_h = $slideshow_size['h'];
+?>
 
-<?php if (strpos($layout, '1c') !== false) : ?>
-.featured, .featured-article { height: 300px; }
-.featured-article { width: 950px; }
-.featured-article img { width: 950px; height: 300px; }
-#controls { width: 920px; top: 120px; }
-#controls .next { left: 915px; }
-.featured-entry	{ height: 100px; top: -100px; }
-<?php elseif (strpos($layout, '3c') !== false) : ?>
-.featured, .featured-article { height: 225px; }
-.featured-article { width: 490px; }
-.featured-article img { width: 490px; height: 225px; }
-#controls { width: 450px; top: 85px; }
-#controls .next { left: 455px; }
-.featured-entry	{ height: 80px; top: -80px; }
-<?php endif;
+.featured { height: <?php echo $slideshow_size_h + 10 ?>px; }
+.featured-article { width: <?php echo $slideshow_size_w ?>px; height: <?php echo $slideshow_size_h ?>px; }
+.featured-article img { width: <?php echo $slideshow_size_w ?>px; height: <?php echo $slideshow_size_h ?>px; }
+#controls { width: <?php echo $slideshow_size_w - 30 ?>px; top: <?php echo ($slideshow_size_h / 2) - 15 ?>px; }
+#controls .next { width: <?php echo $slideshow_size_w - 30 ?>px; }
+.featured-entry { height: <?php echo ceil($slideshow_size_h / 3) ?>px; top: -<?php echo ceil($slideshow_size_h / 3) ?>px; }
+
+<?php
 }
 
 function arras_add_blueprint_css() {
