@@ -81,12 +81,6 @@ class Options {
 		
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
-		
-		$this->featured_thumb_w = 195;
-		$this->featured_thumb_h = 110;
-		
-		$this->news_thumb_w = 155;
-		$this->news_thumb_h = 155;
 	}
 	
 	function save_options() {
@@ -174,10 +168,10 @@ function arras_update_options() {
 
 function arras_upgrade_options() {
 	$custom_thumbs = $arras_options->custom_thumbs;
-	$custom_thumbs['featured-slideshow-thumb']['w'] = $arras_options->featured_thumb_w;
-	$custom_thumbs['featured-slideshow-thumb']['h'] = $arras_options->featured_thumb_h;
-	$custom_thumbs['news-post-thumb']['w'] = $arras_options->news_thumb_w;
-	$custom_thumbs['news-post-thumb']['h'] = $arras_options->news_thumb_h;
+	$custom_thumbs['node-based-thumb']['w'] = $arras_options->featured_thumb_w;
+	$custom_thumbs['node-based-thumb']['h'] = $arras_options->featured_thumb_h;
+	$custom_thumbs['quick-preview-thumb']['w'] = $arras_options->news_thumb_w;
+	$custom_thumbs['quick-preview-thumb']['h'] = $arras_options->news_thumb_h;
 	
 	$arras_options->custom_thumbs = $custom_thumbs;
 	$arras_options->version = ARRAS_VERSION;
