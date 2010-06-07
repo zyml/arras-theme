@@ -124,7 +124,7 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 .widgettitle			{ color: #333; font-size: 12px; font-weight: 700; margin: -10px -10px 10px; padding: 5px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border-bottom: 1px solid #CCC; }
 .widgettitle a			{ color: #333; }
 
-.attachment-sidebar-thumb, .multi-sidebar .recentcomments .avatar	{ float: left; border: 3px solid #CCC; margin: 0 10px 0 0; }
+.multi-sidebar .thumb, .multi-sidebar .recentcomments .avatar, .featured-stories .thumb	{ float: left; border: 3px solid #CCC; margin: 0 10px 0 0; }
 .sidebar-read-more:link, .sidebar-read-more:visited	{ font-size: 11px !important; text-transform: uppercase; font-weight: 700; color: #000; }
 
 .multi-sidebar .tabs	{ list-style: none; margin: 0 0 5px; padding: 0; overflow: hidden; }
