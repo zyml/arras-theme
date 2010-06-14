@@ -12,6 +12,13 @@ a:hover					{ color: #1A8DFF; }
 a img					{ border: none; }
 a:focus, a:hover, a:active  { outline: none; }
 
+h2, h3, h4, h5, h6		{ margin: 1em 0; }
+h2						{ font-size: 20px; }
+h3						{ font-size: 18px; }
+h4						{ font-size: 16px; }
+h5						{ font-size: 14px; }
+h6						{ font-size: 12px; }
+
 p						{ line-height: 1.4em; margin: 0 0 1.25em; padding: 0; }
 blockquote				{ border-left: 2px solid #CCC; color: #666; padding: 5px 10px 1px; font-style: normal; }
 code					{ background: #EAEAEA; color: #333; font-family: Consolas, Monaco, Courier, monospace; font-size: 11px; margin: 1px 0; padding: 1px 3px; }

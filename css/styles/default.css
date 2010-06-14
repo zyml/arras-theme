@@ -129,7 +129,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 .widgettitle			{ color: #333; font-size: 12px; font-weight: 700; margin: -10px -10px 10px; padding: 5px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border-bottom: 1px solid #CCC; }
 .widgettitle a			{ color: #333; }
 
-.multi-sidebar .thumb, .multi-sidebar .recentcomments .avatar, .featured-stories .thumb	{ float: left; border: 3px solid #CCC; margin: 0 10px 0 0; }
+.multi-sidebar .thumb, .multi-sidebar .recentcomments .avatar, .featured-stories .thumb	{ float: left; border: 1px solid #CCC; margin: 0 10px 0 0; background: #FFF; padding: 2px; }
 .sidebar-read-more:link, .sidebar-read-more:visited	{ text-transform: uppercase; font-weight: 700; font-size: 11px; padding: 5px 0; }
 
 .multi-sidebar .tabs	{ list-style: none; margin: 0 0 5px; padding: 0; overflow: hidden; }
@@ -184,7 +184,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 .entry-thumbnails-link { float: left; background: #111; display: block; text-decoration: none !important; }
 .posts-quick			{ margin: 0 10px 10px 0; padding: 0; }
 .posts-quick li			{ padding: 0 10px 0 0; border-bottom: 1px dotted #CCC; margin: 0 0 10px; }
-.posts-quick .entry-title	{ font-weight: 700; font-size: 14px; margin: 5px 0 0; line-height: 1.3em; }
+.posts-quick .entry-title	{ font-weight: 700; font-size: 15px; margin: 5px 0 0; line-height: 1.3em; }
 .posts-quick .entry-summary	{ font-size: 12px; line-height: 1.6em; margin-bottom: 15px; }
 .posts-quick .entry-thumbnails	{ float: left; margin: 0 20px 10px 0; border: 1px solid #CCC; padding: 4px; background: #FFF; }
 .posts-quick .quick-read-more	{ margin: 10px 0 5px; }
