@@ -21,7 +21,7 @@ class Options {
 	var $post_author, $post_date, $post_cats, $post_tags, $postbar_footer, $single_thumbs;
 	
 	// Thumbnail Sizes - added in 1.4.0
-	var $custom_thumbs;
+	var $auto_thumbs, $custom_thumbs;
 	
 	// Design
 	var $layout, $style, $logo;
@@ -81,6 +81,8 @@ class Options {
 		
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
+		
+		$this->auto_thumbs = true;
 	}
 	
 	function save_options() {
@@ -140,6 +142,8 @@ class Options {
 		if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
 			$this->style = (string)$_POST['arras-style'];
 		}
+		
+		$this->auto_thumbs = isset($_POST['arras-thumbs-auto']);
 	}
 
 }
