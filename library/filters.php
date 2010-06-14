@@ -130,10 +130,9 @@ function arras_post_aboutauthor() {
 	
 	$output = '
 		<div class="about-author clearfix">
-			<h4>' . __('About the Author', 'arras') . '</h4>
-			<a href="' . get_author_posts_url($id) . '">' . get_avatar($id, 48) . '</a>
+			<a href="' . get_author_posts_url($id) . '">' . get_avatar($id, 64) . '</a>
 			<div class="author-meta">
-			<h5><a href="' . get_author_posts_url($id) . '">' . get_the_author_meta('display_name') . '</a></h5>
+				<h4>' . sprintf(__('About %s', 'arras'),  get_the_author_meta('display_name')) . '</h4>
 			' . get_the_author_meta('description') . '
 			</div>
 		</div>

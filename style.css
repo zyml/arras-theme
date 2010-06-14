@@ -19,7 +19,6 @@ http://www.arrastheme.com/.
 
 /* Default Stylesheet */
 @import url('css/default.css');
-
 /* User Override Stylesheet */
 @import url('user.css');
 
@@ -29,8 +28,11 @@ http://www.arrastheme.com/.
 .alignleft				{ float: left; margin: 0 1em 1em 0; }
 .floatleft				{ float: left; }
 .floatright				{ float: right; }
-img.aligncenter, img.alignright, 
-img.alignleft			{ border: 3px solid #EEE; }
+img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-align: center; background: #F3F3F3; padding: 4px; }
+
+.textcenter				{ text-align: center; }
+.textright				{ text-align: right; }
+.textleft				{ text-align: left; }
 
 .wp-caption { border: 1px solid #DDD; text-align: center; background: #F3F3F3; padding-top: 4px; margin: 10px }
 .wp-caption img { margin: 0; padding: 0; border: none }

@@ -66,7 +66,7 @@ register_sidebar( array(
 
 // Header Actions
 if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
-	add_action('arras_head', 'arras_add_blueprint_css');
+	//add_action('arras_head', 'arras_add_blueprint_css');
 	add_action('arras_head', 'arras_add_style_css');
 	add_action('arras_custom_styles', 'arras_layout_styles');
 }
