@@ -1,6 +1,6 @@
 .grey					{ color: #999; }
 .ui-widget-content		{ border: none; }
-.ui-widget .code, .ui-widget code { font-family: Consolas,Monaco,Courier,monospace; font-size: 110%; }
+.ui-widget .code, .ui-widget code { font-family: Consolas,Monaco,Courier,monospace; font-size: 100%; }
 
 #arras-header  { margin-bottom: 15px; }
 

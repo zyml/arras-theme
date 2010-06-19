@@ -18,7 +18,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 	__('Categories', 'arras'
 ) => $cats), arras_get_option('slideshow_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown on the featured slideshow of the index page.', 'arras') ?>
-<br /><?php _e('If nothing is selected, this section will show <strong>all</strong> posts.', 'arras') ?>
+<br /><?php _e('<strong>All posts</strong> will be shown if nothing is selected.', 'arras') ?>
 </td>
 </tr>
 
@@ -50,7 +50,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 	__('Categories', 'arras'
 ) => $cats), arras_get_option('featured_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown below the featured slideshow of the index page.', 'arras') ?>
-<br /><?php _e('If nothing is selected, this section will show <strong>all</strong> posts.', 'arras') ?>
+<br /><?php _e('<strong>All posts</strong> will be shown if nothing is selected.', 'arras') ?>
 </td>
 </tr>
 
@@ -99,7 +99,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <td>
 <?php echo arras_form_dropdown('arras-cat-news', $cats, arras_get_option('news_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown below the featured section in the index page.', 'arras') ?>
-<br /><?php _e('If nothing is selected, this section will show <strong>all</strong> posts.', 'arras') ?>
+<br /><?php _e('<strong>All posts</strong> will be shown if nothing is selected.', 'arras') ?>
 </td>
 </tr>
 

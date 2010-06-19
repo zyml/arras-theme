@@ -44,7 +44,7 @@ function arras_add_slideshow() {
 	</div>
 	<?php endif;
 }
-add_action('arras_above_index_featured_post', 'arras_add_slideshow');
+add_action('arras_above_content', 'arras_add_slideshow');
 
 function arras_add_slideshow_js() {
 ?>
