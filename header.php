@@ -87,10 +87,10 @@ document.body.className = c;
 <div id="nav">
 	<div id="nav-content" class="clearfix">
 	<?php 
-	if ( function_exists('wp_nav_menu') ) {
-		wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'sf-menu menu clearfix', 'theme_location' => 'main-menu') );
-	} elseif ( function_exists('pixopoint_menu') ) {
+	if ( function_exists('pixopoint_menu') ) {
 		pixopoint_menu();
+	} elseif ( function_exists('wp_nav_menu') ) {
+		wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'sf-menu menu clearfix', 'theme_location' => 'main-menu') );
 	} else { ?>
 		<ul class="sf-menu menu clearfix">
 			<li><a href="<?php bloginfo('url') ?>"><?php _e( arras_get_option('topnav_home') ); ?></a></li>
