@@ -5,6 +5,15 @@ j(document).ready(function() {
 	j('select[name|=arras-layout-col]').change( function() {
 		checkRegenThumbsField();
 	} );
+	
+	j('.enabler input[type=checkbox]').change( function() {
+		j(this).parent().parent().next().toggle();
+	} );
+	
+	j('.enabler input[type=checkbox]:checked').parent().parent().next().show();
+	j('.enabler input[type=checkbox]:not(:checked)').parent().parent().next().hide();
+	
+	j('.form-table select.multiple').multiSelect();
 });
 
 function checkRegenThumbsField() {

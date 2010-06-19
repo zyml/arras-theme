@@ -66,27 +66,24 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	}
 	
 	function featured_tab() {
-		$featured = arras_get_option('featured_cat');
-		
-		if (is_numeric($featured)) {
-			$f = new WP_Query('showposts=8&cat=' . $featured);
-			if (!$f->have_posts()) {
-				echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
-			} else {
-				echo '<ul>';
-				while ($f->have_posts()) {
-					$f->the_post();
-					?>
-					<li class="clearfix">
-					<span class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb') ?></span>
-					<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
-					<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
-					<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
-					</li>
-					<?php
-				}
-				echo '</ul>';
+		$q = arras_parse_query(arras_get_option('featured_cat'), 8);
+		$f = new WP_Query($q);
+		if (!$f->have_posts()) {
+			echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
+		} else {
+			echo '<ul>';
+			while ($f->have_posts()) {
+				$f->the_post();
+				?>
+				<li class="clearfix">
+				<span class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb') ?></span>
+				<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
+				<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
+				<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
+				</li>
+				<?php
 			}
+			echo '</ul>';
 		}
 	}
 	

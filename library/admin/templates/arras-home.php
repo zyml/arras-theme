@@ -1,6 +1,5 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
 <?php
-$cats = array('0' => __('All Categories', 'arras') );
 foreach( get_categories('hide_empty=0') as $c ) {
 	$cats[(string)$c->cat_ID] = $c->cat_name;
 }
@@ -8,18 +7,18 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 <div id="home" class="padding-content">
 
-<h3><?php _e('Featured Slideshow', 'arras') ?></h3>
+<h3><?php _e('Featured Slideshow', 'arras') ?> <span class="enabler"><?php echo arras_form_checkbox('arras-enable-slideshow', 'show', arras_get_option('enable_slideshow'), 'id="arras-enable-slideshow"') ?><label for="arras-enable-slideshow"><?php _e('Show/Hide', 'arras') ?></label></span></h3>
 <table class="form-table">
 
 <tr valign="top">
-<th scope="row"><label for="arras-cat-featured1"><?php _e('Show Category', 'arras') ?></label></th>
+<th scope="row"><label for="arras-cat-featured1"><?php _e('Stickied Posts / Categories', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_dropdown('arras-cat-featured1', array(
-	'-1' => __('Don\'t Show Featured Slideshow', 'arras'), 
+<?php echo arras_form_dropdown('arras-cat-featured1[]', array( 
 	'-5' => __('Stickied Posts', 'arras'), 
-	__('Available Categories', 'arras'
-) => $cats), arras_get_option('slideshow_cat') ); ?>
-<br /><?php _e('Articles from this category will be shown on the featured slideshow of the index page. <br />You can also specify your stickied posts as the featured \'category\'.', 'arras') ?>
+	__('Categories', 'arras'
+) => $cats), arras_get_option('slideshow_cat'), 'class="multiple" multiple="multiple"' ); ?>
+<br /><?php _e('Selected categories will be shown on the featured slideshow of the index page.', 'arras') ?>
+<br /><?php _e('If nothing is selected, this section will show <strong>all</strong> posts.', 'arras') ?>
 </td>
 </tr>
 
@@ -33,7 +32,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 </table>
 
-<h3><?php _e('Featured Posts', 'arras') ?></h3>
+<h3><?php _e('Featured Posts', 'arras') ?>  <span class="enabler"><?php echo arras_form_checkbox('arras-enable-featured', 'show', arras_get_option('enable_featured'), 'id="arras-enable-featured"') ?><label for="arras-enable-featured"><?php _e('Show/Hide', 'arras') ?></label></span></h3>
 <table class="form-table">
 
 <tr valign="top">
@@ -44,14 +43,14 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-cat-featured2"><?php _e('Show Category', 'arras') ?></label></th>
+<th scope="row"><label for="arras-cat-featured2"><?php _e('Stickied Posts / Categories', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_dropdown('arras-cat-featured2', array(
-	'-1' => __('Don\'t Show Featured Posts', 'arras'), 
+<?php echo arras_form_dropdown('arras-cat-featured2[]', array(
 	'-5' => __('Stickied Posts', 'arras'), 
-	__('Available Categories', 'arras'
-) => $cats), arras_get_option('featured_cat') ); ?>
-<br /><?php _e('Articles from this category will be shown below the featured slideshow of the index page. <br />You can also specify your stickied posts as the featured \'category\'.', 'arras') ?>
+	__('Categories', 'arras'
+) => $cats), arras_get_option('featured_cat'), 'class="multiple" multiple="multiple"' ); ?>
+<br /><?php _e('Selected categories will be shown below the featured slideshow of the index page.', 'arras') ?>
+<br /><?php _e('If nothing is selected, this section will show <strong>all</strong> posts.', 'arras') ?>
 </td>
 </tr>
 
@@ -85,7 +84,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </table>
 
 
-<h3><?php _e('News Posts', 'arras') ?></h3>
+<h3><?php _e('News Posts', 'arras') ?> <span class="enabler"><?php echo arras_form_checkbox('arras-enable-news', 'show', arras_get_option('enable_news'), 'id="arras-enable-news"') ?><label for="arras-enable-news"><?php _e('Show/Hide', 'arras') ?></label></span></h3>
 <table class="form-table">
 
 <tr valign="top">
@@ -96,10 +95,11 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-cat-news"><?php _e('News Category', 'arras') ?></label></th>
+<th scope="row"><label for="arras-cat-news"><?php _e('Stickied Posts / Categories', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_dropdown('arras-cat-news', $cats, arras_get_option('news_cat') ); ?>
-<br /><?php _e('The news category will be shown below the featured section in the index page.', 'arras') ?>
+<?php echo arras_form_dropdown('arras-cat-news', $cats, arras_get_option('news_cat'), 'class="multiple" multiple="multiple"' ); ?>
+<br /><?php _e('Selected categories will be shown below the featured section in the index page.', 'arras') ?>
+<br /><?php _e('If nothing is selected, this section will show <strong>all</strong> posts.', 'arras') ?>
 </td>
 </tr>
 

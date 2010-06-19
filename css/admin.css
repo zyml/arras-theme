@@ -1,9 +1,10 @@
-optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif; }
-
-.wrap					{ width: 1040px; }
 .grey					{ color: #999; }
+.ui-widget-content		{ border: none; }
+.ui-widget .code, .ui-widget code { font-family: Consolas,Monaco,Courier,monospace; font-size: 110%; }
 
-#arras-right-col		{ width: 230px; float: left; margin: 33px 0 0; }
+#arras-header  { margin-bottom: 15px; }
+
+#arras-right-col		{ width: 18%; float: left; margin: 3px 0 0; }
 #arras-right-col .postbox		{ margin-bottom: 10px; }
 #arras-right-col .postbox p		{ margin: 0 10px 10px; font-size: 11px; }
 #arras-right-col .postbox h3	{ font-size: 11px; line-height: 1; padding: 6px 9px; margin: 0 0 5px; }
@@ -11,15 +12,12 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #arras-right-col .postbox li a	{ text-decoration: none; }
 #arras-right-col .button-primary{ font-size: 11px !important; padding: 5px 7px; display: inline-block; }
 
-#arras-settings-form	{ float: left; margin: 0 10px 0 0; }
+#arras-settings-form	{ float: left; margin: 0 10px 0 0; width: 75%; }
 #arras-settings-form th { padding: 10px 7px; }
 
-
-#arras-tabs				{ margin: 5px 0 0; width: 100%; }
-#arras-tabs li			{ float: left; font-size: 12px; margin: 0; padding: 0; }
-#arras-tabs a			{ cursor: default; background: #F1F1F1 repeat-x left top; border: 1px solid #E3E3E3; border-right: none; color: #21759B; display: block; padding: 5px 12px; text-decoration: none; }
-#arras-tabs a:hover		{ background: #F2F2F2 url(../images/admin/white-grad-active.png) repeat-x scroll left top; color: #D54E21; }
-#arras-tabs .ui-tabs-selected a,.arras-hook-title	{ background: url(../../../../wp-admin/images/menu-bits-vs.gif) repeat-x scroll top left; border-bottom: none; color: #fff; font-weight: bold; padding-bottom: 6px; }
+#arras-tabs  { margin: 3px; }
+#arras-tabs li			{ float: left; margin: 2px 2px 0; padding: 0; }
+#arras-tabs a			{ cursor: default; display: block; text-decoration: none; font-size: 12px; padding: 3px 10px; }
 #arras-tabs li:first-child a	{ -moz-border-radius: 6px 0 0 0; -webkit-border-radius: 6px 0 0 0; }
 #arras-tabs li:last-child a	{ border-right: 1px solid #E3E3E3; -moz-border-radius: 0 6px 0 0; -webkit-border-radius: 6px 0 0 0; }
 
@@ -28,7 +26,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 #arras-custom-bg-form input { padding: 4px 5px; margin: 2px 5px 2px 0; }
 #arras-custom-bg-form .upload-bg { padding: 0 0 10px; border-bottom: 1px solid #CCC; margin: 0 0 10px; }
 #arras-custom-bg-form .advanced p  { font-size: 11px; }
-#arras-custom-bg-form .advanced label { font-size: 12px; }
+#arras-custom-bg-form .advanced label { }
 #custom-bg-preview		{ float: left; margin: 0 20px 0; }
 #custom-bg-preview h3	{ font-size: 12px; }
 #custom-bg-preview img	{ border: 3px solid #CCC; width: 600px; overflow: hidden; }
@@ -40,13 +38,15 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 
 #arras-logo-field		{ margin: 0 0 1em; }
 
-#regenthumbsbar			{ border: 1px solid #CCC; background: #FFF; }
-.ui-progressbar-value   { background: #DEEDF7; height: 25px; } 
+#regenthumbsbar			{ border: 1px solid #CCC; }
+.ui-progressbar-value   { height: 23px; } 
 
-.arras-options-wrapper	{ border: 1px solid #F1F1F1; border-top: 2px solid #436D92; padding: 0 10px; background: #FEFEFE; margin: 0 0 20px; -moz-border-radius: 0 6px 6px 6px; -webkit-border-radius: 0 6px 6px 6px; width: 760px; }
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
-.padding-content		{ padding: 0 0 10px; }
+.arras-options-wrapper  { padding: 0 10px; }
+.padding-content		{ padding: 0 0 10px; margin: 0 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .padding-content h3		{ font-size: 11px; margin: 10px 0 0; background: #F0F0F0; padding: 5px 7px; }
+.padding-content .enabler { float: right; }
+.padding-content .enabler label { font-weight: normal; color: #666; margin-left: 5px; }
 .form-table				{ margin-bottom: 0 !important; }
 .form-table th			{ font-size: 11px; min-width: 200px; }
 .form-table .largetext	{ font-size: 12px; }
@@ -54,6 +54,7 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 .form-table tr:last-child	{ border-bottom: 1px solid #DEDEDE; }
 .form-table tr:last-child td { padding-bottom: 20px; }
 .form-table select		{ width: 275px; }
+#wpcontent .form-table select.multiple { height: 70px; }
 .version				{ padding: 10px !important; }
 .version p				{ font-size: 11px; }
 .version .number		{ font-size: 12px !important; font-weight: bold; }
@@ -65,7 +66,34 @@ optgroup				{ font-style: normal !important; font-family: 'Verdana', sans-serif;
 
 .hide, .ui-tabs-hide	{ display: none !important; }
 
-.clearfix:after			{ clear: both; content: "."; display: block; height: 0; line-height: 0; visibility: hidden; }
-.clearfix				{ display: inline-block; }
-html[xmlns] .clearfix	{ display: block; }
-* html .clearfix		{ height: 1%; }
+.clearfix:after, .ui-helper-clearfix:after  { clear: both; content: "."; display: block; height: 0; line-height: 0; visibility: hidden; }
+.clearfix, .ui-helper-clearfix  { display: inline-block; }
+html[xmlns] .clearfix, html[xmlns] .ui-helper-clearfix  { display: block; }
+* html .clearfix  * html .ui-helper-clearfix  { height: 1%; }
+
+.ui-multiselect { font-weight:normal !important; display:-moz-inline-block; display:inline-block; cursor:default; text-decoration:none !important; padding:0; width: 245px !important; }
+.ui-multiselect input { float:left; padding:5px 0 5px 6px; margin:0; border:none !important /* important fixes bug when inside ui-widget-content */; cursor:default; background:transparent }
+.ui-multiselect span { float:right; margin-top: 4px; padding-right: 5px;  }
+
+.ui-multiselect-header { margin-bottom:3px; padding:3px 0 3px 6px }
+.ui-multiselect-header ul { font-size:0.9em }
+.ui-multiselect-header ul li { float:left; padding:0 10px 0 0; margin: 0; }
+.ui-multiselect-header a { text-decoration:none;}
+.ui-multiselect-header a:hover { text-decoration:none }
+.ui-multiselect-header .ui-icon { float:left }
+.ui-multiselect-header li.ui-multiselect-close { float:right; text-align:right; padding-right:0 }
+
+.ui-multiselect-options { display:none; padding:3px; position:relative; z-index:10000 }
+.ui-multiselect-checkboxes { position:relative /* fixes bug in IE6/7 */; overflow-y:scroll }
+.ui-multiselect-checkboxes label { cursor:default; display:block; border:1px solid transparent; padding:3px }
+.ui-multiselect-checkboxes label input { position:relative; top:-1px; margin-right:5px; }
+.ui-multiselect-checkboxes li { clear:both; font-size:12px; padding-right:3px; margin: 0; }
+.ui-multiselect-checkboxes li.ui-multiselect-optgroup-label { text-align:center; font-weight:bold; border-bottom:1px solid }
+.ui-multiselect-checkboxes li.ui-multiselect-optgroup-label a { display:block; padding:3px; margin:1px 0; text-decoration:none }
+
+/* remove label borders in IE6 because IE6 does not support transparency */
+* html .ui-multiselect-checkboxes label { border:none }
+
+/* shadow effect */
+.ui-multiselect-shadow { box-shadow:0 0 10px #777; -moz-box-shadow:0 0 10px #777; -webkit-box-shadow:0 0 10px #777; -ms-filter: "progid:DXImageTransform.Microsoft.Glow(color=#666666,strength=3) progid:DXImageTransform.Microsoft.Shadow(color=#777777,direction=135,strength=3)"; filter: progid:DXImageTransform.Microsoft.Glow(color=#666666,strength=3) progid:DXImageTransform.Microsoft.Shadow(color=#777777,direction=135,strength=3); }
+

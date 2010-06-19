@@ -4,16 +4,14 @@ class Options {
 	
 	// General Settings
 	var $version, $donate, $feed_url, $comments_feed_url, $twitter_username, $facebook_profile, $footer_title, $footer_message;
-	// Categories
-	var $slideshow_cat, $featured_cat, $news_cat;
 	// Navigation
 	var $topnav_home, $topnav_display, $topnav_linkcat;
+	// Home
+	var $enable_slideshow, $slideshow_cat, $slideshow_count;
+	var $enable_featured, $featured_title, $featured_cat, $featured_display, $featured_count, $featured_offset;
+	var $enable_news, $news_title, $news_cat, $news_display, $index_count, $news_offset;
 	// Layout
-	var $slideshow_count, $featured_count, $index_count;
-	var $featured_offset, $news_offset;
-	var $featured_title, $news_title;
-	var $featured_display, $news_display, $index_news_thumbs;
-	var $archive_display, $archive_news_thumbs;
+	var $archive_display;
 	var $display_author, $single_meta_pos, $single_custom_fields;
 	var $node_based_limit_words;
 	
@@ -44,26 +42,29 @@ class Options {
 		
 		$this->footer_title = __('Copyright', 'arras');
 		$this->footer_message = '<p>' . sprintf( __('Copyright %s. All Rights Reserved.', 'arras'), get_bloginfo('name') ) . '</p>';
-		
-		$this->featured_cat = 0;
-		
+
 		$this->topnav_home = __('Home', 'arras');
 		$this->topnav_display = 'categories';
 		$this->topnav_linkcat = 0;
 		
-		$this->featured_title = __('Featured Stories', 'arras');
-		$this->news_title = __('Latest Headlines', 'arras');
-		
+		$this->enable_slideshow = true;
+		$this->slideshow_cat = 0;
 		$this->slideshow_count = 4;
+		
+		$this->enable_featured = true;
+		$this->featured_title = __('Featured Stories', 'arras');
+		$this->featured_cat = 0;
+		$this->featured_display = 'default';
 		$this->featured_count = 3;
-		
 		$this->featured_offset = false;
-		$this->news_offset = false;
 		
-		$this->index_count = get_option('posts_per_page');
-		
-		$this->featured_display = 'default';	
+		$this->enable_news = true;
+		$this->news_title = __('Latest Headlines', 'arras');
+		$this->news_cat = 0;
 		$this->news_display = 'line';
+		$this->index_count = get_option('posts_per_page');
+		$this->news_offset = false;
+
 		$this->archive_display = 'quick';
 		
 		$this->display_author = true;
@@ -96,34 +97,34 @@ class Options {
 		$this->footer_title = (string)stripslashes($_POST['arras-footer-title']);
 		$this->footer_message = (string)($_POST['arras-footer-message']);
 		
-		$this->slideshow_cat = (int)$_POST['arras-cat-featured1'];
-		$this->featured_cat = (int)$_POST['arras-cat-featured2'];
-		$this->news_cat = (int)$_POST['arras-cat-news'];
-		
 		if ( !function_exists('wp_nav_menu') ) {
 			$this->topnav_home = (string)$_POST['arras-nav-home'];
 			$this->topnav_display = (string)$_POST['arras-nav-display'];
 			$this->topnav_linkcat = (int)$_POST['arras-nav-linkcat'];
 		}
 		
-		$this->node_based_limit_words = (int)$_POST['arras-layout-limit-words'];
-		
-		$this->slideshow_full_width = isset($_POST['arras-slideshow-fullwidth']);
+		$this->enable_slideshow = isset($_POST['arras-enable-slideshow']);
+		$this->slideshow_cat = $_POST['arras-cat-featured1'];
 		$this->slideshow_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
-		$this->featured_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
 		
-		$this->index_count = (int)stripslashes($_POST['arras-layout-index-count']);
-		
+		$this->enable_featured = isset($_POST['arras-enable-featured']);
 		$this->featured_title = (string)$_POST['arras-layout-featured-title'];
-		$this->news_title = (string)$_POST['arras-layout-news-title'];
-		
+		$this->featured_cat = $_POST['arras-cat-featured2'];
 		$this->featured_display = (string)$_POST['arras-layout-featured2-display'];
-		$this->news_display = (string)$_POST['arras-layout-index-newsdisplay'];
-		$this->archive_display = (string)$_POST['arras-layout-archive-newsdisplay'];
-		
+		$this->featured_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
 		$this->featured_offset = isset($_POST['arras-layout-featured-offset']);
+		
+		$this->enable_news = isset($_POST['arras-enable-news']);
+		$this->news_title = (string)$_POST['arras-layout-news-title'];
+		$this->news_cat = $_POST['arras-cat-news'];
+		$this->news_display = (string)$_POST['arras-layout-index-newsdisplay'];
+		$this->index_count = (int)stripslashes($_POST['arras-layout-index-count']);
 		$this->news_offset = isset($_POST['arras-layout-news-offset']);
 		
+		$this->node_based_limit_words = (int)$_POST['arras-layout-limit-words'];
+		
+		$this->archive_display = (string)$_POST['arras-layout-archive-newsdisplay'];
+
 		$this->display_author = isset($_POST['arras-layout-single-author']);
 		
 		$this->post_author = isset($_POST['arras-layout-post-author']);

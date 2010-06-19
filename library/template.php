@@ -144,5 +144,36 @@ function arras_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'arras_excerpt_length');
 
+function arras_parse_query($list, $count, $offset = null) {
+	$query = '';
+	
+	if ((array)$list === $list) {
+	
+		if ( in_array('-5', $list) ) {
+			$stickies = get_option('sticky_posts');
+			rsort($stickies);
+			if (count($stickies) > 0) {
+				$s = implode(',', $stickies);
+				$query .= 'p=' . $s . '&';
+			} else {
+				// if no sticky posts are available, return empty value
+				return false;
+			}
+			
+			$key = array_search('-5', $list);
+			unset($list[$key]);
+		}
+		
+		$c = implode(',', $list);
+		if ($c) $query .= 'cat=' . $c . '&';
+	}
+	
+	$query .= 'showposts=' . $count;
+	
+	if ($offset > 0) $query .= '&offset=' . $offset;
+	
+	return $query;
+}
+
 /* End of file template.php */
 /* Location: ./library/template.php */

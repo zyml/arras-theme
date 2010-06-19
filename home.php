@@ -17,65 +17,48 @@ $featured_count 	= (int)arras_get_option('featured_count');
 
 <?php if (!$paged) : ?>
 
+<?php if ( $featured_cat !== '' && arras_get_option('enable_featured') ) : ?>
 <?php arras_above_index_featured_post() ?>
-
 <!-- Featured Articles -->
-<?php if ( $featured_cat !== '' && $featured_cat != '-1' ) : ?>
 <div id="index-featured">
 <?php if ( arras_get_option('featured_title') != '' ) : ?>
 	<div class="home-title"><?php _e( arras_get_option('featured_title'), 'arras' ) ?></div>
 <?php endif ?>
 	<?php
-	if ($featured_cat == '-5') {
-		if (count($stickies) > 0) {
-			$query2 = array('post__in' => $stickies, 'showposts' => $featured_count );
-			if ( arras_get_option('featured_offset') && arras_get_option('slideshow_cat') == $featured_cat ) {
-				$query2['offset'] = $slideshow_count;
-			}
-		}
-	} else {
-		if ($featured_cat == '0') {
-			$query2 = 'showposts=' . $featured_count;
-		} else {
-			$query2 = 'showposts=' . $featured_count . '&cat=' . $featured_cat;
-		}
-		
-		if ( arras_get_option('featured_offset') && $slideshow_cat == $featured_cat ) {
-			$query2 .= '&offset=' . $slideshow_count;
-		}
+	$featured_offset = 0;
+	if ( arras_get_option('featured_offset') && arras_get_option('slideshow_cat') == $featured_cat ) {
+		$featured_offset = $slideshow_count;
 	}
-	
+	$query2 = arras_parse_query($featured_cat, $featured_count, $featured_offset);
 	arras_render_posts( apply_filters('arras_featured_query', $query2), arras_get_option('featured_display'), 'featured' );
 	?>
 </div><!-- #index-featured -->
 <?php endif; ?>
 
+<?php if ( arras_get_option('enable_news') ) : ?>
 <?php arras_above_index_news_post() ?>
-
 <!-- News Articles -->
 <div id="index-news">
 <?php if ( arras_get_option('news_title') != '' ) : ?>
 <div class="home-title"><?php _e( arras_get_option('news_title') ) ?></div>
 <?php endif ?>
 <?php
-$news_query_args = array(
-	'cat' => $news_cat,
-	'paged' => $paged,
-	'showposts' => ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) )
-);
-
+$news_offset = 0;
 if ( arras_get_option('news_offset') ) {
-	$news_offset = 0;
 	if ($slideshow_cat == $news_cat) {
 		$news_offset += $slideshow_count;
 	}
 	if ($featured_cat == $news_cat) {
 		$news_offset += $featured_count;
 	}
-	$news_query_args['offset'] = $news_offset;
+	$news_offset;
 }
 
-query_posts( apply_filters('arras_news_query', $news_query_args) );
+$news_query = arras_parse_query($news_cat, ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) ), $news_offset);
+
+$news_query .= '&paged=' . $paged;
+
+query_posts( apply_filters('arras_news_query', $news_query) );
 arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
@@ -85,8 +68,8 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 	</div>
 <?php } ?>
 </div><!-- #index-news -->
-
 <?php arras_below_index_news_post() ?>
+<?php endif; ?>
 
 <?php $sidebars = wp_get_sidebars_widgets(); ?>
 
