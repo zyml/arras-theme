@@ -34,7 +34,7 @@ else add_filter('arras_postheader', 'arras_postmeta');
     
 	<?php arras_below_post() ?>
 	<a name="comments"></a>
-    <?php comments_template('', true); ?>
+    <?php if ( get_post_custom_values('comments') comments_template('', true); ?>
 	<?php arras_below_comments() ?>
     
 <?php endwhile; else: ?>
@@ -42,10 +42,6 @@ else add_filter('arras_postheader', 'arras_postmeta');
 <?php arras_post_notfound() ?>
 
 <?php endif; ?>
-
-<?php arras_below_post() ?>
-<?php if ( get_post_custom_values('comments') ) comments_template('', true) ?>
-<?php arras_below_comments() ?>
 
 <?php arras_below_content() ?>
 </div><!-- #content -->
