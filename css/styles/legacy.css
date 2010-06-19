@@ -223,7 +223,7 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 .single .post .entry-cat, .single-post .entry-cat	{ display: block; color: #848485; margin: 5px 0 0; }
 .single-post .entry-info a:link, .single-post .entry-info a:visited	{ color: #666; text-decoration: none; }
 .single-post .entry-info a:hover	{ color: #333; }
-.single .post .entry-author, .single-post .entry-author { font-weight: 700; margin: 0; color: #848485; }
+.single .post .entry-author, .single-post .entry-author { font-weight: 700; margin: 0; color: #848485; display: inline; }
 .single .post .entry-author address, .single-post .entry-author address	{ display: inline; font-style: normal; }
 #main .single .post .tags, #main .single-post .tags { margin: 15px 0; padding: 15px 0 0; color: #848485; border-top: 1px dotted #CCC; }
 #main .single .post .tags a, #main .single-post .tags a { padding: 0; }

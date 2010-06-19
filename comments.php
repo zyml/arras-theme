@@ -46,13 +46,13 @@ if ( post_password_required() ) {
    </p>
    <?php else : ?>
     <p><label for="author"><?php _e('Name', 'arras') ?> <?php if ($req) _e('(required)', 'arras') ?></label><br />
-     <input type="text" name="author" id="s1" value="<?php echo $comment_author; ?>" size="40" tabindex="1" minlength="2" <?php if (get_option('require_name_email')) : ?>class="required"<?php endif ?> />
+     <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="40" tabindex="1" <?php if (get_option('require_name_email')) : ?>class="required"<?php endif ?> />
     </p>
     <p><label for="email"><?php _e('Mail (will not be published)', 'arras') ?> <?php if ($req) _e('(required)', 'arras') ?></label><br />
-     <input type="text" name="email" id="s2" value="<?php echo $comment_author_email; ?>" size="40" tabindex="2" <?php if (get_option('require_name_email')) : ?>class="required email"<?php endif ?> />
+     <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="40" tabindex="2" <?php if (get_option('require_name_email')) : ?>class="required email"<?php endif ?> />
     </p>
     <p><label for="url"><?php _e('Website', 'arras') ?></label><br />
-     <input type="text" name="url" id="s3" value="<?php echo $comment_author_url; ?>" size="40" tabindex="3" class="url" />
+     <input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="40" tabindex="3" class="url" />
     </p>
    <?php endif; ?>
 	<p><?php printf( __('<strong>XHTML:</strong> You can use these tags: <code>%s</code>', 'arras'), allowed_tags() ) ?></p>
