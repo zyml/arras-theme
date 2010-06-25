@@ -119,7 +119,7 @@ if (!function_exists('arras_tapestry_default')) {
 			<li <?php arras_post_class() ?>>
 				<?php echo apply_filters('arras_tapestry_default_postheader', arras_generic_postheader('node-based', true) ) ?>
 				<div class="entry-summary">
-					<?php echo arras_strip_content( get_the_excerpt(), arras_get_option('node_based_limit_words') ); ?>
+					<?php the_excerpt() ?>
 				</div>	
 			</li>
 			<?php

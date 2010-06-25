@@ -6,10 +6,6 @@ function arras_add_slideshow() {
 	$slideshow_cat = arras_get_option('slideshow_cat');
 	
 	if (arras_get_option('enable_slideshow') == false) return false;
-
-	if (function_exists('akpc_excerpt_compat_post')) {
-		remove_filter('get_the_excerpt', 'akpc_excerpt_compat_post', 999);
-	}
 	
 	$query = arras_parse_query($slideshow_cat, arras_get_option('slideshow_count'));
 	
@@ -24,9 +20,6 @@ function arras_add_slideshow() {
 		</div>
 		<div id="featured-slideshow">
 			<?php $count = 0; ?>
-		<?php
-		if (function_exists('dsq_loop_end')) remove_action('loop_end', 'dsq_loop_end'); // remove DISQUS action hook 
-		?>
 		
 			<?php while ($q->have_posts()) : $q->the_post(); ?>
 			<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
@@ -35,13 +28,12 @@ function arras_add_slideshow() {
 				<?php echo arras_get_thumbnail('featured-slideshow-thumb'); ?>
 				<span class="featured-entry">
 					<span class="entry-title"><?php the_title(); ?></span>
-					<span class="entry-summary"><?php echo arras_strip_content(get_the_excerpt(), 20); ?></span>
+					<span class="entry-summary"><?php the_excerpt() ?></span>
 					<span class="progress"></span>
 				</span>
 				</a>
 			</div>
 			<?php $count++; endwhile; ?>
-		<?php if (function_exists('dsq_loop_end')) add_action('loop_end', 'dsq_loop_end'); // add it back for other queries to use ?>
 		</div>
 	</div>
 	<?php endif;

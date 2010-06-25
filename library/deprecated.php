@@ -66,5 +66,22 @@ function arras_get_posts($page_type, $query = null) {
 <?php
 }
 
+function arras_strip_content($content, $limit) {
+	$content = apply_filters('the_content', $content);
+	
+	$content = strip_tags($content);
+	$content = str_replace(']]>', ']]&gt;', $content);
+	
+	$words = explode(' ', $content, ($limit + 1));
+	if(count($words) > $limit) {
+		array_pop($words);
+		//add a ... at last article when more than limit word count
+		return implode(' ', $words) . '...'; 
+	} else {
+		//otherwise
+		return implode(' ', $words); 
+	}
+}
+
 /* End of file deprecated.php */
 /* Location: ./library/deprecated.php */

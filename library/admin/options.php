@@ -13,7 +13,7 @@ class Options {
 	// Layout
 	var $archive_display;
 	var $display_author, $single_meta_pos, $single_custom_fields;
-	var $node_based_limit_words;
+	var $excerpt_limit;
 	
 	// added in 1.3.4
 	var $post_author, $post_date, $post_cats, $post_tags, $postbar_footer, $single_thumbs;
@@ -78,7 +78,7 @@ class Options {
 		$this->single_meta_pos = 'top';
 		$this->single_custom_fields = 'Score:score,Pros:pros,Cons:cons';
 		
-		$this->node_based_limit_words = 30;
+		$this->excerpt_limit = 30;
 		
 		$this->layout = '2c-r-fixed';
 		$this->style = 'default';
@@ -121,7 +121,7 @@ class Options {
 		$this->index_count = (int)stripslashes($_POST['arras-layout-index-count']);
 		$this->news_offset = isset($_POST['arras-layout-news-offset']);
 		
-		$this->node_based_limit_words = (int)$_POST['arras-layout-limit-words'];
+		$this->excerpt_limit = (int)$_POST['arras-layout-limit-words'];
 		
 		$this->archive_display = (string)$_POST['arras-layout-archive-newsdisplay'];
 

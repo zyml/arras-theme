@@ -117,30 +117,16 @@ function arras_parse_single_custom_fields() {
 	return $final;
 }
 
-function arras_strip_content($content, $limit) {
-	$content = apply_filters('the_content', $content);
-	
-	$content = strip_tags($content);
-	$content = str_replace(']]>', ']]&gt;', $content);
-	
-	$words = explode(' ', $content, ($limit + 1));
-	if(count($words) > $limit) {
-		array_pop($words);
-		//add a ... at last article when more than limit word count
-		return implode(' ', $words) . '...'; 
-	} else {
-		//otherwise
-		return implode(' ', $words); 
-	}
-}
-
 function arras_excerpt_more($excerpt) {
 	return str_replace(' [...]', '...', $excerpt);
 }
 add_filter('excerpt_more', 'arras_excerpt_more');
 
 function arras_excerpt_length($length) {
-	return 45;
+	if (!arras_get_option('excerpt_limit')) $limit = 30;
+	else $limit = arras_get_option('excerpt_limit');
+	
+	return $limit;
 }
 add_filter('excerpt_length', 'arras_excerpt_length');
 

@@ -8,15 +8,15 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 <div id="layout" class="padding-content">
 
-<h3><?php _e('Tapestry: Node Based', 'arras') ?></h3>
-
+<h3><?php _e('Excerpts', 'arras') ?></h3>
 <table class="form-table">
 
 <tr valign="top">
-<th scope="row"><label for="arras-layout-limit-words"><?php _e('Limit Excerpts', 'arras') ?></label></th>
+<th scope="row"><label for="arras-layout-limit-words"><?php _e('Excerpt Limit', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_input(array('name' => 'arras-layout-limit-words', 'id' => 'arras-layout-limit-words', 'size' => '5', 'value' => arras_get_option('node_based_limit_words'), 'maxlength' => 3 )) ?>
+<?php echo arras_form_input(array('name' => 'arras-layout-limit-words', 'id' => 'arras-layout-limit-words', 'size' => '5', 'value' => arras_get_option('excerpt_limit'), 'maxlength' => 3 )) ?>
  <?php ' ' . _e('words', 'arras') ?>
+ <br /><?php _e('Excerpts will only be trimmed to the limit if no excerpt is specified for the respective post.', 'arras') ?>
 </td>
 </tr>
 </table>
