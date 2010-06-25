@@ -172,7 +172,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 /* latest headlines */
 .posts-default, .posts-quick, .posts-line	{ list-style: none; margin: 0 0 20px; padding: 0; overflow: hidden; }
-.posts-default .post	{ float: left; margin: 0 15px 5px 0; font-size: 12px; padding: 0; }
+.posts-default .post	{ float: left; margin: 0 15px 0 0; font-size: 12px; padding: 0; }
 .posts-default img		{ float: left; background: #111; }
 .posts-default .entry-title	{ font-weight: 700; font-size: 14px; margin: 5px; line-height: 1.4em;  }
 .posts-default .entry-summary, .posts-quick .entry-summary	{ color: #111; overflow: hidden; margin: 0 5px; line-height: 1.4em; }
@@ -197,7 +197,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 .posts-default .entry-meta, .posts-quick .entry-meta	{ color: #CCC; float: left; background: #000; height: 25px; display: block; margin: -25px 0 0; font-weight: 700; opacity: 0.7; }
 .posts-default .entry-meta a:link, .posts-default .entry-meta a:visited, .posts-quick .entry-meta a:link, .posts-quick .entry-meta a:visited	{ color: #FFF; text-decoration: none; }
 .posts-default .entry-comments, .posts-quick .entry-comments { float: right; margin: 5px 5px 0; background: url(../../images/comments.gif) no-repeat left center; padding: 0 0 0 12px; }
-.posts-line				{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 10px 0; padding: 10px; line-height: 1.4em; }
+.posts-line				{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 20px 0; padding: 10px; line-height: 1.4em; }
 .posts-line	li			{ padding: 7px 0; border-bottom: 1px solid #EEE; }
 .posts-line .entry-cat	{ float: left; font-size: 11px; width: 100px; overflow: hidden; color: #848485; }
 .posts-line .entry-title	{ float: left; font-size: 12px; margin: 0; max-width: 450px; line-height: 1.4em; }
@@ -206,7 +206,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 .navigation				{ margin: 0 10px 10px 0; }
 
-.home-title				{ font-family: Century Gothic, Apple Gothic, sans-serif; text-transform: uppercase; font-weight: 700; font-size: 14px; padding: 0 3px 8px; border-bottom: 1px solid #DDD; margin: 0 15px 10px 0; color: #383331; }
+.home-title				{ font-family: Century Gothic, Apple Gothic, sans-serif; text-transform: uppercase; font-weight: 700; font-size: 14px; padding: 0 3px 8px; margin: 0 15px 5px 0; color: 666; }
 
 /* single post */
 .single .post, #main .single-post	{ background: #FFF; border: 1px solid #CCC; margin: 0 10px 15px 0; padding: 0 15px; }

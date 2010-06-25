@@ -8,7 +8,8 @@ class Options {
 	var $topnav_home, $topnav_display, $topnav_linkcat;
 	// Home
 	var $enable_slideshow, $slideshow_cat, $slideshow_count;
-	var $enable_featured, $featured_title, $featured_cat, $featured_display, $featured_count, $featured_offset;
+	var $enable_featured1, $featured1_title, $featured1_cat, $featured1_display, $featured1_count, $featured1_offset;
+	var $enable_featured2, $featured2_title, $featured2_cat, $featured2_display, $featured2_count, $featured2_offset;
 	var $enable_news, $news_title, $news_cat, $news_display, $index_count, $news_offset;
 	// Layout
 	var $archive_display;
@@ -51,12 +52,19 @@ class Options {
 		$this->slideshow_cat = 0;
 		$this->slideshow_count = 4;
 		
-		$this->enable_featured = true;
-		$this->featured_title = __('Featured Stories', 'arras');
-		$this->featured_cat = 0;
-		$this->featured_display = 'default';
-		$this->featured_count = 3;
-		$this->featured_offset = false;
+		$this->enable_featured1 = true;
+		$this->featured1_title = __('Featured Stories', 'arras');
+		$this->featured1_cat = 0;
+		$this->featured1_display = 'default';
+		$this->featured1_count = 3;
+		$this->featured1_offset = false;
+		
+		$this->enable_featured2 = true;
+		$this->featured2_title = __("Editors' Picks", 'arras');
+		$this->featured2_cat = 0;
+		$this->featured2_display = 'quick';
+		$this->featured2_count = 3;
+		$this->featured2_offset = false;
 		
 		$this->enable_news = true;
 		$this->news_title = __('Latest Headlines', 'arras');
@@ -104,15 +112,22 @@ class Options {
 		}
 		
 		$this->enable_slideshow = isset($_POST['arras-enable-slideshow']);
-		$this->slideshow_cat = $_POST['arras-cat-featured1'];
-		$this->slideshow_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
+		$this->slideshow_cat = $_POST['arras-cat-slideshow'];
+		$this->slideshow_count = (int)stripslashes($_POST['arras-layout-slideshow-count']);
 		
-		$this->enable_featured = isset($_POST['arras-enable-featured']);
-		$this->featured_title = (string)$_POST['arras-layout-featured-title'];
-		$this->featured_cat = $_POST['arras-cat-featured2'];
-		$this->featured_display = (string)$_POST['arras-layout-featured2-display'];
-		$this->featured_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
-		$this->featured_offset = isset($_POST['arras-layout-featured-offset']);
+		$this->enable_featured1 = isset($_POST['arras-enable-featured1']);
+		$this->featured1_title = (string)$_POST['arras-layout-featured1-title'];
+		$this->featured1_cat = $_POST['arras-cat-featured1'];
+		$this->featured1_display = (string)$_POST['arras-layout-featured1-display'];
+		$this->featured1_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
+		$this->featured1_offset = isset($_POST['arras-layout-featured1-offset']);
+		
+		$this->enable_featured2 = isset($_POST['arras-enable-featured2']);
+		$this->featured2_title = (string)$_POST['arras-layout-featured2-title'];
+		$this->featured2_cat = $_POST['arras-cat-featured2'];
+		$this->featured2_display = (string)$_POST['arras-layout-featured2-display'];
+		$this->featured2_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
+		$this->featured2_offset = isset($_POST['arras-layout-featured2-offset']);
 		
 		$this->enable_news = isset($_POST['arras-enable-news']);
 		$this->news_title = (string)$_POST['arras-layout-news-title'];

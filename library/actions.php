@@ -129,11 +129,27 @@ function arras_below_index_news_post() {
 }
 
 /**
- * Called before the featured posts in the index page
+ * Called before the featured post (#1) in the index page
  * @since 1.4.3
  */
 function arras_above_index_featured_post() {
-	do_action('arras_above_index_featured_post');	
+	arras_above_index_featured1_post();
+}
+
+/**
+ * Called before the featured post (#1) in the index page
+ * @since 1.4.3
+ */
+function arras_above_index_featured1_post() {
+	do_action('arras_above_index_featured1_post');	
+}
+
+/**
+ * Called before the featured post (#1) in the index page
+ * @since 1.4.3
+ */
+function arras_above_index_featured2_post() {
+	do_action('arras_above_index_featured2_post');	
 }
 
 /* End of file actions.php */
