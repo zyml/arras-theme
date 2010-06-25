@@ -18,7 +18,6 @@ foreach( get_categories('hide_empty=0') as $c ) {
 	__('Categories', 'arras'
 ) => $cats), arras_get_option('slideshow_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown on the featured slideshow of the index page.', 'arras') ?>
-<br /><?php _e('<strong>All posts</strong> will be shown if nothing is selected.', 'arras') ?>
 </td>
 </tr>
 
@@ -50,12 +49,11 @@ foreach( get_categories('hide_empty=0') as $c ) {
 	__('Categories', 'arras'
 ) => $cats), arras_get_option('featured_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown below the featured slideshow of the index page.', 'arras') ?>
-<br /><?php _e('<strong>All posts</strong> will be shown if nothing is selected.', 'arras') ?>
 </td>
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-layout-featured2-display"><?php _e('Display Type', 'arras') ?></label></th>
+<th scope="row"><label for="arras-layout-featured2-display"><?php _e('Tapestry (Display Type)', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_dropdown(
 	'arras-layout-featured2-display',
@@ -99,12 +97,11 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <td>
 <?php echo arras_form_dropdown('arras-cat-news', $cats, arras_get_option('news_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown below the featured section in the index page.', 'arras') ?>
-<br /><?php _e('<strong>All posts</strong> will be shown if nothing is selected.', 'arras') ?>
 </td>
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-layout-index-newsdisplay"><?php _e('News Display Type', 'arras') ?></label></th>
+<th scope="row"><label for="arras-layout-index-newsdisplay"><?php _e('Tapestry (Display Type)', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_dropdown(
 	'arras-layout-index-newsdisplay',

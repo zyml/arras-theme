@@ -13,7 +13,7 @@ j(document).ready(function() {
 	j('.enabler input[type=checkbox]:checked').parent().parent().next().show();
 	j('.enabler input[type=checkbox]:not(:checked)').parent().parent().next().hide();
 	
-	j('.form-table select.multiple').multiSelect();
+	j('.form-table select.multiple').multiSelect({noneSelectedText: 'All Posts', showHeader: false});
 });
 
 function checkRegenThumbsField() {

@@ -1,6 +1,8 @@
 <?php 
 
 function arras_add_slideshow() {
+	if (!is_home()) return false;
+	
 	$slideshow_cat = arras_get_option('slideshow_cat');
 	
 	if (arras_get_option('enable_slideshow') == false) return false;
@@ -44,6 +46,7 @@ function arras_add_slideshow() {
 	</div>
 	<?php endif;
 }
+
 add_action('arras_above_content', 'arras_add_slideshow');
 
 function arras_add_slideshow_js() {

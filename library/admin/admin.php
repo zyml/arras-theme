@@ -124,10 +124,9 @@ function arras_admin() {
 }
 
 function arras_admin_scripts() {
-	wp_enqueue_script('jquery-ui-tabs', null, 'jquery-ui-core');
+	wp_enqueue_script('jquery-ui-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.2.custom.min.js', null, 'jquery');
 	wp_enqueue_script('arras-admin-js', get_template_directory_uri() . '/js/admin.js');
 	wp_enqueue_script('jquery-multiselect', get_template_directory_uri() . '/js/jquery.multiselect.min.js', null, 'jquery');
-	wp_enqueue_script('jquery-ui-progressbar', get_template_directory_uri() . '/js/jquery-ui.progressbar.min.js', null, 'jquery');
 }
 
 function arras_admin_styles() {
