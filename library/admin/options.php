@@ -112,26 +112,34 @@ class Options {
 		}
 		
 		$this->enable_slideshow = isset($_POST['arras-enable-slideshow']);
-		$this->slideshow_cat = $_POST['arras-cat-slideshow'];
+		if (isset($_POST['arras-cat-slideshow'])) {
+			$this->slideshow_cat = $_POST['arras-cat-slideshow'];
+		}
 		$this->slideshow_count = (int)stripslashes($_POST['arras-layout-slideshow-count']);
 		
 		$this->enable_featured1 = isset($_POST['arras-enable-featured1']);
 		$this->featured1_title = (string)$_POST['arras-layout-featured1-title'];
-		$this->featured1_cat = $_POST['arras-cat-featured1'];
+		if (isset($_POST['arras-cat-featured1'])) {
+			$this->featured1_cat = $_POST['arras-cat-featured1'];
+		}
 		$this->featured1_display = (string)$_POST['arras-layout-featured1-display'];
 		$this->featured1_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
 		$this->featured1_offset = isset($_POST['arras-layout-featured1-offset']);
 		
 		$this->enable_featured2 = isset($_POST['arras-enable-featured2']);
 		$this->featured2_title = (string)$_POST['arras-layout-featured2-title'];
-		$this->featured2_cat = $_POST['arras-cat-featured2'];
+		if (isset($_POST['arras-cat-featured2'])) {
+			$this->featured2_cat = $_POST['arras-cat-featured2'];
+		}
 		$this->featured2_display = (string)$_POST['arras-layout-featured2-display'];
 		$this->featured2_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
 		$this->featured2_offset = isset($_POST['arras-layout-featured2-offset']);
 		
 		$this->enable_news = isset($_POST['arras-enable-news']);
 		$this->news_title = (string)$_POST['arras-layout-news-title'];
-		$this->news_cat = $_POST['arras-cat-news'];
+		if (isset($_POST['arras-cat-news'])) {
+			$this->news_cat = $_POST['arras-cat-news'];
+		}
 		$this->news_display = (string)$_POST['arras-layout-index-newsdisplay'];
 		$this->index_count = (int)stripslashes($_POST['arras-layout-index-count']);
 		$this->news_offset = isset($_POST['arras-layout-news-offset']);
