@@ -161,5 +161,31 @@ function arras_parse_query($list, $count, $offset = null) {
 	return $query;
 }
 
+function arras_social_nav() {
+	$feed = arras_get_option('feed_url');
+	$comments_feed = arras_get_option('comments_feed_url');
+?>
+	<ul class="quick-nav clearfix">
+		<?php if ($feed == '') : ?>
+			<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
+		<?php else : ?>
+			<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $feed; ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
+		<?php endif; ?>
+		
+		<?php $twitter_username = arras_get_option('twitter_username'); ?>
+		<?php if ($twitter_username != '') : ?>
+			<li><a id="twitter" title="<?php printf( __( '%s Twitter', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="http://www.twitter.com/<?php echo $twitter_username ?>/" target="_blank"><?php _e('Twitter', 'arras') ?></a></li>
+		<?php endif ?>
+		
+		<?php $facebook_profile = arras_get_option('facebook_profile'); ?>
+		<?php if ($facebook_profile != '') : ?>
+			<li><a id="facebook" title="<?php printf( __( '%s Facebook', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $facebook_profile ?>" target="_blank"><?php _e('Facebook', 'arras') ?></a></li>
+		<?php endif ?>
+		
+		<?php do_action('arras_quick_nav'); // hook to include additional social icons, etc. ?>
+	</ul>
+<?php
+}
+
 /* End of file template.php */
 /* Location: ./library/template.php */

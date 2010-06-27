@@ -11,7 +11,8 @@ if ( function_exists('add_theme_support') ) {
 	
 	if ( function_exists('register_nav_menus') ) {
 		register_nav_menus(array(
-			'main-menu'	=> __('Main Menu', 'arras')
+			'main-menu'	=> __('Main Menu', 'arras'),
+			'top-menu'	=> __('Top Menu', 'arras')
 		));
 	}
 	
@@ -84,6 +85,7 @@ if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
 
 add_action('arras_head', 'arras_override_styles');
 add_action('arras_custom_styles', 'arras_add_custom_logo');
+add_action('arras_beside_nav', 'arras_social_nav');
 
 add_action('wp_head', 'arras_head');
 add_action('wp_head', 'arras_add_user_css', 100);

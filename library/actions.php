@@ -41,6 +41,22 @@ function arras_below_content() {
 }
 
 /**
+ * Called before the top menus
+ * @since 1.5 
+ */
+function arras_above_top_menu() {
+	do_action('arras_above_top_menu');
+}
+
+/**
+ * Called after the top menus
+ * @since 1.5 
+ */
+function arras_below_top_menu() {
+	do_action('arras_below_top_menu');
+}
+
+/**
  * Called before the main navigation
  * @since 1.2.1 
  */
@@ -137,19 +153,35 @@ function arras_above_index_featured_post() {
 }
 
 /**
- * Called before the featured post (#1) in the index page
- * @since 1.4.3
+ * Called before the featured post #1 in the index page
+ * @since 1.5
  */
 function arras_above_index_featured1_post() {
 	do_action('arras_above_index_featured1_post');	
 }
 
 /**
- * Called before the featured post (#1) in the index page
- * @since 1.4.3
+ * Called before the featured post #2 in the index page
+ * @since 1.5
  */
 function arras_above_index_featured2_post() {
 	do_action('arras_above_index_featured2_post');	
+}
+
+/**
+ * Called right after the main navigation
+ * @since 1.5
+ */
+function arras_beside_nav() {
+	do_action('arras_beside_nav');	
+}
+
+/**
+ * Called right after the top menus
+ * @since 1.5
+ */
+function arras_beside_top_menu() {
+	do_action('arras_beside_top_menu');	
 }
 
 /* End of file actions.php */

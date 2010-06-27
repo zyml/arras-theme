@@ -67,6 +67,18 @@ document.body.className = c;
 </script>
 <?php arras_body() ?>
 
+<?php arras_above_top_menu() ?>
+<div id="top-menu" class="clearfix">
+	<div id="top-menu-content">
+	<?php 
+	if ( function_exists('wp_nav_menu') ) {
+		wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'sf-menu menu clearfix', 'theme_location' => 'top-menu') );
+	}
+	?>
+	<?php arras_beside_top_menu() ?>
+	</div><!-- #nav-content -->
+</div><!-- #top-menu -->
+<?php arras_below_top_menu() ?>
 
 <div id="header">
 	<div id="branding" class="clearfix">
@@ -105,25 +117,7 @@ document.body.className = c;
 			?>
 		</ul>
 	<?php } ?>
-		<ul class="quick-nav clearfix">
-			<?php if ($feed == '') : ?>
-				<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
-			<?php else : ?>
-				<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $feed; ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
-			<?php endif; ?>
-			
-			<?php $twitter_username = arras_get_option('twitter_username'); ?>
-			<?php if ($twitter_username != '') : ?>
-				<li><a id="twitter" title="<?php printf( __( '%s Twitter', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="http://www.twitter.com/<?php echo $twitter_username ?>/" target="_blank"><?php _e('Twitter', 'arras') ?></a></li>
-			<?php endif ?>
-			
-			<?php $facebook_profile = arras_get_option('facebook_profile'); ?>
-			<?php if ($facebook_profile != '') : ?>
-				<li><a id="facebook" title="<?php printf( __( '%s Facebook', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $facebook_profile ?>" target="_blank"><?php _e('Facebook', 'arras') ?></a></li>
-			<?php endif ?>
-			
-			<?php do_action('arras_quick_nav'); // hook to include additional social icons, etc. ?>
-		</ul>
+	<?php arras_beside_nav() ?>
 	</div><!-- #nav-content -->
 </div><!-- #nav -->
 <?php arras_below_nav() ?>
