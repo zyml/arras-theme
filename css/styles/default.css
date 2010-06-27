@@ -1,6 +1,6 @@
 /* globals */
 html					{ height: 100%; min-height: 100%; margin: 0; padding: 0; }
-body					{ background-color: #F1EFE6; color: #333; font: 12px 'Lucida Grande',Arial,Helvetica,sans-serif; height: 100%; min-height: 100%; margin: 0; padding: 0; }
+body					{ background-color: #F0F0F0; color: #333; font: 12px 'Lucida Grande',Arial,Helvetica,sans-serif; height: 100%; min-height: 100%; margin: 0; padding: 0; }
 
 .clearfix:after			{ clear: both; content: "."; display: block; height: 0; line-height: 0; visibility: hidden; }
 .clearfix				{ display: inline-block; }
@@ -64,9 +64,11 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 
 .avatar					{ float: left; margin: 0 10px 10px 0; border: 1px solid #CCC; padding: 2px; background: #FFF; }
 
+label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA; margin: 5px 0; }
+
 /* structure */
 #wrapper				{ min-height: 100%; position: relative; padding: 20px 0; }
-#main					{ padding: 10px 10px 0; background: #f7f6f0; border: 1px solid #d3d1c7; }
+#main					{ padding: 10px 10px 0; background: #F5F5F5; border: 1px solid #d3d1c7; }
 
 /* header */
 #header					{ min-width:990px; background: #1e1b1a; border-bottom: 5px solid #383332; padding: 0; }
@@ -342,5 +344,3 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 #footer .footer-message .floatright { margin-left: 20px; }
 #footer-sidebar		{ overflow: hidden; margin: 10px 10px 0; padding: 0 0 10px; border-bottom: 1px solid #CCC; }
 #footer-sidebar .widgetcontainer	{ float: left; margin: 0; max-width: 250px; }
-#footer-sidebar ul	{ list-style: none; margin: 0; padding: 0; }
-#footer-sidebar li	{ margin: 0 0 3px; }

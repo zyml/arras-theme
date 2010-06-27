@@ -8,7 +8,7 @@ if (!$arras_custom_bg_options) {
 		'pos-x'			=> 'center',
 		'pos-y'			=> 'top',
 		'repeat'		=> 'no-repeat',
-		'color'			=> '#F1EFE6',
+		'color'			=> '#F0F0F0',
 		'foreground'	=> false,
 		'wrap'			=> false
 	);
