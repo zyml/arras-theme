@@ -23,15 +23,14 @@ function arras_add_slideshow() {
 		
 			<?php while ($q->have_posts()) : $q->the_post(); ?>
 			<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
-
 				<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark">
 				<?php echo arras_get_thumbnail('featured-slideshow-thumb'); ?>
-				<span class="featured-entry">
-					<span class="entry-title"><?php the_title(); ?></span>
-					<span class="entry-summary"><?php the_excerpt() ?></span>
-					<span class="progress"></span>
-				</span>
 				</a>
+				<div class="featured-entry">
+					<a class="entry-title" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+					<div class="entry-summary"><?php the_excerpt() ?></div>
+					<div class="progress"></div>
+				</div>
 			</div>
 			<?php $count++; endwhile; ?>
 		</div>
