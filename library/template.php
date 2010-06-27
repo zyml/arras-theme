@@ -104,6 +104,8 @@ function arras_single_post_class() {
 }
 
 function arras_parse_single_custom_fields() {
+	if (arras_get_option('single_custom_fields') == '') return false;
+	
 	$arr = explode( ',', arras_get_option('single_custom_fields') );
 	$final = array();
 	
