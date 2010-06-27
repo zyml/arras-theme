@@ -33,7 +33,6 @@
 		
 		</div>
         
-        <!-- <?php trackback_rdf() ?> -->
 		<?php arras_postfooter() ?>
 
     </div>

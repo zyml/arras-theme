@@ -19,8 +19,7 @@ else add_filter('arras_postheader', 'arras_postmeta');
         <?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ', 'arras'), 
 			'after' => '</p>', 'next_or_number' => 'number')); ?>
 		</div>
-        
-        <!-- <?php trackback_rdf() ?> -->
+
 		<?php arras_postfooter() ?>
 
         <?php 

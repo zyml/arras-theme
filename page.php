@@ -20,7 +20,6 @@ else add_filter('arras_postheader', 'arras_postmeta');
 			'after' => '</p>', 'next_or_number' => 'number')); ?>
 		</div>
         
-        <!-- <?php trackback_rdf() ?> -->
 		<?php arras_postfooter() ?>
 
         <?php if ( arras_get_option('display_author') ) : ?>
