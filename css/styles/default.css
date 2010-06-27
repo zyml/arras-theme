@@ -268,6 +268,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 .gallery				{ clear: both; margin: 10px 0; }
 .gallery-item			{ float: left; margin-right: 10px; }
+.gallery-icon img		{ background: #FFF; border: 1px solid #CCC; padding: 4px; }
 
 .about-author			{ border: 1px solid #CCC; padding: 10px; margin: 0 0 10px; line-height: 1.5em; background: #F5F5F5; }
 .about-author .avatar	{ margin-bottom: 0; }
