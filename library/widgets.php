@@ -45,7 +45,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		$this->featured_cat = $instance['featured_cat'];
 		$this->postcount = $instance['postcount'];
 		$this->commentcount = $instance['commentcount'];
-		$this->display_thumbs = $instance['display_thumbs'];
+		$this->display_thumbs = isset($instance['display_thumbs']);
 		
 		if (!$instance['order']) $instance['order'] = $this->get_tabs();
 		
@@ -179,6 +179,8 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		) );
 		$order = $instance['order'];
 		
+		if (!is_array($instance['featured_cat'])) $instance['featured_cat'] = array(0);
+		
 		?>
 		<p>
 		<label for="<?php echo $this->get_field_id('featured_cat') ?>"><?php _e('Featured Categories:', 'arras') ?></label><br />
@@ -278,19 +280,19 @@ class Arras_Featured_Stories extends WP_Widget {
 		}
 		
 		$title = apply_filters('widget_title', $instance['title']);
-		$cat = (int)strip_tags($instance['featured_cat']);
 		
 		echo $before_widget;
 		echo $before_title . $title . $after_title;
 		
-		$r = new WP_Query( array('showposts' => $instance['postcount'], 'cat' => $cat) );
+		$q = arras_parse_query($instance['featured_cat'], $instance['postcount']);
+		$r = new WP_Query($q);
 		if ($r->have_posts()) {
 		
 		echo '<ul class="featured-stories">';
 		while ($r->have_posts()) : $r->the_post();
 		?>
 		<li class="clearfix">
-			<span class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb', get_the_ID()) ?></span>
+			<?php if ( isset($instance['show_thumbs']) ) : ?><span class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb', get_the_ID()) ?></span><?php endif ?>
 			<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
 			<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
 			<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
@@ -319,6 +321,7 @@ class Arras_Featured_Stories extends WP_Widget {
 		$instance['postcount'] = (int)strip_tags($new_instance['postcount']);
 		$instance['no_display_in_home'] = strip_tags($new_instance['no_display_in_home']);
 		$instance['show_excerpts'] = strip_tags($new_instance['show_excerpts']);
+		$instance['show_thumbs'] = strip_tags($new_instance['show_thumbs']);
 		
 		return $instance;
 	}
@@ -329,25 +332,27 @@ class Arras_Featured_Stories extends WP_Widget {
 			'featured_cat' 			=> 0, 
 			'postcount' 			=> 5, 
 			'no_display_in_home' 	=> true, 
-			'show_excerpts' 		=> true 
+			'show_excerpts' 		=> true,
+			'show_thumbs'			=> true
 		) );
 		
-		$cats = array('0' => __('All Categories', 'arras') );
-		foreach( get_categories('hide_empty=0') as $c ) {
-			$cats[(string)$c->cat_ID] = $c->cat_name;
-		}
+		if (!is_array($instance['featured_cat'])) $instance['featured_cat'] = array(0);
 		
 		?>
 		<p><label for="<?php echo $this->get_field_id('title') ?>"><?php _e('Title:', 'arras') ?></label><br />
 		<input type="text" id="<?php echo $this->get_field_id('title') ?>" name="<?php echo $this->get_field_name('title') ?>" size="33" value="<?php echo strip_tags($instance['title']) ?>" />
 		</p>
-		<p><label for="<?php echo $this->get_field_id('featured_cat') ?>"><?php _e('Featured Category:', 'arras') ?></label><br />
-		<select class="widefat" id="<?php echo $this->get_field_id('featured_cat') ?>" name="<?php echo $this->get_field_name('featured_cat') ?>">
-			<?php foreach ($cats as $id => $name) : ?>
-			<option value="<?php echo $id ?>"<?php if ($id == $instance['featured_cat']) : ?> selected="selected"<?php endif ?>>
-			<?php echo $name ?>
-			</option>
-			<?php endforeach ?>
+		<p>
+		<label for="<?php echo $this->get_field_id('featured_cat') ?>"><?php _e('Featured Categories:', 'arras') ?></label><br />
+		<select multiple="multiple" style="width: 200px; height: 75px" name="<?php echo $this->get_field_name('featured_cat') ?>[]">
+			<option<?php if (in_array(0, $instance['featured_cat'])) echo ' selected="selected" ' ?> value="0"><?php _e('All Categories', 'arras') ?></option>
+		<?php
+		foreach( get_categories('hide_empty=0') as $c ) {
+			$selected = '';
+			if (in_array($c->cat_ID, $instance['featured_cat'])) $selected = ' selected="selected"';
+			echo '<option' . $selected . ' value="' . $c->cat_ID . '">' . $c->cat_name . '</option>';
+		}
+		?>
 		</select>
 		</p>
 		
@@ -362,11 +367,13 @@ class Arras_Featured_Stories extends WP_Widget {
 		
 		<p>
 		<input type="checkbox" name="<?php echo $this->get_field_name('no_display_in_home') ?>" <?php if ($instance['no_display_in_home']) : ?> checked="checked" <?php endif ?> />
-		<label for="<?php echo $this->get_field_id('no_display_in_home') ?>"><?php _e('Don\'t display in homepage?', 'arras') ?></label>
-		</p>
-		<p>
+		<label for="<?php echo $this->get_field_id('no_display_in_home') ?>"><?php _e('Do not display in homepage', 'arras') ?></label>
+		<br />
 		<input type="checkbox" name="<?php echo $this->get_field_name('show_excerpts') ?>" <?php if ($instance['show_excerpts']) : ?> checked="checked" <?php endif ?> />
-		<label for="<?php echo $this->get_field_id('show_excerpts') ?>"><?php _e('Show post excerpts?', 'arras') ?></label>
+		<label for="<?php echo $this->get_field_id('show_excerpts') ?>"><?php _e('Show post excerpts', 'arras') ?></label>
+		<br />
+		<input type="checkbox" name="<?php echo $this->get_field_name('show_thumbs') ?>" <?php if ($instance['show_thumbs']) : ?> checked="checked" <?php endif ?> />
+		<label for="<?php echo $this->get_field_id('show_thumbs') ?>"><?php _e('Show thumbnails', 'arras') ?></label>
 		</p>
 		<?php
 	}
