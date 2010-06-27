@@ -247,6 +247,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 #main .single .post .tags strong, #main .single-post .tags strong { text-transform: uppercase; font-size: 11px; }
 .single .post .entry-photo, .single-post .entry-photo	{ overflow: hidden; }
 .single .post .entry-photo img, .single-post .entry-photo img	{ margin: 10px 0; overflow: hidden; border: 1px solid #CCC; }
+.single .post .entry-comments, .single-post .entry-comments  { float: right; padding: 3px 3px 3px 17px; margin-top: 20px; background: url(../../images/comments.gif) no-repeat 3px 6px #383331; color: #FFF; display: inline-block; }
 
 .entry-content, .entry-content	{ margin: 10px 0; font-size: 12px; line-height: 1.5em; }
 .entry-content ul, .entry-content ol  { margin: 0 15px; padding: 0 0 1.5em; }
