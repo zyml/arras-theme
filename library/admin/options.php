@@ -118,7 +118,7 @@ class Options {
 		$this->slideshow_count = (int)stripslashes($_POST['arras-layout-slideshow-count']);
 		
 		$this->enable_featured1 = isset($_POST['arras-enable-featured1']);
-		$this->featured1_title = (string)$_POST['arras-layout-featured1-title'];
+		$this->featured1_title = (string)(stripslashes($_POST['arras-layout-featured1-title']));
 		if (isset($_POST['arras-cat-featured1'])) {
 			$this->featured1_cat = $_POST['arras-cat-featured1'];
 		}
@@ -127,7 +127,7 @@ class Options {
 		$this->featured1_offset = isset($_POST['arras-layout-featured1-offset']);
 		
 		$this->enable_featured2 = isset($_POST['arras-enable-featured2']);
-		$this->featured2_title = (string)$_POST['arras-layout-featured2-title'];
+		$this->featured2_title = (string)(stripslashes($_POST['arras-layout-featured2-title']));
 		if (isset($_POST['arras-cat-featured2'])) {
 			$this->featured2_cat = $_POST['arras-cat-featured2'];
 		}
@@ -136,7 +136,7 @@ class Options {
 		$this->featured2_offset = isset($_POST['arras-layout-featured2-offset']);
 		
 		$this->enable_news = isset($_POST['arras-enable-news']);
-		$this->news_title = (string)$_POST['arras-layout-news-title'];
+		$this->news_title = (string)(stripslashes($_POST['arras-layout-news-title']));
 		if (isset($_POST['arras-cat-news'])) {
 			$this->news_cat = $_POST['arras-cat-news'];
 		}
