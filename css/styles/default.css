@@ -69,7 +69,7 @@ img.aligncenter, img.alignright, img.alignleft  { border: 1px solid #DDD; text-a
 #main					{ padding: 10px 10px 0; background: #f7f6f0; border: 1px solid #d3d1c7; }
 
 /* header */
-#header					{ background: #1e1b1a; border-bottom: 5px solid #383332; padding: 0; }
+#header					{ min-width:990px; background: #1e1b1a; border-bottom: 5px solid #383332; padding: 0; }
 #branding				{ width: 980px; margin: 0 auto; padding: 0 0 25px; }
 .logo					{ max-width: 590px; float: left; margin: 21px 0 0 10px; }
 .blog-name				{ font-family: 'Segoe UI', Arial, Helvetica, sans-serif; font-size: 22px; margin: 0 0 3px; line-height: 1em; display: block; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
@@ -91,7 +91,7 @@ ul.sf-menu li li:hover li ul, ul.sf-menu li li.sfHover li ul  { top: -999em; }
 ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top: 0; }
 
 /* main navigation */
-#nav  { background: url(../../images/topnav.jpg) repeat-x top; font-weight: 700; }
+#nav  { background: url(../../images/topnav.jpg) repeat-x top; font-weight: 700; min-width:990px; }
 #nav-content  { height: 32px; margin: 0 auto; width: 978px; }
 #nav .sf-menu  { float: left; line-height: 1.1; max-width: 770px; }
 #nav .sf-menu a  { text-decoration: none; padding: 8px 10px 11px; color: #777; font-size: 12px; }
