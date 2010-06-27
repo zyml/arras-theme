@@ -52,7 +52,8 @@ $('#featured-slideshow').cycle({
 	next: '#controls .next',
 	prev: '#controls .prev',
 	timeout: 6000,
-	pause: 1
+	pause: 1,
+	height: '<?php $size = arras_get_image_size('featured-slideshow-thumb'); echo $size['h']; ?>px'
 });
 <?php endif ?>
 	
