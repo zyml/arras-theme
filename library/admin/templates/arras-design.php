@@ -1,11 +1,14 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
-<?php global $arras_registered_alt_layouts; ?>
+<?php global $arras_registered_alt_layouts, $arras_registered_style_dirs; ?>
 
 <?php
-$style_dir = dir(TEMPLATEPATH . '/css/styles/');
-if ($style_dir) {
-	while(($file = $style_dir->read()) !== false) {
-		if(is_valid_arras_style($file)) $styles[substr($file, 0, -4)] = $file;
+$styles = array();
+foreach ($arras_registered_style_dirs as $style_dir) {
+	$style_dir = dir($style_dir);
+	if ($style_dir) {
+		while(($file = $style_dir->read()) !== false) {
+			if(is_valid_arras_style($file)) $styles[substr($file, 0, -4)] = $file;
+		}
 	}
 }
 ?>
@@ -36,8 +39,7 @@ echo arras_form_dropdown('arras-layout-col', $arras_registered_alt_layouts, arra
 <td>
 <?php if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
 echo arras_form_dropdown('arras-style', $styles, arras_get_option('style') ) ?><br />
-<?php printf( __('Alternate stylesheets are placed in %s.', 'arras'), '<code>wp-content/themes/' .get_stylesheet(). '/css/styles/</code>' ) ?>
-<br /><?php _e('If you wish to continue using the 1.3.x style, you can do so by selecting <strong>legacy.css</strong>.', 'arras');
+<?php printf( __('Alternate stylesheets can be placed in %s.', 'arras'), '<code>wp-content/themes/' .get_stylesheet(). '/css/styles/</code>' );
 } else {
 	echo '<span class="grey">' . __('The developer of the child theme has disabled alternate stylesheets.', 'arras') . '</span>';
 }

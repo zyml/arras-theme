@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-27 23:33+0800\n"
+"POT-Creation-Date: 2010-06-27 23:48+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -826,48 +826,44 @@ msgstr ""
 msgid "All done! Processed %d images."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:15
+#: ../library/admin/templates/arras-design.php:18
 msgid "Overall Design"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:19
+#: ../library/admin/templates/arras-design.php:22
 msgid "Overall Layout"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:24
+#: ../library/admin/templates/arras-design.php:27
 msgid "Once you have changed your layout settings, you will need to adjust your thumbnail sizes manually and regenerate them."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:27
+#: ../library/admin/templates/arras-design.php:30
 msgid "The developer of the child theme has disabled layout settings."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:35
+#: ../library/admin/templates/arras-design.php:38
 msgid "Default Style"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:39
-#, php-format
-msgid "Alternate stylesheets are placed in %s."
-msgstr ""
-
-#: ../library/admin/templates/arras-design.php:40
-msgid "If you wish to continue using the 1.3.x style, you can do so by selecting <strong>legacy.css</strong>."
-msgstr ""
-
 #: ../library/admin/templates/arras-design.php:42
+#, php-format
+msgid "Alternate stylesheets can be placed in %s."
+msgstr ""
+
+#: ../library/admin/templates/arras-design.php:44
 msgid "The developer of the child theme has disabled alternate stylesheets."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:49
+#: ../library/admin/templates/arras-design.php:51
 msgid "Custom Logo"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:55
+#: ../library/admin/templates/arras-design.php:57
 msgid "Delete existing"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:64
+#: ../library/admin/templates/arras-design.php:66
 msgid "Set Custom Background"
 msgstr ""
 
