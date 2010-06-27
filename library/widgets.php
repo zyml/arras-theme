@@ -5,7 +5,7 @@
  */
  
 class Arras_Tabbed_Sidebar extends WP_Widget {
-	var $featured_cat;
+	var $featured_cat, $display_thumbs;
 	var $commentcount, $postcount;
 
 	// Constructor
@@ -45,6 +45,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		$this->featured_cat = $instance['featured_cat'];
 		$this->postcount = $instance['postcount'];
 		$this->commentcount = $instance['commentcount'];
+		$this->display_thumbs = $instance['display_thumbs'];
 		
 		if (!$instance['order']) $instance['order'] = $this->get_tabs();
 		
@@ -82,7 +83,9 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 				$f->the_post();
 				?>
 				<li class="clearfix">
+				<?php if ($this->display_thumbs) : ?>
 				<span class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb') ?></span>
+				<?php endif ?>
 				<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
 				<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
 				<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
@@ -103,7 +106,9 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 				$f->the_post();
 				?>
 				<li class="clearfix">
+				<?php if ($this->display_thumbs) : ?>
 				<span class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb',get_the_ID()) ?></span>
+				<?php endif ?>
 				<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
 				<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
 				<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
@@ -120,7 +125,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 			echo '<ul id="recentcomments">';
 			foreach ($comments as $comment) {
 				echo '<li class="recentcomments clearfix">';
-				echo get_avatar($comment->user_id, 36);
+				if ($this->display_thumbs) echo get_avatar($comment->user_id, 36);
 				echo '<span class="author">' . $comment->comment_author . '</span><br />';
 				echo '<a href="' . get_permalink($comment->comment_post_ID) . '">' . get_the_title($comment->comment_post_ID) . '</a>';
 				echo '</li>';
@@ -155,6 +160,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		$instance = $old_instance;
 		$instance['order'] = $new_instance['order'];
 		$instance['display_home'] = $new_instance['display_home'];
+		$instance['display_thumbs'] = $new_instance['display_thumbs'];
 		$instance['featured_cat'] = $new_instance['featured_cat'];
 		$instance['postcount'] = $new_instance['postcount'];
 		$instance['commentcount'] = $new_instance['commentcount'];
@@ -166,6 +172,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		$instance = wp_parse_args( (array)$instance, array( 
 			'order' => array('featured', 'latest', 'comments', 'tags'), 
 			'display_home' => true, 
+			'display_thumbs' => true, 
 			'featured_cat' => 0,
 			'postcount' => 8,
 			'commentcount' => 8
@@ -204,10 +211,9 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 			<option value="<?php echo $i ?>"<?php if ($i == $instance['postcount']) : ?> selected="selected"<?php endif ?>><?php echo $i ?>
 			</option>
 			<?php endfor; ?>
-		</select>
-		</p>
+		</select><br />
 		
-		<p><label for="<?php echo $this->get_field_id('commentcount') ?>"><?php _e('Comments Count:', 'arras') ?></label>
+		<label for="<?php echo $this->get_field_id('commentcount') ?>"><?php _e('Comments Count:', 'arras') ?></label>
 		<select id="<?php echo $this->get_field_id('commentcount') ?>" name="<?php echo $this->get_field_name('commentcount') ?>">
 			<?php for ($i = 1; $i <= 20; $i++ ) : ?>
 			<option value="<?php echo $i ?>"<?php if ($i == $instance['commentcount']) : ?> selected="selected"<?php endif ?>><?php echo $i ?>
@@ -218,7 +224,9 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		
 		<p>
 		<input type="checkbox" name="<?php echo $this->get_field_name('display_home') ?>" <?php if ($instance['display_home']) : ?> checked="checked" <?php endif ?> />
-		<label for="<?php echo $this->get_field_id('display_home') ?>"><?php _e('Display only in homepage.', 'arras') ?></label>
+		<label for="<?php echo $this->get_field_id('display_home') ?>"><?php _e('Display only in homepage', 'arras') ?></label><br />
+		<input type="checkbox" name="<?php echo $this->get_field_name('display_thumbs') ?>" <?php if ($instance['display_thumbs']) : ?> checked="checked" <?php endif ?> />
+		<label for="<?php echo $this->get_field_id('display_thumbs') ?>"><?php _e('Display thumbnails', 'arras') ?></label>
 		</p>
 		<?php
 	}
