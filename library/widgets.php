@@ -5,6 +5,8 @@
  */
  
 class Arras_Tabbed_Sidebar extends WP_Widget {
+	var $featured_cat;
+	var $commentcount, $postcount;
 
 	// Constructor
 	function Arras_Tabbed_Sidebar() {
@@ -40,6 +42,10 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		global $wpdb;		
 		extract($args, EXTR_SKIP);
 		
+		$this->featured_cat = $instance['featured_cat'];
+		$this->postcount = $instance['postcount'];
+		$this->commentcount = $instance['commentcount'];
+		
 		if (!$instance['order']) $instance['order'] = $this->get_tabs();
 		
 		if ($instance['display_home'] && !is_home()) {
@@ -50,7 +56,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		<li class="multi-sidebar-container">
 		<div class="multi-sidebar clearfix">
 		<ul class="tabs clearfix">
-		<?php $this->render_sidebar_tabs($instance['order'], is_numeric($featured)) ?>
+		<?php $this->render_sidebar_tabs($instance['order']) ?>
 		</ul>
 		<?php
 		foreach ($instance['order'] as $tab) {
@@ -66,7 +72,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	}
 	
 	function featured_tab() {
-		$q = arras_parse_query(arras_get_option('featured_cat'), 8);
+		$q = arras_parse_query($this->featured_cat, $this->postcount);
 		$f = new WP_Query($q);
 		if (!$f->have_posts()) {
 			echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
@@ -88,7 +94,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	}
 	
 	function latest_tab() {
-		$f = new WP_Query('showposts=8');
+		$f = new WP_Query('showposts=' . $this->postcount);
 		if (!$f->have_posts()) {
 			echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
 		} else {
@@ -109,7 +115,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	}
 	
 	function comments_tab() {
-		$comments = get_comments( array('status' => 'approve', 'number' => 8) );	
+		$comments = get_comments( array('status' => 'approve', 'number' => $this->commentcount) );	
 		if ($comments) {
 			echo '<ul id="recentcomments">';
 			foreach ($comments as $comment) {
@@ -149,18 +155,39 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		$instance = $old_instance;
 		$instance['order'] = $new_instance['order'];
 		$instance['display_home'] = $new_instance['display_home'];
+		$instance['featured_cat'] = $new_instance['featured_cat'];
+		$instance['postcount'] = $new_instance['postcount'];
+		$instance['commentcount'] = $new_instance['commentcount'];
 		
 		return $instance;
 	}
 	
 	function form($instance) {
-		$instance = wp_parse_args( (array)$instance, array( 'order' => array('featured', 'latest', 'comments', 'tags'), 'display_home' => true ) );
+		$instance = wp_parse_args( (array)$instance, array( 
+			'order' => array('featured', 'latest', 'comments', 'tags'), 
+			'display_home' => true, 
+			'featured_cat' => 0,
+			'postcount' => 8,
+			'commentcount' => 8
+		) );
 		$order = $instance['order'];
+		
 		?>
 		<p>
-		<input type="checkbox" name="<?php echo $this->get_field_name('display_home') ?>" <?php if ($instance['display_home']) : ?> checked="checked" <?php endif ?> />
-		<label for="<?php echo $this->get_field_id('display_home') ?>"><?php _e('Display in homepage?', 'arras') ?></label>
+		<label for="<?php echo $this->get_field_id('featured_cat') ?>"><?php _e('Featured Categories:', 'arras') ?></label><br />
+		<select multiple="multiple" style="width: 200px; height: 75px" name="<?php echo $this->get_field_name('featured_cat') ?>[]">
+			<option<?php if (in_array(0, $instance['featured_cat'])) echo ' selected="selected" ' ?> value="0"><?php _e('All Categories', 'arras') ?></option>
+		<?php
+		foreach( get_categories('hide_empty=0') as $c ) {
+			$selected = '';
+			if (in_array($c->cat_ID, $instance['featured_cat'])) $selected = ' selected="selected"';
+			echo '<option' . $selected . ' value="' . $c->cat_ID . '">' . $c->cat_name . '</option>';
+		}
+		?>
+		</select>
 		</p>
+		
+		<p style="font-size:11px"><?php _e('You can select multiple categories by clicking on them while holding the CTRL button.', 'arras') ?></p>
 		
 		<p>
 		<label for="<?php echo $this->get_field_id('order') ?>"><?php _e('Tabbed Sidebar Order:', 'arras') ?></label><br />
@@ -169,7 +196,30 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		<select style="width: 200px" name="<?php echo $this->get_field_name('order') ?>[2]"><?php $this->get_tabbed_opts( $order[2], 'comments'); ?></select><br />
 		<select style="width: 200px" name="<?php echo $this->get_field_name('order') ?>[3]"><?php $this->get_tabbed_opts( $order[3], 'tags'); ?></select>
 		</p>
-		<p><?php _e('The popular posts option is only enabled when the plugin <a href="http://wordpress.org/extend/plugins/popularity-contest/">Popularity Contest</a> is enabled.', 'arras') ?></p>
+		<p style="font-size:11px"><?php _e('The popular posts option is only enabled when the plugin <a href="http://wordpress.org/extend/plugins/popularity-contest/">Popularity Contest</a> is enabled.', 'arras') ?></p>
+		
+		<p><label for="<?php echo $this->get_field_id('postcount') ?>"><?php _e('Post Count:', 'arras') ?></label>
+		<select id="<?php echo $this->get_field_id('postcount') ?>" name="<?php echo $this->get_field_name('postcount') ?>">
+			<?php for ($i = 1; $i <= 20; $i++ ) : ?>
+			<option value="<?php echo $i ?>"<?php if ($i == $instance['postcount']) : ?> selected="selected"<?php endif ?>><?php echo $i ?>
+			</option>
+			<?php endfor; ?>
+		</select>
+		</p>
+		
+		<p><label for="<?php echo $this->get_field_id('commentcount') ?>"><?php _e('Comments Count:', 'arras') ?></label>
+		<select id="<?php echo $this->get_field_id('commentcount') ?>" name="<?php echo $this->get_field_name('commentcount') ?>">
+			<?php for ($i = 1; $i <= 20; $i++ ) : ?>
+			<option value="<?php echo $i ?>"<?php if ($i == $instance['commentcount']) : ?> selected="selected"<?php endif ?>><?php echo $i ?>
+			</option>
+			<?php endfor; ?>
+		</select>
+		</p>
+		
+		<p>
+		<input type="checkbox" name="<?php echo $this->get_field_name('display_home') ?>" <?php if ($instance['display_home']) : ?> checked="checked" <?php endif ?> />
+		<label for="<?php echo $this->get_field_id('display_home') ?>"><?php _e('Display only in homepage.', 'arras') ?></label>
+		</p>
 		<?php
 	}
 	
@@ -188,7 +238,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		}
 	}
 	
-	function render_sidebar_tabs($order, $show_featured) {
+	function render_sidebar_tabs($order) {
 		$order = array_unique($order);
 		$list = $this->get_tabs();
 		
