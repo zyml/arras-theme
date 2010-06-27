@@ -123,8 +123,8 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
  
 	<?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
     	<div class="navigation clearfix">
-			<div class="floatleft"><?php next_posts_link( __('&laquo; Older Entries', 'arras') ) ?></div>
-			<div class="floatright"><?php previous_posts_link( __('Newer Entries &raquo;', 'arras') ) ?></div>
+			<div class="floatleft"><?php next_posts_link( __('Older Entries', 'arras') ) ?></div>
+			<div class="floatright"><?php previous_posts_link( __('Newer Entries', 'arras') ) ?></div>
 		</div>
     <?php } ?>
 </div><!-- #archive-posts -->

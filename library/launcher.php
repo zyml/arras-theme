@@ -63,11 +63,8 @@ register_sidebar( array(
 	'after_title' => '</h5>'
 ) );
 
-// Registering widgets have been moved to the respective widget files
-
 // Header Actions
 if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
-	//add_action('arras_head', 'arras_add_blueprint_css');
 	add_action('arras_head', 'arras_add_style_css');
 	add_action('arras_custom_styles', 'arras_layout_styles');
 }
@@ -85,7 +82,8 @@ if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
 
 add_action('arras_head', 'arras_override_styles');
 add_action('arras_custom_styles', 'arras_add_custom_logo');
-add_action('arras_beside_nav', 'arras_social_nav');
+
+add_action('arras_beside_top_menu', 'arras_social_nav');
 
 add_action('wp_head', 'arras_head');
 add_action('wp_head', 'arras_add_user_css', 100);
