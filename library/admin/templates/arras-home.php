@@ -55,11 +55,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <tr valign="top">
 <th scope="row"><label for="arras-layout-featured1-display"><?php _e('Tapestry (Display Type)', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_dropdown(
-	'arras-layout-featured1-display',
-	array( 'default' => __('Node Based', 'arras'), 'quick' => __('Quick Preview', 'arras'), 'line' => __('Per Line', 'arras'), 'traditional' => __('Traditional', 'arras') ),
-	arras_get_option('featured1_display')
-); ?>
+<?php echo arras_form_dropdown('arras-layout-featured1-display', arras_get_tapestries_select(), arras_get_option('featured1_display')); ?>
 </td>
 </tr>
 
@@ -106,11 +102,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <tr valign="top">
 <th scope="row"><label for="arras-layout-featured2-display"><?php _e('Tapestry (Display Type)', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_dropdown(
-	'arras-layout-featured2-display',
-	array( 'default' => __('Node Based', 'arras'), 'quick' => __('Quick Preview', 'arras'), 'line' => __('Per Line', 'arras'), 'traditional' => __('Traditional', 'arras') ),
-	arras_get_option('featured2_display')
-); ?>
+<?php echo arras_form_dropdown('arras-layout-featured2-display', arras_get_tapestries_select(), arras_get_option('featured2_display')); ?>
 </td>
 </tr>
 
@@ -154,11 +146,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <tr valign="top">
 <th scope="row"><label for="arras-layout-index-newsdisplay"><?php _e('Tapestry (Display Type)', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_dropdown(
-	'arras-layout-index-newsdisplay',
-	array( 'default' => __('Node Based', 'arras'), 'quick' => __('Quick Preview', 'arras'), 'line' => __('Per Line', 'arras'), 'traditional' => __('Traditional', 'arras') ),
-	arras_get_option('news_display')
-); ?>
+<?php echo arras_form_dropdown('arras-layout-index-newsdisplay', arras_get_tapestries_select(), arras_get_option('news_display')); ?>
 </td>
 </tr>
 
