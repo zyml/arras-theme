@@ -79,7 +79,7 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 .blog-description		{ font-family: 'Segoe UI', Arial, Helvetica, sans-serif; line-height: 1em; display: block; font-size: 11px; font-weight: 700; color: #7d716d; margin: 0; padding: 3px 0 0; text-transform: uppercase; }
 
 /* menus */
-.sf-menu, .sf-menu *  { list-style: none; margin: 0; padding: 0; }
+.sf-menu, .sf-menu *  { list-style: none; margin: 0; padding: 0; z-index: 101; }
 .sf-menu  { line-height: 1; }
 .sf-menu ul	 { position: absolute; left: -999em; width: 11em; }
 .sf-menu ul li  { width: 100%; }
