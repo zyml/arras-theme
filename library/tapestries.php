@@ -91,7 +91,7 @@ if (!function_exists('arras_tapestry_line')) {
 			<?php if(!is_archive()) : ?>
 				<span class="entry-cat">
 					<?php $cats = get_the_category(); 
-					if (arras_get_option('news_cat')) echo $cats[1]->cat_name;
+					if (arras_get_option('news_cat') && isset($cats[1])) echo $cats[1]->cat_name;
 					else echo $cats[0]->cat_name; ?>
 				</span>
 				<?php endif ?>
