@@ -22,7 +22,7 @@ function arras_add_slideshow() {
 			<?php $count = 0; ?>
 		
 			<?php while ($q->have_posts()) : $q->the_post(); ?>
-			<div <?php if ($count != 0) echo 'style="display: none"'; ?>>
+			<div class="featured-slideshow-inner" <?php if ($count != 0) echo 'style="display: none"'; ?>>
 				<a class="featured-article" href="<?php the_permalink(); ?>" rel="bookmark">
 				<?php echo arras_get_thumbnail('featured-slideshow-thumb'); ?>
 				</a>
@@ -53,6 +53,7 @@ $('#featured-slideshow').cycle({
 	prev: '#controls .prev',
 	timeout: 6000,
 	pause: 1,
+	slideExpr: '.featured-slideshow-inner',
 	height: '<?php $size = arras_get_image_size('featured-slideshow-thumb'); echo $size['h']; ?>px'
 });
 <?php endif ?>
