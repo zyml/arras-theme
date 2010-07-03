@@ -134,7 +134,6 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 .posts-quick .entry-info abbr  { padding: 0 4px 0 0; }
 .posts-quick .entry-info span  { padding: 0 4px; }
 
-.posts-quick .quick-read-more a:link, .posts-quick .quick-read-more a:visited	{ padding: 4px 6px; margin: 0; }
 .posts-default .entry-meta, .posts-quick .entry-meta	{ float: left; display: block; margin: -25px 0 0; }
 .posts-default .entry-comments, .posts-quick .entry-comments { float: right; margin: 5px 5px 0; background: url(../images/comments.gif) no-repeat left center; padding: 0 0 0 12px; }
 .posts-line  { margin: 0 10px 20px 0; padding: 10px; line-height: 1.4em; }

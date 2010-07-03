@@ -147,7 +147,7 @@ if (!function_exists('arras_tapestry_quick')) {
 					</div>
 					<?php echo get_the_excerpt() ?>
 					<p class="quick-read-more"><a href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>">
-					<?php _e('Full Story', 'arras') ?>
+					<?php _e('Continue Reading...', 'arras') ?>
 					</a></p>
 				</div>	
 			</li>

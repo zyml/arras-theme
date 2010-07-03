@@ -140,13 +140,13 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 .posts-default .published { text-transform: uppercase; font-size: 10px; color: #999; border-bottom: none; }
 
 .posts-quick li			{ border-bottom: 1px dotted #CCC; }
-.posts-quick .entry-title	{ font-weight: 700; font-size: 15px; }
+.posts-quick .entry-title	{ font-weight: 700; font-size: 16px; margin-top: 3px; }
 .posts-quick .entry-summary	{ font-size: 12px; }
 .posts-quick .entry-thumbnails	{ border: 1px solid #CCC; background: #FFF; }
 .posts-quick .entry-info { font-size: 11px; color: #666; border: none; }
 .posts-quick .entry-info abbr { text-decoration: none; border: none; }
 
-.posts-quick .quick-read-more a:link, .posts-quick .quick-read-more a:visited	{ font-size: 11px; background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; border: 1px solid #CCC; font-weight: 700; }
+.posts-quick .quick-read-more a:link, .posts-quick .quick-read-more a:visited	{ padding: 5px 10px; margin: 3px 0; font-size: 12px; background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; border: 1px solid #CCC; font-weight: 700; display: inline-block; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
 .posts-quick .quick-read-more a:hover { background: #383332; color: #FFF; }
 .posts-default .entry-meta, .posts-quick .entry-meta	{ color: #CCC; background: #000; height: 25px; font-weight: 700; opacity: 0.7; }
 .posts-default .entry-meta a:link, .posts-default .entry-meta a:visited, .posts-quick .entry-meta a:link, .posts-quick .entry-meta a:visited	{ color: #FFF; text-decoration: none; }
@@ -156,7 +156,7 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 .posts-line .entry-title	{ font-size: 12px; }
 .posts-line .entry-comments	{ font-size: 11px; color: #848485; }
 
-.home-title				{ font-size: 11px; margin: 0 10px 10px 0; color: #FFF; font-weight: normal; display: inline-block; text-transform: uppercase; border-bottom: 2px solid #000; padding: 5px 7px; background: #383332; }
+.home-title				{ text-transform: uppercase; font-weight: 700; font-size: 14px; padding: 0 3px 8px; border-bottom: 1px solid #DDD; margin: 0 15px 10px 0; color: #848281; }
 
 /* single post */
 .single .post, #main .single-post	{ background: #FFF; border: 1px solid #CCC; }
