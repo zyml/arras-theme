@@ -12,7 +12,7 @@ code					{ background: #EAEAEA; color: #333; font-family: Consolas, Monaco, Cour
 pre code				{ background: #322E2C; border: 1px solid #635957; color: #FFF; display: block; overflow: scroll; padding: 1.5em 1.75em; }
 
 input[type=text], input[type=password], textarea	{ background: url(../../images/form.jpg) repeat-x top #FFF; border: 1px solid #CCC; padding: 5px 3px; }
-input[type=submit]  { font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; background: url(../../images/feed-title-white.jpg) repeat-x; border: 1px solid #CCC; padding: 5px 10px; font-size: 12px; color: #000; font-weight: 700; }
+input[type=submit]  { font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; background: url(../../images/feed-title-white.jpg) repeat-x; border: 1px solid #CCC; padding: 5px 10px; font-size: 12px; color: #000; font-weight: 700; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
 input[type=submit]:hover  { background: #313428; color: #FFF; }
 
 table, th, td			{ border: 1px solid #CCC; }
@@ -103,7 +103,8 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 .widgettitle a			{ color: #333; }
 
 .multi-sidebar .thumb, .multi-sidebar .recentcomments .avatar, .featured-stories .thumb	{ float: left; border: 1px solid #CCC; margin: 0 10px 0 0; background: #FFF; padding: 2px; }
-.sidebar-read-more:link, .sidebar-read-more:visited	{ text-transform: uppercase; font-weight: 700; font-size: 11px; padding: 5px 0; }
+.sidebar-read-more:link, .sidebar-read-more:visited	{ text-transform: uppercase; font-weight: normal; font-size: 10px; padding: 2px 4px; margin: 5px 0 0; display: inline-block; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; color: #FFF; background: #333; }
+.sidebar-read-more:hover  { background: #CC0000; }
 
 .multi-sidebar .tabs li	{ background: #383332; border: 1px solid #CCC; }
 .multi-sidebar .tabs a:link, .multi-sidebar .tabs a:visited	{ text-decoration: none; font-weight: 700; color: #FFF; }
@@ -139,8 +140,8 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 .posts-default .entry-thumbnails-link	{ border: 1px solid #E1E1E1; background: #FFF; }
 .posts-default .published { text-transform: uppercase; font-size: 10px; color: #999; border-bottom: none; }
 
-.posts-quick li			{ border-bottom: 1px dotted #CCC; }
-.posts-quick .entry-title	{ font-weight: 700; font-size: 16px; margin-top: 3px; }
+
+.posts-quick .entry-title	{ font-weight: 700; font-size: 16px; }
 .posts-quick .entry-summary	{ font-size: 12px; }
 .posts-quick .entry-thumbnails	{ border: 1px solid #CCC; background: #FFF; }
 .posts-quick .entry-info { font-size: 11px; color: #666; border: none; }
@@ -203,10 +204,10 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 #commentlist .comment-content  { font-size: 12px; }
 #commentlist .comment-meta, #commentlist .comment-meta abbr	{ border: none; text-decoration: none; color: #999; font-size: 11px; }
 #commentlist .comment-controls	{ padding: 15px 10px; font-weight: 700; float: right; }
-#commentlist .comment-controls a:link, #commentlist .comment-controls a:visited	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 4px 8px; margin: 0; border: 1px solid #CCC; font-weight: 700; }
+#commentlist .comment-controls a:link, #commentlist .comment-controls a:visited	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 4px 8px; margin: 0; border: 1px solid #CCC; font-weight: 700; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
 #commentlist .comment-controls a:hover	{ background: #313428; color: #FFF; }
 
-#commentlist .reply a, .comments-navigation a, .read-more, .navigation a	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 5px 8px; margin: 0; border: 1px solid #CCC; }
+#commentlist .reply a, .comments-navigation a, .read-more, .navigation a	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 5px 8px; margin: 0; border: 1px solid #CCC; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
 #commentlist .reply a:hover, .comments-navigation a:hover, .navigation a:hover, .read-more:hover	{ background: #313428; color: #FFF; }
 
 .comments-navigation a	{ border-top: 0; }

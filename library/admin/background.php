@@ -37,7 +37,7 @@ function arras_custom_background() {
 			'pos-x'			=> 'center',
 			'pos-y'			=> 'center',
 			'repeat'		=> 'no-repeat',
-			'color'			=> '#F1EFE6',
+			'color'			=> '#F0F0F0',
 			'foreground'	=> false,
 			'wrap'			=> false
 		);

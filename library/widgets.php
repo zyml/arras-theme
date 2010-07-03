@@ -292,7 +292,8 @@ class Arras_Featured_Stories extends WP_Widget {
 		while ($r->have_posts()) : $r->the_post();
 		?>
 		<li class="clearfix">
-			<?php if ( isset($instance['show_thumbs']) ) : ?><span class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb', get_the_ID()) ?></span><?php endif ?>
+			<?php if ( isset($instance['show_thumbs']) ) : ?><div class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb', get_the_ID()) ?></div><?php endif ?>
+			<div class="featured-stories-summary">
 			<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
 			<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
 			<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
@@ -303,7 +304,7 @@ class Arras_Featured_Stories extends WP_Widget {
 			</p>
 			<a class="sidebar-read-more" href="<?php the_permalink() ?>"><?php _e('Read More', 'arras') ?></a>
 			<?php endif ?>
-			
+			</div>
 		</li>
 		<?php
 		endwhile;

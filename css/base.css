@@ -126,7 +126,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 .posts-quick  { margin: 0 10px 10px 0; padding: 0; }
 .posts-quick li  { padding: 0 10px 0 0; margin: 0 0 10px; }
-.posts-quick .entry-title  { margin: 5px 0 0; line-height: 1.3em; }
+.posts-quick .entry-title  { padding: 5px 0 0; margin: 0; line-height: 1.3em; }
 .posts-quick .entry-summary	{ line-height: 1.6em; margin-bottom: 15px; }
 .posts-quick .entry-thumbnails  { float: left; margin: 0 20px 10px 0; padding: 4px; }
 .posts-quick .quick-read-more  { margin: 10px 0 5px; }

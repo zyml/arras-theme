@@ -67,6 +67,11 @@ $slideshow_size_h = $slideshow_size['h'];
 .featured-entry { height: <?php echo ceil($slideshow_size_h / 3) ?>px; top: -<?php echo ceil($slideshow_size_h / 3) ?>px; }
 
 <?php
+$sidebar_size = arras_get_image_size('sidebar-thumb');
+$sidebar_size_w = $sidebar_size['w'];
+?>
+.featured-stories-summary  { margin-left: <?php echo $sidebar_size_w + 15 ?>px; }
+<?php
 }
 
 function arras_add_blueprint_css() {
