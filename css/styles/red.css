@@ -1,0 +1,54 @@
+/* import base CSS style */
+@import '../base.css';
+@import 'default.css';
+
+
+/* globals */
+input[type=submit]:hover  { background: #313428; }
+
+a, a:link, a:visited	{ color: #8C1600; text-decoration: none; }
+a:hover					{ color: #D82200; }
+
+/* header */
+#header					{ background: #3D0A00; border-bottom: 5px solid #721B12; }
+.blog-description		{ font-size: 11px; color: #BC2D1E; }
+
+/* top menu */
+#top-menu  { background: #330800; border-bottom: 1px solid #4A0C00; }
+#top-menu .sf-menu a  { color: #FFF; }
+#top-menu .sf-menu ul li  { border: 1px solid #330800; }
+#top-menu .sf-menu a:hover, #top-menu .sf-menu li:hover, #top-menu .sf-menu li.sfHover, #top-menu .sf-menu ul li  { color: #FFF; background: #4F0C00; }
+#top-menu .sf-menu ul a:hover, #top-menu .sf-menu ul li.sfHover, #top-menu .sf-menu ul li:hover { color: #4F0C00; background: #FFF; }
+#top-menu .sf-menu ul li.sfHover a.sf-with-ul { color: #4F0C00; }
+
+/* main navigation */
+#nav  { background: #7E1E14; min-width: 990px; }
+#nav .sf-menu a  { color: #FFF; }
+#nav .sf-menu ul li  { border: 1px solid #A91B00; }
+#nav .sf-menu a:hover, #nav .sf-menu li:hover, #nav .sf-menu li.sfHover, #nav .sf-menu ul li  { background: #A91B00; color: #FFF; }
+#nav .sf-menu ul a:hover, #nav .sf-menu ul li.sfHover, #nav .sf-menu ul li:hover { color: #A91B00; background: #FFF; }
+#nav .sf-menu ul li.sfHover a.sf-with-ul { color: #A91B00; }
+
+/* search bar */
+.searchform  { border: 3px solid #7E1E14; }
+
+/* sidebar */
+.sidebar-read-more:link, .sidebar-read-more:visited	{ background: #8C1600; }
+.sidebar-read-more:hover  { background: #D82200; }
+
+.multi-sidebar .tabs li	{ background: #7E1E14; border: 1px solid #CCC; }				
+.multi-sidebar .tabs .ui-tabs-selected a:link, .multi-sidebar .tabs .ui-tabs-selected a:visited	{ color: #7E1E14; }			
+
+/* tapestries */
+.posts-quick .quick-read-more a:hover, #commentlist .comment-controls a:hover { background: #8C1600; color: #FFF; }
+
+.home-title				{ color: #8C1600; }
+
+/* single post */
+.single .post .entry-comments, .single-post .entry-comments  { background: url(../../images/comments.gif) no-repeat 3px 6px #8C1600; display: inline-block; color: #FFF; }
+
+.single-post-meta-field  { background: #313428; display: block; border: 1px solid #144275; padding: 5px 10px; color: #FFF; font-weight: 700; }
+.single-post-meta-value	 { border: 1px solid #CCC; padding: 5px 10px; background: #F0F0F0; display: block; }
+
+/* author template */
+.author-posts-title, .author-content h1, .archive-title { color: #091e36; }
