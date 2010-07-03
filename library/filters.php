@@ -104,8 +104,7 @@ function arras_post_taxonomies($content) {
 		$term_list = get_the_term_list($post->ID, $term, '', ', ', '');
 		$term_obj = get_taxonomy($term);
 		
-		
-		if ( !is_wp_error($term_list) ) {
+		if ( !is_wp_error($term_list) && !empty($term_list) ) {
 			$postmeta .= '<div class="single-post-meta clearfix">';
 			$postmeta .= '<span class="single-post-meta-field single-post-meta-' . $term . '">' . $term_obj->labels->name . ':</span>';
 			$postmeta .= '<span class="single-post-meta-value single-post-meta-' . $term . '-value">' . $term_list  . '</span>';
