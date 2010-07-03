@@ -3,6 +3,7 @@
 $arras_custom_bg_options = maybe_unserialize(get_option('arras_custom_bg_options'));
 if (!$arras_custom_bg_options) {
 	$arras_custom_bg_options = array(
+		'enable'		=> false,
 		'id' 			=> 0,
 		'attachment' 	=> 'scroll',
 		'pos-x'			=> 'center',
@@ -32,6 +33,7 @@ function arras_custom_background() {
 	if ( isset($_REQUEST['reset']) ) {
 		check_admin_referer('arras-custom-background');
 		$arras_custom_bg_options = array(
+			'enable'		=> false,
 			'id' 			=> 0,
 			'attachment' 	=> 'scroll',
 			'pos-x'			=> 'center',
@@ -71,6 +73,7 @@ function arras_custom_background() {
 			$arras_custom_bg_options['id'] = wp_insert_attachment($object, $file);
 		}
 		
+		$arras_custom_bg_options['enable'] = (boolean)(isset($_POST['bg-enable']));
 		$arras_custom_bg_options['attachment'] = stripslashes($_POST['bg-attachment']);
 		$arras_custom_bg_options['pos-x'] = stripslashes($_POST['bg-pos-x']);
 		$arras_custom_bg_options['pos-y'] = stripslashes($_POST['bg-pos-y']);
@@ -108,6 +111,10 @@ function arras_custom_background() {
 	<form enctype="multipart/form-data" id="arras-custom-bg-form" method="post" action="admin.php?page=arras-custom-background" class="clearfix">
 		<?php wp_nonce_field('arras-custom-background'); ?>
 		<div id="custom-bg-options">
+			<p style="margin-top: 0">
+			<?php echo arras_form_checkbox('bg-enable', false, (boolean)$arras_custom_bg_options['enable'], 'id="bg-enable"'); ?>
+			 <label style="display: inline; color: red;" for="bg-enable"><?php _e('Activate Custom Background', 'arras') ?></label>
+			</p>
 			<div class="upload-bg">
 				<label for="import"><?php _e('Upload Background Image', 'arras') ?></label>
 				<input type="file" id="upload" name="import" size="40" />
@@ -155,6 +162,9 @@ function arras_custom_background() {
 
 function arras_add_custom_background() {
 	global $arras_custom_bg_options;
+	
+	if (!$arras_custom_bg_options['enable']) return false;
+	
 	$img = wp_get_attachment_image_src($arras_custom_bg_options['id'], 'full');
 	
 	if ($arras_custom_bg_options['wrap']) $css_class = 'body';
