@@ -85,7 +85,7 @@ if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
 add_action('arras_head', 'arras_override_styles');
 add_action('arras_custom_styles', 'arras_add_custom_logo');
 
-add_action('arras_beside_top_menu', 'arras_social_nav');
+add_action('arras_beside_nav', 'arras_social_nav');
 
 add_action('wp_head', 'arras_head');
 add_action('wp_head', 'arras_add_user_css', 100);

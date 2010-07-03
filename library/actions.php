@@ -175,14 +175,5 @@ function arras_above_index_featured2_post() {
 function arras_beside_nav() {
 	do_action('arras_beside_nav');	
 }
-
-/**
- * Called right after the top menus
- * @since 1.5
- */
-function arras_beside_top_menu() {
-	do_action('arras_beside_top_menu');	
-}
-
 /* End of file actions.php */
 /* Location: ./library/actions.php */

@@ -180,12 +180,13 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 .about-author h4  { margin: 0 0 5px; }
 
 /* Comments */
-#commentlist			{ list-style: none; padding: 10px; margin: 0 10px 0 0; }
-#commentlist li			{ background: #F5F5F5; border: 1px solid #CCC; }
-#commentlist p			{ clear: left; line-height: 1.8em; }
-#commentlist .reply		{ float: right; }
+#commentlist  { list-style: none; padding: 10px; margin: 0 10px 0 0; }
+#commentlist li  { margin-bottom: 10px; }
+#commentlist p  { clear: left; line-height: 1.8em; }
+#commentlist .reply  { float: right; }
 
-#commentlist .children	{ clear: right; margin: 5px 10px 0; list-style: none; padding: 0; }
+#commentlist .comment-node  { margin-bottom: 10px; }
+#commentlist .children	{ clear: right; margin-left: 20px; list-style: none; padding: 0; }
 #commentlist #respond	{ clear: both; margin: 10px; }
 #commentlist #respond .module-title { margin: 0; }
 #commentlist #respond #commentsform	{ margin: 0; }

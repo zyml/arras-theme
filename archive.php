@@ -7,19 +7,19 @@
 	<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 
 	<?php if ( is_category() ) : ?>
-        <h1 class="home-title"><?php printf( __('%s Archive', 'arras'), single_cat_title() ) ?></h1>
+        <h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), single_cat_title() ) ?></h1>
     <?php elseif ( is_tag() ) : ?>
-        <h1 class="home-title"><?php printf( __('%s Archive', 'arras'), single_tag_title() ) ?></h1>
+        <h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), single_tag_title() ) ?></h1>
     <?php elseif ( is_day() ) : ?>
-        <h1 class="home-title"><?php printf( __('Archive for %s', 'arras'), get_the_time( __('F jS, Y', 'arras') ) ) ?></h1>
+        <h1 class="archive-title"><?php printf( __('Archive for %s', 'arras'), get_the_time( __('F jS, Y', 'arras') ) ) ?></h1>
     <?php elseif ( is_month() ) : ?>
-        <h1 class="home-title"><?php printf( __('Archive for %s', 'arras'), get_the_time( __('F, Y', 'arras') ) ) ?></h1>
+        <h1 class="archive-title"><?php printf( __('Archive for %s', 'arras'), get_the_time( __('F, Y', 'arras') ) ) ?></h1>
     <?php elseif ( is_year() ) : ?>
-        <h1 class="home-title"><?php printf( __('Archive for %s', 'arras'), get_the_time( __('Y', 'arras') ) ) ?></h1>
+        <h1 class="archive-title"><?php printf( __('Archive for %s', 'arras'), get_the_time( __('Y', 'arras') ) ) ?></h1>
     <?php elseif ( is_author() ) : ?>
-        <h1 class="home-title"><?php _e('Author Archive', 'arras') ?></h1>
+        <h1 class="archive-title"><?php _e('Author Archive', 'arras') ?></h1>
     <?php else : ?>
-        <h1 class="home-title"><?php _e('Archives', 'arras') ?></h1>
+        <h1 class="archive-title"><?php _e('Archives', 'arras') ?></h1>
     <?php endif; ?>
     
 	<div id="archive-posts">

@@ -67,18 +67,20 @@ document.body.className = c;
 </script>
 <?php arras_body() ?>
 
+<div id="top-menu">
 <?php arras_above_top_menu() ?>
-<div id="top-menu" class="clearfix">
-	<div id="top-menu-content">
 	<?php 
 	if ( function_exists('wp_nav_menu') ) {
-		wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'sf-menu menu clearfix', 'theme_location' => 'top-menu') );
+		wp_nav_menu( array( 
+			'sort_column' => 'menu_order', 
+			'menu_class' => 'sf-menu menu clearfix', 
+			'theme_location' => 'top-menu',
+			'container_id' => 'top-menu-content'
+		) );
 	}
 	?>
-	<?php arras_beside_top_menu() ?>
-	</div><!-- #nav-content -->
-</div><!-- #top-menu -->
 <?php arras_below_top_menu() ?>
+</div><!-- #top-menu -->
 
 <div id="header">
 	<div id="branding" class="clearfix">
