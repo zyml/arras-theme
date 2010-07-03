@@ -89,7 +89,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-cat-featured1"><?php _e('Stickied Posts / Categories', 'arras') ?></label></th>
+<th scope="row"><label for="arras-cat-featured2"><?php _e('Stickied Posts / Categories', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_dropdown('arras-cat-featured2[]', array(
 	'-5' => __('Stickied Posts', 'arras'), 
