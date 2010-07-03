@@ -13,7 +13,7 @@ class Options {
 	var $enable_news, $news_title, $news_cat, $news_display, $index_count, $news_offset;
 	// Layout
 	var $archive_display;
-	var $display_author, $single_meta_pos, $single_custom_fields;
+	var $display_author, $single_custom_fields, $single_custom_taxonomies;
 	var $excerpt_limit;
 	
 	// added in 1.3.4
@@ -82,8 +82,7 @@ class Options {
 		$this->post_cats = true;
 		$this->post_tags = true;
 		$this->single_thumbs = false;
-		
-		$this->single_meta_pos = 'top';
+
 		$this->single_custom_fields = 'Score:score,Pros:pros,Cons:cons';
 		
 		$this->excerpt_limit = 30;
@@ -172,8 +171,11 @@ class Options {
 		$this->post_tags = isset($_POST['arras-layout-post-tags']);
 		$this->single_thumbs = isset($_POST['arras-layout-single-thumbs']);
 		
-		$this->single_meta_pos = (string)$_POST['arras-layout-metapos'];
-		$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];
+		$this->single_custom_taxonomies = (string)$_POST['arras-single-custom-taxonomies'];
+		
+		if ( defined('ARRAS_CUSTOM_FIELDS') && ARRAS_CUSTOM_FIELDS == true) {
+			$this->single_custom_fields = (string)$_POST['arras-single-custom-fields'];
+		}
 		
 		if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
 			$this->layout = (string)$_POST['arras-layout-col'];

@@ -85,6 +85,37 @@ function arras_postmeta($content) {
 	else return $content . $postmeta;
 }
 
+/**
+ * Called to display custom taxonomies in single posts (review scores, product information, etc.)
+ * @since 1.5
+ */
+function arras_post_taxonomies($content) {
+	global $post;
+	$postmeta = '';
+	
+	if (arras_get_option('single_custom_taxonomies') == '') return false;
+	
+	$arr = explode( ',', arras_get_option('single_custom_taxonomies') );
+	$final = array();
+	
+	if ( !is_array($arr) ) return false;
+	
+	foreach($arr as $term) {
+		$term_list = get_the_term_list($post->ID, $term, '', ', ', '');
+		$term_obj = get_taxonomy($term);
+		
+		
+		if ( !is_wp_error($term_list) ) {
+			$postmeta .= '<div class="single-post-meta clearfix">';
+			$postmeta .= '<span class="single-post-meta-field single-post-meta-' . $term . '">' . $term_obj->labels->name . ':</span>';
+			$postmeta .= '<span class="single-post-meta-value single-post-meta-' . $term . '-value">' . $term_list  . '</span>';
+			$postmeta .= '</div>';
+		}
+	}
+	
+	return $content . $postmeta;
+}
+
 
 /**
  * Called to display post footer for news in single posts

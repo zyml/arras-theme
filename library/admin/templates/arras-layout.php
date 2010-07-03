@@ -67,19 +67,21 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-layout-metapos"><?php _e('Position of Custom Fields', 'arras') ?></label></th>
+<th scope="row"><label for="arras-single-custom-taxonomies"><?php _e('Display Custom Taxonomies', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_radio('arras-layout-metapos', 'top', arras_get_option('single_meta_pos') == 'top') ?> <?php _e('Before the Post Content', 'arras') ?><br />
-<?php echo arras_form_radio('arras-layout-metapos', 'bottom', arras_get_option('single_meta_pos') == 'bottom') ?> <?php _e('After the Post Content', 'arras') ?><br />
+<?php echo arras_form_textarea(array('name' => 'arras-single-custom-taxonomies', 'id' => 'arras-single-custom-taxonomies', 'class' => 'code', 'rows' => '3', 'cols' => '70', 'value' => stripslashes(arras_get_option('single_custom_taxonomies')) )) ?><br />
+<?php _e("List down the custom taxonomies' slug that you wish to display here, separated by a comma (,).", 'arras') ?>
 </td>
 </tr>
 
+<?php if ( defined('ARRAS_CUSTOM_FIELDS') && ARRAS_CUSTOM_FIELDS == true ) : ?>
 <tr valign="top">
-<th scope="row"><label for="arras-single-custom-fields">Single Post Custom Fields</label></th>
+<th scope="row"><label for="arras-single-custom-fields"><?php _e('Single Post Custom Fields', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_textarea(array('name' => 'arras-single-custom-fields', 'id' => 'arras-single-custom-fields', 'class' => 'code', 'rows' => '3', 'cols' => '70', 'value' => stripslashes(arras_get_option('single_custom_fields')) )) ?><br />
 </td>
 </tr>
+<?php endif ?>
 
 </table>
 

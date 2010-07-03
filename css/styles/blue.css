@@ -45,9 +45,9 @@ a:hover					{ color: #BF511F; }
 .home-title				{ color: #091e36; }
 
 /* single post */
-.single .post .entry-comments, .single-post .entry-comments  { background: url(../../images/comments.gif) no-repeat 3px 6px #383331; display: inline-block; color: #FFF; }
+.single .post .entry-comments, .single-post .entry-comments  { background: url(../../images/comments.gif) no-repeat 3px 6px #091E36; display: inline-block; color: #FFF; }
 
-.single-post-meta-field  { background: #313428; display: block; border: 1px solid #144275; padding: 5px 10px; color: #FFF; font-weight: 700; }
+.single-post-meta-field  { background: #091E36; display: block; border: 1px solid #0F3158; padding: 5px 10px; color: #FFF; font-weight: 700; }
 .single-post-meta-value	 { border: 1px solid #CCC; padding: 5px 10px; background: #F0F0F0; display: block; }
 
 /* author template */

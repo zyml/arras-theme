@@ -193,5 +193,6 @@ function arras_add_searchbar() {
 	?><div id="searchbar"><?php get_search_form() ?></div><?php
 }
 
+
 /* End of file template.php */
 /* Location: ./library/template.php */

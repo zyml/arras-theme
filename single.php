@@ -3,11 +3,6 @@
 <div id="content" class="section">
 <?php arras_above_content() ?>
 
-<?php
-if ( arras_get_option('single_meta_pos') == 'bottom' ) add_filter('arras_postfooter', 'arras_postmeta');
-else add_filter('arras_postheader', 'arras_postmeta');
-?>
-
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<?php arras_above_post() ?>
 	<div id="post-<?php the_ID() ?>" <?php arras_single_post_class() ?>>

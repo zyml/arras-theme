@@ -33,9 +33,11 @@ define( 'ARRAS_DIR', TEMPLATEPATH );
 define( 'ARRAS_LIB', ARRAS_DIR . '/library' );
 define( 'ARRAS_VERSION', $parent_data['Version'] );
 
-
-// Thumbnail generator
+// Thumbnail generator (legacy)
 define( 'ARRAS_THUMB', 'timthumb' );
+
+// Add support for custom fields
+define( 'ARRAS_CUSTOM_FIELDS', true );
 
 // Load library files
 require_once ARRAS_LIB . '/admin/options.php';
