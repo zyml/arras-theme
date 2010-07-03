@@ -80,7 +80,7 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 #nav .sf-menu ul .sf-sub-indicator	{ display: none; }
 #nav .quick-nav li  { padding-top: 8px; }
 
-.quick-nav li			{ padding: 5px 0 0 5px; }
+.quick-nav li			{ padding: 5px 0 0 10px; }
 .quick-nav a:link, .quick-nav a:visited	{ display: block; text-indent: -9000px; width: 16px; height: 16px; float: left; clear: left; opacity: 0.6; }
 .quick-nav a:hover  { opacity: 1; }
 
@@ -156,7 +156,7 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 .posts-line .entry-title	{ font-size: 12px; }
 .posts-line .entry-comments	{ font-size: 11px; color: #848485; }
 
-.home-title				{ font-size: 11px; text-transform: uppercase; padding: 6px 8px; margin: 0 10px 10px 0; color: #FFF; background: #383331; display: inline-block; font-weight: normal; }
+.home-title				{ font-size: 12px; margin: 0 10px 10px 0; color: #FFF; background: #660000; padding: 4px 6px; font-weight: bold; display: inline-block; }
 
 /* single post */
 .single .post, #main .single-post	{ background: #FFF; border: 1px solid #CCC; }
