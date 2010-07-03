@@ -10,6 +10,8 @@
         <h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), single_cat_title() ) ?></h1>
     <?php elseif ( is_tag() ) : ?>
         <h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), single_tag_title() ) ?></h1>
+	<?php elseif ( is_tax() ) : $term = $wp_query->get_queried_object(); ?>
+		<h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), $term->name ) ?></h1>
     <?php elseif ( is_day() ) : ?>
         <h1 class="archive-title"><?php printf( __('Archive for %s', 'arras'), get_the_time( __('F jS, Y', 'arras') ) ) ?></h1>
     <?php elseif ( is_month() ) : ?>
