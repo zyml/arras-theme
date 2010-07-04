@@ -176,7 +176,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 .about-author  { padding: 10px; margin: 0 0 10px; line-height: 1.5em; }
 .about-author .avatar  { margin-bottom: 0; }
-.about-author .author-meta  { margin-left: 60px; }
+.about-author .author-meta  { float: left; width: 85%; }
 .about-author h4  { margin: 0 0 5px; }
 
 /* Comments */
@@ -191,6 +191,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 #commentlist #respond .module-title { margin: 0; }
 #commentlist #respond #commentsform	{ margin: 0; }
 #commentlist .comment-author	{ padding: 10px 0 0 10px;}
+#commentlist .comment-meta		{ padding: 0 10px; }
 #commentlist .comment-content	{ padding: 0 10px; }
 #commentlist .comment-controls	{ padding: 15px 10px; float: right; }
 
