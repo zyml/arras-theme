@@ -23,6 +23,10 @@ function arras_form_dropdown($name = '', $options = array(), $selected = array()
 	if ( ! is_array($selected)) {
 		$selected = array($selected);
 	}
+	
+	if ( empty($options) ) {
+		return false;
+	}
 
 	// If no selected state was submitted we will attempt to set it automatically
 	if (count($selected) === 0) {
@@ -172,6 +176,45 @@ function arras_get_files_list($path, $include_none) {
 		closedir($handle);
 	}
 	return $files;
+}
+
+function arras_get_terms_list($taxonomy) {
+	$terms = get_terms($taxonomy, 'hide_empty=0');
+	$opt = array();
+	
+	foreach ($terms as $term) {
+		if ($taxonomy == 'category') {
+			$opt[$term->term_id] = $term->name;
+		} else {
+			$opt[$term->slug] = $term->name;
+		}
+	}
+	
+	return array('-5' => __('Stickied Posts', 'arras'), arras_get_taxonomy_name($taxonomy) => $opt);
+}
+
+function arras_get_taxonomy_list($object) {
+	$taxonomies = get_object_taxonomies($object, 'objects');
+
+	$opt = array();
+	
+	foreach( $taxonomies as $id => $obj ) {
+		if ( !in_array($id, arras_taxonomy_blacklist()) ) {
+			$opt[$id] = $obj->labels->name;
+		}
+	}
+	
+	return $opt;
+}
+
+function arras_get_posttype_name($id) {
+	$obj = get_post_type_object($id);
+	return $obj->labels->name;
+}
+
+function arras_get_taxonomy_name($id) {
+	$obj = get_taxonomy($id);
+	return $obj->labels->name;
 }
 
 function arras_cache_is_writable() {

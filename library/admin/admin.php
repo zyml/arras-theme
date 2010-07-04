@@ -19,12 +19,15 @@ function arras_addmenu() {
 	$options_page = add_menu_page( '', __('Arras Theme', 'arras'), 'switch_themes', 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63);
 	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Theme Options', 'arras'), 'switch_themes', 'arras-options', 'arras_admin' );
 	
-	$post_page = add_submenu_page( 'arras-options', __('Post Types & Taxonomies', 'arras'), __('Post Types & Tax.', 'arras'), 'switch_themes', 'arras-custom-background', 'arras_custom_background' );
+	$posttax_page = add_submenu_page( 'arras-options', __('Post Types & Taxonomies', 'arras'), __('Post Types & Tax.', 'arras'), 'switch_themes', 'arras-posttax', 'arras_posttax' );
 	
 	$custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 'switch_themes', 'arras-custom-background', 'arras_custom_background' );
 
 	add_action('admin_print_scripts-'. $options_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-'. $options_page, 'arras_admin_styles');
+	
+	add_action('admin_print_scripts-' . $posttax_page, 'arras_admin_scripts');
+	add_action('admin_print_styles-' . $posttax_page, 'arras_admin_styles');
 	
 	add_action('admin_print_scripts-' . $custom_background_page, 'arras_custom_background_scripts');
 	add_action('admin_print_styles-' . $custom_background_page, 'arras_custom_background_styles');
@@ -142,6 +145,36 @@ function arras_admin_reset() {
 	$notices = '<div class="updated fade"><p>' . __('Your settings have been reverted to the defaults.', 'arras') . '</p></div>';
 }
 
+function arras_posttax() {
+	global $arras_options, $notices;
+	
+	if ( isset($_GET['page']) && $_GET['page'] == 'arras-posttax' ) {
+		if ( isset($_REQUEST['save']) ) {
+			
+			if ( isset($_REQUEST['type']) && $_REQUEST['type'] == 'posttype' ) {
+				$arras_options->save_posttypes();
+				arras_update_options();
+				do_action('arras_admin_posttype_save');
+				$notices = '<div class="updated fade"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
+			}
+			
+			if ( isset($_REQUEST['type']) && $_REQUEST['type'] == 'taxonomy' ) {
+				$arras_options->save_taxonomies();
+				arras_update_options();
+				do_action('arras_admin_taxonomy_save');
+				$notices = '<div class="updated fade"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
+			}
+			
+		}
+	
+		if ( isset($_REQUEST['type']) && $_REQUEST['type'] == 'taxonomy' ) {
+			include 'templates/taxonomy_page.php';
+		} else {
+			include 'templates/posttype_page.php';
+		}
+	}
+}
+
 function arras_admin_scripts() {
 	wp_enqueue_script('jquery-ui-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.2.custom.min.js', null, 'jquery');
 	wp_enqueue_script('arras-admin-js', get_template_directory_uri() . '/js/admin.js');
@@ -249,6 +282,16 @@ function arras_right_col() {
 
 	</div>
 	<?php
+}
+
+function arras_posttype_blacklist() {
+	$_default = array('revision', 'nav_menu_item');
+	return apply_filters('arras_posttype_blacklist', $_default);
+}
+
+function arras_taxonomy_blacklist() {
+	$_default = array();
+	return apply_filters('arras_taxonomy_blacklist', $_default);
 }
 
 /* End of file admin.php */

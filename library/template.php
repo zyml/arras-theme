@@ -132,34 +132,43 @@ function arras_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'arras_excerpt_length');
 
-function arras_parse_query($list, $count, $offset = null) {
-	$query = '';
+function arras_parse_query($list, $count, $offset = null, $post_type = 'post', $taxonomy = 'category') {
+	$query = array();
 	
 	if ((array)$list === $list) {
-	
 		if ( in_array('-5', $list) ) {
 			$stickies = get_option('sticky_posts');
 			rsort($stickies);
 			if (count($stickies) > 0) {
-				$s = implode(',', $stickies);
-				$query .= 'p=' . $s . '&';
+				$query['post__in'] = $stickies;
 			} else {
 				// if no sticky posts are available, return empty value
 				return false;
 			}
-			
+		
 			$key = array_search('-5', $list);
 			unset($list[$key]);
 		}
 		
-		$c = implode(',', $list);
-		if ($c) $query .= 'cat=' . $c . '&';
+		switch($taxonomy) {
+			case 'category':
+				$query['category__in'] = $list;
+				break;
+			case 'post_tag':
+				$query['tag__in'] = $list;
+				break;
+			default:
+				$list = implode($list, ',');
+				$query[$taxonomy] = $list;
+		}
 	}
 	
-	$query .= 'showposts=' . $count;
+	$query['post_type'] = $post_type;
+	$query['posts_per_page'] = $count;
 	
-	if ($offset > 0) $query .= '&offset=' . $offset;
+	if ($offset > 0) $query['offset'] = $offset;
 	
+	//print_r($query);
 	return $query;
 }
 

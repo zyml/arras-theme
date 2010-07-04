@@ -1,9 +1,4 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); } ?>
-<?php
-foreach( get_categories('hide_empty=0') as $c ) {
-	$cats[(string)$c->cat_ID] = $c->cat_name;
-}
-?>
 
 <div id="home" class="padding-content">
 
@@ -11,12 +6,16 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <table class="form-table">
 
 <tr valign="top">
-<th scope="row"><label for="arras-cat-slideshow"><?php _e('Stickied Posts / Categories', 'arras') ?></label></th>
+<th scope="row"><?php _e('Selected Post Type', 'arras') ?></th>
 <td>
-<?php echo arras_form_dropdown('arras-cat-slideshow[]', array( 
-	'-5' => __('Stickied Posts', 'arras'), 
-	__('Categories', 'arras'
-) => $cats), arras_get_option('slideshow_cat'), 'class="multiple" multiple="multiple"' ); ?>
+<strong><?php echo arras_get_posttype_name(arras_get_option('slideshow_posttype')) ?></strong>
+</td>
+</tr>
+
+<tr valign="top">
+<th scope="row"><label for="arras-cat-slideshow"><?php printf( __('Stickied Posts / %s', 'arras'), arras_get_taxonomy_name(arras_get_option('slideshow_tax')) ) ?></label></th>
+<td>
+<?php echo arras_form_dropdown('arras-cat-slideshow[]', arras_get_terms_list(arras_get_option('slideshow_tax')), arras_get_option('slideshow_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown on the featured slideshow of the index page.', 'arras') ?>
 </td>
 </tr>
@@ -35,6 +34,13 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <table class="form-table">
 
 <tr valign="top">
+<th scope="row"><?php _e('Selected Post Type', 'arras') ?></th>
+<td>
+<strong><?php echo arras_get_posttype_name(arras_get_option('featured1_posttype')) ?></strong>
+</td>
+</tr>
+
+<tr valign="top">
 <th scope="row"><label for="arras-layout-featured1-title"><?php _e('Title', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_input(array('name' => 'arras-layout-featured1-title', 'id' => 'arras-layout-featured1-title', 'style' => 'width:60%', 'value' => arras_get_option('featured1_title') )) ?>
@@ -42,12 +48,9 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-cat-featured1"><?php _e('Stickied Posts / Categories', 'arras') ?></label></th>
+<th scope="row"><label for="arras-cat-featured1"><?php printf( __('Stickied Posts / %s', 'arras'), arras_get_taxonomy_name(arras_get_option('featured1_tax')) ) ?></label></th>
 <td>
-<?php echo arras_form_dropdown('arras-cat-featured1[]', array(
-	'-5' => __('Stickied Posts', 'arras'), 
-	__('Categories', 'arras'
-) => $cats), arras_get_option('featured1_cat'), 'class="multiple" multiple="multiple"' ); ?>
+<?php echo arras_form_dropdown('arras-cat-featured1[]', arras_get_terms_list(arras_get_option('featured1_tax')), arras_get_option('featured1_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown below the featured slideshow of the index page.', 'arras') ?>
 </td>
 </tr>
@@ -67,19 +70,18 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </td>
 </tr>
 
-<tr valign="top">
-<th scope="row"><label for="arras-layout-featured1-offset"><?php _e('Post Offset', 'arras') ?></label></th>
-<td>
-<?php echo arras_form_checkbox('arras-layout-featured1-offset', 'show', arras_get_option('featured1_offset'), 'id="arras-layout-featured1-offset"') ?> 
-<?php _e('Posts will offset from the slideshow if they have the same category.', 'arras') ?></label>
-</td>
-</tr>
-
 </table>
 
 
 <h3><?php _e('Featured Posts #2', 'arras') ?>  <span class="enabler"><?php echo arras_form_checkbox('arras-enable-featured2', 'show', arras_get_option('enable_featured2'), 'id="arras-enable-featured2"') ?><label for="arras-enable-featured2"><?php _e('Show/Hide', 'arras') ?></label></span></h3>
 <table class="form-table">
+
+<tr valign="top">
+<th scope="row"><?php _e('Selected Post Type', 'arras') ?></th>
+<td>
+<strong><?php echo arras_get_posttype_name(arras_get_option('featured2_posttype')) ?></strong>
+</td>
+</tr>
 
 <tr valign="top">
 <th scope="row"><label for="arras-layout-featured2-title"><?php _e('Title', 'arras') ?></label></th>
@@ -89,13 +91,11 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-cat-featured2"><?php _e('Stickied Posts / Categories', 'arras') ?></label></th>
+<th scope="row"><label for="arras-cat-featured2"><?php printf( __('Stickied Posts / %s', 'arras'), arras_get_taxonomy_name(arras_get_option('featured2_tax')) ) ?></label></th>
 <td>
-<?php echo arras_form_dropdown('arras-cat-featured2[]', array(
-	'-5' => __('Stickied Posts', 'arras'), 
-	__('Categories', 'arras'
-) => $cats), arras_get_option('featured2_cat'), 'class="multiple" multiple="multiple"' ); ?>
+<?php echo arras_form_dropdown('arras-cat-featured2[]', arras_get_terms_list(arras_get_option('featured2_tax')), arras_get_option('featured2_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown below the featured slideshow of the index page.', 'arras') ?>
+
 </td>
 </tr>
 
@@ -114,19 +114,18 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </td>
 </tr>
 
-<tr valign="top">
-<th scope="row"><label for="arras-layout-featured2-offset"><?php _e('Post Offset', 'arras') ?></label></th>
-<td>
-<?php echo arras_form_checkbox('arras-layout-featured2-offset', 'show', arras_get_option('featured2_offset'), 'id="arras-layout-featured2-offset"') ?> 
-<?php _e('Posts will offset from the slideshow and Featured Posts #1 if they have the same category.', 'arras') ?></label>
-</td>
-</tr>
-
 </table>
 
 
 <h3><?php _e('News Posts', 'arras') ?> <span class="enabler"><?php echo arras_form_checkbox('arras-enable-news', 'show', arras_get_option('enable_news'), 'id="arras-enable-news"') ?><label for="arras-enable-news"><?php _e('Show/Hide', 'arras') ?></label></span></h3>
 <table class="form-table">
+
+<tr valign="top">
+<th scope="row"><?php _e('Selected Post Type', 'arras') ?></th>
+<td>
+<strong><?php echo arras_get_posttype_name(arras_get_option('news_posttype')) ?></strong>
+</td>
+</tr>
 
 <tr valign="top">
 <th scope="row"><label for="arras-layout-news-title"><?php _e('Title', 'arras') ?></label></th>
@@ -136,9 +135,9 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="arras-cat-news"><?php _e('Stickied Posts / Categories', 'arras') ?></label></th>
+<th scope="row"><label for="arras-cat-news"><?php printf( __('Stickied Posts / %s', 'arras'), arras_get_taxonomy_name(arras_get_option('news_tax')) ) ?></label></th>
 <td>
-<?php echo arras_form_dropdown('arras-cat-news', $cats, arras_get_option('news_cat'), 'class="multiple" multiple="multiple"' ); ?>
+<?php echo arras_form_dropdown('arras-cat-news', arras_get_terms_list(arras_get_option('news_tax')), arras_get_option('news_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown below the featured section in the index page.', 'arras') ?>
 </td>
 </tr>
@@ -155,14 +154,6 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <td>
 <?php echo arras_form_input(array('name' => 'arras-layout-index-count', 'id' => 'arras-layout-index-count', 'size' => '5', 'value' => arras_get_option('index_count'), 'maxlength' => 2 )) ?>
  <?php _e('posts', 'arras') ?>
-</td>
-</tr>
-
-<tr valign="top">
-<th scope="row"><label for="arras-layout-news-offset"><?php _e('Post Offset', 'arras') ?></label></th>
-<td>
-<?php echo arras_form_checkbox('arras-layout-news-offset', 'show', arras_get_option('news_offset'), 'id="arras-layout-news-offset"') ?> 
-<?php _e('Posts will offset from the slideshow and/or Featured Posts if they have the same category.', 'arras') ?></label>
 </td>
 </tr>
 

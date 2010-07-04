@@ -106,6 +106,7 @@ function arras_custom_background() {
 	
 	<?php echo $notices ?>
 	
+	<?php screen_icon('themes'); ?>
 	<h2><?php _e('Custom Background', 'arras') ?></h2>
 	
 	<form enctype="multipart/form-data" id="arras-custom-bg-form" method="post" action="admin.php?page=arras-custom-background" class="clearfix">

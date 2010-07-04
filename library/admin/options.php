@@ -15,15 +15,18 @@ class Options {
 	var $archive_display;
 	var $display_author, $single_custom_fields, $single_custom_taxonomies;
 	var $excerpt_limit;
-	
-	// added in 1.3.4
+
 	var $post_author, $post_date, $post_cats, $post_tags, $postbar_footer, $single_thumbs;
 	
-	// Thumbnail Sizes - added in 1.4.0
+	// Thumbnail Sizes
 	var $auto_thumbs, $custom_thumbs;
 	
 	// Design
 	var $layout, $style, $logo;
+	
+	// Custom Post Types & Taxonomies
+	var $slideshow_posttype, $featured1_posttype, $featured2_posttype, $news_posttype;
+	var $slideshow_tax, $featured1_tax, $featured2_tax, $news_tax;
 	
 	
 	function __construct() {
@@ -57,21 +60,18 @@ class Options {
 		$this->featured1_cat = 0;
 		$this->featured1_display = 'default';
 		$this->featured1_count = 3;
-		$this->featured1_offset = false;
 		
 		$this->enable_featured2 = true;
 		$this->featured2_title = __("Editors' Picks", 'arras');
 		$this->featured2_cat = 0;
 		$this->featured2_display = 'quick';
 		$this->featured2_count = 3;
-		$this->featured2_offset = false;
 		
 		$this->enable_news = true;
 		$this->news_title = __('Latest Headlines', 'arras');
 		$this->news_cat = 0;
 		$this->news_display = 'line';
 		$this->index_count = get_option('posts_per_page');
-		$this->news_offset = false;
 
 		$this->archive_display = 'quick';
 		
@@ -91,6 +91,11 @@ class Options {
 		$this->style = 'default';
 		
 		$this->auto_thumbs = true;
+		
+		$this->slideshow_posttype = 'post';
+		$this->featured1_posttype = 'post';
+		$this->featured2_posttype = 'post';
+		$this->news_posttype = 'post';
 	}
 	
 	function save_options() {
@@ -131,7 +136,6 @@ class Options {
 		
 		$this->featured1_display = (string)$_POST['arras-layout-featured1-display'];
 		$this->featured1_count = (int)stripslashes($_POST['arras-layout-featured1-count']);
-		$this->featured1_offset = isset($_POST['arras-layout-featured1-offset']);
 		
 		$this->enable_featured2 = isset($_POST['arras-enable-featured2']);
 		$this->featured2_title = (string)(stripslashes($_POST['arras-layout-featured2-title']));
@@ -144,7 +148,6 @@ class Options {
 		
 		$this->featured2_display = (string)$_POST['arras-layout-featured2-display'];
 		$this->featured2_count = (int)stripslashes($_POST['arras-layout-featured2-count']);
-		$this->featured2_offset = isset($_POST['arras-layout-featured2-offset']);
 		
 		$this->enable_news = isset($_POST['arras-enable-news']);
 		$this->news_title = (string)(stripslashes($_POST['arras-layout-news-title']));
@@ -157,7 +160,6 @@ class Options {
 		
 		$this->news_display = (string)$_POST['arras-layout-index-newsdisplay'];
 		$this->index_count = (int)stripslashes($_POST['arras-layout-index-count']);
-		$this->news_offset = isset($_POST['arras-layout-news-offset']);
 		
 		$this->excerpt_limit = (int)$_POST['arras-layout-limit-words'];
 		
@@ -187,7 +189,47 @@ class Options {
 		
 		$this->auto_thumbs = isset($_POST['arras-thumbs-auto']);
 	}
-
+	
+	function save_posttypes() {
+		_chain_update_posttypes( $this->slideshow_posttype, (string)$_POST['arras-posttype-slideshow'], $this->slideshow_tax, $this->slideshow_cat );
+		_chain_update_posttypes( $this->featured1_posttype, (string)$_POST['arras-posttype-featured1'], $this->featured1_tax, $this->featured1_cat );
+		_chain_update_posttypes( $this->featured2_posttype, (string)$_POST['arras-posttype-featured2'], $this->featured2_tax, $this->featured2_cat );
+		_chain_update_posttypes( $this->news_posttype, (string)$_POST['arras-posttype-news'], $this->news_tax, $this->news_cat );
+	}
+	
+	function _chain_update_posttypes(&$old_posttype, &$new_posttype, &$taxonomy, &$category = null) {
+		if ( $old_posttype != $new_posttype ) {
+			$new_posttype = $old_posttype;
+			
+			$taxonomies = get_object_taxonomies($new_posttype, 'names');
+			if(count($taxonomies) > 0) $taxonomy = $taxonomies[0];
+			else $taxonomy = 0;
+			
+			$category = null;
+		}
+	}
+	
+	function save_taxonomies() {
+		if ( $this->slideshow_tax != (string)$_POST['arras-taxonomy-slideshow'] ) {
+			$this->slideshow_tax = (string)$_POST['arras-taxonomy-slideshow'];
+			$this->slideshow_cat = null;
+		}
+		
+		if ( $this->featured1_tax != (string)$_POST['arras-taxonomy-featured1'] ) {
+			$this->featured1_tax = (string)$_POST['arras-taxonomy-featured1'];
+			$this->featured1_cat = null;
+		}
+		
+		if ( $this->featured2_tax != (string)$_POST['arras-taxonomy-featured2'] ) {
+			$this->featured2_tax = (string)$_POST['arras-taxonomy-featured2'];
+			$this->featured2_cat = null;
+		}
+		
+		if ( $this->news_tax != (string)$_POST['arras-taxonomy-news'] ) {
+			$this->news_tax = (string)$_POST['arras-taxonomy-news'];
+			$this->news_cat = null;
+		}
+	}
 }
 
 function arras_flush_options() {

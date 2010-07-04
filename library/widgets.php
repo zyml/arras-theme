@@ -5,7 +5,7 @@
  */
  
 class Arras_Tabbed_Sidebar extends WP_Widget {
-	var $featured_cat, $display_thumbs;
+	var $display_thumbs, $query_source;
 	var $commentcount, $postcount;
 
 	// Constructor
@@ -42,7 +42,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		global $wpdb;		
 		extract($args, EXTR_SKIP);
 		
-		$this->featured_cat = $instance['featured_cat'];
+		$this->query_source = $instance['query'];
 		$this->postcount = $instance['postcount'];
 		$this->commentcount = $instance['commentcount'];
 		$this->display_thumbs = isset($instance['display_thumbs']);
@@ -73,7 +73,36 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	}
 	
 	function featured_tab() {
-		$q = arras_parse_query($this->featured_cat, $this->postcount);
+		
+		switch ($this->query_source) {
+			case 'slideshow':
+				$q = arras_parse_query( 
+					arras_get_option('slideshow_cat'),
+					$this->postcount, 
+					0, 
+					arras_get_option('slideshow_posttype'), 
+					arras_get_option('slideshow_tax')
+				);
+				break;
+			case 'featured2':
+				$q = arras_parse_query( 
+					arras_get_option('featured2_cat'),
+					$this->postcount, 
+					0, 
+					arras_get_option('featured2_posttype'), 
+					arras_get_option('featured2_tax')
+				);
+				break;
+			default:
+				$q = arras_parse_query( 
+					arras_get_option('featured1_cat'),
+					$this->postcount, 
+					0, 
+					arras_get_option('featured1_posttype'), 
+					arras_get_option('featured1_tax')
+				);
+		}
+		
 		$f = new WP_Query($q);
 		if (!$f->have_posts()) {
 			echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
@@ -161,7 +190,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		$instance['order'] = $new_instance['order'];
 		$instance['display_home'] = $new_instance['display_home'];
 		$instance['display_thumbs'] = $new_instance['display_thumbs'];
-		$instance['featured_cat'] = $new_instance['featured_cat'];
+		$instance['query'] = $new_instance['query'];
 		$instance['postcount'] = $new_instance['postcount'];
 		$instance['commentcount'] = $new_instance['commentcount'];
 		
@@ -173,31 +202,22 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 			'order' => array('featured', 'latest', 'comments', 'tags'), 
 			'display_home' => true, 
 			'display_thumbs' => true, 
-			'featured_cat' => 0,
+			'query' => 'slideshow',
 			'postcount' => 8,
 			'commentcount' => 8
 		) );
 		$order = $instance['order'];
-		
-		if (!is_array($instance['featured_cat'])) $instance['featured_cat'] = array(0);
-		
+
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id('featured_cat') ?>"><?php _e('Featured Categories:', 'arras') ?></label><br />
-		<select multiple="multiple" style="width: 200px; height: 75px" name="<?php echo $this->get_field_name('featured_cat') ?>[]">
-			<option<?php if (in_array(0, $instance['featured_cat'])) echo ' selected="selected" ' ?> value="0"><?php _e('All Categories', 'arras') ?></option>
-		<?php
-		foreach( get_categories('hide_empty=0') as $c ) {
-			$selected = '';
-			if (in_array($c->cat_ID, $instance['featured_cat'])) $selected = ' selected="selected"';
-			echo '<option' . $selected . ' value="' . $c->cat_ID . '">' . $c->cat_name . '</option>';
-		}
-		?>
+		<label for="<?php echo $this->get_field_id('featured_cat') ?>"><?php _e('Retrieve Posts from:', 'arras') ?></label><br />
+		<select style="width: 200px;" name="<?php echo $this->get_field_name('query') ?>">
+			<option<?php if ($instance['query'] == 'slideshow') echo ' selected="selected" ' ?> value="slideshow"><?php _e('Slideshow', 'arras') ?></option>
+			<option<?php if ($instance['query'] == 'featured1') echo ' selected="selected" ' ?> value="featured1"><?php _e('Featured Posts #1', 'arras') ?></option>
+			<option<?php if ($instance['query'] == 'featured2') echo ' selected="selected" ' ?> value="featured2"><?php _e('Featured Posts #2', 'arras') ?></option>
 		</select>
 		</p>
-		
-		<p style="font-size:11px"><?php _e('You can select multiple categories by clicking on them while holding the CTRL button.', 'arras') ?></p>
-		
+
 		<p>
 		<label for="<?php echo $this->get_field_id('order') ?>"><?php _e('Tabbed Sidebar Order:', 'arras') ?></label><br />
 		<select style="width: 200px" name="<?php echo $this->get_field_name('order') ?>[0]"><?php $this->get_tabbed_opts( $order[0], 'featured'); ?></select><br />
@@ -265,7 +285,7 @@ class Arras_Featured_Stories extends WP_Widget {
 	function Arras_Featured_Stories() {
 		$widget_args = array(
 			'classname'		=> 'arras_featured_stories',
-			'description'	=> __('Featured stories containing post thumbnails and the excerpt.', 'arras'),
+			'description'	=> __('Featured stories containing post thumbnails and the excerpt based on categories.', 'arras'),
 		);
 		$this->WP_Widget('arras_featured_stories', __('Featured Stories', 'arras'), $widget_args);
 	}
@@ -318,7 +338,7 @@ class Arras_Featured_Stories extends WP_Widget {
 		$instance = $old_instance;
 		
 		$instance['title'] = strip_tags($new_instance['title']);
-		$instance['featured_cat'] = strip_tags($new_instance['featured_cat']);
+		$instance['featured_cat'] = $new_instance['featured_cat'];
 		$instance['postcount'] = (int)strip_tags($new_instance['postcount']);
 		$instance['no_display_in_home'] = strip_tags($new_instance['no_display_in_home']);
 		$instance['show_excerpts'] = strip_tags($new_instance['show_excerpts']);

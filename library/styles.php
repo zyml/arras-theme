@@ -46,7 +46,7 @@ $quick_preview_w = $quick_preview_size['w'];
 $quick_preview_h = $quick_preview_size['h'];
 ?>
 
-.posts-default .post { width: <?php echo $node_based_w + 10 ?>px; }
+.posts-default li { width: <?php echo $node_based_w + 10 ?>px; }
 .posts-default img, .posts-default .entry-thumbnails-link { width: <?php echo $node_based_w ?>px; height: <?php echo $node_based_h ?>px; }
 .posts-default .entry-thumbnails { width: <?php echo $node_based_w + 10 ?>px; height: <?php echo $node_based_h + 10 ?>px; }
 .posts-quick .entry-thumbnails img { width: <?php echo $quick_preview_w ?>px; height: <?php echo $quick_preview_h ?>px; }

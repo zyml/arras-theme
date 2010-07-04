@@ -12,8 +12,8 @@
 #arras-right-col .postbox li a	{ text-decoration: none; }
 #arras-right-col .button-primary{ font-size: 11px !important; padding: 5px 7px; display: inline-block; }
 
-#arras-settings-form	{ float: left; margin: 0 10px 0 0; width: 75%; }
-#arras-settings-form th { padding: 10px 7px; }
+#arras-settings-form, #arras-posttax-form	{ float: left; margin: 0 10px 0 0; width: 75%; }
+#arras-settings-form th, #arras-posttax-form th { padding: 10px 7px; }
 
 #arras-tabs  { margin: 3px; }
 #arras-tabs li			{ float: left; margin: 2px 2px 0; padding: 0; }
@@ -60,9 +60,9 @@
 .version .number		{ font-size: 12px !important; font-weight: bold; }
 .arras-regen-thumbs-field  { padding: 5px; margin: 0 0 5px; }
 .arras-thumbnail-size-reset .button-secondary  { display: inline-block; margin-top: 2px; }
-#arras-settings-form .submit  { padding: 0 0 20px; border-bottom: 1px solid #CCC; }
-#arras-settings-form .final-submit { margin: 0 0 20px; }
-#arras-settings-form .final-submit .button-primary, #arras-settings-form .final-submit .button-secondary { padding: 4px 8px; font-size: 12px !important; }
+#arras-settings-form .submit, #arras-posttax-form .submit  { padding: 0 0 20px; border-bottom: 1px solid #CCC; }
+#arras-settings-form .final-submit, #arras-posttax-form .final-submit { margin: 0 0 20px; }
+#arras-settings-form .final-submit .button-primary, #arras-settings-form .final-submit .button-secondary, #arras-posttax-form .final-submit .button-primary, #arras-posttax-form .final-submit .button-secondary { padding: 4px 8px; font-size: 12px !important; }
 
 .hide, .ui-tabs-hide	{ display: none !important; }
 

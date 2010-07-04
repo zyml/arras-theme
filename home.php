@@ -27,11 +27,7 @@ $featured2_count 	= (int)arras_get_option('featured2_count');
 	<div class="home-title"><?php _e( arras_get_option('featured1_title'), 'arras' ) ?></div>
 <?php endif ?>
 	<?php
-	$featured1_offset = 0;
-	if ( arras_get_option('featured1_offset') && $slideshow_cat == $featured1_cat ) {
-		$featured1_offset = $slideshow_count;
-	}
-	$query2 = arras_parse_query($featured1_cat, $featured1_count, $featured1_offset);
+	$query2 = arras_parse_query($featured1_cat, $featured1_count, 0, arras_get_option('featured1_posttype'), arras_get_option('featured1_tax'));
 	arras_render_posts( apply_filters('arras_featured1_query', $query2), arras_get_option('featured1_display'), 'featured' );
 	?>
 </div><!-- #index-featured1 -->
@@ -45,16 +41,7 @@ $featured2_count 	= (int)arras_get_option('featured2_count');
 	<div class="home-title"><?php _e( arras_get_option('featured2_title'), 'arras' ) ?></div>
 <?php endif ?>
 	<?php
-	$featured2_offset = 0;
-	if ( arras_get_option('featured2_offset') ) {
-		if ($slideshow_cat == $featured2_cat) {
-			$featured2_offset += $slideshow_count;
-		}
-		if ($featured1_cat == $featured2_cat) {
-			$featured2_offset += $featured1_count;
-		}
-	}
-	$query3 = arras_parse_query($featured2_cat, $featured2_count, $featured2_offset);
+	$query3 = arras_parse_query($featured2_cat, $featured2_count, 0, arras_get_option('featured2_posttype'), arras_get_option('featured2_tax'));
 	arras_render_posts( apply_filters('arras_featured2_query', $query3), arras_get_option('featured2_display'), 'featured' );
 	?>
 </div><!-- #index-featured2 -->
@@ -68,22 +55,9 @@ $featured2_count 	= (int)arras_get_option('featured2_count');
 <div class="home-title"><?php _e( arras_get_option('news_title') ) ?></div>
 <?php endif ?>
 <?php
-$news_offset = 0;
-if ( arras_get_option('news_offset') ) {
-	if ($slideshow_cat == $news_cat) {
-		$news_offset += $slideshow_count;
-	}
-	if ($featured1_cat == $news_cat) {
-		$news_offset += $featured1_count;
-	}
-	if ($featured2_cat == $news_cat) {
-		$news_offset += $featured2_count;
-	}
-}
+$news_query = arras_parse_query($news_cat, ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) ), 0, arras_get_option('news_posttype'), arras_get_option('news_tax'));
 
-$news_query = arras_parse_query($news_cat, ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) ), $news_offset);
-
-$news_query .= '&paged=' . $paged;
+$news_query['paged'] = $paged;
 
 query_posts( apply_filters('arras_news_query', $news_query) );
 arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>

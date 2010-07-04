@@ -7,7 +7,7 @@ function arras_add_slideshow() {
 	
 	if (arras_get_option('enable_slideshow') == false) return false;
 	
-	$query = arras_parse_query($slideshow_cat, arras_get_option('slideshow_count'));
+	$query = arras_parse_query($slideshow_cat, arras_get_option('slideshow_count'), null, arras_get_option('slideshow_posttype'), arras_get_option('slideshow_tax'));
 	
 	$q = new WP_Query( apply_filters('arras_slideshow_query', $query) );
 	if ($q->have_posts()) :
