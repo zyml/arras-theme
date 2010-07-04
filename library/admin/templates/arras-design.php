@@ -69,4 +69,6 @@ echo arras_form_dropdown('arras-style', $styles, arras_get_option('style') ) ?><
 
 </table>
 
+<?php do_action('arras_admin_settings-design'); ?>
+
 </div><!-- #design -->

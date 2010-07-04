@@ -53,6 +53,8 @@
 	});
 </script>
 
+<?php do_action('arras_admin_settings-thumbnails'); ?>
+
 <h3><?php _e('Frequently Asked Questions (EN only)', 'arras') ?></h3>
 
 <p><strong>Q:</strong> How do I add thumbnails to my posts?</p>
@@ -62,6 +64,5 @@
 <p><strong>Q:</strong> The thumbnail sizes in my blog are too large. How do I fix that?</p>
 <p><strong>A:</strong> When WordPress does not have a thumbnail at a size that is needed (usually caused when the thumbnail size setting is changed), it displays the full image instead. You can regenerate your thumbnails by checking on the option below.</p>
 <hr />
-
 
 </div><!-- #thumbnails -->

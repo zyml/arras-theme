@@ -79,4 +79,6 @@
 
 </table>
 
+<?php do_action('arras_admin_settings-general'); ?>
+
 </div><!-- #general-settings -->

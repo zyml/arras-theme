@@ -168,4 +168,6 @@ foreach( get_categories('hide_empty=0') as $c ) {
 
 </table>
 
+<?php do_action('arras_admin_settings-home'); ?>
+
 </div><!-- #layout -->

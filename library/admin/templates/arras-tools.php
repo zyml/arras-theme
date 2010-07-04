@@ -20,4 +20,6 @@
 <?php echo arras_form_textarea('arras-tools-export', form_prep( base64_encode(maybe_serialize($arras_options)) ), 'style="width: 90%; height: 100px;" class="code"'); ?>
 </p>
 
+<?php do_action('arras_admin_settings-tools'); ?>
+
 </div><!-- #tools -->

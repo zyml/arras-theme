@@ -57,4 +57,6 @@ foreach ( $lc as $c ) {
 
 <?php endif ?>
 
+<?php do_action('arras_admin_settings-navigation'); ?>
+
 </div><!-- #navigation -->
