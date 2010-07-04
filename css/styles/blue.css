@@ -29,11 +29,16 @@ a:hover					{ color: #BF511F; }
 #nav .sf-menu ul li.sfHover a.sf-with-ul { color: #0F3158; }
 
 /* search bar */
-.searchform  { border: 3px solid #19508C; background: #EFEFEF; width: 250px; padding: 6px 5px; margin: 0; }
+.searchform  { border: 3px solid #19508C; }
 
 /* sidebar */
 .sidebar-read-more:link, .sidebar-read-more:visited	{ background: #091E36; }
 .sidebar-read-more:hover  { background: #BF511F; }
+
+.widgettitle  { background: #003773; color: #FFF; }
+.widgettitle a  { color: #FFF; }
+
+#bottom-content-1 .widgettitle, #bottom-content-2 .widgettitle  { color: #333; }
 
 .multi-sidebar .tabs li	{ background: #144275; border: 1px solid #CCC; }				
 .multi-sidebar .tabs .ui-tabs-selected a:link, .multi-sidebar .tabs .ui-tabs-selected a:visited	{ color: #37322F; }			

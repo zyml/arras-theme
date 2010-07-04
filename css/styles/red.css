@@ -35,6 +35,11 @@ a:hover					{ color: #D82200; }
 .sidebar-read-more:link, .sidebar-read-more:visited	{ background: #8C1600; }
 .sidebar-read-more:hover  { background: #D82200; }
 
+.widgettitle  { background: #7E1E14; color: #FFF; }
+.widgettitle a  { color: #FFF; }
+
+#bottom-content-1 .widgettitle, #bottom-content-2 .widgettitle  { color: #333; }
+
 .multi-sidebar .tabs li	{ background: #7E1E14; border: 1px solid #CCC; }				
 .multi-sidebar .tabs .ui-tabs-selected a:link, .multi-sidebar .tabs .ui-tabs-selected a:visited	{ color: #7E1E14; }			
 
