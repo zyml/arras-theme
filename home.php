@@ -13,9 +13,7 @@ $slideshow_count	= (int)arras_get_option('slideshow_count');
 $featured1_count 	= (int)arras_get_option('featured1_count');
 $featured2_count 	= (int)arras_get_option('featured2_count');
 
-if ( arras_get_option('hide_duplicates') ) {
-	$post_blacklist = array();
-}
+$post_blacklist = array();
 ?>
 
 <div id="content" class="section">
