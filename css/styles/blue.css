@@ -44,7 +44,7 @@ a:hover					{ color: #BF511F; }
 .multi-sidebar .tabs .ui-tabs-selected a:link, .multi-sidebar .tabs .ui-tabs-selected a:visited	{ color: #37322F; }			
 
 /* tapestries */
-.posts-quick .quick-read-more a:hover, #commentlist .comment-controls a:hover { background: #144275; color: #FFF; }
+.posts-quick .quick-read-more a:hover, #commentlist .comment-controls a:hover, .navigation a:hover { background: #144275; color: #FFF; }
 
 .home-title				{ color: #091e36; }
 

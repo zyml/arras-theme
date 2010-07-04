@@ -1,0 +1,58 @@
+/* import base CSS style */
+@import 'default.css';
+
+
+/* globals */
+input[type=submit]:hover  { background: #313428; }
+
+a, a:link, a:visited	{ color: #BD4606; text-decoration: none; }
+a:hover					{ color: #06BDB6; }
+
+/* header */
+#header					{ background: #5C2203; border-bottom: 5px solid #6E2A0B; }
+.blog-description		{ font-size: 11px; color: #94390F; }
+
+/* top menu */
+#top-menu  { background: #2E1101; border-bottom: 1px solid #3B1602; }
+#top-menu .sf-menu a  { color: #FFF; }
+#top-menu .sf-menu ul li  { border: 1px solid #542004; }
+#top-menu .sf-menu a:hover, #top-menu .sf-menu li:hover, #top-menu .sf-menu li.sfHover, #top-menu .sf-menu ul li  { color: #FFF; background: #642503; }
+#top-menu .sf-menu ul a:hover, #top-menu .sf-menu ul li.sfHover, #top-menu .sf-menu ul li:hover { color: #642503; background: #FFF; }
+#top-menu .sf-menu ul li.sfHover a.sf-with-ul { color: #642503; }
+
+/* main navigation */
+#nav  { background: #87340E; min-width: 990px; }
+#nav .sf-menu a  { color: #FFF; }
+#nav .sf-menu ul li  { border: 1px solid #cb4c08; }
+#nav .sf-menu a:hover, #nav .sf-menu li:hover, #nav .sf-menu li.sfHover, #nav .sf-menu ul li  { background: #BD4606; color: #FFF; }
+#nav .sf-menu ul a:hover, #nav .sf-menu ul li.sfHover, #nav .sf-menu ul li:hover { color: #BD4606; background: #FFF; }
+#nav .sf-menu ul li.sfHover a.sf-with-ul { color: #BD4606; }
+
+/* search bar */
+.searchform  { border: 3px solid #6E2A0B; }
+
+/* sidebar */
+.sidebar-read-more:link, .sidebar-read-more:visited	{ background: #BD4606; }
+.sidebar-read-more:hover  { background: #06BDB6; }
+
+.widgettitle  { background: #87340E; color: #FFF; }
+.widgettitle a  { color: #FFF; }
+
+#bottom-content-1 .widgettitle, #bottom-content-2 .widgettitle  { color: #333; }
+
+.multi-sidebar .tabs li	{ background: #87340E; border: 1px solid #CCC; }				
+.multi-sidebar .tabs .ui-tabs-selected a:link, .multi-sidebar .tabs .ui-tabs-selected a:visited	{ color: #37322F; }			
+
+/* tapestries */
+.posts-quick .quick-read-more a:hover, #commentlist .comment-controls a:hover, .navigation a:hover { background: #87340E; color: #FFF; }
+
+.home-title				{ color: #4C1C01; }
+
+/* single post */
+.single .post .entry-comments, .single-post .entry-comments  { background: url(../../images/comments.gif) no-repeat 3px 6px #87340E; display: inline-block; color: #FFF; }
+
+.single-post-meta-field  { background: #87340E; display: block; border: 1px solid #0F3158; padding: 5px 10px; color: #FFF; font-weight: 700; }
+.single-post-meta-value	 { border: 1px solid #CCC; padding: 5px 10px; background: #F0F0F0; display: block; }
+
+/* author template */
+.author-posts-title, .author-content h1, .archive-title { color: #4C1C01; }
