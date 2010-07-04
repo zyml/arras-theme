@@ -2,6 +2,20 @@
 
 <div id="home" class="padding-content">
 
+<h3><?php _e('Post Options', 'arras') ?></h3>
+<table class="form-table">
+
+<tr valign="top">
+<th scope="row"><?php _e("Hide duplicate posts", 'arras') ?></th>
+<td>
+
+<?php echo arras_form_checkbox('arras-hide-duplicates', 'show', arras_get_option('hide_duplicates'), 'id="arras-hide-duplicates"') ?> 
+<label for="arras-hide-duplicates"><?php _e('Check this to prevent duplicate posts from displaying within the slideshow and the featured posts.', 'arras') ?></label>
+<p style="font-size: 11px"><?php _e('This might increase your server load, depending on the number of posts displayed.', 'arras') ?></p>
+</td>
+</tr>
+</table>
+
 <h3><?php _e('Slideshow', 'arras') ?> <span class="enabler"><?php echo arras_form_checkbox('arras-enable-slideshow', 'show', arras_get_option('enable_slideshow'), 'id="arras-enable-slideshow"') ?><label for="arras-enable-slideshow"><?php _e('Show/Hide', 'arras') ?></label></span></h3>
 <table class="form-table">
 

@@ -132,7 +132,7 @@ function arras_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'arras_excerpt_length');
 
-function arras_parse_query($list, $count, $offset = null, $post_type = 'post', $taxonomy = 'category') {
+function arras_parse_query($list, $count, $exclude = null, $post_type = 'post', $taxonomy = 'category') {
 	$query = array();
 	
 	if ((array)$list === $list) {
@@ -168,6 +168,10 @@ function arras_parse_query($list, $count, $offset = null, $post_type = 'post', $
 	$query['post_type'] = $post_type;
 	$query['posts_per_page'] = $count;
 	
+	if (is_home() && arras_get_option('hide_duplicates')) {
+		$query['post__not_in'] = $exclude;
+	}
+	
 	if ($offset > 0) $query['offset'] = $offset;
 	
 	//print_r($query);
@@ -202,6 +206,13 @@ function arras_social_nav() {
 
 function arras_add_searchbar() {
 	?><div id="searchbar"><?php get_search_form() ?></div><?php
+}
+
+function arras_blacklist_duplicates() {
+	global $post, $post_blacklist;
+	if (is_home() && arras_get_option('hide_duplicates')) {
+		$post_blacklist[] = $post->ID;
+	}
 }
 
 

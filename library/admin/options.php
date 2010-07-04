@@ -7,10 +7,11 @@ class Options {
 	// Navigation
 	var $topnav_home, $topnav_display, $topnav_linkcat;
 	// Home
+	var $hide_duplicates;
 	var $enable_slideshow, $slideshow_cat, $slideshow_count;
-	var $enable_featured1, $featured1_title, $featured1_cat, $featured1_display, $featured1_count, $featured1_offset;
-	var $enable_featured2, $featured2_title, $featured2_cat, $featured2_display, $featured2_count, $featured2_offset;
-	var $enable_news, $news_title, $news_cat, $news_display, $index_count, $news_offset;
+	var $enable_featured1, $featured1_title, $featured1_cat, $featured1_display, $featured1_count;
+	var $enable_featured2, $featured2_title, $featured2_cat, $featured2_display, $featured2_count;
+	var $enable_news, $news_title, $news_cat, $news_display, $index_count;
 	// Layout
 	var $archive_display;
 	var $display_author, $single_custom_fields, $single_custom_taxonomies;
@@ -50,6 +51,8 @@ class Options {
 		$this->topnav_home = __('Home', 'arras');
 		$this->topnav_display = 'categories';
 		$this->topnav_linkcat = 0;
+		
+		$this->hide_duplicates = false;
 		
 		$this->enable_slideshow = true;
 		$this->slideshow_cat = 0;
@@ -114,6 +117,8 @@ class Options {
 			$this->topnav_display = (string)$_POST['arras-nav-display'];
 			$this->topnav_linkcat = (int)$_POST['arras-nav-linkcat'];
 		}
+		
+		$this->hide_duplicates = isset($_POST['arras-hide-duplicates']);
 		
 		$this->enable_slideshow = isset($_POST['arras-enable-slideshow']);
 		

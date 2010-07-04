@@ -1,13 +1,14 @@
 <?php 
 
 function arras_add_slideshow() {
+	global $post_blacklist;
 	if (!is_home()) return false;
 	
 	$slideshow_cat = arras_get_option('slideshow_cat');
 	
 	if (arras_get_option('enable_slideshow') == false) return false;
 	
-	$query = arras_parse_query($slideshow_cat, arras_get_option('slideshow_count'), null, arras_get_option('slideshow_posttype'), arras_get_option('slideshow_tax'));
+	$query = arras_parse_query($slideshow_cat, arras_get_option('slideshow_count'), array_unique($post_blacklist), arras_get_option('slideshow_posttype'), arras_get_option('slideshow_tax'));
 	
 	$q = new WP_Query( apply_filters('arras_slideshow_query', $query) );
 	if ($q->have_posts()) :
@@ -32,7 +33,9 @@ function arras_add_slideshow() {
 					<div class="progress"></div>
 				</div>
 			</div>
-			<?php $count++; endwhile; ?>
+			<?php 
+			arras_blacklist_duplicates(); // required for duplicate posts function to work.
+			$count++; endwhile; ?>
 		</div>
 	</div>
 	<?php endif;

@@ -60,7 +60,7 @@ function arras_get_tapestry_callback($type, $query, $page_type) {
  * @since 1.4.3
  */
 if (!function_exists('arras_tapestry_traditional')) {
-	function arras_tapestry_traditional($query, $page_type) {
+	function arras_tapestry_traditional($query, $page_type) {	
 		echo '<div class="traditional hfeed">';
 		while ($query->have_posts()) {
 			$query->the_post();
@@ -71,6 +71,7 @@ if (!function_exists('arras_tapestry_traditional')) {
 				<?php arras_postfooter() ?>
 			</div>
 			<?php
+			arras_blacklist_duplicates(); // required for duplicate posts function to work.
 		}
 		echo '</div><!-- .traditional -->';
 	}
@@ -100,6 +101,7 @@ if (!function_exists('arras_tapestry_line')) {
 				<span class="entry-comments"><?php comments_number() ?></span>
 			</li>
 			<?php
+			arras_blacklist_duplicates(); // required for duplicate posts function to work.
 		}
 		echo '</ul><!-- .posts-line -->';
 	}
@@ -123,6 +125,7 @@ if (!function_exists('arras_tapestry_default')) {
 				</div>	
 			</li>
 			<?php
+			arras_blacklist_duplicates(); // required for duplicate posts function to work.
 		}
 		echo '</ul><!-- .posts-default -->';
 	}
@@ -152,6 +155,7 @@ if (!function_exists('arras_tapestry_quick')) {
 				</div>	
 			</li>
 			<?php
+			arras_blacklist_duplicates(); // required for duplicate posts function to work.
 		}
 		echo '</ul><!-- .posts-quick -->';
 	}
