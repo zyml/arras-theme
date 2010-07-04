@@ -19,7 +19,7 @@ foreach( $posttypes as $id => $obj ) {
 
 <?php echo $notices ?>
 
-<form enctype="multipart/form-data" id="arras-posttax-form" method="post" action="admin.php?page=arras-posttax">
+<form enctype="multipart/form-data" id="arras-posttax-form" class="ui-widget-content" method="post" action="admin.php?page=arras-posttax">
 <?php wp_nonce_field('arras-posttax'); ?>
 
 <ul class="clearfix ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" id="arras-tabs">
