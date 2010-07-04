@@ -37,7 +37,7 @@ define( 'ARRAS_VERSION', $parent_data['Version'] );
 define( 'ARRAS_THUMB', 'timthumb' );
 
 // Add support for custom fields
-define( 'ARRAS_CUSTOM_FIELDS', true );
+define( 'ARRAS_CUSTOM_FIELDS', false );
 
 // Load library files
 require_once ARRAS_LIB . '/admin/options.php';
