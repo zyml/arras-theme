@@ -152,6 +152,8 @@ function arras_parse_query($list, $count, $offset = null, $post_type = 'post', $
 		
 		switch($taxonomy) {
 			case 'category':
+				$zero_cat = array_search('0', $list);
+				unset($list[$zero_cat]);
 				$query['category__in'] = $list;
 				break;
 			case 'post_tag':
