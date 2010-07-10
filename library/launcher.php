@@ -4,24 +4,22 @@ if (is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 	header( 'Location: ' . admin_url() . 'admin.php?page=arras-options' ) ;
 }
 
-// Add Theme Support (WordPress 2.9+)
-if ( function_exists('add_theme_support') ) {
-	add_theme_support('post-thumbnails');
-	add_theme_support('nav-menus');
-	
-	if ( function_exists('register_nav_menus') ) {
-		register_nav_menus(array(
-			'main-menu'	=> __('Main Menu', 'arras'),
-			'top-menu'	=> __('Top Menu', 'arras')
-		));
-	}
-	
-	$slideshow_thumb_size = arras_get_slideshow_thumb_size();
-	arras_add_image_size( 'featured-slideshow-thumb', __('Featured Slideshow', 'arras'), $slideshow_thumb_size[0], $slideshow_thumb_size[1]);
-	arras_add_image_size( 'sidebar-thumb', __('Sidebar Widgets', 'arras'), 36, 36);
-	arras_add_image_size( 'node-based-thumb', __('Tapestry: Node-Based', 'arras'), 195, 110 );
-	arras_add_image_size( 'quick-preview-thumb', __('Tapestry: Quick Preview', 'arras'), 115, 115 );
+// Add Theme Support
+add_theme_support('post-thumbnails');
+add_theme_support('nav-menus');
+
+if ( function_exists('register_nav_menus') ) {
+	register_nav_menus(array(
+		'main-menu'	=> __('Main Menu', 'arras'),
+		'top-menu'	=> __('Top Menu', 'arras')
+	));
 }
+
+$slideshow_thumb_size = arras_get_slideshow_thumb_size();
+arras_add_image_size( 'featured-slideshow-thumb', __('Featured Slideshow', 'arras'), $slideshow_thumb_size[0], $slideshow_thumb_size[1]);
+arras_add_image_size( 'sidebar-thumb', __('Sidebar Widgets', 'arras'), 36, 36);
+arras_add_image_size( 'node-based-thumb', __('Tapestry: Node-Based', 'arras'), 195, 110 );
+arras_add_image_size( 'quick-preview-thumb', __('Tapestry: Quick Preview', 'arras'), 115, 115 );
 
 // Remove existing actions
 remove_action('wp_head', 'pagenavi_css');
