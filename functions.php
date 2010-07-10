@@ -62,6 +62,9 @@ if ( is_admin() ) {
 require_once ARRAS_LIB . '/admin/background.php';
 require_once ARRAS_LIB . '/launcher.php';
 
+// Max. Image Size
+$content_width = apply_filters('arras_content_width', 610);
+
 do_action('arras_init');
 
 /* End of file functions.php */
