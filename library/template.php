@@ -132,8 +132,11 @@ function arras_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'arras_excerpt_length');
 
-function arras_parse_query($list, $count, $exclude = null, $post_type = 'post', $taxonomy = 'category') {
+function arras_parse_query($list, $count, $exclude = null, $post_type = '', $taxonomy = '') {
 	$query = array();
+	
+	if ($post_type == '') $post_type = 'post';
+	if ($taxonomy == '') $taxonomy = 'category';
 	
 	if ((array)$list === $list) {
 		if ( in_array('-5', $list) ) {
