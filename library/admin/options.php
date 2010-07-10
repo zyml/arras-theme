@@ -260,7 +260,7 @@ function arras_update_options() {
 }
 
 function arras_upgrade_options() {
-	global $arras_options;
+	global $arras_options, $arras_custom_bg_options;
 	
 	$custom_thumbs = $arras_options->custom_thumbs;
 	
@@ -272,6 +272,8 @@ function arras_upgrade_options() {
 	$arras_options->custom_thumbs = $custom_thumbs;
 	$arras_options->version = ARRAS_VERSION;
 	arras_update_options();
+	
+	$arras_custom_bg_options['enable'] = true;
 }
 
 function arras_get_option($name) {
