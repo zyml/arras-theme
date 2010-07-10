@@ -35,7 +35,7 @@ define('ARRAS_FORCE_LAYOUT', '1c-fixed');
     
 	<?php arras_below_post() ?>
 	<a name="comments"></a>
-    <?php if ( get_post_custom_values('comments') ) comments_template('', true); ?>
+    <?php comments_template('', true); ?>
 	<?php arras_below_comments() ?>
     
 <?php endwhile; else: ?>

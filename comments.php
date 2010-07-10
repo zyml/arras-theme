@@ -30,10 +30,10 @@ if ( post_password_required() ) {
 		<?php endif ?>
 <?php endif; ?>
 
-<?php if ('closed' == $post->comment_status) : ?>
+<?php if ('closed' == $post->comment_status) :  if (!is_page()) : ?>
 	<h4 class="module-title"><?php _e('Comments Closed', 'arras') ?></h4>
 	<p class="nocomments"><?php _e('Comments are closed. You will not be able to post a comment in this post.', 'arras') ?></p>
-<?php else: ?>
+<?php endif; else: ?>
 <div id="respond">
 <h4 class="module-title"><?php comment_form_title( __('Leave a Reply', 'arras'), __('Leave a Reply to %s', 'arras') ); ?></h4>
  <div id="commentsform">
