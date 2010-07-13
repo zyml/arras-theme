@@ -233,7 +233,7 @@ function arras_get_tapestries_select() {
 	$output = array();
 	
 	foreach($arras_tapestries as $id => $args) {
-		$output[$id] = $args['name'];
+		$output[$id] = $args->name;
 	}
 	
 	ksort($output);
