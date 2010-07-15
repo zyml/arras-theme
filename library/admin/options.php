@@ -1,6 +1,7 @@
 <?php
 
-class Options {
+class ArrasOptions {
+	var $defaults;
 	
 	// General Settings
 	var $version, $donate, $feed_url, $comments_feed_url, $twitter_username, $facebook_profile, $footer_title, $footer_message;
@@ -34,71 +35,77 @@ class Options {
 		$this->default_options();
 	}
 	
-	function Options() {
+	function ArrasOptions() {
 		return $this->__construct();
 	}
 	
 	function default_options() {
-		$this->version = ARRAS_VERSION;
-		$this->donate = false;
-		
-		$this->feed_url = get_bloginfo('rss2_url');
-		$this->comments_feed_url = get_bloginfo('comments_rss2_url');
-		
-		$this->footer_title = __('Copyright', 'arras');
-		$this->footer_message = '<p>' . sprintf( __('Copyright %s. All Rights Reserved.', 'arras'), get_bloginfo('name') ) . '</p>';
-
-		$this->topnav_home = __('Home', 'arras');
-		$this->topnav_display = 'categories';
-		$this->topnav_linkcat = 0;
-		
-		$this->hide_duplicates = false;
-		
-		$this->enable_slideshow = true;
-		$this->slideshow_cat = 0;
-		$this->slideshow_count = 4;
-		
-		$this->enable_featured1 = true;
-		$this->featured1_title = __('Featured Stories', 'arras');
-		$this->featured1_cat = 0;
-		$this->featured1_display = 'default';
-		$this->featured1_count = 3;
-		
-		$this->enable_featured2 = true;
-		$this->featured2_title = __("Editors' Picks", 'arras');
-		$this->featured2_cat = 0;
-		$this->featured2_display = 'quick';
-		$this->featured2_count = 3;
-		
-		$this->enable_news = true;
-		$this->news_title = __('Latest Headlines', 'arras');
-		$this->news_cat = 0;
-		$this->news_display = 'line';
-		$this->index_count = get_option('posts_per_page');
-
-		$this->archive_display = 'quick';
-		
-		$this->display_author = true;
-		
-		$this->post_author = true;
-		$this->post_date = true;
-		$this->post_cats = true;
-		$this->post_tags = true;
-		$this->single_thumbs = false;
-
-		$this->single_custom_fields = 'Score:score,Pros:pros,Cons:cons';
-		
-		$this->excerpt_limit = 30;
-		
-		$this->layout = '2c-r-fixed';
-		$this->style = 'default';
-		
-		$this->auto_thumbs = true;
-		
-		$this->slideshow_posttype = 'post';
-		$this->featured1_posttype = 'post';
-		$this->featured2_posttype = 'post';
-		$this->news_posttype = 'post';
+		$this->defaults = array(
+			'version' => ARRAS_VERSION,
+			'donate' => false,
+			'feed_url' => get_bloginfo('rss2_url'),
+			'comments_feed_url'	=> get_bloginfo('comments_rss2_url'),
+			'footer_title' => __('Copyright', 'arras'),
+			'footer_message' => '<p>' . sprintf( __('Copyright %s. All Rights Reserved.', 'arras'), get_bloginfo('name') ) . '</p>',
+			
+			'topnav_home' => __('Home', 'arras'),
+			'topnav_display' => 'categories',
+			'topnav_linkcat' => 0,
+			
+			'hide_duplicates' => false,
+			'enable_slideshow' => true,
+			'slideshow_cat' => 0,
+			'slideshow_count' => 4,
+			
+			'enable_featured1' => true,
+			'featured1_title' => __('Featured Stories', 'arras'),
+			'featured1_cat' => 0,
+			'featured1_display' => 'default',
+			'featured1_count' => 3,
+			
+			'enable_featured2' => true,
+			'featured2_title' => __("Editors' Picks", 'arras'),
+			'featured2_cat' => 0,
+			'featured2_display' => 'quick',
+			'featured2_count' => 3,
+			
+			'enable_news' => true,
+			'news_title' => __('Latest Headlines', 'arras'),
+			'news_cat' => 0,
+			'news_display' => 'line',
+			'index_count' => get_option('posts_per_page'),
+			
+			'archive_display' => 'quick',
+			
+			'display_author' => true,
+			'post_author' => true,
+			'post_date' => true,
+			'post_cats' => true,
+			'post_tags' => true,
+			'single_thumbs' => false,
+			
+			'single_custom_fields' => 'Score:score,Pros:pros,Cons:cons',
+			
+			'excerpt_limit' => 30,
+			
+			'layout' => '2c-r-fixed',
+			'style' => 'default',
+			
+			'auto_thumbs' => true,
+			
+			'slideshow_posttype' => 'post',
+			'featured1_posttype' => 'post',
+			'featured2_posttype' => 'post',
+			'news_posttype' => 'post',
+			
+			'slideshow_tax' => 'category',
+			'featured1_tax' => 'category',
+			'featured2_tax' => 'category',
+			'news_tax' => 'category'
+		);
+			
+		foreach ($this->defaults as $key => $value)
+			if (!isset($this->$key)) $this->$key = $value;
 	}
 	
 	function save_options() {
@@ -240,15 +247,17 @@ class Options {
 function arras_flush_options() {
 	global $arras_options;
 	
-	$opts = maybe_unserialize( get_option('arras_options') );
-	if (is_a($opts, 'Options')) {
+	$opts = get_option('arras_options');
+	if (is_a($opts, 'ArrasOptions')) {
 		$arras_options = $opts;
 	} else {
-		$arras_options = new Options();
-	}
-	
-	if ($arras_options->version != ARRAS_VERSION) {
-		arras_upgrade_options();
+		$arras_options = new ArrasOptions();
+		foreach ($arras_options->defaults as $key => $value) {
+			if (isset($opts->$key)) {
+				$arras_options->$key = $opts->key;
+			}
+		}
+		
 	}
 	
 	return $arras_options;
@@ -256,7 +265,7 @@ function arras_flush_options() {
 
 function arras_update_options() {
 	global $arras_options;
-	update_option('arras_options', maybe_serialize($arras_options));
+	update_option('arras_options', $arras_options);
 }
 
 function arras_upgrade_options() {
@@ -272,8 +281,6 @@ function arras_upgrade_options() {
 	$arras_options->custom_thumbs = $custom_thumbs;
 	$arras_options->version = ARRAS_VERSION;
 	arras_update_options();
-	
-	$arras_custom_bg_options['enable'] = true;
 }
 
 function arras_get_option($name) {
@@ -282,7 +289,11 @@ function arras_get_option($name) {
 	if (!is_object($arras_options) )
 		arras_flush_options();
 	
-	return $arras_options->$name;
+	if (isset($arras_options->$name)) {
+		return $arras_options->$name;
+	} else {
+		return $arras_options->defaults[$name];
+	}
 }
 
 /* End of file options.php */

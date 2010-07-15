@@ -102,6 +102,7 @@ if (is_admin()) {
 // Filters
 add_filter('gallery_style', 'remove_gallery_css');
 
+// print_r($arras_options);
 
 /* End of file launcher.php */
 /* Location: ./library/launcher.php */
