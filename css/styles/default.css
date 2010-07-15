@@ -189,15 +189,12 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 .about-author h4  { color: #333; font-weight: 700; font-size: 12px; }
 
 /* wp-pagenavi */
-.wp-pagenavi			{ margin: 0 0 10px; font-size: 12px; }
-.wp-pagenavi a:link, .wp-pagenavi a:visited	{ padding: 3px 4px; margin: 2px; text-decoration: none; background: #FFF; border: 1px solid #CCC; color: #313428; }
-.wp-pagenavi a:hover	{ color: #000; border-color: #333; }
-.wp-pagenavi span.pages, .wp-pagenavi span.extend	{ padding: 3px 4px; background: #FFF; margin: 2px; border: 1px solid #CCC !important; }
-.wp-pagenavi span.current  { padding: 3px 4px; background: #FFF; margin: 2px; font-weight: 700; border: 1px solid #CCC !important; }
-.wp-pagenavi span.pages	{ margin-left: 0; }
+.wp-pagenavi  { margin: 0 0 30px; font-size: 12px; }
+.wp-pagenavi a, .wp-pagenavi span  { margin: 2px !important; display: inline-block; }
+.wp-pagenavi span.pages  { border: 1px solid #CCC; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; padding: 5px 8px; }
 
 /* comments */
-#commentlist  { background: #F0F0F0; border: solid #CCC; border-width: 0 1px 1px; }
+#commentlist  { background: #F0F0F0; border: solid #CCC; border-width: 0 1px; }
 #commentlist .avatar  { border: 1px solid #CCC; padding: 1px; float: left; margin: 0 5px 10px 0; }
 #commentlist cite  { font-weight: 700; font-style: normal; line-height: 20px; font-size: 14px; }
 
@@ -209,10 +206,13 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 #commentlist .comment-controls a:link, #commentlist .comment-controls a:visited	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 4px 8px; margin: 0; border: 1px solid #CCC; font-weight: 700; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
 #commentlist .comment-controls a:hover	{ background: #313428; color: #FFF; }
 
-#commentlist .reply a, .comments-navigation a, .read-more, .navigation a	{ background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 5px 8px; margin: 0; border: 1px solid #CCC; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
-#commentlist .reply a:hover, .comments-navigation a:hover, .navigation a:hover, .read-more:hover	{ background: #313428; color: #FFF; }
+#commentlist .reply a, .comments-navigation a, .read-more, .navigation a, .wp-pagenavi a  { background: url(../../images/feed-title-white.jpg) top repeat-x #EFEFEF; color: #000; text-decoration: none; padding: 5px 8px; margin: 0; border: 1px solid #CCC; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+#commentlist .reply a:hover, .comments-navigation a:hover, .navigation a:hover, .read-more:hover, .wp-pagenavi a:hover  { background: #313428; color: #FFF; }
+.comments-navigation span.current, .wp-pagenavi span.current  { background: #313428; color: #FFF; text-decoration: none; padding: 5px 8px; margin: 0; border: 1px solid #CCC; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
 
-.comments-navigation a	{ border-top: 0; }
+.comments-navigation	{ background: #F0F0F0; padding: 0 10px 10px; border: solid #CCC; border-width: 0 1px 1px; }
+.comments-navigation a	{ display: inline-block; }
+
 
 .nocomments				{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; padding: 15px 10px; margin: 0 10px 10px 0; font-size: 12px; }
 

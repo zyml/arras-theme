@@ -115,7 +115,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 .entry-thumbnails  { clear: both; display: inline-block; }
 .entry-thumbnails-link  { float: left; display: block; }
 
-.posts-default, .posts-quick, .posts-line  { list-style: none; margin: 0 0 20px; padding: 0; overflow: hidden; }
+.posts-default, .posts-quick, .posts-line  { list-style: none; margin: 0 0 10px; padding: 0; overflow: hidden; }
 .posts-default  { margin: 0; }
 .posts-default li, .posts-default img  { float: left; padding: 0; }
 .posts-default .entry-title	{ margin: 5px; line-height: 1.4em; }
@@ -136,7 +136,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 .posts-default .entry-meta, .posts-quick .entry-meta	{ float: left; display: block; margin: -25px 0 0; }
 .posts-default .entry-comments, .posts-quick .entry-comments { float: right; margin: 5px 5px 0; background: url(../images/comments.gif) no-repeat left center; padding: 0 0 0 12px; }
-.posts-line  { margin: 0 10px 20px 0; padding: 10px; line-height: 1.4em; }
+.posts-line  { margin: 0 10px 10px 0; padding: 10px; line-height: 1.4em; }
 .posts-line	li  { padding: 7px 0; }
 .posts-line .entry-cat  { float: left; width: 100px; overflow: hidden; }
 .posts-line .entry-title  { float: left; margin: 0; max-width: 450px; line-height: 1.4em; }
@@ -180,7 +180,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 .about-author h4  { margin: 0 0 5px; }
 
 /* Comments */
-#commentlist  { list-style: none; padding: 10px; margin: 0 10px 0 0; }
+#commentlist  { list-style: none; padding: 10px 10px 0; margin: 0 10px 0 0; }
 #commentlist li  { margin-bottom: 10px; }
 #commentlist p  { clear: left; line-height: 1.8em; }
 #commentlist .reply  { float: right; }
@@ -195,7 +195,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 #commentlist .comment-content	{ padding: 0 10px; }
 #commentlist .comment-controls	{ padding: 15px 10px; float: right; }
 
-.comments-navigation	{ clear: both; margin: 0 20px 10px 10px; }
+.comments-navigation	{ clear: both; margin: 0 10px 10px 0; }
 
 #commentsform			{ margin: 0 10px 10px 0; padding: 10px; overflow: hidden; }
 #commentsform textarea	{ width: 98%; height: 150px; padding: 5px; }

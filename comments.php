@@ -1,22 +1,27 @@
 <?php
-if ( !empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']) )
+if ( !empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']) ) {
 	die( __('Please do not load this page directly. Thanks!', 'arras') );
+}
+
 if ( post_password_required() ) {
 	_e('<p class="nocomments">This post is password protected. Enter the password to view comments.</p>', 'arras');
 	return;
 }
-?>
-<?php if ( have_comments() ) : ?>
+
+$comments_by_type = &separate_comments($comments);   
+
+if ( have_comments() ) : ?>
+
 	<?php if ( !empty($comments_by_type['comment']) ) : ?>  
 	<h4 class="module-title"><?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), _n('% Comment', '% Comments', get_comments_number(), 'arras') ); ?></h4>
 		<ol id="commentlist" class="clearfix">
 			<?php wp_list_comments('type=comment&callback=arras_list_comments'); ?>
 		</ol>
-		<div class="comments-navigation clearfix">
-			<div class="floatleft"><?php previous_comments_link( __('&laquo; View Older', 'arras') ) ?></div>
-		    <div class="floatright"><?php next_comments_link( __('View Newer &raquo;', 'arras') ) ?></div>
-		</div>
 	<?php endif; ?>
+	
+	<div class="comments-navigation clearfix">
+		<?php paginate_comments_links() ?>
+	</div>
 	
 	<?php if ( !empty($comments_by_type['pings']) ) : ?>
 	<h4 class="module-title"><?php _e('Trackbacks / Pings', 'arras') ?></h4>

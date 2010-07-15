@@ -44,7 +44,7 @@ a:hover					{ color: #06BDB6; }
 .multi-sidebar .tabs .ui-tabs-selected a:link, .multi-sidebar .tabs .ui-tabs-selected a:visited	{ color: #37322F; }			
 
 /* tapestries */
-.posts-quick .quick-read-more a:hover, #commentlist .comment-controls a:hover, .navigation a:hover { background: #87340E; color: #FFF; }
+.posts-quick .quick-read-more a:hover, #commentlist .comment-controls a:hover, .navigation a:hover, .comments-navigation a:hover, .wp-pagenavi a:hover, .wp-pagenavi span.current, .comments-navigation span.current { background: #87340E; color: #FFF; }
 
 .home-title				{ color: #4C1C01; }
 
