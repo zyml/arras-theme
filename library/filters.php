@@ -14,8 +14,13 @@ function arras_postheader() {
 	$postheader = '';
 	
 	if ( is_single() ) {
-		if ( is_attachment() ) $postheader .= '<h1 class="entry-title">' . get_the_title() . ' [<a href="' . get_permalink($post->post_parent) . '" rev="attachment">' . get_the_title($post->post_parent) . '</a>]</h1>';
-		else $postheader .= '<h1 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h1>';
+	
+		if ( is_attachment() ) {
+			$postheader .= '<h1 class="entry-title">' . get_the_title() . ' [<a href="' . get_permalink($post->post_parent) . '" rev="attachment">' . get_the_title($post->post_parent) . '</a>]</h1>';
+		} else {
+			$postheader .= '<h1 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h1>';
+		}
+		
 	} else {
 
 		if ( is_attachment() ) {
@@ -55,7 +60,7 @@ function arras_postheader() {
 	if ( arras_get_option('single_thumbs') && has_post_thumbnail($post->ID) ) {
 		$postheader .= '<div class="entry-photo">' . arras_get_thumbnail('featured-slideshow-thumb') . '</div>';
 	}
-	
+
 	echo apply_filters('arras_postheader', $postheader);
 }
 
@@ -93,12 +98,12 @@ function arras_post_taxonomies($content) {
 	global $post;
 	$postmeta = '';
 	
-	if (arras_get_option('single_custom_taxonomies') == '') return false;
+	if (arras_get_option('single_custom_taxonomies') == '') return $content;
 	
 	$arr = explode( ',', arras_get_option('single_custom_taxonomies') );
 	$final = array();
 	
-	if ( !is_array($arr) ) return false;
+	if ( !is_array($arr) ) return $content;
 	
 	foreach($arr as $term) {
 		$term_list = get_the_term_list($post->ID, $term, '', ', ', '');
