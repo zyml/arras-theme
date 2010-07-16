@@ -7,11 +7,17 @@ $forum_contributors = array(
 	'Dan' => 'http://www.techunfolding.com/'
 );
 $translators = array(
-	'er_mejor (Spanish)' => 'http://www.teusoft.com/',
+	'Celso Azevedo (Portuguese)' => '',
+	'Nolog (French)' => 'http://pookiecookie.fr/',
 	'kokaz84 (French)' => 'http://micromanga.free.fr/',
+	'er_mejor (Spanish)' => 'http://www.teusoft.com/',
+	'AddVariety (Dutch)' => 'http://www.addvariety.com/',
+	'Fredik Arvidsson (Swedish)' => 'http://www.fredrikarvidsson.com/',
+	'Michael Wenzl (German)' => 'http://www.michaelwenzl.de/',
+	'Michalis Pissas (Greek)' => '',
+	'chaibi (Norwegian)' => '',
 	'cngamers (Chinese)' => '',
-	'lesta (Romanian)' => '',
-	'Michael Wenzl (German)' => 'http://www.michaelwenzl.de/'
+	'lesta (Romanian)' => ''
 );
 $notices = ''; // store notices here so that options_page.php will echo it out later
 
@@ -244,11 +250,11 @@ function arras_right_col() {
 		<div class="postbox">
 			<h3><span><?php _e('Recommended Plugins', 'arras') ?></span></h3>
 			<ul>
-				<li><a href="http://www.viper007bond.com/wordpress-plugins/regenerate-thumbnails/">Rengenerate Thumbnails</a></li>
 				<li><a href="http://lesterchan.net/portfolio/programming/php/#wp-pagenavi">WP-PageNavi</a></li>
 				<li><a href="http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/">FancyBox for WordPress</a></li>
 				<li><a href="http://sexybookmarks.net/">SexyBookmarks</a></li>
 				<li><a href="http://mitcho.com/code/yarpp/">Yet Another Related Posts Plugin</a></li>
+				<li><a href="http://www.dev4press.com/plugins/gd-taxonomies-tools/">GD Custom Posts &amp; Taxonomies Tools</a></li>
 			</ul>
 		</div>
 		
