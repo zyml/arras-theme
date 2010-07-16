@@ -186,7 +186,7 @@ if (!function_exists('arras_tapestry_default')) {
 	
 	function arras_defaults_tapestry_default() {
 		$_tapestry_default_settings = array(
-			'height' => 85,
+			'height' => 65,
 			'excerpt' => true
 		);
 		add_option('arras_tapestry_default', $_tapestry_default_settings, '', 'yes');
@@ -197,7 +197,7 @@ if (!function_exists('arras_tapestry_default')) {
 	
 	function arras_style_tapestry_default() {
 		$tapestry_settings = get_option('arras_tapestry_default');
-		$height = (!isset($tapestry_settings['height']) ) ? 85 : $tapestry_settings['height'];
+		$height = (!isset($tapestry_settings['height']) ) ? 65 : $tapestry_settings['height'];
 		
 		echo '.posts-default .entry-summary  { height: ' . $height . 'px; }';
 	}
