@@ -4,28 +4,122 @@ function arras_get_page_no() {
 	if ( get_query_var('paged') ) print ' | Page ' . get_query_var('paged');
 }
 
+/**
+ * SEO-Friendly title tag, based on Thematic Framework, which is based on Tarski :)
+ */
 function arras_document_title() {
-	if ( function_exists('seo_title_tag') ) {
-		seo_title_tag();
-	} else if ( class_exists('All_in_One_SEO_Pack') || class_exists('HeadSpace2_Admin') || class_exists('Platinum_SEO_Pack') ) {
-		if(is_front_page() || is_home()) {
-			echo get_bloginfo('name') . ' | ' . get_bloginfo('description');
-		} else {
-			wp_title('');
-		}
-	} else {
-		if ( is_attachment() ) { bloginfo('name'); print ' | '; single_post_title(''); }
-		elseif ( is_single() ) { single_post_title(); }
-        elseif ( is_home() ) { bloginfo('name'); print ' | '; bloginfo('description'); arras_get_page_no(); }
-        elseif ( is_page() ) { single_post_title(''); }
-        elseif ( is_search() ) { bloginfo('name'); print ' | Search results for ' . esc_html($s); arras_get_page_no(); }
-        elseif ( is_404() ) { bloginfo('name'); print ' | Not Found'; }
-        else { bloginfo('name'); wp_title(' | '); arras_get_page_no(); }
-	}
+	$site_name = get_bloginfo('name');
+	$separator = '|';
+	
+	if ( is_single() ) {
+      $content = single_post_title('', FALSE);
+    }
+    elseif ( is_home() || is_front_page() ) { 
+      $content = get_bloginfo('description');
+    }
+    elseif ( is_page() ) { 
+      $content = single_post_title('', FALSE); 
+    }
+    elseif ( is_search() ) { 
+      $content = __('Search Results for:', 'arras'); 
+      $content .= ' ' . wp_specialchars(stripslashes(get_search_query()), true);
+    }
+    elseif ( is_category() ) {
+      $content = __('Category Archives:', 'arras');
+      $content .= ' ' . single_cat_title("", false);;
+    }
+    elseif ( is_tag() ) { 
+      $content = __('Tag Archives:', 'arras');
+      $content .= ' ' . arras_tag_query();
+    }
+    elseif ( is_404() ) { 
+      $content = __('Not Found', 'arras'); 
+    }
+    else { 
+      $content = get_bloginfo('description');
+    }
+
+    if (get_query_var('paged')) {
+      $content .= ' ' .$separator. ' ';
+      $content .= 'Page';
+      $content .= ' ';
+      $content .= get_query_var('paged');
+    }
+
+    if($content) {
+      if ( is_home() || is_front_page() ) {
+          $elements = array(
+            'site_name' => $site_name,
+            'separator' => $separator,
+            'content' => $content
+          );
+      }
+      else {
+          $elements = array(
+            'content' => $content
+          );
+      }  
+    } else {
+      $elements = array(
+        'site_name' => $site_name
+      );
+    }
+
+    // Filters should return an array
+    $elements = apply_filters('arras_doctitle', $elements);
+	
+    // But if they don't, it won't try to implode
+    if(is_array($elements)) {
+      $doctitle = implode(' ', $elements);
+    }
+    else {
+      $doctitle = $elements;
+    }
+    
+	echo $doctitle;
 }
 
+/**
+ * Based on Thematic's thematic_tag_query()
+ */
+function arras_tag_query() {
+	$nice_tag_query = get_query_var('tag'); // tags in current query
+	$nice_tag_query = str_replace(' ', '+', $nice_tag_query); // get_query_var returns ' ' for AND, replace by +
+	$tag_slugs = preg_split('%[,+]%', $nice_tag_query, -1, PREG_SPLIT_NO_EMPTY); // create array of tag slugs
+	$tag_ops = preg_split('%[^,+]*%', $nice_tag_query, -1, PREG_SPLIT_NO_EMPTY); // create array of operators
+
+	$tag_ops_counter = 0;
+	$nice_tag_query = '';
+
+	foreach ($tag_slugs as $tag_slug) { 
+		$tag = get_term_by('slug', $tag_slug ,'post_tag');
+		// prettify tag operator, if any
+		if ($tag_ops[$tag_ops_counter] == ',') {
+			$tag_ops[$tag_ops_counter] = ', ';
+		} elseif ($tag_ops[$tag_ops_counter] == '+') {
+			$tag_ops[$tag_ops_counter] = ' + ';
+		}
+		// concatenate display name and prettified operators
+		$nice_tag_query = $nice_tag_query.$tag->name.$tag_ops[$tag_ops_counter];
+		$tag_ops_counter += 1;
+	}
+	 return $nice_tag_query;
+}
+
+/**
+ * SEO-Friendly META description, based on Thematic Framework.
+ */
 function arras_document_description() {
-	if ( !class_exists('All_in_One_SEO_Pack') || !class_exists('Platinum_SEO_Pack') ) {
+	if ( class_exists('All_in_One_SEO_Pack') || class_exists('Platinum_SEO_Pack') ) return false;
+	
+	if ( is_single() || is_page() ) {
+		if ( have_posts() ) {
+			while( have_posts() ) {
+				the_post();
+				echo '<meta name="description" content="' . get_the_excerpt() . '" />';
+			}
+		}
+	} else {
 		echo '<meta name="description" content="' . get_bloginfo('description') . '" />';
 	}
 }
