@@ -67,7 +67,7 @@ function arras_get_tapestry_callback($type, $query, $page_type) {
 	echo $tapestry->before;
 	while ($query->have_posts()) {
 		$query->the_post();
-		call_user_func_array( $tapestry->callback, array($dep, $page_type) );
+		call_user_func_array( $tapestry->callback, array($dep = '', $page_type) );
 		if ($tapestry->allow_duplicates) arras_blacklist_duplicates();
 	}
 	echo $tapestry->after;

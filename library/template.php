@@ -268,9 +268,7 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 	if (is_home() && arras_get_option('hide_duplicates')) {
 		$query['post__not_in'] = $exclude;
 	}
-	
-	if ($offset > 0) $query['offset'] = $offset;
-	
+
 	//print_r($query);
 	return $query;
 }

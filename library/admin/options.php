@@ -293,7 +293,7 @@ function arras_get_option($name) {
 	
 	if (isset($arras_options->$name)) {
 		return $arras_options->$name;
-	} else {
+	} elseif (isset($arras_options->defaults[$name])) {
 		return $arras_options->defaults[$name];
 	}
 }
