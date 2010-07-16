@@ -63,7 +63,7 @@ $slideshow_size_h = $slideshow_size['h'];
 .featured-article { width: <?php echo $slideshow_size_w ?>px; height: <?php echo $slideshow_size_h ?>px; }
 .featured-article img { width: <?php echo $slideshow_size_w ?>px; height: <?php echo $slideshow_size_h ?>px; }
 #controls { width: <?php echo $slideshow_size_w - 30 ?>px; top: <?php echo ($slideshow_size_h / 2) - 15 ?>px; }
-#controls .next { width: <?php echo $slideshow_size_w - 30 ?>px; }
+#controls .next { left: <?php echo $slideshow_size_w - 30 ?>px; }
 .featured-entry { height: <?php echo ceil($slideshow_size_h / 3) ?>px; top: -<?php echo ceil($slideshow_size_h / 3) ?>px; }
 
 <?php
