@@ -162,7 +162,7 @@ if (!function_exists('arras_tapestry_default')) {
 		</td>
 		</tr>
 		<tr valign="top">
-		<th scope="row"><label for="arras-tapestry-default-height"><?php _e('Maximum Height for Excerpts', 'arras') ?></label></th>
+		<th scope="row"><label for="arras-tapestry-default-height"><?php _e('Maximum Node Height', 'arras') ?></label></th>
 		<td>
 		<?php echo arras_form_input(array('name' => 'arras-tapestry-default-height', 'id' => 'arras-tapestry-default-height', 'size' => '5', 'value' => $tapestry_settings['height'], 'maxlength' => 3 )) ?>
 		 <?php ' ' . _e('pixels', 'arras') ?>
@@ -186,7 +186,7 @@ if (!function_exists('arras_tapestry_default')) {
 	
 	function arras_defaults_tapestry_default() {
 		$_tapestry_default_settings = array(
-			'height' => 65,
+			'height' => 225,
 			'excerpt' => true
 		);
 		add_option('arras_tapestry_default', $_tapestry_default_settings, '', 'yes');
@@ -197,9 +197,9 @@ if (!function_exists('arras_tapestry_default')) {
 	
 	function arras_style_tapestry_default() {
 		$tapestry_settings = get_option('arras_tapestry_default');
-		$height = (!isset($tapestry_settings['height']) ) ? 65 : $tapestry_settings['height'];
+		$height = (!isset($tapestry_settings['height']) ) ? 225 : $tapestry_settings['height'];
 		
-		echo '.posts-default .entry-summary  { height: ' . $height . 'px; }';
+		echo '.posts-default li  { height: ' . $height . 'px; }';
 	}
 	add_action('arras_custom_styles', 'arras_style_tapestry_default');
 }
