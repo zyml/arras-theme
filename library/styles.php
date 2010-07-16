@@ -65,6 +65,7 @@ $slideshow_size_h = $slideshow_size['h'];
 #controls { width: <?php echo $slideshow_size_w - 30 ?>px; top: <?php echo ($slideshow_size_h / 2) - 15 ?>px; }
 #controls .next { left: <?php echo $slideshow_size_w - 30 ?>px; }
 .featured-entry { height: <?php echo ceil($slideshow_size_h / 3) ?>px; top: -<?php echo ceil($slideshow_size_h / 3) ?>px; }
+.featured-slideshow-inner { height: <?php echo $slideshow_size_h ?>px }
 
 <?php
 $sidebar_size = arras_get_image_size('sidebar-thumb');
