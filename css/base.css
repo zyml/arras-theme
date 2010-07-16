@@ -116,13 +116,12 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 .entry-thumbnails-link  { float: left; display: block; }
 
 .posts-default, .posts-quick, .posts-line  { list-style: none; margin: 0 0 10px; padding: 0; overflow: hidden; }
-.posts-default  { margin: 0; }
+.posts-default  { margin: 0 0 20px; }
 .posts-default li, .posts-default img  { float: left; padding: 0; }
 .posts-default .entry-title	{ margin: 5px; line-height: 1.4em; }
-.posts-default .entry-summary, .posts-quick .entry-summary	{ overflow: hidden; margin: 0 5px; line-height: 1.4em; }
+.posts-default .entry-summary  { height: 65px; overflow: hidden; margin: 0 5px; padding-bottom: 10px; line-height: 1.4em; }
 .posts-default .entry-thumbnails-link	{ padding: 4px; }
 .posts-default .published { float: left; margin: 5px 5px 0; }
-.no-js .posts-default .entry-summary	{ height: 60px; }
 
 .posts-quick  { margin: 0 10px 10px 0; padding: 0; }
 .posts-quick li  { padding: 0 10px 0 0; margin: 0 0 10px; }

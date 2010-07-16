@@ -126,12 +126,18 @@ if (!function_exists('arras_tapestry_line')) {
  */
 if (!function_exists('arras_tapestry_default')) {
 	function arras_tapestry_default($dep = '', $page_type) {
+		$tapestry_settings = get_option('arras_tapestry_default');
+		if (!is_array($tapestry_settings) ) {
+			$tapestry_settings = arras_defaults_tapestry_default();
+		}
 		?>
 		<li <?php arras_post_class() ?>>
 			<?php echo apply_filters('arras_tapestry_default_postheader', arras_generic_postheader('node-based', true) ) ?>
+			<?php if ($tapestry_settings['excerpt']) : ?>
 			<div class="entry-summary">
 				<?php the_excerpt() ?>
-			</div>	
+			</div>
+			<?php endif ?>
 		</li>
 		<?php
 	}
@@ -139,6 +145,63 @@ if (!function_exists('arras_tapestry_default')) {
 		'before' => '<ul class="hfeed posts-default clearfix">',
 		'after' => '</ul><!-- .posts-default -->'
 	) );
+	
+	function arras_admin_tapestry_default() {
+		$tapestry_settings = get_option('arras_tapestry_default');
+		if (!is_array($tapestry_settings) ) {
+			$tapestry_settings = arras_defaults_tapestry_default();
+		}
+		?>
+		<h3><?php _e('Tapestry: Node Based', 'arras') ?></h3>
+		<table class="form-table">
+
+		<tr valign="top">
+		<th scope="row"><label for="arras-tapestry-default-excerpt"><?php _e('Show Excerpt?', 'arras') ?></label></th>
+		<td>
+		<?php echo arras_form_checkbox('arras-tapestry-default-excerpt', 'show', $tapestry_settings['excerpt'], 'id="arras-tapestry-default-excerpt"') ?>
+		</td>
+		</tr>
+		<tr valign="top">
+		<th scope="row"><label for="arras-tapestry-default-height"><?php _e('Maximum Height for Excerpts', 'arras') ?></label></th>
+		<td>
+		<?php echo arras_form_input(array('name' => 'arras-tapestry-default-height', 'id' => 'arras-tapestry-default-height', 'size' => '5', 'value' => $tapestry_settings['height'], 'maxlength' => 3 )) ?>
+		 <?php ' ' . _e('pixels', 'arras') ?>
+		</td>
+		</tr>
+		
+		</table>
+		<?php
+	}
+	add_action('arras_admin_settings-layout', 'arras_admin_tapestry_default');
+	
+	function arras_save_tapestry_default() {
+		$_tapestry_default_settings = array(
+			'height' => (int)$_POST['arras-tapestry-default-height'],
+			'excerpt' => isset($_POST['arras-tapestry-default-excerpt'])
+		);
+
+		update_option('arras_tapestry_default', $_tapestry_default_settings);
+	}
+	add_action('arras_admin_save', 'arras_save_tapestry_default');
+	
+	function arras_defaults_tapestry_default() {
+		$_tapestry_default_settings = array(
+			'height' => 85,
+			'excerpt' => true
+		);
+		add_option('arras_tapestry_default', $_tapestry_default_settings, '', 'yes');
+		
+		return $_tapestry_default_settings;
+	}
+	add_action('arras_options_defaults', 'arras_defaults_tapestry_default');
+	
+	function arras_style_tapestry_default() {
+		$tapestry_settings = get_option('arras_tapestry_default');
+		$height = (!isset($tapestry_settings['height']) ) ? 85 : $tapestry_settings['height'];
+		
+		echo '.posts-default .entry-summary  { height: ' . $height . 'px; }';
+	}
+	add_action('arras_custom_styles', 'arras_style_tapestry_default');
 }
 
 /**

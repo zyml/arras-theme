@@ -106,6 +106,8 @@ class ArrasOptions {
 			
 		foreach ($this->defaults as $key => $value)
 			if (!isset($this->$key)) $this->$key = $value;
+			
+		do_action('arras_options_defaults');
 	}
 	
 	function save_options() {
