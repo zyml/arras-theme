@@ -180,7 +180,7 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 .single-post-meta-field  { background: #313428; display: block; border: 1px solid #383332; padding: 5px 10px; color: #FFF; font-weight: 700; }
 .single-post-meta-value	 { border: 1px solid #CCC; padding: 5px 10px; background: #F0F0F0; display: block; }
 
-.module-title, .feed-title	{ line-height: 1em; color: #333; font-size: 12px; font-weight: 700; margin: 0 10px 0 0; padding: 7px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; display: block; }
+.module-title, .feed-title, #reply-title	{ line-height: 1em; color: #333; font-size: 12px; font-weight: 700; margin: 0 10px 0 0; padding: 7px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; display: block; }
 .feed-title  { border-bottom: none; }
 
 .gallery-icon img  { background: #FFF; border: 1px solid #CCC; }
@@ -216,8 +216,12 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 
 .nocomments				{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; padding: 15px 10px; margin: 0 10px 10px 0; font-size: 12px; }
 
-#commentsform			{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; }
-#commentsform textarea	{ font: 14px 'Lucida Grande',Arial,Helvetica,sans-serif; }
+#commentform			{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; margin-right: 10px; padding: 10px; }
+#commentform label		{ color: #999; }
+#commentform label.error  { margin: 5px 0; color: #D8000C; font-weight: bold; padding: 5px; }
+#commentform span.required	{ color: #FF0000; }
+#commentform input[type=text]  { display: block; width: 300px; font: 14px 'Lucida Grande',Arial,Helvetica,sans-serif; margin: 5px 0; }
+#commentform textarea	{ display: block; font: 14px 'Lucida Grande',Arial,Helvetica,sans-serif; width: 90%; margin-bottom: 5px; }
 #cancel-comment-reply-link	{ font-size: 11px; }
 
 .pingbacks				{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; padding: 15px 10px 15px 30px; margin: 0 10px 20px 0; }

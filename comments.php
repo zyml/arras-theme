@@ -39,40 +39,25 @@ if ( have_comments() ) : ?>
 	<h4 class="module-title"><?php _e('Comments Closed', 'arras') ?></h4>
 	<p class="nocomments"><?php _e('Comments are closed. You will not be able to post a comment in this post.', 'arras') ?></p>
 <?php endif; else: ?>
-<div id="respond">
-<h4 class="module-title"><?php comment_form_title( __('Leave a Reply', 'arras'), __('Leave a Reply to %s', 'arras') ); ?></h4>
- <div id="commentsform">
-  <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-  <?php comment_id_fields(); ?>
-   <?php if ( $user_ID ) : ?>
-   <p>
-	   <?php printf( __('Logged in as <a href="%1$s" title="Logged in as %2$s">%3$s</a>.', 'arras'), get_option('siteurl') . '/wp-admin/profile.php', $user_identity, $user_identity) ?>
-	   <a href="<?php echo wp_logout_url() ?> " title="<?php _e('Log out of this account', 'arras') ?>"> (<?php _e('Logout', 'arras') ?>)</a>
-   </p>
-   <?php else : ?>
-    <p><label for="author"><?php _e('Name', 'arras') ?> <?php if ($req) _e('(required)', 'arras') ?></label><br />
-     <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="40" tabindex="1" <?php if (get_option('require_name_email')) : ?>class="required"<?php endif ?> />
-    </p>
-    <p><label for="email"><?php _e('Mail (will not be published)', 'arras') ?> <?php if ($req) _e('(required)', 'arras') ?></label><br />
-     <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="40" tabindex="2" <?php if (get_option('require_name_email')) : ?>class="required email"<?php endif ?> />
-    </p>
-    <p><label for="url"><?php _e('Website', 'arras') ?></label><br />
-     <input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="40" tabindex="3" class="url" />
-    </p>
-   <?php endif; ?>
-	<p><?php printf( __('<strong>XHTML:</strong> You can use these tags: <code>%s</code>', 'arras'), allowed_tags() ) ?></p>
-    <p>
-     <textarea name="comment" id="s4" cols="50" rows="10" tabindex="4" class="required"></textarea>
-    </p>
-	<?php if(function_exists('show_subscription_checkbox')) : ?>
-	<p><?php show_subscription_checkbox() ?></p>
-	<?php endif; ?>
-    <p>
-     <input name="submit" type="submit" id="sbutt" tabindex="5" value="<?php _e('Submit Comment', 'arras') ?>" />
-     <?php cancel_comment_reply_link( __('Cancel Reply', 'arras') ) ?>
-    </p>
-   <?php do_action('comment_form', $post->ID); ?>
-  </form>
- <?php if(function_exists('show_manual_subscription_form')) { show_manual_subscription_form(); } ?>
- </div><!-- end #commentsform --></div>
- <?php endif ?>
+	<div id="respond">
+		<?php
+		$req = get_option('require_name_email');
+		$aria_req = ( $req ? ' aria-required="true"' : '' );
+		$commenter = wp_get_current_commenter();
+		
+		comment_form( 
+			array(
+				'fields' => array(
+					'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+					'<input id="author" class="required" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
+					'email' => '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+					'<input id="email" class="required email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
+					'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website' ) . '</label>' .
+					'<input id="url" class="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'
+				),
+				'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="required"></textarea></p>'
+			) 
+		); 
+		?>
+	</div><!-- #respond -->
+<?php endif ?>
