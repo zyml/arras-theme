@@ -22,7 +22,7 @@ function arras_document_title() {
     }
     elseif ( is_search() ) { 
       $content = __('Search Results for:', 'arras'); 
-      $content .= ' ' . wp_specialchars(stripslashes(get_search_query()), true);
+      $content .= ' ' . esc_html(stripslashes(get_search_query()), true);
     }
     elseif ( is_category() ) {
       $content = __('Category Archives:', 'arras');
