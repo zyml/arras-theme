@@ -29,7 +29,7 @@
     <h2>Search Results</h2>
     <div class="search-results-content clearfix">
     <p><?php _e('<strong>Sorry, we couldn\'t find any results based on your search query.</strong>', 'arras') ?></p>
-    <?php include (TEMPLATEPATH . '/searchform.php'); ?>
+    <?php get_search_form() ?>
     </div>
 </div> 
 
