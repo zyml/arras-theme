@@ -28,6 +28,8 @@ input[type=text], input[type=password], textarea	{ background: url(../../images/
 input[type=submit], #wp-email-submit    { font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; background: url(../../images/feed-title-white.jpg) repeat-x; border: 1px solid #CCC; padding: 5px 10px; font-size: 12px; color: #000; font-weight: bold; }
 input[type=submit]:hover, #wp-email-submit:hover    { background: #314E6A; color: #FFF; }
 
+label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA; margin: 5px 0; }
+
 table					{ border-collapse: collapse; border-spacing: 0; border: 1px solid #CCC; }
 th, td					{ padding: 5px; border: 1px solid #CCC; border-width: 1px; }
 th, thead th			{ font-weight: 700; color: #333; background: #DDD; }
