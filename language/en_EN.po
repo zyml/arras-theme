@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-05 01:04+0800\n"
+"POT-Creation-Date: 2010-07-18 23:30+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -73,15 +73,15 @@ msgstr ""
 msgid "Newer Entries"
 msgstr ""
 
-#: ../attachment.php:18
-#: ../page-onecolumn.php:20
+#: ../attachment.php:13
 #: ../page.php:12
+#: ../pagetpl-onecolumn.php:20
 msgid "<p>Read the rest of this entry &raquo;</p>"
 msgstr ""
 
-#: ../attachment.php:20
-#: ../page-onecolumn.php:21
+#: ../attachment.php:15
 #: ../page.php:13
+#: ../pagetpl-onecolumn.php:21
 msgid "<p><strong>Pages:</strong> "
 msgstr ""
 
@@ -91,7 +91,7 @@ msgid "About Author: %s"
 msgstr ""
 
 #: ../author.php:15
-#: ../comments.php:54
+#: ../comments.php:55
 msgid "Website"
 msgstr ""
 
@@ -120,89 +120,41 @@ msgstr ""
 msgid "Please do not load this page directly. Thanks!"
 msgstr ""
 
-#: ../comments.php:5
+#: ../comments.php:7
 msgid "<p class=\"nocomments\">This post is password protected. Enter the password to view comments.</p>"
 msgstr ""
 
-#: ../comments.php:11
-#: ../comments.php:28
+#: ../comments.php:16
+#: ../comments.php:33
 msgid "No Comments"
 msgstr ""
 
-#: ../comments.php:11
+#: ../comments.php:16
 msgid "1 Comment"
 msgstr ""
 
-#: ../comments.php:16
-msgid "&laquo; View Older"
-msgstr ""
-
-#: ../comments.php:17
-msgid "View Newer &raquo;"
-msgstr ""
-
-#: ../comments.php:22
+#: ../comments.php:27
 msgid "Trackbacks / Pings"
 msgstr ""
 
-#: ../comments.php:29
+#: ../comments.php:34
 msgid "Start the ball rolling by posting a comment on this article!"
 msgstr ""
 
-#: ../comments.php:34
+#: ../comments.php:39
 msgid "Comments Closed"
 msgstr ""
 
-#: ../comments.php:35
+#: ../comments.php:40
 msgid "Comments are closed. You will not be able to post a comment in this post."
 msgstr ""
 
-#: ../comments.php:38
-msgid "Leave a Reply"
-msgstr ""
-
-#: ../comments.php:38
-#, php-format
-msgid "Leave a Reply to %s"
-msgstr ""
-
-#: ../comments.php:44
-#, php-format
-msgid "Logged in as <a href=\"%1$s\" title=\"Logged in as %2$s\">%3$s</a>."
-msgstr ""
-
-#: ../comments.php:45
-msgid "Log out of this account"
-msgstr ""
-
-#: ../comments.php:45
-msgid "Logout"
-msgstr ""
-
-#: ../comments.php:48
+#: ../comments.php:51
 msgid "Name"
 msgstr ""
 
-#: ../comments.php:48
-#: ../comments.php:51
-msgid "(required)"
-msgstr ""
-
-#: ../comments.php:51
-msgid "Mail (will not be published)"
-msgstr ""
-
-#: ../comments.php:58
-#, php-format
-msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
-msgstr ""
-
-#: ../comments.php:66
-msgid "Submit Comment"
-msgstr ""
-
-#: ../comments.php:67
-msgid "Cancel Reply"
+#: ../comments.php:53
+msgid "Email"
 msgstr ""
 
 #: ../footer.php:13
@@ -225,29 +177,29 @@ msgstr ""
 msgid "Latest Headlines"
 msgstr ""
 
-#: ../page-archives.php:19
+#: ../page.php:21
+#: ../pagetpl-onecolumn.php:29
+msgid "About the Author"
+msgstr ""
+
+#: ../pagetpl-archives.php:19
 msgid "Recent Posts"
 msgstr ""
 
-#: ../page-archives.php:22
+#: ../pagetpl-archives.php:22
 msgid "Monthly Archives"
 msgstr ""
 
-#: ../page-archives.php:25
+#: ../pagetpl-archives.php:25
 msgid "Pages"
 msgstr ""
 
-#: ../page-archives.php:28
+#: ../pagetpl-archives.php:28
 msgid "Categories"
 msgstr ""
 
-#: ../page-archives.php:31
+#: ../pagetpl-archives.php:31
 msgid "Authors"
-msgstr ""
-
-#: ../page-onecolumn.php:29
-#: ../page.php:21
-msgid "About the Author"
 msgstr ""
 
 #: ../search.php:8
@@ -320,92 +272,92 @@ msgstr ""
 
 #: ../library/deprecated.php:32
 #: ../library/deprecated.php:51
-#: ../library/tapestries.php:100
-#: ../library/tapestries.php:152
+#: ../library/tapestries.php:112
+#: ../library/tapestries.php:221
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../library/filters.php:33
+#: ../library/filters.php:38
 #, php-format
 msgid "<div class=\"entry-author\">By %s</div>"
 msgstr ""
 
-#: ../library/filters.php:41
+#: ../library/filters.php:46
 msgid "Edit Post"
 msgstr ""
 
-#: ../library/filters.php:41
+#: ../library/filters.php:46
 msgid "(Edit Post)"
 msgstr ""
 
-#: ../library/filters.php:49
+#: ../library/filters.php:54
 #, php-format
 msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
 msgstr ""
 
-#: ../library/filters.php:129
+#: ../library/filters.php:134
 msgid "Tags:"
 msgstr ""
 
-#: ../library/filters.php:140
+#: ../library/filters.php:145
 msgid "That 'something' you are looking for isn't here!"
 msgstr ""
 
-#: ../library/filters.php:141
+#: ../library/filters.php:146
 msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
 msgstr ""
 
-#: ../library/filters.php:145
+#: ../library/filters.php:150
 msgid "Perhaps searching for it might help?"
 msgstr ""
 
-#: ../library/filters.php:170
+#: ../library/filters.php:175
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: ../library/launcher.php:14
+#: ../library/launcher.php:13
 msgid "Main Menu"
 msgstr ""
 
-#: ../library/launcher.php:15
+#: ../library/launcher.php:14
 msgid "Top Menu"
 msgstr ""
 
-#: ../library/launcher.php:20
+#: ../library/launcher.php:19
 msgid "Featured Slideshow"
 msgstr ""
 
-#: ../library/launcher.php:21
+#: ../library/launcher.php:20
 msgid "Sidebar Widgets"
 msgstr ""
 
-#: ../library/launcher.php:22
+#: ../library/launcher.php:21
 msgid "Tapestry: Node-Based"
 msgstr ""
 
-#: ../library/launcher.php:23
+#: ../library/launcher.php:22
 msgid "Tapestry: Quick Preview"
 msgstr ""
 
-#: ../library/launcher.php:76
+#: ../library/launcher.php:74
 msgid "1 Column Layout (No Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:77
+#: ../library/launcher.php:75
 msgid "2 Column Layout (Right Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:78
+#: ../library/launcher.php:76
 msgid "2 Column Layout (Left Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:79
+#: ../library/launcher.php:77
 msgid "3 Column Layout (Left & Right Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:80
+#: ../library/launcher.php:78
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
@@ -417,78 +369,110 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../library/tapestries.php:78
+#: ../library/tapestries.php:90
 msgid "Traditional"
 msgstr ""
 
-#: ../library/tapestries.php:108
+#: ../library/tapestries.php:117
 msgid "Per Line"
 msgstr ""
 
-#: ../library/tapestries.php:132
+#: ../library/tapestries.php:144
 msgid "Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:149
+#: ../library/tapestries.php:155
+msgid "Tapestry: Node Based"
+msgstr ""
+
+#: ../library/tapestries.php:159
+msgid "Show Excerpt?"
+msgstr ""
+
+#: ../library/tapestries.php:165
+msgid "Maximum Node Height"
+msgstr ""
+
+#: ../library/tapestries.php:168
+msgid "pixels"
+msgstr ""
+
+#: ../library/tapestries.php:218
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: ../library/tapestries.php:153
+#: ../library/tapestries.php:222
 msgid "Continue Reading..."
 msgstr ""
 
-#: ../library/tapestries.php:162
+#: ../library/tapestries.php:228
 msgid "Quick Preview"
 msgstr ""
 
-#: ../library/template.php:88
+#: ../library/template.php:24
+msgid "Search Results for:"
+msgstr ""
+
+#: ../library/template.php:28
+msgid "Category Archives:"
+msgstr ""
+
+#: ../library/template.php:32
+msgid "Tag Archives:"
+msgstr ""
+
+#: ../library/template.php:36
+msgid "Not Found"
+msgstr ""
+
+#: ../library/template.php:182
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:91
+#: ../library/template.php:185
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:91
+#: ../library/template.php:185
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:91
+#: ../library/template.php:185
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:91
+#: ../library/template.php:185
 msgid "g:i A"
 msgstr ""
 
-#: ../library/template.php:187
-#: ../library/template.php:189
+#: ../library/template.php:282
+#: ../library/template.php:284
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../library/template.php:187
-#: ../library/template.php:189
+#: ../library/template.php:282
+#: ../library/template.php:284
 msgid "RSS Feed"
 msgstr ""
 
-#: ../library/template.php:194
+#: ../library/template.php:289
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../library/template.php:194
+#: ../library/template.php:289
 msgid "Twitter"
 msgstr ""
 
-#: ../library/template.php:199
+#: ../library/template.php:294
 #, php-format
 msgid "%s Facebook"
 msgstr ""
 
-#: ../library/template.php:199
+#: ../library/template.php:294
 msgid "Facebook"
 msgstr ""
 
@@ -603,114 +587,114 @@ msgstr ""
 msgid "A search form for your site"
 msgstr ""
 
-#: ../library/admin/admin.php:19
+#: ../library/admin/admin.php:25
 msgid "Arras Theme"
 msgstr ""
 
-#: ../library/admin/admin.php:20
-#: ../library/admin/admin.php:67
+#: ../library/admin/admin.php:26
+#: ../library/admin/admin.php:73
 msgid "Arras Theme Options"
 msgstr ""
 
-#: ../library/admin/admin.php:20
+#: ../library/admin/admin.php:26
 msgid "Theme Options"
 msgstr ""
 
-#: ../library/admin/admin.php:22
+#: ../library/admin/admin.php:28
 msgid "Post Types & Taxonomies"
 msgstr ""
 
-#: ../library/admin/admin.php:22
+#: ../library/admin/admin.php:28
 msgid "Post Types & Tax."
 msgstr ""
 
-#: ../library/admin/admin.php:24
+#: ../library/admin/admin.php:30
 msgid "Custom Background"
 msgstr ""
 
-#: ../library/admin/admin.php:59
+#: ../library/admin/admin.php:65
 msgid "Thumbnail cache has been cleared."
 msgstr ""
 
-#: ../library/admin/admin.php:87
+#: ../library/admin/admin.php:93
 msgid "Your settings have been successfully imported."
 msgstr ""
 
-#: ../library/admin/admin.php:132
-#: ../library/admin/admin.php:158
-#: ../library/admin/admin.php:165
+#: ../library/admin/admin.php:138
+#: ../library/admin/admin.php:164
+#: ../library/admin/admin.php:171
 msgid "Your settings have been saved to the database."
 msgstr ""
 
-#: ../library/admin/admin.php:145
+#: ../library/admin/admin.php:151
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:236
+#: ../library/admin/admin.php:242
 msgid "Helpful Links"
 msgstr ""
 
-#: ../library/admin/admin.php:238
+#: ../library/admin/admin.php:244
 msgid "Quick Start Guide"
 msgstr ""
 
-#: ../library/admin/admin.php:239
+#: ../library/admin/admin.php:245
 msgid "Community Forums"
 msgstr ""
 
-#: ../library/admin/admin.php:240
+#: ../library/admin/admin.php:246
 msgid "Bug Tracker / Repository"
 msgstr ""
 
-#: ../library/admin/admin.php:245
+#: ../library/admin/admin.php:251
 msgid "Recommended Plugins"
 msgstr ""
 
-#: ../library/admin/admin.php:257
+#: ../library/admin/admin.php:263
 msgid "How to Support?"
 msgstr ""
 
-#: ../library/admin/admin.php:258
+#: ../library/admin/admin.php:264
 msgid "There are many ways you can support this theme:"
 msgstr ""
 
-#: ../library/admin/admin.php:260
+#: ../library/admin/admin.php:266
 msgid "Share other about the theme"
 msgstr ""
 
-#: ../library/admin/admin.php:261
+#: ../library/admin/admin.php:267
 msgid "Report bugs / Send patches"
 msgstr ""
 
-#: ../library/admin/admin.php:262
+#: ../library/admin/admin.php:268
 msgid "Contribute to the forums / wiki"
 msgstr ""
 
-#: ../library/admin/admin.php:263
+#: ../library/admin/admin.php:269
 msgid "Translate the theme"
 msgstr ""
 
-#: ../library/admin/admin.php:264
+#: ../library/admin/admin.php:270
 msgid "Send in a donation!"
 msgstr ""
 
-#: ../library/admin/admin.php:266
+#: ../library/admin/admin.php:272
 msgid "Donate using PayPal"
 msgstr ""
 
-#: ../library/admin/admin.php:272
+#: ../library/admin/admin.php:278
 msgid "Thanks!"
 msgstr ""
 
-#: ../library/admin/admin.php:273
+#: ../library/admin/admin.php:279
 msgid "Many thanks to those who have contributed to the theme:"
 msgstr ""
 
-#: ../library/admin/admin.php:274
+#: ../library/admin/admin.php:280
 msgid "Forum Contributors"
 msgstr ""
 
-#: ../library/admin/admin.php:276
+#: ../library/admin/admin.php:282
 msgid "Translators"
 msgstr ""
 
@@ -831,7 +815,7 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: ../library/admin/options.php:68
+#: ../library/admin/options.php:67
 msgid "Editors' Picks"
 msgstr ""
 
