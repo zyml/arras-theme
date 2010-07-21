@@ -10,8 +10,6 @@ $('.sf-menu').superfish({autoArrows: true, speed: 'fast', dropShadows: 'true'});
 $('#commentform').validate();
 <?php endif ?>
 
-$('#footer-sidebar').equalHeights();
-
 <?php do_action('arras_custom_scripts') ?>
 
 });
