@@ -63,7 +63,8 @@ require_once ARRAS_LIB . '/admin/background.php';
 require_once ARRAS_LIB . '/launcher.php';
 
 // Max. Image Size
-$content_width = apply_filters('arras_content_width', 610);
+$max_image_size = arras_get_single_thumbs_size();
+$content_width = $max_image_size[0];
 
 do_action('arras_init');
 

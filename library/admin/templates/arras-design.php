@@ -23,9 +23,11 @@ foreach ($arras_registered_style_dirs as $style_dir) {
 <td>
 <?php if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
 echo arras_form_dropdown('arras-layout-col', $arras_registered_alt_layouts, arras_get_option('layout')) ?><br />
-<span style="color: red">
-<?php _e('Once you have changed your layout settings, you will need to adjust your thumbnail sizes manually and regenerate them.', 'arras');
-?></span><?php
+<?php 
+	echo arras_form_checkbox('arras-reset-thumbs', 'show', false, 'id="arras-reset-thumbs"') . ' '; 
+	_e('Reset thumbnail sizes accordingly based on selected layout.', 'arras');
+?>
+<?php
 } else {
 	echo '<span class="grey">' . __('The developer of the child theme has disabled layout settings.', 'arras') . '</span>';
 }

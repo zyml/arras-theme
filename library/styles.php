@@ -38,8 +38,11 @@ function arras_add_custom_logo() {
 function arras_layout_styles() {
 	$sidebar_size = arras_get_image_size('sidebar-thumb');
 	$sidebar_size_w = $sidebar_size['w'];
+	
+	$single_thumb_size = arras_get_image_size('single-thumb');
 	?>
 	.featured-stories-summary  { margin-left: <?php echo $sidebar_size_w + 15 ?>px; }
+	.single .post .entry-photo img, .single-post .entry-photo img  { width: <?php echo $single_thumb_size['w'] ?>px; height: <?php echo $single_thumb_size['h'] ?>px; }
 	<?php
 }
 

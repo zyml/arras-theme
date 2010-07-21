@@ -58,7 +58,7 @@ function arras_postheader() {
 	}
 	
 	if ( arras_get_option('single_thumbs') && has_post_thumbnail($post->ID) ) {
-		$postheader .= '<div class="entry-photo">' . arras_get_thumbnail('featured-slideshow-thumb') . '</div>';
+		$postheader .= '<div class="entry-photo">' . arras_get_thumbnail('single-thumb') . '</div>';
 	}
 
 	echo apply_filters('arras_postheader', $postheader);

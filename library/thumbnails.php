@@ -5,10 +5,11 @@
  * @since 1.4.4
  */
 $arras_image_sizes = array();
-$arras_custom_image_sizes = arras_get_option('custom_thumbs');
 
 function arras_add_default_thumbnails() {
-	arras_add_image_size( 'single-thumb', __('Single Post Thumbnail', 'arras'), 115, 115 );
+	
+	$single_thumbs = arras_get_single_thumbs_size();
+	arras_add_image_size( 'single-thumb', __('Single Post Thumbnail', 'arras'), $single_thumbs[0], $single_thumbs[1] );
 	arras_add_image_size( 'sidebar-thumb', __('Sidebar Widgets', 'arras'), 36, 36);	
 	
 	do_action('arras_add_default_thumbnails');
@@ -19,10 +20,12 @@ function arras_add_default_thumbnails() {
  * @since 1.4.4
  */
 function arras_add_image_size($id, $name, $default_width, $default_height) {
-	global $arras_image_sizes, $arras_custom_image_sizes;
+	global $arras_image_sizes;
+	
+	$arras_custom_image_sizes = arras_get_option('custom_thumbs');
 	
 	// Check from options if a custom width and height has been specified, else use defaults
-	if ($arras_custom_image_sizes && isset($arras_custom_image_sizes[$id])) {
+	if (isset($arras_custom_image_sizes[$id])) {
 		$width = $arras_custom_image_sizes[$id]['w'];
 		$height = $arras_custom_image_sizes[$id]['h'];
 	} else {
@@ -129,6 +132,20 @@ function arras_get_first_post_image_id($id = NULL) {
 	
 	$keys = array_reverse(array_keys($attachments));
 	return $keys[0];
+}
+
+function arras_get_single_thumbs_size() {
+	$layout = arras_get_option('layout');
+
+	if ( strpos($layout, '1c') !== false ) {
+		$size = array(930, 375);
+	} else if ( strpos($layout, '3c') !== false ) {
+		$size = array(465, 190);
+	} else {
+		$size = array(620, 250);
+	}
+	
+	return apply_filters('arras_content_width', $size);
 }
 
 /* End of file thumbnails.php */

@@ -5,6 +5,9 @@ j(document).ready(function() {
 	j('select[name|=arras-layout-col]').change( function() {
 		checkRegenThumbsField();
 	} );
+	j('input[name|=arras-reset-thumbs]').change( function() {
+		checkRegenThumbsField();
+	} );
 	
 	j('.enabler input[type=checkbox]').change( function() {
 		j(this).parent().parent().next().toggle();

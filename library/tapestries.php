@@ -150,9 +150,9 @@ if (!function_exists('arras_tapestry_default')) {
 		$layout = arras_get_option('layout');
 		
 		if ( strpos($layout, '1c') !== false ) {
-			$size = array(235, 175);
+			$size = array(215, 120);
 		} else if ( strpos($layout, '3c') !== false ) {
-			$size = array(235, 175);
+			$size = array(230, 130);
 		} else {
 			$size = array(195, 110);
 		}

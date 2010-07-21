@@ -65,10 +65,6 @@ function arras_admin() {
 			$notices = '<div class="updated fade"><p>' . __('Thumbnail cache has been cleared.', 'arras') . '</p></div>';
 		}
 		
-		// Hack: Regenerate thumbnail sizes
-		$arras_image_sizes = array();
-		arras_add_default_thumbnails();
-		
 		if ( isset($_REQUEST['arras-regen-thumbs']) ) {
 			check_admin_referer('arras-admin');
 			
@@ -79,6 +75,8 @@ function arras_admin() {
 			echo '</div>';
 			
 		} else {
+			$arras_image_sizes = array();
+			arras_add_default_thumbnails();
 			include 'templates/options_page.php';
 		}
 	}
@@ -128,12 +126,23 @@ function arras_admin_save() {
 			$arras_options->logo = '';
 		}
 		
-		foreach ($arras_image_sizes as $id => $args) {
-			$arras_image_sizes[$id]['w'] = (int)($_POST['arras-' . $id . '-w']);
-			$arras_image_sizes[$id]['h'] = (int)($_POST['arras-' . $id . '-h']);
-		}
-		$arras_options->custom_thumbs = $arras_image_sizes;
+		// Hack!
+		$arras_options->layout = (string)$_POST['arras-layout-col'];
+		$arras_image_sizes = array();
+		arras_add_default_thumbnails();
 		
+		$arras_custom_image_sizes = array();
+		foreach ($arras_image_sizes as $id => $args) {
+			if ( isset($_POST['arras-reset-thumbs']) && $_POST['arras-reset-thumbs'] ) {
+				$arras_custom_image_sizes[$id]['w'] = $arras_image_sizes[$id]['dw'];
+				$arras_custom_image_sizes[$id]['h'] = $arras_image_sizes[$id]['dh'];
+			} else {
+				$arras_custom_image_sizes[$id]['w'] = (int)($_POST['arras-' . $id . '-w']);
+				$arras_custom_image_sizes[$id]['h'] = (int)($_POST['arras-' . $id . '-h']);
+			}
+		}
+		
+		$arras_options->custom_thumbs = $arras_custom_image_sizes;
 		$arras_options->save_options();
 		arras_update_options();
 		
