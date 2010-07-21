@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 23:30+0800\n"
+"POT-Creation-Date: 2010-07-22 00:15+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ../footer.php:13
+#: ../footer.php:22
 msgid "About Arras Theme"
 msgstr ""
 
@@ -273,7 +273,7 @@ msgstr ""
 #: ../library/deprecated.php:32
 #: ../library/deprecated.php:51
 #: ../library/tapestries.php:112
-#: ../library/tapestries.php:221
+#: ../library/tapestries.php:245
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -325,39 +325,23 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: ../library/launcher.php:19
-msgid "Featured Slideshow"
-msgstr ""
-
-#: ../library/launcher.php:20
-msgid "Sidebar Widgets"
-msgstr ""
-
-#: ../library/launcher.php:21
-msgid "Tapestry: Node-Based"
-msgstr ""
-
-#: ../library/launcher.php:22
-msgid "Tapestry: Quick Preview"
-msgstr ""
-
-#: ../library/launcher.php:74
+#: ../library/launcher.php:77
 msgid "1 Column Layout (No Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:75
+#: ../library/launcher.php:78
 msgid "2 Column Layout (Right Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:76
+#: ../library/launcher.php:79
 msgid "2 Column Layout (Left Sidebar)"
 msgstr ""
 
-#: ../library/launcher.php:77
+#: ../library/launcher.php:80
 msgid "3 Column Layout (Left & Right Sidebars)"
 msgstr ""
 
-#: ../library/launcher.php:78
+#: ../library/launcher.php:81
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
@@ -367,6 +351,10 @@ msgstr ""
 
 #: ../library/slideshow.php:20
 msgid "Next"
+msgstr ""
+
+#: ../library/slideshow.php:82
+msgid "Featured Slideshow"
 msgstr ""
 
 #: ../library/tapestries.php:90
@@ -381,33 +369,41 @@ msgstr ""
 msgid "Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:155
+#: ../library/tapestries.php:160
+msgid "Tapestry: Node-Based"
+msgstr ""
+
+#: ../library/tapestries.php:170
 msgid "Tapestry: Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:159
+#: ../library/tapestries.php:174
 msgid "Show Excerpt?"
 msgstr ""
 
-#: ../library/tapestries.php:165
+#: ../library/tapestries.php:180
 msgid "Maximum Node Height"
 msgstr ""
 
-#: ../library/tapestries.php:168
+#: ../library/tapestries.php:183
 msgid "pixels"
 msgstr ""
 
-#: ../library/tapestries.php:218
+#: ../library/tapestries.php:242
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: ../library/tapestries.php:222
+#: ../library/tapestries.php:246
 msgid "Continue Reading..."
 msgstr ""
 
-#: ../library/tapestries.php:228
+#: ../library/tapestries.php:252
 msgid "Quick Preview"
+msgstr ""
+
+#: ../library/tapestries.php:258
+msgid "Tapestry: Quick Preview"
 msgstr ""
 
 #: ../library/template.php:24
@@ -474,6 +470,14 @@ msgstr ""
 
 #: ../library/template.php:294
 msgid "Facebook"
+msgstr ""
+
+#: ../library/thumbnails.php:12
+msgid "Single Post Thumbnail"
+msgstr ""
+
+#: ../library/thumbnails.php:13
+msgid "Sidebar Widgets"
 msgstr ""
 
 #: ../library/widgets.php:15
@@ -616,85 +620,85 @@ msgstr ""
 msgid "Thumbnail cache has been cleared."
 msgstr ""
 
-#: ../library/admin/admin.php:93
+#: ../library/admin/admin.php:95
 msgid "Your settings have been successfully imported."
 msgstr ""
 
-#: ../library/admin/admin.php:138
-#: ../library/admin/admin.php:164
-#: ../library/admin/admin.php:171
+#: ../library/admin/admin.php:151
+#: ../library/admin/admin.php:177
+#: ../library/admin/admin.php:184
 msgid "Your settings have been saved to the database."
 msgstr ""
 
-#: ../library/admin/admin.php:151
+#: ../library/admin/admin.php:164
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:242
+#: ../library/admin/admin.php:255
 msgid "Helpful Links"
 msgstr ""
 
-#: ../library/admin/admin.php:244
+#: ../library/admin/admin.php:257
 msgid "Quick Start Guide"
 msgstr ""
 
-#: ../library/admin/admin.php:245
+#: ../library/admin/admin.php:258
 msgid "Community Forums"
 msgstr ""
 
-#: ../library/admin/admin.php:246
+#: ../library/admin/admin.php:259
 msgid "Bug Tracker / Repository"
 msgstr ""
 
-#: ../library/admin/admin.php:251
+#: ../library/admin/admin.php:264
 msgid "Recommended Plugins"
 msgstr ""
 
-#: ../library/admin/admin.php:263
+#: ../library/admin/admin.php:276
 msgid "How to Support?"
 msgstr ""
 
-#: ../library/admin/admin.php:264
+#: ../library/admin/admin.php:277
 msgid "There are many ways you can support this theme:"
 msgstr ""
 
-#: ../library/admin/admin.php:266
+#: ../library/admin/admin.php:279
 msgid "Share other about the theme"
 msgstr ""
 
-#: ../library/admin/admin.php:267
+#: ../library/admin/admin.php:280
 msgid "Report bugs / Send patches"
 msgstr ""
 
-#: ../library/admin/admin.php:268
+#: ../library/admin/admin.php:281
 msgid "Contribute to the forums / wiki"
 msgstr ""
 
-#: ../library/admin/admin.php:269
+#: ../library/admin/admin.php:282
 msgid "Translate the theme"
 msgstr ""
 
-#: ../library/admin/admin.php:270
+#: ../library/admin/admin.php:283
 msgid "Send in a donation!"
 msgstr ""
 
-#: ../library/admin/admin.php:272
+#: ../library/admin/admin.php:285
 msgid "Donate using PayPal"
 msgstr ""
 
-#: ../library/admin/admin.php:278
+#: ../library/admin/admin.php:291
 msgid "Thanks!"
 msgstr ""
 
-#: ../library/admin/admin.php:279
+#: ../library/admin/admin.php:292
 msgid "Many thanks to those who have contributed to the theme:"
 msgstr ""
 
-#: ../library/admin/admin.php:280
+#: ../library/admin/admin.php:293
 msgid "Forum Contributors"
 msgstr ""
 
-#: ../library/admin/admin.php:282
+#: ../library/admin/admin.php:295
 msgid "Translators"
 msgstr ""
 
@@ -799,23 +803,23 @@ msgstr ""
 msgid "Current Background Image"
 msgstr ""
 
-#: ../library/admin/options.php:48
+#: ../library/admin/options.php:49
 msgid "Copyright"
 msgstr ""
 
-#: ../library/admin/options.php:49
+#: ../library/admin/options.php:50
 #, php-format
 msgid "Copyright %s. All Rights Reserved."
 msgstr ""
 
-#: ../library/admin/options.php:51
+#: ../library/admin/options.php:52
 #: ../library/admin/templates/options_page.php:33
 #: ../library/admin/templates/posttype_page.php:33
 #: ../library/admin/templates/taxonomy_page.php:22
 msgid "Home"
 msgstr ""
 
-#: ../library/admin/options.php:67
+#: ../library/admin/options.php:68
 msgid "Editors' Picks"
 msgstr ""
 
@@ -849,36 +853,36 @@ msgstr ""
 msgid "Overall Layout"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:27
-msgid "Once you have changed your layout settings, you will need to adjust your thumbnail sizes manually and regenerate them."
+#: ../library/admin/templates/arras-design.php:28
+msgid "Reset thumbnail sizes accordingly based on selected layout."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:30
+#: ../library/admin/templates/arras-design.php:32
 msgid "The developer of the child theme has disabled layout settings."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:38
+#: ../library/admin/templates/arras-design.php:40
 msgid "Default Style"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:42
+#: ../library/admin/templates/arras-design.php:44
 #, php-format
 msgid "Alternate stylesheets can be placed in %s."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:44
+#: ../library/admin/templates/arras-design.php:46
 msgid "The developer of the child theme has disabled alternate stylesheets."
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:51
+#: ../library/admin/templates/arras-design.php:53
 msgid "Custom Logo"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:57
+#: ../library/admin/templates/arras-design.php:59
 msgid "Delete existing"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:66
+#: ../library/admin/templates/arras-design.php:68
 msgid "Set Custom Background"
 msgstr ""
 
@@ -939,10 +943,18 @@ msgid "Footer Information"
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:66
+msgid "No. of Columns"
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:69
+msgid "Footer sidebars will be labelled respectively (eg. Footer Sidebar #1, etc.)"
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:74
 msgid "Footer Title"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:76
+#: ../library/admin/templates/arras-general.php:84
 msgid "Usually your website's copyright information would go here.<br /> It would be great if you could include a link to WordPress and even greater if you could include a link to the theme website. :)"
 msgstr ""
 
