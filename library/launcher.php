@@ -15,11 +15,8 @@ if ( function_exists('register_nav_menus') ) {
 	));
 }
 
-$slideshow_thumb_size = arras_get_slideshow_thumb_size();
-arras_add_image_size( 'featured-slideshow-thumb', __('Featured Slideshow', 'arras'), $slideshow_thumb_size[0], $slideshow_thumb_size[1]);
-arras_add_image_size( 'sidebar-thumb', __('Sidebar Widgets', 'arras'), 36, 36);
-arras_add_image_size( 'node-based-thumb', __('Tapestry: Node-Based', 'arras'), 195, 110 );
-arras_add_image_size( 'quick-preview-thumb', __('Tapestry: Quick Preview', 'arras'), 115, 115 );
+// Add various default thumbnails used by main theme
+arras_add_default_thumbnails();
 
 // Remove existing actions
 remove_action('wp_head', 'pagenavi_css');

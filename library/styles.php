@@ -36,43 +36,11 @@ function arras_add_custom_logo() {
 }
 
 function arras_layout_styles() {
-
-$node_based_size = arras_get_image_size('node-based-thumb');
-$node_based_w = $node_based_size['w'];
-$node_based_h = $node_based_size['h'];
-
-$quick_preview_size = arras_get_image_size('quick-preview-thumb');
-$quick_preview_w = $quick_preview_size['w'];
-$quick_preview_h = $quick_preview_size['h'];
-?>
-
-.posts-default li { width: <?php echo $node_based_w + 10 ?>px; }
-.posts-default img, .posts-default .entry-thumbnails-link { width: <?php echo $node_based_w ?>px; height: <?php echo $node_based_h ?>px; }
-.posts-default .entry-thumbnails { width: <?php echo $node_based_w + 10 ?>px; height: <?php echo $node_based_h + 10 ?>px; }
-.posts-quick .entry-thumbnails img { width: <?php echo $quick_preview_w ?>px; height: <?php echo $quick_preview_h ?>px; }
-.posts-default .entry-meta { width: <?php echo $node_based_w ?>px; }
-.posts-quick .entry-meta { width: <?php echo $quick_preview_w ?>px; }
-
-<?php
-$slideshow_size = arras_get_image_size('featured-slideshow-thumb');
-$slideshow_size_w = $slideshow_size['w'];
-$slideshow_size_h = $slideshow_size['h'];
-?>
-
-.featured { height: <?php echo $slideshow_size_h + 10 ?>px; }
-.featured-article { width: <?php echo $slideshow_size_w ?>px; height: <?php echo $slideshow_size_h ?>px; }
-.featured-article img { width: <?php echo $slideshow_size_w ?>px; height: <?php echo $slideshow_size_h ?>px; }
-#controls { width: <?php echo $slideshow_size_w - 30 ?>px; top: <?php echo ($slideshow_size_h / 2) - 15 ?>px; }
-#controls .next { left: <?php echo $slideshow_size_w - 30 ?>px; }
-.featured-entry { height: <?php echo ceil($slideshow_size_h / 3) ?>px; top: -<?php echo ceil($slideshow_size_h / 3) ?>px; }
-.featured-slideshow-inner { height: <?php echo $slideshow_size_h ?>px }
-
-<?php
-$sidebar_size = arras_get_image_size('sidebar-thumb');
-$sidebar_size_w = $sidebar_size['w'];
-?>
-.featured-stories-summary  { margin-left: <?php echo $sidebar_size_w + 15 ?>px; }
-<?php
+	$sidebar_size = arras_get_image_size('sidebar-thumb');
+	$sidebar_size_w = $sidebar_size['w'];
+	?>
+	.featured-stories-summary  { margin-left: <?php echo $sidebar_size_w + 15 ?>px; }
+	<?php
 }
 
 function arras_add_blueprint_css() {

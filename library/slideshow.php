@@ -67,10 +67,8 @@ $('#featured-slideshow').cycle({
 }
 add_action('arras_footer', 'arras_add_slideshow_js');
 
-function arras_get_slideshow_thumb_size($layout = '') {
-	if (!$layout) {
-		$layout = arras_get_option('layout');
-	}
+function arras_add_slideshow_thumb_size() {
+	$layout = arras_get_option('layout');
 	
 	if ( strpos($layout, '1c') !== false ) {
 		$size = array(940, 300);
@@ -80,8 +78,26 @@ function arras_get_slideshow_thumb_size($layout = '') {
 		$size = array(640, 250);
 	}
 	
-	return apply_filters('arras_slideshow_thumb_size', $size);
+	$size = apply_filters('arras_slideshow_thumb_size', $size);
+	arras_add_image_size( 'featured-slideshow-thumb', __('Featured Slideshow', 'arras'), $size[0], $size[1]);
 }
+add_action('arras_add_default_thumbnails', 'arras_add_slideshow_thumb_size', 5);
+
+function arras_slideshow_styles() {
+	$slideshow_size = arras_get_image_size('featured-slideshow-thumb');
+	$slideshow_size_w = $slideshow_size['w'];
+	$slideshow_size_h = $slideshow_size['h'];
+	?>
+	.featured { height: <?php echo $slideshow_size_h + 10 ?>px; }
+	.featured-article { width: <?php echo $slideshow_size_w ?>px; height: <?php echo $slideshow_size_h ?>px; }
+	.featured-article img { width: <?php echo $slideshow_size_w ?>px; height: <?php echo $slideshow_size_h ?>px; }
+	#controls { width: <?php echo $slideshow_size_w - 30 ?>px; top: <?php echo ($slideshow_size_h / 2) - 15 ?>px; }
+	#controls .next { left: <?php echo $slideshow_size_w - 30 ?>px; }
+	.featured-entry { height: <?php echo ceil($slideshow_size_h / 3) ?>px; top: -<?php echo ceil($slideshow_size_h / 3) ?>px; }
+	.featured-slideshow-inner { height: <?php echo $slideshow_size_h ?>px }
+	<?php
+}
+add_action('arras_custom_styles', 'arras_slideshow_styles');
 
 /* End of file slideshow.php */
 /* Location: ./library/slideshow.php */

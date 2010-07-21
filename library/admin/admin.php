@@ -65,6 +65,10 @@ function arras_admin() {
 			$notices = '<div class="updated fade"><p>' . __('Thumbnail cache has been cleared.', 'arras') . '</p></div>';
 		}
 		
+		// Hack: Regenerate thumbnail sizes
+		$arras_image_sizes = array();
+		arras_add_default_thumbnails();
+		
 		if ( isset($_REQUEST['arras-regen-thumbs']) ) {
 			check_admin_referer('arras-admin');
 			

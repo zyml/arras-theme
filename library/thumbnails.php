@@ -7,6 +7,13 @@
 $arras_image_sizes = array();
 $arras_custom_image_sizes = arras_get_option('custom_thumbs');
 
+function arras_add_default_thumbnails() {
+	arras_add_image_size( 'single-thumb', __('Single Post Thumbnail', 'arras'), 115, 115 );
+	arras_add_image_size( 'sidebar-thumb', __('Sidebar Widgets', 'arras'), 36, 36);	
+	
+	do_action('arras_add_default_thumbnails');
+}
+
 /**
  * Function to add image size into both theme system.
  * @since 1.4.4
