@@ -211,11 +211,11 @@ class ArrasOptions {
 		$this->_chain_update_posttypes( $this->news_posttype, (string)$_POST['arras-posttype-news'], $this->news_tax, $this->news_cat );
 	}
 	
-	function _chain_update_posttypes(&$old_posttype, &$new_posttype, &$taxonomy, &$category = null) {
-		if ( $old_posttype != $new_posttype ) {
-			$new_posttype = $old_posttype;
+	function _chain_update_posttypes(&$posttype, $new_posttype, &$taxonomy, &$category = null) {
+		if ( $posttype != $new_posttype ) {
+			$posttype = $new_posttype;
 			
-			$taxonomies = get_object_taxonomies($new_posttype, 'names');
+			$taxonomies = get_object_taxonomies($posttype, 'names');
 			if(count($taxonomies) > 0) $taxonomy = $taxonomies[0];
 			else $taxonomy = 0;
 			
