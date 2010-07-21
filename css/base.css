@@ -207,10 +207,9 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 /* Footer */
 #footer				{ margin: 20px auto 0; width: 980px; padding-bottom: 10px; }
-#footer .widgetcontainer	{ padding: 5px 10px; min-width: 150px; }
-.no-js #footer .widgetcontainer { height: 190px; }
+#footer .widgetcontainer	{ padding: 5px 10px; margin-right: 10px; float: left; }
 #footer .footer-message	{ margin: 0; padding: 10px 15px 0; }
 #footer .footer-message p { margin: 0 0 0.5em; }
 #footer .footer-message .floatright { margin-left: 20px; }
-#footer-sidebar		{ overflow: hidden; margin: 10px 10px 0; padding: 0 0 10px; }
-#footer-sidebar .widgetcontainer	{ float: left; margin: 0; max-width: 250px; }
+.footer-sidebar-container  { margin: 10px; }
+.footer-sidebar		{ overflow: hidden; float: left; margin: 0; padding: 0 0 10px; }

@@ -50,13 +50,19 @@ register_sidebar( array(
 	'before_title' => '<h5 class="widgettitle">',
 	'after_title' => '</h5>'
 ) );
-register_sidebar( array(
-	'name' => 'Footer',
-	'before_widget' => '<li id="%1$s" class="widgetcontainer clearfix">',
-	'after_widget' => '</li>',
-	'before_title' => '<h5 class="widgettitle">',
-	'after_title' => '</h5>'
-) );
+
+$footer_sidebars = arras_get_option('footer_sidebars');
+if ($footer_sidebars == '') $footer_sidebars = 1;
+
+for( $i = 1; $i < $footer_sidebars + 1; $i++ ) {
+	register_sidebar( array(
+		'name' => 'Footer Sidebar #' . $i,
+		'before_widget' => '<li id="%1$s" class="widgetcontainer clearfix">',
+		'after_widget' => '</li>',
+		'before_title' => '<h5 class="widgettitle">',
+		'after_title' => '</h5>'
+	) );
+}
 
 // Header Actions
 if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
@@ -79,6 +85,7 @@ if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
 
 add_action('arras_head', 'arras_override_styles');
 add_action('arras_custom_styles', 'arras_add_custom_logo');
+add_action('arras_custom_styles', 'arras_constrain_footer_sidebars');
 
 add_action('arras_beside_nav', 'arras_social_nav');
 

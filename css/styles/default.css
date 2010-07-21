@@ -242,4 +242,4 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 #footer .widgettitle	{ background: none; border: none; font-size: 14px; color: #444; padding: 0 0 10px; letter-spacing: -1px; margin: 0; }
 #footer .widgetcontent	{ font-size: 12px; background: none; padding: 0; border: none; }
 #footer .footer-message	{ font-size: 11px; }
-#footer-sidebar		{ border-bottom: 1px solid #CCC; }
+.footer-sidebar-container  { border-bottom: 1px solid #CCC; }

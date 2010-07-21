@@ -63,6 +63,14 @@
 <table class="form-table">
 
 <tr valign="top">
+<th scope="row"><label for="arras-footer-sidebars"><?php _e('No. of Columns', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_dropdown( 'arras-footer-sidebars', array(1 => 1, 2, 3, 4), arras_get_option('footer_sidebars') ); ?>
+<?php echo '<br />' . __('Footer sidebars will be labelled respectively (eg. Footer Sidebar #1, etc.)', 'arras') ?>
+</td>
+</tr>
+
+<tr valign="top">
 <th scope="row"><label for="arras-footer-title"><?php _e('Footer Title', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_input(array('name' => 'arras-footer-title', 'id' => 'arras-footer-title', 'style' => 'width:40%', 'value' => arras_get_option('footer_title') )) ?>

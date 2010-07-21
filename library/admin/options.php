@@ -24,7 +24,7 @@ class ArrasOptions {
 	var $auto_thumbs, $custom_thumbs;
 	
 	// Design
-	var $layout, $style, $logo;
+	var $layout, $style, $logo, $footer_sidebars;
 	
 	// Custom Post Types & Taxonomies
 	var $slideshow_posttype, $featured1_posttype, $featured2_posttype, $news_posttype;
@@ -45,6 +45,7 @@ class ArrasOptions {
 			'donate' => false,
 			'feed_url' => get_bloginfo('rss2_url'),
 			'comments_feed_url'	=> get_bloginfo('comments_rss2_url'),
+			'footer_sidebars' => 1,
 			'footer_title' => __('Copyright', 'arras'),
 			'footer_message' => '<p>' . sprintf( __('Copyright %s. All Rights Reserved.', 'arras'), get_bloginfo('name') ) . '</p>',
 			
@@ -118,6 +119,7 @@ class ArrasOptions {
 		$this->comments_feed_url = (string)$_POST['arras-rss-comments-url'];
 		$this->twitter_username = (string)$_POST['arras-twitter'];
 		$this->facebook_profile = (string)$_POST['arras-facebook'];
+		$this->footer_sidebars = (int)$_POST['arras-footer-sidebars'];
 		$this->footer_title = (string)stripslashes($_POST['arras-footer-title']);
 		$this->footer_message = (string)($_POST['arras-footer-message']);
 		
