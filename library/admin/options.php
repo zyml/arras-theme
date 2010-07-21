@@ -205,10 +205,10 @@ class ArrasOptions {
 	}
 	
 	function save_posttypes() {
-		_chain_update_posttypes( $this->slideshow_posttype, (string)$_POST['arras-posttype-slideshow'], $this->slideshow_tax, $this->slideshow_cat );
-		_chain_update_posttypes( $this->featured1_posttype, (string)$_POST['arras-posttype-featured1'], $this->featured1_tax, $this->featured1_cat );
-		_chain_update_posttypes( $this->featured2_posttype, (string)$_POST['arras-posttype-featured2'], $this->featured2_tax, $this->featured2_cat );
-		_chain_update_posttypes( $this->news_posttype, (string)$_POST['arras-posttype-news'], $this->news_tax, $this->news_cat );
+		$this->_chain_update_posttypes( $this->slideshow_posttype, (string)$_POST['arras-posttype-slideshow'], $this->slideshow_tax, $this->slideshow_cat );
+		$this->_chain_update_posttypes( $this->featured1_posttype, (string)$_POST['arras-posttype-featured1'], $this->featured1_tax, $this->featured1_cat );
+		$this->_chain_update_posttypes( $this->featured2_posttype, (string)$_POST['arras-posttype-featured2'], $this->featured2_tax, $this->featured2_cat );
+		$this->_chain_update_posttypes( $this->news_posttype, (string)$_POST['arras-posttype-news'], $this->news_tax, $this->news_cat );
 	}
 	
 	function _chain_update_posttypes(&$old_posttype, &$new_posttype, &$taxonomy, &$category = null) {
