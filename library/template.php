@@ -249,8 +249,9 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 		
 		switch($taxonomy) {
 			case 'category':
-				$zero_cat = array_search('0', $list);
-				unset($list[$zero_cat]);
+				if ( ($zero_cat = array_search('0', $list)) === true )
+					unset($list[$zero_cat]);
+					
 				$query['category__in'] = $list;
 				break;
 			case 'post_tag':
@@ -269,7 +270,7 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 		$query['post__not_in'] = $exclude;
 	}
 
-	//print_r($query);
+	// print_r($query);
 	return $query;
 }
 
