@@ -61,7 +61,8 @@ function arras_remove_image_size($id) {
  */
 function arras_get_image_size($id) {
 	global $arras_image_sizes;
-	return $arras_image_sizes[$id];
+	
+	return (isset($arras_image_sizes[$id])) ? $arras_image_sizes[$id] : false;
 }
 
 
