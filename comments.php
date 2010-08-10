@@ -4,6 +4,7 @@ if ( !empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER[
 }
 
 if ( post_password_required() ) {
+	?> <h4 class="module-title"><?php _e('Password Required', 'arras') ?></h4> <?php
 	_e('<p class="nocomments">This post is password protected. Enter the password to view comments.</p>', 'arras');
 	return;
 }
