@@ -51,6 +51,9 @@
 </tr>
 
 </table>
+
+<?php do_action('arras_admin_taxonomy'); ?>
+
 </div>
 
 

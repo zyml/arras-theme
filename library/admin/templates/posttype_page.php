@@ -62,6 +62,9 @@ foreach( $posttypes as $id => $obj ) {
 </tr>
 
 </table>
+
+<?php do_action('arras_admin_posttype'); ?>
+
 </div>
 
 
