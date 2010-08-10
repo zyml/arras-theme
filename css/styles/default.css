@@ -165,12 +165,12 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 .single .post .entry-title, .single-post .entry-title	{ font-size: 22px; font-weight: 700; }
 .single .post .entry-info, .single-post .entry-info	{ color: #848485; font-size: 11px; text-transform: uppercase; border-bottom: 1px dotted #CCC; }
 .single .post .entry-info .published, .single-post .entry-info .published { border: none; }
-.single .post .entry-cat, .single-post .entry-cat	{ color: #848485; }
+.single .post .entry-cat, .single-post .entry-cat	{ color: #848485; line-height: 1.5em; }
 .single-post .entry-info a:link, .single-post .entry-info a:visited	{ color: #666; text-decoration: none; }
 .single-post .entry-info a:hover	{ color: #333; }
 .single .post .entry-author, .single-post .entry-author { font-weight: 700; color: #848485; }
 .single .post .entry-author address, .single-post .entry-author address	{ font-style: normal; }
-#main .single .post .tags, #main .single-post .tags { color: #848485; border-top: 1px dotted #CCC; }
+#main .single .post .tags, #main .single-post .tags { color: #848485; border-top: 1px dotted #CCC; line-height: 1.5em; }
 #main .single .post .tags strong, #main .single-post .tags strong { text-transform: uppercase; font-size: 11px; }
 .single .post .entry-photo img, .single-post .entry-photo img	{ border: 1px solid #CCC; }
 .single .post .entry-comments, .single-post .entry-comments  { float: right; padding: 3px 3px 3px 17px; margin-top: 20px; background: url(../../images/comments.gif) no-repeat 3px 6px #383331; display: inline-block; color: #FFF; font-size: 14px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
