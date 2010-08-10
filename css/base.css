@@ -50,9 +50,9 @@ th, td  { padding: 5px; }
 .blog-description		{ line-height: 1em; display: block; margin: 0; padding: 3px 0 0; }
 
 /* Menus */
-.sf-menu, .sf-menu *  { list-style: none; margin: 0; padding: 0; z-index: 101; }
+.sf-menu, .sf-menu *  { list-style: none; margin: 0; padding: 0; }
 .sf-menu  { line-height: 1; }
-.sf-menu ul	 { position: absolute; left: -999em; width: 11em; }
+.sf-menu ul	 { position: absolute; left: -999em; width: 11em; z-index: 100; }
 .sf-menu ul li  { width: 100%; }
 .sf-menu li:hover  { visibility: inherit; }
 .sf-menu li  { float: left; position: relative; }
@@ -67,7 +67,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 #top-menu, #nav  { min-width: 990px; }
 #top-menu-content, #nav-content  { margin: 0 auto; width: 978px; }
-#top-menu-content .sf-menu, #nav .sf-menu  { float: left; line-height: 1.1; max-width: 770px; }
+#top-menu-content .sf-menu, #nav .sf-menu  { float: left; line-height: 1.1; }
 
 .quick-nav  { float: right; list-style: none; margin: 0 10px 0; padding: 0; }
 .quick-nav li  { float: left; display: inline; }

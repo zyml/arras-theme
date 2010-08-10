@@ -73,7 +73,8 @@ document.body.className = c;
 			'sort_column' => 'menu_order', 
 			'menu_class' => 'sf-menu menu clearfix', 
 			'theme_location' => 'top-menu',
-			'container_id' => 'top-menu-content'
+			'container_id' => 'top-menu-content',
+			'fallback_cb' => 'arras_topmenu_fallback_cb'
 		) );
 	}
 	?>
@@ -102,7 +103,7 @@ document.body.className = c;
 	if ( function_exists('pixopoint_menu') ) {
 		pixopoint_menu();
 	} elseif ( function_exists('wp_nav_menu') ) {
-		wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'sf-menu menu clearfix', 'theme_location' => 'main-menu') );
+		wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'sf-menu menu clearfix', 'theme_location' => 'main-menu', 'fallback_cb' => 'arras_nav_fallback_cb' ) );
 	} else { ?>
 		<ul class="sf-menu menu clearfix">
 			<li><a href="<?php bloginfo('url') ?>"><?php _e( arras_get_option('topnav_home') ); ?></a></li>

@@ -321,5 +321,17 @@ function arras_constrain_footer_sidebars() {
 	<?php
 }
 
+function arras_topmenu_fallback_cb() {
+	echo '<div id="top-menu-content"><ul class="sf-menu menu clearfix">';
+	wp_list_pages('sort_column=menu_order&title_li=');
+	echo '</ul></div>';
+}
+
+function arras_nav_fallback_cb() {
+	echo '<ul class="sf-menu menu clearfix">';
+	wp_list_categories('hierarchical=1&orderby=id&hide_empty=1&title_li=');	
+	echo '</ul>';
+}
+
 /* End of file template.php */
 /* Location: ./library/template.php */
