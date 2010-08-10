@@ -13,7 +13,7 @@ function arras_postheader() {
 	
 	$postheader = '';
 	
-	if ( is_single() ) {
+	if ( is_single() || is_page() ) {
 	
 		if ( is_attachment() ) {
 			$postheader .= '<h1 class="entry-title">' . get_the_title() . ' [<a href="' . get_permalink($post->post_parent) . '" rev="attachment">' . get_the_title($post->post_parent) . '</a>]</h1>';
