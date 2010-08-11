@@ -15,10 +15,12 @@ function arras_add_slideshow() {
 	?> 
 	<!-- Featured Slideshow -->
 	<div class="featured clearfix">
+		<?php if ($q->post_count > 1) : ?>
 		<div id="controls">
 			<a href="" class="prev"><?php _e('Prev', 'arras') ?></a>
 			<a href="" class="next"><?php _e('Next', 'arras') ?></a>
 		</div>
+		<?php endif ?>
 		<div id="featured-slideshow">
 			<?php $count = 0; ?>
 		
