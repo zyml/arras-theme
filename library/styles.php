@@ -74,18 +74,14 @@ function arras_add_layout_css() {
 function arras_add_style_css() {
 	global $theme_data, $arras_registered_alt_styles;
 
-
 	$scheme = arras_get_option('style');
-	if ( $scheme != 'default' )
+	if ( !isset($scheme) ) $scheme = 'default';
+
+	if ( is_rtl() && file_exists(get_stylesheet_directory() . '/css/styles/' . $scheme . '-rtl.css') ) {
+		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/styles/' . $scheme . '-rtl.css" type="text/css" media="screen,projection" />';
+	} else {
 		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projection" />';
-	else
-		echo '<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/styles/default.css" type="text/css" media="screen,projection" />';
-		
-	if ( $scheme == 'default' || $scheme == 'legacy' ) { ?>
-	<!--[if IE 6]>
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" />
-	<![endif]-->
-	<?php }
+	}
 }
 
 function arras_add_user_css() {

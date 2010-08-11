@@ -203,8 +203,12 @@ function arras_admin_scripts() {
 function arras_admin_styles() {
 ?> 
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/smoothness/jquery-ui-1.8.2.custom.css" type="text/css" /> 
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/admin.css" type="text/css" /> 
 <?php
+	if ( is_rtl() ) {
+		echo '<link rel="stylesheet" href="' . get_bloginfo('template_directory') . '/css/admin-rtl.css" type="text/css" />';
+	} else {
+		echo '<link rel="stylesheet" href="' . get_bloginfo('template_directory') . '/css/admin.css" type="text/css" />';
+	}
 }
 
 function get_remote_array($url) {
