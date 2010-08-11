@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-22 00:15+0800\n"
+"POT-Creation-Date: 2010-08-11 23:52+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -91,7 +91,7 @@ msgid "About Author: %s"
 msgstr ""
 
 #: ../author.php:15
-#: ../comments.php:55
+#: ../comments.php:56
 msgid "Website"
 msgstr ""
 
@@ -121,39 +121,43 @@ msgid "Please do not load this page directly. Thanks!"
 msgstr ""
 
 #: ../comments.php:7
+msgid "Password Required"
+msgstr ""
+
+#: ../comments.php:8
 msgid "<p class=\"nocomments\">This post is password protected. Enter the password to view comments.</p>"
 msgstr ""
 
-#: ../comments.php:16
-#: ../comments.php:33
+#: ../comments.php:17
+#: ../comments.php:34
 msgid "No Comments"
 msgstr ""
 
-#: ../comments.php:16
+#: ../comments.php:17
 msgid "1 Comment"
 msgstr ""
 
-#: ../comments.php:27
+#: ../comments.php:28
 msgid "Trackbacks / Pings"
 msgstr ""
 
-#: ../comments.php:34
+#: ../comments.php:35
 msgid "Start the ball rolling by posting a comment on this article!"
 msgstr ""
 
-#: ../comments.php:39
+#: ../comments.php:40
 msgid "Comments Closed"
 msgstr ""
 
-#: ../comments.php:40
+#: ../comments.php:41
 msgid "Comments are closed. You will not be able to post a comment in this post."
 msgstr ""
 
-#: ../comments.php:51
+#: ../comments.php:52
 msgid "Name"
 msgstr ""
 
-#: ../comments.php:53
+#: ../comments.php:54
 msgid "Email"
 msgstr ""
 
@@ -245,35 +249,35 @@ msgid "Tag Cloud"
 msgstr ""
 
 #: ../yarpp-template-arras.php:16
-#: ../library/widgets.php:119
-#: ../library/widgets.php:142
-#: ../library/widgets.php:318
+#: ../library/widgets.php:118
+#: ../library/widgets.php:141
+#: ../library/widgets.php:316
 msgid "d F Y g:i A"
 msgstr ""
 
 #: ../yarpp-template-arras.php:17
-#: ../library/widgets.php:120
-#: ../library/widgets.php:143
-#: ../library/widgets.php:319
+#: ../library/widgets.php:119
+#: ../library/widgets.php:142
+#: ../library/widgets.php:317
 msgid "% Comments"
 msgstr ""
 
 #: ../yarpp-template-arras.php:21
 #: ../library/deprecated.php:52
-#: ../library/widgets.php:325
+#: ../library/widgets.php:323
 msgid "Read More"
 msgstr ""
 
 #: ../yarpp-template-arras.php:27
-#: ../library/widgets.php:108
-#: ../library/widgets.php:131
+#: ../library/widgets.php:107
+#: ../library/widgets.php:130
 msgid "No posts at the moment. Check back again later!"
 msgstr ""
 
 #: ../library/deprecated.php:32
 #: ../library/deprecated.php:51
 #: ../library/tapestries.php:112
-#: ../library/tapestries.php:245
+#: ../library/tapestries.php:246
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -345,15 +349,15 @@ msgstr ""
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
-#: ../library/slideshow.php:19
+#: ../library/slideshow.php:20
 msgid "Prev"
 msgstr ""
 
-#: ../library/slideshow.php:20
+#: ../library/slideshow.php:21
 msgid "Next"
 msgstr ""
 
-#: ../library/slideshow.php:82
+#: ../library/slideshow.php:84
 msgid "Featured Slideshow"
 msgstr ""
 
@@ -369,40 +373,40 @@ msgstr ""
 msgid "Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:160
+#: ../library/tapestries.php:167
 msgid "Tapestry: Node-Based"
 msgstr ""
 
-#: ../library/tapestries.php:170
+#: ../library/tapestries.php:176
 msgid "Tapestry: Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:174
+#: ../library/tapestries.php:180
 msgid "Show Excerpt?"
 msgstr ""
 
-#: ../library/tapestries.php:180
+#: ../library/tapestries.php:186
 msgid "Maximum Node Height"
 msgstr ""
 
-#: ../library/tapestries.php:183
+#: ../library/tapestries.php:189
 msgid "pixels"
 msgstr ""
 
-#: ../library/tapestries.php:242
+#: ../library/tapestries.php:243
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: ../library/tapestries.php:246
+#: ../library/tapestries.php:247
 msgid "Continue Reading..."
 msgstr ""
 
-#: ../library/tapestries.php:252
+#: ../library/tapestries.php:253
 msgid "Quick Preview"
 msgstr ""
 
-#: ../library/tapestries.php:258
+#: ../library/tapestries.php:259
 msgid "Tapestry: Quick Preview"
 msgstr ""
 
@@ -443,32 +447,32 @@ msgstr ""
 msgid "g:i A"
 msgstr ""
 
-#: ../library/template.php:282
-#: ../library/template.php:284
+#: ../library/template.php:283
+#: ../library/template.php:285
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../library/template.php:282
-#: ../library/template.php:284
+#: ../library/template.php:283
+#: ../library/template.php:285
 msgid "RSS Feed"
 msgstr ""
 
-#: ../library/template.php:289
+#: ../library/template.php:290
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../library/template.php:289
+#: ../library/template.php:290
 msgid "Twitter"
 msgstr ""
 
-#: ../library/template.php:294
+#: ../library/template.php:295
 #, php-format
 msgid "%s Facebook"
 msgstr ""
 
-#: ../library/template.php:294
+#: ../library/template.php:295
 msgid "Facebook"
 msgstr ""
 
@@ -501,8 +505,8 @@ msgid "Comments"
 msgstr ""
 
 #: ../library/widgets.php:31
-#: ../library/widgets.php:419
-#: ../library/widgets.php:435
+#: ../library/widgets.php:417
+#: ../library/widgets.php:433
 msgid "Tags"
 msgstr ""
 
@@ -510,84 +514,84 @@ msgstr ""
 msgid "Popular"
 msgstr ""
 
-#: ../library/widgets.php:213
+#: ../library/widgets.php:212
 msgid "Retrieve Posts from:"
 msgstr ""
 
-#: ../library/widgets.php:215
+#: ../library/widgets.php:214
 msgid "Slideshow"
 msgstr ""
 
-#: ../library/widgets.php:216
+#: ../library/widgets.php:215
 msgid "Featured Posts #1"
 msgstr ""
 
-#: ../library/widgets.php:217
+#: ../library/widgets.php:216
 msgid "Featured Posts #2"
 msgstr ""
 
-#: ../library/widgets.php:222
+#: ../library/widgets.php:221
 msgid "Tabbed Sidebar Order:"
 msgstr ""
 
-#: ../library/widgets.php:228
+#: ../library/widgets.php:227
 msgid "The popular posts option is only enabled when the plugin <a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Popularity Contest</a> is enabled."
 msgstr ""
 
-#: ../library/widgets.php:230
+#: ../library/widgets.php:229
 msgid "Post Count:"
 msgstr ""
 
-#: ../library/widgets.php:238
+#: ../library/widgets.php:237
 msgid "Comments Count:"
 msgstr ""
 
-#: ../library/widgets.php:249
+#: ../library/widgets.php:248
 msgid "Display only in homepage"
 msgstr ""
 
-#: ../library/widgets.php:251
+#: ../library/widgets.php:250
 msgid "Display thumbnails"
 msgstr ""
 
-#: ../library/widgets.php:288
+#: ../library/widgets.php:287
 msgid "Featured stories containing post thumbnails and the excerpt based on categories."
 msgstr ""
 
-#: ../library/widgets.php:290
-#: ../library/widgets.php:352
+#: ../library/widgets.php:289
+#: ../library/widgets.php:350
 msgid "Featured Stories"
 msgstr ""
 
-#: ../library/widgets.php:363
+#: ../library/widgets.php:361
 msgid "Title:"
 msgstr ""
 
-#: ../library/widgets.php:367
+#: ../library/widgets.php:365
 msgid "Featured Categories:"
 msgstr ""
 
-#: ../library/widgets.php:369
+#: ../library/widgets.php:367
 msgid "All Categories"
 msgstr ""
 
-#: ../library/widgets.php:380
+#: ../library/widgets.php:378
 msgid "How many items would you like to display?"
 msgstr ""
 
-#: ../library/widgets.php:391
+#: ../library/widgets.php:389
 msgid "Do not display in homepage"
 msgstr ""
 
-#: ../library/widgets.php:394
+#: ../library/widgets.php:392
 msgid "Show post excerpts"
 msgstr ""
 
-#: ../library/widgets.php:397
+#: ../library/widgets.php:395
 msgid "Show thumbnails"
 msgstr ""
 
-#: ../library/widgets.php:451
+#: ../library/widgets.php:449
 msgid "A search form for your site"
 msgstr ""
 
@@ -634,71 +638,71 @@ msgstr ""
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:255
+#: ../library/admin/admin.php:259
 msgid "Helpful Links"
 msgstr ""
 
-#: ../library/admin/admin.php:257
+#: ../library/admin/admin.php:261
 msgid "Quick Start Guide"
 msgstr ""
 
-#: ../library/admin/admin.php:258
+#: ../library/admin/admin.php:262
 msgid "Community Forums"
 msgstr ""
 
-#: ../library/admin/admin.php:259
+#: ../library/admin/admin.php:263
 msgid "Bug Tracker / Repository"
 msgstr ""
 
-#: ../library/admin/admin.php:264
+#: ../library/admin/admin.php:268
 msgid "Recommended Plugins"
 msgstr ""
 
-#: ../library/admin/admin.php:276
+#: ../library/admin/admin.php:280
 msgid "How to Support?"
 msgstr ""
 
-#: ../library/admin/admin.php:277
+#: ../library/admin/admin.php:281
 msgid "There are many ways you can support this theme:"
 msgstr ""
 
-#: ../library/admin/admin.php:279
+#: ../library/admin/admin.php:283
 msgid "Share other about the theme"
 msgstr ""
 
-#: ../library/admin/admin.php:280
+#: ../library/admin/admin.php:284
 msgid "Report bugs / Send patches"
 msgstr ""
 
-#: ../library/admin/admin.php:281
+#: ../library/admin/admin.php:285
 msgid "Contribute to the forums / wiki"
 msgstr ""
 
-#: ../library/admin/admin.php:282
+#: ../library/admin/admin.php:286
 msgid "Translate the theme"
 msgstr ""
 
-#: ../library/admin/admin.php:283
+#: ../library/admin/admin.php:287
 msgid "Send in a donation!"
 msgstr ""
 
-#: ../library/admin/admin.php:285
+#: ../library/admin/admin.php:289
 msgid "Donate using PayPal"
 msgstr ""
 
-#: ../library/admin/admin.php:291
+#: ../library/admin/admin.php:295
 msgid "Thanks!"
 msgstr ""
 
-#: ../library/admin/admin.php:292
+#: ../library/admin/admin.php:296
 msgid "Many thanks to those who have contributed to the theme:"
 msgstr ""
 
-#: ../library/admin/admin.php:293
+#: ../library/admin/admin.php:297
 msgid "Forum Contributors"
 msgstr ""
 
-#: ../library/admin/admin.php:295
+#: ../library/admin/admin.php:299
 msgid "Translators"
 msgstr ""
 
@@ -790,8 +794,8 @@ msgstr ""
 
 #: ../library/admin/background.php:148
 #: ../library/admin/templates/options_page.php:53
-#: ../library/admin/templates/posttype_page.php:70
-#: ../library/admin/templates/taxonomy_page.php:59
+#: ../library/admin/templates/posttype_page.php:73
+#: ../library/admin/templates/taxonomy_page.php:62
 msgid "Save Changes"
 msgstr ""
 
@@ -1266,8 +1270,8 @@ msgid "Regenerate post thumbnails after saving."
 msgstr ""
 
 #: ../library/admin/templates/options_page.php:54
-#: ../library/admin/templates/posttype_page.php:71
-#: ../library/admin/templates/taxonomy_page.php:60
+#: ../library/admin/templates/posttype_page.php:74
+#: ../library/admin/templates/taxonomy_page.php:63
 msgid "Reset Settings"
 msgstr ""
 
