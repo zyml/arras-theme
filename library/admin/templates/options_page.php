@@ -22,7 +22,10 @@
 </div>
 <?php endif ?>
 
-<?php echo $notices ?>
+<?php 
+echo $notices;
+do_action('arras_admin_notices');
+?>
 
 <form enctype="multipart/form-data" id="arras-settings-form" method="post" action="admin.php?page=arras-options">
 <?php wp_nonce_field('arras-admin'); ?>

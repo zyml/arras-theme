@@ -47,6 +47,7 @@ body  { direction: rtl; unicode-bidi: embed; }
 .arras-options-wrapper  { padding: 0 10px; }
 .padding-content		{ padding: 0 0 10px; margin: 0 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .padding-content h3		{ font-size: 11px; margin: 10px 0 0; background: #F0F0F0; padding: 5px 7px; text-align: right; }
+.padding-content p		{ font-size: 11px; }
 .padding-content .enabler { float: left; }
 .padding-content .enabler label { font-weight: normal; color: #666; margin-left: 5px; }
 table.form-table		{ margin-bottom: 0 !important; direction: rtl !important; }

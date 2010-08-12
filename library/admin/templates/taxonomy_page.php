@@ -19,6 +19,7 @@
 <div class="clearfix arras-options-wrapper">
 
 <div class="padding-content">
+
 <h3><?php _e('Home', 'arras') ?></h3>
 <table class="form-table">
 
@@ -53,6 +54,8 @@
 </table>
 
 <?php do_action('arras_admin_taxonomy'); ?>
+
+<p><?php _e('<strong>Note:</strong> Custom taxonomies require the <code>query_var</code> parameter to be defined to work.', 'arras') ?></p>
 
 </div>
 

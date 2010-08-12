@@ -302,6 +302,8 @@ function arras_right_col() {
 			</div>
 		</div>
 		<?php endif; ?>
+		
+		<?php do_action('arras_admin_right_col'); ?>
 
 	</div>
 	<?php
