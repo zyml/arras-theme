@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-11 23:52+0800\n"
+"POT-Creation-Date: 2010-08-12 18:40+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -793,9 +793,9 @@ msgid "Apply Background from Top"
 msgstr ""
 
 #: ../library/admin/background.php:148
-#: ../library/admin/templates/options_page.php:53
+#: ../library/admin/templates/options_page.php:56
 #: ../library/admin/templates/posttype_page.php:73
-#: ../library/admin/templates/taxonomy_page.php:62
+#: ../library/admin/templates/taxonomy_page.php:65
 msgid "Save Changes"
 msgstr ""
 
@@ -817,9 +817,9 @@ msgid "Copyright %s. All Rights Reserved."
 msgstr ""
 
 #: ../library/admin/options.php:52
-#: ../library/admin/templates/options_page.php:33
+#: ../library/admin/templates/options_page.php:36
 #: ../library/admin/templates/posttype_page.php:33
-#: ../library/admin/templates/taxonomy_page.php:22
+#: ../library/admin/templates/taxonomy_page.php:23
 msgid "Home"
 msgstr ""
 
@@ -1040,7 +1040,7 @@ msgstr ""
 
 #: ../library/admin/templates/arras-home.php:134
 #: ../library/admin/templates/posttype_page.php:58
-#: ../library/admin/templates/taxonomy_page.php:47
+#: ../library/admin/templates/taxonomy_page.php:48
 msgid "News Posts"
 msgstr ""
 
@@ -1221,7 +1221,7 @@ msgid "Export Theme Settings (BETA)"
 msgstr ""
 
 #: ../library/admin/templates/arras-tools.php:19
-msgid "You can save the following code into a text file and use it when you need to import them into another installation."
+msgid "You can save the following code into a text file and use it when you need to import them into another installation. Note that not all options (custom background, child theme settings, etc.) will be exported."
 msgstr ""
 
 #: ../library/admin/templates/functions.php:193
@@ -1241,37 +1241,37 @@ msgstr ""
 msgid "The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:31
+#: ../library/admin/templates/options_page.php:34
 msgid "General"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:32
+#: ../library/admin/templates/options_page.php:35
 msgid "Navigation"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:34
+#: ../library/admin/templates/options_page.php:37
 msgid "Layout"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:35
+#: ../library/admin/templates/options_page.php:38
 msgid "Design"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:36
+#: ../library/admin/templates/options_page.php:39
 msgid "Thumbnails"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:37
+#: ../library/admin/templates/options_page.php:40
 msgid "Tools"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:51
+#: ../library/admin/templates/options_page.php:54
 msgid "Regenerate post thumbnails after saving."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:54
+#: ../library/admin/templates/options_page.php:57
 #: ../library/admin/templates/posttype_page.php:74
-#: ../library/admin/templates/taxonomy_page.php:63
+#: ../library/admin/templates/taxonomy_page.php:66
 msgid "Reset Settings"
 msgstr ""
 
@@ -1291,12 +1291,16 @@ msgid "Taxonomies"
 msgstr ""
 
 #: ../library/admin/templates/posttype_page.php:44
-#: ../library/admin/templates/taxonomy_page.php:33
+#: ../library/admin/templates/taxonomy_page.php:34
 msgid "Featured Post #1"
 msgstr ""
 
 #: ../library/admin/templates/posttype_page.php:51
-#: ../library/admin/templates/taxonomy_page.php:40
+#: ../library/admin/templates/taxonomy_page.php:41
 msgid "Featured Post #2"
+msgstr ""
+
+#: ../library/admin/templates/taxonomy_page.php:58
+msgid "<strong>Note:</strong> Custom taxonomies require the <code>query_var</code> parameter to be defined to work."
 msgstr ""
 
