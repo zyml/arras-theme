@@ -7,7 +7,7 @@ body					{ background-color: #F0F0F0; color: #333; font: 12px 'Lucida Grande',Ar
 a, a:link, a:visited	{ color: #313428; text-decoration: none; }
 a:hover					{ color: #CC0000; }
 
-blockquote				{ border-left: 2px solid #CCC; color: #666; padding: 5px 10px 1px; font-style: normal; }
+blockquote				{ border-left: 2px solid #CCC; color: #666; padding: 5px 10px 1px; margin: 10px; font-style: normal; }
 code					{ background: #EAEAEA; color: #333; font-family: Consolas, Monaco, Courier, monospace; font-size: 11px; margin: 1px 0; padding: 1px 3px; }
 pre code				{ background: #322E2C; border: 1px solid #635957; color: #FFF; display: block; overflow: scroll; padding: 1.5em 1.75em; }
 
