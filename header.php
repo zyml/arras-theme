@@ -73,8 +73,7 @@ document.body.className = c;
 			'sort_column' => 'menu_order', 
 			'menu_class' => 'sf-menu menu clearfix', 
 			'theme_location' => 'top-menu',
-			'container_id' => 'top-menu-content',
-			'fallback_cb' => 'arras_topmenu_fallback_cb'
+			'container_id' => 'top-menu-content'
 		) );
 	}
 	?>
