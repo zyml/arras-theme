@@ -65,7 +65,7 @@ document.body.className = c;
 </script>
 <?php arras_body() ?>
 
-<div id="top-menu">
+<div id="top-menu" class="clearfix">
 <?php arras_above_top_menu() ?>
 	<?php 
 	if ( function_exists('wp_nav_menu') ) {
