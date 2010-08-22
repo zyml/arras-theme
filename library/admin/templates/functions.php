@@ -183,7 +183,7 @@ function arras_get_terms_list($taxonomy) {
 	$opt = array();
 	
 	foreach ($terms as $term) {
-		if ($taxonomy == 'category') {
+		if ($taxonomy == 'category' || $taxonomy = 'post_tag') {
 			$opt[$term->term_id] = $term->name;
 		} else {
 			$opt[$term->slug] = $term->name;
