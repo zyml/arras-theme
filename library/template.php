@@ -232,7 +232,11 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 	if ($post_type == '') $post_type = 'post';
 	if ($taxonomy == '') $taxonomy = 'category';
 	
-	if ((array)$list === $list) {
+	if ($list != false) {
+		if ((array)$list !== $list) {
+			$list = array($list);
+		}
+		
 		if ( in_array('-5', $list) ) {
 			$stickies = get_option('sticky_posts');
 			rsort($stickies);
@@ -246,7 +250,7 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 			$key = array_search('-5', $list);
 			unset($list[$key]);
 		}
-		
+	
 		switch($taxonomy) {
 			case 'category':
 				if ( ($zero_cat = array_search('0', $list)) === true )
@@ -261,6 +265,7 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 				$list = implode($list, ',');
 				$query[$taxonomy] = $list;
 		}
+
 	}
 	
 	$query['post_type'] = $post_type;
@@ -270,7 +275,7 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 		$query['post__not_in'] = $exclude;
 	}
 
-	// print_r($query);
+	//print_r($query);
 	return $query;
 }
 
