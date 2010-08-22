@@ -17,7 +17,7 @@
 
 <h3><?php _e('Export Theme Settings (BETA)', 'arras') ?></h3>
 <p><?php _e('You can save the following code into a text file and use it when you need to import them into another installation. Note that not all options (custom background, child theme settings, etc.) will be exported.', 'arras') ?></p>
-<?php echo arras_form_textarea('arras-tools-export', form_prep( base64_encode(maybe_serialize($arras_options)) ), 'style="width: 90%; height: 100px;" class="code"'); ?>
+<?php echo arras_form_textarea('arras-tools-export', form_prep( json_encode(maybe_serialize($arras_options)) ), 'style="width: 90%; height: 100px;" class="code"'); ?>
 </p>
 
 <?php do_action('arras_admin_settings-tools'); ?>

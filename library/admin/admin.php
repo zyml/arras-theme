@@ -87,7 +87,7 @@ function arras_admin_save() {
 	check_admin_referer('arras-admin');
 	
 	if ( isset($_REQUEST['arras-tools-import']) && $_REQUEST['arras-tools-import'] != '' ) {
-		$new_arras_options = maybe_unserialize(base64_decode($_REQUEST['arras-tools-import']));
+		$new_arras_options = maybe_unserialize(json_decode($_REQUEST['arras-tools-import']));
 		
 		if (is_a($new_arras_options, 'Options')) {
 			$arras_options = $new_arras_options;
