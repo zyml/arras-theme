@@ -13,7 +13,7 @@
 </div>
 
 <div id="archive-posts">
-<?php arras_render_posts(null, arras_get_option('archive_display'), 'archive'); ?>
+<?php arras_render_posts( null, arras_get_option('archive_display') ); ?>
 </div>
 
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
@@ -35,7 +35,7 @@
 
 <h2 class="home-title"><?php _e('Blog Archive', 'arras') ?></h2>
 <?php query_posts(''); ?>
-<?php arras_render_posts(null, arras_get_option('archive_display'), 'archive') ?>
+<?php arras_render_posts( null, arras_get_option('archive_display') ) ?>
     
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
     <div class="navigation clearfix">
