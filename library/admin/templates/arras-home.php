@@ -151,7 +151,7 @@
 <tr valign="top">
 <th scope="row"><label for="arras-cat-news"><?php printf( __('Stickied Posts / %s', 'arras'), arras_get_taxonomy_name(arras_get_option('news_tax')) ) ?></label></th>
 <td>
-<?php echo arras_form_dropdown('arras-cat-news', arras_get_terms_list(arras_get_option('news_tax')), arras_get_option('news_cat'), 'class="multiple" multiple="multiple"' ); ?>
+<?php echo arras_form_dropdown('arras-cat-news[]', arras_get_terms_list(arras_get_option('news_tax')), arras_get_option('news_cat'), 'class="multiple" multiple="multiple"' ); ?>
 <br /><?php _e('Selected categories will be shown below the featured section in the index page.', 'arras') ?>
 </td>
 </tr>
