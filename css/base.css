@@ -108,7 +108,6 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 /* Bottom Content */
 #bottom-content-1, #bottom-content-2  { list-style: none; float: left; width: 320px; margin: 0 10px 10px 0; overflow: hidden; padding: 0; }
-#bottom-content-1 ul, #bottom-content-2 ul  { margin: 0; padding: 0; }
 .layout-3c-r-fixed #bottom-content-1, .layout-3c-r-fixed #bottom-content-2, .layout-3c-fixed #bottom-content-1, .layout-3c-fixed #bottom-content-2	{ width: 243px; }
 
 /* Tapestries */
