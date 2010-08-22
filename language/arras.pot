@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-12 18:40+0800\n"
+"POT-Creation-Date: 2010-08-23 00:56+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -276,8 +276,8 @@ msgstr ""
 
 #: ../library/deprecated.php:32
 #: ../library/deprecated.php:51
-#: ../library/tapestries.php:112
-#: ../library/tapestries.php:246
+#: ../library/tapestries.php:117
+#: ../library/tapestries.php:251
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -361,52 +361,52 @@ msgstr ""
 msgid "Featured Slideshow"
 msgstr ""
 
-#: ../library/tapestries.php:90
+#: ../library/tapestries.php:91
 msgid "Traditional"
 msgstr ""
 
-#: ../library/tapestries.php:117
+#: ../library/tapestries.php:122
 msgid "Per Line"
 msgstr ""
 
-#: ../library/tapestries.php:144
+#: ../library/tapestries.php:149
 msgid "Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:167
+#: ../library/tapestries.php:172
 msgid "Tapestry: Node-Based"
 msgstr ""
 
-#: ../library/tapestries.php:176
+#: ../library/tapestries.php:181
 msgid "Tapestry: Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:180
+#: ../library/tapestries.php:185
 msgid "Show Excerpt?"
 msgstr ""
 
-#: ../library/tapestries.php:186
+#: ../library/tapestries.php:191
 msgid "Maximum Node Height"
 msgstr ""
 
-#: ../library/tapestries.php:189
+#: ../library/tapestries.php:194
 msgid "pixels"
 msgstr ""
 
-#: ../library/tapestries.php:243
+#: ../library/tapestries.php:248
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: ../library/tapestries.php:247
+#: ../library/tapestries.php:252
 msgid "Continue Reading..."
 msgstr ""
 
-#: ../library/tapestries.php:253
+#: ../library/tapestries.php:258
 msgid "Quick Preview"
 msgstr ""
 
-#: ../library/tapestries.php:259
+#: ../library/tapestries.php:264
 msgid "Tapestry: Quick Preview"
 msgstr ""
 
@@ -447,32 +447,32 @@ msgstr ""
 msgid "g:i A"
 msgstr ""
 
-#: ../library/template.php:283
-#: ../library/template.php:285
+#: ../library/template.php:288
+#: ../library/template.php:290
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../library/template.php:283
-#: ../library/template.php:285
+#: ../library/template.php:288
+#: ../library/template.php:290
 msgid "RSS Feed"
 msgstr ""
 
-#: ../library/template.php:290
+#: ../library/template.php:295
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../library/template.php:290
+#: ../library/template.php:295
 msgid "Twitter"
 msgstr ""
 
-#: ../library/template.php:295
+#: ../library/template.php:300
 #, php-format
 msgid "%s Facebook"
 msgstr ""
 
-#: ../library/template.php:295
+#: ../library/template.php:300
 msgid "Facebook"
 msgstr ""
 
@@ -1224,8 +1224,12 @@ msgstr ""
 msgid "You can save the following code into a text file and use it when you need to import them into another installation. Note that not all options (custom background, child theme settings, etc.) will be exported."
 msgstr ""
 
-#: ../library/admin/templates/functions.php:193
+#: ../library/admin/templates/functions.php:195
 msgid "Stickied Posts"
+msgstr ""
+
+#: ../library/admin/templates/functions.php:226
+msgid "Taxonomy"
 msgstr ""
 
 #: ../library/admin/templates/options_page.php:12
