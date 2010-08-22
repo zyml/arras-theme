@@ -30,7 +30,7 @@ $post_blacklist = array();
 <?php endif ?>
 	<?php
 	$query2 = arras_parse_query($featured1_cat, $featured1_count, array_unique($post_blacklist), arras_get_option('featured1_posttype'), arras_get_option('featured1_tax'));
-	arras_render_posts( apply_filters('arras_featured1_query', $query2), arras_get_option('featured1_display'), 'featured' );
+	arras_render_posts( apply_filters('arras_featured1_query', $query2), arras_get_option('featured1_display'), arras_get_option('featured1_tax') );
 	?>
 </div><!-- #index-featured1 -->
 <?php endif; ?>
@@ -44,7 +44,7 @@ $post_blacklist = array();
 <?php endif ?>
 	<?php
 	$query3 = arras_parse_query($featured2_cat, $featured2_count, array_unique($post_blacklist), arras_get_option('featured2_posttype'), arras_get_option('featured2_tax'));
-	arras_render_posts( apply_filters('arras_featured2_query', $query3), arras_get_option('featured2_display'), 'featured' );
+	arras_render_posts( apply_filters('arras_featured2_query', $query3), arras_get_option('featured2_display'), arras_get_option('featured2_tax') );
 	?>
 </div><!-- #index-featured2 -->
 <?php endif; ?>
@@ -62,7 +62,7 @@ $news_query = arras_parse_query($news_cat, ( (arras_get_option('index_count') ==
 $news_query['paged'] = $paged;
 
 query_posts( apply_filters('arras_news_query', $news_query) );
-arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
+arras_render_posts( null, arras_get_option('news_display'), arras_get_option('news_tax') ); ?>
 <?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
 	<div class="navigation clearfix">
 		<div class="floatleft"><?php next_posts_link( __('Older Entries', 'arras') ) ?></div>
@@ -101,7 +101,7 @@ arras_render_posts(null, arras_get_option('news_display'), 'news'); ?>
 <div class="home-title"><?php _e('Latest Headlines', 'arras') ?></div>
 
 <div id="archive-posts">
-	<?php arras_render_posts(null, arras_get_option('archive_display'), 'archive') ?>    
+	<?php arras_render_posts(null, arras_get_option('archive_display')) ?>    
  
 	<?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
     	<div class="navigation clearfix">

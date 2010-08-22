@@ -182,11 +182,13 @@ function arras_get_terms_list($taxonomy) {
 	$terms = get_terms($taxonomy, 'hide_empty=0');
 	$opt = array();
 	
-	foreach ($terms as $term) {
-		if ($taxonomy == 'category' || $taxonomy = 'post_tag') {
-			$opt[$term->term_id] = $term->name;
-		} else {
-			$opt[$term->slug] = $term->name;
+	if (!is_wp_error($terms)) {
+		foreach ($terms as $term) {
+			if ($taxonomy == 'category' || $taxonomy = 'post_tag') {
+				$opt[$term->term_id] = $term->name;
+			} else {
+				$opt[$term->slug] = $term->name;
+			}
 		}
 	}
 	
@@ -209,12 +211,20 @@ function arras_get_taxonomy_list($object) {
 
 function arras_get_posttype_name($id) {
 	$obj = get_post_type_object($id);
-	return $obj->labels->name;
+	
+	if ($obj) {
+		return $obj->labels->name;
+	}
 }
 
 function arras_get_taxonomy_name($id) {
 	$obj = get_taxonomy($id);
-	return $obj->labels->name;
+	
+	if ($obj) {
+		return $obj->labels->name;
+	} else {
+		return __('Taxonomy', 'arras');
+	}
 }
 
 function arras_cache_is_writable() {

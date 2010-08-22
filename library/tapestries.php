@@ -18,7 +18,8 @@ function arras_add_tapestry( $id, $name, $callback, $args = array() ) {
 	$defaults = array(
 		'before' => '<div class="hfeed clearfix">',
 		'after' => '</div>',
-		'allow_duplicates' => true
+		'allow_duplicates' => true,
+		'taxonomy' => 'category'
 	);
 	$args = wp_parse_args($args, $defaults);
 	
@@ -52,7 +53,7 @@ function arras_remove_all_tapestries() {
  * Gets tapestry callback function
  * @since 1.4.4
  */
-function arras_get_tapestry_callback($type, $query, $page_type) {
+function arras_get_tapestry_callback($type, $query, $taxonomy = 'category') {
 	global $arras_tapestries;
 	
 	if ( count($arras_tapestries) == 0 ) return false;
@@ -67,7 +68,7 @@ function arras_get_tapestry_callback($type, $query, $page_type) {
 	echo $tapestry->before;
 	while ($query->have_posts()) {
 		$query->the_post();
-		call_user_func_array( $tapestry->callback, array($dep = '', $page_type) );
+		call_user_func_array( $tapestry->callback, array($dep = '', $taxonomy) );
 		if ($tapestry->allow_duplicates) arras_blacklist_duplicates();
 	}
 	echo $tapestry->after;
@@ -78,7 +79,7 @@ function arras_get_tapestry_callback($type, $query, $page_type) {
  * @since 1.4.3
  */
 if (!function_exists('arras_tapestry_traditional')) {
-	function arras_tapestry_traditional($dep = '', $page_type) {
+	function arras_tapestry_traditional($dep = '', $taxonomy) {
 		?>
 		<div <?php arras_single_post_class() ?>>
 			<?php arras_postheader() ?>
@@ -98,16 +99,20 @@ if (!function_exists('arras_tapestry_traditional')) {
  * @since 1.4.3
  */
 if (!function_exists('arras_tapestry_line')) {
-	function arras_tapestry_line($dep = '', $page_type) {
+	function arras_tapestry_line($dep = '', $taxonomy) {
 		?>
 		<li <?php arras_post_class() ?>>
-		<?php if(!is_archive()) : ?>
+		
 			<span class="entry-cat">
-				<?php $cats = get_the_category(); 
-				if (arras_get_option('news_cat') && isset($cats[1])) echo $cats[1]->cat_name;
-				else echo $cats[0]->cat_name; ?>
+				<?php 
+				$terms = get_the_terms( get_the_ID(), $taxonomy );
+				if ( !is_wp_error($terms) ) {
+					$terms = array_values($terms);
+					if (arras_get_option('news_cat') && isset($terms[1])) echo $terms[1]->name;
+					else echo $terms[0]->name;
+				}
+				?>
 			</span>
-			<?php endif ?>
 			
 			<h3 class="entry-title"><a rel="bookmark" href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>"><?php the_title() ?></a></h3>
 			<span class="entry-comments"><?php comments_number() ?></span>
@@ -125,7 +130,7 @@ if (!function_exists('arras_tapestry_line')) {
  * @since 1.4.3
  */
 if (!function_exists('arras_tapestry_default')) {
-	function arras_tapestry_default($dep = '', $page_type) {
+	function arras_tapestry_default($dep = '', $taxonomy) {
 		$tapestry_settings = get_option('arras_tapestry_default');
 		if (!is_array($tapestry_settings) ) {
 			$tapestry_settings = arras_defaults_tapestry_default();
@@ -234,7 +239,7 @@ function arras_style_tapestry_default() {
  * @since 1.4.3
  */
 if (!function_exists('arras_tapestry_quick')) {
-	function arras_tapestry_quick($dep = '', $page_type) {
+	function arras_tapestry_quick($dep = '', $taxonomy) {
 		?>
 		<li <?php arras_post_class() ?>>
 			<?php echo apply_filters('arras_tapestry_quick_postheader', arras_generic_postheader('quick-preview') ) ?>

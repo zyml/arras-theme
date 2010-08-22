@@ -140,7 +140,7 @@ function arras_body_class() {
 	}
 }
 
-function arras_render_posts($args = null, $display_type = 'default', $page_type = 'news') {
+function arras_render_posts($args = null, $display_type = 'default', $taxonomy = 'category') {
 	global $post, $wp_query, $arras_tapestries;
 	
 	if (!$args) {
@@ -150,7 +150,7 @@ function arras_render_posts($args = null, $display_type = 'default', $page_type 
 	}
 	
 	if ($query->have_posts()) {	
-		arras_get_tapestry_callback($display_type, $query, $page_type);
+		arras_get_tapestry_callback($display_type, $query, $taxonomy);
 	}
 	
 	wp_reset_query();
