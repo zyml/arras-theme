@@ -91,6 +91,7 @@ add_action('arras_beside_nav', 'arras_social_nav');
 
 add_action('wp_head', 'arras_head');
 add_action('wp_head', 'arras_add_user_css', 20);
+add_action('wp_head', 'arras_add_header_js');
 
 add_filter('arras_postheader', 'arras_post_taxonomies');
 if ( defined('ARRAS_CUSTOM_FIELDS') && ARRAS_CUSTOM_FIELDS == true ) {

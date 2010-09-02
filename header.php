@@ -46,11 +46,9 @@ if ( is_singular() ) {
 	wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
 }
 
-wp_head();
 ?>
-<script type="text/javascript">
-<?php @include ARRAS_DIR . '/js/header.js.php'; ?>
-</script>
+
+<?php wp_head(); ?>
 </head>
 
 <body <?php arras_body_class() ?>>

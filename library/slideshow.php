@@ -67,7 +67,7 @@ $('#featured-slideshow').cycle({
 </script>
 <?php
 }
-add_action('arras_footer', 'arras_add_slideshow_js');
+add_action('wp_footer', 'arras_add_slideshow_js');
 
 function arras_add_slideshow_thumb_size() {
 	$layout = arras_get_option('layout');

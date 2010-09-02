@@ -23,11 +23,11 @@
 		<?php echo stripslashes(arras_get_option('footer_message')); ?>		
 		</div><!-- .footer-message -->
     </div>
-    
-    <?php wp_footer() ?>
-	<?php arras_footer() ?>
-	
 </div><!-- #wrapper -->
+<?php 
+arras_footer();
+wp_footer(); 
+?>
 </body>
 </html>
    

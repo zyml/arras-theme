@@ -79,6 +79,14 @@ function arras_document_title() {
 	echo $doctitle;
 }
 
+function arras_add_header_js() {
+	?>
+	<script type="text/javascript">
+	<?php @include ARRAS_DIR . '/js/header.js.php'; ?>
+	</script>
+	<?php
+}
+
 /**
  * Based on Thematic's thematic_tag_query()
  */
