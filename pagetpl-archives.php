@@ -14,7 +14,7 @@
 	<div <?php arras_single_post_class() ?>>
         <?php arras_postheader() ?>
         
-        <div class="entry-content">
+        <div class="entry-content clearfix">
 		
 		<h3><?php _e('Recent Posts', 'arras') ?></h3>
 		<ul><?php wp_get_archives('type=postbypost&limit=20') ?></ul>

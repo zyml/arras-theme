@@ -11,7 +11,7 @@ function arras_get_posts($page_type, $query = null) {
 	<?php while ($query->have_posts()) : $query->the_post() ?>
 	<div <?php arras_single_post_class() ?>>
         <?php arras_postheader() ?>
-		<div class="entry-content"><?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?></div>
+		<div class="entry-content clearfix"><?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?></div>
 		<?php arras_postfooter() ?>
     </div>
 	<?php endwhile; ?>

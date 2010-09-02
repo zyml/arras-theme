@@ -9,7 +9,7 @@
 
         <?php arras_postheader() ?>
 
-		<div class="entry-content single-post-attachment"><?php the_attachment_link($post->ID, false) ?>
+		<div class="entry-content single-post-attachment clearfix"><?php the_attachment_link($post->ID, false) ?>
 		<?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?>	
         
         <?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ', 'arras'), 

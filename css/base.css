@@ -157,7 +157,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 .single-post-meta  { clear: right; float: right; margin: 1em 0 1em 1em; width: 40%; }
 
-.entry-content, .entry-content	{ margin: 10px 0; font-size: 12px; line-height: 1.5em; overflow: auto; }
+.entry-content  { margin: 10px 0; font-size: 12px; line-height: 1.5em; overflow: auto; }
 .entry-content ul, .entry-content ol  { margin: 0 20px; padding: 0 0 1.5em; }
 .entry-content ul ul, .entry-content ol ol, .entry-content ol ul, .entry-content ul ol  { padding: 0; }
 .entry-content blockquote  { font-style: italic; }

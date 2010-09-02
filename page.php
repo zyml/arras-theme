@@ -8,7 +8,7 @@
 	<div id="post-<?php the_ID() ?>" <?php arras_single_post_class() ?>>
         <?php arras_postheader() ?>
         
-        <div class="entry-content">
+        <div class="entry-content clearfix">
 		<?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?>  
         <?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ', 'arras'), 
 			'after' => '</p>', 'next_or_number' => 'number')); ?>
