@@ -157,7 +157,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 
 .single-post-meta  { clear: right; float: right; margin: 1em 0 1em 1em; width: 40%; }
 
-.entry-content  { margin: 10px 0; font-size: 12px; line-height: 1.5em; overflow: auto; }
+.entry-content  { margin: 10px 0; font-size: 12px; line-height: 1.5em; overflow: hidden; }
 .entry-content ul, .entry-content ol  { margin: 0 20px; padding: 0 0 1.5em; }
 .entry-content ul ul, .entry-content ol ol, .entry-content ol ul, .entry-content ul ol  { padding: 0; }
 .entry-content blockquote  { font-style: italic; }
@@ -169,8 +169,9 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: 11em; top:
 .layout-3c-r-fixed .post .entry-photo, .layout-3c-r-fixed .single-post .entry-photo, .layout-3c-fixed .post .entry-photo, .layout-3c-fixed .single-post .entry-photo  { width: 480px; }
 
 .gallery  { clear: both; margin: 10px 0; }
-.gallery-item  { float: left; margin-right: 10px; }
+.gallery-item  { float: left; margin-right: 10px; width: 31%; text-align: center; }
 .gallery-icon img  { padding: 4px; }
+.gallery-caption  { font-size: 12px; }
 
 .about-author  { padding: 10px; margin: 0 0 10px; line-height: 1.5em; }
 .about-author .avatar  { margin-bottom: 0; }

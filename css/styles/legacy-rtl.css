@@ -260,7 +260,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { right: 11em; top
 .single .post .entry-photo img, .single-post .entry-photo img	{ margin: 10px 0; overflow: hidden; border: 1px solid #CCC; }
 .single .post .entry-comments, .single-post .entry-comments  { float: left; padding: 3px 17px 3px 3px; margin-top: 20px; background: url(../../images/comments.gif) no-repeat right #0052A3; display: inline-block; color: #FFF; font-size: 14px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
 
-.entry-content, .entry-content	{ margin: 20px 0; font-size: 12px; line-height: 1.5em; }
+.entry-content, .entry-content	{ margin: 20px 0; font-size: 12px; line-height: 1.5em; overflow: hidden; }
 .entry-content ul, .entry-content ol  { margin: 0 15px; padding: 0 0 1.5em; }
 .entry-content ul ul, .entry-content ol ol, .entry-content ol ul, .entry-content ul ol  { padding: 0; }
 .entry-content blockquote { font-style: italic; }
@@ -277,8 +277,10 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { right: 11em; top
 .module-title, .feed-title, .archive-title, #reply-title	{ line-height: 1em; color: #333; font-size: 12px; font-weight: bold; margin: 0 10px 0 0; padding: 8px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; display: block; }
 .feed-title				{ border-bottom: none; }
 
-.gallery				{ clear: both; margin: 10px 0; }
-.gallery-item			{ float: right; margin-right: 10px; }
+.gallery  { clear: both; margin: 10px 0; }
+.gallery-item  { float: right; margin-left: 10px; width: 31%; text-align: center; }
+.gallery-icon img  { padding: 4px; border: 1px solid #CCC; }
+.gallery-caption  { font-size: 12px; }
 
 .about-author			{ border: 1px solid #CCC; padding: 10px; margin: 0 0 10px; line-height: 1.5em; background: #F5F5F5; }
 .about-author .avatar	{ margin-bottom: 0; }
