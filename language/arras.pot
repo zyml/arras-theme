@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras Theme 1.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-23 00:56+0800\n"
+"POT-Creation-Date: 2010-09-04 00:43+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -162,7 +162,7 @@ msgid "Email"
 msgstr ""
 
 #: ../footer.php:22
-msgid "About Arras Theme"
+msgid "About Arras WordPress Theme"
 msgstr ""
 
 #: ../header.php:12
@@ -237,11 +237,11 @@ msgid "Search %s"
 msgstr ""
 
 #: ../sidebar.php:10
-msgid "Welcome to Arras Theme!"
+msgid "Welcome to Arras!"
 msgstr ""
 
 #: ../sidebar.php:13
-msgid "Arras Theme is a WordPress theme designed for news or review sites with lots of customisable features."
+msgid "Arras is a WordPress theme designed for news or review sites with lots of customisable features."
 msgstr ""
 
 #: ../sidebar.php:36
@@ -426,53 +426,53 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: ../library/template.php:182
+#: ../library/template.php:190
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:185
+#: ../library/template.php:193
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:185
+#: ../library/template.php:193
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:185
+#: ../library/template.php:193
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:185
+#: ../library/template.php:193
 msgid "g:i A"
 msgstr ""
 
-#: ../library/template.php:288
-#: ../library/template.php:290
+#: ../library/template.php:296
+#: ../library/template.php:298
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../library/template.php:288
-#: ../library/template.php:290
+#: ../library/template.php:296
+#: ../library/template.php:298
 msgid "RSS Feed"
 msgstr ""
 
-#: ../library/template.php:295
+#: ../library/template.php:303
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../library/template.php:295
+#: ../library/template.php:303
 msgid "Twitter"
 msgstr ""
 
-#: ../library/template.php:300
+#: ../library/template.php:308
 #, php-format
 msgid "%s Facebook"
 msgstr ""
 
-#: ../library/template.php:300
+#: ../library/template.php:308
 msgid "Facebook"
 msgstr ""
 
@@ -596,12 +596,11 @@ msgid "A search form for your site"
 msgstr ""
 
 #: ../library/admin/admin.php:25
-msgid "Arras Theme"
+msgid "Arras"
 msgstr ""
 
 #: ../library/admin/admin.php:26
-#: ../library/admin/admin.php:73
-msgid "Arras Theme Options"
+msgid "Arras Options"
 msgstr ""
 
 #: ../library/admin/admin.php:26
@@ -622,6 +621,10 @@ msgstr ""
 
 #: ../library/admin/admin.php:65
 msgid "Thumbnail cache has been cleared."
+msgstr ""
+
+#: ../library/admin/admin.php:73
+msgid "Arras Theme Options"
 msgstr ""
 
 #: ../library/admin/admin.php:95
@@ -899,7 +902,7 @@ msgid "Current Version"
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:12
-msgid "If you have recently upgraded Arras Theme to a new release, it is <span style=\"color: red\">highly recommended</span> that you reset your theme options, clear your browser cache and restart your browser before proceeding."
+msgid "If you have recently upgraded Arras to a new release, it is <span style=\"color: red\">highly recommended</span> that you reset your theme options, clear your browser cache and restart your browser before proceeding."
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:17

@@ -19,7 +19,7 @@
 		</div>
 		
 		<div class="footer-message">
-		<p class="floatright"><a class="arras" href="http://www.arrastheme.com/"><strong><?php _e('About Arras Theme', 'arras') ?></strong></a></p>
+		<p class="floatright"><a class="arras" href="http://www.arrastheme.com/"><strong><?php _e('About Arras WordPress Theme', 'arras') ?></strong></a></p>
 		<?php echo stripslashes(arras_get_option('footer_message')); ?>		
 		</div><!-- .footer-message -->
     </div>

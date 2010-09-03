@@ -7,10 +7,10 @@
 	<ul class="xoxo">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Primary Sidebar') ) : ?>
 			<li class="widgetcontainer clearfix">
-				<h5 class="widgettitle"><?php _e('Welcome to Arras Theme!', 'arras') ?></h5>
+				<h5 class="widgettitle"><?php _e('Welcome to Arras!', 'arras') ?></h5>
 				<div class="widgetcontent">
 				<div class="textwidget">
-					<p><?php _e('Arras Theme is a WordPress theme designed for news or review sites with lots of customisable features.', 'arras') ?></p>
+					<p><?php _e('Arras is a WordPress theme designed for news or review sites with lots of customisable features.', 'arras') ?></p>
 				</div>
 				</div>
 			</li>

@@ -22,8 +22,8 @@ $translators = array(
 $notices = ''; // store notices here so that options_page.php will echo it out later
 
 function arras_addmenu() {
-	$options_page = add_menu_page( '', __('Arras Theme', 'arras'), 'switch_themes', 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63);
-	add_submenu_page( 'arras-options', __('Arras Theme Options', 'arras'), __('Theme Options', 'arras'), 'switch_themes', 'arras-options', 'arras_admin' );
+	$options_page = add_menu_page( '', __('Arras', 'arras'), 'switch_themes', 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63);
+	add_submenu_page( 'arras-options', __('Arras Options', 'arras'), __('Theme Options', 'arras'), 'switch_themes', 'arras-options', 'arras_admin' );
 	
 	$posttax_page = add_submenu_page( 'arras-options', __('Post Types & Taxonomies', 'arras'), __('Post Types & Tax.', 'arras'), 'switch_themes', 'arras-posttax', 'arras_posttax' );
 	
@@ -215,7 +215,7 @@ function get_remote_array($url) {
 	if ( function_exists('wp_remote_request') ) {	
 		$options = array();
 		$options['headers'] = array(
-			'User-Agent' => 'Arras Theme Feed Grabber' . ARRAS_VERSION . '; (' . get_bloginfo('url') .')'
+			'User-Agent' => 'Arras Feed Grabber' . ARRAS_VERSION . '; (' . get_bloginfo('url') .')'
 		 );
 		 
 		$response = wp_remote_request($url, $options);

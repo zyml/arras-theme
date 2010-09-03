@@ -3,7 +3,7 @@
 <div class="wrap clearfix">
 
 <?php screen_icon('themes') ?>
-<h2 id="arras-header"><?php _e('Arras Theme Options', 'arras') ?></h2>
+<h2 id="arras-header"><?php _e('Arras Options', 'arras') ?></h2>
 
 <?php if (!arras_cache_is_writable()) : ?>
 <div class="error">

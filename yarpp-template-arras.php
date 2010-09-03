@@ -1,7 +1,7 @@
 <?php
 /*
-Template for Arras Theme
-This template returns the related posts, Arras Theme way.
+Template for Arras WP Theme
+This template returns the related posts, Arras way.
 Author: zy (Melvin Lee)
 */
 
