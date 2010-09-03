@@ -102,10 +102,12 @@ function arras_tag_query() {
 	foreach ($tag_slugs as $tag_slug) { 
 		$tag = get_term_by('slug', $tag_slug ,'post_tag');
 		// prettify tag operator, if any
-		if ($tag_ops[$tag_ops_counter] == ',') {
+		if ( isset($tag_ops[$tag_ops_counter]) && $tag_ops[$tag_ops_counter] == ',') {
 			$tag_ops[$tag_ops_counter] = ', ';
-		} elseif ($tag_ops[$tag_ops_counter] == '+') {
+		} elseif ( isset($tag_ops[$tag_ops_counter]) && $tag_ops[$tag_ops_counter] == '+') {
 			$tag_ops[$tag_ops_counter] = ' + ';
+		} else {
+			$tag_ops[$tag_ops_counter] = '';
 		}
 		// concatenate display name and prettified operators
 		$nice_tag_query = $nice_tag_query.$tag->name.$tag_ops[$tag_ops_counter];
