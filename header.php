@@ -71,7 +71,8 @@ document.body.className = c;
 			'sort_column' => 'menu_order', 
 			'menu_class' => 'sf-menu menu clearfix', 
 			'theme_location' => 'top-menu',
-			'container_id' => 'top-menu-content'
+			'container_id' => 'top-menu-content',
+			'fallback_cb' => ''
 		) );
 	}
 	?>
