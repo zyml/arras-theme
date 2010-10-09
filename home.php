@@ -98,7 +98,9 @@ arras_render_posts( null, arras_get_option('news_display'), arras_get_option('ne
 
 <?php else: ?>
 
-<div class="home-title"><?php _e('Latest Headlines', 'arras') ?></div>
+<?php if ( arras_get_option('news_title') != '' ) : ?>
+<div class="home-title"><?php _e( arras_get_option('news_title') ) ?></div>
+<?php endif ?>
 
 <div id="archive-posts">
 	<?php arras_render_posts(null, arras_get_option('archive_display')) ?>    
