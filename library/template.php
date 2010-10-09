@@ -268,24 +268,30 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 					
 				$query['category__in'] = $list;
 				break;
+				
 			case 'post_tag':
 				$query['tag__in'] = $list;
 				break;
+				
 			default:
 				$list = implode($list, ',');
 				$query[$taxonomy] = $list;
 		}
 
 	}
-	
+
 	$query['post_type'] = $post_type;
 	$query['posts_per_page'] = $count;
 	
 	if (is_home() && arras_get_option('hide_duplicates')) {
 		$query['post__not_in'] = $exclude;
 	}
+	
+	if ($post_type == 'attachment') {
+		$query['post_status'] = 'inherit';
+	}
 
-	//print_r($query);
+	// print_r($query);
 	return $query;
 }
 

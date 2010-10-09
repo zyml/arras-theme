@@ -84,14 +84,24 @@ function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
 				'alt' 	=> get_the_excerpt(), 
 				'title' => get_the_title()
 			) );
-		} else if (arras_get_option('auto_thumbs')) {
-			$img_id = arras_get_first_post_image_id();
-			if (!$img_id) return $empty_thumbnail;
-			
-			return wp_get_attachment_image($img_id, $size, false, array(
-				'alt' 	=> get_the_excerpt(), 
-				'title' => get_the_title()
-			) );
+		} else {
+			// Could it be an attachment?
+			if ($post->post_type == 'attachment') {
+				return wp_get_attachment_image( $id, $size, false, array(
+					'alt' 	=> get_the_excerpt(), 
+					'title' => get_the_title()
+				) );
+			}		
+			// Use first thumbnail if auto thumbs is enabled.
+			if (arras_get_option('auto_thumbs')) {
+				$img_id = arras_get_first_post_image_id();
+				if (!$img_id) return $empty_thumbnail;
+				
+				return wp_get_attachment_image($img_id, $size, false, array(
+					'alt' 	=> get_the_excerpt(), 
+					'title' => get_the_title()
+				) );
+			}
 		}
 	}
 	
