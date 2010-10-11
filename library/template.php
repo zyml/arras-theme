@@ -274,8 +274,10 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 				break;
 				
 			default:
+				$taxonomy_obj = get_taxonomy($taxonomy);
+				
 				$list = implode($list, ',');
-				$query[$taxonomy] = $list;
+				$query[$taxonomy_obj->query_var] = $list;
 		}
 
 	}
@@ -291,7 +293,8 @@ function arras_parse_query($list, $count, $exclude = null, $post_type = '', $tax
 		$query['post_status'] = 'inherit';
 	}
 
-	// print_r($query);
+	//print_r($query);
+	
 	return $query;
 }
 

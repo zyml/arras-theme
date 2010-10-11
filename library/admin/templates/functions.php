@@ -184,7 +184,7 @@ function arras_get_terms_list($taxonomy) {
 	
 	if (!is_wp_error($terms)) {
 		foreach ($terms as $term) {
-			if ($taxonomy == 'category' || $taxonomy = 'post_tag') {
+			if ($taxonomy == 'category' || $taxonomy == 'post_tag') {
 				$opt[$term->term_id] = $term->name;
 			} else {
 				$opt[$term->slug] = $term->name;
@@ -202,7 +202,9 @@ function arras_get_taxonomy_list($object) {
 	
 	foreach( $taxonomies as $id => $obj ) {
 		if ( !in_array($id, arras_taxonomy_blacklist()) ) {
-			$opt[$id] = $obj->labels->name;
+			if ( $id == 'category' || $id == 'post_tag' || isset($obj->query_var) ) {
+				$opt[$id] = $obj->labels->name;
+			}
 		}
 	}
 	
