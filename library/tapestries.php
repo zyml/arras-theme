@@ -54,7 +54,7 @@ function arras_remove_all_tapestries() {
  * @since 1.4.4
  */
 function arras_get_tapestry_callback($type, $query, $taxonomy = 'category') {
-	global $arras_tapestries;
+	global $arras_tapestries, $post;
 	
 	if ( count($arras_tapestries) == 0 ) return false;
 	
@@ -106,7 +106,7 @@ if (!function_exists('arras_tapestry_line')) {
 			<span class="entry-cat">
 				<?php 
 				$terms = get_the_terms( get_the_ID(), $taxonomy );
-				if ( !is_wp_error($terms) ) {
+				if ( $terms != '' && !is_wp_error($terms) ) {
 					$terms = array_values($terms);
 					if (arras_get_option('news_cat') && isset($terms[1])) echo $terms[1]->name;
 					else echo $terms[0]->name;

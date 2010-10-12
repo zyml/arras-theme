@@ -1,4 +1,70 @@
 <?php
+/**
+ * Deprecated in Arras 1.5.1. Use arras_prep_query() instead
+ */
+function arras_parse_query($list, $count, $exclude = null, $post_type = '', $taxonomy = '') {
+	$query = array();
+	
+	if ($post_type == '') $post_type = 'post';
+	if ($taxonomy == '') $taxonomy = 'category';
+	
+	if ($list != false) {
+		if ((array)$list !== $list) {
+			$list = array($list);
+		}
+		
+		if ( in_array('-5', $list) ) {
+			$stickies = get_option('sticky_posts');
+			rsort($stickies);
+			if (count($stickies) > 0) {
+				$query['post__in'] = $stickies;
+			} else {
+				// if no sticky posts are available, return empty value
+				return false;
+			}
+		
+			$key = array_search('-5', $list);
+			unset($list[$key]);
+		}
+	
+		switch($taxonomy) {
+			case 'category':
+				if ( ($zero_cat = array_search('0', $list)) === true )
+					unset($list[$zero_cat]);
+					
+				$query['category__in'] = $list;
+				break;
+				
+			case 'post_tag':
+				$query['tag__in'] = $list;
+				break;
+				
+			default:
+				$taxonomy_obj = get_taxonomy($taxonomy);
+				
+				$list = implode($list, ',');
+				$query[$taxonomy_obj->query_var] = $list;
+		}
+
+	}
+
+	$query['post_type'] = $post_type;
+	$query['posts_per_page'] = $count;
+	
+	if (is_home() && arras_get_option('hide_duplicates')) {
+		$query['post__not_in'] = $exclude;
+	}
+	
+	if ($post_type == 'attachment') {
+		$query['post_status'] = 'inherit';
+	}
+
+	//print_r($query);
+	
+	return $query;
+}
+
+
 /* Deprecated - use arras_render_posts() instead */ 
 function arras_get_posts($page_type, $query = null) {
 	global $post, $wp_query;

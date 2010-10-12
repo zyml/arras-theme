@@ -27,13 +27,20 @@ $post_blacklist = array();
 <div id="index-featured1">
 <?php if ( arras_get_option('featured1_title') != '' ) : ?>
 	<div class="home-title"><?php _e( arras_get_option('featured1_title'), 'arras' ) ?></div>
-<?php endif ?>
-	<?php
-	$query2 = arras_parse_query($featured1_cat, $featured1_count, array_unique($post_blacklist), arras_get_option('featured1_posttype'), arras_get_option('featured1_tax'));
-	arras_render_posts( apply_filters('arras_featured1_query', $query2), arras_get_option('featured1_display'), arras_get_option('featured1_tax') );
-	?>
+<?php endif;
+
+arras_featured_loop( arras_get_option('featured1_display'), apply_filters('arras_featured1_query', array(
+	'list' 				=> $featured1_cat,
+	'taxonomy'			=> arras_get_option('featured1_tax'),
+	'query'				=> array(
+		'posts_per_page' 	=> $featured1_count,
+		'exclude'			=> $post_blacklist,
+		'post_type'			=> arras_get_option('featured1_posttype')
+	)
+) ) );
+?>
 </div><!-- #index-featured1 -->
-<?php endif; ?>
+<?php endif ?>
 
 <?php if ( $featured2_cat !== '' && arras_get_option('enable_featured2') ) : ?>
 <?php arras_above_index_featured2_post() ?>
@@ -41,11 +48,19 @@ $post_blacklist = array();
 <div id="index-featured2">
 <?php if ( arras_get_option('featured2_title') != '' ) : ?>
 	<div class="home-title"><?php _e( arras_get_option('featured2_title'), 'arras' ) ?></div>
-<?php endif ?>
-	<?php
-	$query3 = arras_parse_query($featured2_cat, $featured2_count, array_unique($post_blacklist), arras_get_option('featured2_posttype'), arras_get_option('featured2_tax'));
-	arras_render_posts( apply_filters('arras_featured2_query', $query3), arras_get_option('featured2_display'), arras_get_option('featured2_tax') );
-	?>
+<?php endif;
+
+arras_featured_loop( arras_get_option('featured2_display'), apply_filters('arras_featured2_query', array(
+	'list' 				=> $featured2_cat,
+	'taxonomy'			=> arras_get_option('featured2_tax'),
+	'query'				=> array(
+		'posts_per_page' 	=> $featured2_count,
+		'exclude'			=> $post_blacklist,
+		'post_type'			=> arras_get_option('featured2_posttype')
+	)
+) ) );
+?>
+
 </div><!-- #index-featured2 -->
 <?php endif; ?>
 
@@ -57,13 +72,23 @@ $post_blacklist = array();
 <div class="home-title"><?php _e( arras_get_option('news_title') ) ?></div>
 <?php endif ?>
 <?php
-$news_query = arras_parse_query($news_cat, ( (arras_get_option('index_count') == 0 ? get_option('posts_per_page') : arras_get_option('index_count')) ), array_unique($post_blacklist), arras_get_option('news_posttype'), arras_get_option('news_tax'));
+$news_query_args = apply_filters('arras_news_query', array(
+	'list' 				=> $news_cat,
+	'taxonomy'			=> arras_get_option('news_tax'),
+	'query'				=> array(
+		'posts_per_page' 	=> arras_get_option('index_count'),
+		'exclude'			=> $post_blacklist,
+		'post_type'			=> arras_get_option('news_posttype'),
+		'paged'				=> $paged
+	)
+) );
 
-$news_query['paged'] = $paged;
+$news_query = arras_prep_query($news_query_args);
 
-query_posts( apply_filters('arras_news_query', $news_query) );
-arras_render_posts( null, arras_get_option('news_display'), arras_get_option('news_tax') ); ?>
-<?php if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
+query_posts($news_query);
+arras_featured_loop( arras_get_option('news_display'), $news_query_args, true );
+
+if(function_exists('wp_pagenavi')) wp_pagenavi(); else { ?>
 	<div class="navigation clearfix">
 		<div class="floatleft"><?php next_posts_link( __('Older Entries', 'arras') ) ?></div>
 		<div class="floatright"><?php previous_posts_link( __('Newer Entries', 'arras') ) ?></div>
