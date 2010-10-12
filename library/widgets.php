@@ -48,7 +48,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		$this->display_thumbs = isset($instance['display_thumbs']);
 		
 		if (!$instance['order']) $instance['order'] = $this->get_tabs();
-		
+
 		if ($instance['display_home'] && !is_home()) {
 			return false;
 		}
@@ -72,85 +72,54 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	}
 	
 	function featured_tab() {
-		
 		switch ($this->query_source) {
 			case 'slideshow':
-				$q = arras_parse_query( 
-					arras_get_option('slideshow_cat'),
-					$this->postcount, 
-					0, 
-					arras_get_option('slideshow_posttype'), 
-					arras_get_option('slideshow_tax')
-				);
+				$list = arras_get_option('slideshow_cat');
+				$post_type = arras_get_option('slideshow_posttype');
+				$taxonomy = arras_get_option('slideshow_tax');
+				break;
+			case 'featured1':
+				$list = arras_get_option('featured1_cat');
+				$post_type = arras_get_option('featured1_posttype');
+				$taxonomy = arras_get_option('featured1_tax');
 				break;
 			case 'featured2':
-				$q = arras_parse_query( 
-					arras_get_option('featured2_cat'),
-					$this->postcount, 
-					0, 
-					arras_get_option('featured2_posttype'), 
-					arras_get_option('featured2_tax')
-				);
+				$list = arras_get_option('featured2_cat');
+				$post_type = arras_get_option('featured2_posttype');
+				$taxonomy = arras_get_option('featured2_tax');
 				break;
 			default:
-				$q = arras_parse_query( 
-					arras_get_option('featured1_cat'),
-					$this->postcount, 
-					0, 
-					arras_get_option('featured1_posttype'), 
-					arras_get_option('featured1_tax')
-				);
+				$list = arras_get_option('news_cat');
+				$post_type = arras_get_option('news_posttype');
+				$taxonomy = arras_get_option('news_tax');
 		}
 		
-		$f = new WP_Query($q);
-		if (!$f->have_posts()) {
-			echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
-		} else {
-			echo '<ul>';
-			while ($f->have_posts()) {
-				$f->the_post();
-				?>
-				<li class="clearfix">
-				<?php if ($this->display_thumbs) : ?>
-				<span class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb') ?></span>
-				<?php endif ?>
-				<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
-				<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
-				<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
-				</li>
-				<?php
-			}
-			echo '</ul>';
-		}
+		arras_widgets_post_loop('sidebar-featured', array(
+			'list'				=> $list,
+			'taxonomy'			=> $taxonomy,
+			'show_thumbs'		=> true,
+			'show_excerpt'		=> false,
+			'query'				=> array(
+				'posts_per_page'	=> $this->postcount,
+				'post_type'			=> $post_type
+			)
+		) );
 	}
 	
 	function latest_tab() {
-		$f = new WP_Query('showposts=' . $this->postcount);
-		if (!$f->have_posts()) {
-			echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
-		} else {
-			echo '<ul>';
-			while ($f->have_posts()) {
-				$f->the_post();
-				?>
-				<li class="clearfix">
-				<?php if ($this->display_thumbs) : ?>
-				<span class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb',get_the_ID()) ?></span>
-				<?php endif ?>
-				<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
-				<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
-				<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
-				</li>
-				<?php
-			}
-			echo '</ul>';
-		}
+		arras_widgets_post_loop('sidebar-latest', array(
+			'show_thumbs'		=> true,
+			'show_excerpt'		=> false,
+			'query'				=> array(
+				'posts_per_page'	=> $this->postcount
+			)
+		) );
 	}
 	
 	function comments_tab() {
 		$comments = get_comments( array('status' => 'approve', 'number' => $this->commentcount) );	
 		if ($comments) {
-			echo '<ul id="recentcomments">';
+			echo '<ul class="sidebar-comments">';
 			foreach ($comments as $comment) {
 				echo '<li class="recentcomments clearfix">';
 				if ($this->display_thumbs) echo get_avatar($comment->user_id, 36);
@@ -302,32 +271,14 @@ class Arras_Featured_Stories extends WP_Widget {
 		echo $before_widget;
 		echo $before_title . $title . $after_title;
 		
-		$q = arras_parse_query($instance['featured_cat'], $instance['postcount']);
-		$r = new WP_Query($q);
-		if ($r->have_posts()) {
-		
-		echo '<ul class="featured-stories">';
-		while ($r->have_posts()) : $r->the_post();
-		?>
-		<li class="clearfix">
-			<?php if ( isset($instance['show_thumbs']) ) : ?><div class="thumb"><?php echo arras_get_thumbnail('sidebar-thumb', get_the_ID()) ?></div><?php endif ?>
-			<div class="featured-stories-summary">
-			<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
-			<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
-			<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
-			
-			<?php if ($instance['show_excerpts']) : ?>
-			<p class="excerpt">
-			<?php echo get_the_excerpt() ?>
-			</p>
-			<a class="sidebar-read-more" href="<?php the_permalink() ?>"><?php _e('Read More', 'arras') ?></a>
-			<?php endif ?>
-			</div>
-		</li>
-		<?php
-		endwhile;
-		echo '</ul>';
-		}
+		arras_widgets_post_loop('featured-stories', array(
+			'list'				=> $instance['featured_cat'],
+			'show_thumbs'		=> $instance['show_thumbs'],
+			'show_excerpt'		=> $instance['show_excerpts'],
+			'query'				=> array(
+				'posts_per_page'	=> $instance['postcount']
+			)
+		) );
 		
 		echo $after_widget;
 	}
@@ -467,6 +418,59 @@ class Arras_Widget_Search extends WP_Widget {
 
 	}
 
+}
+
+function arras_widgets_post_loop( $id, $args = array() ) {
+	global $wp_query;
+	// $temp_query = $wp_query;
+	
+	$_defaults = array(
+		'taxonomy'			=> 'category',
+		'show_thumbs'		=> true,
+		'show_excerpt'		=> true,
+		'query'				=> array(
+			'post_type'			=> 'post',
+			'posts_per_page'	=> 5,
+			'orderby'			=> 'date',
+			'order'				=> 'DESC'
+		)
+	);
+	
+	$args['query'] = wp_parse_args($args['query'], $_defaults['query']);
+	$args = wp_parse_args($args, $_defaults);
+	
+	$q = new WP_Query( arras_prep_query($args) );
+	// $wp_query = $q;
+	
+	if ( $q->have_posts() ) {
+		echo '<ul class="' . $id . '">';
+		while( $q->have_posts() ) {
+			$q->the_post();
+			?> <li class="clearfix"> <?php
+			if ($args['show_thumbs']) {
+				echo '<span class="thumb">' . arras_get_thumbnail( 'sidebar-thumb', get_the_ID() ) . '</span>';
+			}
+			?>
+			<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
+			<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
+			<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
+			
+			<?php if ($args['show_excerpt']) : ?>
+			<p class="excerpt">
+			<?php echo get_the_excerpt() ?>
+			</p>
+			<a class="sidebar-read-more" href="<?php the_permalink() ?>"><?php _e('Read More', 'arras') ?></a>
+			<?php endif ?>
+			
+			</li>
+			<?php
+		}
+		echo '</ul>';
+	} else {
+		echo '<span class="textCenter sub">' . __('No posts at the moment. Check back again later!', 'arras') . '</span>';
+	}
+	
+	wp_reset_query();
 }
 
 // Register Widgets

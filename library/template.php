@@ -176,19 +176,21 @@ function arras_render_posts($args = null, $display_type = 'default', $taxonomy =
 function arras_featured_loop( $display_type = 'default', $arras_args = array(), $query_posts = false ) {
 	global $wp_query;
 	
+
 	if ($query_posts) {
 		$q = $wp_query;
 	} else {
 		// store the current $wp_query here before assigning for use.
-		$temp_query = $wp_query;
+		// $temp_query = $wp_query;
 	
 		$arras_args = arras_prep_query($arras_args);
 		$q = new WP_Query($arras_args);
 		
-		$wp_query = $q;
+		// $wp_query = $q;
 	}
 	
 	if ($q->have_posts()) {
+		if ( !isset($arras_args['taxonomy']) ) $arras_args['taxonomy'] = 'category';
 		arras_get_tapestry_callback($display_type, $q, $arras_args['taxonomy']);
 	}
 	
@@ -196,10 +198,13 @@ function arras_featured_loop( $display_type = 'default', $arras_args = array(), 
 	
 	if (!$query_posts) {
 		// assign back the original $wp_query.
-		$wp_query = $temp_query;
+		// $wp_query = $temp_query;
 	}
 }
 
+/**
+ * This function replaces arras_parse_query() starting from 1.5.1.
+ */
 function arras_prep_query( $args = array() ) {
 	$_defaults = array(
 		'list'				=> array(),
@@ -214,8 +219,10 @@ function arras_prep_query( $args = array() ) {
 		)
 	);
 	
+	$args['query'] = wp_parse_args($args['query'], $_defaults['query']);
 	$args = wp_parse_args($args, $_defaults);
 	
+
 	if ( !is_array($args['list']) ) {
 		$args['list'] = array($args['list']);
 	}
@@ -261,7 +268,7 @@ function arras_prep_query( $args = array() ) {
 		$args['query']['post__not_in'] = array_unique($args['exclude']);
 	}
 	
-	if ($post_type == 'attachment') {
+	if ($args['query']['post_type'] == 'attachment') {
 		$args['query']['post_status'] = 'inherit';
 	}
 	
