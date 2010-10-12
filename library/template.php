@@ -159,10 +159,7 @@ function arras_render_posts($args = null, $display_type = 'default', $taxonomy =
 	if (!$args) {
 		$query = $wp_query;
 	} else {
-		$temp_query = $wp_query;
-	
 		$query = new WP_Query($args);
-		$wp_query = $query;
 	}
 	
 	if ($query->have_posts()) {	
@@ -170,7 +167,6 @@ function arras_render_posts($args = null, $display_type = 'default', $taxonomy =
 	}
 	
 	wp_reset_query();
-	if ($args) $wp_query = $temp_query;
 }
 
 function arras_featured_loop( $display_type = 'default', $arras_args = array(), $query_posts = false ) {
@@ -180,13 +176,8 @@ function arras_featured_loop( $display_type = 'default', $arras_args = array(), 
 	if ($query_posts) {
 		$q = $wp_query;
 	} else {
-		// store the current $wp_query here before assigning for use.
-		// $temp_query = $wp_query;
-	
 		$arras_args = arras_prep_query($arras_args);
 		$q = new WP_Query($arras_args);
-		
-		// $wp_query = $q;
 	}
 	
 	if ($q->have_posts()) {
@@ -195,11 +186,6 @@ function arras_featured_loop( $display_type = 'default', $arras_args = array(), 
 	}
 	
 	wp_reset_query();
-	
-	if (!$query_posts) {
-		// assign back the original $wp_query.
-		// $wp_query = $temp_query;
-	}
 }
 
 /**

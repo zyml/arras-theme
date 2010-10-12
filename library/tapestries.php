@@ -54,7 +54,7 @@ function arras_remove_all_tapestries() {
  * @since 1.4.4
  */
 function arras_get_tapestry_callback($type, $query, $taxonomy = 'category') {
-	global $arras_tapestries, $post;
+	global $arras_tapestries, $wp_query, $post;
 	
 	if ( count($arras_tapestries) == 0 ) return false;
 	
@@ -68,6 +68,11 @@ function arras_get_tapestry_callback($type, $query, $taxonomy = 'category') {
 	echo $tapestry->before;
 	while ($query->have_posts()) {
 		$query->the_post();
+		
+		// hack for plugin authors who love to use $post = $wp_query->post
+		$wp_query->post = $query->post;
+		setup_postdata($post);
+		
 		call_user_func_array( $tapestry->callback, array($dep = '', $taxonomy) );
 		if ($tapestry->allow_duplicates) arras_blacklist_duplicates();
 	}

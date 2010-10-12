@@ -422,7 +422,6 @@ class Arras_Widget_Search extends WP_Widget {
 
 function arras_widgets_post_loop( $id, $args = array() ) {
 	global $wp_query;
-	// $temp_query = $wp_query;
 	
 	$_defaults = array(
 		'taxonomy'			=> 'category',
@@ -440,12 +439,16 @@ function arras_widgets_post_loop( $id, $args = array() ) {
 	$args = wp_parse_args($args, $_defaults);
 	
 	$q = new WP_Query( arras_prep_query($args) );
-	// $wp_query = $q;
 	
 	if ( $q->have_posts() ) {
 		echo '<ul class="' . $id . '">';
 		while( $q->have_posts() ) {
 			$q->the_post();
+			
+			// hack for plugin authors who love to use $post = $wp_query->post
+			$wp_query->post = $q->post;
+			setup_postdata($post);
+			
 			?> <li class="clearfix"> <?php
 			if ($args['show_thumbs']) {
 				echo '<span class="thumb">' . arras_get_thumbnail( 'sidebar-thumb', get_the_ID() ) . '</span>';
