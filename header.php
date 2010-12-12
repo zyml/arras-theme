@@ -33,7 +33,7 @@ wp_enqueue_script('jquery');
 wp_enqueue_script('jquery-ui-tabs', null, array('jquery-ui-core', 'jquery'), null, false); 
 
 if ( is_home() || is_front_page() ) {
-	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', 'jquery', null, true);
+	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.lite.min.js', 'jquery', null, true);
 }
 
 if ( !function_exists('pixopoint_menu') ) {
