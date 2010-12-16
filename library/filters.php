@@ -142,7 +142,7 @@ function arras_postfooter() {
  */
 function arras_post_notfound() {
 	$postcontent = '<div class="single-post">';
-	$postcontent .= '<h1 class="entry-title">' . __('That \'something\' you are looking for isn\'t here!', 'arras') . '</h2>';
+	$postcontent .= '<h1 class="entry-title">' . __('That \'something\' you are looking for isn\'t here!', 'arras') . '</h1>';
 	$postcontent .= '<div class="entry-content"><p>' . __('<strong>We\'re very sorry, but the page that you are looking for doesn\'t exist or has been moved.</strong>', 'arras') . '</p>';
 	
 	
