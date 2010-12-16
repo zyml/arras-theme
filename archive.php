@@ -7,9 +7,9 @@
 	<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 
 	<?php if ( is_category() ) : ?>
-        <h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), single_cat_title() ) ?></h1>
+        <h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), single_cat_title('', false) ) ?></h1>
     <?php elseif ( is_tag() ) : ?>
-        <h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), single_tag_title() ) ?></h1>
+        <h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), single_tag_title('', false) ) ?></h1>
 	<?php elseif ( is_tax() ) : $term = $wp_query->get_queried_object(); ?>
 		<h1 class="archive-title"><?php printf( __('%s Archive', 'arras'), $term->name ) ?></h1>
     <?php elseif ( is_day() ) : ?>
