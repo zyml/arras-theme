@@ -81,11 +81,11 @@ function arras_add_slideshow_thumb_size() {
 	$layout = arras_get_option('layout');
 	
 	if ( strpos($layout, '1c') !== false ) {
-		$size = array(950, 300);
+		$size = array(950, 450);
 	} else if ( strpos($layout, '3c') !== false ) {
 		$size = array(490, 225);
 	} else {
-		$size = array(640, 250);
+		$size = array(640, 300);
 	}
 	
 	$size = apply_filters('arras_slideshow_thumb_size', $size);

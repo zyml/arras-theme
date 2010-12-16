@@ -153,7 +153,7 @@ function arras_get_single_thumbs_size() {
 	} else if ( strpos($layout, '3c') !== false ) {
 		$size = array(465, 190);
 	} else {
-		$size = array(620, 250);
+		$size = array(620, 300);
 	}
 	
 	return apply_filters('arras_content_width', $size);
