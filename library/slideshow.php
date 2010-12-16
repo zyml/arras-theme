@@ -1,9 +1,9 @@
 <?php 
 
 function arras_add_slideshow() {
-	global $post_blacklist;
-	if (!is_home()) return false;
-	
+	global $post_blacklist, $paged;
+	if ( !is_home() || $paged ) return false;
+
 	$slideshow_cat = arras_get_option('slideshow_cat');
 	
 	if (arras_get_option('enable_slideshow') == false) return false;
@@ -14,7 +14,8 @@ function arras_add_slideshow() {
 		'query'				=> array(
 			'posts_per_page'	=> arras_get_option('slideshow_count'),
 			'exclude'			=> $post_blacklist,
-			'post_type'			=> arras_get_option('slideshow_posttype')
+			'post_type'			=> arras_get_option('slideshow_posttype'),
+			'paged'				=> $paged
 		)
 	) );
 	
