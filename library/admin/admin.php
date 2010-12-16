@@ -22,12 +22,12 @@ $translators = array(
 $notices = ''; // store notices here so that options_page.php will echo it out later
 
 function arras_addmenu() {
-	$options_page = add_menu_page( '', __('Arras', 'arras'), 'switch_themes', 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63);
-	add_submenu_page( 'arras-options', __('Arras Options', 'arras'), __('Theme Options', 'arras'), 'switch_themes', 'arras-options', 'arras_admin' );
+	$options_page = add_menu_page( '', __('Arras', 'arras'), 'edit_theme_options', 'arras-options', 'arras_admin', get_template_directory_uri() . '/images/icon.png', 63);
+	add_submenu_page( 'arras-options', __('Arras Options', 'arras'), __('Theme Options', 'arras'), 'edit_theme_options', 'arras-options', 'arras_admin' );
 	
-	$posttax_page = add_submenu_page( 'arras-options', __('Post Types & Taxonomies', 'arras'), __('Post Types & Tax.', 'arras'), 'switch_themes', 'arras-posttax', 'arras_posttax' );
+	$posttax_page = add_submenu_page( 'arras-options', __('Post Types & Taxonomies', 'arras'), __('Post Types & Tax.', 'arras'), 'edit_theme_options', 'arras-posttax', 'arras_posttax' );
 	
-	$custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 'switch_themes', 'arras-custom-background', 'arras_custom_background' );
+	$custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 'edit_theme_options', 'arras-custom-background', 'arras_custom_background' );
 
 	add_action('admin_print_scripts-'. $options_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-'. $options_page, 'arras_admin_styles');
@@ -322,7 +322,7 @@ function arras_taxonomy_blacklist() {
 function arras_admin_bar() {
 	global $wp_admin_bar;
 	
-	if ( !current_user_can('switch_themes') )
+	if ( !current_user_can('edit_theme_options') || is_network_admin() )
 		return;
 	
 	$wp_admin_bar->add_menu( array(
