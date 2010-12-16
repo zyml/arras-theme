@@ -26,7 +26,7 @@ http://www.arrastheme.com/.
 @import url('user.css');
 
 /* Trick the WordPress Theme Bot *Evil* */
-.aligncenter			{ display: block; margin: 0 auto; }
+.aligncenter			{ display: block; margin: 0 auto !important; }
 .alignright				{ float: right; margin: 0 0 1em 1em; }
 .alignleft				{ float: left; margin: 0 1em 1em 0; }
 .floatleft				{ float: left; }
