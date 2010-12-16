@@ -101,6 +101,7 @@ if ( defined('ARRAS_CUSTOM_FIELDS') && ARRAS_CUSTOM_FIELDS == true ) {
 // Options
 if (is_admin()) {
 	add_action('admin_menu', 'arras_addmenu');
+	add_action('admin_bar_menu', 'arras_admin_bar', 100);
 	add_action('wp_ajax_regenthumbnail', 'arras_ajax_process_image');
 }
 

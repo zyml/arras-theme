@@ -319,5 +319,37 @@ function arras_taxonomy_blacklist() {
 	return apply_filters('arras_taxonomy_blacklist', $_default);
 }
 
+function arras_admin_bar() {
+	global $wp_admin_bar;
+	
+	if ( !current_user_can('switch_themes') )
+		return;
+	
+	$wp_admin_bar->add_menu( array(
+		'id'	=> 'arras-admin-menu',
+		'title' => __('Arras', 'arras'),
+		'href'	=> get_admin_url('', 'admin.php?page=arras-options')
+	) );
+	
+	$wp_admin_bar->add_menu( array(
+		'parent'	=> 'arras-admin-menu',
+		'title'		=> __('Theme Options', 'arras'),
+		'href'		=> get_admin_url('', 'admin.php?page=arras-options')
+	) );
+	
+	$wp_admin_bar->add_menu( array(
+		'parent'	=> 'arras-admin-menu',
+		'title'		=> __('Post Types & Tax.', 'arras'),
+		'href'		=> get_admin_url('', 'admin.php?page=arras-posttax')
+	) );
+	
+	$wp_admin_bar->add_menu( array(
+		'parent'	=> 'arras-admin-menu',
+		'title'		=> __('Custom Background', 'arras'),
+		'href'		=> get_admin_url('', 'admin.php?page=arras-custom-background')
+	) );
+	
+}
+
 /* End of file admin.php */
 /* Location: ./library/admin/admin.php */
