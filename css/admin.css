@@ -72,7 +72,7 @@
 html[xmlns] .clearfix, html[xmlns] .ui-helper-clearfix  { display: block; }
 * html .clearfix  * html .ui-helper-clearfix  { height: 1%; }
 
-.ui-multiselect { font-weight:normal !important; display:-moz-inline-block; display:inline-block; cursor:default; text-decoration:none !important; padding:0; width: 245px !important; }
+.ui-multiselect { font-weight:normal !important; display:-moz-inline-block; display:inline-block; cursor:default; text-decoration:none !important; padding:0; width: auto !important; }
 .ui-multiselect input { float:left; padding:5px 0 5px 6px; margin:0; border:none !important /* important fixes bug when inside ui-widget-content */; cursor:default; background:transparent }
 .ui-multiselect span { float:right; margin-top: 4px; padding-right: 5px;  }
 
