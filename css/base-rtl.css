@@ -195,7 +195,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: -11em; top
 
 .comments-navigation	{ clear: both; margin: 0 10px 10px 0; }
 
-#commentsform			{ margin: 0 10px 10px 0; padding: 10px; overflow: hidden; }
+#commentsform, #disqus_thread  { margin: 0 10px 10px 0; padding: 10px; overflow: hidden; }
 #commentsform textarea	{ width: 98%; height: 150px; padding: 5px; }
 #commentsform .error	{ display: block; padding: 5px; }
 #cancel-comment-reply-link	{ padding: 0 10px 0 0; float: left; }

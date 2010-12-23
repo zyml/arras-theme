@@ -224,6 +224,9 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 #commentform textarea	{ display: block; font: 14px 'Lucida Grande',Arial,Helvetica,sans-serif; width: 90%; margin-bottom: 5px; }
 #cancel-comment-reply-link	{ font-size: 11px; }
 
+#disqus_thread			{ background: #FFF; border: 1px solid #CCC; margin-right: 10px; padding: 10px; }
+.dsq-brlink				{ background: #FFF; padding: 5px; margin: 10px 10px 10px 0; display: block; border: 1px solid #CCC; }
+
 .pingbacks				{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; padding: 15px 30px 15px 10px; margin: 0 10px 20px 0; }
 .pingbacks li			{ padding: 2px 0; font-weight: 700; }
 .pingbacks a:link, .pingbacks a:visited	{ text-decoration: none; }
