@@ -456,7 +456,8 @@ function arras_widgets_post_loop( $id, $args = array() ) {
 			?>
 			<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
 			<span class="sub"><?php the_time( __('d F Y g:i A', 'arras') ); ?> | 
-			<?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></span>
+			<a href="<?php comments_link() ?>"><?php comments_number( __('No Comments', 'arras'), __('1 Comment', 'arras'), __('% Comments', 'arras') ); ?></a>
+			</span>
 			
 			<?php if ($args['show_excerpt']) : ?>
 			<p class="excerpt">
