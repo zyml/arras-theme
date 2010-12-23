@@ -88,7 +88,7 @@ if (!function_exists('arras_tapestry_traditional')) {
 		?>
 		<div <?php arras_single_post_class() ?>>
 			<?php arras_postheader() ?>
-			<div class="entry-content clearfix"><?php the_content( __('<p>Read the rest of this entry &raquo;</p>', 'arras') ); ?></div>
+			<div class="entry-content clearfix"><?php the_content( __('Read the rest of this entry &raquo;', 'arras') ); ?></div>
 			<?php arras_postfooter() ?>
 		</div>
 		<?php
