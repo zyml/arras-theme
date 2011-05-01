@@ -70,7 +70,7 @@ function arras_admin() {
 			
 			echo '<div class="wrap clearfix">';
 			screen_icon('themes');
-			?> <h2 id="arras-header"><?php _e('Arras Theme Options', 'arras') ?></h2> <?php
+			?> <h2 id="arras-header"><?php _e('Arras Options', 'arras') ?></h2> <?php
 			arras_regen_thumbs_process();
 			echo '</div>';
 			
@@ -195,9 +195,9 @@ function arras_posttax() {
 }
 
 function arras_admin_scripts() {
-	wp_enqueue_script('jquery-ui-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.2.custom.min.js', null, 'jquery');
-	wp_enqueue_script('arras-admin-js', get_template_directory_uri() . '/js/admin.js');
-	wp_enqueue_script('jquery-multiselect', get_template_directory_uri() . '/js/jquery.multiselect.min.js', null, 'jquery');
+	wp_enqueue_script( 'jquery-ui-progressbar', get_template_directory_uri() . '/js/jquery.ui.progressbar.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-widget') );
+	wp_enqueue_script( 'jquery-multiselect', get_template_directory_uri() . '/js/jquery.multiselect.min.js', null, 'jquery' );
+	wp_enqueue_script( 'arras-admin-js', get_template_directory_uri() . '/js/admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tabs') );
 }
 
 function arras_admin_styles() {
