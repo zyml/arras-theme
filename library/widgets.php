@@ -45,7 +45,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		$this->query_source = $instance['query'];
 		$this->postcount = $instance['postcount'];
 		$this->commentcount = $instance['commentcount'];
-		$this->display_thumbs = isset($instance['display_thumbs']);
+		$this->display_thumbs = $instance['display_thumbs'];
 		
 		if (!$instance['order']) $instance['order'] = $this->get_tabs();
 
@@ -97,7 +97,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		arras_widgets_post_loop('sidebar-featured', array(
 			'list'				=> $list,
 			'taxonomy'			=> $taxonomy,
-			'show_thumbs'		=> true,
+			'show_thumbs'		=> $this->display_thumbs,
 			'show_excerpt'		=> false,
 			'query'				=> array(
 				'posts_per_page'	=> $this->postcount,
@@ -108,7 +108,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	
 	function latest_tab() {
 		arras_widgets_post_loop('sidebar-latest', array(
-			'show_thumbs'		=> true,
+			'show_thumbs'		=> $this->display_thumbs,
 			'show_excerpt'		=> false,
 			'query'				=> array(
 				'posts_per_page'	=> $this->postcount
@@ -156,8 +156,8 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['order'] = $new_instance['order'];
-		$instance['display_home'] = $new_instance['display_home'];
-		$instance['display_thumbs'] = $new_instance['display_thumbs'];
+		$instance['display_home'] = (boolean)($new_instance['display_home']);
+		$instance['display_thumbs'] = (boolean)($new_instance['display_thumbs']);
 		$instance['query'] = $new_instance['query'];
 		$instance['postcount'] = $new_instance['postcount'];
 		$instance['commentcount'] = $new_instance['commentcount'];
@@ -198,7 +198,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		<p><label for="<?php echo $this->get_field_id('postcount') ?>"><?php _e('Post Count:', 'arras') ?></label>
 		<select id="<?php echo $this->get_field_id('postcount') ?>" name="<?php echo $this->get_field_name('postcount') ?>">
 			<?php for ($i = 1; $i <= 20; $i++ ) : ?>
-			<option value="<?php echo $i ?>"<?php if ($i == $instance['postcount']) : ?> selected="selected"<?php endif ?>><?php echo $i ?>
+			<option value="<?php echo $i ?>"<?php selected($i, $instance['postcount']) ?>><?php echo $i ?>
 			</option>
 			<?php endfor; ?>
 		</select><br />
@@ -206,16 +206,16 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		<label for="<?php echo $this->get_field_id('commentcount') ?>"><?php _e('Comments Count:', 'arras') ?></label>
 		<select id="<?php echo $this->get_field_id('commentcount') ?>" name="<?php echo $this->get_field_name('commentcount') ?>">
 			<?php for ($i = 1; $i <= 20; $i++ ) : ?>
-			<option value="<?php echo $i ?>"<?php if ($i == $instance['commentcount']) : ?> selected="selected"<?php endif ?>><?php echo $i ?>
+			<option value="<?php echo $i ?>"<?php selected($i, $instance['commentcount']) ?>><?php echo $i ?>
 			</option>
 			<?php endfor; ?>
 		</select>
 		</p>
 		
 		<p>
-		<input type="checkbox" name="<?php echo $this->get_field_name('display_home') ?>" <?php if ($instance['display_home']) : ?> checked="checked" <?php endif ?> />
+		<input type="checkbox" name="<?php echo $this->get_field_name('display_home') ?>" <?php checked($instance['display_home'], 1) ?> />
 		<label for="<?php echo $this->get_field_id('display_home') ?>"><?php _e('Display only in homepage', 'arras') ?></label><br />
-		<input type="checkbox" name="<?php echo $this->get_field_name('display_thumbs') ?>" <?php if ($instance['display_thumbs']) : ?> checked="checked" <?php endif ?> />
+		<input type="checkbox" name="<?php echo $this->get_field_name('display_thumbs') ?>" <?php checked($instance['display_thumbs'], 1) ?> />
 		<label for="<?php echo $this->get_field_id('display_thumbs') ?>"><?php _e('Display thumbnails', 'arras') ?></label>
 		</p>
 		<?php
@@ -228,7 +228,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		
 		foreach ( $opts as $id => $val ) {
 			echo '<option value="' . $id . '" ';
-			if ($selected == $id) echo 'selected="selected"';
+			selected($selected, $id);
 			echo '>';
 			
 			echo $val;
@@ -289,9 +289,9 @@ class Arras_Featured_Stories extends WP_Widget {
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['featured_cat'] = $new_instance['featured_cat'];
 		$instance['postcount'] = (int)strip_tags($new_instance['postcount']);
-		$instance['no_display_in_home'] = strip_tags($new_instance['no_display_in_home']);
-		$instance['show_excerpts'] = strip_tags($new_instance['show_excerpts']);
-		$instance['show_thumbs'] = strip_tags($new_instance['show_thumbs']);
+		$instance['no_display_in_home'] = (boolean)($new_instance['no_display_in_home']);
+		$instance['show_excerpts'] = (boolean)($new_instance['show_excerpts']);
+		$instance['show_thumbs'] = (boolean)($new_instance['show_thumbs']);
 		
 		return $instance;
 	}
@@ -315,12 +315,11 @@ class Arras_Featured_Stories extends WP_Widget {
 		<p>
 		<label for="<?php echo $this->get_field_id('featured_cat') ?>"><?php _e('Featured Categories:', 'arras') ?></label><br />
 		<select multiple="multiple" style="width: 200px; height: 75px" name="<?php echo $this->get_field_name('featured_cat') ?>[]">
-			<option<?php if (in_array(0, $instance['featured_cat'])) echo ' selected="selected" ' ?> value="0"><?php _e('All Categories', 'arras') ?></option>
+			<option<?php selected( in_array( 0, $instance['featured_cat'] ), true ) ?> value="0"><?php _e('All Categories', 'arras') ?></option>
 		<?php
 		foreach( get_categories('hide_empty=0') as $c ) {
 			$selected = '';
-			if (in_array($c->cat_ID, $instance['featured_cat'])) $selected = ' selected="selected"';
-			echo '<option' . $selected . ' value="' . $c->cat_ID . '">' . $c->cat_name . '</option>';
+			echo '<option' . selected( in_array($c->cat_ID, $instance['featured_cat']), true ) . ' value="' . $c->cat_ID . '">' . $c->cat_name . '</option>';
 		}
 		?>
 		</select>
@@ -329,20 +328,20 @@ class Arras_Featured_Stories extends WP_Widget {
 		<p><label for="<?php echo $this->get_field_id('postcount') ?>"><?php _e('How many items would you like to display?', 'arras') ?></label>
 		<select id="<?php echo $this->get_field_id('postcount') ?>" name="<?php echo $this->get_field_name('postcount') ?>">
 			<?php for ($i = 1; $i <= 20; $i++ ) : ?>
-			<option value="<?php echo $i ?>"<?php if ($i == $instance['postcount']) : ?> selected="selected"<?php endif ?>><?php echo $i ?>
+			<option value="<?php echo $i ?>"<?php selected($i, $instance['postcount']) ?>><?php echo $i ?>
 			</option>
 			<?php endfor; ?>
 		</select>
 		</p>
 		
 		<p>
-		<input type="checkbox" name="<?php echo $this->get_field_name('no_display_in_home') ?>" <?php if ($instance['no_display_in_home']) : ?> checked="checked" <?php endif ?> />
+		<input type="checkbox" name="<?php echo $this->get_field_name('no_display_in_home') ?>" <?php checked($instance['no_display_in_home'], 1) ?> />
 		<label for="<?php echo $this->get_field_id('no_display_in_home') ?>"><?php _e('Do not display in homepage', 'arras') ?></label>
 		<br />
-		<input type="checkbox" name="<?php echo $this->get_field_name('show_excerpts') ?>" <?php if ($instance['show_excerpts']) : ?> checked="checked" <?php endif ?> />
+		<input type="checkbox" name="<?php echo $this->get_field_name('show_excerpts') ?>" <?php checked($instance['show_excerpts'], 1) ?> />
 		<label for="<?php echo $this->get_field_id('show_excerpts') ?>"><?php _e('Show post excerpts', 'arras') ?></label>
 		<br />
-		<input type="checkbox" name="<?php echo $this->get_field_name('show_thumbs') ?>" <?php if ($instance['show_thumbs']) : ?> checked="checked" <?php endif ?> />
+		<input type="checkbox" name="<?php echo $this->get_field_name('show_thumbs') ?>" <?php checked($instance['show_thumbs'], 1) ?> />
 		<label for="<?php echo $this->get_field_id('show_thumbs') ?>"><?php _e('Show thumbnails', 'arras') ?></label>
 		</p>
 		<?php
