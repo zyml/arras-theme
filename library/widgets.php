@@ -352,7 +352,7 @@ class Arras_Featured_Stories extends WP_Widget {
 
 class Arras_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud {
 	function Arras_Widget_Tag_Cloud() {
-		$this->WP_Widget_Tag_Cloud();
+		parent::__construct();
 	}
 	
 	function widget( $args, $instance ) {
