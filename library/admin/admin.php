@@ -1,23 +1,23 @@
 <?php
 $forum_contributors = array(
 	'Giovanni' => 'http://www.animeblog.nl/',
-	'dgodfather' => 'http://trusupremekillaz.com/tskgaming',
+	'Bobby Clapp' => 'http://profaneentertainment.com/gaming',
 	'Charles' => 'http://www.claireraborar.com/travel',
 	'Nedrago' => 'http://www.nedrago.com/',
 	'Dan' => 'http://www.techunfolding.com/'
 );
 $translators = array(
-	'Celso Azevedo (Portuguese)' => '',
-	'Nolog (French)' => 'http://pookiecookie.fr/',
-	'kokaz84 (French)' => 'http://micromanga.free.fr/',
-	'er_mejor (Spanish)' => 'http://www.teusoft.com/',
-	'AddVariety (Dutch)' => 'http://www.addvariety.com/',
-	'Fredik Arvidsson (Swedish)' => 'http://www.fredrikarvidsson.com/',
-	'Michael Wenzl (German)' => 'http://www.michaelwenzl.de/',
-	'Michalis Pissas (Greek)' => '',
-	'chaibi (Norwegian)' => '',
-	'cngamers (Chinese)' => '',
-	'lesta (Romanian)' => ''
+	'Bestmoose (Dutch)' => 'http://www.arrastheme.com/forums/topic3369-1501-german-translation-deutsche-uebersetzung.html',
+	'Drun Ming Haung (Traditional Chinese)' => 'http://www.arrastheme.com/forums/topic2956-1501-chinese-traditional-translation-zhtw.html',
+	'carlosmarchi (Brazilian Portuguese)' => 'http://www.arrastheme.com/forums/topic3401-1501-brazilian-portuguese-ptbr-pack.html',
+	'PressPlay (Norwegian)' => 'http://www.arrastheme.com/forums/topic3736-1501-norwegian-nb-translation-norsk-bokmal-oversettingnbno.html',
+	'Bob Robot (Simplified Chinese)' => 'http://www.arrastheme.com/forums/topic4412-1501-simplified-chinese-translation-zhcn.html',
+	'edvind (Swedish)' => 'http://www.arrastheme.com/forums/topic3627-1501-swedish-translation-svensk-oeversaettning.html',
+	'Celso Azevedo (Portuguese)' => 'http://www.arrastheme.com/forums/topic3658-1501-portuguese-portugal-translation-traducao-portuguesa.html',
+	'Sokac (Croatian)' => 'http://www.arrastheme.com/forums/topic3219-1501-croatian-translation-hrvatski-prijevod.html',
+	'Berniru (Russian)' => 'http://www.arrastheme.com/forums/topic3202-1501-russkii-perevod-russian-translation.html',
+	'vicsabi (Hungarian)' => 'http://www.arrastheme.com/forums/topic6561-1501-hungarian-translation-magyar-forditas.html',
+	'vfenix (Spanish)' => 'http://www.arrastheme.com/forums/topic3549-1501-spanish-translation-traduccion-espanola.html'
 );
 $notices = ''; // store notices here so that options_page.php will echo it out later
 
@@ -261,17 +261,6 @@ function arras_right_col() {
 				<li><a href="http://www.arrastheme.com/wiki/doku.php/quick_start_guide"><?php _e('Quick Start Guide', 'arras') ?></a></li>
 				<li><a href="http://www.arrastheme.com/forums/"><?php _e('Community Forums', 'arras') ?></a></li>
 				<li><a href="http://arras-theme.googlecode.com/"><?php _e('Bug Tracker / Repository', 'arras') ?></a></li>
-			</ul>
-		</div>
-		
-		<div class="postbox">
-			<h3><span><?php _e('Recommended Plugins', 'arras') ?></span></h3>
-			<ul>
-				<li><a href="http://lesterchan.net/portfolio/programming/php/#wp-pagenavi">WP-PageNavi</a></li>
-				<li><a href="http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/">FancyBox for WordPress</a></li>
-				<li><a href="http://sexybookmarks.net/">SexyBookmarks</a></li>
-				<li><a href="http://mitcho.com/code/yarpp/">Yet Another Related Posts Plugin</a></li>
-				<li><a href="http://www.dev4press.com/plugins/gd-taxonomies-tools/">GD Custom Posts &amp; Taxonomies Tools</a></li>
 			</ul>
 		</div>
 		
