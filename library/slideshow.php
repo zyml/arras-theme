@@ -68,7 +68,7 @@ $('#featured-slideshow').cycle({
 	timeout: 6000,
 	pause: 1,
 	slideExpr: '.featured-slideshow-inner',
-	height: '<?php $size = arras_get_image_size('featured-slideshow-thumb'); echo $size['h']; ?>px'
+	height: '<?php echo $size['h']; ?>px'
 });
 <?php endif ?>
 	
@@ -83,7 +83,7 @@ function arras_add_slideshow_thumb_size() {
 	
 	if ( strpos($layout, '1c') !== false ) {
 		$size = array(950, 450);
-	} else if ( strpos($layout, '3c') !== false ) {
+	} else if ( preg_match('/3c/', $layout) ) {
 		$size = array(490, 225);
 	} else {
 		$size = array(640, 300);
