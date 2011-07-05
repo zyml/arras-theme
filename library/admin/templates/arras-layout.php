@@ -69,7 +69,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <tr valign="top">
 <th scope="row"><label for="arras-single-custom-taxonomies"><?php _e('Display Custom Taxonomies', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_textarea(array('name' => 'arras-single-custom-taxonomies', 'id' => 'arras-single-custom-taxonomies', 'class' => 'code', 'rows' => '3', 'cols' => '70', 'value' => stripslashes(arras_get_option('single_custom_taxonomies')) )) ?><br />
+<?php echo arras_form_textarea(array('name' => 'arras-single-custom-taxonomies', 'id' => 'arras-single-custom-taxonomies', 'class' => 'code', 'rows' => '3', 'cols' => '70', 'value' => esc_textarea(arras_get_option('single_custom_taxonomies')) )) ?><br />
 <?php _e("List down the custom taxonomies' slug that you wish to display here, separated by a comma (,).", 'arras') ?>
 </td>
 </tr>
@@ -78,7 +78,7 @@ foreach( get_categories('hide_empty=0') as $c ) {
 <tr valign="top">
 <th scope="row"><label for="arras-single-custom-fields"><?php _e('Single Post Custom Fields', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_textarea(array('name' => 'arras-single-custom-fields', 'id' => 'arras-single-custom-fields', 'class' => 'code', 'rows' => '3', 'cols' => '70', 'value' => stripslashes(arras_get_option('single_custom_fields')) )) ?><br />
+<?php echo arras_form_textarea(array('name' => 'arras-single-custom-fields', 'id' => 'arras-single-custom-fields', 'class' => 'code', 'rows' => '3', 'cols' => '70', 'value' => esc_textarea(arras_get_option('single_custom_fields')) )) ?><br />
 </td>
 </tr>
 <?php endif ?>
