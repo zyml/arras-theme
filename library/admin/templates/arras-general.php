@@ -80,7 +80,7 @@
 <tr valign="top">
 <th scope="row"><label for="arras-footer-message">Footer Message</label></th>
 <td>
-<?php echo arras_form_textarea( 'arras-footer-message', form_prep(stripslashes(arras_get_option('footer_message'))), 'style="width: 70%; height: 100px;" class="code"' ) ?><br />
+<?php echo arras_form_textarea( 'arras-footer-message', esc_textarea(arras_get_option('footer_message')), 'style="width: 70%; height: 100px;" class="code"' ) ?><br />
 <?php _e('Usually your website\'s copyright information would go here.<br /> It would be great if you could include a link to WordPress and even greater if you could include a link to the theme website. :)', 'arras') ?>
 </td>
 </tr>
