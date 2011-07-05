@@ -5,12 +5,12 @@ msgstr ""
 "POT-Creation-Date: 2011-07-05 18:40+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
-"Language-Team:  <zy@zy.sg>\n"
+"Language-Team: Robot Shell <http://robotshell.org/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: SINGAPORE\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../404.php:7
 msgid "Error 404 - Not Found"
-msgstr ""
+msgstr "错误404 - 页面无法找到"
 
 #: ../404.php:9
 msgid ""
@@ -26,244 +26,247 @@ msgid ""
 "\t\tPlease make sure you have the right URL.</p>\n"
 "\t\t<p>If you still can't find what you're looking for, try using the search form below.</p>"
 msgstr ""
+"<p><strong>抱歉，您访问的页面不存在或已经被删除。</strong><br />\n"
+"\t\t请确认网址正确。</p>\n"
+"\t\t<p>如果您仍然找不到您所需要的页面，请尝试使用下方的搜索功能。</p>"
 
 #: ../archive.php:10
 #: ../archive.php:12
 #: ../archive.php:14
 #, php-format
 msgid "%s Archive"
-msgstr ""
+msgstr "%s 归档"
 
 #: ../archive.php:16
 #: ../archive.php:18
 #: ../archive.php:20
 #, php-format
 msgid "Archive for %s"
-msgstr ""
+msgstr "%s 的归档"
 
 #: ../archive.php:16
 msgid "F jS, Y"
-msgstr ""
+msgstr "F jS, Y"
 
 #: ../archive.php:18
 msgid "F, Y"
-msgstr ""
+msgstr "F, Y"
 
 #: ../archive.php:20
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: ../archive.php:22
 msgid "Author Archive"
-msgstr ""
+msgstr "作者归档"
 
 #: ../archive.php:24
 msgid "Archives"
-msgstr ""
+msgstr "归档"
 
 #: ../archive.php:32
 #: ../home.php:93
 #: ../home.php:135
 msgid "Older Entries"
-msgstr ""
+msgstr "更早的条目"
 
 #: ../archive.php:33
 #: ../home.php:94
 #: ../home.php:136
 msgid "Newer Entries"
-msgstr ""
+msgstr "更新的条目"
 
 #: ../attachment.php:13
 #: ../page.php:12
 #: ../pagetpl-onecolumn.php:20
 msgid "<p>Read the rest of this entry &raquo;</p>"
-msgstr ""
+msgstr "<p>阅读全部 &raquo;</p>"
 
 #: ../attachment.php:15
 #: ../page.php:13
 #: ../pagetpl-onecolumn.php:21
 msgid "<p><strong>Pages:</strong> "
-msgstr ""
+msgstr "<p><strong>页面：</strong> "
 
 #: ../author.php:9
 #, php-format
 msgid "About Author: %s"
-msgstr ""
+msgstr "关于作者：%s"
 
 #: ../author.php:15
 #: ../comments.php:56
 msgid "Website"
-msgstr ""
+msgstr "网站"
 
 #: ../author.php:19
 msgid "Description"
-msgstr ""
+msgstr "介绍"
 
 #: ../author.php:25
 #, php-format
 msgid "Posts by %s"
-msgstr ""
+msgstr "由 %s 发表"
 
 #: ../author.php:33
 #: ../search.php:22
 #: ../search.php:42
 msgid "&laquo; Older Entries"
-msgstr ""
+msgstr "&laquo; 更早的条目"
 
 #: ../author.php:34
 #: ../search.php:21
 #: ../search.php:43
 msgid "Newer Entries &raquo;"
-msgstr ""
+msgstr "更新的条目 &raquo;"
 
 #: ../comments.php:3
 msgid "Please do not load this page directly. Thanks!"
-msgstr ""
+msgstr "请不要直接访问该页面，谢谢！"
 
 #: ../comments.php:7
 msgid "Password Required"
-msgstr ""
+msgstr "需要密码"
 
 #: ../comments.php:8
 msgid "<p class=\"nocomments\">This post is password protected. Enter the password to view comments.</p>"
-msgstr ""
+msgstr "<p class=\"nocomments\">这篇文章受密码保护，请输入密码浏览。</p>"
 
 #: ../comments.php:17
 #: ../comments.php:34
 msgid "No Comments"
-msgstr ""
+msgstr "没有评论"
 
 #: ../comments.php:17
 msgid "1 Comment"
-msgstr ""
+msgstr "1条评论"
 
 #: ../comments.php:28
 msgid "Trackbacks / Pings"
-msgstr ""
+msgstr "Trackbacks / Pings"
 
 #: ../comments.php:35
 msgid "Start the ball rolling by posting a comment on this article!"
-msgstr ""
+msgstr "发表评论来提高文章人气！"
 
 #: ../comments.php:40
 msgid "Comments Closed"
-msgstr ""
+msgstr "评论关闭"
 
 #: ../comments.php:41
 msgid "Comments are closed. You will not be able to post a comment in this post."
-msgstr ""
+msgstr "评论已关闭，您无法对该文章发表评论。"
 
 #: ../comments.php:52
 msgid "Name"
-msgstr ""
+msgstr "昵称"
 
 #: ../comments.php:54
 msgid "Email"
-msgstr ""
+msgstr "邮箱"
 
 #: ../footer.php:22
 msgid "About Arras WordPress Theme"
-msgstr ""
+msgstr "关于 Arras WordPress Theme"
 
 #: ../header.php:12
 #: ../header.php:14
 #, php-format
 msgid "%s latest posts"
-msgstr ""
+msgstr "%s 最新文章"
 
 #: ../header.php:18
 #: ../header.php:20
 #, php-format
 msgid "%s latest comments"
-msgstr ""
+msgstr "%s 最新评论"
 
 #: ../page.php:21
 #: ../pagetpl-onecolumn.php:29
 msgid "About the Author"
-msgstr ""
+msgstr "关于作者"
 
 #: ../pagetpl-archives.php:19
 msgid "Recent Posts"
-msgstr ""
+msgstr "最近文章"
 
 #: ../pagetpl-archives.php:22
 msgid "Monthly Archives"
-msgstr ""
+msgstr "每月归档"
 
 #: ../pagetpl-archives.php:25
 msgid "Pages"
-msgstr ""
+msgstr "页"
 
 #: ../pagetpl-archives.php:28
 msgid "Categories"
-msgstr ""
+msgstr "分类"
 
 #: ../pagetpl-archives.php:31
 msgid "Authors"
-msgstr ""
+msgstr "作者"
 
 #: ../search.php:8
 msgid "Search Results"
-msgstr ""
+msgstr "搜索结果"
 
 #: ../search.php:10
 #, php-format
 msgid "Search Results for <strong>&#8216;%s&#8217;</strong></p>"
-msgstr ""
+msgstr "<strong>&#8216;%s&#8217;</strong>的搜索结果</p>"
 
 #: ../search.php:31
 msgid "<strong>Sorry, we couldn't find any results based on your search query.</strong>"
-msgstr ""
+msgstr "<strong>对不起，无法找到您所搜索的信息。</strong>"
 
 #: ../search.php:36
 msgid "Blog Archive"
-msgstr ""
+msgstr "博客归档"
 
 #: ../searchform.php:2
 msgid "Search..."
-msgstr ""
+msgstr "搜索..."
 
 #: ../searchform.php:3
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: ../searchform.php:3
 #, php-format
 msgid "Search %s"
-msgstr ""
+msgstr "搜索 %s"
 
 #: ../sidebar.php:10
 msgid "Welcome to Arras!"
-msgstr ""
+msgstr "欢迎来到 Arras！"
 
 #: ../sidebar.php:13
 msgid "Arras is a WordPress theme designed for news or review sites with lots of customisable features."
-msgstr ""
+msgstr "Arras 是一个为新闻和评论网站而设计的拥有大量自定义功能的 WordPress 主题。"
 
 #: ../sidebar.php:36
 msgid "Tag Cloud"
-msgstr ""
+msgstr "标签云"
 
 #: ../yarpp-template-arras.php:16
 #: ../library/widgets.php:457
 msgid "d F Y g:i A"
-msgstr ""
+msgstr "d F Y g:i A"
 
 #: ../yarpp-template-arras.php:17
 #: ../library/widgets.php:458
 msgid "% Comments"
-msgstr ""
+msgstr "% 评论"
 
 #: ../yarpp-template-arras.php:21
 #: ../library/deprecated.php:118
 #: ../library/widgets.php:465
 msgid "Read More"
-msgstr ""
+msgstr "阅读更多"
 
 #: ../yarpp-template-arras.php:27
 #: ../library/widgets.php:473
 msgid "No posts at the moment. Check back again later!"
-msgstr ""
+msgstr "当前没有文章，请稍候再来查看。"
 
 #: ../library/deprecated.php:98
 #: ../library/deprecated.php:117
@@ -271,729 +274,729 @@ msgstr ""
 #: ../library/tapestries.php:256
 #, php-format
 msgid "Permalink to %s"
-msgstr ""
+msgstr "到 %s 的永久链接"
 
 #: ../library/filters.php:38
 #, php-format
 msgid "<div class=\"entry-author\">By %s</div>"
-msgstr ""
+msgstr "<div class=\"entry-author\">作者: %s</div>"
 
 #: ../library/filters.php:46
 msgid "Edit Post"
-msgstr ""
+msgstr "编辑文章"
 
 #: ../library/filters.php:46
 msgid "(Edit Post)"
-msgstr ""
+msgstr "(编辑文章)"
 
 #: ../library/filters.php:54
 #, php-format
 msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
-msgstr ""
+msgstr "<span class=\"entry-cat\"><strong>发表于： </strong>%s</span>"
 
 #: ../library/filters.php:134
 msgid "Tags:"
-msgstr ""
+msgstr "标签："
 
 #: ../library/filters.php:145
 msgid "That 'something' you are looking for isn't here!"
-msgstr ""
+msgstr "未找到相关内容!"
 
 #: ../library/filters.php:146
 msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
-msgstr ""
+msgstr "<strong>抱歉，您访问的页面不存在或已经被删除。</strong>"
 
 #: ../library/filters.php:150
 msgid "Perhaps searching for it might help?"
-msgstr ""
+msgstr "也许搜索有关信息会有所帮助？"
 
 #: ../library/filters.php:175
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "关于 %s"
 
 #: ../library/launcher.php:13
 msgid "Main Menu"
-msgstr ""
+msgstr "主菜单"
 
 #: ../library/launcher.php:14
 msgid "Top Menu"
-msgstr ""
+msgstr "顶部菜单"
 
 #: ../library/launcher.php:77
 msgid "1 Column Layout (No Sidebars)"
-msgstr ""
+msgstr "单列视图（无边栏）"
 
 #: ../library/launcher.php:78
 msgid "2 Column Layout (Right Sidebar)"
-msgstr ""
+msgstr "双列视图（右边栏）"
 
 #: ../library/launcher.php:79
 msgid "2 Column Layout (Left Sidebar)"
-msgstr ""
+msgstr "双列视图（左边栏）"
 
 #: ../library/launcher.php:80
 msgid "3 Column Layout (Left & Right Sidebars)"
-msgstr ""
+msgstr "三列视图（左、右边栏）"
 
 #: ../library/launcher.php:81
 msgid "3 Column Layout (Right Sidebars)"
-msgstr ""
+msgstr "三列视图（右边栏）"
 
 #: ../library/slideshow.php:29
 msgid "Prev"
-msgstr ""
+msgstr "前一个"
 
 #: ../library/slideshow.php:30
 msgid "Next"
-msgstr ""
+msgstr "下一个"
 
 #: ../library/slideshow.php:93
 msgid "Featured Slideshow"
-msgstr ""
+msgstr "精选幻灯片"
 
 #: ../library/tapestries.php:91
 msgid "Read the rest of this entry &raquo;"
-msgstr ""
+msgstr "阅读全部 &raquo;"
 
 #: ../library/tapestries.php:96
 msgid "Traditional"
-msgstr ""
+msgstr "传统"
 
 #: ../library/tapestries.php:127
 msgid "Per Line"
-msgstr ""
+msgstr "每行"
 
 #: ../library/tapestries.php:154
 msgid "Node Based"
-msgstr ""
+msgstr "节点视图"
 
 #: ../library/tapestries.php:177
 msgid "Tapestry: Node-Based"
-msgstr ""
+msgstr "挂件：节点视图"
 
 #: ../library/tapestries.php:186
 msgid "Tapestry: Node Based"
-msgstr ""
+msgstr "挂件：节点视图"
 
 #: ../library/tapestries.php:190
 msgid "Show Excerpt?"
-msgstr ""
+msgstr "显示摘要？"
 
 #: ../library/tapestries.php:196
 msgid "Maximum Node Height"
-msgstr ""
+msgstr "最大节点高度"
 
 #: ../library/tapestries.php:199
 msgid "pixels"
-msgstr ""
+msgstr "像素"
 
 #: ../library/tapestries.php:253
 #, php-format
 msgid "Posted on %s"
-msgstr ""
+msgstr "在 %s 上发表"
 
 #: ../library/tapestries.php:257
 msgid "Continue Reading..."
-msgstr ""
+msgstr "继续阅读..."
 
 #: ../library/tapestries.php:263
 msgid "Quick Preview"
-msgstr ""
+msgstr "快速预览"
 
 #: ../library/tapestries.php:269
 msgid "Tapestry: Quick Preview"
-msgstr ""
+msgstr "挂件：快速预览"
 
 #: ../library/template.php:24
 msgid "Search Results for:"
-msgstr ""
+msgstr "搜索结果："
 
 #: ../library/template.php:28
 msgid "Category Archives:"
-msgstr ""
+msgstr "分类归档："
 
 #: ../library/template.php:32
 msgid "Tag Archives:"
-msgstr ""
+msgstr "标签归档："
 
 #: ../library/template.php:36
 msgid "Not Found"
-msgstr ""
+msgstr "未找到"
 
 #: ../library/template.php:288
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "您的评论正在等待审核。"
 
 #: ../library/template.php:291
 #, php-format
 msgid "Posted %1$s at %2$s"
-msgstr ""
+msgstr "发表 %1$s 于 %2$s"
 
 #: ../library/template.php:291
 msgid "c"
-msgstr ""
+msgstr "c"
 
 #: ../library/template.php:291
 msgid "F j, Y"
-msgstr ""
+msgstr "F j, Y"
 
 #: ../library/template.php:291
 msgid "g:i A"
-msgstr ""
+msgstr "g:i A"
 
 #: ../library/template.php:342
 #: ../library/template.php:344
 #, php-format
 msgid "%s RSS Feed"
-msgstr ""
+msgstr "%s RSS 订阅"
 
 #: ../library/template.php:342
 #: ../library/template.php:344
 msgid "RSS Feed"
-msgstr ""
+msgstr "RSS 订阅"
 
 #: ../library/template.php:349
 #, php-format
 msgid "%s Twitter"
-msgstr ""
+msgstr "%s Twitter"
 
 #: ../library/template.php:349
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../library/template.php:354
 #, php-format
 msgid "%s Facebook"
-msgstr ""
+msgstr "%s Facebook"
 
 #: ../library/template.php:354
 msgid "Facebook"
-msgstr ""
+msgstr "%sFacebook"
 
 #: ../library/thumbnails.php:12
 msgid "Single Post Thumbnail"
-msgstr ""
+msgstr "单文章缩略图"
 
 #: ../library/thumbnails.php:13
 msgid "Sidebar Widgets"
-msgstr ""
+msgstr "边栏小工具"
 
 #: ../library/widgets.php:15
 msgid "Sidebar containing tabs that displays posts, comments and tags."
-msgstr ""
+msgstr "边栏标签页包含文章、评论和标签。"
 
 #: ../library/widgets.php:17
 msgid "Tabbed Sidebar"
-msgstr ""
+msgstr "标签式边栏"
 
 #: ../library/widgets.php:28
 msgid "Featured"
-msgstr ""
+msgstr "精选"
 
 #: ../library/widgets.php:29
 msgid "Latest"
-msgstr ""
+msgstr "最新"
 
 #: ../library/widgets.php:30
 msgid "Comments"
-msgstr ""
+msgstr "评论"
 
 #: ../library/widgets.php:31
 #: ../library/widgets.php:367
 #: ../library/widgets.php:383
 msgid "Tags"
-msgstr ""
+msgstr "标签"
 
 #: ../library/widgets.php:35
 msgid "Popular"
-msgstr ""
+msgstr "热门"
 
 #: ../library/widgets.php:181
 msgid "Retrieve Posts from:"
-msgstr ""
+msgstr "检索文章："
 
 #: ../library/widgets.php:183
 msgid "Slideshow"
-msgstr ""
+msgstr "幻灯片"
 
 #: ../library/widgets.php:184
 msgid "Featured Posts #1"
-msgstr ""
+msgstr "精选文章 #1"
 
 #: ../library/widgets.php:185
 msgid "Featured Posts #2"
-msgstr ""
+msgstr "精选文章 #2"
 
 #: ../library/widgets.php:190
 msgid "Tabbed Sidebar Order:"
-msgstr ""
+msgstr "标签式边栏顺序："
 
 #: ../library/widgets.php:196
 msgid "The popular posts option is only enabled when the plugin <a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Popularity Contest</a> is enabled."
-msgstr ""
+msgstr "热门文章功能仅当插件<a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Popularity Contest</a>启用时有效。"
 
 #: ../library/widgets.php:198
 msgid "Post Count:"
-msgstr ""
+msgstr "文章数量："
 
 #: ../library/widgets.php:206
 msgid "Comments Count:"
-msgstr ""
+msgstr "评论数量："
 
 #: ../library/widgets.php:217
 msgid "Display only in homepage"
-msgstr ""
+msgstr "仅在主页显示"
 
 #: ../library/widgets.php:219
 msgid "Display thumbnails"
-msgstr ""
+msgstr "显示缩略图"
 
 #: ../library/widgets.php:256
 msgid "Featured stories containing post thumbnails and the excerpt based on categories."
-msgstr ""
+msgstr "精选专题包含文章缩略图以及基于分类的摘要。"
 
 #: ../library/widgets.php:258
 #: ../library/widgets.php:301
 msgid "Featured Stories"
-msgstr ""
+msgstr "精选专题"
 
 #: ../library/widgets.php:312
 msgid "Title:"
-msgstr ""
+msgstr "标题："
 
 #: ../library/widgets.php:316
 msgid "Featured Categories:"
-msgstr ""
+msgstr "精选分类："
 
 #: ../library/widgets.php:318
 msgid "All Categories"
-msgstr ""
+msgstr "所有分类："
 
 #: ../library/widgets.php:328
 msgid "How many items would you like to display?"
-msgstr ""
+msgstr "您想显示多少条目？"
 
 #: ../library/widgets.php:339
 msgid "Do not display in homepage"
-msgstr ""
+msgstr "不在首页显示"
 
 #: ../library/widgets.php:342
 msgid "Show post excerpts"
-msgstr ""
+msgstr "显示文章摘要"
 
 #: ../library/widgets.php:345
 msgid "Show thumbnails"
-msgstr ""
+msgstr "显示缩略图"
 
 #: ../library/widgets.php:399
 msgid "A search form for your site"
-msgstr ""
+msgstr "为您站点设计的搜索表单"
 
 #: ../library/admin/admin.php:25
 #: ../library/admin/admin.php:330
 msgid "Arras"
-msgstr ""
+msgstr "Arras"
 
 #: ../library/admin/admin.php:26
 #: ../library/admin/admin.php:73
 msgid "Arras Options"
-msgstr ""
+msgstr "Arras 选项"
 
 #: ../library/admin/admin.php:26
 #: ../library/admin/admin.php:336
 msgid "Theme Options"
-msgstr ""
+msgstr "主题选项"
 
 #: ../library/admin/admin.php:28
 msgid "Post Types & Taxonomies"
-msgstr ""
+msgstr "文章类型和自定义分类"
 
 #: ../library/admin/admin.php:28
 #: ../library/admin/admin.php:342
 msgid "Post Types & Tax."
-msgstr ""
+msgstr "文章类型和自定义分类"
 
 #: ../library/admin/admin.php:30
 #: ../library/admin/admin.php:348
 msgid "Custom Background"
-msgstr ""
+msgstr "自定义背景"
 
 #: ../library/admin/admin.php:65
 msgid "Thumbnail cache has been cleared."
-msgstr ""
+msgstr "缩略图缓存已清空。"
 
 #: ../library/admin/admin.php:95
 msgid "Your settings have been successfully imported."
-msgstr ""
+msgstr "您的设置已被成功导入。"
 
 #: ../library/admin/admin.php:151
 #: ../library/admin/admin.php:177
 #: ../library/admin/admin.php:184
 msgid "Your settings have been saved to the database."
-msgstr ""
+msgstr "您的设置已被保存至数据库中。"
 
 #: ../library/admin/admin.php:164
 msgid "Your settings have been reverted to the defaults."
-msgstr ""
+msgstr "您的设置已恢复到默认。"
 
 #: ../library/admin/admin.php:259
 msgid "Helpful Links"
-msgstr ""
+msgstr "有帮助的链接"
 
 #: ../library/admin/admin.php:261
 msgid "Quick Start Guide"
-msgstr ""
+msgstr "快速入门指南"
 
 #: ../library/admin/admin.php:262
 msgid "Community Forums"
-msgstr ""
+msgstr "社区论坛"
 
 #: ../library/admin/admin.php:263
 msgid "Bug Tracker / Repository"
-msgstr ""
+msgstr "Bug 跟踪器/源"
 
 #: ../library/admin/admin.php:268
 msgid "Recommended Plugins"
-msgstr ""
+msgstr "推荐插件"
 
 #: ../library/admin/admin.php:280
 msgid "How to Support?"
-msgstr ""
+msgstr "怎样支持？"
 
 #: ../library/admin/admin.php:281
 msgid "There are many ways you can support this theme:"
-msgstr ""
+msgstr "有许多方法可以支持这个主题："
 
 #: ../library/admin/admin.php:283
 msgid "Share other about the theme"
-msgstr ""
+msgstr "与他人分享这个主题："
 
 #: ../library/admin/admin.php:284
 msgid "Report bugs / Send patches"
-msgstr ""
+msgstr "报告Bug/提交补丁"
 
 #: ../library/admin/admin.php:285
 msgid "Contribute to the forums / wiki"
-msgstr ""
+msgstr "贡献论坛或维基"
 
 #: ../library/admin/admin.php:286
 msgid "Translate the theme"
-msgstr ""
+msgstr "翻译主题"
 
 #: ../library/admin/admin.php:287
 msgid "Send in a donation!"
-msgstr ""
+msgstr "提供赞助！"
 
 #: ../library/admin/admin.php:289
 msgid "Donate using PayPal"
-msgstr ""
+msgstr "使用 PayPal 支付"
 
 #: ../library/admin/admin.php:295
 msgid "Thanks!"
-msgstr ""
+msgstr "谢榭！"
 
 #: ../library/admin/admin.php:296
 msgid "Many thanks to those who have contributed to the theme:"
-msgstr ""
+msgstr "衷心感谢那些帮助过这个主题的人："
 
 #: ../library/admin/admin.php:297
 msgid "Forum Contributors"
-msgstr ""
+msgstr "论坛贡献者"
 
 #: ../library/admin/admin.php:299
 msgid "Translators"
-msgstr ""
+msgstr "翻译者"
 
 #: ../library/admin/background.php:117
 msgid "Activate Custom Background"
-msgstr ""
+msgstr "启用自定义背景"
 
 #: ../library/admin/background.php:120
 msgid "Upload Background Image"
-msgstr ""
+msgstr "上传背景图片"
 
 #: ../library/admin/background.php:124
 msgid "Background Attachment"
-msgstr ""
+msgstr "背景附件"
 
 #: ../library/admin/background.php:125
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 #: ../library/admin/background.php:126
 msgid "Scroll (along with the rest of the page)"
-msgstr ""
+msgstr "滚动（跟随页面）"
 
 #: ../library/admin/background.php:127
 msgid "Horizontal Position"
-msgstr ""
+msgstr "水平位置"
 
 #: ../library/admin/background.php:128
 msgid "Left"
-msgstr ""
+msgstr "左"
 
 #: ../library/admin/background.php:129
 #: ../library/admin/background.php:133
 msgid "Center"
-msgstr ""
+msgstr "中"
 
 #: ../library/admin/background.php:130
 msgid "Right"
-msgstr ""
+msgstr "右"
 
 #: ../library/admin/background.php:131
 msgid "Vertical Position"
-msgstr ""
+msgstr "垂直位置"
 
 #: ../library/admin/background.php:132
 msgid "Top"
-msgstr ""
+msgstr "上"
 
 #: ../library/admin/background.php:134
 msgid "Bottom"
-msgstr ""
+msgstr "下"
 
 #: ../library/admin/background.php:135
 msgid "Repeat Background Image?"
-msgstr ""
+msgstr "平铺背景图片？"
 
 #: ../library/admin/background.php:136
 #: ../library/admin/templates/arras-navigation.php:3
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: ../library/admin/background.php:137
 msgid "Repeat Horizontally"
-msgstr ""
+msgstr "水平重复"
 
 #: ../library/admin/background.php:138
 msgid "Repeat Vertically"
-msgstr ""
+msgstr "垂直重复"
 
 #: ../library/admin/background.php:139
 msgid "Repeat Both"
-msgstr ""
+msgstr "双向重复"
 
 #: ../library/admin/background.php:141
 msgid "Background Color"
-msgstr ""
+msgstr "背景颜色"
 
 #: ../library/admin/background.php:145
 msgid "Semi-Transparent Foreground"
-msgstr ""
+msgstr "半透明前景色"
 
 #: ../library/admin/background.php:145
 msgid "This feature does not work in IE6 and for those using the legacy stylesheet."
-msgstr ""
+msgstr "该功能对IE6及仅支持旧版样式表的浏览器无效。"
 
 #: ../library/admin/background.php:146
 msgid "Apply Background from Top"
-msgstr ""
+msgstr "从顶部开始应用背景"
 
 #: ../library/admin/background.php:148
 #: ../library/admin/templates/options_page.php:56
 #: ../library/admin/templates/posttype_page.php:73
 #: ../library/admin/templates/taxonomy_page.php:65
 msgid "Save Changes"
-msgstr ""
+msgstr "保存更改"
 
 #: ../library/admin/background.php:149
 msgid "Reset"
-msgstr ""
+msgstr "重置"
 
 #: ../library/admin/background.php:152
 msgid "Current Background Image"
-msgstr ""
+msgstr "当前背景图片"
 
 #: ../library/admin/options.php:49
 msgid "Copyright"
-msgstr ""
+msgstr "Copyright"
 
 #: ../library/admin/options.php:50
 #, php-format
 msgid "Copyright %s. All Rights Reserved."
-msgstr ""
+msgstr "Copyright %s. All Rights Reserved."
 
 #: ../library/admin/options.php:52
 #: ../library/admin/templates/options_page.php:36
 #: ../library/admin/templates/posttype_page.php:33
 #: ../library/admin/templates/taxonomy_page.php:23
 msgid "Home"
-msgstr ""
+msgstr "主页"
 
 #: ../library/admin/options.php:68
 msgid "Editors' Picks"
-msgstr ""
+msgstr "编辑推荐"
 
 #: ../library/admin/options.php:74
 msgid "Latest Headlines"
-msgstr ""
+msgstr "最新头条"
 
 #: ../library/admin/thumbnails.php:33
 #, php-format
 msgid "Unable to find any images. Are you sure <a href='%s'>some exist</a>?"
-msgstr ""
+msgstr "无法找到任何图片。您确定<a href='%s'>它存在么</a>？"
 
 #: ../library/admin/thumbnails.php:35
 msgid "Please be patient while all thumbnails are regenerated. This can take a while if your server is slow (cheap hosting) or if you have many images. Do not navigate away from this page until this script is done or all thumbnails won't be resized. You will be notified via this page when all regenerating is completed."
-msgstr ""
+msgstr "在生成缩略图时请保持耐心。如果您的服务器较慢（廉价主机）或者您有许多图片，这有可能耗费较长时间。在脚本运行结束之间请不要转到其他页面，否则有些缩略图将不会被修改大小。当所有转换完成后您将在这个页面得到一个通知。"
 
 #: ../library/admin/thumbnails.php:44
 msgid "You must enable Javascript in order to proceed!"
-msgstr ""
+msgstr "您必须启用 Javascript 以继续。"
 
 #: ../library/admin/thumbnails.php:51
 msgid "Back to Theme Options"
-msgstr ""
+msgstr "返回主题选项"
 
 #: ../library/admin/thumbnails.php:76
 #, php-format
 msgid "All done! Processed %d images."
-msgstr ""
+msgstr "全部完成！已处理 %d 张图片。"
 
 #: ../library/admin/templates/arras-design.php:18
 msgid "Overall Design"
-msgstr ""
+msgstr "全局设计"
 
 #: ../library/admin/templates/arras-design.php:22
 msgid "Overall Layout"
-msgstr ""
+msgstr "全局视图"
 
 #: ../library/admin/templates/arras-design.php:28
 msgid "Reset thumbnail sizes accordingly based on selected layout."
-msgstr ""
+msgstr "根据所选布局重置缩略图大小。"
 
 #: ../library/admin/templates/arras-design.php:32
 msgid "The developer of the child theme has disabled layout settings."
-msgstr ""
+msgstr "子主题的开发者已禁用布局设置。"
 
 #: ../library/admin/templates/arras-design.php:40
 msgid "Default Style"
-msgstr ""
+msgstr "默认风格"
 
 #: ../library/admin/templates/arras-design.php:44
 #, php-format
 msgid "Alternate stylesheets can be placed in %s."
-msgstr ""
+msgstr "替代样式表可放置于 %s。"
 
 #: ../library/admin/templates/arras-design.php:46
 msgid "The developer of the child theme has disabled alternate stylesheets."
-msgstr ""
+msgstr "子主题的开发者已禁用替代样式表。"
 
 #: ../library/admin/templates/arras-design.php:53
 msgid "Custom Logo"
-msgstr ""
+msgstr "自定义 Logo"
 
 #: ../library/admin/templates/arras-design.php:59
 msgid "Delete existing"
-msgstr ""
+msgstr "删除现存"
 
 #: ../library/admin/templates/arras-design.php:68
 msgid "Set Custom Background"
-msgstr ""
+msgstr "设置自定义背景"
 
 #: ../library/admin/templates/arras-general.php:5
 msgid "Theme Information"
-msgstr ""
+msgstr "主题信息"
 
 #: ../library/admin/templates/arras-general.php:9
 msgid "Current Version"
-msgstr ""
+msgstr "当前版本"
 
 #: ../library/admin/templates/arras-general.php:12
 msgid "If you have recently upgraded Arras to a new release, it is <span style=\"color: red\">highly recommended</span> that you reset your theme options, clear your browser cache and restart your browser before proceeding."
-msgstr ""
+msgstr "如果您最近升级了 Arras 到一个新的版本，<span style=\"color: red\">强烈推荐</span> 您在操作之前重置主题设置，清除浏览器缓存并重启您的浏览器。"
 
 #: ../library/admin/templates/arras-general.php:17
 msgid "Display Credits"
-msgstr ""
+msgstr "显示制作信息"
 
 #: ../library/admin/templates/arras-general.php:20
 msgid "Credits will only appear to the right of the theme options page."
-msgstr ""
+msgstr "制作人员信息仅会显示在主题选项页面的右侧。"
 
 #: ../library/admin/templates/arras-general.php:26
 msgid "Site Information"
-msgstr ""
+msgstr "站点信息"
 
 #: ../library/admin/templates/arras-general.php:30
 msgid "RSS Feed (URL)"
-msgstr ""
+msgstr "RSS 订阅 (URL)"
 
 #: ../library/admin/templates/arras-general.php:33
 msgid "This will replace the default WordPress RSS feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
-msgstr ""
+msgstr "这会替换默认的 WordPress RSS 订阅设定。当您决定使用第三方服务（比如 <a href=\"http://feedburner.google.com/\">Feedburner</a>）时十分有用。"
 
 #: ../library/admin/templates/arras-general.php:38
 msgid "RSS Comments Feed (URL)"
-msgstr ""
+msgstr "RSS 评论订阅 (URL)"
 
 #: ../library/admin/templates/arras-general.php:41
 msgid "This will replace the default WordPress RSS comments feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
-msgstr ""
+msgstr "这会替换默认的 WordPress RSS 评论订阅设定。当您决定使用第三方服务（比如 <a href=\"http://feedburner.google.com/\">Feedburner</a>）时十分有用。"
 
 #: ../library/admin/templates/arras-general.php:46
 msgid "Twitter Username"
-msgstr ""
+msgstr "Twitter 用户名"
 
 #: ../library/admin/templates/arras-general.php:53
 msgid "Facebook Profile (URL)"
-msgstr ""
+msgstr "Facebook 个人信息（URL）"
 
 #: ../library/admin/templates/arras-general.php:56
 msgid "Link to your Facebook profile."
-msgstr ""
+msgstr "链接到 Facebook 个人信息。"
 
 #: ../library/admin/templates/arras-general.php:62
 msgid "Footer Information"
-msgstr ""
+msgstr "页脚信息"
 
 #: ../library/admin/templates/arras-general.php:66
 msgid "No. of Columns"
-msgstr ""
+msgstr "列数量"
 
 #: ../library/admin/templates/arras-general.php:69
 msgid "Footer sidebars will be labelled respectively (eg. Footer Sidebar #1, etc.)"
-msgstr ""
+msgstr "页脚边栏拥有单独标签（比如 Footer Sidebar #1 等）"
 
 #: ../library/admin/templates/arras-general.php:74
 msgid "Footer Title"
-msgstr ""
+msgstr "页脚标题"
 
 #: ../library/admin/templates/arras-general.php:84
 msgid "Usually your website's copyright information would go here.<br /> It would be great if you could include a link to WordPress and even greater if you could include a link to the theme website. :)"
-msgstr ""
+msgstr "通常您的网站的版权信息应该放置于此。<br />如果您能在此包含一个 WordPress 的链接甚至是主题网站的链接是再好不过的了！ :)"
 
 #: ../library/admin/templates/arras-home.php:5
 msgid "Post Options"
-msgstr ""
+msgstr "文章选项"
 
 #: ../library/admin/templates/arras-home.php:9
 msgid "Hide duplicate posts"
-msgstr ""
+msgstr "隐藏重复文章"
 
 #: ../library/admin/templates/arras-home.php:13
 msgid "Check this to prevent duplicate posts from displaying within the slideshow and the featured posts."
-msgstr ""
+msgstr "勾选此项以避免在幻灯片与精选文章中出现重复文章。"
 
 #: ../library/admin/templates/arras-home.php:14
 msgid "This might increase your server load, depending on the number of posts displayed."
-msgstr ""
+msgstr "这有可能增加服务器负载（取决于显示的文章数量）。"
 
 #: ../library/admin/templates/arras-home.php:19
 #: ../library/admin/templates/arras-home.php:47
 #: ../library/admin/templates/arras-home.php:90
 #: ../library/admin/templates/arras-home.php:134
 msgid "Show/Hide"
-msgstr ""
+msgstr "显示/隐藏"
 
 #: ../library/admin/templates/arras-home.php:23
 #: ../library/admin/templates/arras-home.php:51
 #: ../library/admin/templates/arras-home.php:94
 #: ../library/admin/templates/arras-home.php:138
 msgid "Selected Post Type"
-msgstr ""
+msgstr "所选文章类型"
 
 #: ../library/admin/templates/arras-home.php:30
 #: ../library/admin/templates/arras-home.php:65
@@ -1001,313 +1004,315 @@ msgstr ""
 #: ../library/admin/templates/arras-home.php:152
 #, php-format
 msgid "Stickied Posts / %s"
-msgstr ""
+msgstr "置顶文章 / %s"
 
 #: ../library/admin/templates/arras-home.php:33
 msgid "Selected categories will be shown on the featured slideshow of the index page."
-msgstr ""
+msgstr "所选分类将会显示在首页的精选幻灯片上。"
 
 #: ../library/admin/templates/arras-home.php:38
 msgid "Show Posts"
-msgstr ""
+msgstr "显示文章"
 
 #: ../library/admin/templates/arras-home.php:41
 #: ../library/admin/templates/arras-home.php:83
 #: ../library/admin/templates/arras-home.php:127
 #: ../library/admin/templates/arras-home.php:170
 msgid "posts"
-msgstr ""
+msgstr "文章"
 
 #: ../library/admin/templates/arras-home.php:58
 #: ../library/admin/templates/arras-home.php:101
 #: ../library/admin/templates/arras-home.php:145
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #: ../library/admin/templates/arras-home.php:68
 #: ../library/admin/templates/arras-home.php:111
 msgid "Selected categories will be shown below the featured slideshow of the index page."
-msgstr ""
+msgstr "所选分类将会显示在首页的精选幻灯片下方。"
 
 #: ../library/admin/templates/arras-home.php:73
 #: ../library/admin/templates/arras-home.php:117
 #: ../library/admin/templates/arras-home.php:160
 #: ../library/admin/templates/arras-layout.php:28
 msgid "Tapestry (Display Type)"
-msgstr ""
+msgstr "挂件（显示类型）"
 
 #: ../library/admin/templates/arras-home.php:80
 #: ../library/admin/templates/arras-home.php:124
 msgid "Post Count"
-msgstr ""
+msgstr "文章数量"
 
 #: ../library/admin/templates/arras-home.php:134
 #: ../library/admin/templates/posttype_page.php:58
 #: ../library/admin/templates/taxonomy_page.php:48
 msgid "News Posts"
-msgstr ""
+msgstr "新闻"
 
 #: ../library/admin/templates/arras-home.php:155
 msgid "Selected categories will be shown below the featured section in the index page."
-msgstr ""
+msgstr "所选分类将会显示在首页的精选区域下方。"
 
 #: ../library/admin/templates/arras-home.php:167
 msgid "News Count"
-msgstr ""
+msgstr "新闻数量"
 
 #: ../library/admin/templates/arras-layout.php:11
 msgid "Excerpts"
-msgstr ""
+msgstr "摘要"
 
 #: ../library/admin/templates/arras-layout.php:15
 msgid "Excerpt Limit"
-msgstr ""
+msgstr "摘要限制"
 
 #: ../library/admin/templates/arras-layout.php:18
 msgid "words"
-msgstr ""
+msgstr "字"
 
 #: ../library/admin/templates/arras-layout.php:19
 msgid "Excerpts will only be trimmed to the limit if no excerpt is specified for the respective post."
-msgstr ""
+msgstr "仅当某篇文章不存在摘要时，才会截取所限制长度的摘要。"
 
 #: ../library/admin/templates/arras-layout.php:24
 msgid "Archive / Search"
-msgstr ""
+msgstr "存档/搜索"
 
 #: ../library/admin/templates/arras-layout.php:36
 msgid "Single Post"
-msgstr ""
+msgstr "单篇文章"
 
 #: ../library/admin/templates/arras-layout.php:40
 msgid "Display in Single Posts"
-msgstr ""
+msgstr "在单篇文章中显示"
 
 #: ../library/admin/templates/arras-layout.php:44
 msgid "Author (Header)"
-msgstr ""
+msgstr "作者（头部）"
 
 #: ../library/admin/templates/arras-layout.php:48
 msgid "Publish Date (Header)"
-msgstr ""
+msgstr "发布日期（头部）"
 
 #: ../library/admin/templates/arras-layout.php:52
 msgid "Categories (Header)"
-msgstr ""
+msgstr "分类（头部）"
 
 #: ../library/admin/templates/arras-layout.php:60
 msgid "Post Thumbnail"
-msgstr ""
+msgstr "文章缩略图"
 
 #: ../library/admin/templates/arras-layout.php:64
 msgid "Author Information"
-msgstr ""
+msgstr "作者信息"
 
 #: ../library/admin/templates/arras-layout.php:70
 msgid "Display Custom Taxonomies"
-msgstr ""
+msgstr "显示自定义分类"
 
 #: ../library/admin/templates/arras-layout.php:73
 msgid "List down the custom taxonomies' slug that you wish to display here, separated by a comma (,)."
-msgstr ""
+msgstr "在这里列出您希望显示的自定义分类块，用逗号（,）隔开。"
 
 #: ../library/admin/templates/arras-layout.php:79
 msgid "Single Post Custom Fields"
-msgstr ""
+msgstr "单篇文章自定义域"
 
 #: ../library/admin/templates/arras-navigation.php:15
 msgid "Main Navigation"
-msgstr ""
+msgstr "主导航条"
 
 #: ../library/admin/templates/arras-navigation.php:19
 #, php-format
 msgid "It is highly recommended that you use the %s for better control of the main navigation."
-msgstr ""
+msgstr "强烈推荐您使用 %s 以获得更好的主导航条设置。"
 
 #: ../library/admin/templates/arras-navigation.php:25
 msgid "Home Link"
-msgstr ""
+msgstr "主页链接"
 
 #: ../library/admin/templates/arras-navigation.php:28
 msgid "You can change the name of the home link at the main navigation."
-msgstr ""
+msgstr "您可以修改主页链接在主导航条中的名字。"
 
 #: ../library/admin/templates/arras-navigation.php:33
 msgid "Top Navigation Display"
-msgstr ""
+msgstr "顶部导航条显示"
 
 #: ../library/admin/templates/arras-navigation.php:37
 #: ../library/admin/templates/arras-navigation.php:42
 msgid "Link Category"
-msgstr ""
+msgstr "链接分类"
 
 #: ../library/admin/templates/arras-navigation.php:45
 msgid "To organise and arrange the links in the top navigation, you can create a link category with all the links you want to display at the main navigation and assign the link category here."
-msgstr ""
+msgstr "为了更好地组织和排列顶部导航条中的链接，您可以创建一个链接分类包含所有您希望在主导航条显示的链接并在此处定义链接分类。"
 
 #: ../library/admin/templates/arras-navigation.php:53
 #, php-format
 msgid "You have %s installed."
-msgstr ""
+msgstr "您已安装 %s。"
 
 #: ../library/admin/templates/arras-navigation.php:56
 msgid "You will need to go to their respective plugin settings page to adjust the navigation bar."
-msgstr ""
+msgstr "您需要前往它们各自的插件设置页以调整导航条。"
 
 #: ../library/admin/templates/arras-thumbnails.php:5
 msgid "Thumbnail Options"
-msgstr ""
+msgstr "缩略图选项"
 
 #: ../library/admin/templates/arras-thumbnails.php:9
 msgid "Auto Thumbnails"
-msgstr ""
+msgstr "自动缩略图"
 
 #: ../library/admin/templates/arras-thumbnails.php:13
 msgid "Check this to allow the theme to automatically retrieve the first attached image from the post as featured image when no image is specified."
-msgstr ""
+msgstr "勾选此项以允许主题在没有指定时自动使用第一张插入的图片作为精选图片。"
 
 #: ../library/admin/templates/arras-thumbnails.php:19
 msgid "Thumbnail Sizes"
-msgstr ""
+msgstr "缩略图尺寸"
 
 #: ../library/admin/templates/arras-thumbnails.php:21
 msgid "If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate your thumbnails."
-msgstr ""
+msgstr "如果您最近更改了视图设置或者手动调整了缩略图尺寸，您需要重新生成缩略图。"
 
 #: ../library/admin/templates/arras-thumbnails.php:28
 msgid "Width"
-msgstr ""
+msgstr "宽度"
 
 #: ../library/admin/templates/arras-thumbnails.php:31
 msgid "Height"
-msgstr ""
+msgstr "高度"
 
 #: ../library/admin/templates/arras-thumbnails.php:35
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "重置为默认"
 
 #: ../library/admin/templates/arras-thumbnails.php:58
 msgid "Frequently Asked Questions (EN only)"
-msgstr ""
+msgstr "常见问题（仅英语）"
 
 #: ../library/admin/templates/arras-tools.php:5
 msgid "Clear timThumb Thumbnail Cache (Legacy)"
-msgstr ""
+msgstr "清空 timThumb 缩略图缓存（传统）"
 
 #: ../library/admin/templates/arras-tools.php:6
 #, php-format
 msgid "The thumbnail cache folder is located at: %s."
-msgstr ""
+msgstr "缩略图缓存文件夹位于： %s"
 
 #: ../library/admin/templates/arras-tools.php:7
 msgid "If this does not work, you can manually delete all the files in that folder."
-msgstr ""
+msgstr "如果这不起作用，您可以手动删除该文件夹下的所有文件。"
 
 #: ../library/admin/templates/arras-tools.php:8
 msgid "Ensure that you have submitted any changes made before proceeding."
-msgstr ""
+msgstr "在继续之前确认您已经提交更改。"
 
 #: ../library/admin/templates/arras-tools.php:10
 msgid "Clear Thumbnail Cache"
-msgstr ""
+msgstr "清空缩略图缓存"
 
 #: ../library/admin/templates/arras-tools.php:13
 msgid "Import Theme Settings (BETA)"
-msgstr ""
+msgstr "导入主题选项（BETA）"
 
 #: ../library/admin/templates/arras-tools.php:14
 msgid "Import your theme settings by pasting the exported code below."
-msgstr ""
+msgstr "将导出的代码粘贴在下方来导入您的主题选项。"
 
 #: ../library/admin/templates/arras-tools.php:18
 msgid "Export Theme Settings (BETA)"
-msgstr ""
+msgstr "导出主题选项（BETA）"
 
 #: ../library/admin/templates/arras-tools.php:19
 msgid "You can save the following code into a text file and use it when you need to import them into another installation. Note that not all options (custom background, child theme settings, etc.) will be exported."
-msgstr ""
+msgstr "您可以将以下代码保存到一个文本文件并且在您需要导入它们到另外一个安装时使用。注意并不是所有选项（例如自定义背景、子主题选项等）都会被导出。"
 
 #: ../library/admin/templates/functions.php:195
 msgid "Stickied Posts"
-msgstr ""
+msgstr "置顶文章"
 
 #: ../library/admin/templates/functions.php:228
 msgid "Taxonomy"
-msgstr ""
+msgstr "自定义分类"
 
 #: ../library/admin/templates/options_page.php:12
 #, php-format
 msgid "The thumbnails cache directory (%s) is not writable. You will need to set the directory's permissions 755 or 777 for the thumbnails to work."
-msgstr ""
+msgstr "缩略图缓存文件夹（%s）不可写。您需要设定该文件夹权限为755或777以使缩略图正常工作。"
 
 #: ../library/admin/templates/options_page.php:15
 msgid "More about Changing File/Folder Permissions"
-msgstr ""
+msgstr "更多有关改变文件夹/文件的权限的信息"
 
 #: ../library/admin/templates/options_page.php:21
 msgid "The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information."
-msgstr ""
+msgstr "服务器看起来未安装缩略图工作所需要的GD库。联系您的主机提供商以获取更多信息。"
 
 #: ../library/admin/templates/options_page.php:34
 msgid "General"
-msgstr ""
+msgstr "通用"
 
 #: ../library/admin/templates/options_page.php:35
 msgid "Navigation"
-msgstr ""
+msgstr "导航条"
 
 #: ../library/admin/templates/options_page.php:37
 msgid "Layout"
-msgstr ""
+msgstr "视图"
 
 #: ../library/admin/templates/options_page.php:38
 msgid "Design"
-msgstr ""
+msgstr "设计"
 
 #: ../library/admin/templates/options_page.php:39
 msgid "Thumbnails"
-msgstr ""
+msgstr "缩略图"
 
 #: ../library/admin/templates/options_page.php:40
 msgid "Tools"
-msgstr ""
+msgstr "工具"
 
 #: ../library/admin/templates/options_page.php:54
 msgid "Regenerate post thumbnails after saving."
-msgstr ""
+msgstr "在保存后重新生成缩略图。"
 
 #: ../library/admin/templates/options_page.php:57
 #: ../library/admin/templates/posttype_page.php:74
 #: ../library/admin/templates/taxonomy_page.php:66
 msgid "Reset Settings"
-msgstr ""
+msgstr "复位设置"
 
 #: ../library/admin/templates/posttype_page.php:18
 #: ../library/admin/templates/taxonomy_page.php:7
 msgid "Post Types & Taxonomies Options"
-msgstr ""
+msgstr "文章类型和自定义分类选项"
 
 #: ../library/admin/templates/posttype_page.php:26
 #: ../library/admin/templates/taxonomy_page.php:15
 msgid "Post Types"
-msgstr ""
+msgstr "文章类型"
 
 #: ../library/admin/templates/posttype_page.php:27
 #: ../library/admin/templates/taxonomy_page.php:16
 msgid "Taxonomies"
-msgstr ""
+msgstr "自定义分类"
 
 #: ../library/admin/templates/posttype_page.php:44
 #: ../library/admin/templates/taxonomy_page.php:34
 msgid "Featured Post #1"
-msgstr ""
+msgstr "精选文章 #1"
 
 #: ../library/admin/templates/posttype_page.php:51
 #: ../library/admin/templates/taxonomy_page.php:41
 msgid "Featured Post #2"
-msgstr ""
+msgstr "精选文章 #2"
 
 #: ../library/admin/templates/taxonomy_page.php:58
 msgid "<strong>Note:</strong> Custom taxonomies require the <code>query_var</code> parameter to be defined to work."
-msgstr ""
+msgstr "<strong>注意：</storng>自定义分类需要定义 <code>query_var</code> 参数以正常工作。"
 
+#~ msgid "Arras Theme Options"
+#~ msgstr "Arras Theme 选项"

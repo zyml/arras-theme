@@ -5,12 +5,11 @@ msgstr ""
 "POT-Creation-Date: 2011-07-05 18:40+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
-"Language-Team:  <zy@zy.sg>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: SINGAPORE\n"
+"X-Poedit-Language: Dutch\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
@@ -18,7 +17,7 @@ msgstr ""
 
 #: ../404.php:7
 msgid "Error 404 - Not Found"
-msgstr ""
+msgstr "Fehler 404 - Seite nicht gefunden!"
 
 #: ../404.php:9
 msgid ""
@@ -26,244 +25,247 @@ msgid ""
 "\t\tPlease make sure you have the right URL.</p>\n"
 "\t\t<p>If you still can't find what you're looking for, try using the search form below.</p>"
 msgstr ""
+"<p><strong>Leider gibt es diese Seite nicht, oder sie wurde verschoben.</strong><br />\n"
+"\t\tÜberprüfen Sie bitte, ob die richtige URL eingegeben wurde.</p>\n"
+"\t\t<p>Falls es dennoch fehlschlägt, verwenden Sie bitte das Suchformular.<br />"
 
 #: ../archive.php:10
 #: ../archive.php:12
 #: ../archive.php:14
 #, php-format
 msgid "%s Archive"
-msgstr ""
+msgstr "%s Archiv"
 
 #: ../archive.php:16
 #: ../archive.php:18
 #: ../archive.php:20
 #, php-format
 msgid "Archive for %s"
-msgstr ""
+msgstr "Archiv vom %s"
 
 #: ../archive.php:16
 msgid "F jS, Y"
-msgstr ""
+msgstr "j. F Y"
 
 #: ../archive.php:18
 msgid "F, Y"
-msgstr ""
+msgstr "F  Y"
 
 #: ../archive.php:20
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: ../archive.php:22
 msgid "Author Archive"
-msgstr ""
+msgstr "Authorenarchiv"
 
 #: ../archive.php:24
 msgid "Archives"
-msgstr ""
+msgstr "Archive"
 
 #: ../archive.php:32
 #: ../home.php:93
 #: ../home.php:135
 msgid "Older Entries"
-msgstr ""
+msgstr "Ältere Einträge"
 
 #: ../archive.php:33
 #: ../home.php:94
 #: ../home.php:136
 msgid "Newer Entries"
-msgstr ""
+msgstr "Neuere Einträge"
 
 #: ../attachment.php:13
 #: ../page.php:12
 #: ../pagetpl-onecolumn.php:20
 msgid "<p>Read the rest of this entry &raquo;</p>"
-msgstr ""
+msgstr "<p>Rest des Artikels lesen &raquo;</p>"
 
 #: ../attachment.php:15
 #: ../page.php:13
 #: ../pagetpl-onecolumn.php:21
 msgid "<p><strong>Pages:</strong> "
-msgstr ""
+msgstr "<p><strong>Seiten:</strong> "
 
 #: ../author.php:9
 #, php-format
 msgid "About Author: %s"
-msgstr ""
+msgstr "Über den Autor: %s"
 
 #: ../author.php:15
 #: ../comments.php:56
 msgid "Website"
-msgstr ""
+msgstr "Webseite"
 
 #: ../author.php:19
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../author.php:25
 #, php-format
 msgid "Posts by %s"
-msgstr ""
+msgstr "Artikel von %s"
 
 #: ../author.php:33
 #: ../search.php:22
 #: ../search.php:42
 msgid "&laquo; Older Entries"
-msgstr ""
+msgstr "&laquo; Ältere Einträge"
 
 #: ../author.php:34
 #: ../search.php:21
 #: ../search.php:43
 msgid "Newer Entries &raquo;"
-msgstr ""
+msgstr "Neuere Einträge &raquo;"
 
 #: ../comments.php:3
 msgid "Please do not load this page directly. Thanks!"
-msgstr ""
+msgstr "Diese Seite bitte nicht direkt aufrufen. Danke."
 
 #: ../comments.php:7
 msgid "Password Required"
-msgstr ""
+msgstr "Passwort erforderlich"
 
 #: ../comments.php:8
 msgid "<p class=\"nocomments\">This post is password protected. Enter the password to view comments.</p>"
-msgstr ""
+msgstr "<p class=\"nocomments\">Dieser Artikel ist mit Passwort geschützt. Bitte das Passwort eingeben, um die Kommentare zu lesen.</p>"
 
 #: ../comments.php:17
 #: ../comments.php:34
 msgid "No Comments"
-msgstr ""
+msgstr "Keine Kommentare"
 
 #: ../comments.php:17
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Kommentar"
 
 #: ../comments.php:28
 msgid "Trackbacks / Pings"
-msgstr ""
+msgstr "Trackbacks / Pings"
 
 #: ../comments.php:35
 msgid "Start the ball rolling by posting a comment on this article!"
-msgstr ""
+msgstr "Bringen Sie die Lawine ins Rollen mit Ihrem Kommentar zu diesem Artikel!"
 
 #: ../comments.php:40
 msgid "Comments Closed"
-msgstr ""
+msgstr "Kommentare geschlossen"
 
 #: ../comments.php:41
 msgid "Comments are closed. You will not be able to post a comment in this post."
-msgstr ""
+msgstr "Kommentarfunktion abgeschaltet. Zu diesem Artikel können keine Kommentare veröffentlicht werden."
 
 #: ../comments.php:52
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: ../comments.php:54
 msgid "Email"
-msgstr ""
+msgstr "E-Mail"
 
 #: ../footer.php:22
 msgid "About Arras WordPress Theme"
-msgstr ""
+msgstr "Über Arras WordPress Theme"
 
 #: ../header.php:12
 #: ../header.php:14
 #, php-format
 msgid "%s latest posts"
-msgstr ""
+msgstr "%s aktuellste Artikel"
 
 #: ../header.php:18
 #: ../header.php:20
 #, php-format
 msgid "%s latest comments"
-msgstr ""
+msgstr "%s aktuellste Kommentare"
 
 #: ../page.php:21
 #: ../pagetpl-onecolumn.php:29
 msgid "About the Author"
-msgstr ""
+msgstr "Über den Autor"
 
 #: ../pagetpl-archives.php:19
 msgid "Recent Posts"
-msgstr ""
+msgstr "Neue Artikel"
 
 #: ../pagetpl-archives.php:22
 msgid "Monthly Archives"
-msgstr ""
+msgstr "Monatliche Archive"
 
 #: ../pagetpl-archives.php:25
 msgid "Pages"
-msgstr ""
+msgstr "Seiten"
 
 #: ../pagetpl-archives.php:28
 msgid "Categories"
-msgstr ""
+msgstr "Kategorien"
 
 #: ../pagetpl-archives.php:31
 msgid "Authors"
-msgstr ""
+msgstr "Authoren"
 
 #: ../search.php:8
 msgid "Search Results"
-msgstr ""
+msgstr "Suchergebnisse"
 
 #: ../search.php:10
 #, php-format
 msgid "Search Results for <strong>&#8216;%s&#8217;</strong></p>"
-msgstr ""
+msgstr "Suchergebnisse für <strong>&#8216;%s&#8217;</strong></p>"
 
 #: ../search.php:31
 msgid "<strong>Sorry, we couldn't find any results based on your search query.</strong>"
-msgstr ""
+msgstr "<strong>Leider ergab Ihre Suchanfrage keine Ergebnisse.</strong"
 
 #: ../search.php:36
 msgid "Blog Archive"
-msgstr ""
+msgstr "Blog Archiv"
 
 #: ../searchform.php:2
 msgid "Search..."
-msgstr ""
+msgstr "Suche..."
 
 #: ../searchform.php:3
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: ../searchform.php:3
 #, php-format
 msgid "Search %s"
-msgstr ""
+msgstr "Suche %s"
 
 #: ../sidebar.php:10
 msgid "Welcome to Arras!"
-msgstr ""
+msgstr "Willkommen bei Arras!"
 
 #: ../sidebar.php:13
 msgid "Arras is a WordPress theme designed for news or review sites with lots of customisable features."
-msgstr ""
+msgstr "Arras ist ein WordPress Theme, speziell für Nachrichten- und Bewertungsseiten gestaltet und vielseitig anpassbar."
 
 #: ../sidebar.php:36
 msgid "Tag Cloud"
-msgstr ""
+msgstr "Schlagwörter-Wolke"
 
 #: ../yarpp-template-arras.php:16
 #: ../library/widgets.php:457
 msgid "d F Y g:i A"
-msgstr ""
+msgstr "d F Y g:i A"
 
 #: ../yarpp-template-arras.php:17
 #: ../library/widgets.php:458
 msgid "% Comments"
-msgstr ""
+msgstr "% Kommentare"
 
 #: ../yarpp-template-arras.php:21
 #: ../library/deprecated.php:118
 #: ../library/widgets.php:465
 msgid "Read More"
-msgstr ""
+msgstr "Weiterlesen"
 
 #: ../yarpp-template-arras.php:27
 #: ../library/widgets.php:473
 msgid "No posts at the moment. Check back again later!"
-msgstr ""
+msgstr "Zur Zeit keine Artikel vorhanden. Schauen Sie später noch einmal vorbei."
 
 #: ../library/deprecated.php:98
 #: ../library/deprecated.php:117
@@ -271,729 +273,729 @@ msgstr ""
 #: ../library/tapestries.php:256
 #, php-format
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Permalink zu %s"
 
 #: ../library/filters.php:38
 #, php-format
 msgid "<div class=\"entry-author\">By %s</div>"
-msgstr ""
+msgstr "<div class=\"entry-author\">Von %s</div>"
 
 #: ../library/filters.php:46
 msgid "Edit Post"
-msgstr ""
+msgstr "Artikel bearbeiten"
 
 #: ../library/filters.php:46
 msgid "(Edit Post)"
-msgstr ""
+msgstr "(Artikel bearbeiten)"
 
 #: ../library/filters.php:54
 #, php-format
 msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
-msgstr ""
+msgstr "<span class=\"entry-cat\"><strong>Eingestellt unter: </strong>%s</span>"
 
 #: ../library/filters.php:134
 msgid "Tags:"
-msgstr ""
+msgstr "Schlagwörter:"
 
 #: ../library/filters.php:145
 msgid "That 'something' you are looking for isn't here!"
-msgstr ""
+msgstr "Was auch immer Sie suchen, es ist leider nicht hier."
 
 #: ../library/filters.php:146
 msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
-msgstr ""
+msgstr "<strong>Es tut uns furchtbar leid, aber die Seite die Sie suchen gibt es nicht oder sie wurde verschoben.</strong>"
 
 #: ../library/filters.php:150
 msgid "Perhaps searching for it might help?"
-msgstr ""
+msgstr "Möglicherweise hilft die Suchfunktion weiter."
 
 #: ../library/filters.php:175
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "Über %s"
 
 #: ../library/launcher.php:13
 msgid "Main Menu"
-msgstr ""
+msgstr "Hauptmenü"
 
 #: ../library/launcher.php:14
 msgid "Top Menu"
-msgstr ""
+msgstr "Oberes Menü"
 
 #: ../library/launcher.php:77
 msgid "1 Column Layout (No Sidebars)"
-msgstr ""
+msgstr "1-spaltiges Layout (Ohne Seitenleisten)"
 
 #: ../library/launcher.php:78
 msgid "2 Column Layout (Right Sidebar)"
-msgstr ""
+msgstr "2-spaltiges Layout (Seitenleiste rechts)"
 
 #: ../library/launcher.php:79
 msgid "2 Column Layout (Left Sidebar)"
-msgstr ""
+msgstr "2-spaltiges Layout (Seitenleiste links)"
 
 #: ../library/launcher.php:80
 msgid "3 Column Layout (Left & Right Sidebars)"
-msgstr ""
+msgstr "3-spaltiges Layout (Seitenleisten links & rechts)"
 
 #: ../library/launcher.php:81
 msgid "3 Column Layout (Right Sidebars)"
-msgstr ""
+msgstr "3-spaltiges Layout (Seitenleisten rechts)"
 
 #: ../library/slideshow.php:29
 msgid "Prev"
-msgstr ""
+msgstr "Zurück"
 
 #: ../library/slideshow.php:30
 msgid "Next"
-msgstr ""
+msgstr "Weiter"
 
 #: ../library/slideshow.php:93
 msgid "Featured Slideshow"
-msgstr ""
+msgstr "Bevorzugte Diaschau"
 
 #: ../library/tapestries.php:91
 msgid "Read the rest of this entry &raquo;"
-msgstr ""
+msgstr "Rest des Artikels lesen &raquo;"
 
 #: ../library/tapestries.php:96
 msgid "Traditional"
-msgstr ""
+msgstr "Traditionell"
 
 #: ../library/tapestries.php:127
 msgid "Per Line"
-msgstr ""
+msgstr "Je Zeile"
 
 #: ../library/tapestries.php:154
 msgid "Node Based"
-msgstr ""
+msgstr "Knoten basierend"
 
 #: ../library/tapestries.php:177
 msgid "Tapestry: Node-Based"
-msgstr ""
+msgstr "Tapete: Knoten basierend"
 
 #: ../library/tapestries.php:186
 msgid "Tapestry: Node Based"
-msgstr ""
+msgstr "Tapete: Knoten basierend"
 
 #: ../library/tapestries.php:190
 msgid "Show Excerpt?"
-msgstr ""
+msgstr "Auszug anzeigen?"
 
 #: ../library/tapestries.php:196
 msgid "Maximum Node Height"
-msgstr ""
+msgstr "Maximale Knotenhöhe"
 
 #: ../library/tapestries.php:199
 msgid "pixels"
-msgstr ""
+msgstr "Pixel"
 
 #: ../library/tapestries.php:253
 #, php-format
 msgid "Posted on %s"
-msgstr ""
+msgstr "Artikel vom %s"
 
 #: ../library/tapestries.php:257
 msgid "Continue Reading..."
-msgstr ""
+msgstr "Weiterlesen..."
 
 #: ../library/tapestries.php:263
 msgid "Quick Preview"
-msgstr ""
+msgstr "schnelle Vorschau"
 
 #: ../library/tapestries.php:269
 msgid "Tapestry: Quick Preview"
-msgstr ""
+msgstr "Tapete: schnelle Vorschau"
 
 #: ../library/template.php:24
 msgid "Search Results for:"
-msgstr ""
+msgstr "Suchergebnisse für:"
 
 #: ../library/template.php:28
 msgid "Category Archives:"
-msgstr ""
+msgstr "Kategorienarchive:"
 
 #: ../library/template.php:32
 msgid "Tag Archives:"
-msgstr ""
+msgstr "Schlagwortarchive:"
 
 #: ../library/template.php:36
 msgid "Not Found"
-msgstr ""
+msgstr "Ncht gefunden"
 
 #: ../library/template.php:288
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Ihr Kommentar wird momentan moderiert."
 
 #: ../library/template.php:291
 #, php-format
 msgid "Posted %1$s at %2$s"
-msgstr ""
+msgstr "Eingetragen %1$s um %2$s"
 
 #: ../library/template.php:291
 msgid "c"
-msgstr ""
+msgstr "c"
 
 #: ../library/template.php:291
 msgid "F j, Y"
-msgstr ""
+msgstr "j.F Y"
 
 #: ../library/template.php:291
 msgid "g:i A"
-msgstr ""
+msgstr "g:i A"
 
 #: ../library/template.php:342
 #: ../library/template.php:344
 #, php-format
 msgid "%s RSS Feed"
-msgstr ""
+msgstr "%s RSS Feed"
 
 #: ../library/template.php:342
 #: ../library/template.php:344
 msgid "RSS Feed"
-msgstr ""
+msgstr "RSS Feed"
 
 #: ../library/template.php:349
 #, php-format
 msgid "%s Twitter"
-msgstr ""
+msgstr "%s Twitter"
 
 #: ../library/template.php:349
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../library/template.php:354
 #, php-format
 msgid "%s Facebook"
-msgstr ""
+msgstr "%s Facebook"
 
 #: ../library/template.php:354
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../library/thumbnails.php:12
 msgid "Single Post Thumbnail"
-msgstr ""
+msgstr "Einzeleintrag Daumennagel"
 
 #: ../library/thumbnails.php:13
 msgid "Sidebar Widgets"
-msgstr ""
+msgstr "Seitenleisten-Widgets"
 
 #: ../library/widgets.php:15
 msgid "Sidebar containing tabs that displays posts, comments and tags."
-msgstr ""
+msgstr "Seitenleiste mit Tabulatoren die Posts, Kommentare und Tags anzeigen."
 
 #: ../library/widgets.php:17
 msgid "Tabbed Sidebar"
-msgstr ""
+msgstr "Seitenleiste mit Tabulatoren"
 
 #: ../library/widgets.php:28
 msgid "Featured"
-msgstr ""
+msgstr "Bevorzugt"
 
 #: ../library/widgets.php:29
 msgid "Latest"
-msgstr ""
+msgstr "Aktuellste"
 
 #: ../library/widgets.php:30
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 #: ../library/widgets.php:31
 #: ../library/widgets.php:367
 #: ../library/widgets.php:383
 msgid "Tags"
-msgstr ""
+msgstr "Etiketten"
 
 #: ../library/widgets.php:35
 msgid "Popular"
-msgstr ""
+msgstr "Beliebt"
 
 #: ../library/widgets.php:181
 msgid "Retrieve Posts from:"
-msgstr ""
+msgstr "Posts sammeln von:"
 
 #: ../library/widgets.php:183
 msgid "Slideshow"
-msgstr ""
+msgstr "Diaschau"
 
 #: ../library/widgets.php:184
 msgid "Featured Posts #1"
-msgstr ""
+msgstr "Beliebte Artikel #1"
 
 #: ../library/widgets.php:185
 msgid "Featured Posts #2"
-msgstr ""
+msgstr "Beliebte Artikel #2"
 
 #: ../library/widgets.php:190
 msgid "Tabbed Sidebar Order:"
-msgstr ""
+msgstr "Tab-Reihenfolge der Seitenleiste:"
 
 #: ../library/widgets.php:196
 msgid "The popular posts option is only enabled when the plugin <a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Popularity Contest</a> is enabled."
-msgstr ""
+msgstr "Die Option \"Beliebte Artikel\" ist nur verfügbar, wenn das Plugin <a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Beliebtheitswettbewerb</a>aktiviert ist."
 
 #: ../library/widgets.php:198
 msgid "Post Count:"
-msgstr ""
+msgstr "Artikelzähler:"
 
 #: ../library/widgets.php:206
 msgid "Comments Count:"
-msgstr ""
+msgstr "Kommentarzähler:"
 
 #: ../library/widgets.php:217
 msgid "Display only in homepage"
-msgstr ""
+msgstr "Nur auf der Startseite anzeigen"
 
 #: ../library/widgets.php:219
 msgid "Display thumbnails"
-msgstr ""
+msgstr "Minibilder anzeigen"
 
 #: ../library/widgets.php:256
 msgid "Featured stories containing post thumbnails and the excerpt based on categories."
-msgstr ""
+msgstr "Bevorzugte Artikel mit Minibilder und Auszügen basierend auf den Kategorien."
 
 #: ../library/widgets.php:258
 #: ../library/widgets.php:301
 msgid "Featured Stories"
-msgstr ""
+msgstr "Bevorzugte Artikel"
 
 #: ../library/widgets.php:312
 msgid "Title:"
-msgstr ""
+msgstr "Titel:"
 
 #: ../library/widgets.php:316
 msgid "Featured Categories:"
-msgstr ""
+msgstr "Bevorzugte Kategorien:"
 
 #: ../library/widgets.php:318
 msgid "All Categories"
-msgstr ""
+msgstr "Alle Kategorien"
 
 #: ../library/widgets.php:328
 msgid "How many items would you like to display?"
-msgstr ""
+msgstr "Wieviele Einträge wollen Sie angezeigt bekommen?"
 
 #: ../library/widgets.php:339
 msgid "Do not display in homepage"
-msgstr ""
+msgstr "Nicht auf der Startseite anzeigen"
 
 #: ../library/widgets.php:342
 msgid "Show post excerpts"
-msgstr ""
+msgstr "Artikelauszug anzeigen?"
 
 #: ../library/widgets.php:345
 msgid "Show thumbnails"
-msgstr ""
+msgstr "Minibilder anzeigen?"
 
 #: ../library/widgets.php:399
 msgid "A search form for your site"
-msgstr ""
+msgstr "Eine Suche von Ihrer Site"
 
 #: ../library/admin/admin.php:25
 #: ../library/admin/admin.php:330
 msgid "Arras"
-msgstr ""
+msgstr "Arras"
 
 #: ../library/admin/admin.php:26
 #: ../library/admin/admin.php:73
 msgid "Arras Options"
-msgstr ""
+msgstr "Arras Optionen"
 
 #: ../library/admin/admin.php:26
 #: ../library/admin/admin.php:336
 msgid "Theme Options"
-msgstr ""
+msgstr "Theme Optionen"
 
 #: ../library/admin/admin.php:28
 msgid "Post Types & Taxonomies"
-msgstr ""
+msgstr "Artikel Typen & Taxonomien"
 
 #: ../library/admin/admin.php:28
 #: ../library/admin/admin.php:342
 msgid "Post Types & Tax."
-msgstr ""
+msgstr "Artikel Typen & Tax."
 
 #: ../library/admin/admin.php:30
 #: ../library/admin/admin.php:348
 msgid "Custom Background"
-msgstr ""
+msgstr "Eigener Hintergrund"
 
 #: ../library/admin/admin.php:65
 msgid "Thumbnail cache has been cleared."
-msgstr ""
+msgstr "Minibildpuffer wurde geleert."
 
 #: ../library/admin/admin.php:95
 msgid "Your settings have been successfully imported."
-msgstr ""
+msgstr "Ihre Einstellungen wurden erfolgreich importiert."
 
 #: ../library/admin/admin.php:151
 #: ../library/admin/admin.php:177
 #: ../library/admin/admin.php:184
 msgid "Your settings have been saved to the database."
-msgstr ""
+msgstr "Ihre Einstellungen wurden in der Datenbank gesichert."
 
 #: ../library/admin/admin.php:164
 msgid "Your settings have been reverted to the defaults."
-msgstr ""
+msgstr "Ihre Einstellungen wurden auf Standard zurückgestellt."
 
 #: ../library/admin/admin.php:259
 msgid "Helpful Links"
-msgstr ""
+msgstr "Hilfreiche Links"
 
 #: ../library/admin/admin.php:261
 msgid "Quick Start Guide"
-msgstr ""
+msgstr "Schnellstart Einführung"
 
 #: ../library/admin/admin.php:262
 msgid "Community Forums"
-msgstr ""
+msgstr "Community Foren"
 
 #: ../library/admin/admin.php:263
 msgid "Bug Tracker / Repository"
-msgstr ""
+msgstr "Bug Tracker / Repository"
 
 #: ../library/admin/admin.php:268
 msgid "Recommended Plugins"
-msgstr ""
+msgstr "Empfohlene Plugins"
 
 #: ../library/admin/admin.php:280
 msgid "How to Support?"
-msgstr ""
+msgstr "Wie gibt man Unterstützung?"
 
 #: ../library/admin/admin.php:281
 msgid "There are many ways you can support this theme:"
-msgstr ""
+msgstr "es gibt viele Wege dieses Theme zu unterstützen:"
 
 #: ../library/admin/admin.php:283
 msgid "Share other about the theme"
-msgstr ""
+msgstr "Andere über dieses Theme informieren"
 
 #: ../library/admin/admin.php:284
 msgid "Report bugs / Send patches"
-msgstr ""
+msgstr "Fehler melden / Patches liefern"
 
 #: ../library/admin/admin.php:285
 msgid "Contribute to the forums / wiki"
-msgstr ""
+msgstr "An Foren teilnehmen / Wiki"
 
 #: ../library/admin/admin.php:286
 msgid "Translate the theme"
-msgstr ""
+msgstr "Das Theme übersetzen"
 
 #: ../library/admin/admin.php:287
 msgid "Send in a donation!"
-msgstr ""
+msgstr "Spenden einreichen."
 
 #: ../library/admin/admin.php:289
 msgid "Donate using PayPal"
-msgstr ""
+msgstr "Spenden mit PayPal"
 
 #: ../library/admin/admin.php:295
 msgid "Thanks!"
-msgstr ""
+msgstr "Danke!"
 
 #: ../library/admin/admin.php:296
 msgid "Many thanks to those who have contributed to the theme:"
-msgstr ""
+msgstr "Vielen Dank an alle die Beiträge zum Theme geleistet haben:"
 
 #: ../library/admin/admin.php:297
 msgid "Forum Contributors"
-msgstr ""
+msgstr "Forumsteilnehmer"
 
 #: ../library/admin/admin.php:299
 msgid "Translators"
-msgstr ""
+msgstr "Übersetzer"
 
 #: ../library/admin/background.php:117
 msgid "Activate Custom Background"
-msgstr ""
+msgstr "Eigenen Hintergrund aktivieren"
 
 #: ../library/admin/background.php:120
 msgid "Upload Background Image"
-msgstr ""
+msgstr "Bild hochladen"
 
 #: ../library/admin/background.php:124
 msgid "Background Attachment"
-msgstr ""
+msgstr "Hintergrundanhang"
 
 #: ../library/admin/background.php:125
 msgid "Fixed"
-msgstr ""
+msgstr "Feststehend"
 
 #: ../library/admin/background.php:126
 msgid "Scroll (along with the rest of the page)"
-msgstr ""
+msgstr "Scrollen (zusammen mit der Seite)"
 
 #: ../library/admin/background.php:127
 msgid "Horizontal Position"
-msgstr ""
+msgstr "Horizontale Position"
 
 #: ../library/admin/background.php:128
 msgid "Left"
-msgstr ""
+msgstr "Links"
 
 #: ../library/admin/background.php:129
 #: ../library/admin/background.php:133
 msgid "Center"
-msgstr ""
+msgstr "Mitte"
 
 #: ../library/admin/background.php:130
 msgid "Right"
-msgstr ""
+msgstr "Rechts"
 
 #: ../library/admin/background.php:131
 msgid "Vertical Position"
-msgstr ""
+msgstr "Vertikale Position"
 
 #: ../library/admin/background.php:132
 msgid "Top"
-msgstr ""
+msgstr "Oben"
 
 #: ../library/admin/background.php:134
 msgid "Bottom"
-msgstr ""
+msgstr "Unten"
 
 #: ../library/admin/background.php:135
 msgid "Repeat Background Image?"
-msgstr ""
+msgstr "Hintergrundbild wiederholen?"
 
 #: ../library/admin/background.php:136
 #: ../library/admin/templates/arras-navigation.php:3
 msgid "None"
-msgstr ""
+msgstr "Ohne Wiederholung"
 
 #: ../library/admin/background.php:137
 msgid "Repeat Horizontally"
-msgstr ""
+msgstr "Horizontale Wiederholung"
 
 #: ../library/admin/background.php:138
 msgid "Repeat Vertically"
-msgstr ""
+msgstr "Vertikale Wiederholung"
 
 #: ../library/admin/background.php:139
 msgid "Repeat Both"
-msgstr ""
+msgstr "Wiederholung in beide Richtungen"
 
 #: ../library/admin/background.php:141
 msgid "Background Color"
-msgstr ""
+msgstr "Hintergrundfarbe"
 
 #: ../library/admin/background.php:145
 msgid "Semi-Transparent Foreground"
-msgstr ""
+msgstr "Halbdurchsichtiger Vordergrund"
 
 #: ../library/admin/background.php:145
 msgid "This feature does not work in IE6 and for those using the legacy stylesheet."
-msgstr ""
+msgstr "Dieses Feature funktioniert nicht mit IE6 oder mit Legacy Stylesheet."
 
 #: ../library/admin/background.php:146
 msgid "Apply Background from Top"
-msgstr ""
+msgstr "Hintergrund oben beginnend anwenden"
 
 #: ../library/admin/background.php:148
 #: ../library/admin/templates/options_page.php:56
 #: ../library/admin/templates/posttype_page.php:73
 #: ../library/admin/templates/taxonomy_page.php:65
 msgid "Save Changes"
-msgstr ""
+msgstr "Veräderungen speichern"
 
 #: ../library/admin/background.php:149
 msgid "Reset"
-msgstr ""
+msgstr "Zurücksetzen"
 
 #: ../library/admin/background.php:152
 msgid "Current Background Image"
-msgstr ""
+msgstr "Momentanes Hintergrundbild"
 
 #: ../library/admin/options.php:49
 msgid "Copyright"
-msgstr ""
+msgstr "Copyright"
 
 #: ../library/admin/options.php:50
 #, php-format
 msgid "Copyright %s. All Rights Reserved."
-msgstr ""
+msgstr "Copyright %s. Alle Rechte vorbehalten."
 
 #: ../library/admin/options.php:52
 #: ../library/admin/templates/options_page.php:36
 #: ../library/admin/templates/posttype_page.php:33
 #: ../library/admin/templates/taxonomy_page.php:23
 msgid "Home"
-msgstr ""
+msgstr "Startseite"
 
 #: ../library/admin/options.php:68
 msgid "Editors' Picks"
-msgstr ""
+msgstr "Editors' Picks"
 
 #: ../library/admin/options.php:74
 msgid "Latest Headlines"
-msgstr ""
+msgstr "Aktuellste  Nachrichten"
 
 #: ../library/admin/thumbnails.php:33
 #, php-format
 msgid "Unable to find any images. Are you sure <a href='%s'>some exist</a>?"
-msgstr ""
+msgstr "Keine Bilder gefunden. Sind Sie sicher <a href='%s'>existiert</a>?"
 
 #: ../library/admin/thumbnails.php:35
 msgid "Please be patient while all thumbnails are regenerated. This can take a while if your server is slow (cheap hosting) or if you have many images. Do not navigate away from this page until this script is done or all thumbnails won't be resized. You will be notified via this page when all regenerating is completed."
-msgstr ""
+msgstr "Bitte etwas Geduld während die Minibilder erneuert werden. Dies kann bei einem langsamen Server (Billighosting) eine Weile dauern wenn Sie viele Bilder haben. Bitte nicht von dieser Seite wegsteuern bis alles fertig ist, sonst werden u.U. einzelne Minibilder nicht erneuert. Sie bekommen einen Hinweis wenn alles erledigt ist."
 
 #: ../library/admin/thumbnails.php:44
 msgid "You must enable Javascript in order to proceed!"
-msgstr ""
+msgstr "Um weiter zu machen muss Javascript aktiviert werden!"
 
 #: ../library/admin/thumbnails.php:51
 msgid "Back to Theme Options"
-msgstr ""
+msgstr "Zurück zu den Theme-Optionen"
 
 #: ../library/admin/thumbnails.php:76
 #, php-format
 msgid "All done! Processed %d images."
-msgstr ""
+msgstr "Erleditgt! %d Bilder sind neu erstellt."
 
 #: ../library/admin/templates/arras-design.php:18
 msgid "Overall Design"
-msgstr ""
+msgstr "Gesamtdesign"
 
 #: ../library/admin/templates/arras-design.php:22
 msgid "Overall Layout"
-msgstr ""
+msgstr "Gesamtlayout"
 
 #: ../library/admin/templates/arras-design.php:28
 msgid "Reset thumbnail sizes accordingly based on selected layout."
-msgstr ""
+msgstr "Minibildgröße passend zum ausgewählten Layout umstellen."
 
 #: ../library/admin/templates/arras-design.php:32
 msgid "The developer of the child theme has disabled layout settings."
-msgstr ""
+msgstr "Der Entwickler des Child-Themes hat Layouteinstellungen abgeschaltet."
 
 #: ../library/admin/templates/arras-design.php:40
 msgid "Default Style"
-msgstr ""
+msgstr "Basis Stil"
 
 #: ../library/admin/templates/arras-design.php:44
 #, php-format
 msgid "Alternate stylesheets can be placed in %s."
-msgstr ""
+msgstr "Alternative Stylesheets könenn unter %s hinterlegt werden."
 
 #: ../library/admin/templates/arras-design.php:46
 msgid "The developer of the child theme has disabled alternate stylesheets."
-msgstr ""
+msgstr "Der Entwickler des Child-Themes hat alternative Stylesheets abgeschaltet."
 
 #: ../library/admin/templates/arras-design.php:53
 msgid "Custom Logo"
-msgstr ""
+msgstr "Eigenes Logo"
 
 #: ../library/admin/templates/arras-design.php:59
 msgid "Delete existing"
-msgstr ""
+msgstr "Existierende löschen"
 
 #: ../library/admin/templates/arras-design.php:68
 msgid "Set Custom Background"
-msgstr ""
+msgstr "Eigenen Hintergrund festelegen"
 
 #: ../library/admin/templates/arras-general.php:5
 msgid "Theme Information"
-msgstr ""
+msgstr "Theme Information"
 
 #: ../library/admin/templates/arras-general.php:9
 msgid "Current Version"
-msgstr ""
+msgstr "Aktuelle Version"
 
 #: ../library/admin/templates/arras-general.php:12
 msgid "If you have recently upgraded Arras to a new release, it is <span style=\"color: red\">highly recommended</span> that you reset your theme options, clear your browser cache and restart your browser before proceeding."
-msgstr ""
+msgstr "Wen Sie kürzlich Arras auf eine neuere Version gehoben haben, wird es <span style=\"color: red\">dringend empfohlen</span> dass Sie die Theme Optionen zurücksetzen, den Browserpuffer entleeren und den Browser neu starten bevor Sie weiterarbeiten."
 
 #: ../library/admin/templates/arras-general.php:17
 msgid "Display Credits"
-msgstr ""
+msgstr "Credits anzeigen"
 
 #: ../library/admin/templates/arras-general.php:20
 msgid "Credits will only appear to the right of the theme options page."
-msgstr ""
+msgstr "Credits erscheinen nur rechts auf der Theme-Optionenseite."
 
 #: ../library/admin/templates/arras-general.php:26
 msgid "Site Information"
-msgstr ""
+msgstr "Site Information"
 
 #: ../library/admin/templates/arras-general.php:30
 msgid "RSS Feed (URL)"
-msgstr ""
+msgstr "RSS Feed (URL)"
 
 #: ../library/admin/templates/arras-general.php:33
 msgid "This will replace the default WordPress RSS feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
-msgstr ""
+msgstr "Hiermit wird das Standard-WordPress RSS Feed ersetzt. Sinnvoll ist dies z.B. dann, wenn Sie sich entschließen Drittanwender-Dienste wie <a href=\"http://feedburner.google.com/\">Feedburner</a> zu nutzen."
 
 #: ../library/admin/templates/arras-general.php:38
 msgid "RSS Comments Feed (URL)"
-msgstr ""
+msgstr "RSS Comments Feed (URL)"
 
 #: ../library/admin/templates/arras-general.php:41
 msgid "This will replace the default WordPress RSS comments feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
-msgstr ""
+msgstr "Hiermit wird das Standard-WordPress RSS Kommentar-Feed ersetzt. Sinnvoll ebenfalls dann, wenn Sie sich entschließen Drittanwender-Dienste wie <a href=\"http://feedburner.google.com/\">Feedburner</a> zu nutzen."
 
 #: ../library/admin/templates/arras-general.php:46
 msgid "Twitter Username"
-msgstr ""
+msgstr "Twitter Benutzername"
 
 #: ../library/admin/templates/arras-general.php:53
 msgid "Facebook Profile (URL)"
-msgstr ""
+msgstr "Facebook-Profil (URL)"
 
 #: ../library/admin/templates/arras-general.php:56
 msgid "Link to your Facebook profile."
-msgstr ""
+msgstr "Link zu Ihrem Facebook-Profil."
 
 #: ../library/admin/templates/arras-general.php:62
 msgid "Footer Information"
-msgstr ""
+msgstr "Fußzeileninformation"
 
 #: ../library/admin/templates/arras-general.php:66
 msgid "No. of Columns"
-msgstr ""
+msgstr "Anzahl Spalten"
 
 #: ../library/admin/templates/arras-general.php:69
 msgid "Footer sidebars will be labelled respectively (eg. Footer Sidebar #1, etc.)"
-msgstr ""
+msgstr "Fußzeilenseitenleisten werden entsprechen benannt (z.B. Fußzeilenseitenleisten #1, usw.)"
 
 #: ../library/admin/templates/arras-general.php:74
 msgid "Footer Title"
-msgstr ""
+msgstr "Fußzeilentitel"
 
 #: ../library/admin/templates/arras-general.php:84
 msgid "Usually your website's copyright information would go here.<br /> It would be great if you could include a link to WordPress and even greater if you could include a link to the theme website. :)"
-msgstr ""
+msgstr "Hier stehen Informationen zu Nutzungsrechten Ihrer Webseite.<br />Fantastisch wäre auch ein Link zu WordPress und noch besser wenn Sie auch noch einen Link zur Theme-Website integrieren. :)"
 
 #: ../library/admin/templates/arras-home.php:5
 msgid "Post Options"
-msgstr ""
+msgstr "Artikeloptionen"
 
 #: ../library/admin/templates/arras-home.php:9
 msgid "Hide duplicate posts"
-msgstr ""
+msgstr "Duplizierte Artikel verbergen"
 
 #: ../library/admin/templates/arras-home.php:13
 msgid "Check this to prevent duplicate posts from displaying within the slideshow and the featured posts."
-msgstr ""
+msgstr "Hier markieren um Artikelduplikate innerhalb der bevorzugten Artikel der Diaschau zu verhindern."
 
 #: ../library/admin/templates/arras-home.php:14
 msgid "This might increase your server load, depending on the number of posts displayed."
-msgstr ""
+msgstr "Erhöht die Serverbelastung abhängig von der Anzahl der dargestellten Posts."
 
 #: ../library/admin/templates/arras-home.php:19
 #: ../library/admin/templates/arras-home.php:47
 #: ../library/admin/templates/arras-home.php:90
 #: ../library/admin/templates/arras-home.php:134
 msgid "Show/Hide"
-msgstr ""
+msgstr "Zeigen/Verbergen"
 
 #: ../library/admin/templates/arras-home.php:23
 #: ../library/admin/templates/arras-home.php:51
 #: ../library/admin/templates/arras-home.php:94
 #: ../library/admin/templates/arras-home.php:138
 msgid "Selected Post Type"
-msgstr ""
+msgstr "Ausgewählter Artikeltyp"
 
 #: ../library/admin/templates/arras-home.php:30
 #: ../library/admin/templates/arras-home.php:65
@@ -1001,313 +1003,315 @@ msgstr ""
 #: ../library/admin/templates/arras-home.php:152
 #, php-format
 msgid "Stickied Posts / %s"
-msgstr ""
+msgstr "Stickied Artikel / %s"
 
 #: ../library/admin/templates/arras-home.php:33
 msgid "Selected categories will be shown on the featured slideshow of the index page."
-msgstr ""
+msgstr "Ausgewählte Kategorien erscheinen auf der bevorzugten Diaschau der Hauptseite."
 
 #: ../library/admin/templates/arras-home.php:38
 msgid "Show Posts"
-msgstr ""
+msgstr "Artikel anzeigen"
 
 #: ../library/admin/templates/arras-home.php:41
 #: ../library/admin/templates/arras-home.php:83
 #: ../library/admin/templates/arras-home.php:127
 #: ../library/admin/templates/arras-home.php:170
 msgid "posts"
-msgstr ""
+msgstr "Artikel"
 
 #: ../library/admin/templates/arras-home.php:58
 #: ../library/admin/templates/arras-home.php:101
 #: ../library/admin/templates/arras-home.php:145
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: ../library/admin/templates/arras-home.php:68
 #: ../library/admin/templates/arras-home.php:111
 msgid "Selected categories will be shown below the featured slideshow of the index page."
-msgstr ""
+msgstr "Ausgewählte Kategorien erscheinen unterhalb der bevorzugten  Diaschau der Hauptseite."
 
 #: ../library/admin/templates/arras-home.php:73
 #: ../library/admin/templates/arras-home.php:117
 #: ../library/admin/templates/arras-home.php:160
 #: ../library/admin/templates/arras-layout.php:28
 msgid "Tapestry (Display Type)"
-msgstr ""
+msgstr "Tapete (Anzeigeart)"
 
 #: ../library/admin/templates/arras-home.php:80
 #: ../library/admin/templates/arras-home.php:124
 msgid "Post Count"
-msgstr ""
+msgstr "Artikelzähler"
 
 #: ../library/admin/templates/arras-home.php:134
 #: ../library/admin/templates/posttype_page.php:58
 #: ../library/admin/templates/taxonomy_page.php:48
 msgid "News Posts"
-msgstr ""
+msgstr "Nachrichtenartikel"
 
 #: ../library/admin/templates/arras-home.php:155
 msgid "Selected categories will be shown below the featured section in the index page."
-msgstr ""
+msgstr "Ausgewählte Kategorien erscheinen unterhalb des bevorzugten Abschnittes der Hauptseite."
 
 #: ../library/admin/templates/arras-home.php:167
 msgid "News Count"
-msgstr ""
+msgstr "Nachrichtenzähler"
 
 #: ../library/admin/templates/arras-layout.php:11
 msgid "Excerpts"
-msgstr ""
+msgstr "Auszüge"
 
 #: ../library/admin/templates/arras-layout.php:15
 msgid "Excerpt Limit"
-msgstr ""
+msgstr "Auszugsgrenze"
 
 #: ../library/admin/templates/arras-layout.php:18
 msgid "words"
-msgstr ""
+msgstr "Wörter"
 
 #: ../library/admin/templates/arras-layout.php:19
 msgid "Excerpts will only be trimmed to the limit if no excerpt is specified for the respective post."
-msgstr ""
+msgstr "Es wird nur dann zur Auszugsgrenze beschnitten wenn im betreffenden Artikel keine Auszugslänge definiert ist."
 
 #: ../library/admin/templates/arras-layout.php:24
 msgid "Archive / Search"
-msgstr ""
+msgstr "Archiv / Suche"
 
 #: ../library/admin/templates/arras-layout.php:36
 msgid "Single Post"
-msgstr ""
+msgstr "Einzelner Artikel"
 
 #: ../library/admin/templates/arras-layout.php:40
 msgid "Display in Single Posts"
-msgstr ""
+msgstr "In einzelnen Artikeln anzeigen"
 
 #: ../library/admin/templates/arras-layout.php:44
 msgid "Author (Header)"
-msgstr ""
+msgstr "Autor (Kopfzeile)"
 
 #: ../library/admin/templates/arras-layout.php:48
 msgid "Publish Date (Header)"
-msgstr ""
+msgstr "Veröffentlichungsdatum (Kopfzeile)"
 
 #: ../library/admin/templates/arras-layout.php:52
 msgid "Categories (Header)"
-msgstr ""
+msgstr "Kategorien (Kopfzeile)"
 
 #: ../library/admin/templates/arras-layout.php:60
 msgid "Post Thumbnail"
-msgstr ""
+msgstr "Artikel Minibild"
 
 #: ../library/admin/templates/arras-layout.php:64
 msgid "Author Information"
-msgstr ""
+msgstr "Autoreninformation"
 
 #: ../library/admin/templates/arras-layout.php:70
 msgid "Display Custom Taxonomies"
-msgstr ""
+msgstr "Eigene Taxonomien anzeigen"
 
 #: ../library/admin/templates/arras-layout.php:73
 msgid "List down the custom taxonomies' slug that you wish to display here, separated by a comma (,)."
-msgstr ""
+msgstr "Benutzedefinierten \"Slug\" der Taxonomien die angezeigt werden sollen hier mit Komma (, )getrennt auflisten."
 
 #: ../library/admin/templates/arras-layout.php:79
 msgid "Single Post Custom Fields"
-msgstr ""
+msgstr "Eigene Felder zu Einzelartikeln"
 
 #: ../library/admin/templates/arras-navigation.php:15
 msgid "Main Navigation"
-msgstr ""
+msgstr "Hauptnavigation"
 
 #: ../library/admin/templates/arras-navigation.php:19
 #, php-format
 msgid "It is highly recommended that you use the %s for better control of the main navigation."
-msgstr ""
+msgstr "Es wird dringend empfohlen die %s zur besseren Kontrolle der Hauptnavigation zu benutzen."
 
 #: ../library/admin/templates/arras-navigation.php:25
 msgid "Home Link"
-msgstr ""
+msgstr "Link zur Startseite"
 
 #: ../library/admin/templates/arras-navigation.php:28
 msgid "You can change the name of the home link at the main navigation."
-msgstr ""
+msgstr "Der Name des Links zur Startseite kann in der Hauptnavigation geändert werden."
 
 #: ../library/admin/templates/arras-navigation.php:33
 msgid "Top Navigation Display"
-msgstr ""
+msgstr "Anzeige obere Navigation"
 
 #: ../library/admin/templates/arras-navigation.php:37
 #: ../library/admin/templates/arras-navigation.php:42
 msgid "Link Category"
-msgstr ""
+msgstr "Linkkategorie"
 
 #: ../library/admin/templates/arras-navigation.php:45
 msgid "To organise and arrange the links in the top navigation, you can create a link category with all the links you want to display at the main navigation and assign the link category here."
-msgstr ""
+msgstr "Um die Links der oberen Navigation zu organisieren und anzuordnen, können Sie eine Linkkategorie anlegen die Sie in der Hauptnavigation anzeigen möchten und die Linkkategorie hier zuweisen."
 
 #: ../library/admin/templates/arras-navigation.php:53
 #, php-format
 msgid "You have %s installed."
-msgstr ""
+msgstr "Sie haben %s installiert."
 
 #: ../library/admin/templates/arras-navigation.php:56
 msgid "You will need to go to their respective plugin settings page to adjust the navigation bar."
-msgstr ""
+msgstr "Anpassung der Navigationsleiste muss bei den Einstellungen des jeweiligen Plugins vorgenommen werden."
 
 #: ../library/admin/templates/arras-thumbnails.php:5
 msgid "Thumbnail Options"
-msgstr ""
+msgstr "Minibild-Optionen"
 
 #: ../library/admin/templates/arras-thumbnails.php:9
 msgid "Auto Thumbnails"
-msgstr ""
+msgstr "Automatische Minibilder"
 
 #: ../library/admin/templates/arras-thumbnails.php:13
 msgid "Check this to allow the theme to automatically retrieve the first attached image from the post as featured image when no image is specified."
-msgstr ""
+msgstr "Hier markieren um dem Theme zu gestatten, den ersten Bildanhang des Artikels als bevorzugtes Bild zu benutzen, wenn kein anderes Bild definiert ist."
 
 #: ../library/admin/templates/arras-thumbnails.php:19
 msgid "Thumbnail Sizes"
-msgstr ""
+msgstr "Minibildgröße"
 
 #: ../library/admin/templates/arras-thumbnails.php:21
 msgid "If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate your thumbnails."
-msgstr ""
+msgstr "Wenn Sie kürzlich Ihr Layout oder die Minibildgröße verändert haben, sollten Sie die Minibilder neu berechnen lassen."
 
 #: ../library/admin/templates/arras-thumbnails.php:28
 msgid "Width"
-msgstr ""
+msgstr "Breite"
 
 #: ../library/admin/templates/arras-thumbnails.php:31
 msgid "Height"
-msgstr ""
+msgstr "Höhe"
 
 #: ../library/admin/templates/arras-thumbnails.php:35
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "Zum Standard zurücksetzen"
 
 #: ../library/admin/templates/arras-thumbnails.php:58
 msgid "Frequently Asked Questions (EN only)"
-msgstr ""
+msgstr "Häufig gestellte Fragen (nur in Englisch)"
 
 #: ../library/admin/templates/arras-tools.php:5
 msgid "Clear timThumb Thumbnail Cache (Legacy)"
-msgstr ""
+msgstr "Entleere timThumb Minibildpuffer (Legacy)"
 
 #: ../library/admin/templates/arras-tools.php:6
 #, php-format
 msgid "The thumbnail cache folder is located at: %s."
-msgstr ""
+msgstr "Den Minibildpufferordner finden Sie unter: %s."
 
 #: ../library/admin/templates/arras-tools.php:7
 msgid "If this does not work, you can manually delete all the files in that folder."
-msgstr ""
+msgstr "Wenn es nicht funktioniert können Sie alle Dateien in diesem Ordner auch manuell löschen."
 
 #: ../library/admin/templates/arras-tools.php:8
 msgid "Ensure that you have submitted any changes made before proceeding."
-msgstr ""
+msgstr "Bevor Sie weitermachen bitte sicherstellen dass alle Änderungen gespeichert wurden."
 
 #: ../library/admin/templates/arras-tools.php:10
 msgid "Clear Thumbnail Cache"
-msgstr ""
+msgstr "Minibildpuffer leeren"
 
 #: ../library/admin/templates/arras-tools.php:13
 msgid "Import Theme Settings (BETA)"
-msgstr ""
+msgstr "Theme-Einstellungen importieren (BETA)"
 
 #: ../library/admin/templates/arras-tools.php:14
 msgid "Import your theme settings by pasting the exported code below."
-msgstr ""
+msgstr "Importieren Sie Ihre Theme-Einstellungen durch Einfügen des exportierten Codes am Ende."
 
 #: ../library/admin/templates/arras-tools.php:18
 msgid "Export Theme Settings (BETA)"
-msgstr ""
+msgstr "Theme-Einstellungen exportieren (BETA)"
 
 #: ../library/admin/templates/arras-tools.php:19
 msgid "You can save the following code into a text file and use it when you need to import them into another installation. Note that not all options (custom background, child theme settings, etc.) will be exported."
-msgstr ""
+msgstr "Sie können den folgenden Code in eine Textdatei exportieren und benutzen, falls Sie ihn in eine andere Installation importieren möchten. Beachten Sie, dass alle Optionen (eigener Hintergrund, Unter-Theme Einstellungen etc.) exportiert werden."
 
 #: ../library/admin/templates/functions.php:195
 msgid "Stickied Posts"
-msgstr ""
+msgstr "Stickied Artikel"
 
 #: ../library/admin/templates/functions.php:228
 msgid "Taxonomy"
-msgstr ""
+msgstr "Taxonomie"
 
 #: ../library/admin/templates/options_page.php:12
 #, php-format
 msgid "The thumbnails cache directory (%s) is not writable. You will need to set the directory's permissions 755 or 777 for the thumbnails to work."
-msgstr ""
+msgstr "Ins Minibildpuffer-Verzeichnis (%s) kann nicht geschrieben werden. Setzen Sie die Verzeichnisrechte auf 755 oder 777 damit die Minibilder funktionieren können!"
 
 #: ../library/admin/templates/options_page.php:15
 msgid "More about Changing File/Folder Permissions"
-msgstr ""
+msgstr "Mehr über das Verändern von Datei/Verzeichnisrechten"
 
 #: ../library/admin/templates/options_page.php:21
 msgid "The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information."
-msgstr ""
+msgstr "Der Server scheint keine GD Bibliothek installiert zu haben. Diese wird aber für die Erstellung der Minibilder benötigt. Nehmen Sie bitte mit Ihrem Provider Kontakt auf."
 
 #: ../library/admin/templates/options_page.php:34
 msgid "General"
-msgstr ""
+msgstr "Allgemein"
 
 #: ../library/admin/templates/options_page.php:35
 msgid "Navigation"
-msgstr ""
+msgstr "Navigation"
 
 #: ../library/admin/templates/options_page.php:37
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #: ../library/admin/templates/options_page.php:38
 msgid "Design"
-msgstr ""
+msgstr "Design"
 
 #: ../library/admin/templates/options_page.php:39
 msgid "Thumbnails"
-msgstr ""
+msgstr "Minibilder"
 
 #: ../library/admin/templates/options_page.php:40
 msgid "Tools"
-msgstr ""
+msgstr "Werkzeuge"
 
 #: ../library/admin/templates/options_page.php:54
 msgid "Regenerate post thumbnails after saving."
-msgstr ""
+msgstr "Artikelminibilder nach dem Speichern erneuern."
 
 #: ../library/admin/templates/options_page.php:57
 #: ../library/admin/templates/posttype_page.php:74
 #: ../library/admin/templates/taxonomy_page.php:66
 msgid "Reset Settings"
-msgstr ""
+msgstr "Einstellungen zurücksetzen"
 
 #: ../library/admin/templates/posttype_page.php:18
 #: ../library/admin/templates/taxonomy_page.php:7
 msgid "Post Types & Taxonomies Options"
-msgstr ""
+msgstr "Artikeltypen & Taxonomie-Optionen"
 
 #: ../library/admin/templates/posttype_page.php:26
 #: ../library/admin/templates/taxonomy_page.php:15
 msgid "Post Types"
-msgstr ""
+msgstr "Artikeltypen"
 
 #: ../library/admin/templates/posttype_page.php:27
 #: ../library/admin/templates/taxonomy_page.php:16
 msgid "Taxonomies"
-msgstr ""
+msgstr "Taxonomien"
 
 #: ../library/admin/templates/posttype_page.php:44
 #: ../library/admin/templates/taxonomy_page.php:34
 msgid "Featured Post #1"
-msgstr ""
+msgstr "Bevorzugter Artikel #1"
 
 #: ../library/admin/templates/posttype_page.php:51
 #: ../library/admin/templates/taxonomy_page.php:41
 msgid "Featured Post #2"
-msgstr ""
+msgstr "Bevorzugter Artikel #2"
 
 #: ../library/admin/templates/taxonomy_page.php:58
 msgid "<strong>Note:</strong> Custom taxonomies require the <code>query_var</code> parameter to be defined to work."
-msgstr ""
+msgstr "<strong>Hinweis:</strong> Eigenen Taxonomien erfordern, dass der<code>query_var</code> Parameter definiert wird."
 
+#~ msgid "Arras Theme Options"
+#~ msgstr "Arras Theme Optionen"

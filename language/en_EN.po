@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arras Theme 1.5\n"
+"Project-Id-Version: Arras 1.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-05 18:40+0800\n"
 "PO-Revision-Date: \n"

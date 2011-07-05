@@ -1,16 +1,14 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arras 1.5\n"
+"Project-Id-Version: Arras Theme 1.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-05 18:40+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
-"Language-Team:  <zy@zy.sg>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: SINGAPORE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
@@ -18,7 +16,7 @@ msgstr ""
 
 #: ../404.php:7
 msgid "Error 404 - Not Found"
-msgstr ""
+msgstr "Error 404 - Fil ikke funnet"
 
 #: ../404.php:9
 msgid ""
@@ -26,244 +24,247 @@ msgid ""
 "\t\tPlease make sure you have the right URL.</p>\n"
 "\t\t<p>If you still can't find what you're looking for, try using the search form below.</p>"
 msgstr ""
+"<p><strong>Vi beklager, men denne siden eksisterer ikke eller har blitt flyttet.</strong><br />\n"
+"\t\tVennligst sjekk om du har brukt rett URL.</p>\n"
+"\t\t<p>Hvis du fremdeles ikke finner det du leter etter, prøv søkefetet under.</p>"
 
 #: ../archive.php:10
 #: ../archive.php:12
 #: ../archive.php:14
 #, php-format
 msgid "%s Archive"
-msgstr ""
+msgstr "%s Arkiv"
 
 #: ../archive.php:16
 #: ../archive.php:18
 #: ../archive.php:20
 #, php-format
 msgid "Archive for %s"
-msgstr ""
+msgstr "Arkiv for %s"
 
 #: ../archive.php:16
 msgid "F jS, Y"
-msgstr ""
+msgstr "l j. F Y"
 
 #: ../archive.php:18
 msgid "F, Y"
-msgstr ""
+msgstr "F, Y"
 
 #: ../archive.php:20
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: ../archive.php:22
 msgid "Author Archive"
-msgstr ""
+msgstr "Forfatter Arkiv"
 
 #: ../archive.php:24
 msgid "Archives"
-msgstr ""
+msgstr "Arkiver"
 
 #: ../archive.php:32
 #: ../home.php:93
 #: ../home.php:135
 msgid "Older Entries"
-msgstr ""
+msgstr "Eldre oppføringer"
 
 #: ../archive.php:33
 #: ../home.php:94
 #: ../home.php:136
 msgid "Newer Entries"
-msgstr ""
+msgstr "Nyere oppføringer"
 
 #: ../attachment.php:13
 #: ../page.php:12
 #: ../pagetpl-onecolumn.php:20
 msgid "<p>Read the rest of this entry &raquo;</p>"
-msgstr ""
+msgstr "<p>Les resten av denne oppføringen &raquo;</p>"
 
 #: ../attachment.php:15
 #: ../page.php:13
 #: ../pagetpl-onecolumn.php:21
 msgid "<p><strong>Pages:</strong> "
-msgstr ""
+msgstr "<p><strong>Sider:</strong> "
 
 #: ../author.php:9
 #, php-format
 msgid "About Author: %s"
-msgstr ""
+msgstr "Om forfatteren: %s"
 
 #: ../author.php:15
 #: ../comments.php:56
 msgid "Website"
-msgstr ""
+msgstr "Nettside"
 
 #: ../author.php:19
 msgid "Description"
-msgstr ""
+msgstr "Beskrivelse"
 
 #: ../author.php:25
 #, php-format
 msgid "Posts by %s"
-msgstr ""
+msgstr "Artikler av %s"
 
 #: ../author.php:33
 #: ../search.php:22
 #: ../search.php:42
 msgid "&laquo; Older Entries"
-msgstr ""
+msgstr "&laquo; Eldre oppføringer"
 
 #: ../author.php:34
 #: ../search.php:21
 #: ../search.php:43
 msgid "Newer Entries &raquo;"
-msgstr ""
+msgstr "Nyere oppføringer &raquo;"
 
 #: ../comments.php:3
 msgid "Please do not load this page directly. Thanks!"
-msgstr ""
+msgstr "Vennligst ikke åpne denne siden direkte. Takk!"
 
 #: ../comments.php:7
 msgid "Password Required"
-msgstr ""
+msgstr "Passord påkrevd"
 
 #: ../comments.php:8
 msgid "<p class=\"nocomments\">This post is password protected. Enter the password to view comments.</p>"
-msgstr ""
+msgstr "<p class=\"nocomments\">Denne artikkelen er passordbeskyttet. Skriv inn passordet for å se kommentarer.</p>"
 
 #: ../comments.php:17
 #: ../comments.php:34
 msgid "No Comments"
-msgstr ""
+msgstr "Ingen kommentarer"
 
 #: ../comments.php:17
 msgid "1 Comment"
-msgstr ""
+msgstr "1 kommentar"
 
 #: ../comments.php:28
 msgid "Trackbacks / Pings"
-msgstr ""
+msgstr "Trackbacks / Pings"
 
 #: ../comments.php:35
 msgid "Start the ball rolling by posting a comment on this article!"
-msgstr ""
+msgstr "Start diskusjonen ved å kommentere denne artikkelen!"
 
 #: ../comments.php:40
 msgid "Comments Closed"
-msgstr ""
+msgstr "Kommentarfeltet stengt"
 
 #: ../comments.php:41
 msgid "Comments are closed. You will not be able to post a comment in this post."
-msgstr ""
+msgstr "Kommentarfeltet er stengt. Du kan ikke legge inn en kommentar på denne artikkelen."
 
 #: ../comments.php:52
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #: ../comments.php:54
 msgid "Email"
-msgstr ""
+msgstr "E-post"
 
 #: ../footer.php:22
 msgid "About Arras WordPress Theme"
-msgstr ""
+msgstr "Om Arras WordPress Temaet"
 
 #: ../header.php:12
 #: ../header.php:14
 #, php-format
 msgid "%s latest posts"
-msgstr ""
+msgstr "%s siste artikler"
 
 #: ../header.php:18
 #: ../header.php:20
 #, php-format
 msgid "%s latest comments"
-msgstr ""
+msgstr "%s siste kommentarer"
 
 #: ../page.php:21
 #: ../pagetpl-onecolumn.php:29
 msgid "About the Author"
-msgstr ""
+msgstr "Om forfatteren"
 
 #: ../pagetpl-archives.php:19
 msgid "Recent Posts"
-msgstr ""
+msgstr "Nylige artikler"
 
 #: ../pagetpl-archives.php:22
 msgid "Monthly Archives"
-msgstr ""
+msgstr "Månedsarkiv"
 
 #: ../pagetpl-archives.php:25
 msgid "Pages"
-msgstr ""
+msgstr "Sider"
 
 #: ../pagetpl-archives.php:28
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 #: ../pagetpl-archives.php:31
 msgid "Authors"
-msgstr ""
+msgstr "Forfattere"
 
 #: ../search.php:8
 msgid "Search Results"
-msgstr ""
+msgstr "Søkeresultat"
 
 #: ../search.php:10
 #, php-format
 msgid "Search Results for <strong>&#8216;%s&#8217;</strong></p>"
-msgstr ""
+msgstr "Søkeresultat for <strong>&#8216;%s&#8217;</strong></p>"
 
 #: ../search.php:31
 msgid "<strong>Sorry, we couldn't find any results based on your search query.</strong>"
-msgstr ""
+msgstr "<strong>Beklager, vi kunne ikke finne noe basert på ditt søk.</strong>"
 
 #: ../search.php:36
 msgid "Blog Archive"
-msgstr ""
+msgstr "Bloggarkiv"
 
 #: ../searchform.php:2
 msgid "Search..."
-msgstr ""
+msgstr "Søk..."
 
 #: ../searchform.php:3
 msgid "Search"
-msgstr ""
+msgstr "Søk"
 
 #: ../searchform.php:3
 #, php-format
 msgid "Search %s"
-msgstr ""
+msgstr "Søk %s"
 
 #: ../sidebar.php:10
 msgid "Welcome to Arras!"
-msgstr ""
+msgstr "Velkommen til Arras"
 
 #: ../sidebar.php:13
 msgid "Arras is a WordPress theme designed for news or review sites with lots of customisable features."
-msgstr ""
+msgstr "Arras er et WordPress Tema designet for nyhets- eller anmeldersider med mange tilpassingsvennlige funksjoner."
 
 #: ../sidebar.php:36
 msgid "Tag Cloud"
-msgstr ""
+msgstr "Tag Cloud"
 
 #: ../yarpp-template-arras.php:16
 #: ../library/widgets.php:457
 msgid "d F Y g:i A"
-msgstr ""
+msgstr "d F Y h:i"
 
 #: ../yarpp-template-arras.php:17
 #: ../library/widgets.php:458
 msgid "% Comments"
-msgstr ""
+msgstr "% Kommentarer"
 
 #: ../yarpp-template-arras.php:21
 #: ../library/deprecated.php:118
 #: ../library/widgets.php:465
 msgid "Read More"
-msgstr ""
+msgstr "Les mer"
 
 #: ../yarpp-template-arras.php:27
 #: ../library/widgets.php:473
 msgid "No posts at the moment. Check back again later!"
-msgstr ""
+msgstr "Ingen artikler for øyeblikket. Sjekk innom igjen senere!"
 
 #: ../library/deprecated.php:98
 #: ../library/deprecated.php:117
@@ -271,729 +272,729 @@ msgstr ""
 #: ../library/tapestries.php:256
 #, php-format
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Permaling til %s"
 
 #: ../library/filters.php:38
 #, php-format
 msgid "<div class=\"entry-author\">By %s</div>"
-msgstr ""
+msgstr "<div class=\"entry-author\">Av %s</div>"
 
 #: ../library/filters.php:46
 msgid "Edit Post"
-msgstr ""
+msgstr "Endre artikkel"
 
 #: ../library/filters.php:46
 msgid "(Edit Post)"
-msgstr ""
+msgstr "(Endre artikkel)"
 
 #: ../library/filters.php:54
 #, php-format
 msgid "<span class=\"entry-cat\"><strong>Posted in: </strong>%s</span>"
-msgstr ""
+msgstr "<span class=\"entry-cat\"><strong>Publisert i: </strong>%s</span>"
 
 #: ../library/filters.php:134
 msgid "Tags:"
-msgstr ""
+msgstr "Tags:"
 
 #: ../library/filters.php:145
 msgid "That 'something' you are looking for isn't here!"
-msgstr ""
+msgstr "Det du måtte lete etter finnes ikke her!"
 
 #: ../library/filters.php:146
 msgid "<strong>We're very sorry, but the page that you are looking for doesn't exist or has been moved.</strong>"
-msgstr ""
+msgstr "<strong>Vi beklager, men siden du leter etter eksisterer ikke eller har blitt flyttet.</strong>"
 
 #: ../library/filters.php:150
 msgid "Perhaps searching for it might help?"
-msgstr ""
+msgstr "Kanskje det hjelper å søke etter det?"
 
 #: ../library/filters.php:175
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "Om %s"
 
 #: ../library/launcher.php:13
 msgid "Main Menu"
-msgstr ""
+msgstr "Hovedmeny"
 
 #: ../library/launcher.php:14
 msgid "Top Menu"
-msgstr ""
+msgstr "Toppmeny"
 
 #: ../library/launcher.php:77
 msgid "1 Column Layout (No Sidebars)"
-msgstr ""
+msgstr "1 kolonneslayout ( Ingen sidefelt)"
 
 #: ../library/launcher.php:78
 msgid "2 Column Layout (Right Sidebar)"
-msgstr ""
+msgstr "2 kolonneslayout (Høyre sidefelt)"
 
 #: ../library/launcher.php:79
 msgid "2 Column Layout (Left Sidebar)"
-msgstr ""
+msgstr "2  kolonneslayout ( Venstre sidefelt)"
 
 #: ../library/launcher.php:80
 msgid "3 Column Layout (Left & Right Sidebars)"
-msgstr ""
+msgstr "3 kolonneslayout (Venstre & Høyre sidefelt)"
 
 #: ../library/launcher.php:81
 msgid "3 Column Layout (Right Sidebars)"
-msgstr ""
+msgstr "3  kolonneslayout (Høyre sidefelt)"
 
 #: ../library/slideshow.php:29
 msgid "Prev"
-msgstr ""
+msgstr "Forrige"
 
 #: ../library/slideshow.php:30
 msgid "Next"
-msgstr ""
+msgstr "Neste"
 
 #: ../library/slideshow.php:93
 msgid "Featured Slideshow"
-msgstr ""
+msgstr "Utvalgt Artikler Slideshow"
 
 #: ../library/tapestries.php:91
 msgid "Read the rest of this entry &raquo;"
-msgstr ""
+msgstr "Les resten av denne oppføringen &raquo;"
 
 #: ../library/tapestries.php:96
 msgid "Traditional"
-msgstr ""
+msgstr "Tradisjonell"
 
 #: ../library/tapestries.php:127
 msgid "Per Line"
-msgstr ""
+msgstr "Per linje"
 
 #: ../library/tapestries.php:154
 msgid "Node Based"
-msgstr ""
+msgstr "Nodebasert"
 
 #: ../library/tapestries.php:177
 msgid "Tapestry: Node-Based"
-msgstr ""
+msgstr "Artikkelflate: Node-basert"
 
 #: ../library/tapestries.php:186
 msgid "Tapestry: Node Based"
-msgstr ""
+msgstr "Artikkelflate: Node-basert"
 
 #: ../library/tapestries.php:190
 msgid "Show Excerpt?"
-msgstr ""
+msgstr "Vise utdrag?"
 
 #: ../library/tapestries.php:196
 msgid "Maximum Node Height"
-msgstr ""
+msgstr "Maksimal nodehøyde"
 
 #: ../library/tapestries.php:199
 msgid "pixels"
-msgstr ""
+msgstr "piksler"
 
 #: ../library/tapestries.php:253
 #, php-format
 msgid "Posted on %s"
-msgstr ""
+msgstr "Publisert den %s"
 
 #: ../library/tapestries.php:257
 msgid "Continue Reading..."
-msgstr ""
+msgstr "Fortsett lesning..."
 
 #: ../library/tapestries.php:263
 msgid "Quick Preview"
-msgstr ""
+msgstr "Forhåndsvisning"
 
 #: ../library/tapestries.php:269
 msgid "Tapestry: Quick Preview"
-msgstr ""
+msgstr "Artikkelflate: Forhåndsvisning"
 
 #: ../library/template.php:24
 msgid "Search Results for:"
-msgstr ""
+msgstr "Søkeresultat for:"
 
 #: ../library/template.php:28
 msgid "Category Archives:"
-msgstr ""
+msgstr "Kategoriarkiver:"
 
 #: ../library/template.php:32
 msgid "Tag Archives:"
-msgstr ""
+msgstr "Tag-Arkiver"
 
 #: ../library/template.php:36
 msgid "Not Found"
-msgstr ""
+msgstr "Ikke funnet"
 
 #: ../library/template.php:288
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Din kommentar avventer moderering."
 
 #: ../library/template.php:291
 #, php-format
 msgid "Posted %1$s at %2$s"
-msgstr ""
+msgstr "Publisert %1$s den %2$s"
 
 #: ../library/template.php:291
 msgid "c"
-msgstr ""
+msgstr "c"
 
 #: ../library/template.php:291
 msgid "F j, Y"
-msgstr ""
+msgstr "j. F Y"
 
 #: ../library/template.php:291
 msgid "g:i A"
-msgstr ""
+msgstr "h:i"
 
 #: ../library/template.php:342
 #: ../library/template.php:344
 #, php-format
 msgid "%s RSS Feed"
-msgstr ""
+msgstr "%s RSS Feed"
 
 #: ../library/template.php:342
 #: ../library/template.php:344
 msgid "RSS Feed"
-msgstr ""
+msgstr "RSS Feed"
 
 #: ../library/template.php:349
 #, php-format
 msgid "%s Twitter"
-msgstr ""
+msgstr "%s Twitter"
 
 #: ../library/template.php:349
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../library/template.php:354
 #, php-format
 msgid "%s Facebook"
-msgstr ""
+msgstr "%s Facebook"
 
 #: ../library/template.php:354
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../library/thumbnails.php:12
 msgid "Single Post Thumbnail"
-msgstr ""
+msgstr "Enkeltinnleggs-miniatyrbilde"
 
 #: ../library/thumbnails.php:13
 msgid "Sidebar Widgets"
-msgstr ""
+msgstr "Sidefeltswidgeter"
 
 #: ../library/widgets.php:15
 msgid "Sidebar containing tabs that displays posts, comments and tags."
-msgstr ""
+msgstr "Sidefelt inneholder tabber som viser artikler, kommentarer og tags."
 
 #: ../library/widgets.php:17
 msgid "Tabbed Sidebar"
-msgstr ""
+msgstr "Sidefelt delt i tabber"
 
 #: ../library/widgets.php:28
 msgid "Featured"
-msgstr ""
+msgstr "Utvalgte"
 
 #: ../library/widgets.php:29
 msgid "Latest"
-msgstr ""
+msgstr "Siste"
 
 #: ../library/widgets.php:30
 msgid "Comments"
-msgstr ""
+msgstr "Kommentarer"
 
 #: ../library/widgets.php:31
 #: ../library/widgets.php:367
 #: ../library/widgets.php:383
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #: ../library/widgets.php:35
 msgid "Popular"
-msgstr ""
+msgstr "Populære"
 
 #: ../library/widgets.php:181
 msgid "Retrieve Posts from:"
-msgstr ""
+msgstr "Hent artikler fra:"
 
 #: ../library/widgets.php:183
 msgid "Slideshow"
-msgstr ""
+msgstr "Slideshow"
 
 #: ../library/widgets.php:184
 msgid "Featured Posts #1"
-msgstr ""
+msgstr "Utvalgte Artikler #1"
 
 #: ../library/widgets.php:185
 msgid "Featured Posts #2"
-msgstr ""
+msgstr "Utvalgte Artikler #2"
 
 #: ../library/widgets.php:190
 msgid "Tabbed Sidebar Order:"
-msgstr ""
+msgstr "Etikettmerket sidefeltsrangering"
 
 #: ../library/widgets.php:196
 msgid "The popular posts option is only enabled when the plugin <a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Popularity Contest</a> is enabled."
-msgstr ""
+msgstr "Alternativet for populære artikler er bare aktivert når plugin for  <a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Popularity Contest</a> er aktivert."
 
 #: ../library/widgets.php:198
 msgid "Post Count:"
-msgstr ""
+msgstr "Artikkelteller:"
 
 #: ../library/widgets.php:206
 msgid "Comments Count:"
-msgstr ""
+msgstr "Kommentarteller:"
 
 #: ../library/widgets.php:217
 msgid "Display only in homepage"
-msgstr ""
+msgstr "Vis bare på forsiden."
 
 #: ../library/widgets.php:219
 msgid "Display thumbnails"
-msgstr ""
+msgstr "Vis miniatyrbilde"
 
 #: ../library/widgets.php:256
 msgid "Featured stories containing post thumbnails and the excerpt based on categories."
-msgstr ""
+msgstr "Utvalgte historier som inneholder miniatyrbilde for artikkelen og utdrag basert på kategori."
 
 #: ../library/widgets.php:258
 #: ../library/widgets.php:301
 msgid "Featured Stories"
-msgstr ""
+msgstr "Utvalgte Historier"
 
 #: ../library/widgets.php:312
 msgid "Title:"
-msgstr ""
+msgstr "Tittel:"
 
 #: ../library/widgets.php:316
 msgid "Featured Categories:"
-msgstr ""
+msgstr "Utvalgte Kategorier:"
 
 #: ../library/widgets.php:318
 msgid "All Categories"
-msgstr ""
+msgstr "Alle kategorier"
 
 #: ../library/widgets.php:328
 msgid "How many items would you like to display?"
-msgstr ""
+msgstr "Hvor mange elementer vil du vise?"
 
 #: ../library/widgets.php:339
 msgid "Do not display in homepage"
-msgstr ""
+msgstr "Ikke vis på forsiden"
 
 #: ../library/widgets.php:342
 msgid "Show post excerpts"
-msgstr ""
+msgstr "Hvis utdrag fra artikkel"
 
 #: ../library/widgets.php:345
 msgid "Show thumbnails"
-msgstr ""
+msgstr "Vis miniatyrbilde"
 
 #: ../library/widgets.php:399
 msgid "A search form for your site"
-msgstr ""
+msgstr "Et søkefelt for din nettside"
 
 #: ../library/admin/admin.php:25
 #: ../library/admin/admin.php:330
 msgid "Arras"
-msgstr ""
+msgstr "Arras"
 
 #: ../library/admin/admin.php:26
 #: ../library/admin/admin.php:73
 msgid "Arras Options"
-msgstr ""
+msgstr "Arras Alternativer"
 
 #: ../library/admin/admin.php:26
 #: ../library/admin/admin.php:336
 msgid "Theme Options"
-msgstr ""
+msgstr "Tema Alternativer"
 
 #: ../library/admin/admin.php:28
 msgid "Post Types & Taxonomies"
-msgstr ""
+msgstr "Artikkeltyper & Taksonomier"
 
 #: ../library/admin/admin.php:28
 #: ../library/admin/admin.php:342
 msgid "Post Types & Tax."
-msgstr ""
+msgstr "Artikkeltyper & Taks."
 
 #: ../library/admin/admin.php:30
 #: ../library/admin/admin.php:348
 msgid "Custom Background"
-msgstr ""
+msgstr "Brukerdefinert bakgrunn"
 
 #: ../library/admin/admin.php:65
 msgid "Thumbnail cache has been cleared."
-msgstr ""
+msgstr "Miniatyrbilde-cahce har blitt renset."
 
 #: ../library/admin/admin.php:95
 msgid "Your settings have been successfully imported."
-msgstr ""
+msgstr "Dine innstillinger har blitt importert."
 
 #: ../library/admin/admin.php:151
 #: ../library/admin/admin.php:177
 #: ../library/admin/admin.php:184
 msgid "Your settings have been saved to the database."
-msgstr ""
+msgstr "Dine innstillingerhar blitt lagret i databasen."
 
 #: ../library/admin/admin.php:164
 msgid "Your settings have been reverted to the defaults."
-msgstr ""
+msgstr "Dine innstillinger har blitt tilbakestilt til utgangspunktet."
 
 #: ../library/admin/admin.php:259
 msgid "Helpful Links"
-msgstr ""
+msgstr "Hjelpsome linker"
 
 #: ../library/admin/admin.php:261
 msgid "Quick Start Guide"
-msgstr ""
+msgstr "Hurtigstartsguide"
 
 #: ../library/admin/admin.php:262
 msgid "Community Forums"
-msgstr ""
+msgstr "Fellesforumer"
 
 #: ../library/admin/admin.php:263
 msgid "Bug Tracker / Repository"
-msgstr ""
+msgstr "Bug Tracker / Oppbevaringssted"
 
 #: ../library/admin/admin.php:268
 msgid "Recommended Plugins"
-msgstr ""
+msgstr "Anbefalte Plugins"
 
 #: ../library/admin/admin.php:280
 msgid "How to Support?"
-msgstr ""
+msgstr "Hvordan støtte?"
 
 #: ../library/admin/admin.php:281
 msgid "There are many ways you can support this theme:"
-msgstr ""
+msgstr "Det finnes mange måter å støtte dette temaet:"
 
 #: ../library/admin/admin.php:283
 msgid "Share other about the theme"
-msgstr ""
+msgstr "Fortell andre om temaet"
 
 #: ../library/admin/admin.php:284
 msgid "Report bugs / Send patches"
-msgstr ""
+msgstr "Rapportèr bugs / Send patcher"
 
 #: ../library/admin/admin.php:285
 msgid "Contribute to the forums / wiki"
-msgstr ""
+msgstr "Bidra på forumene / wiki"
 
 #: ../library/admin/admin.php:286
 msgid "Translate the theme"
-msgstr ""
+msgstr "Oversett temaet"
 
 #: ../library/admin/admin.php:287
 msgid "Send in a donation!"
-msgstr ""
+msgstr "Gi en slant!"
 
 #: ../library/admin/admin.php:289
 msgid "Donate using PayPal"
-msgstr ""
+msgstr "Donèr via PayPal"
 
 #: ../library/admin/admin.php:295
 msgid "Thanks!"
-msgstr ""
+msgstr "Takk!"
 
 #: ../library/admin/admin.php:296
 msgid "Many thanks to those who have contributed to the theme:"
-msgstr ""
+msgstr "Tusen takk til dem som har bidratt på temaet:"
 
 #: ../library/admin/admin.php:297
 msgid "Forum Contributors"
-msgstr ""
+msgstr "Bidragsytere på forumet"
 
 #: ../library/admin/admin.php:299
 msgid "Translators"
-msgstr ""
+msgstr "Oversettere"
 
 #: ../library/admin/background.php:117
 msgid "Activate Custom Background"
-msgstr ""
+msgstr "Aktivèr brukerdefinert bakgrunn"
 
 #: ../library/admin/background.php:120
 msgid "Upload Background Image"
-msgstr ""
+msgstr "Last opp bakgrunnsbilde"
 
 #: ../library/admin/background.php:124
 msgid "Background Attachment"
-msgstr ""
+msgstr "Bakgrunnsvedlegg"
 
 #: ../library/admin/background.php:125
 msgid "Fixed"
-msgstr ""
+msgstr "Fast"
 
 #: ../library/admin/background.php:126
 msgid "Scroll (along with the rest of the page)"
-msgstr ""
+msgstr "Rull (langsmed resten av siden)"
 
 #: ../library/admin/background.php:127
 msgid "Horizontal Position"
-msgstr ""
+msgstr "Horisontal posisjon"
 
 #: ../library/admin/background.php:128
 msgid "Left"
-msgstr ""
+msgstr "Venstre"
 
 #: ../library/admin/background.php:129
 #: ../library/admin/background.php:133
 msgid "Center"
-msgstr ""
+msgstr "Sentrum"
 
 #: ../library/admin/background.php:130
 msgid "Right"
-msgstr ""
+msgstr "Høyre"
 
 #: ../library/admin/background.php:131
 msgid "Vertical Position"
-msgstr ""
+msgstr "Vertikal posisjon"
 
 #: ../library/admin/background.php:132
 msgid "Top"
-msgstr ""
+msgstr "Topp"
 
 #: ../library/admin/background.php:134
 msgid "Bottom"
-msgstr ""
+msgstr "Bunn"
 
 #: ../library/admin/background.php:135
 msgid "Repeat Background Image?"
-msgstr ""
+msgstr "Repeterende bakgrunnsbilde?"
 
 #: ../library/admin/background.php:136
 #: ../library/admin/templates/arras-navigation.php:3
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: ../library/admin/background.php:137
 msgid "Repeat Horizontally"
-msgstr ""
+msgstr "Repiter horisontalt"
 
 #: ../library/admin/background.php:138
 msgid "Repeat Vertically"
-msgstr ""
+msgstr "Repiter vertikalt"
 
 #: ../library/admin/background.php:139
 msgid "Repeat Both"
-msgstr ""
+msgstr "Repiter begge"
 
 #: ../library/admin/background.php:141
 msgid "Background Color"
-msgstr ""
+msgstr "Bakgrunnsfarge"
 
 #: ../library/admin/background.php:145
 msgid "Semi-Transparent Foreground"
-msgstr ""
+msgstr "Delvis gjennomsiktig forgrunn"
 
 #: ../library/admin/background.php:145
 msgid "This feature does not work in IE6 and for those using the legacy stylesheet."
-msgstr ""
+msgstr "Denne funksjonen virker ikke i IE6 og for dem som bruker det arvete stilarket."
 
 #: ../library/admin/background.php:146
 msgid "Apply Background from Top"
-msgstr ""
+msgstr "Påfør bakgrunn fra toppen"
 
 #: ../library/admin/background.php:148
 #: ../library/admin/templates/options_page.php:56
 #: ../library/admin/templates/posttype_page.php:73
 #: ../library/admin/templates/taxonomy_page.php:65
 msgid "Save Changes"
-msgstr ""
+msgstr "Lagre endringer"
 
 #: ../library/admin/background.php:149
 msgid "Reset"
-msgstr ""
+msgstr "Tilbakestill"
 
 #: ../library/admin/background.php:152
 msgid "Current Background Image"
-msgstr ""
+msgstr "Gjeldende bakgrunnsbilde"
 
 #: ../library/admin/options.php:49
 msgid "Copyright"
-msgstr ""
+msgstr "Kopibeskyttet"
 
 #: ../library/admin/options.php:50
 #, php-format
 msgid "Copyright %s. All Rights Reserved."
-msgstr ""
+msgstr "Copyright %s. All Rights Reserved."
 
 #: ../library/admin/options.php:52
 #: ../library/admin/templates/options_page.php:36
 #: ../library/admin/templates/posttype_page.php:33
 #: ../library/admin/templates/taxonomy_page.php:23
 msgid "Home"
-msgstr ""
+msgstr "Hjem"
 
 #: ../library/admin/options.php:68
 msgid "Editors' Picks"
-msgstr ""
+msgstr "Redaktørens valg"
 
 #: ../library/admin/options.php:74
 msgid "Latest Headlines"
-msgstr ""
+msgstr "Nyeste Overskrifter"
 
 #: ../library/admin/thumbnails.php:33
 #, php-format
 msgid "Unable to find any images. Are you sure <a href='%s'>some exist</a>?"
-msgstr ""
+msgstr "Kunne ikke finne bilder. Er du sikker på at <a href='%s'>det finnes noen</a>?"
 
 #: ../library/admin/thumbnails.php:35
 msgid "Please be patient while all thumbnails are regenerated. This can take a while if your server is slow (cheap hosting) or if you have many images. Do not navigate away from this page until this script is done or all thumbnails won't be resized. You will be notified via this page when all regenerating is completed."
-msgstr ""
+msgstr "Vennligst vent mens alle miniatyrbildene blir tilpasset. Dette kan ta en stund avhengig av serverhastighet (dyr/billig serverløsning) eller om du har mange bilder. Ikke navigèr vekk fra denne siden før skriptet er ferdig da alle bildene ikke vil bli tilpasset. Du vil bli varslet via denne siden når all tilpasningen er fullført"
 
 #: ../library/admin/thumbnails.php:44
 msgid "You must enable Javascript in order to proceed!"
-msgstr ""
+msgstr "Du må aktivere JavaScript for å kunne fortsette!"
 
 #: ../library/admin/thumbnails.php:51
 msgid "Back to Theme Options"
-msgstr ""
+msgstr "Tilbake til Tema Alternativer"
 
 #: ../library/admin/thumbnails.php:76
 #, php-format
 msgid "All done! Processed %d images."
-msgstr ""
+msgstr "Ferdig! %d bilder prosessert."
 
 #: ../library/admin/templates/arras-design.php:18
 msgid "Overall Design"
-msgstr ""
+msgstr "Generell design"
 
 #: ../library/admin/templates/arras-design.php:22
 msgid "Overall Layout"
-msgstr ""
+msgstr "Generell layout"
 
 #: ../library/admin/templates/arras-design.php:28
 msgid "Reset thumbnail sizes accordingly based on selected layout."
-msgstr ""
+msgstr "Tilbakestill miniatyrbildestørrelsene ihht. valgte layout."
 
 #: ../library/admin/templates/arras-design.php:32
 msgid "The developer of the child theme has disabled layout settings."
-msgstr ""
+msgstr "Utvikleren av "
 
 #: ../library/admin/templates/arras-design.php:40
 msgid "Default Style"
-msgstr ""
+msgstr "Forhåndsvalgt stil"
 
 #: ../library/admin/templates/arras-design.php:44
 #, php-format
 msgid "Alternate stylesheets can be placed in %s."
-msgstr ""
+msgstr "Alternative stilark kan plasseres i %s"
 
 #: ../library/admin/templates/arras-design.php:46
 msgid "The developer of the child theme has disabled alternate stylesheets."
-msgstr ""
+msgstr "Utvikleren av barnetemaet har slått av alternative stilark"
 
 #: ../library/admin/templates/arras-design.php:53
 msgid "Custom Logo"
-msgstr ""
+msgstr "Brukerdefinert logo"
 
 #: ../library/admin/templates/arras-design.php:59
 msgid "Delete existing"
-msgstr ""
+msgstr "Slett eksisterende"
 
 #: ../library/admin/templates/arras-design.php:68
 msgid "Set Custom Background"
-msgstr ""
+msgstr "Sett brukerdefinert bakgrunn"
 
 #: ../library/admin/templates/arras-general.php:5
 msgid "Theme Information"
-msgstr ""
+msgstr "Tema Informasjon"
 
 #: ../library/admin/templates/arras-general.php:9
 msgid "Current Version"
-msgstr ""
+msgstr "Gjeldende versjon"
 
 #: ../library/admin/templates/arras-general.php:12
 msgid "If you have recently upgraded Arras to a new release, it is <span style=\"color: red\">highly recommended</span> that you reset your theme options, clear your browser cache and restart your browser before proceeding."
-msgstr ""
+msgstr "Hvis du nylig har oppgradert Arras til en ny utgave, er det <span style=\"color: red\">høyt anbefalt</span> at du tilbakestiller temaalternativene, renser nettleserens cachce og starter nettleseren din på nytt før du fortsetter."
 
 #: ../library/admin/templates/arras-general.php:17
 msgid "Display Credits"
-msgstr ""
+msgstr "Vis Referanser"
 
 #: ../library/admin/templates/arras-general.php:20
 msgid "Credits will only appear to the right of the theme options page."
-msgstr ""
+msgstr "Referanser vil bare vises til høyre for tema-innstillingsside."
 
 #: ../library/admin/templates/arras-general.php:26
 msgid "Site Information"
-msgstr ""
+msgstr "Nettsideinfomasjon"
 
 #: ../library/admin/templates/arras-general.php:30
 msgid "RSS Feed (URL)"
-msgstr ""
+msgstr "RSS Feed (URL)"
 
 #: ../library/admin/templates/arras-general.php:33
 msgid "This will replace the default WordPress RSS feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
-msgstr ""
+msgstr "Dette vil erstatte forhåndsinnstilt WordPress RSS feed. Det er nyttig hvis du har tenkt å bruke en tredjepartsløsning som f.eks <a href=\"http://feedburner.google.com/\">Feedburner</a>."
 
 #: ../library/admin/templates/arras-general.php:38
 msgid "RSS Comments Feed (URL)"
-msgstr ""
+msgstr "RSS kommentar Feed (URL)"
 
 #: ../library/admin/templates/arras-general.php:41
 msgid "This will replace the default WordPress RSS comments feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
-msgstr ""
+msgstr "Dette vil erstatte forhåndsinnstilt WordPress RSS kommentar feed. Det er nyttig hvis du har tenkt å bruke en tredjepartsløsning som f.eks <a href=\"http://feedburner.google.com/\">Feedburner</a>."
 
 #: ../library/admin/templates/arras-general.php:46
 msgid "Twitter Username"
-msgstr ""
+msgstr "Twitter Brukernavn"
 
 #: ../library/admin/templates/arras-general.php:53
 msgid "Facebook Profile (URL)"
-msgstr ""
+msgstr "Facebook-profil (URL)"
 
 #: ../library/admin/templates/arras-general.php:56
 msgid "Link to your Facebook profile."
-msgstr ""
+msgstr "Lenke til din Facebook-profil"
 
 #: ../library/admin/templates/arras-general.php:62
 msgid "Footer Information"
-msgstr ""
+msgstr "Bunnlinjeinformasjon"
 
 #: ../library/admin/templates/arras-general.php:66
 msgid "No. of Columns"
-msgstr ""
+msgstr "Antall kolonner"
 
 #: ../library/admin/templates/arras-general.php:69
 msgid "Footer sidebars will be labelled respectively (eg. Footer Sidebar #1, etc.)"
-msgstr ""
+msgstr "Sidefelt i bunnlinjen vil bli respektivt merket (f.eks Bunnlinje sidefelt #1, etc.)"
 
 #: ../library/admin/templates/arras-general.php:74
 msgid "Footer Title"
-msgstr ""
+msgstr "Bunnlinjetittel"
 
 #: ../library/admin/templates/arras-general.php:84
 msgid "Usually your website's copyright information would go here.<br /> It would be great if you could include a link to WordPress and even greater if you could include a link to the theme website. :)"
-msgstr ""
+msgstr "Vannligvis vil din nettsides kopibeskyttelsesinformasjon stå her.<br />Det hadde vært fantastisk om du inkluderer en lenke til WordPress og enda bedre om du inkluderer en lenke til temaets nettside. :)"
 
 #: ../library/admin/templates/arras-home.php:5
 msgid "Post Options"
-msgstr ""
+msgstr "Artikkel-alternativer"
 
 #: ../library/admin/templates/arras-home.php:9
 msgid "Hide duplicate posts"
-msgstr ""
+msgstr "Skjul duplikate artikler"
 
 #: ../library/admin/templates/arras-home.php:13
 msgid "Check this to prevent duplicate posts from displaying within the slideshow and the featured posts."
-msgstr ""
+msgstr "Marker av denne for å forhindre duplikate artikler fra å vises på slideshowet og i utvalgte artikler."
 
 #: ../library/admin/templates/arras-home.php:14
 msgid "This might increase your server load, depending on the number of posts displayed."
-msgstr ""
+msgstr "Dette kan øke trykket på serveren avhengig av antall artikler som vises."
 
 #: ../library/admin/templates/arras-home.php:19
 #: ../library/admin/templates/arras-home.php:47
 #: ../library/admin/templates/arras-home.php:90
 #: ../library/admin/templates/arras-home.php:134
 msgid "Show/Hide"
-msgstr ""
+msgstr "Skjul/Vis"
 
 #: ../library/admin/templates/arras-home.php:23
 #: ../library/admin/templates/arras-home.php:51
 #: ../library/admin/templates/arras-home.php:94
 #: ../library/admin/templates/arras-home.php:138
 msgid "Selected Post Type"
-msgstr ""
+msgstr "Valgte Artikkeltyper"
 
 #: ../library/admin/templates/arras-home.php:30
 #: ../library/admin/templates/arras-home.php:65
@@ -1001,313 +1002,315 @@ msgstr ""
 #: ../library/admin/templates/arras-home.php:152
 #, php-format
 msgid "Stickied Posts / %s"
-msgstr ""
+msgstr "Limte artikler / %s"
 
 #: ../library/admin/templates/arras-home.php:33
 msgid "Selected categories will be shown on the featured slideshow of the index page."
-msgstr ""
+msgstr "Valgte kategorier blir vist på slideshowet på index-siden."
 
 #: ../library/admin/templates/arras-home.php:38
 msgid "Show Posts"
-msgstr ""
+msgstr "Vis Artikler"
 
 #: ../library/admin/templates/arras-home.php:41
 #: ../library/admin/templates/arras-home.php:83
 #: ../library/admin/templates/arras-home.php:127
 #: ../library/admin/templates/arras-home.php:170
 msgid "posts"
-msgstr ""
+msgstr "artikler"
 
 #: ../library/admin/templates/arras-home.php:58
 #: ../library/admin/templates/arras-home.php:101
 #: ../library/admin/templates/arras-home.php:145
 msgid "Title"
-msgstr ""
+msgstr "Tittel"
 
 #: ../library/admin/templates/arras-home.php:68
 #: ../library/admin/templates/arras-home.php:111
 msgid "Selected categories will be shown below the featured slideshow of the index page."
-msgstr ""
+msgstr "Valgte kategorier blir vist under slideshowet på index-siden."
 
 #: ../library/admin/templates/arras-home.php:73
 #: ../library/admin/templates/arras-home.php:117
 #: ../library/admin/templates/arras-home.php:160
 #: ../library/admin/templates/arras-layout.php:28
 msgid "Tapestry (Display Type)"
-msgstr ""
+msgstr "Artikkelflate (Visningstype)"
 
 #: ../library/admin/templates/arras-home.php:80
 #: ../library/admin/templates/arras-home.php:124
 msgid "Post Count"
-msgstr ""
+msgstr "Artikkelteller"
 
 #: ../library/admin/templates/arras-home.php:134
 #: ../library/admin/templates/posttype_page.php:58
 #: ../library/admin/templates/taxonomy_page.php:48
 msgid "News Posts"
-msgstr ""
+msgstr "Nyhetsartikler"
 
 #: ../library/admin/templates/arras-home.php:155
 msgid "Selected categories will be shown below the featured section in the index page."
-msgstr ""
+msgstr "Valgte kategorier blir vist under seksjonen for utvalgte innlegg på forsiden."
 
 #: ../library/admin/templates/arras-home.php:167
 msgid "News Count"
-msgstr ""
+msgstr "Nyhetsteller"
 
 #: ../library/admin/templates/arras-layout.php:11
 msgid "Excerpts"
-msgstr ""
+msgstr "Utdrag"
 
 #: ../library/admin/templates/arras-layout.php:15
 msgid "Excerpt Limit"
-msgstr ""
+msgstr "Utdragsgrense"
 
 #: ../library/admin/templates/arras-layout.php:18
 msgid "words"
-msgstr ""
+msgstr "ord"
 
 #: ../library/admin/templates/arras-layout.php:19
 msgid "Excerpts will only be trimmed to the limit if no excerpt is specified for the respective post."
-msgstr ""
+msgstr "Utdrag vil bare bli forkortet ved angitt grense hvis det ikke er spesifisert noe utdrag."
 
 #: ../library/admin/templates/arras-layout.php:24
 msgid "Archive / Search"
-msgstr ""
+msgstr "Arkiv / Søk"
 
 #: ../library/admin/templates/arras-layout.php:36
 msgid "Single Post"
-msgstr ""
+msgstr "Enkeltinnlegg"
 
 #: ../library/admin/templates/arras-layout.php:40
 msgid "Display in Single Posts"
-msgstr ""
+msgstr "Vis i enkeltinnlegg"
 
 #: ../library/admin/templates/arras-layout.php:44
 msgid "Author (Header)"
-msgstr ""
+msgstr "Forfatter (Topptekst)"
 
 #: ../library/admin/templates/arras-layout.php:48
 msgid "Publish Date (Header)"
-msgstr ""
+msgstr "Publiseringsdato (Topptekst)"
 
 #: ../library/admin/templates/arras-layout.php:52
 msgid "Categories (Header)"
-msgstr ""
+msgstr "Kategorier (Topptekst)"
 
 #: ../library/admin/templates/arras-layout.php:60
 msgid "Post Thumbnail"
-msgstr ""
+msgstr "Legg inn miniatyrbilde"
 
 #: ../library/admin/templates/arras-layout.php:64
 msgid "Author Information"
-msgstr ""
+msgstr "Forfatterinformasjon"
 
 #: ../library/admin/templates/arras-layout.php:70
 msgid "Display Custom Taxonomies"
-msgstr ""
+msgstr "Vis brukerdefinerte taksonomier"
 
 #: ../library/admin/templates/arras-layout.php:73
 msgid "List down the custom taxonomies' slug that you wish to display here, separated by a comma (,)."
-msgstr ""
+msgstr "List opp de brukerdefinerte taksonomiers Slug som du ønsker vise her. Separer med komma (,). "
 
 #: ../library/admin/templates/arras-layout.php:79
 msgid "Single Post Custom Fields"
-msgstr ""
+msgstr "Enkeltinnlegg brukerdefinerte felt"
 
 #: ../library/admin/templates/arras-navigation.php:15
 msgid "Main Navigation"
-msgstr ""
+msgstr "Hovednavigasjon"
 
 #: ../library/admin/templates/arras-navigation.php:19
 #, php-format
 msgid "It is highly recommended that you use the %s for better control of the main navigation."
-msgstr ""
+msgstr "Det er sterkt anbefalt at du bruker %s for bedre kontroll over hovednavigasjonen."
 
 #: ../library/admin/templates/arras-navigation.php:25
 msgid "Home Link"
-msgstr ""
+msgstr "Hjemlenke"
 
 #: ../library/admin/templates/arras-navigation.php:28
 msgid "You can change the name of the home link at the main navigation."
-msgstr ""
+msgstr "Du kan endre navnet på hjemlenken på hovednavigasjonen."
 
 #: ../library/admin/templates/arras-navigation.php:33
 msgid "Top Navigation Display"
-msgstr ""
+msgstr "Visning toppnavigering"
 
 #: ../library/admin/templates/arras-navigation.php:37
 #: ../library/admin/templates/arras-navigation.php:42
 msgid "Link Category"
-msgstr ""
+msgstr "Lenkekategori"
 
 #: ../library/admin/templates/arras-navigation.php:45
 msgid "To organise and arrange the links in the top navigation, you can create a link category with all the links you want to display at the main navigation and assign the link category here."
-msgstr ""
+msgstr "For å organisere og ordne lenkene på toppnavigasjonen kan du opprette en lenkekategori med alle lenkene du vil vise på toppnavigasjonen og tilknytte lenkekategorien her."
 
 #: ../library/admin/templates/arras-navigation.php:53
 #, php-format
 msgid "You have %s installed."
-msgstr ""
+msgstr "Du har %s innstallert."
 
 #: ../library/admin/templates/arras-navigation.php:56
 msgid "You will need to go to their respective plugin settings page to adjust the navigation bar."
-msgstr ""
+msgstr "Du må gå til de respektive plugins-innstillingssidene for å endre navigasjonsfeltet."
 
 #: ../library/admin/templates/arras-thumbnails.php:5
 msgid "Thumbnail Options"
-msgstr ""
+msgstr "Miniatyrbildealternativ"
 
 #: ../library/admin/templates/arras-thumbnails.php:9
 msgid "Auto Thumbnails"
-msgstr ""
+msgstr "Auto-miniatyrbilder"
 
 #: ../library/admin/templates/arras-thumbnails.php:13
 msgid "Check this to allow the theme to automatically retrieve the first attached image from the post as featured image when no image is specified."
-msgstr ""
+msgstr "Merk av denne for å tillatte at temaet automatisk henter første vedlagte bilde fra artikkelen som visningsbilde når det ikke er definert et bilde. "
 
 #: ../library/admin/templates/arras-thumbnails.php:19
 msgid "Thumbnail Sizes"
-msgstr ""
+msgstr "Miniatyrbildestørrelse"
 
 #: ../library/admin/templates/arras-thumbnails.php:21
 msgid "If you have recently changed your layout or edited the thumbnail sizes, you will need to regenerate your thumbnails."
-msgstr ""
+msgstr "Hvis du nylig har endret layouten eller endret miniatyrbildestørrelsen må du tilpasse miniatyrbildene."
 
 #: ../library/admin/templates/arras-thumbnails.php:28
 msgid "Width"
-msgstr ""
+msgstr "Bredde"
 
 #: ../library/admin/templates/arras-thumbnails.php:31
 msgid "Height"
-msgstr ""
+msgstr "Høyde"
 
 #: ../library/admin/templates/arras-thumbnails.php:35
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "Tilbakestill til forhåndsinnstillingene"
 
 #: ../library/admin/templates/arras-thumbnails.php:58
 msgid "Frequently Asked Questions (EN only)"
-msgstr ""
+msgstr "Ofte Stilte Spørsmål (FAQ, kun engelsk)"
 
 #: ../library/admin/templates/arras-tools.php:5
 msgid "Clear timThumb Thumbnail Cache (Legacy)"
-msgstr ""
+msgstr "Rens timThumb miniatyrbilde cache (Legacy)"
 
 #: ../library/admin/templates/arras-tools.php:6
 #, php-format
 msgid "The thumbnail cache folder is located at: %s."
-msgstr ""
+msgstr "Miniatyrbildemappen er lokalisert på: %s"
 
 #: ../library/admin/templates/arras-tools.php:7
 msgid "If this does not work, you can manually delete all the files in that folder."
-msgstr ""
+msgstr "Hvis det ikke virker kan du manuelt slette alle filene i mappen."
 
 #: ../library/admin/templates/arras-tools.php:8
 msgid "Ensure that you have submitted any changes made before proceeding."
-msgstr ""
+msgstr "Forsikre deg om at du har lagt inn endringer før du fortsetter."
 
 #: ../library/admin/templates/arras-tools.php:10
 msgid "Clear Thumbnail Cache"
-msgstr ""
+msgstr "Rens miniatyrbilde-cache"
 
 #: ../library/admin/templates/arras-tools.php:13
 msgid "Import Theme Settings (BETA)"
-msgstr ""
+msgstr "Importèr Tema Innstillinger (BETA)"
 
 #: ../library/admin/templates/arras-tools.php:14
 msgid "Import your theme settings by pasting the exported code below."
-msgstr ""
+msgstr "Importèr dine tema-innstililnger ved å lime inn den eksporterte koden under. "
 
 #: ../library/admin/templates/arras-tools.php:18
 msgid "Export Theme Settings (BETA)"
-msgstr ""
+msgstr "Eksportèr Tema Innstillinger (BETA)"
 
 #: ../library/admin/templates/arras-tools.php:19
 msgid "You can save the following code into a text file and use it when you need to import them into another installation. Note that not all options (custom background, child theme settings, etc.) will be exported."
-msgstr ""
+msgstr "Du kan lagre følgende kode i en tekstfil og bruke den når du vil importere den inn i en annen installasjon. Bemerk at ikke alle innstillinger (brukerdefinert bakgrunn, childe theme innstillinger, etc.) vil bli eksportert."
 
 #: ../library/admin/templates/functions.php:195
 msgid "Stickied Posts"
-msgstr ""
+msgstr "Limte artikler"
 
 #: ../library/admin/templates/functions.php:228
 msgid "Taxonomy"
-msgstr ""
+msgstr "Taksonomi"
 
 #: ../library/admin/templates/options_page.php:12
 #, php-format
 msgid "The thumbnails cache directory (%s) is not writable. You will need to set the directory's permissions 755 or 777 for the thumbnails to work."
-msgstr ""
+msgstr "Miniatyrbilde-cache mappen (%s) er ikke skrivbar. Du må sette mappens tilgangsnivå til 755 eller 777 for at miniatyrbildene skal fungere."
 
 #: ../library/admin/templates/options_page.php:15
 msgid "More about Changing File/Folder Permissions"
-msgstr ""
+msgstr "Mer om å endre fil/mappe-tilgangsnivå."
 
 #: ../library/admin/templates/options_page.php:21
 msgid "The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information."
-msgstr ""
+msgstr "Det ser ikke ut til at serveren har installert GD-biblioteket som behøves for at miniatyrbilde skal fungere. Kontakt din webhotell-leverandør for mer informasjon."
 
 #: ../library/admin/templates/options_page.php:34
 msgid "General"
-msgstr ""
+msgstr "Generelt"
 
 #: ../library/admin/templates/options_page.php:35
 msgid "Navigation"
-msgstr ""
+msgstr "Navigasjon"
 
 #: ../library/admin/templates/options_page.php:37
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #: ../library/admin/templates/options_page.php:38
 msgid "Design"
-msgstr ""
+msgstr "Design"
 
 #: ../library/admin/templates/options_page.php:39
 msgid "Thumbnails"
-msgstr ""
+msgstr "Miniatyrbilde"
 
 #: ../library/admin/templates/options_page.php:40
 msgid "Tools"
-msgstr ""
+msgstr "Verktøy"
 
 #: ../library/admin/templates/options_page.php:54
 msgid "Regenerate post thumbnails after saving."
-msgstr ""
+msgstr "Tilpass innleggsminiatyrbilder etter lagring."
 
 #: ../library/admin/templates/options_page.php:57
 #: ../library/admin/templates/posttype_page.php:74
 #: ../library/admin/templates/taxonomy_page.php:66
 msgid "Reset Settings"
-msgstr ""
+msgstr "Tilbakestill innstillinger."
 
 #: ../library/admin/templates/posttype_page.php:18
 #: ../library/admin/templates/taxonomy_page.php:7
 msgid "Post Types & Taxonomies Options"
-msgstr ""
+msgstr "Innleggstyper & Taksonomi-innstillinger"
 
 #: ../library/admin/templates/posttype_page.php:26
 #: ../library/admin/templates/taxonomy_page.php:15
 msgid "Post Types"
-msgstr ""
+msgstr "Innleggstyper"
 
 #: ../library/admin/templates/posttype_page.php:27
 #: ../library/admin/templates/taxonomy_page.php:16
 msgid "Taxonomies"
-msgstr ""
+msgstr "Taksonomier"
 
 #: ../library/admin/templates/posttype_page.php:44
 #: ../library/admin/templates/taxonomy_page.php:34
 msgid "Featured Post #1"
-msgstr ""
+msgstr "Utvalgte Innlegg #1"
 
 #: ../library/admin/templates/posttype_page.php:51
 #: ../library/admin/templates/taxonomy_page.php:41
 msgid "Featured Post #2"
-msgstr ""
+msgstr "Utvalgte Innlegg #2"
 
 #: ../library/admin/templates/taxonomy_page.php:58
 msgid "<strong>Note:</strong> Custom taxonomies require the <code>query_var</code> parameter to be defined to work."
-msgstr ""
+msgstr "<strong>OBS:</strong> Brukerdefinerte taksonomier krever at koden <code>query_var</code> parametere er definert for å fungere. "
 
+#~ msgid "Arras Theme Options"
+#~ msgstr "Arras Tema Alternativer"
