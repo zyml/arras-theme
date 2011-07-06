@@ -171,7 +171,6 @@ function arras_render_posts($args = null, $display_type = 'default', $taxonomy =
 
 function arras_featured_loop( $display_type = 'default', $arras_args = array(), $query_posts = false ) {
 	global $wp_query;
-	
 
 	if ($query_posts) {
 		$q = $wp_query;
@@ -195,9 +194,9 @@ function arras_prep_query( $args = array() ) {
 	$_defaults = array(
 		'list'				=> array(),
 		'taxonomy'			=> 'category',
-		'exclude'			=> null,
-		
+
 		'query'				=> array(
+			'exclude'			=> array(),
 			'post_type'			=> 'post',
 			'posts_per_page'	=> 10,
 			'orderby'			=> 'date',
@@ -207,7 +206,6 @@ function arras_prep_query( $args = array() ) {
 	
 	$args['query'] = wp_parse_args($args['query'], $_defaults['query']);
 	$args = wp_parse_args($args, $_defaults);
-	
 
 	if ( !is_array($args['list']) ) {
 		$args['list'] = array($args['list']);
@@ -251,7 +249,7 @@ function arras_prep_query( $args = array() ) {
 	
 
 	if (is_home() && arras_get_option('hide_duplicates')) {
-		$args['query']['post__not_in'] = array_unique($args['exclude']);
+		$args['query']['post__not_in'] = array_unique($args['query']['exclude']);
 	}
 	
 	if ($args['query']['post_type'] == 'attachment') {
