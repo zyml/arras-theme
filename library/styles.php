@@ -44,17 +44,7 @@ function arras_layout_styles() {
 	.featured-stories-summary  { margin-left: <?php echo $sidebar_size_w + 15 ?>px; }
 	.single .post .entry-photo img, .single-post .entry-photo img  { width: <?php echo $single_thumb_size['w'] ?>px; height: <?php echo $single_thumb_size['h'] ?>px; }
 	<?php
-}
-
-function arras_add_blueprint_css() {
-	echo '
-	<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/screen.css" type="text/css" media="screen,projection" />
-	<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/print.css" type="text/css" media="print" />
-	<!--[if IE 6]>
-	<link rel="stylesheet" href="' . get_bloginfo('template_url') . '/css/blueprint/ie.css" type="text/css" media="screen,projection" />
-	<![endif]-->
-	';
-}
+}s
 
 function arras_add_layout_css() {
 	global $arras_registered_alt_layouts;
