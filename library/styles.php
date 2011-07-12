@@ -44,7 +44,7 @@ function arras_layout_styles() {
 	.featured-stories-summary  { margin-left: <?php echo $sidebar_size_w + 15 ?>px; }
 	.single .post .entry-photo img, .single-post .entry-photo img  { width: <?php echo $single_thumb_size['w'] ?>px; height: <?php echo $single_thumb_size['h'] ?>px; }
 	<?php
-}s
+}
 
 function arras_add_layout_css() {
 	global $arras_registered_alt_layouts;
