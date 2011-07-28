@@ -98,25 +98,16 @@ document.body.className = c;
 <div id="nav">
 	<div id="nav-content" class="clearfix">
 	<?php 
-	if ( function_exists('pixopoint_menu') ) {
-		pixopoint_menu();
-	} elseif ( function_exists('wp_nav_menu') ) {
-		wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'sf-menu menu clearfix', 'theme_location' => 'main-menu', 'fallback_cb' => 'arras_nav_fallback_cb' ) );
-	} else { ?>
-		<ul class="sf-menu menu clearfix">
-			<li><a href="<?php bloginfo('url') ?>"><?php _e( arras_get_option('topnav_home') ); ?></a></li>
-			<?php 
-			if (arras_get_option('topnav_display') == 'pages') {
-				wp_list_pages('sort_column=menu_order&title_li=');
-			} else if (arras_get_option('topnav_display') == 'linkcat') {
-				wp_list_bookmarks('category='.arras_get_option('topnav_linkcat').'&hierarchical=0&show_private=1&hide_invisible=0&title_li=&categorize=0&orderby=id'); 
-			} else {
-				wp_list_categories('hierarchical=1&orderby=id&hide_empty=1&title_li=');	
-			}
-			?>
-		</ul>
-	<?php } ?>
-	<?php arras_beside_nav() ?>
+	if ( function_exists('wp_nav_menu') ) {
+		wp_nav_menu( array( 
+			'sort_column' => 'menu_order', 
+			'menu_class' => 'sf-menu menu clearfix', 
+			'theme_location' => 'main-menu', 
+			'fallback_cb' => 'arras_nav_fallback_cb' 
+		) );
+	}
+	arras_beside_nav(); 
+	?>
 	</div><!-- #nav-content -->
 </div><!-- #nav -->
 <?php arras_below_nav() ?>
