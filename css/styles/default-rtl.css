@@ -217,7 +217,7 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 
 .nocomments				{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; padding: 15px 10px; margin: 0 10px 10px 0; font-size: 12px; }
 
-#commentform			{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; margin-right: 10px; padding: 10px; }
+#commentform, #commentsform	{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; margin-right: 10px; padding: 10px; }
 #commentform label		{ color: #999; }
 #commentform label.error  { margin: 5px 0; color: #D8000C; font-weight: bold; padding: 5px; }
 #commentform span.required	{ color: #FF0000; }

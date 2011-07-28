@@ -62,7 +62,7 @@ ul.sf-menu li:hover li ul, ul.sf-menu li.sfHover li ul  { top: -999em; }
 ul.sf-menu li li:hover ul, ul.sf-menu li li.sfHover ul  { left: -11em; top: 0; }
 ul.sf-menu li li:hover li ul, ul.sf-menu li li.sfHover li ul  { top: -999em; }
 ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: -11em; top: 0; }
-.sf-shadow ul { background:	url(../images/shadow.png) no-repeat bottom right; padding: 0 -8px -9px 0; -moz-border-radius-bottomleft: 17px; -moz-border-radius-topright: 17px; -webkit-border-top-right-radius: 17px; -webkit-border-bottom-left-radius: 17px; }
+.sf-shadow ul { background:	url(../images/shadow.png) no-repeat bottom right; padding: 0 8px 9px 0; -moz-border-radius-bottomleft: 17px; -moz-border-radius-topright: 17px; -webkit-border-top-right-radius: 17px; -webkit-border-bottom-left-radius: 17px; }
 .sf-shadow ul.sf-shadow-off { background: transparent; }
 
 #top-menu, #nav  { min-width: 990px; }
@@ -195,7 +195,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul  { left: -11em; top
 
 .comments-navigation	{ clear: both; margin: 0 10px 10px 0; }
 
-#commentsform, #disqus_thread  { margin: 0 10px 10px 0; padding: 10px; overflow: hidden; }
+#commentform, #commentsform, #disqus_thread  { margin: 0 10px 10px 0; padding: 10px; overflow: hidden; }
 #commentsform textarea	{ width: 98%; height: 150px; padding: 5px; }
 #commentsform .error	{ display: block; padding: 5px; }
 #cancel-comment-reply-link	{ padding: 0 10px 0 0; float: left; }
