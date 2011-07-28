@@ -217,12 +217,12 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 
 .nocomments				{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; padding: 15px 10px; margin: 0 10px 10px 0; font-size: 12px; }
 
-#commentsform			{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; margin-right: 10px; padding: 10px; }
-#commentsform label		{ color: #999; }
-#commentsform label.error  { margin: 5px 0; color: #D8000C; font-weight: bold; padding: 5px; }
-#commentsform span.required	{ color: #FF0000; }
-#commentsform input[type=text]  { display: block; width: 300px; font: 14px 'Lucida Grande',Arial,Helvetica,sans-serif; margin: 5px 0; }
-#commentsform textarea	{ display: block; font: 14px 'Lucida Grande',Arial,Helvetica,sans-serif; width: 90%; margin-bottom: 5px; }
+#commentform			{ background: #FFF; border: solid #CCC; border-width: 0 1px 1px; margin-right: 10px; padding: 10px; }
+#commentform label		{ color: #999; }
+#commentform label.error  { margin: 5px 0; color: #D8000C; font-weight: bold; padding: 5px; }
+#commentform span.required	{ color: #FF0000; }
+#commentform input[type=text]  { display: block; width: 300px; font: 14px 'Lucida Grande',Arial,Helvetica,sans-serif; margin: 5px 0; }
+#commentform textarea	{ display: block; font: 14px 'Lucida Grande',Arial,Helvetica,sans-serif; width: 90%; margin-bottom: 5px; }
 #cancel-comment-reply-link	{ font-size: 11px; }
 
 #disqus_thread			{ background: #FFF; border: 1px solid #CCC; margin-right: 10px; padding: 10px; }
