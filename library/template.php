@@ -82,7 +82,7 @@ function arras_document_title() {
 function arras_add_header_js() {
 	?>
 	<script type="text/javascript">
-	<?php @include ARRAS_DIR . '/js/header.js.php'; ?>
+	<?php @include TEMPLATEPATH . '/js/header.js.php'; ?>
 	</script>
 	<?php
 }

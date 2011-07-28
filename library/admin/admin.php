@@ -235,6 +235,8 @@ function get_remote_array($url) {
 }
 
 function arras_get_contributors($arr) {
+	if ( !is_array($arr) ) return false;
+	
 	ksort($arr);
 	$i = count($arr);
 	foreach ($arr as $name => $url)
