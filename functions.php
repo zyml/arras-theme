@@ -45,10 +45,6 @@ function arras_setup() {
 	
 	define( 'ARRAS_CUSTOM_FIELDS', false );
 	
-	/* Legacy thumbnail generator options */
-	define( 'ARRAS_POST_THUMBNAIL', 'thumb' );
-	define( 'ARRAS_THUMB', 'timthumb' );
-	
 	/* Langauge support */
 	load_theme_textdomain( 'arras', TEMPLATEPATH . '/language' );
 	

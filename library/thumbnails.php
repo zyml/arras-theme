@@ -105,49 +105,7 @@ function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
 		}
 	}
 	
-	// go back to legacy (phpThumb or timThumb)
-	$thumbnail = get_post_meta($id, ARRAS_POST_THUMBNAIL, true);
-	
-	$w = $arras_image_sizes[$size]['w'];
-	$h = $arras_image_sizes[$size]['h'];
-	
-	if ($thumbnail != '') {
-		if (!$arras_image_sizes[$size]) return false;	
-		return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . arras_timthumb_wpmu_image_src($thumbnail) . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_excerpt() . '" title="' . get_the_title() . '" />';
-	} else if (arras_get_option('auto_thumbs')) {
-		if (!$arras_image_sizes[$size]) return false;
-		
-		$img_id = arras_get_first_post_image_id();
-		if (!$img_id) return $empty_thumbnail;
-		
-		$image = wp_get_attachment_image_src($img_id, 'full', false);
-		if ($image) {
-			list($src, $width, $height) = $image;
-			return '<img src="' . get_bloginfo('template_directory') . '/library/timthumb.php?src=' . arras_timthumb_wpmu_image_src($src) . '&amp;w=' . $w . '&amp;h=' . $h . '&amp;zc=1" alt="' . get_the_excerpt() . '" title="' . get_the_title() . '" />';
-		}
-	}
-	
 	return $empty_thumbnail;	
-}
-
-
-/**
- * Function to convert image URLs into WPMU compatible URLs for Timthumb
- * @since 1.5.1
- */
-function arras_timthumb_wpmu_image_src($url) {
-	global $blog_id, $current_site;
-	
-	$uploads = wp_upload_dir();
-	
-	if ( isset($blog_id) && $blog_id > 0 ) {
-		$split = explode( '/files/', $url);
-		if ( isset($split[1]) ) {
-			$url = 'http://' . $current_site->domain . $current_site->path . 'wp-content/blogs.dir/' . $blog_id . '/files/' . $split[1];
-		}
-	}
-	
-	return $url;
 }
 
 /**

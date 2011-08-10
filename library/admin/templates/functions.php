@@ -229,16 +229,6 @@ function arras_get_taxonomy_name($id) {
 	}
 }
 
-function arras_cache_is_writable() {
-	if (ARRAS_THUMB == 'phpthumb') $cache_path = TEMPLATEPATH . '/library/phpthumb/cache';
-	else $cache_path = TEMPLATEPATH . '/library/cache';
-	return (boolean)is_writable($cache_path);
-}
-
-function arras_gd_is_installed() {
-	return (boolean)function_exists('gd_info');
-}
-
 function arras_get_tapestries_select() {
 	global $arras_tapestries;
 	

@@ -5,23 +5,6 @@
 <?php screen_icon('themes') ?>
 <h2 id="arras-header"><?php _e('Arras Options', 'arras') ?></h2>
 
-<?php if (!arras_cache_is_writable()) : ?>
-<div class="error">
-	<p>
-		<?php printf( 
-		__('The thumbnails cache directory (%s) is not writable. You will need to set the directory\'s permissions 755 or 777 for the thumbnails to work.', 'arras'), 
-		'<code>' . TEMPLATEPATH . '/library/cache' . '</code>' ) ?>
-	</p>
-	<p><a href="http://codex.wordpress.org/Changing_File_Permissions"><?php _e('More about Changing File/Folder Permissions', 'arras') ?></a></p>
-</div><!-- .error -->
-<?php endif ?>
-
-<?php if (!arras_gd_is_installed()) : ?>
-<div class="error">
-	<p><?php _e('The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information.', 'arras') ?></p>
-</div>
-<?php endif ?>
-
 <?php 
 echo $notices;
 do_action('arras_admin_notices');
