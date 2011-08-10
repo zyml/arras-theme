@@ -53,18 +53,6 @@ function arras_admin() {
 			arras_admin_reset();
 		}
 		
-		if ( isset($_REQUEST['clearcache']) ) {
-			check_admin_referer('arras-admin');
-			$cache_location = get_template_directory() . '/library/cache';
-			if ( !$dh = @opendir($cache_location) ) return false;
-			while ( false !== ($obj = readdir($dh)) ) {
-				if($obj == '.' || $obj == '..') continue;
-				@unlink(trailingslashit($cache_location) . $obj);
-			}
-			closedir($dh);
-			$notices = '<div class="updated fade"><p>' . __('Thumbnail cache has been cleared.', 'arras') . '</p></div>';
-		}
-		
 		if ( isset($_REQUEST['arras-regen-thumbs']) ) {
 			check_admin_referer('arras-admin');
 			
