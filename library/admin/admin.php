@@ -53,16 +53,18 @@ function arras_admin() {
 			arras_admin_reset();
 		}
 		
-		if ( isset($_REQUEST['arras-regen-thumbs']) ) {
+		if ( isset( $_REQUEST['arras-regen-thumbs'] ) && is_plugin_active( 'regenerate-thumbnails/regenerate-thumbnails.php' ) ) {
 			check_admin_referer('arras-admin');
-			
-			echo '<div class="wrap clearfix">';
-			screen_icon('themes');
-			?> <h2 id="arras-header"><?php _e('Arras Options', 'arras') ?></h2> <?php
-			arras_regen_thumbs_process();
-			echo '</div>';
-			
+			?>
+			<script type="text/javascript">
+				window.location = '<?php echo admin_url( 'tools.php?page=regenerate-thumbnails' ) ?>';
+			</script>
+			<?php
 		} else {
+			if ( !is_plugin_active( 'regenerate-thumbnails/regenerate-thumbnails.php' ) ) {
+				$notices = '<div class="error fade"><p>' . __( '<strong>Notice:</strong> Having <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin installed and activated is highly recommended for Arras.', 'arras' ) . '</p></div>';
+			}
+			
 			$arras_image_sizes = array();
 			arras_add_default_thumbnails();
 			include 'templates/options_page.php';

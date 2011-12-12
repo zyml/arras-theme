@@ -33,7 +33,6 @@ function arras_setup() {
 	
 	if ( is_admin() ) {
 		require_once ARRAS_LIB . '/admin/admin.php';
-		require_once ARRAS_LIB . '/admin/thumbnails.php';
 	}
 	
 	require_once ARRAS_LIB . '/admin/background.php';
