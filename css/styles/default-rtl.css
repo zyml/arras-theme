@@ -2,7 +2,7 @@
 @import '../base-rtl.css';
 
 /* globals */
-body					{ background-color: #F0F0F0; color: #333; font: 12px 'Lucida Grande',Arial,Helvetica,sans-serif;}
+body					{ background-color: #F0F0F0; color: #333; font: 12px Helvetica, Arial, sans-serif; }
 
 a, a:link, a:visited	{ color: #313428; text-decoration: none; }
 a:hover					{ color: #CC0000; }
@@ -70,9 +70,9 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 /* main navigation */
 #nav  { background: url(../../images/topnav.jpg) repeat-x bottom #322C2C; min-width: 990px; }
 #nav-content  { margin: 0 auto; width: 978px; }
-#nav .sf-menu  { line-height: 1.1; max-width: 770px; }
+#nav .sf-menu  { line-height: 1.2; max-width: 770px; }
 #nav .sf-menu a  { display: block; text-decoration: none; padding: 8px 12px 11px; color: #AAA; font-size: 14px; }
-#nav .sf-menu ul li  { border: 1px solid #474331; margin-top: -1px; }
+#nav .sf-menu ul li  { border: 1px solid #474331; margin-top: 0; }
 #nav .sf-menu a:hover, #nav .sf-menu li:hover, #nav .sf-menu li.sfHover, #nav .sf-menu ul li  { background: #373331; color: #FFF; }
 #nav .sf-menu ul a:hover, #nav .sf-menu ul li.sfHover, #nav .sf-menu ul li:hover { color: #373331; background: #FFF; }
 #nav .sf-menu ul li.sfHover a.sf-with-ul { color: #373331; }

@@ -45,7 +45,7 @@ th, td  { padding: 5px; }
 /* Header */
 #header					{ min-width: 990px; padding: 0; }
 #branding				{ width: 980px; margin: 0 auto; padding: 0; }
-.logo					{ max-width: 590px; float: left; padding: 21px 0 25px 10px; }
+.logo					{ max-width: 590px; float: left; padding: 30px 0 34px 10px; }
 .blog-name				{ margin: 0 0 3px; line-height: 1em; display: block; }
 .blog-description		{ line-height: 1em; display: block; margin: 0; padding: 3px 0 0; }
 
