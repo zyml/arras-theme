@@ -1,7 +1,5 @@
 jQuery(document).ready(function($) {
 
-$('.multi-sidebar').tabs();
-
 $('.sf-menu').superfish({autoArrows: true, speed: 'fast', dropShadows: 'true'});
 
 <?php if (is_singular()) : ?>

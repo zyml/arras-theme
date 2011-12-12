@@ -21,6 +21,21 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		add_action('arras_tabbed_sidebar_tab-comments', array(&$this, 'comments_tab'));
 		add_action('arras_tabbed_sidebar_tab-tags', array(&$this, 'tags_tab'));
 		add_action('arras_tabbed_sidebar_tab-popular', array(&$this, 'popular_tab'));
+		
+		if ( is_active_widget( false, false, $this->id_base ) ) {
+			add_action( 'wp_head', array( &$this, 'load_js' ) );
+			add_action( 'arras_custom_scripts', array( &$this, 'do_js' ) );
+		}
+	}
+	
+	function load_js() {
+		wp_enqueue_script( 'jquery-ui-tabs', null, array( 'jquery-ui-core', 'jquery' ), null, false ); 
+	}
+	
+	function do_js() {
+		?>
+		$('.multi-sidebar').tabs();
+		<?php
 	}
 	
 	function get_tabs() {

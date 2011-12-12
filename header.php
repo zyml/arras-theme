@@ -17,17 +17,16 @@
 <?php endif; ?>
 
 <?php
-wp_enqueue_script('jquery-ui-tabs', null, array('jquery-ui-core', 'jquery'), null, false); 
-wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/superfish/hoverIntent.js', 'jquery', null, false);
-wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish/superfish.js', 'jquery', null, false);
+wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish/superfish.js', array( 'jquery' ), '2011-12-01' );
+wp_enqueue_script( 'hoverintent', get_template_directory_uri() . '/js/superfish/hoverintent.js', array( 'jquery' ), '2011-12-01' );
 
 if ( is_home() || is_front_page() ) {
-	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', 'jquery', null, true);
+	wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', array( 'jquery' ), null, true);
 }
 
 if ( is_singular() ) {
 	wp_enqueue_script('comment-reply');
-	wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', 'jquery', null, false);
+	wp_enqueue_script('jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', array( 'jquery' ), null, false);
 }
 
 ?>
