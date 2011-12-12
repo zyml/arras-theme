@@ -149,7 +149,7 @@ function arras_post_notfound() {
 	$postcontent .= '<form method="get" class="clearfix" action="' . get_bloginfo('url') . '">
 	' . __('Perhaps searching for it might help?', 'arras') . '<br />
 	<input type="text" value="" name="s" class="s" size="30" onfocus="this.value=\'\'" />
-	<input type="submit" class="searchsubmit" value="' . __('Search', 'arras') . '" title="' . sprintf( __('Search %s', 'arras'), wp_specialchars( get_bloginfo('name'), 1 ) ) . '" />
+	<input type="submit" class="searchsubmit" value="' . __('Search', 'arras') . '" title="' . sprintf( __('Search %s', 'arras'), esc_html( get_bloginfo('name'), 1 ) ) . '" />
 	</form>';
 	
 	$postcontent .= '<h3>Latest Posts</h3>';

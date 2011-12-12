@@ -7,7 +7,7 @@
 <div class="search-results">
     <h2><?php _e('Search Results', 'arras') ?></h2>
     <div class="search-results-content clearfix">
-	<p><?php printf( __('Search Results for <strong>&#8216;' . '%s' . '&#8217;</strong></p>', 'arras'), wp_specialchars($s, 1) ) ?>
+	<p><?php printf( __('Search Results for <strong>&#8216;' . '%s' . '&#8217;</strong></p>', 'arras'), esc_html($s, 1) ) ?>
     <?php get_search_form(); ?>
     </div>
 </div>
