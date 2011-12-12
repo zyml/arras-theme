@@ -121,7 +121,7 @@ class ArrasOptions {
 		$this->facebook_profile = (string)$_POST['arras-facebook'];
 		$this->footer_sidebars = (int)$_POST['arras-footer-sidebars'];
 		$this->footer_title = (string)stripslashes($_POST['arras-footer-title']);
-		$this->footer_message = (string)($_POST['arras-footer-message']);
+		$this->footer_message = wp_kses_post($_POST['arras-footer-message']);
 		
 		if ( !function_exists('wp_nav_menu') ) {
 			$this->topnav_home = (string)$_POST['arras-nav-home'];

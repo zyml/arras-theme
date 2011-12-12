@@ -6,17 +6,21 @@ function arras_form_input($data = '', $value = '', $extra = '') {
 	return "<input "._parse_form_attributes($data, $defaults).$extra." />";
 }
 
-function arras_form_textarea($data = '', $value = '', $extra = '') {
-	$defaults = array('name' => (( ! is_array($data)) ? $data : ''), 'cols' => '90', 'rows' => '12');
-
-	if ( ! is_array($data) OR ! isset($data['value'])) {
-		$val = $value;
+function arras_form_textarea($data = '', $value = '', $extra = '') {	
+	$_defaults = array (
+		'name'	=> ( ( !is_array( $data ) ) ? $data : ' ' ),
+		'cols'	=> '90',
+		'rows'	=> '5'
+	);
+	
+	if ( !is_array( $data ) || !isset( $data['value'] ) ) {
+		$val = esc_textarea( $value );
 	} else {
-		$val = $data['value']; 
-		unset($data['value']); // textareas don't use the value attribute
+		$val = esc_textarea( $data['value'] );
+		unset( $data['value'] ); // Textareas don't use the value attribute.	
 	}
-
-	return "<textarea "._parse_form_attributes($data, $defaults).$extra.">".$val."</textarea>";
+	
+	return '<textarea ' . _parse_form_attributes( $data, $_defaults ) . $extra . '>' . $val . '</textarea>';
 }
 
 function arras_form_dropdown($name = '', $options = array(), $selected = array(), $extra = '') {
@@ -123,43 +127,13 @@ function _parse_form_attributes($attributes, $default) {
 	
 	foreach ($default as $key => $val) {
 		if ($key == 'value') {
-			$val = form_prep($val);
+			$val = esc_attr($val);
 		}
 	
 		$att .= $key . '="' . $val . '" ';
 	}
 	
 	return $att;
-}
-
-function form_prep($str = '') {
-	// if the field name is an array we do this recursively
-	if (is_array($str)) {
-		foreach ($str as $key => $val){
-			$str[$key] = form_prep($val);
-		}
-		return $str;
-	}
-
-	if ($str === '') return '';
-
-	$temp = '__TEMP_AMPERSANDS__';
-
-	// Replace entities to temporary markers so that 
-	// htmlspecialchars won't mess them up
-	$str = preg_replace("/&#(\d+);/", "$temp\\1;", $str);
-	$str = preg_replace("/&(\w+);/",  "$temp\\1;", $str);
-
-	$str = htmlspecialchars($str);
-
-	// In case htmlspecialchars misses these.
-	$str = str_replace(array("'", '"'), array("&#39;", "&quot;"), $str);
-
-	// Decode the temp markers back to entities
-	$str = preg_replace("/$temp(\d+);/","&#\\1;",$str);
-	$str = preg_replace("/$temp(\w+);/","&\\1;",$str);
-
-	return $str;
 }
 
 function arras_get_files_list($path, $include_none) {
