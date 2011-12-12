@@ -1,24 +1,4 @@
 <?php
-$forum_contributors = array(
-	'Giovanni' => 'http://www.animeblog.nl/',
-	'Bobby Clapp' => 'http://profaneentertainment.com/gaming',
-	'Charles' => 'http://www.claireraborar.com/travel',
-	'Nedrago' => 'http://www.nedrago.com/',
-	'Dan' => 'http://www.techunfolding.com/'
-);
-$translators = array(
-	'Bestmoose (Dutch)' => 'http://www.arrastheme.com/forums/topic3369-1501-german-translation-deutsche-uebersetzung.html',
-	'Drun Ming Haung (Traditional Chinese)' => 'http://www.arrastheme.com/forums/topic2956-1501-chinese-traditional-translation-zhtw.html',
-	'carlosmarchi (Brazilian Portuguese)' => 'http://www.arrastheme.com/forums/topic3401-1501-brazilian-portuguese-ptbr-pack.html',
-	'PressPlay (Norwegian)' => 'http://www.arrastheme.com/forums/topic3736-1501-norwegian-nb-translation-norsk-bokmal-oversettingnbno.html',
-	'Bob Robot (Simplified Chinese)' => 'http://www.arrastheme.com/forums/topic4412-1501-simplified-chinese-translation-zhcn.html',
-	'edvind (Swedish)' => 'http://www.arrastheme.com/forums/topic3627-1501-swedish-translation-svensk-oeversaettning.html',
-	'Celso Azevedo (Portuguese)' => 'http://www.arrastheme.com/forums/topic3658-1501-portuguese-portugal-translation-traducao-portuguesa.html',
-	'Sokac (Croatian)' => 'http://www.arrastheme.com/forums/topic3219-1501-croatian-translation-hrvatski-prijevod.html',
-	'Berniru (Russian)' => 'http://www.arrastheme.com/forums/topic3202-1501-russkii-perevod-russian-translation.html',
-	'vicsabi (Hungarian)' => 'http://www.arrastheme.com/forums/topic6561-1501-hungarian-translation-magyar-forditas.html',
-	'vfenix (Spanish)' => 'http://www.arrastheme.com/forums/topic3549-1501-spanish-translation-traduccion-espanola.html'
-);
 $notices = ''; // store notices here so that options_page.php will echo it out later
 
 function arras_addmenu() {
@@ -185,20 +165,16 @@ function arras_posttax() {
 }
 
 function arras_admin_scripts() {
-	wp_enqueue_script( 'jquery-ui-progressbar', get_template_directory_uri() . '/js/jquery.ui.progressbar.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-widget') );
 	wp_enqueue_script( 'jquery-multiselect', get_template_directory_uri() . '/js/jquery.multiselect.min.js', null, 'jquery' );
 	wp_enqueue_script( 'arras-admin-js', get_template_directory_uri() . '/js/admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tabs') );
 }
 
 function arras_admin_styles() {
-?> 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/smoothness/jquery-ui-1.8.2.custom.css" type="text/css" /> 
-<?php
-	if ( is_rtl() ) {
-		echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/css/admin-rtl.css" type="text/css" />';
-	} else {
-		echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/css/admin.css" type="text/css" />';
-	}
+	wp_enqueue_style( 'jquery-smoothness', get_template_directory_uri() . '/css/smoothness/jquery-ui-1.8.2.custom.css', false, '2011-12-12', 'all' );
+	if ( is_rtl() )
+		wp_enqueue_style( 'arras-admin', get_template_directory_uri() . '/css/admin-rtl.css', false, '2011-12-12', 'all' );
+	else
+		wp_enqueue_style( 'arras-admin', get_template_directory_uri() . '/css/admin.css', false, '2011-12-12', 'all' );
 }
 
 function get_remote_array($url) {
@@ -244,7 +220,27 @@ function arras_get_contributors($arr) {
 }
 
 function arras_right_col() {
-	global $forum_contributors, $translators;
+	$forum_contributors = array(
+		'Giovanni' => 'http://www.animeblog.nl/',
+		'Bobby Clapp' => 'http://profaneentertainment.com/gaming',
+		'Charles' => 'http://www.claireraborar.com/travel',
+		'Nedrago' => 'http://www.nedrago.com/',
+		'Dan' => 'http://www.techunfolding.com/'
+	);
+	$translators = array(
+		'Bestmoose (Dutch)' => 'http://www.arrastheme.com/forums/topic3369-1501-german-translation-deutsche-uebersetzung.html',
+		'Drun Ming Haung (Traditional Chinese)' => 'http://www.arrastheme.com/forums/topic2956-1501-chinese-traditional-translation-zhtw.html',
+		'carlosmarchi (Brazilian Portuguese)' => 'http://www.arrastheme.com/forums/topic3401-1501-brazilian-portuguese-ptbr-pack.html',
+		'PressPlay (Norwegian)' => 'http://www.arrastheme.com/forums/topic3736-1501-norwegian-nb-translation-norsk-bokmal-oversettingnbno.html',
+		'Bob Robot (Simplified Chinese)' => 'http://www.arrastheme.com/forums/topic4412-1501-simplified-chinese-translation-zhcn.html',
+		'edvind (Swedish)' => 'http://www.arrastheme.com/forums/topic3627-1501-swedish-translation-svensk-oeversaettning.html',
+		'Celso Azevedo (Portuguese)' => 'http://www.arrastheme.com/forums/topic3658-1501-portuguese-portugal-translation-traducao-portuguesa.html',
+		'Sokac (Croatian)' => 'http://www.arrastheme.com/forums/topic3219-1501-croatian-translation-hrvatski-prijevod.html',
+		'Berniru (Russian)' => 'http://www.arrastheme.com/forums/topic3202-1501-russkii-perevod-russian-translation.html',
+		'vicsabi (Hungarian)' => 'http://www.arrastheme.com/forums/topic6561-1501-hungarian-translation-magyar-forditas.html',
+		'vfenix (Spanish)' => 'http://www.arrastheme.com/forums/topic3549-1501-spanish-translation-traduccion-espanola.html'
+	);
+	
 	?>
 	<div id="arras-right-col">
 		<div class="postbox">

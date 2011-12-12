@@ -11,7 +11,7 @@
 
 <?php echo arras_form_checkbox('arras-hide-duplicates', 'show', arras_get_option('hide_duplicates'), 'id="arras-hide-duplicates"') ?> 
 <label for="arras-hide-duplicates"><?php _e('Check this to prevent duplicate posts from displaying within the slideshow and the featured posts.', 'arras') ?></label>
-<p style="font-size: 11px"><?php _e('This might increase your server load, depending on the number of posts displayed.', 'arras') ?></p>
+<p><?php _e('This might increase your server load, depending on the number of posts displayed.', 'arras') ?></p>
 </td>
 </tr>
 </table>

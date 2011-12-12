@@ -6,18 +6,18 @@
 
 #arras-right-col		{ width: 18%; float: left; margin: 3px 0 0; }
 #arras-right-col .postbox		{ margin-bottom: 10px; }
-#arras-right-col .postbox p		{ margin: 0 10px 10px; font-size: 11px; }
-#arras-right-col .postbox h3	{ font-size: 11px; line-height: 1; padding: 6px 9px; margin: 0 0 5px; }
-#arras-right-col .postbox li	{ list-style: circle; margin: 7px 22px; font-size: 11px !important; }
+#arras-right-col .postbox p		{ margin: 0 10px 10px; font-size: 12px; line-height: 1.3em; }
+#arras-right-col .postbox h3	{ line-height: 1; padding: 6px 9px; margin: 0 0 5px; }
+#arras-right-col .postbox li	{ list-style: circle; margin: 7px 22px; }
 #arras-right-col .postbox li a	{ text-decoration: none; }
-#arras-right-col .button-primary{ font-size: 11px !important; padding: 5px 7px; display: inline-block; }
+#arras-right-col .button-primary{ display: inline-block; }
 
-#arras-settings-form, #arras-posttax-form	{ float: left; margin: 0 10px 0 0; width: 75%; }
+#arras-settings-form, #arras-posttax-form	{ float: left; margin: 0 10px 0 0; width: 75%; font-family: Helvetica, Arial, sans-serif; }
 #arras-settings-form th, #arras-posttax-form th { padding: 10px 7px; }
 
-#arras-tabs  { margin: 3px; }
-#arras-tabs li			{ float: left; margin: 2px 2px 0; padding: 0; }
-#arras-tabs a			{ cursor: default; display: block; text-decoration: none; font-size: 12px; padding: 3px 10px; }
+#arras-tabs  { margin: 3px; background: none; border: none; border-bottom: 1px solid #CCC; font-family: Helvetica, Arial, sans-serif; }
+#arras-tabs li			{ float: left; margin: 2px 2px 0; padding: 0; border-bottom: none; }
+#arras-tabs a			{ cursor: default; display: block; text-decoration: none; font-size: 15px; font-weight: 300; padding: 7px 8px; }
 #arras-tabs li:first-child a	{ -moz-border-radius: 6px 0 0 0; -webkit-border-radius: 6px 0 0 0; }
 #arras-tabs li:last-child a	{ border-right: 1px solid #E3E3E3; -moz-border-radius: 0 6px 0 0; -webkit-border-radius: 6px 0 0 0; }
 
@@ -25,7 +25,6 @@
 #arras-custom-bg-form label { display: block; font-weight: bold; margin: 0 0 5px; }
 #arras-custom-bg-form input { padding: 4px 5px; margin: 2px 5px 2px 0; }
 #arras-custom-bg-form .upload-bg { padding: 0 0 10px; border-bottom: 1px solid #CCC; margin: 0 0 10px; }
-#arras-custom-bg-form .advanced p  { font-size: 11px; }
 #arras-custom-bg-form .advanced label { }
 #custom-bg-preview		{ float: left; margin: 0 20px 0; }
 #custom-bg-preview h3	{ font-size: 12px; }
@@ -43,27 +42,25 @@
 
 .arras-options-tabcover	{ background: #8a8a8a; height: 5px; }
 .arras-options-wrapper  { padding: 0 10px; }
-.padding-content		{ padding: 0 0 10px; margin: 0 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
-.padding-content h3		{ font-size: 11px; margin: 10px 0 0; background: #F0F0F0; padding: 5px 7px; }
-.padding-content p		{ font-size: 11px; }
+.padding-content		{ font-family: Helvetica, Arial, sans-serif; padding: 0 0 10px; margin: 0 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+.padding-content h3		{ font-size: 13px; margin: 10px 0 0; background: #F0F0F0; padding: 5px 7px; }
+.padding-content p		{ }
 .padding-content .enabler { float: right; }
 .padding-content .enabler label { font-weight: normal; color: #666; margin-left: 5px; }
 .form-table				{ margin-bottom: 0 !important; }
-.form-table th			{ font-size: 11px; min-width: 200px; }
-.form-table .largetext	{ font-size: 12px; }
+.form-table th			{ min-width: 200px; }
+.form-table .largetext	{ font-size: 14px; }
 .form-table td			{ max-width: 500px; }
 .form-table tr:last-child	{ border-bottom: 1px solid #DEDEDE; }
 .form-table tr:last-child td { padding-bottom: 20px; }
 .form-table select		{ width: 275px; }
 #wpcontent .form-table select.multiple { height: 70px; }
 .version				{ padding: 10px !important; }
-.version p				{ font-size: 11px; }
-.version .number		{ font-size: 12px !important; font-weight: bold; }
+.version .number		{ font-size: 14px !important; font-weight: bold; }
 .arras-regen-thumbs-field  { padding: 5px; margin: 0 0 5px; }
 .arras-thumbnail-size-reset .button-secondary  { display: inline-block; margin-top: 2px; }
 #arras-settings-form .submit, #arras-posttax-form .submit  { padding: 0 0 20px; border-bottom: 1px solid #CCC; }
 #arras-settings-form .final-submit, #arras-posttax-form .final-submit { margin: 0 0 20px; }
-#arras-settings-form .final-submit .button-primary, #arras-settings-form .final-submit .button-secondary, #arras-posttax-form .final-submit .button-primary, #arras-posttax-form .final-submit .button-secondary { padding: 4px 8px; font-size: 12px !important; }
 
 .hide, .ui-tabs-hide	{ display: none !important; }
 
