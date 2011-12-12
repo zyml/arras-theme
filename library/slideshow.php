@@ -78,6 +78,13 @@ $('#featured-slideshow').cycle({
 }
 add_action('wp_footer', 'arras_add_slideshow_js');
 
+function arras_load_slideshow_scripts() {
+	if ( ( arras_get_option('enable_slideshow') ) && is_home() || is_front_page() ) {
+		wp_enqueue_script('jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.min.js', array( 'jquery' ), null, true);
+	}
+}
+add_action('wp_head', 'arras_load_slideshow_scripts');
+
 function arras_add_slideshow_thumb_size() {
 	$layout = arras_get_option('layout');
 	
