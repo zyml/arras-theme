@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-05 18:40+0800\n"
+"POT-Creation-Date: 2011-12-12 20:22+0730\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -22,8 +22,8 @@ msgstr ""
 
 #: ../404.php:9
 msgid ""
-"<p><strong>We're very sorry, but that page doesn't exist or has been moved.</strong><br />\n"
-"\t\tPlease make sure you have the right URL.</p>\n"
+"<p><strong>We're very sorry, but that page doesn't exist or has been moved.</strong><br />\r\n"
+"\t\tPlease make sure you have the right URL.</p>\r\n"
 "\t\t<p>If you still can't find what you're looking for, try using the search form below.</p>"
 msgstr ""
 
@@ -165,16 +165,32 @@ msgstr ""
 msgid "About Arras WordPress Theme"
 msgstr ""
 
-#: ../header.php:12
-#: ../header.php:14
-#, php-format
-msgid "%s latest posts"
+#: ../functions.php:62
+msgid "Main Menu"
 msgstr ""
 
-#: ../header.php:18
-#: ../header.php:20
-#, php-format
-msgid "%s latest comments"
+#: ../functions.php:63
+msgid "Top Menu"
+msgstr ""
+
+#: ../functions.php:79
+msgid "1 Column Layout (No Sidebars)"
+msgstr ""
+
+#: ../functions.php:80
+msgid "2 Column Layout (Right Sidebar)"
+msgstr ""
+
+#: ../functions.php:81
+msgid "2 Column Layout (Left Sidebar)"
+msgstr ""
+
+#: ../functions.php:82
+msgid "3 Column Layout (Left & Right Sidebars)"
+msgstr ""
+
+#: ../functions.php:83
+msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
 #: ../page.php:21
@@ -220,7 +236,7 @@ msgid "Blog Archive"
 msgstr ""
 
 #: ../searchform.php:2
-msgid "Search..."
+msgid "Search this site"
 msgstr ""
 
 #: ../searchform.php:3
@@ -245,23 +261,23 @@ msgid "Tag Cloud"
 msgstr ""
 
 #: ../yarpp-template-arras.php:16
-#: ../library/widgets.php:457
+#: ../library/widgets.php:472
 msgid "d F Y g:i A"
 msgstr ""
 
 #: ../yarpp-template-arras.php:17
-#: ../library/widgets.php:458
+#: ../library/widgets.php:473
 msgid "% Comments"
 msgstr ""
 
 #: ../yarpp-template-arras.php:21
 #: ../library/deprecated.php:118
-#: ../library/widgets.php:465
+#: ../library/widgets.php:480
 msgid "Read More"
 msgstr ""
 
 #: ../yarpp-template-arras.php:27
-#: ../library/widgets.php:473
+#: ../library/widgets.php:488
 msgid "No posts at the moment. Check back again later!"
 msgstr ""
 
@@ -307,37 +323,13 @@ msgstr ""
 msgid "Perhaps searching for it might help?"
 msgstr ""
 
+#: ../library/filters.php:155
+msgid "Latest Posts"
+msgstr ""
+
 #: ../library/filters.php:175
 #, php-format
 msgid "About %s"
-msgstr ""
-
-#: ../library/launcher.php:13
-msgid "Main Menu"
-msgstr ""
-
-#: ../library/launcher.php:14
-msgid "Top Menu"
-msgstr ""
-
-#: ../library/launcher.php:77
-msgid "1 Column Layout (No Sidebars)"
-msgstr ""
-
-#: ../library/launcher.php:78
-msgid "2 Column Layout (Right Sidebar)"
-msgstr ""
-
-#: ../library/launcher.php:79
-msgid "2 Column Layout (Left Sidebar)"
-msgstr ""
-
-#: ../library/launcher.php:80
-msgid "3 Column Layout (Left & Right Sidebars)"
-msgstr ""
-
-#: ../library/launcher.php:81
-msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
 #: ../library/slideshow.php:29
@@ -348,7 +340,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../library/slideshow.php:93
+#: ../library/slideshow.php:100
 msgid "Featured Slideshow"
 msgstr ""
 
@@ -421,53 +413,51 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: ../library/template.php:288
+#: ../library/template.php:286
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:291
+#: ../library/template.php:289
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:291
+#: ../library/template.php:289
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:291
+#: ../library/template.php:289
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:291
+#: ../library/template.php:289
 msgid "g:i A"
 msgstr ""
 
-#: ../library/template.php:342
-#: ../library/template.php:344
+#: ../library/template.php:337
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../library/template.php:342
-#: ../library/template.php:344
+#: ../library/template.php:337
 msgid "RSS Feed"
 msgstr ""
 
-#: ../library/template.php:349
+#: ../library/template.php:341
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../library/template.php:349
+#: ../library/template.php:341
 msgid "Twitter"
 msgstr ""
 
-#: ../library/template.php:354
+#: ../library/template.php:346
 #, php-format
 msgid "%s Facebook"
 msgstr ""
 
-#: ../library/template.php:354
+#: ../library/template.php:346
 msgid "Facebook"
 msgstr ""
 
@@ -487,221 +477,220 @@ msgstr ""
 msgid "Tabbed Sidebar"
 msgstr ""
 
-#: ../library/widgets.php:28
+#: ../library/widgets.php:43
 msgid "Featured"
 msgstr ""
 
-#: ../library/widgets.php:29
+#: ../library/widgets.php:44
 msgid "Latest"
 msgstr ""
 
-#: ../library/widgets.php:30
+#: ../library/widgets.php:45
 msgid "Comments"
 msgstr ""
 
-#: ../library/widgets.php:31
-#: ../library/widgets.php:367
-#: ../library/widgets.php:383
+#: ../library/widgets.php:46
+#: ../library/widgets.php:382
+#: ../library/widgets.php:398
 msgid "Tags"
 msgstr ""
 
-#: ../library/widgets.php:35
+#: ../library/widgets.php:50
 msgid "Popular"
 msgstr ""
 
-#: ../library/widgets.php:181
+#: ../library/widgets.php:196
 msgid "Retrieve Posts from:"
 msgstr ""
 
-#: ../library/widgets.php:183
+#: ../library/widgets.php:198
 msgid "Slideshow"
 msgstr ""
 
-#: ../library/widgets.php:184
+#: ../library/widgets.php:199
 msgid "Featured Posts #1"
 msgstr ""
 
-#: ../library/widgets.php:185
+#: ../library/widgets.php:200
 msgid "Featured Posts #2"
 msgstr ""
 
-#: ../library/widgets.php:190
+#: ../library/widgets.php:205
 msgid "Tabbed Sidebar Order:"
 msgstr ""
 
-#: ../library/widgets.php:196
+#: ../library/widgets.php:211
 msgid "The popular posts option is only enabled when the plugin <a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Popularity Contest</a> is enabled."
 msgstr ""
 
-#: ../library/widgets.php:198
+#: ../library/widgets.php:213
 msgid "Post Count:"
 msgstr ""
 
-#: ../library/widgets.php:206
+#: ../library/widgets.php:221
 msgid "Comments Count:"
 msgstr ""
 
-#: ../library/widgets.php:217
+#: ../library/widgets.php:232
 msgid "Display only in homepage"
 msgstr ""
 
-#: ../library/widgets.php:219
+#: ../library/widgets.php:234
 msgid "Display thumbnails"
 msgstr ""
 
-#: ../library/widgets.php:256
+#: ../library/widgets.php:271
 msgid "Featured stories containing post thumbnails and the excerpt based on categories."
 msgstr ""
 
-#: ../library/widgets.php:258
-#: ../library/widgets.php:301
+#: ../library/widgets.php:273
+#: ../library/widgets.php:316
+#: ../library/admin/options.php:60
 msgid "Featured Stories"
 msgstr ""
 
-#: ../library/widgets.php:312
+#: ../library/widgets.php:327
 msgid "Title:"
 msgstr ""
 
-#: ../library/widgets.php:316
+#: ../library/widgets.php:331
 msgid "Featured Categories:"
 msgstr ""
 
-#: ../library/widgets.php:318
+#: ../library/widgets.php:333
 msgid "All Categories"
 msgstr ""
 
-#: ../library/widgets.php:328
+#: ../library/widgets.php:343
 msgid "How many items would you like to display?"
 msgstr ""
 
-#: ../library/widgets.php:339
+#: ../library/widgets.php:354
 msgid "Do not display in homepage"
 msgstr ""
 
-#: ../library/widgets.php:342
+#: ../library/widgets.php:357
 msgid "Show post excerpts"
 msgstr ""
 
-#: ../library/widgets.php:345
+#: ../library/widgets.php:360
 msgid "Show thumbnails"
 msgstr ""
 
-#: ../library/widgets.php:399
+#: ../library/widgets.php:414
 msgid "A search form for your site"
 msgstr ""
 
-#: ../library/admin/admin.php:25
-#: ../library/admin/admin.php:330
+#: ../library/admin/admin.php:5
+#: ../library/admin/admin.php:307
 msgid "Arras"
 msgstr ""
 
-#: ../library/admin/admin.php:26
-#: ../library/admin/admin.php:73
+#: ../library/admin/admin.php:6
 msgid "Arras Options"
 msgstr ""
 
-#: ../library/admin/admin.php:26
-#: ../library/admin/admin.php:336
+#: ../library/admin/admin.php:6
+#: ../library/admin/admin.php:313
 msgid "Theme Options"
 msgstr ""
 
-#: ../library/admin/admin.php:28
+#: ../library/admin/admin.php:8
 msgid "Post Types & Taxonomies"
 msgstr ""
 
-#: ../library/admin/admin.php:28
-#: ../library/admin/admin.php:342
+#: ../library/admin/admin.php:8
+#: ../library/admin/admin.php:319
 msgid "Post Types & Tax."
 msgstr ""
 
-#: ../library/admin/admin.php:30
-#: ../library/admin/admin.php:348
+#: ../library/admin/admin.php:10
+#: ../library/admin/admin.php:325
+#: ../library/admin/background.php:110
 msgid "Custom Background"
 msgstr ""
 
-#: ../library/admin/admin.php:65
-msgid "Thumbnail cache has been cleared."
+#: ../library/admin/admin.php:45
+msgid "<strong>Notice:</strong> Having <a href=\"http://wordpress.org/extend/plugins/regenerate-thumbnails/\">Regenerate Thumbnails</a> plugin installed and activated is highly recommended for Arras."
 msgstr ""
 
-#: ../library/admin/admin.php:95
+#: ../library/admin/admin.php:65
 msgid "Your settings have been successfully imported."
 msgstr ""
 
-#: ../library/admin/admin.php:151
-#: ../library/admin/admin.php:177
-#: ../library/admin/admin.php:184
+#: ../library/admin/admin.php:121
+#: ../library/admin/admin.php:147
+#: ../library/admin/admin.php:154
+#: ../library/admin/background.php:87
 msgid "Your settings have been saved to the database."
 msgstr ""
 
-#: ../library/admin/admin.php:164
+#: ../library/admin/admin.php:134
+#: ../library/admin/background.php:47
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
-#: ../library/admin/admin.php:259
+#: ../library/admin/admin.php:247
 msgid "Helpful Links"
 msgstr ""
 
-#: ../library/admin/admin.php:261
+#: ../library/admin/admin.php:249
 msgid "Quick Start Guide"
 msgstr ""
 
-#: ../library/admin/admin.php:262
+#: ../library/admin/admin.php:250
 msgid "Community Forums"
 msgstr ""
 
-#: ../library/admin/admin.php:263
+#: ../library/admin/admin.php:251
 msgid "Bug Tracker / Repository"
 msgstr ""
 
-#: ../library/admin/admin.php:268
-msgid "Recommended Plugins"
-msgstr ""
-
-#: ../library/admin/admin.php:280
+#: ../library/admin/admin.php:257
 msgid "How to Support?"
 msgstr ""
 
-#: ../library/admin/admin.php:281
+#: ../library/admin/admin.php:258
 msgid "There are many ways you can support this theme:"
 msgstr ""
 
-#: ../library/admin/admin.php:283
+#: ../library/admin/admin.php:260
 msgid "Share other about the theme"
 msgstr ""
 
-#: ../library/admin/admin.php:284
+#: ../library/admin/admin.php:261
 msgid "Report bugs / Send patches"
 msgstr ""
 
-#: ../library/admin/admin.php:285
+#: ../library/admin/admin.php:262
 msgid "Contribute to the forums / wiki"
 msgstr ""
 
-#: ../library/admin/admin.php:286
+#: ../library/admin/admin.php:263
 msgid "Translate the theme"
 msgstr ""
 
-#: ../library/admin/admin.php:287
+#: ../library/admin/admin.php:264
 msgid "Send in a donation!"
 msgstr ""
 
-#: ../library/admin/admin.php:289
+#: ../library/admin/admin.php:266
 msgid "Donate using PayPal"
 msgstr ""
 
-#: ../library/admin/admin.php:295
+#: ../library/admin/admin.php:272
 msgid "Thanks!"
 msgstr ""
 
-#: ../library/admin/admin.php:296
+#: ../library/admin/admin.php:273
 msgid "Many thanks to those who have contributed to the theme:"
 msgstr ""
 
-#: ../library/admin/admin.php:297
+#: ../library/admin/admin.php:274
 msgid "Forum Contributors"
 msgstr ""
 
-#: ../library/admin/admin.php:299
+#: ../library/admin/admin.php:276
 msgid "Translators"
 msgstr ""
 
@@ -759,7 +748,6 @@ msgid "Repeat Background Image?"
 msgstr ""
 
 #: ../library/admin/background.php:136
-#: ../library/admin/templates/arras-navigation.php:3
 msgid "None"
 msgstr ""
 
@@ -792,9 +780,6 @@ msgid "Apply Background from Top"
 msgstr ""
 
 #: ../library/admin/background.php:148
-#: ../library/admin/templates/options_page.php:56
-#: ../library/admin/templates/posttype_page.php:73
-#: ../library/admin/templates/taxonomy_page.php:65
 msgid "Save Changes"
 msgstr ""
 
@@ -806,50 +791,25 @@ msgstr ""
 msgid "Current Background Image"
 msgstr ""
 
-#: ../library/admin/options.php:49
+#: ../library/admin/options.php:47
 msgid "Copyright"
 msgstr ""
 
-#: ../library/admin/options.php:50
+#: ../library/admin/options.php:48
 #, php-format
 msgid "Copyright %s. All Rights Reserved."
 msgstr ""
 
-#: ../library/admin/options.php:52
-#: ../library/admin/templates/options_page.php:36
-#: ../library/admin/templates/posttype_page.php:33
-#: ../library/admin/templates/taxonomy_page.php:23
+#: ../library/admin/options.php:50
 msgid "Home"
 msgstr ""
 
-#: ../library/admin/options.php:68
+#: ../library/admin/options.php:66
 msgid "Editors' Picks"
 msgstr ""
 
-#: ../library/admin/options.php:74
+#: ../library/admin/options.php:72
 msgid "Latest Headlines"
-msgstr ""
-
-#: ../library/admin/thumbnails.php:33
-#, php-format
-msgid "Unable to find any images. Are you sure <a href='%s'>some exist</a>?"
-msgstr ""
-
-#: ../library/admin/thumbnails.php:35
-msgid "Please be patient while all thumbnails are regenerated. This can take a while if your server is slow (cheap hosting) or if you have many images. Do not navigate away from this page until this script is done or all thumbnails won't be resized. You will be notified via this page when all regenerating is completed."
-msgstr ""
-
-#: ../library/admin/thumbnails.php:44
-msgid "You must enable Javascript in order to proceed!"
-msgstr ""
-
-#: ../library/admin/thumbnails.php:51
-msgid "Back to Theme Options"
-msgstr ""
-
-#: ../library/admin/thumbnails.php:76
-#, php-format
-msgid "All done! Processed %d images."
 msgstr ""
 
 #: ../library/admin/templates/arras-design.php:18
@@ -922,15 +882,12 @@ msgid "RSS Feed (URL)"
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:33
-msgid "This will replace the default WordPress RSS feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
+#: ../library/admin/templates/arras-general.php:41
+msgid "Custom feed URLs are no longer allowed due to support for automatic feed links."
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:38
 msgid "RSS Comments Feed (URL)"
-msgstr ""
-
-#: ../library/admin/templates/arras-general.php:41
-msgid "This will replace the default WordPress RSS comments feed to this. Useful if you have decided to use third-party services like <a href=\"http://feedburner.google.com/\">Feedburner</a>."
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:46
@@ -1191,92 +1148,58 @@ msgid "Frequently Asked Questions (EN only)"
 msgstr ""
 
 #: ../library/admin/templates/arras-tools.php:5
-msgid "Clear timThumb Thumbnail Cache (Legacy)"
-msgstr ""
-
-#: ../library/admin/templates/arras-tools.php:6
-#, php-format
-msgid "The thumbnail cache folder is located at: %s."
-msgstr ""
-
-#: ../library/admin/templates/arras-tools.php:7
-msgid "If this does not work, you can manually delete all the files in that folder."
-msgstr ""
-
-#: ../library/admin/templates/arras-tools.php:8
-msgid "Ensure that you have submitted any changes made before proceeding."
-msgstr ""
-
-#: ../library/admin/templates/arras-tools.php:10
-msgid "Clear Thumbnail Cache"
-msgstr ""
-
-#: ../library/admin/templates/arras-tools.php:13
 msgid "Import Theme Settings (BETA)"
 msgstr ""
 
-#: ../library/admin/templates/arras-tools.php:14
+#: ../library/admin/templates/arras-tools.php:6
 msgid "Import your theme settings by pasting the exported code below."
 msgstr ""
 
-#: ../library/admin/templates/arras-tools.php:18
+#: ../library/admin/templates/arras-tools.php:10
 msgid "Export Theme Settings (BETA)"
 msgstr ""
 
-#: ../library/admin/templates/arras-tools.php:19
+#: ../library/admin/templates/arras-tools.php:11
 msgid "You can save the following code into a text file and use it when you need to import them into another installation. Note that not all options (custom background, child theme settings, etc.) will be exported."
 msgstr ""
 
-#: ../library/admin/templates/functions.php:195
+#: ../library/admin/templates/functions.php:169
 msgid "Stickied Posts"
 msgstr ""
 
-#: ../library/admin/templates/functions.php:228
+#: ../library/admin/templates/functions.php:202
 msgid "Taxonomy"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:12
-#, php-format
-msgid "The thumbnails cache directory (%s) is not writable. You will need to set the directory's permissions 755 or 777 for the thumbnails to work."
-msgstr ""
-
-#: ../library/admin/templates/options_page.php:15
-msgid "More about Changing File/Folder Permissions"
-msgstr ""
-
-#: ../library/admin/templates/options_page.php:21
-msgid "The server does not seem to have GD library installed, which is required for the thumbnails to work. Contact your web host for more information."
-msgstr ""
-
-#: ../library/admin/templates/options_page.php:34
+#: ../library/admin/templates/options_page.php:17
 msgid "General"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:35
+#: ../library/admin/templates/options_page.php:18
 msgid "Navigation"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:37
+#: ../library/admin/templates/options_page.php:20
 msgid "Layout"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:38
+#: ../library/admin/templates/options_page.php:21
 msgid "Design"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:39
+#: ../library/admin/templates/options_page.php:22
 msgid "Thumbnails"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:40
+#: ../library/admin/templates/options_page.php:23
 msgid "Tools"
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:54
+#: ../library/admin/templates/options_page.php:37
 msgid "Regenerate post thumbnails after saving."
 msgstr ""
 
-#: ../library/admin/templates/options_page.php:57
+#: ../library/admin/templates/options_page.php:40
 #: ../library/admin/templates/posttype_page.php:74
 #: ../library/admin/templates/taxonomy_page.php:66
 msgid "Reset Settings"
