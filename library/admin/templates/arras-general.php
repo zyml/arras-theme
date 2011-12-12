@@ -29,16 +29,16 @@
 <tr valign="top">
 <th scope="row"><label for="arras-rss-feed-url"><?php _e('RSS Feed (URL)', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_input(array('name' => 'arras-rss-feed-url', 'id' => 'arras-rss-feed-url', 'class' => 'code', 'size' => '65', 'value' => arras_get_option('feed_url') )) ?><br />
-<?php _e('This will replace the default WordPress RSS feed to this. Useful if you have decided to use third-party services like <a href="http://feedburner.google.com/">Feedburner</a>.', 'arras') ?>
+<code><?php echo get_bloginfo( 'rss2_url' ) ?></code><br />
+<?php _e( 'Custom feed URLs are no longer allowed due to support for automatic feed links.', 'arras' ) ?>
 </td>
 </tr>
 
 <tr valign="top">
 <th scope="row"><label for="arras-rss-comments-url"><?php _e('RSS Comments Feed (URL)', 'arras') ?></label></th>
 <td>
-<?php echo arras_form_input(array('name' => 'arras-rss-comments-url', 'id' => 'arras-rss-comments-url', 'class' => 'code', 'size' => '65', 'value' => arras_get_option('comments_feed_url') )) ?><br />
-<?php _e('This will replace the default WordPress RSS comments feed to this. Useful if you have decided to use third-party services like <a href="http://feedburner.google.com/">Feedburner</a>.', 'arras') ?>
+<code><?php echo get_bloginfo( 'comments_rss2_url' ) ?></code><br />
+<?php _e( 'Custom feed URLs are no longer allowed due to support for automatic feed links.', 'arras' ) ?>
 </td>
 </tr>
 

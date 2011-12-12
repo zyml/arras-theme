@@ -55,6 +55,7 @@ function arras_setup() {
 	/* Theme support */
 	add_theme_support('post-thumbnails');
 	add_theme_support('nav-menus');
+	add_theme_support('automatic-feed-links');
 	
 	/* Menus locations */
 	register_nav_menus(array(

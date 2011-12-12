@@ -8,18 +8,6 @@
 <meta name="robots" content="noindex, nofollow" />
 <?php endif ?>
 
-<?php if ( ($feed = arras_get_option('feed_url') ) == '' ) : ?>
-<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
-<?php else : ?>
-<link rel="alternate" type="application/rss+xml" href="<?php echo $feed ?>" title="<?php printf( __( '%s latest posts', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
-<?php endif; ?>
-
-<?php if ( ($comments_feed = arras_get_option('comments_feed_url') ) == '' ) : ?>
-<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
-<?php else : ?>
-<link rel="alternate" type="application/rss+xml" href="<?php echo $comments_feed ?>" title="<?php printf( __( '%s latest comments', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />
-<?php endif; ?>
-
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <?php if ( !file_exists(ABSPATH . 'favicon.ico') ) : ?>

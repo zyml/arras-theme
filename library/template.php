@@ -332,15 +332,9 @@ add_filter('excerpt_length', 'arras_excerpt_length');
 
 
 function arras_social_nav() {
-	$feed = arras_get_option('feed_url');
-	$comments_feed = arras_get_option('comments_feed_url');
 ?>
 	<ul class="quick-nav clearfix">
-		<?php if ($feed == '') : ?>
-			<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
-		<?php else : ?>
-			<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php echo $feed; ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
-		<?php endif; ?>
+		<li><a id="rss" title="<?php printf( __( '%s RSS Feed', 'arras' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS Feed', 'arras') ?></a></li>
 		
 		<?php $twitter_username = arras_get_option('twitter_username'); ?>
 		<?php if ($twitter_username != '') : ?>

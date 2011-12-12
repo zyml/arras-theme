@@ -43,8 +43,6 @@ class ArrasOptions {
 		$this->defaults = array(
 			'version' => ARRAS_VERSION,
 			'donate' => false,
-			'feed_url' => get_bloginfo('rss2_url'),
-			'comments_feed_url'	=> get_bloginfo('comments_rss2_url'),
 			'footer_sidebars' => 1,
 			'footer_title' => __('Copyright', 'arras'),
 			'footer_message' => '<p>' . sprintf( __('Copyright %s. All Rights Reserved.', 'arras'), get_bloginfo('name') ) . '</p>',
