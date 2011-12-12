@@ -450,7 +450,7 @@ function arras_widgets_post_loop( $id, $args = array() ) {
 			
 			?> <li class="clearfix"> <?php
 			if ($args['show_thumbs']) {
-				echo '<span class="thumb">' . arras_get_thumbnail( 'sidebar-thumb', get_the_ID() ) . '</span>';
+				echo '<a rel="bookmark" href="' . get_permalink() . '" class="thumb">' . arras_get_thumbnail( 'sidebar-thumb', get_the_ID() ) . '</a>';
 			}
 			?>
 			<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br />
