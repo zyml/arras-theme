@@ -121,6 +121,9 @@ function arras_setup() {
 	$max_image_size = arras_get_single_thumbs_size();
 	$content_width = $max_image_size[0];
 	
+	/* For child themes overrides */
+	do_action( 'arras_setup' );
+	
 	// print_r($arras_options);
 }
 
