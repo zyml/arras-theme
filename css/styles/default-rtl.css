@@ -92,9 +92,9 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 
 /* search bar */
 #searchbar  { margin: 25px 0 0; }
-.searchform  { border: 3px solid #383332; background: #EFEFEF; width: 250px; padding: 6px 5px; margin: 0; }
-.searchform .s  { font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; font-size: 14px; border: none; background: #EFEFEF; padding: 0; margin: 0; float: right; width: 234px; }
-.searchform .searchsubmit  { background: url(../../images/searchsubmit.gif) no-repeat; text-indent: -9000px; width: 16px; height: 16px; border: none; float: right; cursor: pointer; opacity: 0.7; text-transform: capitalize; padding: 0; margin: 0; }
+.searchform  { border: 3px solid #383332; background: #EFEFEF; margin: 0; }
+.searchform .s  { font-family: Helvetica, Arial, sans-serif; font-size: 14px; border: none; background: #EFEFEF; padding: 8px 5px; margin: 0; float: right; width: 234px; }
+.searchform .searchsubmit  { background: url(../../images/searchsubmit.gif) no-repeat; text-indent: -9000px; width: 16px; height: 16px; border: none; float: left; cursor: pointer; opacity: 0.7; text-transform: capitalize; padding: 0; margin: 6px 5px; }
 .searchform .searchsubmit:hover  { background: url(../../images/searchsubmit.gif) no-repeat; opacity: 1; }
 
 /* sidebar */
@@ -235,7 +235,7 @@ label.error				{ border: 1px solid #D8000C; color: #D8000C; background: #FFBABA;
 /* search results */
 .search-results h2      { color: #333; font-size: 12px; font-weight: 700; margin: 0 10px 0 0; padding: 6px 10px; background: url(../../images/feed-title-white.jpg) repeat-x top #EFEFEF; border: 1px solid #CCC; }
 .search-results-content { border: solid #CCC; border-width: 0 1px 1px; background: #FFF; margin: 0 10px 10px 0; padding: 10px; }
-.search-results-content .searchform, .sidebar .searchform { padding: 5px 4px; border: 4px solid #CCC; background: #EFEFEF; width: 250px; }
+.search-results-content .searchform, .sidebar .searchform { border: 2px solid #CCC; background: #EFEFEF; }
 
 /* author template */
 .author-posts-title, .author-content h1, .archive-title { font-family: Century Gothic, Apple Gothic, sans-serif; text-transform: uppercase; font-weight: 700; font-size: 14px; padding: 0 3px 8px; border-bottom: 1px solid #DDD; margin: 0 15px 10px 0; color: #383331; }
