@@ -46,40 +46,36 @@ function arras_layout_styles() {
 	<?php
 }
 
-function arras_add_layout_css() {
-	global $arras_registered_alt_layouts;
+function arras_load_styles() {
+	global $arras_registered_alt_layouts, $arras_registered_alt_styles;
 	
-	if ( count($arras_registered_alt_layouts) > 0 ) {
-		
-		if ( defined('ARRAS_FORCE_LAYOUT') ) {
-			$layout = ARRAS_FORCE_LAYOUT;
-		} else {
-			$layout = arras_get_option('layout');
+	if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
+		if ( count( $arras_registered_alt_layouts ) > 0 ) {
+			$layout = ( defined( 'ARRAS_FORCE_LAYOUT' ) ) ? ARRAS_FORCE_LAYOUT : arras_get_option( 'layout' );
+			wp_enqueue_style( 'arras-layout', get_template_directory_uri() . '/css/layouts/' . $layout . '.css', false, '2011-12-12', 'all' );
 		}
+	}
 	
-		?><link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/layouts/<?php echo $layout ?>.css" type="text/css" /><?php
+	if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
+		$scheme = arras_get_option( 'style' );
+		if ( !isset( $scheme ) ) $scheme = 'default';
+	
+		$css_path = '/css/styles/' . $scheme;
+	
+		if ( is_rtl() )
+			$css_path .= '-rtl';
+		
+		wp_enqueue_style( 'arras', get_template_directory_uri() . $css_path . '.css', false, '2011-12-12', 'all' );
 	}
-}
 
-function arras_add_style_css() {
-	global $theme_data, $arras_registered_alt_styles;
-
-	$scheme = arras_get_option('style');
-	if ( !isset($scheme) ) $scheme = 'default';
-
-	if ( is_rtl() && file_exists(get_stylesheet_directory() . '/css/styles/' . $scheme . '-rtl.css') ) {
-		echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/css/styles/' . $scheme . '-rtl.css" type="text/css" media="screen,projection" />';
-	} else {
-		echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/css/styles/' . $scheme . '.css" type="text/css" media="screen,projection" />';
-	}
-}
-
-function arras_add_user_css() {
-	if (!ARRAS_CHILD) {
-		echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/user.css" type="text/css" media="screen,projection" />';
-	} else {
-		echo '<link rel="stylesheet" href="' . get_bloginfo('stylesheet_url') . '" type="text/css" media="screen,projection" />';
-	}
+	// add user css
+	if ( !ARRAS_CHILD )
+		wp_enqueue_style( 'arras-user', get_template_directory_uri() . '/user.css', false, '2011-12-12', 'all' ); 
+	else
+		wp_enqueue_style( 'arras-child', get_bloginfo( 'stylesheet_uri' ), false, '2011-12-12', 'all' );
+	
+	// load other custom styles
+	do_action( 'arras_load_styles' );
 }
 
 /* End of file styles.php */

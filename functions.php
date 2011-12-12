@@ -70,13 +70,10 @@ function arras_setup() {
 	
 	/* Custom layouts & styles */
 	if ( !defined('ARRAS_INHERIT_STYLES') || ARRAS_INHERIT_STYLES == true ) {
-	add_action( 'arras_head', 'arras_add_style_css' );
-	add_action( 'arras_custom_styles', 'arras_layout_styles' );
+		add_action( 'arras_custom_styles', 'arras_layout_styles' );
 	}
 	
 	if ( !defined('ARRAS_INHERIT_LAYOUT') || ARRAS_INHERIT_LAYOUT == true ) {
-		add_action( 'arras_head', 'arras_add_layout_css' );
-		
 		// Alternate Styles & Layouts
 		register_alternate_layout( '1c-fixed', __('1 Column Layout (No Sidebars)', 'arras') );
 		register_alternate_layout( '2c-r-fixed', __('2 Column Layout (Right Sidebar)', 'arras') );
@@ -96,8 +93,8 @@ function arras_setup() {
 	
 	add_action( 'arras_beside_nav', 'arras_social_nav' );
 	
+	add_action( 'wp_head', 'arras_load_styles', 1 );
 	add_action( 'wp_head', 'arras_head' );
-	add_action( 'wp_head', 'arras_add_user_css', 20 );
 	add_action( 'wp_head', 'arras_add_header_js' );
 	
 	/* Filters */
