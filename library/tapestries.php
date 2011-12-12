@@ -66,15 +66,35 @@ function arras_get_tapestry_callback($type, $query, $taxonomy = 'category') {
 	}
 	
 	echo $tapestry->before;
-	while ($query->have_posts()) {
-		$query->the_post();
-		
-		// hack for plugin authors who love to use $post = $wp_query->post
-		$wp_query->post = $query->post;
-		setup_postdata($post);
-		
-		call_user_func_array( $tapestry->callback, array($dep = '', $taxonomy) );
-		if ($tapestry->allow_duplicates) arras_blacklist_duplicates();
+	if ( $type == 'default' ) {
+		$tapestry_settings = get_option( 'arras_tapestry_default' );
+
+		for ( $c = 0; $query->have_posts(); $c++ ) {
+			$query->the_post();
+			if ( $c % $tapestry_settings['nodes'] == 0 ) 
+				echo '<div class="clearfix">';
+			
+			// hack for plugin authors who love to use $post = $wp_query->post
+			$wp_query->post = $query->post;
+			setup_postdata($post);
+
+			call_user_func_array( $tapestry->callback, array($dep = '', $taxonomy) );
+			if ($tapestry->allow_duplicates) arras_blacklist_duplicates();
+			
+			if ( $c % $tapestry_settings['nodes'] == ( $tapestry_settings['nodes'] - 1 ) ) 
+				echo '</div>';
+		}
+	} else {
+		while ($query->have_posts()) {
+			$query->the_post();
+
+			// hack for plugin authors who love to use $post = $wp_query->post
+			$wp_query->post = $query->post;
+			setup_postdata($post);
+
+			call_user_func_array( $tapestry->callback, array($dep = '', $taxonomy) );
+			if ($tapestry->allow_duplicates) arras_blacklist_duplicates();
+		}
 	}
 	echo $tapestry->after;
 }
@@ -141,19 +161,19 @@ if (!function_exists('arras_tapestry_default')) {
 			$tapestry_settings = arras_defaults_tapestry_default();
 		}
 		?>
-		<li <?php arras_post_class() ?>>
+		<div <?php arras_post_class() ?>>
 			<?php echo apply_filters('arras_tapestry_default_postheader', arras_generic_postheader('node-based', true) ) ?>
 			<?php if ($tapestry_settings['excerpt']) : ?>
 			<div class="entry-summary">
 				<?php the_excerpt() ?>
 			</div>
 			<?php endif ?>
-		</li>
+		</div>
 		<?php
 	}
 	arras_add_tapestry( 'default', __('Node Based', 'arras'), 'arras_tapestry_default', array(
-		'before' => '<ul class="hfeed posts-default clearfix">',
-		'after' => '</ul><!-- .posts-default -->'
+		'before' => '<div class="hfeed posts-default clearfix">',
+		'after' => '</div><!-- .posts-default -->'
 	) );
 	
 	add_action('arras_add_default_thumbnails', 'arras_add_tapestry_default_thumbs');
@@ -193,10 +213,9 @@ function arras_admin_tapestry_default() {
 	</td>
 	</tr>
 	<tr valign="top">
-	<th scope="row"><label for="arras-tapestry-default-height"><?php _e('Maximum Node Height', 'arras') ?></label></th>
+	<th scope="row"><label for="arras-tapestry-default-height"><?php _e('Nodes per Row', 'arras') ?></label></th>
 	<td>
-	<?php echo arras_form_input(array('name' => 'arras-tapestry-default-height', 'id' => 'arras-tapestry-default-height', 'size' => '5', 'value' => $tapestry_settings['height'], 'maxlength' => 3 )) ?>
-	 <?php ' ' . _e('pixels', 'arras') ?>
+	<?php echo arras_form_input(array('name' => 'arras-tapestry-default-nodes', 'id' => 'arras-tapestry-default-nodes', 'size' => '3', 'value' => $tapestry_settings['nodes'], 'maxlength' => 1 )) ?>
 	</td>
 	</tr>
 	
@@ -206,8 +225,8 @@ function arras_admin_tapestry_default() {
 
 function arras_save_tapestry_default() {
 	$_tapestry_default_settings = array(
-		'height' => (int)$_POST['arras-tapestry-default-height'],
-		'excerpt' => isset($_POST['arras-tapestry-default-excerpt'])
+		'nodes' => (int)$_POST['arras-tapestry-default-nodes'],
+		'excerpt' => isset( $_POST['arras-tapestry-default-excerpt'] )
 	);
 
 	update_option('arras_tapestry_default', $_tapestry_default_settings);
@@ -216,7 +235,7 @@ function arras_save_tapestry_default() {
 function arras_defaults_tapestry_default() {
 	$_tapestry_default_settings = array(
 		'height' => 225,
-		'excerpt' => true
+		'nodes'	=> 3,
 	);
 	add_option('arras_tapestry_default', $_tapestry_default_settings, '', 'yes');
 	
@@ -225,14 +244,13 @@ function arras_defaults_tapestry_default() {
 
 function arras_style_tapestry_default() {
 	$tapestry_settings = get_option('arras_tapestry_default');
-	$height = (!isset($tapestry_settings['height']) ) ? 225 : $tapestry_settings['height'];
 	
 	$node_based_size = arras_get_image_size('node-based-thumb');
 	$node_based_w = $node_based_size['w'];
 	$node_based_h = $node_based_size['h'];
 	
 	?>
-	.posts-default li  { width: <?php echo $node_based_w + 10 ?>px; height: <?php echo $height ?>px; }
+	.posts-default .entry  { width: <?php echo $node_based_w + 10 ?>px; height: <?php echo $height ?>px; }
 	.posts-default img, .posts-default .entry-thumbnails-link { width: <?php echo $node_based_w ?>px; height: <?php echo $node_based_h ?>px; }
 	.posts-default .entry-meta { width: <?php echo $node_based_w ?>px; }
 	.posts-default .entry-thumbnails { width: <?php echo $node_based_w + 10 ?>px; height: <?php echo $node_based_h + 10 ?>px; }
