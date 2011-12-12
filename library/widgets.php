@@ -364,7 +364,7 @@ class Arras_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud {
 				$title = $instance['title'];
 			} else {
 				if ( 'post_tag' == $current_taxonomy ) {
-					$title = __('Tags');
+					$title = __('Tags', 'arras');
 				} else {
 					$tax = get_taxonomy($current_taxonomy);
 					$title = $tax->label;
@@ -380,7 +380,7 @@ class Arras_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud {
 			echo "</div>\n";
 			echo $after_widget;
 		} else {
-			$title = apply_filters('widget_title', empty($instance['title']) ? __('Tags') : $instance['title']);
+			$title = apply_filters('widget_title', empty($instance['title']) ? __('Tags', 'arras') : $instance['title']);
 
 			echo $before_widget;
 			if ( $title )
@@ -396,8 +396,8 @@ class Arras_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud {
 class Arras_Widget_Search extends WP_Widget {
 
 	function Arras_Widget_Search() {
-		$widget_ops = array('classname' => 'widget_search', 'description' => __( "A search form for your site") );
-		$this->WP_Widget('search', __('Search'), $widget_ops);
+		$widget_ops = array('classname' => 'widget_search', 'description' => __( "A search form for your site", 'arras' ) );
+		$this->WP_Widget('search', __('Search', 'arras'), $widget_ops);
 	}
 
 	function widget( $args, $instance ) {
