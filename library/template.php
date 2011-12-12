@@ -384,5 +384,25 @@ function arras_debug($exp) {
 	//}
 }
 
+function arras_add_facebook_share_meta() {
+	global $post;
+	if ( is_single() ) {
+		if ( has_post_thumbnail( $post->ID ) )
+			$thumb_id = get_post_thumbnail_id( $post->ID );			
+		elseif ( arras_get_option( 'auto_thumbs' ) )
+			$thumb_id = arras_get_first_post_image_id();
+		
+		if ( !$thumb_id ) return false;
+		
+		$image = wp_get_attachment_image_src( $thumb_id );
+		$src = $image[0];
+	?>
+	<meta property="og:title" content="<?php echo get_the_title( $post->ID ) ?>" />
+	<meta property="og:description" content="<?php echo get_the_excerpt() ?>" />
+	<meta property="og:image" content="<?php echo $image[0] ?>" />
+	<?php
+	}
+}
+
 /* End of file template.php */
 /* Location: ./library/template.php */

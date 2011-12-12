@@ -97,6 +97,7 @@ function arras_setup() {
 	add_action( 'wp_head', 'arras_load_styles', 1 );
 	add_action( 'wp_head', 'arras_head' );
 	add_action( 'wp_head', 'arras_add_header_js' );
+	add_action( 'wp_head', 'arras_add_facebook_share_meta' );
 	
 	/* Filters */
 	add_filter( 'arras_postheader', 'arras_post_taxonomies' );
@@ -105,7 +106,6 @@ function arras_setup() {
 	if ( defined('ARRAS_CUSTOM_FIELDS') && ARRAS_CUSTOM_FIELDS == true ) {
 		add_filter( 'arras_postheader', 'arras_postmeta' );
 	}
-	
 	
 	/* Admin actions */
 	if (is_admin()) {
