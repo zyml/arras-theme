@@ -73,7 +73,7 @@ function arras_get_image_size($id) {
 function arras_get_thumbnail($size = 'thumbnail', $id = NULL) {
 	global $post, $arras_image_sizes;
 	
-	$empty_thumbnail = '<img src="' . get_bloginfo('template_directory') . '/images/thumbnail.png" alt="' . get_the_excerpt() . '" title="' . get_the_title() . '" />';
+	$empty_thumbnail = '<img src="' . get_template_directory_uri() . '/images/thumbnail.png" alt="' . get_the_excerpt() . '" title="' . get_the_title() . '" />';
 	
 	if ($post) $id = $post->ID;
 	

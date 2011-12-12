@@ -25,7 +25,7 @@
 <?php if ( !file_exists(ABSPATH . 'favicon.ico') ) : ?>
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" />
 <?php else: ?>
-<link rel="shortcut icon" href="<?php echo get_bloginfo('url') ?>/favicon.ico" />
+<link rel="shortcut icon" href="<?php echo home_url() ?>/favicon.ico" />
 <?php endif; ?>
 
 <?php
@@ -79,10 +79,10 @@ document.body.className = c;
 	<div id="branding" class="clearfix">
 	<div class="logo">
 		<?php if ( is_home() || is_front_page() ) : ?>
-		<h1 class="blog-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+		<h1 class="blog-name"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 		<h2 class="blog-description"><?php bloginfo('description'); ?></h2>
 		<?php else: ?>
-		<span class="blog-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></span>
+		<span class="blog-name"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></span>
 		<span class="blog-description"><?php bloginfo('description'); ?></span>
 		<?php endif ?>
 	</div>

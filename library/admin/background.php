@@ -21,7 +21,7 @@ function arras_custom_background_scripts() {
 }
 
 function arras_custom_background_styles() {
-	?> <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/admin.css" type="text/css" /> <?php
+	?> <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/admin.css" type="text/css" /> <?php
 	wp_enqueue_style('farbtastic');
 }
 

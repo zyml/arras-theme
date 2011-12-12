@@ -192,12 +192,12 @@ function arras_admin_scripts() {
 
 function arras_admin_styles() {
 ?> 
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/smoothness/jquery-ui-1.8.2.custom.css" type="text/css" /> 
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/smoothness/jquery-ui-1.8.2.custom.css" type="text/css" /> 
 <?php
 	if ( is_rtl() ) {
-		echo '<link rel="stylesheet" href="' . get_bloginfo('template_directory') . '/css/admin-rtl.css" type="text/css" />';
+		echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/css/admin-rtl.css" type="text/css" />';
 	} else {
-		echo '<link rel="stylesheet" href="' . get_bloginfo('template_directory') . '/css/admin.css" type="text/css" />';
+		echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/css/admin.css" type="text/css" />';
 	}
 }
 
@@ -205,7 +205,7 @@ function get_remote_array($url) {
 	if ( function_exists('wp_remote_request') ) {	
 		$options = array();
 		$options['headers'] = array(
-			'User-Agent' => 'Arras Feed Grabber' . ARRAS_VERSION . '; (' . get_bloginfo('url') .')'
+			'User-Agent' => 'Arras Feed Grabber' . ARRAS_VERSION . '; (' . home_url() .')'
 		 );
 		 
 		$response = wp_remote_request($url, $options);

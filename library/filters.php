@@ -146,7 +146,7 @@ function arras_post_notfound() {
 	$postcontent .= '<div class="entry-content"><p>' . __('<strong>We\'re very sorry, but the page that you are looking for doesn\'t exist or has been moved.</strong>', 'arras') . '</p>';
 	
 	
-	$postcontent .= '<form method="get" class="clearfix" action="' . get_bloginfo('url') . '">
+	$postcontent .= '<form method="get" class="clearfix" action="' . home_url() . '">
 	' . __('Perhaps searching for it might help?', 'arras') . '<br />
 	<input type="text" value="" name="s" class="s" size="30" onfocus="this.value=\'\'" />
 	<input type="submit" class="searchsubmit" value="' . __('Search', 'arras') . '" title="' . sprintf( __('Search %s', 'arras'), esc_html( get_bloginfo('name'), 1 ) ) . '" />
