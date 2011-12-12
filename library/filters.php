@@ -152,7 +152,7 @@ function arras_post_notfound() {
 	<input type="submit" class="searchsubmit" value="' . __('Search', 'arras') . '" title="' . sprintf( __('Search %s', 'arras'), esc_html( get_bloginfo('name'), 1 ) ) . '" />
 	</form>';
 	
-	$postcontent .= '<h3>Latest Posts</h3>';
+	$postcontent .= '<h3>' . __( 'Latest Posts', 'arras' ) . '</h3>';
 	$postcontent .= '<ul>';
 	$postcontent .= wp_get_archives('type=postbypost&limit=10&format=custom&before=<li>&after=</li>&echo=0');
 	$postcontent .= '</ul>';
