@@ -46,7 +46,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 			'tags'			=> __('Tags', 'arras')
 		);
 		
-		if ( function_exists('akpc_most_popular') ) {
+		if ( function_exists('WPPP_show_popular_posts') ) {
 			$_default_tabs['popular'] = __('Popular', 'arras');
 		}
 		
@@ -161,10 +161,8 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 	}
 	
 	function popular_tab() {
-		if ( function_exists('akpc_most_popular') ) {
-			echo '<ul>';
-			akpc_most_popular(10, '<li>', '</li>');
-			echo '</ul>';
+		if ( function_exists('WPPP_show_popular_posts') ) {
+			WPPP_show_popular_posts( "title=&number=" . $this->postcount . "&format=<a href='%post_permalink%' title='%post_title_attribute%'>%post_title%</a><br /><span class='sub'>%post_time%</span>&time_format=d F Y g:i A" );
 		}
 	}
 	
@@ -208,7 +206,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		<select style="width: 200px" name="<?php echo $this->get_field_name('order') ?>[2]"><?php $this->get_tabbed_opts( $order[2], 'comments'); ?></select><br />
 		<select style="width: 200px" name="<?php echo $this->get_field_name('order') ?>[3]"><?php $this->get_tabbed_opts( $order[3], 'tags'); ?></select>
 		</p>
-		<p style="font-size:11px"><?php _e('The popular posts option is only enabled when the plugin <a href="http://wordpress.org/extend/plugins/popularity-contest/">Popularity Contest</a> is enabled.', 'arras') ?></p>
+		<p style="font-size:11px"><?php _e('The popular posts option is only enabled when the plugin <a href="http://wordpress.org/extend/plugins/wordpresscom-popular-posts/">WordPress.com Popular Posts</a> is enabled.', 'arras') ?></p>
 		
 		<p><label for="<?php echo $this->get_field_id('postcount') ?>"><?php _e('Post Count:', 'arras') ?></label>
 		<select id="<?php echo $this->get_field_id('postcount') ?>" name="<?php echo $this->get_field_name('postcount') ?>">
