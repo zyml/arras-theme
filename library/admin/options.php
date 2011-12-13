@@ -113,8 +113,6 @@ class ArrasOptions {
 		$this->version = ARRAS_VERSION;
 		$this->donate = !isset($_POST['arras-credits']);
 		
-		$this->feed_url = (string)$_POST['arras-rss-feed-url'];
-		$this->comments_feed_url = (string)$_POST['arras-rss-comments-url'];
 		$this->twitter_username = (string)$_POST['arras-twitter'];
 		$this->facebook_profile = (string)$_POST['arras-facebook'];
 		$this->footer_sidebars = (int)$_POST['arras-footer-sidebars'];
