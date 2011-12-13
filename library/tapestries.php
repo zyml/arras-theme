@@ -250,7 +250,7 @@ function arras_style_tapestry_default() {
 	$node_based_h = $node_based_size['h'];
 	
 	?>
-	.posts-default .entry  { width: <?php echo $node_based_w + 10 ?>px; height: <?php echo $height ?>px; }
+	.posts-default .entry  { width: <?php echo $node_based_w + 10 ?>px; }
 	.posts-default img, .posts-default .entry-thumbnails-link { width: <?php echo $node_based_w ?>px; height: <?php echo $node_based_h ?>px; }
 	.posts-default .entry-meta { width: <?php echo $node_based_w ?>px; }
 	.posts-default .entry-thumbnails { width: <?php echo $node_based_w + 10 ?>px; height: <?php echo $node_based_h + 10 ?>px; }
