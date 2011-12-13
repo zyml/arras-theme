@@ -24,7 +24,7 @@ class Arras_Tabbed_Sidebar extends WP_Widget {
 		
 		if ( is_active_widget( false, false, $this->id_base ) ) {
 			add_action( 'wp_head', array( &$this, 'load_js' ) );
-			add_action( 'arras_custom_scripts', array( &$this, 'do_js' ) );
+			add_action( 'arras_custom_js-footer', array( &$this, 'do_js' ) );
 		}
 	}
 	

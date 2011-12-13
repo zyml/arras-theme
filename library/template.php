@@ -82,9 +82,25 @@ function arras_document_title() {
 function arras_add_header_js() {
 	?>
 	<script type="text/javascript">
-	<?php @include TEMPLATEPATH . '/js/header.js.php'; ?>
+	jQuery(document).ready( function($) {
+		$('.sf-menu').superfish({autoArrows: true, speed: 'fast', dropShadows: 'true'});
+		<?php if ( is_single() ) : ?>
+			$( '#commentform' ).validate();
+		<?php endif ?>
+		<?php do_action( 'arras_custom_js-header' ) ?>
+	} );
 	</script>
 	<?php
+}
+
+function arras_add_footer_js() {
+	?>
+	<script type="text/javascript">
+	jQuery(document).ready( function($) {
+		<?php do_action( 'arras_custom_js-footer' ) ?>
+	} );
+	</script>
+	<?php	
 }
 
 /**
