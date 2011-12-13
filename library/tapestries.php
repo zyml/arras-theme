@@ -68,6 +68,9 @@ function arras_get_tapestry_callback($type, $query, $taxonomy = 'category') {
 	echo $tapestry->before;
 	if ( $type == 'default' ) {
 		$tapestry_settings = get_option( 'arras_tapestry_default' );
+		
+		if ( !isset( $tapestry_settings['nodes'] ) )
+			$tapestry_settings['nodes'] = 3;
 
 		for ( $c = 0; $query->have_posts(); $c++ ) {
 			$query->the_post();
