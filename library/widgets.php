@@ -435,7 +435,7 @@ class Arras_Widget_Search extends WP_Widget {
 }
 
 function arras_widgets_post_loop( $id, $args = array() ) {
-	global $wp_query;
+	global $wp_query, $post;
 	
 	$_defaults = array(
 		'taxonomy'			=> 'category',
