@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-12 20:22+0730\n"
+"POT-Creation-Date: 2011-12-13 16:53+0730\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -261,30 +261,30 @@ msgid "Tag Cloud"
 msgstr ""
 
 #: ../yarpp-template-arras.php:16
-#: ../library/widgets.php:472
+#: ../library/widgets.php:470
 msgid "d F Y g:i A"
 msgstr ""
 
 #: ../yarpp-template-arras.php:17
-#: ../library/widgets.php:473
+#: ../library/widgets.php:471
 msgid "% Comments"
 msgstr ""
 
 #: ../yarpp-template-arras.php:21
 #: ../library/deprecated.php:118
-#: ../library/widgets.php:480
+#: ../library/widgets.php:478
 msgid "Read More"
 msgstr ""
 
 #: ../yarpp-template-arras.php:27
-#: ../library/widgets.php:488
+#: ../library/widgets.php:486
 msgid "No posts at the moment. Check back again later!"
 msgstr ""
 
 #: ../library/deprecated.php:98
 #: ../library/deprecated.php:117
-#: ../library/tapestries.php:122
-#: ../library/tapestries.php:256
+#: ../library/tapestries.php:145
+#: ../library/tapestries.php:277
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -340,60 +340,56 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../library/slideshow.php:100
+#: ../library/slideshow.php:97
 msgid "Featured Slideshow"
 msgstr ""
 
-#: ../library/tapestries.php:91
+#: ../library/tapestries.php:114
 msgid "Read the rest of this entry &raquo;"
 msgstr ""
 
-#: ../library/tapestries.php:96
+#: ../library/tapestries.php:119
 msgid "Traditional"
 msgstr ""
 
-#: ../library/tapestries.php:127
+#: ../library/tapestries.php:150
 msgid "Per Line"
 msgstr ""
 
-#: ../library/tapestries.php:154
+#: ../library/tapestries.php:177
 msgid "Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:177
+#: ../library/tapestries.php:200
 msgid "Tapestry: Node-Based"
 msgstr ""
 
-#: ../library/tapestries.php:186
+#: ../library/tapestries.php:209
 msgid "Tapestry: Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:190
+#: ../library/tapestries.php:213
 msgid "Show Excerpt?"
 msgstr ""
 
-#: ../library/tapestries.php:196
-msgid "Maximum Node Height"
+#: ../library/tapestries.php:219
+msgid "Nodes per Row"
 msgstr ""
 
-#: ../library/tapestries.php:199
-msgid "pixels"
-msgstr ""
-
-#: ../library/tapestries.php:253
+#: ../library/tapestries.php:274
 #, php-format
 msgid "Posted on %s"
 msgstr ""
 
-#: ../library/tapestries.php:257
+#: ../library/tapestries.php:278
 msgid "Continue Reading..."
 msgstr ""
 
-#: ../library/tapestries.php:263
+#: ../library/tapestries.php:284
 msgid "Quick Preview"
 msgstr ""
 
-#: ../library/tapestries.php:269
+#: ../library/tapestries.php:290
 msgid "Tapestry: Quick Preview"
 msgstr ""
 
@@ -413,51 +409,51 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: ../library/template.php:286
+#: ../library/template.php:302
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../library/template.php:289
+#: ../library/template.php:305
 #, php-format
 msgid "Posted %1$s at %2$s"
 msgstr ""
 
-#: ../library/template.php:289
+#: ../library/template.php:305
 msgid "c"
 msgstr ""
 
-#: ../library/template.php:289
+#: ../library/template.php:305
 msgid "F j, Y"
 msgstr ""
 
-#: ../library/template.php:289
+#: ../library/template.php:305
 msgid "g:i A"
 msgstr ""
 
-#: ../library/template.php:337
+#: ../library/template.php:353
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../library/template.php:337
+#: ../library/template.php:353
 msgid "RSS Feed"
 msgstr ""
 
-#: ../library/template.php:341
+#: ../library/template.php:357
 #, php-format
 msgid "%s Twitter"
 msgstr ""
 
-#: ../library/template.php:341
+#: ../library/template.php:357
 msgid "Twitter"
 msgstr ""
 
-#: ../library/template.php:346
+#: ../library/template.php:362
 #, php-format
 msgid "%s Facebook"
 msgstr ""
 
-#: ../library/template.php:346
+#: ../library/template.php:362
 msgid "Facebook"
 msgstr ""
 
@@ -490,8 +486,8 @@ msgid "Comments"
 msgstr ""
 
 #: ../library/widgets.php:46
-#: ../library/widgets.php:382
-#: ../library/widgets.php:398
+#: ../library/widgets.php:380
+#: ../library/widgets.php:396
 msgid "Tags"
 msgstr ""
 
@@ -499,90 +495,89 @@ msgstr ""
 msgid "Popular"
 msgstr ""
 
-#: ../library/widgets.php:196
+#: ../library/widgets.php:194
 msgid "Retrieve Posts from:"
 msgstr ""
 
-#: ../library/widgets.php:198
+#: ../library/widgets.php:196
 msgid "Slideshow"
 msgstr ""
 
-#: ../library/widgets.php:199
+#: ../library/widgets.php:197
 msgid "Featured Posts #1"
 msgstr ""
 
-#: ../library/widgets.php:200
+#: ../library/widgets.php:198
 msgid "Featured Posts #2"
 msgstr ""
 
-#: ../library/widgets.php:205
+#: ../library/widgets.php:203
 msgid "Tabbed Sidebar Order:"
 msgstr ""
 
-#: ../library/widgets.php:211
-msgid "The popular posts option is only enabled when the plugin <a href=\"http://wordpress.org/extend/plugins/popularity-contest/\">Popularity Contest</a> is enabled."
+#: ../library/widgets.php:209
+msgid "The popular posts option is only enabled when the plugin <a href=\"http://wordpress.org/extend/plugins/wordpresscom-popular-posts/\">WordPress.com Popular Posts</a> is enabled."
 msgstr ""
 
-#: ../library/widgets.php:213
+#: ../library/widgets.php:211
 msgid "Post Count:"
 msgstr ""
 
-#: ../library/widgets.php:221
+#: ../library/widgets.php:219
 msgid "Comments Count:"
 msgstr ""
 
-#: ../library/widgets.php:232
+#: ../library/widgets.php:230
 msgid "Display only in homepage"
 msgstr ""
 
-#: ../library/widgets.php:234
+#: ../library/widgets.php:232
 msgid "Display thumbnails"
 msgstr ""
 
-#: ../library/widgets.php:271
+#: ../library/widgets.php:269
 msgid "Featured stories containing post thumbnails and the excerpt based on categories."
 msgstr ""
 
-#: ../library/widgets.php:273
-#: ../library/widgets.php:316
+#: ../library/widgets.php:271
+#: ../library/widgets.php:314
 #: ../library/admin/options.php:60
 msgid "Featured Stories"
 msgstr ""
 
-#: ../library/widgets.php:327
+#: ../library/widgets.php:325
 msgid "Title:"
 msgstr ""
 
-#: ../library/widgets.php:331
+#: ../library/widgets.php:329
 msgid "Featured Categories:"
 msgstr ""
 
-#: ../library/widgets.php:333
+#: ../library/widgets.php:331
 msgid "All Categories"
 msgstr ""
 
-#: ../library/widgets.php:343
+#: ../library/widgets.php:341
 msgid "How many items would you like to display?"
 msgstr ""
 
-#: ../library/widgets.php:354
+#: ../library/widgets.php:352
 msgid "Do not display in homepage"
 msgstr ""
 
-#: ../library/widgets.php:357
+#: ../library/widgets.php:355
 msgid "Show post excerpts"
 msgstr ""
 
-#: ../library/widgets.php:360
+#: ../library/widgets.php:358
 msgid "Show thumbnails"
 msgstr ""
 
-#: ../library/widgets.php:414
+#: ../library/widgets.php:412
 msgid "A search form for your site"
 msgstr ""
 
 #: ../library/admin/admin.php:5
-#: ../library/admin/admin.php:307
 msgid "Arras"
 msgstr ""
 
@@ -591,7 +586,6 @@ msgid "Arras Options"
 msgstr ""
 
 #: ../library/admin/admin.php:6
-#: ../library/admin/admin.php:313
 msgid "Theme Options"
 msgstr ""
 
@@ -600,13 +594,12 @@ msgid "Post Types & Taxonomies"
 msgstr ""
 
 #: ../library/admin/admin.php:8
-#: ../library/admin/admin.php:319
 msgid "Post Types & Tax."
 msgstr ""
 
 #: ../library/admin/admin.php:10
-#: ../library/admin/admin.php:325
 #: ../library/admin/background.php:110
+#: ../library/admin/templates/arras-design.php:66
 msgid "Custom Background"
 msgstr ""
 
