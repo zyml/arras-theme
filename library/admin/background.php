@@ -21,8 +21,24 @@ function arras_custom_background_scripts() {
 }
 
 function arras_custom_background_styles() {
-	?> <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/admin.css" type="text/css" /> <?php
-	wp_enqueue_style('farbtastic');
+	wp_enqueue_style( 'arras-admin', get_template_directory_uri() . '/css/admin.css', false, '2011-12-12', 'all' );
+	wp_enqueue_style( 'farbtastic' );
+}
+
+function arras_get_custom_background_defaults() {
+	$_defaults = array(
+		'enable'		=> false,
+		'id' 			=> 0,
+		'attachment' 	=> 'scroll',
+		'pos-x'			=> 'center',
+		'pos-y'			=> 'center',
+		'repeat'		=> 'no-repeat',
+		'color'			=> '#F0F0F0',
+		'foreground'	=> false,
+		'wrap'			=> false
+	);	
+	
+	return $_defaults;	
 }
 
 function arras_custom_background() {
@@ -32,23 +48,16 @@ function arras_custom_background() {
 	
 	if ( isset($_REQUEST['reset']) ) {
 		check_admin_referer('arras-custom-background');
-		$arras_custom_bg_options = array(
-			'enable'		=> false,
-			'id' 			=> 0,
-			'attachment' 	=> 'scroll',
-			'pos-x'			=> 'center',
-			'pos-y'			=> 'center',
-			'repeat'		=> 'no-repeat',
-			'color'			=> '#F0F0F0',
-			'foreground'	=> false,
-			'wrap'			=> false
-		);
-		update_option('arras_custom_bg_options', maybe_serialize($arras_custom_bg_options));
+		$arras_custom_bg_options = arras_get_custom_background_defaults();
+		update_option( 'arras_custom_bg_options', maybe_serialize($arras_custom_bg_options) );
 		$notices = '<div class="updated"><p>' . __('Your settings have been reverted to the defaults.', 'arras') . '</p></div>';
 	}
 
 	if ( isset($_REQUEST['save']) ) {
+		var_dump( $_REQUEST );
+		
 		check_admin_referer('arras-custom-background');
+		$defaults = arras_get_custom_background_defaults();
 		
 		if ($_FILES['import']['error'] != 4) {
 			$overrides = array('test_form' => false);
@@ -73,18 +82,19 @@ function arras_custom_background() {
 			$arras_custom_bg_options['id'] = wp_insert_attachment($object, $file);
 		}
 		
-		$arras_custom_bg_options['enable'] = (boolean)(isset($_POST['bg-enable']));
-		$arras_custom_bg_options['attachment'] = stripslashes($_POST['bg-attachment']);
-		$arras_custom_bg_options['pos-x'] = stripslashes($_POST['bg-pos-x']);
-		$arras_custom_bg_options['pos-y'] = stripslashes($_POST['bg-pos-y']);
-		$arras_custom_bg_options['repeat'] = stripslashes($_POST['bg-repeat']);
-		$arras_custom_bg_options['color'] = stripslashes($_POST['bg-color']);
-		$arras_custom_bg_options['foreground'] = (boolean)(isset($_POST['foreground']));
-		$arras_custom_bg_options['wrap'] = (boolean)(isset($_POST['wrap']));
+		$arras_custom_bg_options['enable'] = ( isset( $_POST['bg-enable'] ) );
 		
-		update_option('arras_custom_bg_options', maybe_serialize($arras_custom_bg_options));
+		$arras_custom_bg_options['attachment'] = isset( $_POST['bg-attachment'] ) ? $_POST['bg-attachment'] : $defaults['attachment'];
+		$arras_custom_bg_options['pos-x'] = isset( $_POST['bg-pos-x'] ) ? $_POST['bg-pos-x'] : $defaults['pos-x'];
+		$arras_custom_bg_options['pos-y'] = isset( $_POST['bg-pos-y'] ) ? $_POST['bg-pos-y'] : $defaults['pos-y'];
+		$arras_custom_bg_options['repeat'] = isset( $_POST['bg-repeat'] ) ? $_POST['bg-repeat'] : $defaults['repeat'];
+		$arras_custom_bg_options['color'] = ( isset( $_POST['bg-color'] ) && preg_match( '/^#?(([a-fA-F0-9]){3}){1,2}$/', $_POST['bg-color'] ) )? $_POST['bg-color'] : $defaults['color'];
+		$arras_custom_bg_options['foreground'] = isset( $_POST['foreground'] );
+		$arras_custom_bg_options['wrap'] = isset( $_POST['wrap'] ) ? $_POST['wrap'] : $defaults['wrap'];
+
+		update_option( 'arras_custom_bg_options', maybe_serialize( $arras_custom_bg_options ) );
 		
-		$notices = '<div class="updated"><p>' . __('Your settings have been saved to the database.', 'arras') . '</p></div>';
+		$notices = '<div class="updated"><p>' . __( 'Your settings have been saved to the database.', 'arras' ) . '</p></div>';
 	}
 
 	if ( isset($_GET['page']) && $_GET['page'] == 'arras-custom-background' ) : ?>
@@ -150,7 +160,7 @@ function arras_custom_background() {
 		</div><!-- #custom-bg-options -->
 		<div id="custom-bg-preview">
 			<h3><?php _e('Current Background Image', 'arras') ?></h3>
-			<?php if ( $arras_custom_bg_options['id'] != 0 ) echo wp_get_attachment_image($arras_custom_bg_options['id'], 'full'); ?>
+			<?php if ( isset( $arras_custom_bg_options['id'] ) && $arras_custom_bg_options['id'] != 0 ) echo wp_get_attachment_image($arras_custom_bg_options['id'], 'full'); ?>
 		</div><!-- #custom-bg-preview -->
 	</form>
 	
@@ -160,25 +170,5 @@ function arras_custom_background() {
 	
 <?php
 }
-
-function arras_add_custom_background() {
-	global $arras_custom_bg_options;
-	
-	if (!$arras_custom_bg_options['enable']) return false;
-	
-	$img = wp_get_attachment_image_src($arras_custom_bg_options['id'], 'full');
-	
-	if ($arras_custom_bg_options['wrap']) $css_class = 'body';
-	else $css_class ='#wrapper';
-?>
-<?php echo $css_class ?> { background:<?php if($arras_custom_bg_options['id'] != 0) echo ' url(' . $img[0] . ')'; ?> <?php echo $arras_custom_bg_options['pos-x'] . ' ' . $arras_custom_bg_options['pos-y'] . ' ' . $arras_custom_bg_options['attachment'] . ' ' . $arras_custom_bg_options['repeat'] . ' ' . $arras_custom_bg_options['color']; ?> !important; }
-<?php
-if ($arras_custom_bg_options['foreground']) :
-?>
-#main { background: url(<?php echo get_template_directory_uri() ?>/images/foreground.png) !important; }
-<?php
-endif;
-}
-add_action('arras_custom_styles', 'arras_add_custom_background');
 
 ?>

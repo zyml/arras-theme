@@ -89,8 +89,10 @@ function arras_setup() {
 	remove_action( 'wp_head', 'pagenavi_css' );
 	
 	add_action( 'arras_head', 'arras_override_styles' );
+	
 	add_action( 'arras_custom_styles', 'arras_add_custom_logo' );
 	add_action( 'arras_custom_styles', 'arras_constrain_footer_sidebars' );
+	add_action( 'arras_custom_styles', 'arras_add_custom_background' );
 	
 	add_action( 'arras_beside_nav', 'arras_social_nav' );
 	
