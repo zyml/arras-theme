@@ -69,7 +69,7 @@ function arras_get_tapestry_callback($type, $query, $taxonomy = 'category') {
 	if ( $type == 'default' ) {
 		$tapestry_settings = get_option( 'arras_tapestry_default' );
 		
-		if ( !isset( $tapestry_settings['nodes'] ) )
+		if ( !isset( $tapestry_settings['nodes'] ) || $tapestry_settings['nodes'] <= 0 )
 			$tapestry_settings['nodes'] = 3;
 		
 		$c = 0;
