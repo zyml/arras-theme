@@ -68,10 +68,14 @@ function arras_load_styles() {
 	}
 
 	// add user css
-	if ( !ARRAS_CHILD )
+	if ( !ARRAS_CHILD ) {
 		wp_enqueue_style( 'arras-user', get_template_directory_uri() . '/user.css', false, '2011-12-12', 'all' ); 
-	else
-		wp_enqueue_style( 'arras-child', get_bloginfo( 'stylesheet_uri' ), false, '2011-12-12', 'all' );
+	} else {
+		if ( is_rtl() )
+			wp_enqueue_style( 'arras-child', get_stylesheet_directory_uri() . '/rtl.css', false, '2011-12-12', 'all' );
+		else
+			wp_enqueue_style( 'arras-child', get_stylesheet_directory_uri() . '/style.css', false, '2011-12-12', 'all' );
+	}
 	
 	// load other custom styles
 	do_action( 'arras_load_styles' );
