@@ -71,8 +71,10 @@ function arras_get_tapestry_callback($type, $query, $taxonomy = 'category') {
 		
 		if ( !isset( $tapestry_settings['nodes'] ) )
 			$tapestry_settings['nodes'] = 3;
+		
+		$c = 0;
 
-		for ( $c = 0; $query->have_posts(); $c++ ) {
+		for ( $c; $query->have_posts(); $c++ ) {
 			$query->the_post();
 			if ( $c % $tapestry_settings['nodes'] == 0 ) 
 				echo '<div class="clearfix">';
@@ -87,6 +89,10 @@ function arras_get_tapestry_callback($type, $query, $taxonomy = 'category') {
 			if ( $c % $tapestry_settings['nodes'] == ( $tapestry_settings['nodes'] - 1 ) ) 
 				echo '</div>';
 		}
+		
+		if ( $c % $tapestry_settings['nodes'] != 0 )
+			echo '</div>';
+		
 	} else {
 		while ($query->have_posts()) {
 			$query->the_post();
