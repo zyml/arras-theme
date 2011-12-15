@@ -46,6 +46,9 @@ function arras_custom_background() {
 
 	$notices = '';
 	
+	if ( !isset( $arras_custom_bg_options ) )
+		$arras_custom_bg_options = maybe_unserialize( get_option( 'arras_custom_bg_options' ) );
+	
 	if ( isset($_REQUEST['reset']) ) {
 		check_admin_referer('arras-custom-background');
 		$arras_custom_bg_options = arras_get_custom_background_defaults();
@@ -54,12 +57,11 @@ function arras_custom_background() {
 	}
 
 	if ( isset($_REQUEST['save']) ) {
-		var_dump( $_REQUEST );
-		
 		check_admin_referer('arras-custom-background');
-		$defaults = arras_get_custom_background_defaults();
 		
-		if ($_FILES['import']['error'] != 4) {
+		$defaults = !isset( $arras_custom_bg_options ) ? arras_get_custom_background_defaults() : $arras_custom_bg_options;
+
+		if ( isset( $_FILES['import'] ) && $_FILES['import']['error'] != 4 ) {
 			$overrides = array('test_form' => false);
 			$file = wp_handle_upload($_FILES['import'], $overrides);
 
