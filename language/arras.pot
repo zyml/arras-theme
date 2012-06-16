@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-13 16:53+0730\n"
+"POT-Creation-Date: 2012-06-16 20:31+0730\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -165,31 +165,31 @@ msgstr ""
 msgid "About Arras WordPress Theme"
 msgstr ""
 
-#: ../functions.php:62
+#: ../functions.php:63
 msgid "Main Menu"
 msgstr ""
 
-#: ../functions.php:63
+#: ../functions.php:64
 msgid "Top Menu"
 msgstr ""
 
-#: ../functions.php:79
+#: ../functions.php:80
 msgid "1 Column Layout (No Sidebars)"
 msgstr ""
 
-#: ../functions.php:80
+#: ../functions.php:81
 msgid "2 Column Layout (Right Sidebar)"
 msgstr ""
 
-#: ../functions.php:81
+#: ../functions.php:82
 msgid "2 Column Layout (Left Sidebar)"
 msgstr ""
 
-#: ../functions.php:82
+#: ../functions.php:83
 msgid "3 Column Layout (Left & Right Sidebars)"
 msgstr ""
 
-#: ../functions.php:83
+#: ../functions.php:84
 msgid "3 Column Layout (Right Sidebars)"
 msgstr ""
 
@@ -261,7 +261,6 @@ msgid "Tag Cloud"
 msgstr ""
 
 #: ../yarpp-template-arras.php:16
-#: ../library/widgets.php:470
 msgid "d F Y g:i A"
 msgstr ""
 
@@ -283,8 +282,8 @@ msgstr ""
 
 #: ../library/deprecated.php:98
 #: ../library/deprecated.php:117
-#: ../library/tapestries.php:145
-#: ../library/tapestries.php:277
+#: ../library/tapestries.php:151
+#: ../library/tapestries.php:283
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -292,6 +291,13 @@ msgstr ""
 #: ../library/filters.php:38
 #, php-format
 msgid "<div class=\"entry-author\">By %s</div>"
+msgstr ""
+
+#: ../library/filters.php:42
+#: ../library/tapestries.php:280
+#: ../library/widgets.php:470
+#, php-format
+msgid "Posted %s"
 msgstr ""
 
 #: ../library/filters.php:46
@@ -344,52 +350,47 @@ msgstr ""
 msgid "Featured Slideshow"
 msgstr ""
 
-#: ../library/tapestries.php:114
+#: ../library/tapestries.php:120
 msgid "Read the rest of this entry &raquo;"
 msgstr ""
 
-#: ../library/tapestries.php:119
+#: ../library/tapestries.php:125
 msgid "Traditional"
 msgstr ""
 
-#: ../library/tapestries.php:150
+#: ../library/tapestries.php:156
 msgid "Per Line"
 msgstr ""
 
-#: ../library/tapestries.php:177
+#: ../library/tapestries.php:183
 msgid "Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:200
+#: ../library/tapestries.php:206
 msgid "Tapestry: Node-Based"
 msgstr ""
 
-#: ../library/tapestries.php:209
+#: ../library/tapestries.php:215
 msgid "Tapestry: Node Based"
 msgstr ""
 
-#: ../library/tapestries.php:213
+#: ../library/tapestries.php:219
 msgid "Show Excerpt?"
 msgstr ""
 
-#: ../library/tapestries.php:219
+#: ../library/tapestries.php:225
 msgid "Nodes per Row"
 msgstr ""
 
-#: ../library/tapestries.php:274
-#, php-format
-msgid "Posted on %s"
-msgstr ""
-
-#: ../library/tapestries.php:278
+#: ../library/tapestries.php:284
 msgid "Continue Reading..."
 msgstr ""
 
-#: ../library/tapestries.php:284
+#: ../library/tapestries.php:290
 msgid "Quick Preview"
 msgstr ""
 
-#: ../library/tapestries.php:290
+#: ../library/tapestries.php:296
 msgid "Tapestry: Quick Preview"
 msgstr ""
 
@@ -430,31 +431,104 @@ msgstr ""
 msgid "g:i A"
 msgstr ""
 
-#: ../library/template.php:353
+#: ../library/template.php:358
+#: ../library/template.php:379
+#, php-format
+msgid "on %s"
+msgstr ""
+
+#: ../library/template.php:384
+#, php-format
+msgid "%s weeks ago"
+msgstr ""
+
+#: ../library/template.php:386
+msgid "1 week ago"
+msgstr ""
+
+#: ../library/template.php:390
+#, php-format
+msgid "%s days ago"
+msgstr ""
+
+#: ../library/template.php:392
+msgid "1 day ago"
+msgstr ""
+
+#: ../library/template.php:396
+#, php-format
+msgid "%s hours ago"
+msgstr ""
+
+#: ../library/template.php:398
+msgid "1 hour ago"
+msgstr ""
+
+#: ../library/template.php:402
+#, php-format
+msgid "%s minutes ago"
+msgstr ""
+
+#: ../library/template.php:404
+msgid "1 minute ago"
+msgstr ""
+
+#: ../library/template.php:407
+msgid "less than a minute ago"
+msgstr ""
+
+#: ../library/template.php:420
 #, php-format
 msgid "%s RSS Feed"
 msgstr ""
 
-#: ../library/template.php:353
+#: ../library/template.php:420
 msgid "RSS Feed"
 msgstr ""
 
-#: ../library/template.php:357
-#, php-format
-msgid "%s Twitter"
-msgstr ""
-
-#: ../library/template.php:357
-msgid "Twitter"
-msgstr ""
-
-#: ../library/template.php:362
+#: ../library/template.php:424
 #, php-format
 msgid "%s Facebook"
 msgstr ""
 
-#: ../library/template.php:362
+#: ../library/template.php:424
 msgid "Facebook"
+msgstr ""
+
+#: ../library/template.php:429
+#, php-format
+msgid "%s Flickr"
+msgstr ""
+
+#: ../library/template.php:429
+msgid "Flickr"
+msgstr ""
+
+#: ../library/template.php:434
+#, php-format
+msgid "%s Google+"
+msgstr ""
+
+#: ../library/template.php:434
+msgid "Google+"
+msgstr ""
+
+#: ../library/template.php:439
+#, php-format
+msgid "%s Twitter"
+msgstr ""
+
+#: ../library/template.php:439
+msgid "Twitter"
+msgstr ""
+
+#: ../library/template.php:444
+#, php-format
+msgid "%s YouTube"
+msgstr ""
+
+#: ../library/template.php:444
+msgid "YouTube"
 msgstr ""
 
 #: ../library/thumbnails.php:12
@@ -597,12 +671,6 @@ msgstr ""
 msgid "Post Types & Tax."
 msgstr ""
 
-#: ../library/admin/admin.php:10
-#: ../library/admin/background.php:110
-#: ../library/admin/templates/arras-design.php:66
-msgid "Custom Background"
-msgstr ""
-
 #: ../library/admin/admin.php:45
 msgid "<strong>Notice:</strong> Having <a href=\"http://wordpress.org/extend/plugins/regenerate-thumbnails/\">Regenerate Thumbnails</a> plugin installed and activated is highly recommended for Arras."
 msgstr ""
@@ -614,12 +682,12 @@ msgstr ""
 #: ../library/admin/admin.php:121
 #: ../library/admin/admin.php:147
 #: ../library/admin/admin.php:154
-#: ../library/admin/background.php:87
+#: ../library/admin/background.php:99
 msgid "Your settings have been saved to the database."
 msgstr ""
 
 #: ../library/admin/admin.php:134
-#: ../library/admin/background.php:47
+#: ../library/admin/background.php:56
 msgid "Your settings have been reverted to the defaults."
 msgstr ""
 
@@ -687,100 +755,104 @@ msgstr ""
 msgid "Translators"
 msgstr ""
 
-#: ../library/admin/background.php:117
-msgid "Activate Custom Background"
-msgstr ""
-
-#: ../library/admin/background.php:120
-msgid "Upload Background Image"
-msgstr ""
-
-#: ../library/admin/background.php:124
-msgid "Background Attachment"
-msgstr ""
-
-#: ../library/admin/background.php:125
-msgid "Fixed"
-msgstr ""
-
-#: ../library/admin/background.php:126
-msgid "Scroll (along with the rest of the page)"
-msgstr ""
-
-#: ../library/admin/background.php:127
-msgid "Horizontal Position"
-msgstr ""
-
-#: ../library/admin/background.php:128
-msgid "Left"
+#: ../library/admin/background.php:122
+msgid "Custom Background"
 msgstr ""
 
 #: ../library/admin/background.php:129
-#: ../library/admin/background.php:133
-msgid "Center"
-msgstr ""
-
-#: ../library/admin/background.php:130
-msgid "Right"
-msgstr ""
-
-#: ../library/admin/background.php:131
-msgid "Vertical Position"
+msgid "Activate Custom Background"
 msgstr ""
 
 #: ../library/admin/background.php:132
-msgid "Top"
-msgstr ""
-
-#: ../library/admin/background.php:134
-msgid "Bottom"
-msgstr ""
-
-#: ../library/admin/background.php:135
-msgid "Repeat Background Image?"
+msgid "Upload Background Image"
 msgstr ""
 
 #: ../library/admin/background.php:136
-msgid "None"
+msgid "Background Attachment"
 msgstr ""
 
 #: ../library/admin/background.php:137
-msgid "Repeat Horizontally"
+msgid "Fixed"
 msgstr ""
 
 #: ../library/admin/background.php:138
-msgid "Repeat Vertically"
+msgid "Scroll (along with the rest of the page)"
 msgstr ""
 
 #: ../library/admin/background.php:139
-msgid "Repeat Both"
+msgid "Horizontal Position"
+msgstr ""
+
+#: ../library/admin/background.php:140
+msgid "Left"
 msgstr ""
 
 #: ../library/admin/background.php:141
-msgid "Background Color"
+#: ../library/admin/background.php:145
+msgid "Center"
 msgstr ""
 
-#: ../library/admin/background.php:145
-msgid "Semi-Transparent Foreground"
+#: ../library/admin/background.php:142
+msgid "Right"
 msgstr ""
 
-#: ../library/admin/background.php:145
-msgid "This feature does not work in IE6 and for those using the legacy stylesheet."
+#: ../library/admin/background.php:143
+msgid "Vertical Position"
+msgstr ""
+
+#: ../library/admin/background.php:144
+msgid "Top"
 msgstr ""
 
 #: ../library/admin/background.php:146
-msgid "Apply Background from Top"
+msgid "Bottom"
+msgstr ""
+
+#: ../library/admin/background.php:147
+msgid "Repeat Background Image?"
 msgstr ""
 
 #: ../library/admin/background.php:148
-msgid "Save Changes"
+msgid "None"
 msgstr ""
 
 #: ../library/admin/background.php:149
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ../library/admin/background.php:150
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ../library/admin/background.php:151
+msgid "Repeat Both"
+msgstr ""
+
+#: ../library/admin/background.php:153
+msgid "Background Color"
+msgstr ""
+
+#: ../library/admin/background.php:157
+msgid "Semi-Transparent Foreground"
+msgstr ""
+
+#: ../library/admin/background.php:157
+msgid "This feature does not work in IE6 and for those using the legacy stylesheet."
+msgstr ""
+
+#: ../library/admin/background.php:158
+msgid "Apply Background from Top"
+msgstr ""
+
+#: ../library/admin/background.php:160
+msgid "Save Changes"
+msgstr ""
+
+#: ../library/admin/background.php:161
 msgid "Reset"
 msgstr ""
 
-#: ../library/admin/background.php:152
+#: ../library/admin/background.php:164
 msgid "Current Background Image"
 msgstr ""
 
@@ -842,10 +914,6 @@ msgstr ""
 msgid "Delete existing"
 msgstr ""
 
-#: ../library/admin/templates/arras-design.php:68
-msgid "Set Custom Background"
-msgstr ""
-
 #: ../library/admin/templates/arras-general.php:5
 msgid "Theme Information"
 msgstr ""
@@ -895,23 +963,55 @@ msgstr ""
 msgid "Link to your Facebook profile."
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:62
-msgid "Footer Information"
+#: ../library/admin/templates/arras-general.php:61
+msgid "Flickr Profile (URL)"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:66
-msgid "No. of Columns"
+#: ../library/admin/templates/arras-general.php:64
+msgid "Link to your Flickr profile."
 msgstr ""
 
 #: ../library/admin/templates/arras-general.php:69
+msgid "Google+ Profile (URL)"
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:72
+msgid "Link to your Google+ profile."
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:77
+msgid "YouTube Profile (URL)"
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:80
+msgid "Link to your YouTube profile."
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:87
+msgid "Credits:"
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:88
+msgid "Google+ Icon from <a href=\"http://themedy.com/free-google-icons\">Themedy</a>. Other social icons from <a href=\"http://19eighty7.com/icons\">19eighty7</a>."
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:91
+msgid "Footer Information"
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:95
+msgid "No. of Columns"
+msgstr ""
+
+#: ../library/admin/templates/arras-general.php:98
 msgid "Footer sidebars will be labelled respectively (eg. Footer Sidebar #1, etc.)"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:74
+#: ../library/admin/templates/arras-general.php:103
 msgid "Footer Title"
 msgstr ""
 
-#: ../library/admin/templates/arras-general.php:84
+#: ../library/admin/templates/arras-general.php:113
 msgid "Usually your website's copyright information would go here.<br /> It would be great if you could include a link to WordPress and even greater if you could include a link to the theme website. :)"
 msgstr ""
 
@@ -1054,14 +1154,22 @@ msgid "Author Information"
 msgstr ""
 
 #: ../library/admin/templates/arras-layout.php:70
+msgid "Display Relative Post Dates"
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:74
+msgid "Check this to display post dates relative to current time (eg. 2 days ago )."
+msgstr ""
+
+#: ../library/admin/templates/arras-layout.php:80
 msgid "Display Custom Taxonomies"
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:73
+#: ../library/admin/templates/arras-layout.php:83
 msgid "List down the custom taxonomies' slug that you wish to display here, separated by a comma (,)."
 msgstr ""
 
-#: ../library/admin/templates/arras-layout.php:79
+#: ../library/admin/templates/arras-layout.php:89
 msgid "Single Post Custom Fields"
 msgstr ""
 
