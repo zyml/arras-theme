@@ -62,13 +62,6 @@ echo arras_form_dropdown('arras-style', $styles, arras_get_option('style') ) ?><
 </td>
 </tr>
 
-<tr valign="top">
-<th scope="row"><label for="arras-style"><?php _e('Custom Background', 'arras') ?></label></th>
-<td>
-<a href="<?php echo home_url() ?>/wp-admin/admin.php?page=arras-custom-background"><strong><?php _e('Set Custom Background', 'arras') ?></strong></a>
-</td>
-</tr>
-
 </table>
 
 <?php do_action('arras_admin_settings-design'); ?>
