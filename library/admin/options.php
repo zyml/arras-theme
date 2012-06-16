@@ -114,7 +114,10 @@ class ArrasOptions {
 		$this->donate = !isset($_POST['arras-credits']);
 		
 		$this->twitter_username = (string)$_POST['arras-twitter'];
-		$this->facebook_profile = (string)$_POST['arras-facebook'];
+		$this->facebook_profile = esc_url( $_POST['arras-facebook'] );
+		$this->gplus_profile = esc_url( $_POST['arras-gplus'] );
+		$this->flickr_profile = esc_url( $_POST['arras-flickr'] );
+		$this->youtube_profile = esc_url( $_POST['arras-youtube'] );
 		$this->footer_sidebars = (int)$_POST['arras-footer-sidebars'];
 		$this->footer_title = (string)stripslashes($_POST['arras-footer-title']);
 		$this->footer_message = wp_kses_post($_POST['arras-footer-message']);

@@ -57,7 +57,36 @@
 </td>
 </tr>
 
+<tr valign="top">
+<th scope="row"><label for="arras-flickr"><?php _e('Flickr Profile (URL)', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-flickr', 'id' => 'arras-flickr', 'class' => 'code', 'size' => '65', 'value' => arras_get_option('flickr_profile') )) ?><br />
+<?php _e('Link to your Flickr profile.', 'arras') ?>
+</td>
+</tr>
+
+<tr valign="top">
+<th scope="row"><label for="arras-gplus"><?php _e('Google+ Profile (URL)', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-gplus', 'id' => 'arras-gplus', 'class' => 'code', 'size' => '65', 'value' => arras_get_option('gplus_profile') )) ?><br />
+<?php _e('Link to your Google+ profile.', 'arras') ?>
+</td>
+</tr>
+
+<tr valign="top">
+<th scope="row"><label for="arras-youtube"><?php _e('YouTube Profile (URL)', 'arras') ?></label></th>
+<td>
+<?php echo arras_form_input(array('name' => 'arras-youtube', 'id' => 'arras-youtube', 'class' => 'code', 'size' => '65', 'value' => arras_get_option('youtube_profile') )) ?><br />
+<?php _e('Link to your YouTube profile.', 'arras') ?>
+</td>
+</tr>
+
 </table>
+
+<p style="margin: 1em 0.5em; font-size: 12px;">
+	<strong><?php _e( 'Credits:', 'arras' ) ?></strong>
+	<?php _e( 'Google+ Icon from <a href="http://themedy.com/free-google-icons">Themedy</a>. Other social icons from <a href="http://19eighty7.com/icons">19eighty7</a>.', 'arras' ) ?>
+</p>
 
 <h3><?php _e('Footer Information', 'arras') ?></h3>
 <table class="form-table">
