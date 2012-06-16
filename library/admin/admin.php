@@ -7,7 +7,7 @@ function arras_addmenu() {
 	
 	$posttax_page = add_submenu_page( 'arras-options', __('Post Types & Taxonomies', 'arras'), __('Post Types & Tax.', 'arras'), 'edit_theme_options', 'arras-posttax', 'arras_posttax' );
 	
-	$custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 'edit_theme_options', 'arras-custom-background', 'arras_custom_background' );
+	// $custom_background_page = add_submenu_page( 'arras-options', __('Custom Background', 'arras'), __('Custom Background', 'arras'), 'edit_theme_options', 'arras-custom-background', 'arras_custom_background' );
 
 	add_action('admin_print_scripts-'. $options_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-'. $options_page, 'arras_admin_styles');
@@ -15,8 +15,8 @@ function arras_addmenu() {
 	add_action('admin_print_scripts-' . $posttax_page, 'arras_admin_scripts');
 	add_action('admin_print_styles-' . $posttax_page, 'arras_admin_styles');
 	
-	add_action('admin_print_scripts-' . $custom_background_page, 'arras_custom_background_scripts');
-	add_action('admin_print_styles-' . $custom_background_page, 'arras_custom_background_styles');
+	// add_action('admin_print_scripts-' . $custom_background_page, 'arras_custom_background_scripts');
+	// add_action('admin_print_styles-' . $custom_background_page, 'arras_custom_background_styles');
 }
 
 function arras_admin() {
