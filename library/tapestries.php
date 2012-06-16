@@ -172,7 +172,7 @@ if (!function_exists('arras_tapestry_default')) {
 		?>
 		<div <?php arras_post_class() ?>>
 			<?php echo apply_filters('arras_tapestry_default_postheader', arras_generic_postheader('node-based', true) ) ?>
-			<?php if ($tapestry_settings['excerpt']) : ?>
+			<?php if ( isset($tapestry_settings['excerpt']) && $tapestry_settings['excerpt'] ) : ?>
 			<div class="entry-summary">
 				<?php the_excerpt() ?>
 			</div>
