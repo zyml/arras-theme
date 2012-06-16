@@ -39,7 +39,7 @@ function arras_postheader() {
 		}
 		
 		if ( arras_get_option('post_date') ) {
-			$postheader .= ' &ndash; <abbr class="published" title="' . get_the_time('c') . '">' . get_the_time(get_option('date_format')) . '</abbr>';
+			$postheader .= ' &ndash; <abbr class="published" title="' . get_the_time('c') . '">' . sprintf( __('Posted %s', 'arras'), arras_posted_on( false ) ) . '</abbr>';
 		}
 		
 		if (current_user_can('edit_post')) {

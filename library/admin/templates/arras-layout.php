@@ -67,6 +67,16 @@ foreach( get_categories('hide_empty=0') as $c ) {
 </tr>
 
 <tr valign="top">
+<th scope="row"><?php _e('Display Relative Post Dates', 'arras') ?></th>
+<td>
+
+<?php echo arras_form_checkbox('arras-layout-single-postdates', 'show', arras_get_option('relative_postdates'), 'id="arras-layout-single-postdates"') ?> 
+<label for="arras-layout-single-author"><?php _e('Check this to display post dates relative to current time (eg. 2 days ago ).', 'arras') ?></label>
+
+</td>
+</tr>
+
+<tr valign="top">
 <th scope="row"><label for="arras-single-custom-taxonomies"><?php _e('Display Custom Taxonomies', 'arras') ?></label></th>
 <td>
 <?php echo arras_form_textarea(array('name' => 'arras-single-custom-taxonomies', 'id' => 'arras-single-custom-taxonomies', 'class' => 'code', 'rows' => '3', 'cols' => '70', 'value' => esc_textarea(arras_get_option('single_custom_taxonomies')) )) ?><br />

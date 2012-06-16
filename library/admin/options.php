@@ -82,6 +82,7 @@ class ArrasOptions {
 			'post_cats' => true,
 			'post_tags' => true,
 			'single_thumbs' => false,
+			'relative_postdates' => false,
 			
 			'single_custom_fields' => 'Score:score,Pros:pros,Cons:cons',
 			
@@ -187,6 +188,7 @@ class ArrasOptions {
 		$this->post_cats = isset($_POST['arras-layout-post-cats']);
 		$this->post_tags = isset($_POST['arras-layout-post-tags']);
 		$this->single_thumbs = isset($_POST['arras-layout-single-thumbs']);
+		$this->relative_postdates = isset($_POST['arras-layout-single-postdates']);
 		
 		$this->single_custom_taxonomies = (string)$_POST['arras-single-custom-taxonomies'];
 		

@@ -277,7 +277,7 @@ if (!function_exists('arras_tapestry_quick')) {
 			<?php echo apply_filters('arras_tapestry_quick_postheader', arras_generic_postheader('quick-preview') ) ?>
 			<div class="entry-summary">
 				<div class="entry-info">
-					<abbr class="published" title="<?php the_time('c') ?>"><?php printf( __('Posted on %s', 'arras'), get_the_time(get_option('date_format')) ) ?></abbr> | <a href="<?php comments_link() ?>"><?php comments_number() ?></a>
+					<abbr class="published" title="<?php the_time('c') ?>"><?php printf( __('Posted %s', 'arras'), arras_posted_on( false ) ) ?></abbr> | <a href="<?php comments_link() ?>"><?php comments_number() ?></a>
 				</div>
 				<?php echo get_the_excerpt() ?>
 				<p class="quick-read-more"><a href="<?php the_permalink() ?>" title="<?php printf( __('Permalink to %s', 'arras'), get_the_title() ) ?>">
