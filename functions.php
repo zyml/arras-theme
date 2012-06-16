@@ -35,7 +35,7 @@ function arras_setup() {
 		require_once ARRAS_LIB . '/admin/admin.php';
 	}
 	
-	require_once ARRAS_LIB . '/admin/background.php';
+	//require_once ARRAS_LIB . '/admin/background.php';
 	
 	/* Post meta fields */
 	define( 'ARRAS_REVIEW_SCORE', 'score' );
@@ -56,6 +56,7 @@ function arras_setup() {
 	add_theme_support('post-thumbnails');
 	add_theme_support('nav-menus');
 	add_theme_support('automatic-feed-links');
+	add_theme_support('custom-background');
 	
 	/* Menus locations */
 	register_nav_menus(array(
