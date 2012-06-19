@@ -1,7 +1,7 @@
 <?php
 
 define ( 'ARRAS_CHILD', is_child_theme() );
-define ( 'ARRAS_VERSION' , '1.5.2' );
+define ( 'ARRAS_VERSION' , '1.5.3' );
 define ( 'ARRAS_LIB', TEMPLATEPATH . '/library' );
 
 do_action('arras_init');
