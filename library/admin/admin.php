@@ -248,7 +248,7 @@ function arras_right_col() {
 			<ul>
 				<li><a href="http://www.arrastheme.com/wiki/doku.php/quick_start_guide"><?php _e('Quick Start Guide', 'arras') ?></a></li>
 				<li><a href="http://www.arrastheme.com/forums/"><?php _e('Community Forums', 'arras') ?></a></li>
-				<li><a href="http://arras-theme.googlecode.com/"><?php _e('Bug Tracker / Repository', 'arras') ?></a></li>
+				<li><a href="https://github.com/zyml/arras-theme"><?php _e('Arras on GitHub', 'arras') ?></a></li>
 			</ul>
 		</div>
 		
