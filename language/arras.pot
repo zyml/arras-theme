@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arras 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-16 20:31+0730\n"
+"POT-Creation-Date: 2012-08-07 02:31+0730\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Melvin Lee <zy@zy.sg>\n"
 "Language-Team:  <zy@zy.sg>\n"
@@ -21,10 +21,15 @@ msgid "Error 404 - Not Found"
 msgstr ""
 
 #: ../404.php:9
-msgid ""
-"<p><strong>We're very sorry, but that page doesn't exist or has been moved.</strong><br />\r\n"
-"\t\tPlease make sure you have the right URL.</p>\r\n"
-"\t\t<p>If you still can't find what you're looking for, try using the search form below.</p>"
+msgid "We're very sorry, but that page doesn't exist or has been moved."
+msgstr ""
+
+#: ../404.php:10
+msgid "Please make sure you have the right URL."
+msgstr ""
+
+#: ../404.php:12
+msgid "If you still can't find what you're looking for, try using the search form below."
 msgstr ""
 
 #: ../archive.php:10
@@ -704,7 +709,7 @@ msgid "Community Forums"
 msgstr ""
 
 #: ../library/admin/admin.php:251
-msgid "Bug Tracker / Repository"
+msgid "Arras on GitHub"
 msgstr ""
 
 #: ../library/admin/admin.php:257
