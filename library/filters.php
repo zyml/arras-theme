@@ -35,7 +35,7 @@ function arras_postheader() {
 		$postheader .= '<div class="entry-info">';
 	
 		if ( arras_get_option('post_author') ) {
-			$postheader .= sprintf( __('<div class="entry-author">By %s</div>', 'arras'), '<address class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta('ID') ) . '" title="' . esc_attr(get_the_author()) . '">' . get_the_author() . '</a></address>' );
+			$postheader .= sprintf( __('<div class="entry-author">By %s</div>', 'arras'), '<address class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta('ID') ) . '" rel="author" title="' . esc_attr(get_the_author()) . '">' . get_the_author() . '</a></address>' );
 		}
 		
 		if ( arras_get_option('post_date') ) {
