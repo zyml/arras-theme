@@ -138,28 +138,28 @@ function arras_add_sidebars() {
 	/* Default sidebars */
 	register_sidebar( array(
 		'name' => 'Primary Sidebar',
-		'before_widget' => '<li id="%1$s" class="widgetcontainer clearfix">',
+		'before_widget' => '<li id="%1$s" class="%2$s widgetcontainer clearfix">',
 		'after_widget' => '</li>',
 		'before_title' => '<h5 class="widgettitle">',
 		'after_title' => '</h5>'
 	) );
 	register_sidebar( array(
 		'name' => 'Secondary Sidebar #1',
-		'before_widget' => '<li id="%1$s" class="widgetcontainer clearfix">',
+		'before_widget' => '<li id="%1$s" class="%2$s widgetcontainer clearfix">',
 		'after_widget' => '</li>',
 		'before_title' => '<h5 class="widgettitle">',
 		'after_title' => '</h5>'
 	) );
 	register_sidebar( array(
 		'name' => 'Bottom Content #1',
-		'before_widget' => '<li id="%1$s" class="widgetcontainer clearfix">',
+		'before_widget' => '<li id="%1$s" class="%2$s widgetcontainer clearfix">',
 		'after_widget' => '</li>',
 		'before_title' => '<h5 class="widgettitle">',
 		'after_title' => '</h5>'
 	) );
 	register_sidebar( array(
 		'name' => 'Bottom Content #2',
-		'before_widget' => '<li id="%1$s" class="widgetcontainer clearfix">',
+		'before_widget' => '<li id="%1$s" class="%2$s widgetcontainer clearfix">',
 		'after_widget' => '</li>',
 		'before_title' => '<h5 class="widgettitle">',
 		'after_title' => '</h5>'
@@ -172,7 +172,7 @@ function arras_add_sidebars() {
 	for( $i = 1; $i < $footer_sidebars + 1; $i++ ) {
 		register_sidebar( array(
 			'name' => 'Footer Sidebar #' . $i,
-			'before_widget' => '<li id="%1$s" class="widgetcontainer clearfix">',
+			'before_widget' => '<li id="%1$s" class="%2$s widgetcontainer clearfix">',
 			'after_widget' => '</li>',
 			'before_title' => '<h5 class="widgettitle">',
 			'after_title' => '</h5>'
